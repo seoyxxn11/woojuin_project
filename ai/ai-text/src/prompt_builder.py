@@ -9,10 +9,13 @@ def format_category_definitions(definitions: list[dict]) -> str:
     lines: list[str] = []
     for item in definitions:
         examples = ", ".join(item.get("examples", [])) or "없음"
-        lines.append(f"- {item['name']}: {item['description']} (예: {examples})")
+        category_id = item.get("id", item["name"])
+        lines.append(f"- {category_id} | {item['name']}: {item['description']} (예: {examples})")
     return "\n".join(lines)
 
-def format_category_names(categories: list[str]) -> str:
+def format_category_names(categories: list[str], definitions: list[dict] | None = None) -> str:
+    if definitions:
+        return "\n".join(f"- {item.get('id', item['name'])} | {item['name']}" for item in definitions)
     return "\n".join(f"- {category}" for category in categories)
 
 def build_prompt(
@@ -30,7 +33,7 @@ def build_prompt(
     meaningful_title = title.strip() if title and not DEFAULT_TITLE_PATTERN.fullmatch(title.strip()) else ""
     title_context = f"입력 제목:\n{meaningful_title}\n\n" if meaningful_title else ""
     category_context = (format_category_definitions(category_definitions or [])
-                        if include_category_descriptions else format_category_names(categories))
+                        if include_category_descriptions else format_category_names(categories, category_definitions))
     return (template.replace("{{CATEGORIES}}", ", ".join(categories))
             .replace("{{CATEGORY_DEFINITIONS}}", category_context)
             .replace("{{TITLE_CONTEXT}}", title_context).replace("{{CONTENT}}", content))

@@ -1,0 +1,22 @@
+model:
+  provider: gms
+  # GMS 화면에 표시된 멀티모달 모델 ID로 바꾸세요.
+  model_id: gpt-4o-mini
+  api_key_env: GMS_API_KEY
+  base_url: https://gms.ssafy.io/gmsapi/api.openai.com/v1
+  base_url_env: GMS_BASE_URL
+  # 운영 비용 절감 설정: 일반 이미지 입력을 저해상도 비전 모드로 처리
+  image_detail: low
+  max_image_dimension: 512
+  max_image_bytes: 30000
+  max_new_tokens: 350
+  temperature: 0.0
+
+benchmark:
+  dataset: datasets/ground_truth.jsonl
+  prompt: prompts/analyze_image.txt
+  results_dir: results
+  reports_dir: reports
+
+generation:
+  do_sample: false

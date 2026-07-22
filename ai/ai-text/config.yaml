@@ -1,0 +1,24 @@
+models:
+  - qwen3:4b
+  - qwen3:8b
+repeatCount: 3
+temperature: 0
+seed: 42
+thinking: false
+contextLength: 4096
+ollamaBaseUrl: http://localhost:11434
+connectTimeoutSeconds: 5
+readTimeoutSeconds: 300
+keepAlive: 10m
+openai:
+  apiKeyEnv: GMS_KEY
+  baseUrl: https://gms.ssafy.io/gmsapi/api.openai.com/v1
+  apiMode: chat_completions
+promptVersions:
+  category-only: v1
+  summary-only: v1
+  metadata-only: v1
+  integrated: v2
+modelSizesGb:
+  qwen3:4b: 2.5
+  qwen3:8b: 5.2

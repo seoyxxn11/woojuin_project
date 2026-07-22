@@ -1,0 +1,1 @@
+Java와 Spring Boot 경험을 요구하며 MySQL, Redis, Docker 사용 경험을 우대한다. 지원 마감은 8월 3일이고 포트폴리오 제출은 선택 사항이다.

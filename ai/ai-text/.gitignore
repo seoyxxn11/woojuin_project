@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+results/*/
+!results/.gitkeep
+!results/1차 통합 테스트/
+!results/2차 분류 테스트/
+results/1차 통합 테스트/*
+!results/1차 통합 테스트/.gitkeep
+results/2차 분류 테스트/*
+!results/2차 분류 테스트/.gitkeep
+.env
+.env.local
+!.env.example
+*.key

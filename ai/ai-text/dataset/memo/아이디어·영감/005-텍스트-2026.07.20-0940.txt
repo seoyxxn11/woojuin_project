@@ -1,0 +1,1 @@
+팀 회의에서 URL 미리보기 생성과 본문 추출을 별도의 처리 과정으로 나누기로 했다. 미리보기는 Open Graph와 oEmbed를 사용하고, 본문은 Jsoup과 Readability를 우선 적용한 뒤 실패하면 Playwright를 실행하는 방향을 검토한다.

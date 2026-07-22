@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "model": "qwen3:8b",
+    "excludedCategory": "개발·IT",
+    "allowedCategories": [
+      "건강·운동",
+      "기타",
+      "문화·콘텐츠",
+      "생활·할 일",
+      "쇼핑·제품",
+      "업무·프로젝트",
+      "여행·장소",
+      "음식·맛집",
+      "취업·커리어",
+      "학습·지식"
+    ],
+    "targetCount": 2,
+    "executedAt": "2026-07-21T15:31:06.074169+09:00",
+    "rule": "기존 카테고리에 적합하지 않으면 새 카테고리 생성"
+  },
+  "results": [
+    {
+      "testId": "TEXT-001",
+      "title": "텍스트-2026.07.20-0905",
+      "sourcePath": "개발·IT/001-텍스트-2026.07.20-0905.txt",
+      "originalCategory": "개발·IT",
+      "input": "Spring Boot에서 사용자가 업로드한 이미지 파일을 AWS S3에 저장하는 기능을 구현해야 한다. 파일 이름이 중복되지 않도록 UUID를 붙이고, 업로드가 완료되면 이미지 URL과 파일 크기, 확장자를 데이터베이스에 저장한다.",
+      "rawResponse": "{\n  \"category\": \"업무·프로젝트\",\n  \"isNewCategory\": false,\n  \"reason\": \"메모 내용은 Spring Boot에서 AWS S3 이미지 저장 기능 구현에 관한 것으로, 업무 및 프로젝트 진행 관리와 관련이 있다.\",\n  \"newCategoryDescription\": \"\"\n}",
+      "parsedResponse": {
+        "category": "업무·프로젝트",
+        "isNewCategory": false,
+        "reason": "메모 내용은 Spring Boot에서 AWS S3 이미지 저장 기능 구현에 관한 것으로, 업무 및 프로젝트 진행 관리와 관련이 있다.",
+        "newCategoryDescription": ""
+      },
+      "parseError": null,
+      "performance": {
+        "totalDurationMs": 21456.9756,
+        "loadDurationMs": 10051.5313,
+        "promptEvalDurationMs": 7568.473,
+        "evalDurationMs": 3824.089,
+        "promptEvalCount": 1028,
+        "evalCount": 72,
+        "tokensPerSecond": 18.828013678551937
+      }
+    },
+    {
+      "testId": "TEXT-002",
+      "title": "JWT 재발급 구조 정리",
+      "sourcePath": "개발·IT/002-JWT 재발급 구조 정리.txt",
+      "originalCategory": "개발·IT",
+      "input": "액세스 토큰이 만료되면 리프레시 토큰을 이용해 새로운 토큰을 발급하는 구조를 다시 확인해야 한다. 리프레시 토큰은 HttpOnly 쿠키에 저장하고, 재발급 과정에서 토큰 탈취와 중복 사용을 방지할 방법도 찾아본다.",
+      "rawResponse": "{\n  \"category\": \"학습·지식\",\n  \"isNewCategory\": false,\n  \"reason\": \"JWT 재발급 구조는 기술적 개념 정리와 관련되어 학습·지식 카테고리에 속합니다.\",\n  \"newCategoryDescription\": \"\"\n}",
+      "parsedResponse": {
+        "category": "학습·지식",
+        "isNewCategory": false,
+        "reason": "JWT 재발급 구조는 기술적 개념 정리와 관련되어 학습·지식 카테고리에 속합니다.",
+        "newCategoryDescription": ""
+      },
+      "parseError": null,
+      "performance": {
+        "totalDurationMs": 4129.9692,
+        "loadDurationMs": 355.5741,
+        "promptEvalDurationMs": 397.729,
+        "evalDurationMs": 3366.774,
+        "promptEvalCount": 1039,
+        "evalCount": 65,
+        "tokensPerSecond": 19.30631518480302
+      }
+    }
+  ]
+}

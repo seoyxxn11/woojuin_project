@@ -1,0 +1,17 @@
+model:
+  provider: gemma
+  model_id: google/gemma-3-4b-it
+  quantization: 4bit
+  device_map: auto
+  cpu_offload: false
+  max_new_tokens: 800
+  temperature: 0.0
+
+benchmark:
+  dataset: datasets/ground_truth.jsonl
+  prompt: prompts/analyze_image.txt
+  results_dir: results
+  reports_dir: reports
+
+generation:
+  do_sample: false

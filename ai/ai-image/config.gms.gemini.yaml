@@ -1,0 +1,16 @@
+model:
+  provider: gemini_gms
+  model_id: gemini-3.5-flash
+  endpoint: https://gms.ssafy.io/gmsapi/generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent
+  api_key_env: GMS_API_KEY
+  max_new_tokens: 800
+  timeout_seconds: 90
+
+benchmark:
+  dataset: datasets/ground_truth.jsonl
+  prompt: prompts/analyze_image.txt
+  results_dir: results
+  reports_dir: reports
+
+generation:
+  do_sample: false

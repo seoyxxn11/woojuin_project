@@ -1,0 +1,13 @@
+.venv/
+.model-offload/
+__pycache__/
+*.py[cod]
+.env
+datasets/ground_truth.jsonl
+datasets/images/*
+!datasets/images/.gitkeep
+results/*
+!results/.gitkeep
+reports/*
+!reports/.gitkeep
+!reports/final-image-model-evaluation.md

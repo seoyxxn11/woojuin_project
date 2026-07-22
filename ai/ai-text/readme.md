@@ -1,15 +1,8 @@
 # AI 텍스트 모델 테스트 도구
 
-동일한 데이터, 프롬프트, JSON Schema, 평가 코드로 Ollama 로컬 모델과 OpenAI API 모델을 비교하는 도구입니다. 기존 Ollama 전용 진입점인 `run_tests.py`는 그대로 유지하고, 설정 기반 공통 실행은 `main.py`를 사용합니다.
+현재 기본 실험은 `qwen3:8b` 하나만 사용해 분리 처리와 통합 처리, 카테고리 설명 사용 여부가 분류 정확도에 미치는 영향을 비교합니다. 실행 진입점은 `run_classification_experiment.py`입니다.
 
-지원 모드는 다음 네 가지입니다.
-
-| 모드 | 모델 출력 | 주요 평가 |
-|---|---|---|
-| `category-only` | `category`, `confidence` | Accuracy, Macro Precision/Recall/F1, 혼동 행렬, confidence |
-| `summary-only` | `summary` | 필수 키워드·핵심 내용 재현율, 금지 표현 |
-| `metadata-only` | `tags`, `keywords` | 개수·중복 제약, 원문 키워드 포함 비율 |
-| `integrated` | 요약, 카테고리, 태그, 키워드 | 분류·요약·메타데이터 통합 평가 |
+기존 Ollama·OpenAI 모델 비교 코드와 결과는 과거 모델 선정 근거를 재현할 수 있도록 보존합니다.
 
 ## 카테고리
 
@@ -30,6 +23,59 @@
 ```
 
 `dataset/memo/<카테고리>/*.txt`의 상위 폴더명이 메모 테스트의 정답입니다. 상세 설명과 예시는 `config/categories.json`에서 관리하며 폴더명과 정의 이름은 정확히 일치해야 합니다. 기술 구현과 개발·IT 참고 내용은 `학습·지식`, 실행 체크리스트는 `생활·할 일`, 발상과 개선 방향은 `아이디어·영감`으로 분류합니다.
+
+## 현재 실험: 8B 분류 구조 비교
+
+동일한 메모를 다음 네 조건으로 실행합니다.
+
+| 조건 | 처리 방식 | 카테고리 설명 | 메모당 호출 수 |
+|---|---|---:|---:|
+| `split-with-description` | 분류 후 요약·정리 | 있음 | 2 |
+| `split-without-description` | 분류 후 요약·정리 | 없음 | 2 |
+| `integrated-with-description` | 분류·요약·정리 통합 | 있음 | 1 |
+| `integrated-without-description` | 분류·요약·정리 통합 | 없음 | 1 |
+
+먼저 모델을 호출하지 않는 실행 계획을 확인합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py --dry-run
+```
+
+전체 메모를 네 조건으로 한 번씩 실행합니다. 메모 78개 기준 총 468회 호출합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py
+```
+
+실제 전체 실행 전에 메모 2개로 연결과 출력 형식을 확인할 수 있습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py --limit 2
+```
+
+실행을 중단한 경우 생성된 상위 결과 폴더를 지정하면 완료된 메모를 건너뛰고 이어서 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+  --resume ".\results\3차 분류 구조 비교\20260722-150000"
+```
+
+결과는 다음 구조로 저장됩니다.
+
+```text
+results/3차 분류 구조 비교/<실행시각>/
+├── split-with-description/
+├── split-without-description/
+├── integrated-with-description/
+├── integrated-without-description/
+├── comparison-summary.json
+├── comparison-report.md
+├── wrong-answers.json
+├── wrong-answers.csv
+└── run-metadata.json
+```
+
+종합 보고서에는 네 조건의 카테고리 정확도, Macro F1, 성공률, 평균 처리 시간, 호출 수, 기타 선택률과 조건 간 정확도 차이가 포함됩니다. 오답은 조건, 테스트 ID, 제목, 입력 내용, 정답, 모델 예측, confidence와 오류 원인을 표로 표시하며 JSON·CSV로도 별도 저장합니다.
 
 ## 설치
 
@@ -191,7 +237,8 @@ OpenAI 모델에는 호환성을 위해 temperature, seed, Ollama context length
 ```text
 results/
 ├── 1차 통합 테스트/   # 초기 4B·8B 통합 응답 비교
-└── 2차 분류 테스트/   # 분류 정확도 중심의 모드 분리·API 비교
+├── 2차 분류 테스트/   # 분류 정확도 중심의 모드 분리·API 비교
+└── 3차 분류 구조 비교/ # 8B 분리·통합 및 설명 유무 비교
 ```
 
 단일 모드는 다음과 같이 저장합니다.

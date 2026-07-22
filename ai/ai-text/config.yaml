@@ -1,5 +1,4 @@
 models:
-  - qwen3:4b
   - qwen3:8b
 repeatCount: 3
 temperature: 0
@@ -20,5 +19,4 @@ promptVersions:
   metadata-only: v1
   integrated: v2
 modelSizesGb:
-  qwen3:4b: 2.5
   qwen3:8b: 5.2

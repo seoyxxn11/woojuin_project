@@ -48,13 +48,17 @@ class MetadataResult(StrictResult):
         if len(normalized) != len(set(normalized)): raise ValueError("중복 항목은 허용되지 않습니다")
         return values
 
-class IntegratedResult(SummaryResult, MetadataResult):
+class OrganizeResult(SummaryResult, MetadataResult):
+    pass
+
+class IntegratedResult(OrganizeResult):
     category: str
 
 MODELS: dict[str, type[BaseModel]] = {
     "category-only": CategoryResult,
     "summary-only": SummaryResult,
     "metadata-only": MetadataResult,
+    "organize-only": OrganizeResult,
     "integrated": IntegratedResult,
 }
 

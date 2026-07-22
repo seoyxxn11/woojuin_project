@@ -24,14 +24,16 @@
 
 `dataset/memo/<카테고리>/*.txt`의 상위 폴더명이 메모 테스트의 정답입니다. 상세 설명과 예시는 `config/categories.json`에서 관리하며 폴더명과 정의 이름은 정확히 일치해야 합니다. 기술 구현과 개발·IT 참고 내용은 `학습·지식`, 실행 체크리스트는 `생활·할 일`, 발상과 개선 방향은 `아이디어·영감`으로 분류합니다.
 
-## 현재 실험: 8B 분류 구조 비교
+## 현재 실험: 8B 다중 카테고리 분류 비교
 
-동일한 메모를 다음 네 조건으로 실행합니다.
+모델은 카테고리별 `score`(카테고리 적합도 점수)를 반환합니다. 이 값은 통계적으로 보정된 수치로 해석하지 않습니다. 원본 응답을 한 번 저장한 뒤 같은 결과에 여러 임계값을 적용하므로 임계값 수가 늘어나도 모델 호출 수는 늘어나지 않습니다. 현재 데이터의 정답은 메모당 하나이며 ID는 `config/categories.json`에서 관리합니다.
+
+동일한 메모를 다음 네 조건으로 실행합니다. 각 조건은 데이터마다 분류 원본 응답을 한 번만 생성합니다.
 
 | 조건 | 처리 방식 | 카테고리 설명 | 메모당 호출 수 |
 |---|---|---:|---:|
-| `split-with-description` | 분류 후 요약·정리 | 있음 | 2 |
-| `split-without-description` | 분류 후 요약·정리 | 없음 | 2 |
+| `split-with-description` | 분류 단독 | 있음 | 1 |
+| `split-without-description` | 분류 단독 | 없음 | 1 |
 | `integrated-with-description` | 분류·요약·정리 통합 | 있음 | 1 |
 | `integrated-without-description` | 분류·요약·정리 통합 | 없음 | 1 |
 
@@ -41,7 +43,7 @@
 .\.venv\Scripts\python.exe .\run_classification_experiment.py --dry-run
 ```
 
-전체 메모를 네 조건으로 한 번씩 실행합니다. 메모 78개 기준 총 468회 호출합니다.
+전체 메모를 네 조건으로 한 번씩 실행합니다. 메모 78개 기준 총 312회 호출하고, 기본 임계값 5개에 대한 1,560건 평가는 추가 호출 없이 처리합니다.
 
 ```powershell
 .\.venv\Scripts\python.exe .\run_classification_experiment.py
@@ -57,25 +59,40 @@
 
 ```powershell
 .\.venv\Scripts\python.exe .\run_classification_experiment.py `
-  --resume ".\results\3차 분류 구조 비교\20260722-150000"
+  --resume ".\results\4차 다중 카테고리 분류 비교\20260722-150000"
+```
+
+저장된 원본 결과만 다른 임계값으로 다시 평가할 수 있습니다. 이 명령은 Ollama를 호출하지 않습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+  --evaluate-only `
+  --resume ".\results\4차 다중 카테고리 분류 비교\20260722-150000" `
+  --thresholds 0.55 0.60 0.65 0.70
 ```
 
 결과는 다음 구조로 저장됩니다.
 
 ```text
-results/3차 분류 구조 비교/<실행시각>/
-├── split-with-description/
-├── split-without-description/
-├── integrated-with-description/
-├── integrated-without-description/
-├── comparison-summary.json
-├── comparison-report.md
-├── wrong-answers.json
-├── wrong-answers.csv
+results/4차 다중 카테고리 분류 비교/<실행시각>/
+├── raw/<조건>/results.jsonl
+├── threshold/<조건>/<임계값>/
+│   ├── evaluation-results.json
+│   ├── evaluation-results.csv
+│   ├── metrics.json
+│   └── evaluation-metadata.json
+├── reports/
+│   ├── summary.md
+│   ├── threshold-comparison.csv
+│   └── error-analysis.md
+├── json/detailed-results.json
+├── csv/detailed-results.csv
 └── run-metadata.json
 ```
 
-종합 보고서에는 네 조건의 카테고리 정확도, Macro F1, 성공률, 평균 처리 시간, 호출 수, 기타 선택률과 조건 간 정확도 차이가 포함됩니다. 오답은 조건, 테스트 ID, 제목, 입력 내용, 정답, 모델 예측, confidence와 오류 원인을 표로 표시하며 JSON·CSV로도 별도 저장합니다.
+주요 지표는 `Relaxed Accuracy`, `Top-1 Accuracy`, `Exact Accuracy`, `Gold Coverage`, `Over-prediction Rate` 순으로 판단합니다. 정답만 선택하면 `EXACT_CORRECT`, 정답과 추가 카테고리 하나를 선택하면 `RELAXED_CORRECT`, 추가 카테고리가 두 개 이상이면 `WRONG_OVER_PREDICTION`입니다. 서비스 최대 2개 제한은 평가를 마친 뒤에만 적용합니다.
+
+현재 테스트 데이터에는 정답 카테고리가 하나만 존재하므로, 정답과 함께 반환된 추가 카테고리가 실제로 적합한지 완전히 검증할 수 없습니다. 따라서 추가 카테고리 1개까지 허용하는 Relaxed Accuracy는 정식 다중 라벨 정확도가 아니라 단일 정답 데이터 기반 완화 지표입니다.
 
 ## 메모 임베딩 및 UMAP 3차원 좌표
 
@@ -283,7 +300,8 @@ results/
 ├── 1차 통합 테스트/   # 초기 4B·8B 통합 응답 비교
 ├── 2차 분류 테스트/   # 분류 정확도 중심의 모드 분리·API 비교
 ├── 3차 분류 구조 비교/ # 8B 분리·통합 및 설명 유무 비교
-└── 4차 임베딩 시각화/ # text-embedding-3-small 및 UMAP 3차원 좌표
+├── 4차 임베딩 시각화/ # text-embedding-3-small 및 UMAP 3차원 좌표
+└── 4차 다중 카테고리 분류 비교/ # 적합도 임계값 및 단일 정답 완화 평가
 ```
 
 단일 모드는 다음과 같이 저장합니다.

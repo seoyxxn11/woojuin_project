@@ -21,6 +21,25 @@ embedding:
     minDist: 0.1
     metric: cosine
     randomState: 42
+classification:
+  mode: multi_label
+  threshold: 0.65
+  fallback_category: 기타
+  ensure_at_least_one: true
+  service_max_categories: 2
+  threshold_sweep:
+    enabled: true
+    values:
+      - 0.50
+      - 0.60
+      - 0.65
+      - 0.70
+      - 0.80
+evaluation:
+  gold_mode: single_label_relaxed
+  max_allowed_extra_categories: 1
+  invalid_prediction_is_wrong: true
+  fallback_counts_as_model_correct: false
 promptVersions:
   category-only: v1
   summary-only: v1

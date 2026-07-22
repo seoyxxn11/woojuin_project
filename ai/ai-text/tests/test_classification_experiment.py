@@ -2,93 +2,140 @@ import json
 
 import pytest
 
+import run_classification_experiment as runner
 from run_classification_experiment import (
     SCENARIO_BY_ID,
     SCENARIOS,
-    make_record,
+    evaluate_raw_record,
+    make_raw_record,
     planned_call_count,
-    summarize_scenario,
-    write_comparison,
+    resolve_thresholds,
 )
-from src.metrics import classification_metrics
 from src.prompt_builder import build_prompt
 from src.response_parser import parse_response
 
 
-CATEGORIES = ["생활·할 일", "학습·지식", "기타"]
+DEFINITIONS = [
+    {"id": "LIFE_TASK", "name": "생활·할 일", "description": "일정", "examples": []},
+    {"id": "LEARNING_KNOWLEDGE", "name": "학습·지식", "description": "학습", "examples": []},
+    {"id": "TRAVEL_PLACE", "name": "여행·장소", "description": "여행", "examples": []},
+    {"id": "FOOD_RESTAURANT", "name": "음식·맛집", "description": "음식", "examples": []},
+    {"id": "CULTURE_CONTENT", "name": "문화·콘텐츠", "description": "문화", "examples": []},
+    {"id": "OTHER", "name": "기타", "description": "기타", "examples": []},
+]
+CATEGORIES = [item["name"] for item in DEFINITIONS]
+CLASSIFICATION = {
+    "fallback_category": "기타", "ensure_at_least_one": True, "service_max_categories": 2,
+}
+EVALUATION = {
+    "gold_mode": "single_label_relaxed",
+    "max_allowed_extra_categories": 1, "invalid_prediction_is_wrong": True,
+    "fallback_counts_as_model_correct": False,
+}
 
 
-def fake_call(mode: str, parsed: dict, duration: float = 100.0) -> dict:
+def fake_multi_call(predictions: list[dict], *, integrated: bool = False, summary_valid: bool = True) -> dict:
+    parsed = {"categories": predictions}
+    if integrated:
+        parsed |= {
+            "summary": "테스트 요약" if summary_valid else "",
+            "tags": ["하나", "둘", "셋"], "keywords": ["하나", "둘", "셋"],
+        }
     return {
-        "mode": mode,
-        "prompt": "prompt",
-        "request": {},
-        "ollamaResponse": {},
-        "rawResponse": json.dumps(parsed, ensure_ascii=False),
-        "parsedResponse": parsed,
-        "validation": {
-            "jsonValid": True,
-            "schemaValid": True,
-            "requiredFieldsPresent": True,
-            "extraTextDetected": False,
-            "thinkingTagDetected": False,
-            "validationError": "",
+        "mode": "multi-integrated" if integrated else "multi-category",
+        "prompt": "prompt", "request": {}, "ollamaResponse": {},
+        "rawResponse": json.dumps(parsed, ensure_ascii=False), "parsedResponse": parsed,
+        "parsing": {
+            "rawPredictions": predictions, "validPredictions": predictions,
+            "invalidPredictions": [], "duplicateCategoryIds": [],
+            "categoryParseSuccess": True,
+            "summaryParseSuccess": summary_valid if integrated else None,
+            "organizationParseSuccess": summary_valid if integrated else None,
         },
-        "evaluation": {},
-        "performance": {
-            "totalDurationMs": duration,
-            "promptEvalCount": 10,
-            "evalCount": 5,
-        },
+        "performance": {"totalDurationMs": 100, "promptEvalCount": 10, "evalCount": 5},
         "error": {"requestFailed": False, "errorType": "", "errorMessage": ""},
     }
 
 
-def memo_item() -> dict:
+def item() -> dict:
     return {
-        "testId": "TEXT-001",
-        "title": "메모",
-        "sourcePath": "학습·지식/001-메모.txt",
-        "input": "Redis 멱등성을 공부한다.",
-        "expected": {
-            "categories": ["학습·지식"],
-            "requiredKeywords": [],
-            "summaryPoints": [],
-            "forbiddenClaims": [],
-        },
+        "testId": "TEXT-001", "title": "제주 맛집", "sourcePath": "여행·장소/001.txt",
+        "input": "제주 여행 중 방문할 맛집", "expected": {"categories": ["여행·장소"]},
     }
 
 
-def test_organize_only_schema_combines_summary_tags_and_keywords():
-    raw = json.dumps({
-        "summary": "Redis 멱등성을 공부한다.",
-        "tags": ["Redis", "큐", "멱등성"],
-        "keywords": ["재전달", "ACK", "중복 처리"],
-    }, ensure_ascii=False)
-    parsed = parse_response(raw, CATEGORIES, "organize-only")
-    assert parsed["schemaValid"]
-    assert "category" not in parsed["parsedResponse"]
+def raw_record(predictions: list[dict], invalid: list[dict] | None = None) -> dict:
+    record = make_raw_record(
+        SCENARIO_BY_ID["split-with-description"], item(), 1,
+        fake_multi_call(predictions), None, None,
+    )
+    record["invalidPredictions"] = invalid or []
+    return record
 
 
-def test_category_description_toggle_changes_only_context():
-    template = "카테고리:\n{{CATEGORY_DEFINITIONS}}\n{{TITLE_CONTEXT}}{{CONTENT}}"
-    definitions = [
-        {"name": "학습·지식", "description": "배우고 확인할 지식", "examples": ["Redis 공부"]},
-        {"name": "기타", "description": "판단 근거 부족", "examples": ["알 수 없는 문자열"]},
-    ]
-    names = [item["name"] for item in definitions]
-    with_description = build_prompt(
-        template, "본문", names, category_definitions=definitions,
-        include_category_descriptions=True,
+def prediction(category_id: str, category_name: str, score: float) -> dict:
+    return {"categoryId": category_id, "categoryName": category_name, "score": score}
+
+
+def test_each_scenario_calls_model_once_and_thresholds_do_not_add_calls():
+    assert planned_call_count(78, 1, list(SCENARIOS)) == 312
+    config = {"classification": {"threshold": 0.65, "threshold_sweep": {"enabled": True, "values": [0.5, 0.7]}}}
+    assert resolve_thresholds(config, None) == [0.5, 0.7]
+    assert planned_call_count(78, 1, list(SCENARIOS)) == 312
+
+
+def test_split_raw_record_contains_one_category_call():
+    record = raw_record([prediction("TRAVEL_PLACE", "여행·장소", 0.9)])
+    assert record["callCount"] == 1
+    assert record["summaryParseSuccess"] is None
+
+
+def test_integrated_summary_and_category_parse_states_are_independent():
+    call = fake_multi_call([prediction("TRAVEL_PLACE", "여행·장소", 0.9)], integrated=True, summary_valid=False)
+    record = make_raw_record(
+        SCENARIO_BY_ID["integrated-with-description"], item(), 1, None, None, call,
     )
-    without_description = build_prompt(
-        template, "본문", names, category_definitions=definitions,
-        include_category_descriptions=False,
+    assert record["categoryParseSuccess"] is True
+    assert record["summaryParseSuccess"] is False
+
+
+def test_threshold_miss_is_separate_from_raw_missing_gold():
+    below = evaluate_raw_record(
+        raw_record([prediction("TRAVEL_PLACE", "여행·장소", 0.6)]),
+        0.7, DEFINITIONS, CLASSIFICATION | {"ensure_at_least_one": False}, EVALUATION,
     )
-    assert "배우고 확인할 지식" in with_description
-    assert "Redis 공부" in with_description
-    assert "배우고 확인할 지식" not in without_description
-    assert "- 학습·지식" in without_description
+    missing = evaluate_raw_record(
+        raw_record([prediction("FOOD_RESTAURANT", "음식·맛집", 0.9)]),
+        0.7, DEFINITIONS, CLASSIFICATION, EVALUATION,
+    )
+    assert below["thresholdMiss"] is True
+    assert "THRESHOLD_MISS" in below["errorTypes"]
+    assert missing["thresholdMiss"] is False
+    assert "MISSING_GOLD_CATEGORY" in missing["errorTypes"]
+
+
+def test_fallback_matching_gold_does_not_inflate_model_accuracy():
+    result = evaluate_raw_record(
+        raw_record([]), 0.7, DEFINITIONS,
+        CLASSIFICATION | {"fallback_category": "여행·장소"}, EVALUATION,
+    )
+    assert result["thresholdSelectedCategoryIds"] == []
+    assert result["serviceSelectedCategoryIds"] == ["TRAVEL_PLACE"]
+    assert result["fallbackUsed"] is True
+    assert result["serviceGoldIncluded"] is True
+    assert result["relaxedCorrect"] is False
+
+
+def test_same_raw_result_is_evaluated_at_multiple_thresholds_without_mutation():
+    raw = raw_record([
+        prediction("TRAVEL_PLACE", "여행·장소", 0.9),
+        prediction("FOOD_RESTAURANT", "음식·맛집", 0.65),
+    ])
+    low = evaluate_raw_record(raw, 0.6, DEFINITIONS, CLASSIFICATION, EVALUATION)
+    high = evaluate_raw_record(raw, 0.7, DEFINITIONS, CLASSIFICATION, EVALUATION)
+    assert low["thresholdSelectedCategoryIds"] == ["TRAVEL_PLACE", "FOOD_RESTAURANT"]
+    assert high["thresholdSelectedCategoryIds"] == ["TRAVEL_PLACE"]
+    assert len(raw["validPredictions"]) == 2
 
 
 @pytest.mark.parametrize("title", ["텍스트-2026.07.20-0905", "텍스트-2026-07-01"])
@@ -97,82 +144,73 @@ def test_generated_titles_are_excluded_from_experiment_prompt(title):
     assert title not in prompt
 
 
-def test_four_scenarios_require_six_calls_per_memo():
-    assert planned_call_count(78, 1, list(SCENARIOS)) == 468
-
-
-def test_invalid_category_prediction_counts_as_false_negative():
-    metrics = classification_metrics([
-        {"expectedCategory": "학습·지식", "generatedCategory": "학습·지식"},
-        {"expectedCategory": "학습·지식", "generatedCategory": ""},
-    ], CATEGORIES)
-    assert metrics["accuracy"] == pytest.approx(0.5)
-    assert metrics["perCategory"]["학습·지식"]["recall"] == pytest.approx(0.5)
-
-
-def test_integrated_record_counts_one_call():
-    integrated = fake_call("integrated", {
-        "category": "학습·지식",
-        "summary": "Redis 멱등성을 공부한다.",
-        "tags": ["Redis", "큐", "멱등성"],
-        "keywords": ["재전달", "ACK", "중복 처리"],
-    })
-    record = make_record(
-        SCENARIO_BY_ID["integrated-with-description"],
-        memo_item(), 1, None, None, integrated,
+def test_category_description_toggle_includes_ids_without_description():
+    template = "{{CATEGORY_DEFINITIONS}}\n{{TITLE_CONTEXT}}{{CONTENT}}"
+    prompt = build_prompt(
+        template, "본문", CATEGORIES, category_definitions=DEFINITIONS,
+        include_category_descriptions=False,
     )
-    assert record["callCount"] == 1
-    assert record["totalDurationMs"] == 100
-    assert record["categoryCorrect"]
+    assert "TRAVEL_PLACE | 여행·장소" in prompt
+    assert "여행" not in prompt.replace("여행·장소", "")
 
 
-def test_split_record_sums_two_calls_and_summary():
-    category = fake_call("category-only", {"category": "학습·지식", "confidence": 0.9})
-    organize = fake_call("organize-only", {
-        "summary": "Redis 멱등성을 공부한다.",
-        "tags": ["Redis", "큐", "멱등성"],
-        "keywords": ["재전달", "ACK", "중복 처리"],
-    }, duration=150)
-    record = make_record(
-        SCENARIO_BY_ID["split-with-description"],
-        memo_item(), 1, category, organize, None,
+def test_organize_only_response_remains_supported():
+    raw = json.dumps({
+        "summary": "요약입니다.", "tags": ["하나", "둘", "셋"],
+        "keywords": ["넷", "다섯", "여섯"],
+    }, ensure_ascii=False)
+    assert parse_response(raw, CATEGORIES, "organize-only")["schemaValid"]
+
+
+def test_evaluate_only_never_constructs_ollama_client(monkeypatch, tmp_path):
+    target = tmp_path / "saved"
+    raw_path = target / "raw" / "split-with-description" / "results.jsonl"
+    raw_path.parent.mkdir(parents=True)
+    raw_path.write_text(json.dumps(raw_record([prediction("TRAVEL_PLACE", "여행·장소", 0.9)]), ensure_ascii=False) + "\n", encoding="utf-8")
+    monkeypatch.setattr(runner, "OllamaClient", lambda *args: pytest.fail("모델을 호출하면 안 됩니다"))
+    code = runner.main([
+        "--evaluate-only", "--resume", str(target), "--scenarios", "split-with-description",
+        "--thresholds", "0.70", "--limit", "1",
+    ])
+    assert code == 0
+    assert (target / "reports" / "summary.md").is_file()
+    report = (target / "reports" / "summary.md").read_text(encoding="utf-8")
+    assert "보조 엄격 평가 지표" in report
+    assert "최적 조건 판정 상태 분포" in report
+
+
+def test_resume_skips_completed_model_result(monkeypatch, tmp_path):
+    target = tmp_path / "saved"
+    raw_path = target / "raw" / "split-with-description" / "results.jsonl"
+    raw_path.parent.mkdir(parents=True)
+    raw_path.write_text(json.dumps(raw_record([prediction("TRAVEL_PLACE", "여행·장소", 0.9)]), ensure_ascii=False) + "\n", encoding="utf-8")
+
+    class FakeClient:
+        def __init__(self, *args): pass
+        def models(self): return ["qwen3:8b"]
+        def unload(self, model): pass
+        def chat(self, *args): pytest.fail("완료된 원본을 다시 호출하면 안 됩니다")
+
+    monkeypatch.setattr(runner, "OllamaClient", FakeClient)
+    code = runner.main([
+        "--resume", str(target), "--scenarios", "split-with-description",
+        "--thresholds", "0.70", "--test-ids", "TEXT-001",
+    ])
+    assert code == 0
+
+
+def test_completed_threshold_evaluation_is_reused(monkeypatch, tmp_path):
+    raw = [raw_record([prediction("TRAVEL_PLACE", "여행·장소", 0.9)])]
+    config = {"classification": CLASSIFICATION, "evaluation": EVALUATION}
+    scenario = SCENARIO_BY_ID["split-with-description"]
+    first_rows, _ = runner.evaluate_scenario_threshold(
+        tmp_path, scenario, raw, 0.7, DEFINITIONS, config,
     )
-    assert record["callCount"] == 2
-    assert record["totalDurationMs"] == 250
-    assert record["generatedSummary"] == "Redis 멱등성을 공부한다."
-
-
-def test_scenario_summary_and_comparison_report(tmp_path):
-    category = fake_call("category-only", {"category": "학습·지식", "confidence": 0.9})
-    organize = fake_call("organize-only", {
-        "summary": "Redis 멱등성을 공부한다.",
-        "tags": ["Redis", "큐", "멱등성"],
-        "keywords": ["재전달", "ACK", "중복 처리"],
-    })
-    record = make_record(
-        SCENARIO_BY_ID["split-with-description"],
-        memo_item(), 1, category, organize, None,
+    monkeypatch.setattr(
+        runner, "evaluate_raw_record",
+        lambda *args: pytest.fail("완료된 임계값 평가를 다시 계산하면 안 됩니다"),
     )
-    summaries = []
-    for scenario in SCENARIOS:
-        scenario_record = record | {
-            "scenario": scenario.id,
-            "structure": scenario.structure,
-            "categoryDescriptions": scenario.category_descriptions,
-        }
-        if scenario.id == "integrated-without-description":
-            scenario_record |= {
-                "generatedCategory": "기타",
-                "categoryCorrect": False,
-                "confidence": None,
-            }
-        summaries.append(summarize_scenario(scenario, [scenario_record], CATEGORIES))
-    write_comparison(tmp_path, summaries)
-    assert (tmp_path / "comparison-summary.json").is_file()
-    assert (tmp_path / "wrong-answers.csv").is_file()
-    report = (tmp_path / "comparison-report.md").read_text(encoding="utf-8")
-    assert "분리 방식의 설명 효과" in report
-    assert "100.0%" in report
-    assert "전체 오답 데이터 (1건)" in report
-    assert "TEXT-001" in report
-    assert "학습·지식" in report and "기타" in report
+    second_rows, _ = runner.evaluate_scenario_threshold(
+        tmp_path, scenario, raw, 0.7, DEFINITIONS, config,
+    )
+    assert second_rows == first_rows

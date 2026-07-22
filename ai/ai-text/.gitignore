@@ -15,6 +15,9 @@ results/3차 분류 구조 비교/*
 !results/4차 임베딩 시각화/
 results/4차 임베딩 시각화/*
 !results/4차 임베딩 시각화/.gitkeep
+!results/4차 다중 카테고리 분류 비교/
+results/4차 다중 카테고리 분류 비교/*
+!results/4차 다중 카테고리 분류 비교/.gitkeep
 .env
 .env.local
 !.env.example

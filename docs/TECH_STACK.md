@@ -22,8 +22,6 @@
 <img src="https://img.shields.io/badge/Java_21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=FFFFFF" alt="Java 21"/>
 <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=FFFFFF" alt="JWT"/>
 <img src="https://img.shields.io/badge/OAuth-3C4043?style=for-the-badge&logoColor=FFFFFF" alt="OAuth"/>
-<img src="https://img.shields.io/badge/Kakao-FFCD00?style=for-the-badge&logo=kakao&logoColor=000000" alt="Kakao"/>
-<img src="https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=google&logoColor=FFFFFF" alt="Google"/>
 
 <h3>Data · Storage · Queue</h3>
 
@@ -41,7 +39,6 @@
 
 <img src="https://img.shields.io/badge/Mattermost-0058CC?style=for-the-badge&logo=mattermost&logoColor=FFFFFF" alt="Mattermost"/>
 <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF" alt="Discord"/>
-<img src="https://img.shields.io/badge/Slash_Command-5865F2?style=for-the-badge&logoColor=FFFFFF" alt="Slash Command"/>
 <img src="https://img.shields.io/badge/Web_Push-4285F4?style=for-the-badge&logo=googlechrome&logoColor=FFFFFF" alt="Web Push"/>
 <img src="https://img.shields.io/badge/FCM-FFCA28?style=for-the-badge&logo=firebase&logoColor=000000" alt="Firebase Cloud Messaging"/>
 

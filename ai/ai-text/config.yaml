@@ -13,6 +13,14 @@ openai:
   apiKeyEnv: GMS_KEY
   baseUrl: https://gms.ssafy.io/gmsapi/api.openai.com/v1
   apiMode: chat_completions
+embedding:
+  model: text-embedding-3-small
+  batchSize: 64
+  umap:
+    nNeighbors: 15
+    minDist: 0.1
+    metric: cosine
+    randomState: 42
 promptVersions:
   category-only: v1
   summary-only: v1

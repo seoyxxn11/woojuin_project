@@ -77,6 +77,50 @@ results/3차 분류 구조 비교/<실행시각>/
 
 종합 보고서에는 네 조건의 카테고리 정확도, Macro F1, 성공률, 평균 처리 시간, 호출 수, 기타 선택률과 조건 간 정확도 차이가 포함됩니다. 오답은 조건, 테스트 ID, 제목, 입력 내용, 정답, 모델 예측, confidence와 오류 원인을 표로 표시하며 JSON·CSV로도 별도 저장합니다.
 
+## 메모 임베딩 및 UMAP 3차원 좌표
+
+`text-embedding-3-small`로 현재 메모 78개를 임베딩한 뒤 UMAP으로 3차원 좌표를 생성합니다. 의미 있는 제목은 본문과 함께 사용하고, `텍스트-날짜` 형식의 자동 제목은 제외합니다. API는 `config.yaml`의 SSAFY GMS Base URL과 프로젝트 루트 `.env`의 `GMS_KEY`를 사용합니다.
+
+먼저 API를 호출하지 않는 실행 계획을 확인합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_embedding_umap.py --dry-run
+```
+
+의존성을 설치한 뒤 전체 데이터를 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe .\run_embedding_umap.py
+```
+
+소량으로 형식만 확인하려면 UMAP 변환에 필요한 최소 3개 이상을 지정합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_embedding_umap.py --limit 5
+```
+
+실행 중단 후에는 생성된 결과 폴더를 지정해 저장된 임베딩 다음부터 이어갑니다. 메모 본문이나 모델이 변경된 캐시는 안전을 위해 재사용하지 않습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_embedding_umap.py `
+  --resume ".\results\4차 임베딩 시각화\20260722-170000"
+```
+
+결과 구조는 다음과 같습니다.
+
+```text
+results/4차 임베딩 시각화/<실행시각>/
+├── raw/
+│   └── embeddings.jsonl  # 배치마다 즉시 저장되는 재개용 벡터
+├── embeddings.json       # 메모 정보와 원본 임베딩 벡터
+├── umap-3d.json          # x, y, z 좌표와 카테고리
+├── umap-3d.csv
+└── run-metadata.json     # 모델, UMAP 설정, 요청·토큰 수
+```
+
+기본값은 API 배치 크기 64, `n_neighbors=15`, `min_dist=0.1`, `metric=cosine`, `random_state=42`입니다. `--batch-size`, `--n-neighbors`, `--min-dist`, `--metric`, `--random-state`로 바꿀 수 있습니다. API 키 값은 결과나 로그에 기록하지 않습니다.
+
 ## 설치
 
 ```powershell
@@ -238,7 +282,8 @@ OpenAI 모델에는 호환성을 위해 temperature, seed, Ollama context length
 results/
 ├── 1차 통합 테스트/   # 초기 4B·8B 통합 응답 비교
 ├── 2차 분류 테스트/   # 분류 정확도 중심의 모드 분리·API 비교
-└── 3차 분류 구조 비교/ # 8B 분리·통합 및 설명 유무 비교
+├── 3차 분류 구조 비교/ # 8B 분리·통합 및 설명 유무 비교
+└── 4차 임베딩 시각화/ # text-embedding-3-small 및 UMAP 3차원 좌표
 ```
 
 단일 모드는 다음과 같이 저장합니다.

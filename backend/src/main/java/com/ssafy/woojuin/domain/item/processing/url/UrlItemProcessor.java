@@ -7,6 +7,8 @@ import com.ssafy.woojuin.domain.category.service.CategoryAssignmentService;
 import com.ssafy.woojuin.domain.item.entity.Item;
 import com.ssafy.woojuin.domain.item.repository.ItemRepository;
 import com.ssafy.woojuin.domain.item.entity.ItemType;
+import com.ssafy.woojuin.domain.item.processing.ItemEnrichment;
+import com.ssafy.woojuin.domain.item.processing.ItemEnrichmentWriter;
 import com.ssafy.woojuin.domain.item.processing.ItemProcessingMessage;
 import com.ssafy.woojuin.domain.item.processing.ItemProcessor;
 import com.ssafy.woojuin.global.common.ItemStatus;
@@ -16,7 +18,6 @@ import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * URL 아이템 가공 오케스트레이터 (묶음 D).
@@ -29,7 +30,10 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * <p><b>AI 보강</b>: 본문이 없어도(PARTIAL) title만으로 분류하도록 항상 시도한다. 요약은
  * 본문이 있을 때만 채워지고, 카테고리는 그 워크스페이스의 현재 카테고리 중에서 배정된다.
- * 보강 실패는 이미 확보한 미리보기·본문을 무효화하지 않는다.
+ *
+ * <p><b>트랜잭션 경계</b>: oEmbed·HTML fetch·본문 추출·AI 호출은 네트워크 I/O라 트랜잭션
+ * 밖에서 하고, DB 반영만 {@link ItemEnrichmentWriter}의 짧은 트랜잭션에 맡긴다(커넥션 장기
+ * 점유 방지). 반영 시 미리보기·본문·요약·카테고리·상태가 한 트랜잭션에서 함께 커밋된다.
  *
  * <p><b>상태 전이</b>는 AGENTS.md 정의를 따른다 — 트랙 B(콘텐츠) 성공 여부로만 정한다.
  * <ul>
@@ -50,11 +54,13 @@ public class UrlItemProcessor implements ItemProcessor {
     private final ContentExtractor contentExtractor;
     private final AiAnalyzer aiAnalyzer;
     private final CategoryAssignmentService categoryAssignmentService;
+    private final ItemEnrichmentWriter enrichmentWriter;
 
     public UrlItemProcessor(ItemRepository itemRepository, UrlNormalizer urlNormalizer,
             OEmbedClient oEmbedClient, HtmlFetcher htmlFetcher, OpenGraphScraper openGraphScraper,
             ContentExtractor contentExtractor, AiAnalyzer aiAnalyzer,
-            CategoryAssignmentService categoryAssignmentService) {
+            CategoryAssignmentService categoryAssignmentService,
+            ItemEnrichmentWriter enrichmentWriter) {
         this.itemRepository = itemRepository;
         this.urlNormalizer = urlNormalizer;
         this.oEmbedClient = oEmbedClient;
@@ -63,6 +69,7 @@ public class UrlItemProcessor implements ItemProcessor {
         this.contentExtractor = contentExtractor;
         this.aiAnalyzer = aiAnalyzer;
         this.categoryAssignmentService = categoryAssignmentService;
+        this.enrichmentWriter = enrichmentWriter;
     }
 
     @Override
@@ -70,13 +77,7 @@ public class UrlItemProcessor implements ItemProcessor {
         return type == ItemType.URL;
     }
 
-    /**
-     * @Transactional이라 JPA 더티체킹으로 변경이 flush되고, 미리보기·본문·요약·카테고리가
-     * 한 트랜잭션에서 함께 커밋된다. 아이템이 사라졌으면(저장과 처리 사이 삭제) 조용히
-     * 반환한다 — 재시도해도 다시 생기지 않으므로 예외를 던지지 않는다.
-     */
     @Override
-    @Transactional
     public void process(ItemProcessingMessage message) {
         Item item = itemRepository.findById(message.itemId()).orElse(null);
         if (item == null) {
@@ -84,8 +85,8 @@ public class UrlItemProcessor implements ItemProcessor {
             return;
         }
         if (item.getStatus() != ItemStatus.PROCESSING) {
-            // DB 커밋은 됐는데 큐 ACK 직전에 죽는 등 at-least-once 큐 특성상 이미 끝난
-            // 메시지가 재배달될 수 있다. AI를 또 호출하지 않도록 여기서 막는다.
+            // at-least-once 큐 특성상 이미 끝난 메시지가 재배달될 수 있다. 값비싼 fetch·추출·AI를
+            // 반복하지 않도록 여기서 미리 막는다(반영 단계에서 한 번 더 권위 있게 재확인한다).
             log.info("이미 처리된 아이템, 재처리 스킵: itemId={}, status={}", item.getId(), item.getStatus());
             return;
         }
@@ -105,17 +106,29 @@ public class UrlItemProcessor implements ItemProcessor {
         if (preview.hasNothing()) {
             preview = new UrlPreview(domainOf(normalizedUrl), null, null);
         }
-        item.applyPreview(preview.title(), preview.thumbnailUrl(), preview.description());
 
         // 트랙 B: 본문 확보. Document가 없으면(oEmbed 경로/트랙 A fetch 실패) 본문도 없다.
         String content = (doc != null) ? contentExtractor.extract(doc) : null;
         boolean contentAcquired = content != null;
-        if (contentAcquired) {
-            item.applyContent(content);
-        }
 
-        enrichWithAi(item, content);   // 본문이 없어도 title로 분류 시도(상태에는 영향 없음)
-        finalizeStatus(item, preview, contentAcquired);
+        // AI 보강(네트워크). title이 비어 있으면 미리보기 제목을 분류 힌트로 넘긴다
+        // (applyPreview가 title을 채우는 규칙과 동일). 본문이 없어도 title로 분류 시도한다.
+        String titleForAi = hasText(item.getTitle()) ? item.getTitle() : preview.title();
+        AiAnalysis analysis = analyzeQuietly(item, titleForAi, content);
+
+        ItemStatus target = contentAcquired ? ItemStatus.DONE
+                : (!preview.hasNothing() ? ItemStatus.PARTIAL : ItemStatus.FAILED);
+
+        enrichmentWriter.apply(message.itemId(), ItemEnrichment.builder()
+                .previewTitle(preview.title())
+                .previewThumbnailUrl(preview.thumbnailUrl())
+                .previewDescription(preview.description())
+                .content(content)
+                .summary(analysis.summary())
+                .categories(analysis.categories())
+                .targetStatus(target)
+                .build());
+        log.info("URL 가공 완료: itemId={}, status={}", message.itemId(), target);
     }
 
     private Document tryFetch(String url) {
@@ -128,31 +141,21 @@ public class UrlItemProcessor implements ItemProcessor {
     }
 
     /**
-     * AI 요약·분류를 반영한다. 후보 카테고리(그 워크스페이스의 현재 목록)를 넘기고, 결과
-     * 요약을 저장하며, 분류된 카테고리를 아이템에 연결한다. 어떤 실패도 이미 확보한 본문·
-     * 미리보기를 무효화하면 안 되므로 조용히 흡수한다.
+     * AI 요약·분류를 시도한다. 후보 카테고리(그 워크스페이스의 현재 목록)를 넘겨 결과를 받는다.
+     * 어떤 실패도 이미 확보한 본문·미리보기를 무효화하면 안 되므로 조용히 흡수하고 빈 결과를 돌려준다.
      */
-    private void enrichWithAi(Item item, String content) {
+    private AiAnalysis analyzeQuietly(Item item, String title, String content) {
         try {
             List<String> candidates = categoryAssignmentService.candidateNames(item.getWorkspaceId());
-            AiAnalysis analysis = aiAnalyzer.analyze(
-                    new AiAnalysisRequest(item.getTitle(), content, candidates));
-            item.applySummary(analysis.summary());
-            categoryAssignmentService.assign(item.getId(), item.getWorkspaceId(), analysis.categories());
+            return aiAnalyzer.analyze(new AiAnalysisRequest(title, content, candidates));
         } catch (Exception e) {
             log.warn("AI 보강 실패(무시): itemId={}, cause={}", item.getId(), e.toString());
+            return AiAnalysis.empty();
         }
     }
 
-    private void finalizeStatus(Item item, UrlPreview preview, boolean contentAcquired) {
-        if (contentAcquired) {
-            item.markDone();
-        } else if (!preview.hasNothing()) {
-            item.markPartial();
-        } else {
-            item.markFailed();   // 도메인 폴백조차 비었을 때 — 사실상 URL 파싱 불가
-        }
-        log.info("URL 가공 완료: itemId={}, status={}", item.getId(), item.getStatus());
+    private static boolean hasText(String s) {
+        return s != null && !s.isBlank();
     }
 
     private String domainOf(String url) {

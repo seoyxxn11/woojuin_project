@@ -12,6 +12,7 @@ import com.ssafy.woojuin.domain.ai.AiAnalyzer;
 import com.ssafy.woojuin.domain.category.service.CategoryAssignmentService;
 import com.ssafy.woojuin.domain.item.entity.Item;
 import com.ssafy.woojuin.domain.item.entity.ItemType;
+import com.ssafy.woojuin.domain.item.processing.ItemEnrichmentWriter;
 import com.ssafy.woojuin.domain.item.processing.ItemProcessingMessage;
 import com.ssafy.woojuin.domain.item.repository.ItemRepository;
 import com.ssafy.woojuin.domain.item.service.S3Uploader;
@@ -47,7 +48,8 @@ class ImageItemProcessorTest {
 
     private void newProcessor() {
         processor = new ImageItemProcessor(itemRepository, s3Uploader, imageTextExtractor,
-                aiAnalyzer, categoryAssignmentService);
+                aiAnalyzer, categoryAssignmentService,
+                new ItemEnrichmentWriter(itemRepository, categoryAssignmentService));
     }
 
     @Test

@@ -14,6 +14,7 @@ import com.ssafy.woojuin.domain.category.service.CategoryAssignmentService;
 import com.ssafy.woojuin.domain.item.entity.Item;
 import com.ssafy.woojuin.domain.item.repository.ItemRepository;
 import com.ssafy.woojuin.domain.item.entity.ItemType;
+import com.ssafy.woojuin.domain.item.processing.ItemEnrichmentWriter;
 import com.ssafy.woojuin.domain.item.processing.ItemProcessingMessage;
 import com.ssafy.woojuin.global.common.ItemStatus;
 import java.util.List;
@@ -55,7 +56,8 @@ class UrlItemProcessorTest {
             }
         };
         processor = new UrlItemProcessor(itemRepository, normalizer, oEmbedClient,
-                htmlFetcher, openGraphScraper, contentExtractor, aiAnalyzer, categoryAssignmentService);
+                htmlFetcher, openGraphScraper, contentExtractor, aiAnalyzer, categoryAssignmentService,
+                new ItemEnrichmentWriter(itemRepository, categoryAssignmentService));
     }
 
     private Item urlItem() {

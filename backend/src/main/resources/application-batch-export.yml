@@ -1,0 +1,8 @@
+# UrlBatchExportRunner 전용 프로파일. 입출력 txt는 backend/url-batch-export/ 아래에서 관리.
+# 사용: ./gradlew bootRun --args="--spring.profiles.active=batch-export --urls=url-batch-export/input/urls.txt --out=url-batch-export/output/export.txt"
+#
+# web-application-type: none 으로 웹 서버를 끄고 싶었지만, SecurityConfig가 서블릿
+# 웹 컨텍스트를 전제로 OAuth2 ClientRegistrationRepository를 요구해서 기동이 실패한다.
+# 그래서 그냥 평범한 웹 앱으로 뜬 채 배치만 돌리고 끝나면 SpringApplication.exit()으로
+# 전체(웹 서버 포함) 종료한다 — 그 대신 이미 :8080에 다른 서버(bootRun)가 떠 있으면
+# 포트 충돌이 나니 먼저 내려두고 실행할 것.

@@ -1,4 +1,4 @@
-# 로컬 개발용 인프라 (PostgreSQL + Redis + MinIO)
+# 로컬 개발용 인프라 (PostgreSQL + Redis + MinIO + Crawler)
 # 사용: docker compose up -d
 services:
   postgres:
@@ -31,6 +31,18 @@ services:
       - "9001:9001"   # 콘솔
     volumes:
       - minio-data:/data
+
+  # Scrapling 크롤러 사이드카. JS 렌더링·봇 차단 페이지 폴백용(자세한 건 crawler/README.md).
+  # 브라우저를 번들해 빌드가 오래 걸리고 이미지가 크다. 백엔드에서 CRAWLER_ENABLED=true로 켜야 쓰인다.
+  crawler:
+    build: ./crawler
+    container_name: woojuin-crawler
+    ports:
+      - "8001:8001"
+    environment:
+      CRAWLER_SOLVE_CLOUDFLARE: "true"
+      CRAWLER_MAX_CONCURRENCY: "2"
+    shm_size: "1gb"   # 브라우저 렌더 중 /dev/shm 부족으로 인한 크래시 방지
 
 volumes:
   postgres-data:

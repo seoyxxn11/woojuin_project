@@ -50,6 +50,13 @@ woojuin:
     timeout-ms: 5000
     max-body-bytes: 3145728   # 3MB. 미리보기/본문 추출에 이보다 큰 HTML은 불필요
     max-redirects: 5
+  crawler:
+    # Scrapling 사이드카 폴백. crawler는 docker-compose에 포함돼 함께 뜨므로 기본 켜둔다.
+    # 크롤러 없이 백엔드만 돌릴 땐 CRAWLER_ENABLED=false로 끄면 Jsoup 결과만 쓴다.
+    enabled: ${CRAWLER_ENABLED:true}
+    base-url: ${CRAWLER_BASE_URL:http://localhost:8001}
+    timeout-ms: 40000                # 브라우저 렌더가 느려 크롤러 자체 타임아웃보다 넉넉히
+    fallback-min-text-length: 200    # Jsoup 본문이 이보다 짧고 og:title도 없으면 폴백
 
 aws:
   region: ${AWS_REGION:ap-northeast-2}

@@ -1,0 +1,6 @@
+# Scrapling: 스텔스 크롤링 엔진. [fetchers]로 브라우저 페처(StealthyFetcher 등) 포함.
+# solve_cloudflare / DynamicFetcher API는 0.2.9+ 에서 제공된다.
+scrapling[fetchers]>=0.2.9
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.7,<3.0

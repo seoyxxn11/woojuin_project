@@ -1,5 +1,9 @@
 package com.ssafy.woojuin.tools;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ssafy.woojuin.domain.item.dto.ItemResponse;
+import com.ssafy.woojuin.domain.item.entity.Item;
+import com.ssafy.woojuin.domain.item.entity.ItemType;
 import com.ssafy.woojuin.domain.item.processing.url.ContentExtractor;
 import com.ssafy.woojuin.domain.item.processing.url.HtmlFetchException;
 import com.ssafy.woojuin.domain.item.processing.url.HtmlFetcher;
@@ -33,6 +37,13 @@ import org.springframework.stereotype.Component;
  * AiAnalyzer가 받게 될 title/content와 동일한 결과를 뽑아준다 — DB·큐·인증은
  * 거치지 않아 워크스페이스/토큰 준비 없이 바로 돌릴 수 있다.
  *
+ * <p>결과는 실제 아이템 응답 DTO({@link ItemResponse})와 동일한 구조로 나간다 —
+ * 직접 필드를 나열하지 않고 트랙A/B 결과를 (저장 안 되는) {@link Item}에 그대로
+ * 반영한 뒤 {@code ItemResponse.from()}에 태워서, 응답 DTO가 바뀌어도 이 도구가
+ * 자동으로 같이 맞는다. itemId/createdAt은 실제로 저장하지 않아 null이고,
+ * summary/categories는 AiAnalyzer/CategoryAssignmentService를 안 거쳐 항상
+ * null/빈 배열이다 — 그 자리는 F의 몫이라는 뜻.
+ *
  * <p>입출력 txt는 {@code backend/url-batch-export/}(input/output) 아래에서 관리한다.
  * docker-compose로 postgres/redis/minio는 떠 있어야 하고, 이미 떠 있는 :8080 서버는
  * 포트 충돌을 피하려면 잠시 내려둘 것.
@@ -41,8 +52,7 @@ import org.springframework.stereotype.Component;
  * ./gradlew bootRun --args="--spring.profiles.active=batch-export --urls=url-batch-export/input/urls.txt --out=url-batch-export/output/export.txt"
  * </pre>
  * urls.txt는 한 줄에 URL 하나(빈 줄/#으로 시작하는 줄은 무시). 결과는 out 경로에
- * 탭으로 구분된 txt로 쌓인다 — 헤더 한 줄(url\ttitle\tcontent) 뒤로 URL당 한 줄.
- * 끝나면 프로세스가 자동 종료된다.
+ * JSON Lines(한 줄에 ItemResponse 하나씩)로 쌓인다. 끝나면 프로세스가 자동 종료된다.
  */
 @Slf4j
 @Component
@@ -56,20 +66,20 @@ public class UrlBatchExportRunner implements ApplicationRunner {
     private final HtmlFetcher htmlFetcher;
     private final OpenGraphScraper openGraphScraper;
     private final ContentExtractor contentExtractor;
+    private final ObjectMapper objectMapper;
     private final ConfigurableApplicationContext context;
 
     public UrlBatchExportRunner(UrlNormalizer urlNormalizer, OEmbedClient oEmbedClient,
             HtmlFetcher htmlFetcher, OpenGraphScraper openGraphScraper,
-            ContentExtractor contentExtractor, ConfigurableApplicationContext context) {
+            ContentExtractor contentExtractor, ObjectMapper objectMapper,
+            ConfigurableApplicationContext context) {
         this.urlNormalizer = urlNormalizer;
         this.oEmbedClient = oEmbedClient;
         this.htmlFetcher = htmlFetcher;
         this.openGraphScraper = openGraphScraper;
         this.contentExtractor = contentExtractor;
+        this.objectMapper = objectMapper;
         this.context = context;
-    }
-
-    private record ExportResult(String url, String title, String content, boolean hasContent) {
     }
 
     @Override
@@ -95,17 +105,16 @@ public class UrlBatchExportRunner implements ApplicationRunner {
         Object writeLock = new Object();
 
         try (BufferedWriter writer = Files.newBufferedWriter(Path.of(outPath), StandardCharsets.UTF_8)) {
-            writeRow(writer, "url", "title", "content");   // 헤더
-
             List<Runnable> tasks = urls.stream()
                     .<Runnable>map(url -> () -> {
-                        ExportResult result = extract(url);
-                        if (result.hasContent()) {
+                        ItemResponse response = extract(url);
+                        if (response.content() != null) {
                             withContent.incrementAndGet();
                         }
                         try {
                             synchronized (writeLock) {
-                                writeRow(writer, result.url(), result.title(), result.content());
+                                writer.write(objectMapper.writeValueAsString(response));
+                                writer.newLine();
                             }
                         } catch (IOException e) {
                             log.error("결과 쓰기 실패: url={}", url, e);
@@ -128,8 +137,12 @@ public class UrlBatchExportRunner implements ApplicationRunner {
         exit(0);
     }
 
-    /** UrlItemProcessor.process()의 트랙A/트랙B와 동일한 로직 — DB/AI/카테고리 없이 추출만. */
-    private ExportResult extract(String rawUrl) {
+    /**
+     * UrlItemProcessor.process()의 트랙A/트랙B와 동일한 로직으로 (저장 안 되는) Item을
+     * 채운 뒤 실제 응답 DTO로 변환한다. DB/AI/카테고리는 거치지 않는다.
+     */
+    private ItemResponse extract(String rawUrl) {
+        Item item = Item.builder().workspaceId(0L).createdBy(0L).type(ItemType.URL).url(rawUrl).build();
         try {
             String normalizedUrl = urlNormalizer.normalize(rawUrl);
 
@@ -145,13 +158,20 @@ public class UrlBatchExportRunner implements ApplicationRunner {
             if (preview.hasNothing()) {
                 preview = new UrlPreview(domainOf(normalizedUrl), null, null);
             }
+            item.applyPreview(preview.title(), preview.thumbnailUrl(), preview.description());
 
             String content = (doc != null) ? contentExtractor.extract(doc) : null;
-            return new ExportResult(rawUrl, preview.title(), content, content != null);
+            if (content != null) {
+                item.applyContent(content);
+                item.markDone();
+            } else {
+                item.markPartial();
+            }
         } catch (Exception e) {
             log.warn("추출 실패: url={}, cause={}", rawUrl, e.toString());
-            return new ExportResult(rawUrl, null, null, false);
+            item.markFailed();
         }
+        return ItemResponse.from(item, List.of());
     }
 
     private Document tryFetch(String url) {
@@ -169,19 +189,6 @@ public class UrlBatchExportRunner implements ApplicationRunner {
         } catch (Exception e) {
             return url;
         }
-    }
-
-    /**
-     * TSV 한 줄을 쓴다. content는 이미 ContentExtractor가 공백류를 한 칸으로
-     * 뭉개둬서 개행은 안 남지만, title은 확실치 않으니 탭/개행을 방어적으로 지운다.
-     */
-    private void writeRow(BufferedWriter writer, String url, String title, String content) throws IOException {
-        writer.write(tsvSafe(url) + "\t" + tsvSafe(title) + "\t" + tsvSafe(content));
-        writer.newLine();
-    }
-
-    private String tsvSafe(String value) {
-        return value == null ? "" : value.replaceAll("[\\t\\r\\n]+", " ").trim();
     }
 
     private String singleOption(ApplicationArguments args, String name) {

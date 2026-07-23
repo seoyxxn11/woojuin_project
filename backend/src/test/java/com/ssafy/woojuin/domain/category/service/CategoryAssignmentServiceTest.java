@@ -8,7 +8,6 @@ import static org.mockito.Mockito.when;
 
 import com.ssafy.woojuin.domain.category.CategoryDefaults;
 import com.ssafy.woojuin.domain.category.entity.Category;
-import com.ssafy.woojuin.domain.category.entity.ItemCategory;
 import com.ssafy.woojuin.domain.category.repository.CategoryRepository;
 import com.ssafy.woojuin.domain.category.repository.ItemCategoryRepository;
 import java.util.List;
@@ -38,11 +37,10 @@ class CategoryAssignmentServiceTest {
         Category learn = category(10L, "학습·지식");
         when(categoryRepository.findByWorkspaceIdAndNameIn(1L, List.of("학습·지식")))
                 .thenReturn(List.of(learn));
-        when(itemCategoryRepository.existsByItemIdAndCategoryId(5L, 10L)).thenReturn(false);
 
         service.assign(5L, 1L, List.of("학습·지식"));
 
-        verify(itemCategoryRepository).save(any(ItemCategory.class));
+        verify(itemCategoryRepository).insertIgnoringDuplicate(5L, 10L);
     }
 
     @Test
@@ -52,11 +50,10 @@ class CategoryAssignmentServiceTest {
                 .thenReturn(List.of());
         when(categoryRepository.findByWorkspaceIdAndName(1L, CategoryDefaults.ETC))
                 .thenReturn(Optional.of(etc));
-        when(itemCategoryRepository.existsByItemIdAndCategoryId(5L, 99L)).thenReturn(false);
 
         service.assign(5L, 1L, List.of("없는카테고리"));
 
-        verify(itemCategoryRepository).save(any(ItemCategory.class));
+        verify(itemCategoryRepository).insertIgnoringDuplicate(5L, 99L);
     }
 
     @Test
@@ -64,11 +61,10 @@ class CategoryAssignmentServiceTest {
         Category etc = category(99L, CategoryDefaults.ETC);
         when(categoryRepository.findByWorkspaceIdAndName(1L, CategoryDefaults.ETC))
                 .thenReturn(Optional.of(etc));
-        when(itemCategoryRepository.existsByItemIdAndCategoryId(5L, 99L)).thenReturn(false);
 
         service.assign(5L, 1L, List.of());   // AI 미분류
 
-        verify(itemCategoryRepository).save(any(ItemCategory.class));
+        verify(itemCategoryRepository).insertIgnoringDuplicate(5L, 99L);
         // 이름 목록이 비면 조회 자체를 생략한다
         verify(categoryRepository, never()).findByWorkspaceIdAndNameIn(anyLong(), any());
     }
@@ -80,18 +76,21 @@ class CategoryAssignmentServiceTest {
 
         service.assign(5L, 1L, List.of());   // 시드 안 된 옛 워크스페이스
 
-        verify(itemCategoryRepository, never()).save(any());
+        verify(itemCategoryRepository, never()).insertIgnoringDuplicate(anyLong(), anyLong());
     }
 
     @Test
-    void 이미_연결되어_있으면_중복_저장하지_않는다() {
+    void 중복_연결은_존재확인_없이_멱등_insert에_맡긴다() {
+        // 동시성 안전을 위해 존재 확인(existsBy) 없이 항상 insert하고, 중복은 DB의
+        // ON CONFLICT DO NOTHING이 흡수한다. 서비스는 매칭된 카테고리 수만큼 그대로 호출한다.
         Category learn = category(10L, "학습·지식");
-        when(categoryRepository.findByWorkspaceIdAndNameIn(1L, List.of("학습·지식")))
-                .thenReturn(List.of(learn));
-        when(itemCategoryRepository.existsByItemIdAndCategoryId(5L, 10L)).thenReturn(true);
+        Category food = category(20L, "음식·맛집");
+        when(categoryRepository.findByWorkspaceIdAndNameIn(1L, List.of("학습·지식", "음식·맛집")))
+                .thenReturn(List.of(learn, food));
 
-        service.assign(5L, 1L, List.of("학습·지식"));
+        service.assign(5L, 1L, List.of("학습·지식", "음식·맛집"));
 
-        verify(itemCategoryRepository, never()).save(any());
+        verify(itemCategoryRepository).insertIgnoringDuplicate(5L, 10L);
+        verify(itemCategoryRepository).insertIgnoringDuplicate(5L, 20L);
     }
 }

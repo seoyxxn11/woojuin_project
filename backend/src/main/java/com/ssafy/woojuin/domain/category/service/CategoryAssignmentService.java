@@ -2,7 +2,6 @@ package com.ssafy.woojuin.domain.category.service;
 
 import com.ssafy.woojuin.domain.category.CategoryDefaults;
 import com.ssafy.woojuin.domain.category.entity.Category;
-import com.ssafy.woojuin.domain.category.entity.ItemCategory;
 import com.ssafy.woojuin.domain.category.repository.CategoryRepository;
 import com.ssafy.woojuin.domain.category.repository.ItemCategoryRepository;
 import java.util.List;
@@ -43,11 +42,11 @@ public class CategoryAssignmentService {
                     .orElseGet(List::of);
         }
 
+        // 중복은 DB의 멱등 insert(ON CONFLICT DO NOTHING)에 맡긴다. "존재 확인 후 save"는
+        // 같은 아이템이 동시에 가공되면(재전달/다중 인스턴스) 두 트랜잭션이 함께 insert해
+        // unique 제약을 위반하고, 그 여파로 요약·본문까지 롤백된다 — insertIgnoringDuplicate javadoc 참조.
         for (Category category : matched) {
-            if (!itemCategoryRepository.existsByItemIdAndCategoryId(itemId, category.getId())) {
-                itemCategoryRepository.save(
-                        ItemCategory.builder().itemId(itemId).categoryId(category.getId()).build());
-            }
+            itemCategoryRepository.insertIgnoringDuplicate(itemId, category.getId());
         }
         log.debug("카테고리 연결: itemId={}, categories={}", itemId, matched.stream().map(Category::getName).toList());
     }

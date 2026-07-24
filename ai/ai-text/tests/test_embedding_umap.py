@@ -15,7 +15,12 @@ from src.embedding_pipeline import (
 def memo(title: str = "Redis 공부") -> dict:
     return {
         "testId": "TEXT-001",
+        "embeddingId": "TEXT-001::LEARNING_KNOWLEDGE",
+        "id": 1,
         "title": title,
+        "type": "MEMO",
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
         "sourcePath": "학습·지식/001-Redis 공부.txt",
         "input": "Redis Streams의 소비자 그룹을 정리한다.",
         "expected": {"categories": ["학습·지식"]},
@@ -24,13 +29,13 @@ def memo(title: str = "Redis 공부") -> dict:
 
 def test_embedding_text_uses_meaningful_title_and_body():
     assert build_embedding_text(memo()) == (
-        "제목: Redis 공부\n본문: Redis Streams의 소비자 그룹을 정리한다."
+        "제목: Redis 공부\n원본 본문: Redis Streams의 소비자 그룹을 정리한다.\n카테고리: 학습·지식"
     )
 
 
 def test_embedding_text_ignores_automatic_title():
     assert build_embedding_text(memo("텍스트-2026.07.20-1220")) == (
-        "Redis Streams의 소비자 그룹을 정리한다."
+        "원본 본문: Redis Streams의 소비자 그룹을 정리한다.\n카테고리: 학습·지식"
     )
 
 
@@ -77,14 +82,39 @@ def test_umap_reduction_requests_three_dimensions_and_adjusts_neighbors():
 def test_coordinate_rows_keep_category_and_source_metadata():
     rows = build_coordinate_rows([memo()], [[0.1, 0.2, 0.3]])
     assert rows == [{
+        "embeddingId": "TEXT-001::LEARNING_KNOWLEDGE",
         "testId": "TEXT-001",
+        "id": 1,
         "title": "Redis 공부",
-        "category": "학습·지식",
+        "type": "MEMO",
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
         "sourcePath": "학습·지식/001-Redis 공부.txt",
         "x": 0.1,
         "y": 0.2,
         "z": 0.3,
     }]
+
+
+def test_write_universe_html_replaces_data_array(tmp_path):
+    template = tmp_path / "template.html"
+    output = tmp_path / "universe.html"
+    template.write_text("<script>const DATA = [{id:'old'}];\nconst keep = true;</script>", encoding="utf-8")
+    runner.write_universe_html(template, output, [{
+        "embeddingId": "TEXT-001::LEARNING_KNOWLEDGE",
+        "testId": "TEXT-001",
+        "id": 1,
+        "title": "Redis 공부",
+        "categoryName": "학습·지식",
+        "x": 0.1,
+        "y": 0.2,
+        "z": 0.3,
+    }])
+    html = output.read_text(encoding="utf-8")
+    assert '"id":"TEXT-001::LEARNING_KNOWLEDGE"' in html
+    assert '"itemId":1' in html
+    assert '"c":"학습·지식"' in html
+    assert "const keep = true" in html
 
 
 def test_request_embeddings_uses_openai_embeddings_endpoint():

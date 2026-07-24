@@ -15,9 +15,14 @@ def build_embedding_text(item: dict[str, Any]) -> str:
     if not body:
         raise ValueError(f"{item.get('testId', '?')}: 메모 본문이 비어 있습니다")
     title = str(item.get("title", "")).strip()
-    if not title or DEFAULT_TITLE_PATTERN.fullmatch(title):
-        return body
-    return f"제목: {title}\n본문: {body}"
+    category = str(item.get("categoryName", "")).strip()
+    parts = []
+    if title and not DEFAULT_TITLE_PATTERN.fullmatch(title):
+        parts.append(f"제목: {title}")
+    parts.append(f"원본 본문: {body}")
+    if category:
+        parts.append(f"카테고리: {category}")
+    return "\n".join(parts)
 
 
 def input_hash(text: str) -> str:
@@ -113,11 +118,14 @@ def build_coordinate_rows(
     for item, coordinate in zip(items, coordinates, strict=True):
         if len(coordinate) != 3:
             raise ValueError(f"{item.get('testId', '?')}: 좌표가 3차원이 아닙니다")
-        categories = item.get("expected", {}).get("categories", [])
         rows.append({
+            "embeddingId": item.get("embeddingId", item["testId"]),
             "testId": item["testId"],
+            "id": item.get("id"),
             "title": item.get("title", ""),
-            "category": categories[0] if categories else "",
+            "type": item.get("type", "MEMO"),
+            "categoryId": item.get("categoryId", ""),
+            "categoryName": item.get("categoryName", ""),
             "sourcePath": item.get("sourcePath", ""),
             "x": float(coordinate[0]),
             "y": float(coordinate[1]),

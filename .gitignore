@@ -41,3 +41,10 @@ test-results/
 
 # --- Docker ---
 docker-volumes/
+
+# --- URL Batch Export Tool ---
+backend/url-batch-export/input/*
+!backend/url-batch-export/input/.gitkeep
+backend/url-batch-export/output/*
+!backend/url-batch-export/output/.gitkeep
+

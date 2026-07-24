@@ -24,6 +24,47 @@
 
 `dataset/memo/<카테고리>/*.txt`의 상위 폴더명이 메모 테스트의 정답입니다. 상세 설명과 예시는 `config/categories.json`에서 관리하며 폴더명과 정의 이름은 정확히 일치해야 합니다. 기술 구현과 개발·IT 참고 내용은 `학습·지식`, 실행 체크리스트는 `생활·할 일`, 발상과 개선 방향은 `아이디어·영감`으로 분류합니다.
 
+### 카테고리 데이터로 설명 생성
+
+카테고리 폴더의 실제 메모를 읽어 AI가 설명과 대표 예시를 생성할 수 있습니다. 기존 `config/categories.json`은 수정하지 않고 `config/generated/` 아래에 재사용 가능한 정의와 생성 이력을 따로 저장합니다.
+
+```powershell
+cd ai/ai-text
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py --dry-run
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py
+```
+
+일부 카테고리만 만들거나 출력 파일을 직접 지정할 수도 있습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py `
+  --categories "학습·지식" "생활·할 일" `
+  --output .\config\generated\my-category-definitions.json
+```
+
+생성된 정의를 분류 비교 실험에서 바로 사용하려면 다음처럼 지정합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+  --category-definitions .\config\generated\my-category-definitions.json
+```
+
+기존 출력 파일은 실수로 덮어쓰지 않으며, 같은 경로를 갱신하려면 `--overwrite`를 명시해야 합니다.
+
+### 카테고리 설명 3조건 비교
+
+동일한 원문 메모를 `AI 생성 설명`, `기존 설명`, `카테고리 이름만`의 세 조건으로 각각 분류할 수 있습니다. 기본 임계값은 `config.yaml`의 `classification.threshold`이며 현재 0.65입니다.
+
+```powershell
+cd ai/ai-text
+.\.venv\Scripts\python.exe .\run_category_description_comparison.py `
+  --generated-definitions .\config\generated\category-descriptions-20260722-164953.json
+```
+
+호출 수와 설정만 먼저 확인하려면 `--dry-run`을 붙입니다. 빠른 검증은 `--limit 3`, 다른 임계값은 `--threshold 0.70`, 결과 위치 지정은 `--output <폴더>`를 사용할 수 있습니다.
+
+결과는 `results/5차 카테고리 설명 비교/<실행시각>/`에 저장합니다. `reports/comparison.md`에서 Top-1, 완화 정확도, fallback 적용 최종 정답률과 평균 시간을 한 표로 확인할 수 있습니다.
+
 ## 현재 실험: 8B 다중 카테고리 분류 비교
 
 모델은 카테고리별 `score`(카테고리 적합도 점수)를 반환합니다. 이 값은 통계적으로 보정된 수치로 해석하지 않습니다. 원본 응답을 한 번 저장한 뒤 같은 결과에 여러 임계값을 적용하므로 임계값 수가 늘어나도 모델 호출 수는 늘어나지 않습니다. 현재 데이터의 정답은 메모당 하나이며 ID는 `config/categories.json`에서 관리합니다.

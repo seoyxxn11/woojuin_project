@@ -84,6 +84,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="일부 조건만 실행. 생략하면 네 조건 모두 실행",
     )
     parser.add_argument("--thresholds", nargs="+", type=float, help="설정 대신 평가할 임계값 목록")
+    parser.add_argument(
+        "--category-definitions",
+        help="config/categories.json 대신 사용할 카테고리 정의 JSON",
+    )
     parser.add_argument("--resume", help="기존 결과 상위 폴더를 지정해 이어서 실행")
     parser.add_argument("--evaluate-only", action="store_true", help="저장된 원본 응답만 임계값 재평가")
     parser.add_argument("--dry-run", action="store_true", help="모델 호출과 결과 저장 없이 계획만 확인")
@@ -97,7 +101,11 @@ def model_installed(wanted: str, installed: list[str]) -> bool:
 def load_experiment_data(options: argparse.Namespace) -> tuple[list[dict], list[str], list[dict]]:
     memo_root = ROOT / "dataset" / "memo"
     folder_categories = load_categories(memo_root)
-    definitions = load_category_definitions(ROOT / "config" / "categories.json", memo_root)
+    definitions_path = (
+        Path(options.category_definitions).resolve()
+        if options.category_definitions else ROOT / "config" / "categories.json"
+    )
+    definitions = load_category_definitions(definitions_path, memo_root)
     categories = [str(item["name"]) for item in definitions]
     if set(categories) != set(folder_categories):
         raise ValueError("카테고리 정의와 메모 폴더가 일치하지 않습니다")

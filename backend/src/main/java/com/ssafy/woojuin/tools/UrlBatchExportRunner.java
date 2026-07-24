@@ -51,8 +51,14 @@ import org.springframework.stereotype.Component;
  * cd backend
  * ./gradlew bootRun --args="--spring.profiles.active=batch-export --urls=url-batch-export/input/urls.txt --out=url-batch-export/output/export.txt"
  * </pre>
- * urls.txt는 한 줄에 URL 하나(빈 줄/#으로 시작하는 줄은 무시). 결과는 out 경로에
- * JSON Lines(한 줄에 ItemResponse 하나씩)로 쌓인다. 끝나면 프로세스가 자동 종료된다.
+ * urls.txt는 한 줄에 URL 하나(빈 줄/#으로 시작하는 줄은 무시). URL 뒤에 공백을 두고
+ * <b>정답(기대 분류/라벨)</b>을 적으면 결과에 {@code expected}로 함께 나온다 —
+ * {@code https://example.com   개발}처럼. 정답은 생략해도 된다.
+ *
+ * <p>병렬로 추출하지만 결과는 <b>입력 순서 그대로</b> 기록한다(먼저 끝난 URL이
+ * 앞서 나오지 않는다). 출력은 out 경로에 JSON Lines(한 줄에 {@link BatchResult}
+ * 하나씩 = index/url/expected + ItemResponse)로 쌓여, 입력 URL·정답과 응답을
+ * 눈으로 바로 대조할 수 있다. 끝나면 프로세스가 자동 종료된다.
  */
 @Slf4j
 @Component
@@ -93,48 +99,74 @@ public class UrlBatchExportRunner implements ApplicationRunner {
             return;
         }
 
-        List<String> urls = Files.readAllLines(Path.of(urlsPath), StandardCharsets.UTF_8).stream()
+        List<UrlInput> inputs = Files.readAllLines(Path.of(urlsPath), StandardCharsets.UTF_8).stream()
                 .map(String::trim)
                 .filter(line -> !line.isBlank() && !line.startsWith("#"))
+                .map(UrlBatchExportRunner::parseInput)
                 .toList();
-        log.info("URL {}개 처리 시작 (병렬 {}개), 출력: {}", urls.size(), PARALLELISM, outPath);
+        log.info("URL {}개 처리 시작 (병렬 {}개), 출력: {}", inputs.size(), PARALLELISM, outPath);
 
         AtomicInteger done = new AtomicInteger();
         AtomicInteger withContent = new AtomicInteger();
         ExecutorService pool = Executors.newFixedThreadPool(PARALLELISM);
-        Object writeLock = new Object();
+        // 입력 순서를 보존하려고 index로 자리에 꽂아둔다 — 먼저 끝난 URL이 앞서 나오지 않게.
+        BatchResult[] results = new BatchResult[inputs.size()];
+
+        for (int i = 0; i < inputs.size(); i++) {
+            final int index = i;
+            final UrlInput input = inputs.get(i);
+            pool.submit(() -> {
+                ItemResponse response = extract(input.url());
+                if (response.content() != null) {
+                    withContent.incrementAndGet();
+                }
+                results[index] = new BatchResult(index, input.url(), input.expected(), response);
+                int n = done.incrementAndGet();
+                if (n % 10 == 0 || n == inputs.size()) {
+                    log.info("진행 {}/{}", n, inputs.size());
+                }
+            });
+        }
+        pool.shutdown();
+        pool.awaitTermination(30, TimeUnit.MINUTES);
 
         try (BufferedWriter writer = Files.newBufferedWriter(Path.of(outPath), StandardCharsets.UTF_8)) {
-            List<Runnable> tasks = urls.stream()
-                    .<Runnable>map(url -> () -> {
-                        ItemResponse response = extract(url);
-                        if (response.content() != null) {
-                            withContent.incrementAndGet();
-                        }
-                        try {
-                            synchronized (writeLock) {
-                                writer.write(objectMapper.writeValueAsString(response));
-                                writer.newLine();
-                            }
-                        } catch (IOException e) {
-                            log.error("결과 쓰기 실패: url={}", url, e);
-                        }
-                        int n = done.incrementAndGet();
-                        if (n % 10 == 0 || n == urls.size()) {
-                            log.info("진행 {}/{}", n, urls.size());
-                        }
-                    })
-                    .toList();
-
-            for (Runnable task : tasks) {
-                pool.submit(task);
+            for (BatchResult result : results) {
+                writer.write(objectMapper.writeValueAsString(result));
+                writer.newLine();
             }
-            pool.shutdown();
-            pool.awaitTermination(30, TimeUnit.MINUTES);
         }
 
-        log.info("완료: 총 {}개 중 본문 확보 {}개, 출력 파일: {}", urls.size(), withContent.get(), outPath);
+        log.info("완료: 총 {}개 중 본문 확보 {}개, 출력 파일: {}", inputs.size(), withContent.get(), outPath);
         exit(0);
+    }
+
+    /** {@code URL   정답} 형태의 한 줄을 URL과 정답으로 쪼갠다. URL 뒤 첫 공백부터가 정답(생략 가능). */
+    private static UrlInput parseInput(String line) {
+        int sep = indexOfWhitespace(line);
+        if (sep < 0) {
+            return new UrlInput(line, null);
+        }
+        String url = line.substring(0, sep);
+        String expected = line.substring(sep).trim();
+        return new UrlInput(url, expected.isEmpty() ? null : expected);
+    }
+
+    private static int indexOfWhitespace(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isWhitespace(s.charAt(i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /** 입력 한 줄: URL + 정답(선택). */
+    private record UrlInput(String url, String expected) {
+    }
+
+    /** 출력 한 줄: 입력 순서(index)·URL·정답을 응답과 나란히 담아 대조하기 쉽게 한다. */
+    public record BatchResult(int index, String url, String expected, ItemResponse result) {
     }
 
     /**

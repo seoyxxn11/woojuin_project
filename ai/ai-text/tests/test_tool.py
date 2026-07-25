@@ -3,7 +3,12 @@ from pathlib import Path
 import pytest
 from src.auto_evaluator import evaluate, speed_scores
 from src.comparison import compare_result_directories
-from src.dataset_loader import load_categories, load_category_definitions, load_memo_dataset
+from src.dataset_loader import (
+    load_categories,
+    load_category_definitions,
+    load_memo_dataset,
+    load_typed_test_dataset,
+)
 from src.metrics import classification_metrics, nullable_average, percentile
 from src.prompt_builder import build_prompt
 from src.report_generator import generate_auto_report, generate_final_report, generate_mode_report
@@ -56,6 +61,48 @@ def test_empty_semantic_answers_are_not_zero():
     assert result["possibleHallucination"] is None
     assert nullable_average([result], "requiredKeywordRecall") is None
 def test_speed_score(): assert speed_scores({"a":100,"b":200})=={"a":5.0,"b":2.5}
+
+
+def test_load_typed_test_dataset_selects_url_and_uses_url_as_title(tmp_path):
+    for category in ("음악", "학습·지식"):
+        for data_type in ("url", "image", "memo"):
+            (tmp_path / category / data_type).mkdir(parents=True)
+    result = {
+        "type": "URL",
+        "title": "음원 제목",
+        "url": "https://music.example/song?id=1",
+        "content": None,
+        "preview": {"description": "노래"},
+    }
+    (tmp_path / "음악" / "url" / "music.txt").write_text(
+        json.dumps(result, ensure_ascii=False), encoding="utf-8"
+    )
+    (tmp_path / "학습·지식" / "memo" / "Redis.txt").write_text(
+        "Redis를 공부한다.", encoding="utf-8"
+    )
+
+    rows, categories = load_typed_test_dataset(tmp_path, ["url"])
+
+    assert categories == ["음악", "학습·지식"]
+    assert len(rows) == 1
+    assert rows[0]["testId"] == "URL-001"
+    assert rows[0]["title"] == result["url"]
+    assert rows[0]["expected"]["categories"] == ["음악"]
+    assert json.loads(rows[0]["input"]) == result
+
+
+def test_load_typed_test_dataset_all_reads_memo_and_url(tmp_path):
+    for category in ("음악",):
+        for data_type in ("url", "image", "memo"):
+            (tmp_path / category / data_type).mkdir(parents=True)
+    (tmp_path / "음악" / "url" / "music.txt").write_text(
+        '{"type":"URL","url":"https://example.com/song"}', encoding="utf-8"
+    )
+    (tmp_path / "음악" / "memo" / "메모.txt").write_text("노래 메모", encoding="utf-8")
+
+    rows, _ = load_typed_test_dataset(tmp_path, ["all"])
+
+    assert {row["inputType"] for row in rows} == {"memo", "url"}
 
 def test_percentile_and_classification_metrics():
     assert percentile([1,2,3,4,5], .95) == pytest.approx(4.8)

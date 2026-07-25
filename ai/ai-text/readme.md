@@ -6,7 +6,7 @@
 
 ## 카테고리
 
-최종 카테고리는 다음 11개입니다.
+최종 카테고리는 다음 12개입니다.
 
 ```text
 생활·할 일
@@ -17,12 +17,41 @@
 쇼핑·제품
 건강·운동
 문화·콘텐츠
+음악
 돈·재테크
 아이디어·영감
 기타
 ```
 
 `dataset/memo/<카테고리>/*.txt`의 상위 폴더명이 메모 테스트의 정답입니다. 상세 설명과 예시는 `config/categories.json`에서 관리하며 폴더명과 정의 이름은 정확히 일치해야 합니다. 기술 구현과 개발·IT 참고 내용은 `학습·지식`, 실행 체크리스트는 `생활·할 일`, 발상과 개선 방향은 `아이디어·영감`으로 분류합니다.
+
+## 입력 유형별 테스트
+
+공통 실행기 `main.py`는 `dataset/test/<카테고리>/<url|image|memo>/*.txt`를 읽습니다.
+상위 카테고리 폴더가 정답 라벨이며, 카테고리 설명과 예시는 기본적으로 프롬프트에 포함됩니다.
+`category-only`는 각 카테고리의 적합도 `score`를 받은 뒤 `config.yaml`의 임계값
+(기본 0.65) 이상을 선택하고, 서비스 결과를 최대 2개로 제한합니다. 임계값을 넘는
+항목이 없지만 후보가 있으면 가장 높은 후보 하나를 유지하고, 후보 자체가 없으면
+`기타`를 fallback으로 사용합니다.
+
+```powershell
+cd ai/ai-text
+
+# URL만
+.\.venv\Scripts\python.exe .\main.py --input-type url --category-only --dry-run
+
+# 메모만
+.\.venv\Scripts\python.exe .\main.py --input-type memo --category-only --dry-run
+
+# 이미지와 URL
+.\.venv\Scripts\python.exe .\main.py --input-type image url --category-only --dry-run
+
+# 전체 유형 (기본값)
+.\.venv\Scripts\python.exe .\main.py --input-type all --category-only --dry-run
+```
+
+실제 모델 테스트에서는 `--dry-run`을 제거합니다. 설명 없이 이름만 비교하려면
+`--no-category-descriptions`를 추가합니다.
 
 ### 카테고리 데이터로 설명 생성
 

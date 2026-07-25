@@ -282,18 +282,30 @@ def test_model_failure_does_not_stop_next_model(monkeypatch, tmp_path):
         def generate(self, _request, config):
             if config.id == "bad":
                 return ModelResponse("openai", config.id, config.model, status="FAILED", error_type="RATE_LIMIT_ERROR", error_message="limited")
-            return ModelResponse("openai", config.id, config.model, raw_text='{"category":"학습·지식","confidence":0.9}', status="SUCCESS", structured_output_applied=True)
+            return ModelResponse(
+                "openai", config.id, config.model,
+                raw_text='{"categories":[{"categoryId":"LEARNING_KNOWLEDGE","categoryName":"학습·지식","score":0.9}]}',
+                status="SUCCESS", structured_output_applied=True,
+            )
 
     monkeypatch.setattr(app, "make_providers", lambda *_: {"openai": Provider()})
     selections = [app.ModelSelection("bad", model("bad")), app.ModelSelection("good", model("good"))]
     data = [{"testId": "TEXT-001", "datasetType": "memo", "input": "JWT 구현", "expected": {"categories": ["학습·지식"], "requiredKeywords": [], "summaryPoints": [], "forbiddenClaims": []}}]
     pricing = PricingConfig("USD", "per_1m_tokens", None, {})
     config = app.load_project_config()
-    definitions = [{"name": "학습·지식", "description": "기술과 지식 관련 메모", "examples": []}]
+    definitions = [
+        {"id": "LEARNING_KNOWLEDGE", "name": "학습·지식", "description": "기술과 지식 관련 메모", "examples": []},
+        {"id": "OTHER", "name": "기타", "description": "그 밖의 메모", "examples": []},
+    ]
     app.run_mode("category-only", tmp_path, selections, data, ["학습·지식"], definitions, "memo", config, pricing, Settings(gms_key="gms-test"), 1)
     good = json.loads((tmp_path / "model-results" / "good.json").read_text(encoding="utf-8"))
     assert good["status"] == "COMPLETED"
     assert good["requests"][0]["response"]["status"] == "SUCCESS"
+    evaluation = json.loads((tmp_path / "evaluation-results.json").read_text(encoding="utf-8"))
+    good_row = next(row for row in evaluation if row["modelId"] == "good")
+    assert good_row["threshold"] == 0.65
+    assert good_row["serviceSelectedCategoryIds"] == ["LEARNING_KNOWLEDGE"]
+    assert good_row["serviceRelaxedCorrect"] is True
 
 
 def test_api_key_is_not_written_to_results(monkeypatch, tmp_path):
@@ -306,7 +318,10 @@ def test_api_key_is_not_written_to_results(monkeypatch, tmp_path):
     monkeypatch.setattr(app, "make_providers", lambda *_: {"openai": Provider()})
     selections = [app.ModelSelection("bad", model("bad"))]
     data = [{"testId": "TEXT-001", "datasetType": "memo", "input": "JWT 구현", "expected": {"categories": ["학습·지식"], "requiredKeywords": [], "summaryPoints": [], "forbiddenClaims": []}}]
-    definitions = [{"name": "학습·지식", "description": "기술과 지식 관련 메모", "examples": []}]
+    definitions = [
+        {"id": "LEARNING_KNOWLEDGE", "name": "학습·지식", "description": "기술과 지식 관련 메모", "examples": []},
+        {"id": "OTHER", "name": "기타", "description": "그 밖의 메모", "examples": []},
+    ]
     app.run_mode("category-only", tmp_path, selections, data, ["학습·지식"], definitions, "memo", app.load_project_config(), PricingConfig("USD", "per_1m_tokens", None, {}), Settings(gms_key=secret), 1)
     assert secret not in "\n".join(path.read_text(encoding="utf-8-sig") for path in tmp_path.rglob("*") if path.is_file())
 

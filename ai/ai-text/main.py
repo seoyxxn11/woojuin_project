@@ -10,6 +10,7 @@ from typing import Any
 
 import yaml
 
+from run_classification_experiment import evaluate_raw_record
 from src.auto_evaluator import evaluate
 from src.comparison import compare_result_directories
 from src.dataset_loader import (
@@ -17,9 +18,11 @@ from src.dataset_loader import (
     load_category_definitions,
     load_dataset,
     load_memo_dataset,
+    load_typed_test_dataset,
     validate_expected_categories,
 )
 from src.metrics import classification_metrics, confidence_metrics, nullable_average, nullable_rate, operational_metrics
+from src.multi_label_selector import category_maps
 from src.model_config import (
     ModelConfig,
     ModelConfigError,
@@ -35,7 +38,12 @@ from src.model_config import (
 from src.ollama_client import OllamaClient, OllamaError
 from src.prompt_builder import build_prompt, load_prompt
 from src.providers import ModelRequest, ModelResponse, OllamaProvider, OpenAIProvider, sanitize_error
-from src.response_parser import output_schema, parse_response
+from src.response_parser import (
+    output_multi_label_schema,
+    output_schema,
+    parse_multi_label_response,
+    parse_response,
+)
 from src.result_writer import write_csv, write_json
 from src.settings import Settings, load_settings
 
@@ -43,7 +51,7 @@ from src.settings import Settings, load_settings
 ROOT = Path(__file__).resolve().parent
 MODES = ("category-only", "summary-only", "metadata-only", "integrated")
 PROMPT_FILES = {
-    "category-only": "category-prompt-v1.txt",
+    "category-only": "experiment-category-prompt-v1.txt",
     "summary-only": "summary-prompt-v1.txt",
     "metadata-only": "metadata-prompt-v1.txt",
     "integrated": "integrated-prompt-v2.txt",
@@ -68,6 +76,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--memo-only", action="store_true")
     parser.add_argument("--include-json", action="store_true")
+    parser.add_argument(
+        "--input-type", "--input-types",
+        nargs="+", choices=("memo", "url", "image", "all"), default=["all"],
+        help="dataset/test에서 실행할 입력 유형 (기본: all)",
+    )
+    parser.add_argument(
+        "--category-descriptions",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="프롬프트에 카테고리 설명과 예시 포함 (기본: 활성화)",
+    )
     return parser.parse_args(argv)
 
 
@@ -90,14 +109,22 @@ def load_project_config() -> dict[str, Any]:
 
 
 def load_test_data(options: argparse.Namespace) -> tuple[list[dict], list[str], list[dict], str]:
-    memo_root = ROOT / "dataset" / "memo"
-    categories = load_categories(memo_root)
-    definitions = load_category_definitions(ROOT / "config" / "categories.json", memo_root)
-    memo_data = load_memo_dataset(memo_root, categories)
-    json_data = load_dataset(ROOT / "dataset" / "text-test-data.json") if options.include_json else []
-    if json_data:
-        validate_expected_categories(json_data, categories)
-    data = memo_data if options.memo_only or not json_data else json_data + memo_data
+    if options.memo_only or options.include_json:
+        memo_root = ROOT / "dataset" / "memo"
+        categories = load_categories(memo_root)
+        definitions = load_category_definitions(ROOT / "config" / "categories.json", memo_root)
+        memo_data = load_memo_dataset(memo_root, categories)
+        json_data = load_dataset(ROOT / "dataset" / "text-test-data.json") if options.include_json else []
+        if json_data:
+            validate_expected_categories(json_data, categories)
+        data = memo_data if not json_data else json_data + memo_data
+        dataset_type = "memo+json" if json_data else "memo"
+    else:
+        test_root = ROOT / "dataset" / "test"
+        data, categories = load_typed_test_dataset(test_root, options.input_type)
+        definitions = load_category_definitions(ROOT / "config" / "categories.json", test_root)
+        selected_types = sorted({item["inputType"] for item in data})
+        dataset_type = "test:" + "+".join(selected_types)
     if options.test_ids:
         known = {item["testId"] for item in data}
         unknown = sorted(set(options.test_ids) - known)
@@ -111,7 +138,7 @@ def load_test_data(options: argparse.Namespace) -> tuple[list[dict], list[str], 
         data = data[: options.limit]
     if not data:
         raise ValueError("실행할 테스트 데이터가 없습니다")
-    return data, categories, definitions, "memo+json" if json_data and not options.memo_only else "memo"
+    return data, categories, definitions, dataset_type
 
 
 def selection_ids(options: argparse.Namespace, suites: dict[str, tuple[str, ...]]) -> tuple[list[str], str]:
@@ -257,15 +284,25 @@ def _row(record: dict[str, Any]) -> dict[str, Any]:
     evaluation = record["evaluation"]
     provider_meta = response.get("providerMetadata") or {}
     expected_categories = expected.get("categories", [])
-    return {
+    multi_label = "serviceSelectedCategoryNames" in evaluation
+    generated_category = (
+        " | ".join(evaluation.get("serviceSelectedCategoryNames", []))
+        if multi_label else parsed.get("category", "")
+    )
+    confidence = (
+        evaluation.get("validPredictions", [{}])[0].get("score")
+        if multi_label and evaluation.get("validPredictions")
+        else parsed.get("confidence")
+    )
+    row = {
         "testId": record["testId"], "datasetKey": record["datasetKey"], "datasetType": record["datasetType"],
         "testMode": record["testMode"], "title": record.get("title", ""), "sourcePath": record.get("sourcePath", ""),
         "model": record["modelId"], "modelId": record["modelId"], "provider": record["provider"],
         "requestedModel": record["requestedModel"], "resolvedModel": response.get("resolvedModel"),
         "runType": "WARM", "runNumber": record["runNumber"], "promptVersion": record["promptVersion"],
         "expectedCategory": expected_categories[0] if len(expected_categories) == 1 else " | ".join(expected_categories),
-        "generatedSummary": parsed.get("summary", ""), "generatedCategory": parsed.get("category", ""),
-        "confidence": parsed.get("confidence"), "generatedTags": " | ".join(parsed.get("tags", [])),
+        "generatedSummary": parsed.get("summary", ""), "generatedCategory": generated_category,
+        "confidence": confidence, "generatedTags": " | ".join(parsed.get("tags", [])),
         "generatedKeywords": " | ".join(parsed.get("keywords", [])), **evaluation,
         "totalDurationMs": response.get("latencyMs"), "loadDurationMs": provider_meta.get("loadDurationMs"),
         "evalDurationMs": provider_meta.get("generationDurationMs"), "tokensPerSecond": provider_meta.get("tokensPerSecond"),
@@ -282,6 +319,9 @@ def _row(record: dict[str, Any]) -> dict[str, Any]:
         "extraTextDetected": evaluation.get("extraTextDetected"), "thinkingTagDetected": evaluation.get("thinkingTagDetected"),
         "executedAt": record["executedAt"],
     }
+    if multi_label:
+        row["categoryCorrect"] = evaluation.get("serviceRelaxedCorrect")
+    return row
 
 
 def run_mode(
@@ -304,7 +344,11 @@ def run_mode(
     selections = preflight(selections, providers, settings, api_key_env)
     prompt_version = project_config["promptVersions"][mode]
     prompt_template = load_prompt(ROOT / "prompts" / PROMPT_FILES[mode])
-    schema = output_schema(categories, mode)
+    schema = (
+        output_multi_label_schema(definitions, integrated=False)
+        if mode == "category-only"
+        else output_schema(categories, mode)
+    )
     started = datetime.now().astimezone()
     metadata: dict[str, Any] = {
         "testMode": mode, "datasetType": dataset_type, "datasetCount": len(data),
@@ -327,6 +371,11 @@ def run_mode(
         "environmentVariables": {api_key_env: "configured" if settings.key_configured(api_key_env) else "missing"},
         "options": {
             "temperatureRequested": project_config.get("temperature"), "repeat": repeat,
+            "categoryDescriptions": project_config.get("includeCategoryDescriptions", True),
+            "classificationMode": project_config.get("classification", {}).get("mode"),
+            "threshold": project_config.get("classification", {}).get("threshold"),
+            "serviceMaxCategories": project_config.get("classification", {}).get("service_max_categories"),
+            "ensureAtLeastOne": project_config.get("classification", {}).get("ensure_at_least_one"),
             "streaming": False, "externalSearch": False, "tools": False,
             "providerDifferences": "GMS OpenAI 호환 Chat Completions에는 temperature/seed/contextLength를 적용하지 않음; 토큰 측정 기준은 provider별로 다를 수 있음",
             "openaiEndpoint": openai_config.get("baseUrl", "default"),
@@ -335,6 +384,7 @@ def run_mode(
         "pricing": {"currency": pricing.currency, "unit": pricing.unit, "updatedAt": pricing.updated_at},
     }
     write_json(out / "run-metadata.json", metadata)
+    write_json(out / "category-descriptions.json", definitions)
     all_records: list[dict[str, Any]] = []
     rows: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
@@ -362,7 +412,16 @@ def run_mode(
                 for run_number in range(1, repeat + 1):
                     request_number += 1
                     print(f"[{request_number}/{len(data) * repeat} 요청] {item['testId']} ({run_number}/{repeat})")
-                    built_prompt = build_prompt(prompt_template, item["input"], categories, item.get("title", ""), definitions)
+                    built_prompt = build_prompt(
+                        prompt_template,
+                        item["input"],
+                        categories,
+                        item.get("title", ""),
+                        definitions,
+                        include_category_descriptions=project_config.get(
+                            "includeCategoryDescriptions", True
+                        ),
+                    )
                     request = ModelRequest(built_prompt, schema, mode, item["testId"], project_config.get("temperature"))
                     try:
                         response = provider.generate(request, config)
@@ -371,14 +430,60 @@ def run_mode(
                             provider=config.provider, model_id=config.id, requested_model=config.model,
                             status="FAILED", error_type="UNKNOWN_ERROR", error_message=sanitize_error(exc),
                         )
-                    info = parse_response(response.raw_text, categories, mode)
+                    info = (
+                        parse_multi_label_response(response.raw_text, definitions, integrated=False)
+                        if mode == "category-only"
+                        else parse_response(response.raw_text, categories, mode)
+                    )
                     response.parsed_output = info.get("parsedResponse")
                     error_type, error_message = _provider_failure(response, info)
                     if error_type:
                         response.status = "FAILED" if response.status != "SKIPPED" else "SKIPPED"
                         response.error_type = error_type
                         response.error_message = sanitize_error(error_message or error_type)
-                    evaluation = evaluate(info, item["expected"], categories, mode, item["input"])
+                    if mode == "category-only":
+                        raw_record = {
+                            "testId": item["testId"],
+                            "title": item.get("title", ""),
+                            "sourcePath": item.get("sourcePath", ""),
+                            "input": item["input"],
+                            "expectedCategoryName": item["expected"]["categories"][0],
+                            "scenario": "typed-category-classification",
+                            "structure": "split",
+                            "categoryDescriptions": project_config.get("includeCategoryDescriptions", True),
+                            "repeatNumber": run_number,
+                            "model": config.id,
+                            "rawPredictions": info.get("rawPredictions", []),
+                            "validPredictions": info.get("validPredictions", []),
+                            "invalidPredictions": info.get("invalidPredictions", []),
+                            "categoryParseSuccess": info.get("categoryParseSuccess"),
+                            "summaryParseSuccess": None,
+                            "organizationParseSuccess": None,
+                            "requestFailed": response.status != "SUCCESS",
+                            "totalDurationMs": response.latency_ms,
+                        }
+                        evaluation = evaluate_raw_record(
+                            raw_record,
+                            float(project_config["classification"]["threshold"]),
+                            definitions,
+                            project_config["classification"],
+                            project_config["evaluation"],
+                        )
+                        by_id, _ = category_maps(definitions)
+                        evaluation["thresholdSelectedCategoryNames"] = [
+                            by_id[category_id]["name"]
+                            for category_id in evaluation["thresholdSelectedCategoryIds"]
+                        ]
+                        evaluation["serviceSelectedCategoryNames"] = [
+                            by_id[category_id]["name"]
+                            for category_id in evaluation["serviceSelectedCategoryIds"]
+                        ]
+                        evaluation["top1CategoryName"] = (
+                            by_id[evaluation["top1CategoryId"]]["name"]
+                            if evaluation.get("top1CategoryId") in by_id else ""
+                        )
+                    else:
+                        evaluation = evaluate(info, item["expected"], categories, mode, item["input"])
                     response_dict = response.to_dict()
                     cost = calculate_cost(pricing, config.id, response.input_tokens, response.output_tokens)
                     record = {
@@ -417,14 +522,18 @@ def run_mode(
     metadata["structuredOutput"] = _structured_summary(rows)
     write_json(out / "run-metadata.json", metadata)
     write_json(out / "evaluation-results.json", rows)
-    comparison = build_comparison(rows, selections, categories, mode, pricing)
-    write_csv(out / "comparison.csv", [
-        {key: "N/A" if value is None else value for key, value in item.items()}
-        for item in comparison
-    ])
     write_csv(out / "failures.csv", failures, ["modelId", "testId", "status", "errorType", "errorMessage"])
     write_confusion_matrices(out, rows, categories, mode)
-    write_report(out / "report.md", metadata, comparison, rows, failures)
+    executed_model_ids = {str(row.get("modelId")) for row in rows if row.get("modelId")}
+    if mode == "category-only" and len(executed_model_ids) <= 1:
+        write_classification_outputs(out, metadata, rows, categories, definitions)
+    else:
+        comparison = build_comparison(rows, selections, categories, mode, pricing)
+        write_csv(out / "comparison.csv", [
+            {key: "N/A" if value is None else value for key, value in item.items()}
+            for item in comparison
+        ])
+        write_report(out / "report.md", metadata, comparison, rows, failures)
     if interrupted:
         raise KeyboardInterrupt
 
@@ -507,6 +616,202 @@ def _display(value: Any, percent: bool = False) -> str:
     if isinstance(value, float):
         return f"{value * 100:.1f}%" if percent else f"{value:.3f}"
     return str(value)
+
+
+def _input_type(row: dict[str, Any]) -> str:
+    dataset_type = str(row.get("datasetType", "")).lower()
+    if dataset_type.startswith("test-"):
+        return dataset_type.removeprefix("test-")
+    test_id = str(row.get("testId", ""))
+    prefix = test_id.partition("-")[0].lower()
+    return prefix if prefix in {"memo", "url", "image"} else dataset_type or "unknown"
+
+
+def _markdown_cell(value: Any) -> str:
+    return str(value if value is not None else "").replace("|", r"\|").replace("\r", " ").replace("\n", " ")
+
+
+def _service_classification_metrics(
+    rows: list[dict[str, Any]], definitions: list[dict[str, Any]]
+) -> dict[str, Any] | None:
+    if not rows:
+        return None
+    category_names = [str(item["name"]) for item in definitions]
+    per_category: dict[str, dict[str, Any]] = {}
+    for category in category_names:
+        tp = fp = fn = support = 0
+        for row in rows:
+            gold = str(row.get("expectedCategory", ""))
+            predicted = set(row.get("serviceSelectedCategoryNames", []))
+            support += gold == category
+            tp += gold == category and category in predicted
+            fp += gold != category and category in predicted
+            fn += gold == category and category not in predicted
+        precision = tp / (tp + fp) if tp + fp else None
+        recall = tp / (tp + fn) if tp + fn else None
+        f1 = (
+            2 * precision * recall / (precision + recall)
+            if precision is not None and recall is not None and precision + recall
+            else (0.0 if precision is not None and recall is not None else None)
+        )
+        per_category[category] = {
+            "support": support, "precision": precision, "recall": recall, "f1": f1,
+        }
+    average = lambda key: (
+        sum(float(item[key]) for item in per_category.values() if item[key] is not None)
+        / sum(item[key] is not None for item in per_category.values())
+        if any(item[key] is not None for item in per_category.values()) else None
+    )
+    count = len(rows)
+    return {
+        "count": count,
+        "top1Accuracy": sum(bool(row.get("top1Correct")) for row in rows) / count,
+        "exactAccuracy": sum(bool(row.get("serviceExactCorrect")) for row in rows) / count,
+        "relaxedAccuracy": sum(bool(row.get("serviceRelaxedCorrect")) for row in rows) / count,
+        "averageSelectedCategoryCount": (
+            sum(len(row.get("serviceSelectedCategoryIds", [])) for row in rows) / count
+        ),
+        "macroPrecision": average("precision"),
+        "macroRecall": average("recall"),
+        "macroF1": average("f1"),
+        "perCategory": per_category,
+    }
+
+
+def write_classification_outputs(
+    out: Path,
+    metadata: dict[str, Any],
+    rows: list[dict[str, Any]],
+    categories: list[str],
+    definitions: list[dict[str, Any]],
+) -> None:
+    """확정된 단일 모델의 카테고리 분류 결과만 입력 유형별로 저장한다."""
+    model_ids = sorted({str(row.get("modelId", "")) for row in rows if row.get("modelId")})
+    if len(model_ids) > 1:
+        raise ValueError("category-only 보고서는 확정 모델 하나만 지원합니다")
+
+    enriched = [{**row, "inputType": _input_type(row)} for row in rows]
+    fields = [
+        "inputType", "testId", "title", "sourcePath", "expectedCategory",
+        "top1CategoryName", "top1Correct",
+        "thresholdSelectedCategoryNames", "serviceSelectedCategoryNames",
+        "serviceExactCorrect", "serviceRelaxedCorrect",
+        "threshold", "fallbackUsed", "serviceLimitApplied", "status",
+        "errorType", "errorMessage",
+    ]
+    write_csv(out / "classification-results.csv", enriched, fields)
+    write_json(out / "classification-results.json", enriched)
+
+    sections: list[tuple[str, list[dict[str, Any]]]] = [("전체", enriched)]
+    for input_type in ("memo", "url", "image"):
+        selected = [row for row in enriched if row["inputType"] == input_type]
+        sections.append((input_type, selected))
+        write_json(out / "by-input-type" / f"{input_type}.json", selected)
+        write_csv(out / "by-input-type" / f"{input_type}.csv", selected, fields)
+
+    summary_rows: list[dict[str, Any]] = []
+    report: list[str] = [
+        "# 카테고리 분류 테스트 보고서", "",
+        "## 실행 정보", "",
+        f"- 모델: {model_ids[0] if model_ids else 'N/A'}",
+        f"- 데이터셋: {metadata.get('datasetType', '')}",
+        f"- 전체 데이터: {len(enriched)}건",
+        f"- 카테고리 설명: {'포함' if metadata.get('options', {}).get('categoryDescriptions') else '미포함'}",
+        f"- 선택 정책: score {metadata.get('options', {}).get('threshold', 0.65)} 이상, 최대 {metadata.get('options', {}).get('serviceMaxCategories', 2)}개",
+        f"- 실행 일시: {metadata.get('startedAt')} ~ {metadata.get('completedAt')}", "",
+        "## 정확도 요약", "",
+    ]
+
+    overview: list[list[str]] = []
+    section_metrics: dict[str, dict[str, Any] | None] = {}
+    for label, selected in sections:
+        if not selected:
+            section_metrics[label] = None
+            overview.append([label, "0", "0", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"])
+            summary_rows.append({
+                "inputType": label, "count": 0, "correctCount": 0,
+                "top1Accuracy": None, "exactAccuracy": None, "relaxedAccuracy": None,
+                "averageSelectedCategoryCount": None,
+                "macroPrecision": None, "macroRecall": None, "macroF1": None,
+            })
+            continue
+        metrics = _service_classification_metrics(selected, definitions)
+        assert metrics is not None
+        section_metrics[label] = metrics
+        correct = sum(row.get("serviceRelaxedCorrect") is True for row in selected)
+        overview.append([
+            label, str(len(selected)), str(correct), _display(metrics["top1Accuracy"], True),
+            _display(metrics["exactAccuracy"], True), _display(metrics["relaxedAccuracy"], True),
+            _display(metrics["averageSelectedCategoryCount"]),
+            _display(metrics["macroPrecision"], True), _display(metrics["macroRecall"], True),
+            _display(metrics["macroF1"], True),
+        ])
+        summary_rows.append({
+            "inputType": label, "count": len(selected), "correctCount": correct,
+            "top1Accuracy": metrics["top1Accuracy"], "exactAccuracy": metrics["exactAccuracy"],
+            "relaxedAccuracy": metrics["relaxedAccuracy"],
+            "averageSelectedCategoryCount": metrics["averageSelectedCategoryCount"],
+            "macroPrecision": metrics["macroPrecision"],
+            "macroRecall": metrics["macroRecall"], "macroF1": metrics["macroF1"],
+        })
+    write_json(out / "classification-summary.json", summary_rows)
+    write_csv(
+        out / "classification-summary.csv", summary_rows,
+        [
+            "inputType", "count", "correctCount", "top1Accuracy", "exactAccuracy",
+            "relaxedAccuracy", "averageSelectedCategoryCount",
+            "macroPrecision", "macroRecall", "macroF1",
+        ],
+    )
+    report.append(_markdown_table(
+        [
+            "구분", "데이터 수", "정답 포함 수", "Top-1", "정확 일치",
+            "완화 정확도", "평균 선택 수", "Macro Precision", "Macro Recall", "Macro F1",
+        ],
+        overview,
+    ))
+
+    for label, selected in sections:
+        report.extend(["", f"## {label} 결과", ""])
+        metrics = section_metrics[label]
+        if metrics is None:
+            report.append("- 테스트 데이터 없음")
+            continue
+        category_rows = []
+        for category, values in metrics["perCategory"].items():
+            category_rows.append([
+                category, str(values["support"]), _display(values["precision"], True),
+                _display(values["recall"], True), _display(values["f1"], True),
+            ])
+        report.extend([
+            "### 카테고리별 지표", "",
+            _markdown_table(["카테고리", "표본", "Precision", "Recall", "F1"], category_rows),
+            "", "### 개별 테스트 결과", "",
+            _markdown_table(
+                ["ID", "정답", "Top-1", "최종 선택", "정답 포함", "점수", "제목"],
+                [[
+                    _markdown_cell(row.get("testId")), _markdown_cell(row.get("expectedCategory")),
+                    _markdown_cell(row.get("top1CategoryName")),
+                    _markdown_cell(" / ".join(row.get("serviceSelectedCategoryNames", []))),
+                    "O" if row.get("serviceRelaxedCorrect") is True else "X",
+                    _markdown_cell(" / ".join(
+                        f"{item['categoryName']} {float(item['score']):.2f}"
+                        for item in row.get("validPredictions", [])
+                    )),
+                    _markdown_cell(row.get("title")),
+                ] for row in selected],
+            ),
+        ])
+
+    report.extend(["", "## 카테고리 설명", ""])
+    report.append(_markdown_table(
+        ["ID", "카테고리", "설명", "예시"],
+        [[
+            _markdown_cell(item.get("id")), _markdown_cell(item.get("name")),
+            _markdown_cell(item.get("description")), _markdown_cell(", ".join(item.get("examples", []))),
+        ] for item in definitions],
+    ))
+    (out / "report.md").write_text("\n".join(report) + "\n", encoding="utf-8")
 
 
 def _markdown_table(headers: list[str], values: list[list[str]]) -> str:
@@ -634,6 +939,7 @@ def main(argv: list[str] | None = None) -> int:
         suites = load_suites(ROOT / "config" / "model-suites.yaml")
         pricing = load_pricing(ROOT / "config" / "model-pricing.yaml")
         project_config = load_project_config()
+        project_config["includeCategoryDescriptions"] = options.category_descriptions
         if options.list_models:
             print_models(models)
             return 0
@@ -643,6 +949,12 @@ def main(argv: list[str] | None = None) -> int:
         modes = selected_modes(options)
         ids, selector = selection_ids(options, suites)
         data, categories, definitions, dataset_type = load_test_data(options)
+        print(
+            f"[OK] 입력 유형: {', '.join(sorted({item.get('inputType', item.get('datasetType', 'unknown')) for item in data}))}"
+        )
+        print(
+            f"[OK] 카테고리 설명: {'포함' if options.category_descriptions else '미포함'}"
+        )
         selections_by_mode = {mode: select_models(models, ids, mode) for mode in modes}
         settings = load_settings(ROOT)
         output = planned_output(modes, selector)

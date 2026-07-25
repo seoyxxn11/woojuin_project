@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import platform
 import statistics
 import sys
@@ -77,6 +78,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--memo-only", action="store_true")
     parser.add_argument("--include-json", action="store_true")
     parser.add_argument(
+        "--category-definitions",
+        type=Path,
+        help="분류에 사용할 카테고리 설명 JSON (기본: config/categories.json)",
+    )
+    parser.add_argument(
+        "--write-url-summary",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="summary-only/integrated 성공 시 dataset/test URL JSON의 summary 갱신",
+    )
+    parser.add_argument(
         "--input-type", "--input-types",
         nargs="+", choices=("memo", "url", "image", "all"), default=["all"],
         help="dataset/test에서 실행할 입력 유형 (기본: all)",
@@ -109,10 +121,15 @@ def load_project_config() -> dict[str, Any]:
 
 
 def load_test_data(options: argparse.Namespace) -> tuple[list[dict], list[str], list[dict], str]:
+    definitions_path = (
+        options.category_definitions.resolve()
+        if options.category_definitions
+        else ROOT / "config" / "categories.json"
+    )
     if options.memo_only or options.include_json:
         memo_root = ROOT / "dataset" / "memo"
         categories = load_categories(memo_root)
-        definitions = load_category_definitions(ROOT / "config" / "categories.json", memo_root)
+        definitions = load_category_definitions(definitions_path, memo_root)
         memo_data = load_memo_dataset(memo_root, categories)
         json_data = load_dataset(ROOT / "dataset" / "text-test-data.json") if options.include_json else []
         if json_data:
@@ -122,7 +139,7 @@ def load_test_data(options: argparse.Namespace) -> tuple[list[dict], list[str], 
     else:
         test_root = ROOT / "dataset" / "test"
         data, categories = load_typed_test_dataset(test_root, options.input_type)
-        definitions = load_category_definitions(ROOT / "config" / "categories.json", test_root)
+        definitions = load_category_definitions(definitions_path, test_root)
         selected_types = sorted({item["inputType"] for item in data})
         dataset_type = "test:" + "+".join(selected_types)
     if options.test_ids:
@@ -149,6 +166,25 @@ def selection_ids(options: argparse.Namespace, suites: dict[str, tuple[str, ...]
             raise ModelConfigError(f"존재하지 않는 suite: {options.suite}")
         return list(suites[options.suite]), options.suite
     return ["qwen-local"], "qwen-local"
+
+
+def write_url_summary(item: dict[str, Any], summary: str) -> Path | None:
+    """AI가 생성한 URL 요약을 해당 로컬 테스트 JSON에 기록한다."""
+    if item.get("inputType") != "url" or not summary.strip():
+        return None
+    test_root = (ROOT / "dataset" / "test").resolve()
+    source = (test_root / str(item.get("sourcePath", ""))).resolve()
+    if not source.is_relative_to(test_root) or not source.is_file():
+        raise ValueError(f"URL 요약을 기록할 테스트 파일이 없습니다: {source}")
+    value = json.loads(source.read_text(encoding="utf-8"))
+    if not isinstance(value, dict) or str(value.get("type", "")).upper() != "URL":
+        raise ValueError(f"URL 테스트 JSON 형식이 아닙니다: {source}")
+    value["summary"] = summary.strip()
+    source.write_text(
+        json.dumps(value, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+    return source
 
 
 def planned_output(modes: list[str], selector: str) -> Path:
@@ -336,6 +372,7 @@ def run_mode(
     pricing: PricingConfig,
     settings: Settings,
     repeat: int,
+    write_url_summaries: bool = True,
 ) -> None:
     out.mkdir(parents=True, exist_ok=True)
     providers = make_providers(project_config, settings)
@@ -376,6 +413,7 @@ def run_mode(
             "threshold": project_config.get("classification", {}).get("threshold"),
             "serviceMaxCategories": project_config.get("classification", {}).get("service_max_categories"),
             "ensureAtLeastOne": project_config.get("classification", {}).get("ensure_at_least_one"),
+            "writeUrlSummary": write_url_summaries,
             "streaming": False, "externalSearch": False, "tools": False,
             "providerDifferences": "GMS OpenAI 호환 Chat Completions에는 temperature/seed/contextLength를 적용하지 않음; 토큰 측정 기준은 provider별로 다를 수 있음",
             "openaiEndpoint": openai_config.get("baseUrl", "default"),
@@ -441,6 +479,16 @@ def run_mode(
                         response.status = "FAILED" if response.status != "SKIPPED" else "SKIPPED"
                         response.error_type = error_type
                         response.error_message = sanitize_error(error_message or error_type)
+                    parsed_output = info.get("parsedResponse") or {}
+                    generated_summary = parsed_output.get("summary")
+                    if (
+                        write_url_summaries
+                        and mode in {"summary-only", "integrated"}
+                        and response.status == "SUCCESS"
+                        and info.get("schemaValid") is True
+                        and isinstance(generated_summary, str)
+                    ):
+                        write_url_summary(item, generated_summary)
                     if mode == "category-only":
                         raw_record = {
                             "testId": item["testId"],
@@ -968,7 +1016,11 @@ def main(argv: list[str] | None = None) -> int:
             mode_out = output / mode if len(modes) > 1 else output
             print(f"\n[MODE {index}/{len(modes)}] {mode}")
             print(f"[OK] 결과 디렉터리: {mode_out}")
-            run_mode(mode, mode_out, selections_by_mode[mode], data, categories, definitions, dataset_type, project_config, pricing, settings, options.repeat)
+            run_mode(
+                mode, mode_out, selections_by_mode[mode], data, categories,
+                definitions, dataset_type, project_config, pricing, settings,
+                options.repeat, options.write_url_summary,
+            )
         if len(modes) > 1:
             report_output = generate_multi_mode_report(output, modes)
             print(f"[OK] 종합 비교 보고서: {report_output / 'comparison-report.md'}")

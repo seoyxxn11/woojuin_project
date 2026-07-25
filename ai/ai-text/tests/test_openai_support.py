@@ -326,6 +326,35 @@ def test_api_key_is_not_written_to_results(monkeypatch, tmp_path):
     assert secret not in "\n".join(path.read_text(encoding="utf-8-sig") for path in tmp_path.rglob("*") if path.is_file())
 
 
+def test_generated_url_summary_is_written_back_to_test_json(monkeypatch, tmp_path):
+    monkeypatch.setattr(app, "ROOT", tmp_path)
+    source = tmp_path / "dataset" / "test" / "음악" / "url" / "song.txt"
+    source.parent.mkdir(parents=True)
+    source.write_text(
+        json.dumps(
+            {
+                "type": "URL",
+                "url": "https://music.example/song",
+                "content": "노래 원문",
+                "summary": None,
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    item = {
+        "inputType": "url",
+        "sourcePath": "음악/url/song.txt",
+    }
+
+    written = app.write_url_summary(item, "AI가 생성한 음악 요약")
+
+    assert written == source
+    saved = json.loads(source.read_text(encoding="utf-8"))
+    assert saved["summary"] == "AI가 생성한 음악 요약"
+    assert saved["content"] == "노래 원문"
+
+
 @pytest.mark.integration
 @pytest.mark.requires_openai_api_key
 def test_openai_live_call_requires_explicit_opt_in(monkeypatch):

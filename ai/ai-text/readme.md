@@ -50,12 +50,35 @@ cd ai/ai-text
 .\.venv\Scripts\python.exe .\main.py --input-type all --category-only --dry-run
 ```
 
+이미 실행한 `category-only` 결과는 모델을 다시 호출하지 않고 여러 임계값으로
+재평가할 수 있습니다. 기본 비교값은 `0.55, 0.60, 0.65, 0.70, 0.75`입니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\reevaluate_category_thresholds.py `
+  --result-dir ".\results\20260725-213614-category-only-qwen-local"
+```
+
+값을 직접 지정하려면 `--thresholds`를 사용합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\reevaluate_category_thresholds.py `
+  --result-dir ".\results\20260725-213614-category-only-qwen-local" `
+  --thresholds 0.55 0.60 0.65 0.70 0.75
+```
+
+결과는 기존 실행 폴더의 `threshold-comparison` 아래에 임계값별 상세 보고서와
+전체 비교 CSV, JSON, Markdown으로 저장됩니다.
+
+URL 데이터를 `summary-only` 또는 `integrated`로 실행하면 성공한 AI 요약을 해당
+`dataset/test/<카테고리>/url/*.txt` JSON의 `summary` 필드에도 기록합니다.
+기록하지 않으려면 `--no-write-url-summary`를 사용합니다.
+
 실제 모델 테스트에서는 `--dry-run`을 제거합니다. 설명 없이 이름만 비교하려면
 `--no-category-descriptions`를 추가합니다.
 
 ### 카테고리 데이터로 설명 생성
 
-카테고리 폴더의 실제 메모를 읽어 AI가 설명과 대표 예시를 생성할 수 있습니다. 기존 `config/categories.json`은 수정하지 않고 `config/generated/` 아래에 재사용 가능한 정의와 생성 이력을 따로 저장합니다.
+`dataset/test/<카테고리>/<memo|url|image>`의 샘플을 카테고리별로 합쳐 AI가 설명과 대표 예시를 생성할 수 있습니다. URL은 `summary`를 우선 사용하고, 없으면 `content`를 사용합니다. 둘 다 없으면 설명 생성 샘플에서 제외하며, 카테고리에 사용할 샘플이 하나도 없으면 카테고리 이름만 보고 설명을 생성합니다. 기존 `config/categories.json`은 수정하지 않고 `config/generated/` 아래에 재사용 가능한 정의와 생성 이력을 따로 저장합니다.
 
 ```powershell
 cd ai/ai-text
@@ -74,7 +97,9 @@ cd ai/ai-text
 생성된 정의를 분류 비교 실험에서 바로 사용하려면 다음처럼 지정합니다.
 
 ```powershell
-.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+.\.venv\Scripts\python.exe .\main.py `
+  --input-type url `
+  --category-only `
   --category-definitions .\config\generated\my-category-definitions.json
 ```
 

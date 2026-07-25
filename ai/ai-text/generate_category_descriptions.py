@@ -11,10 +11,11 @@ import yaml
 from src.category_description_generator import (
     DESCRIPTION_SCHEMA,
     build_description_prompt,
+    prepare_description_items,
     select_category_samples,
     validate_generated_description,
 )
-from src.dataset_loader import load_categories, load_category_definitions, load_memo_dataset
+from src.dataset_loader import load_categories, load_category_definitions, load_typed_test_dataset
 from src.ollama_client import OllamaClient, OllamaError, performance
 from src.result_writer import write_json
 
@@ -49,10 +50,11 @@ def main(argv: list[str] | None = None) -> int:
         raise ValueError(f"출력 파일이 이미 있습니다. --overwrite가 필요합니다: {output}")
 
     config = yaml.safe_load((ROOT / "config.yaml").read_text(encoding="utf-8"))
-    memo_root = ROOT / "dataset" / "memo"
-    category_names = load_categories(memo_root)
-    base_definitions = load_category_definitions(ROOT / "config" / "categories.json", memo_root)
-    items = load_memo_dataset(memo_root, category_names)
+    test_root = ROOT / "dataset" / "test"
+    category_names = load_categories(test_root)
+    base_definitions = load_category_definitions(ROOT / "config" / "categories.json", test_root)
+    typed_items, _ = load_typed_test_dataset(test_root, ["all"])
+    items = prepare_description_items(typed_items)
     requested = options.categories or category_names
     unknown = set(requested) - set(category_names)
     if unknown:
@@ -120,6 +122,8 @@ def main(argv: list[str] | None = None) -> int:
         "createdAt": now.isoformat(),
         "output": str(output),
         "generatedCategories": requested,
+        "sampleRoot": str(test_root),
+        "urlSamplePolicy": "summary 우선, summary가 없으면 content, 둘 다 없으면 제외",
         "calls": calls,
     })
     print(f"[OK] 재사용 정의 저장: {output}")

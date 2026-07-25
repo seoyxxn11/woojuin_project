@@ -4,6 +4,7 @@ import generate_category_descriptions as runner
 import run_classification_experiment as classification_runner
 from src.category_description_generator import (
     build_description_prompt,
+    prepare_description_items,
     select_category_samples,
     validate_generated_description,
 )
@@ -29,6 +30,48 @@ def test_build_prompt_contains_category_context_and_samples():
     )
     assert "학습·지식" in prompt and "생활·할 일" in prompt
     assert "TEXT-001" in prompt and "TEXT-002" in prompt
+
+
+def test_url_sample_prefers_summary_and_excludes_empty_content():
+    items = [
+        {
+            "testId": "URL-001",
+            "inputType": "url",
+            "input": '{"summary":"짧은 요약","content":"긴 원문"}',
+            "expected": {"categories": ["음악"]},
+        },
+        {
+            "testId": "URL-002",
+            "inputType": "url",
+            "input": '{"summary":null,"content":"본문만 있음"}',
+            "expected": {"categories": ["음악"]},
+        },
+        {
+            "testId": "URL-003",
+            "inputType": "url",
+            "input": '{"summary":null,"content":null}',
+            "expected": {"categories": ["음악"]},
+        },
+    ]
+
+    prepared = prepare_description_items(items)
+
+    assert [item["testId"] for item in prepared] == ["URL-001", "URL-002"]
+    assert prepared[0]["input"] == "짧은 요약"
+    assert prepared[0]["summary"] == "짧은 요약"
+    assert prepared[1]["input"] == "본문만 있음"
+
+
+def test_category_without_samples_uses_name_only_fallback_prompt():
+    prompt = build_description_prompt(
+        "{{CATEGORY_NAME}}\n{{ALL_CATEGORY_NAMES}}\n{{CATEGORY_SAMPLES}}",
+        "음악",
+        ["음악", "기타"],
+        [],
+    )
+
+    assert "사용 가능한 샘플 데이터가 없습니다" in prompt
+    assert "음악" in prompt
 
 
 def test_generated_description_is_normalized():

@@ -178,3 +178,31 @@ model:
 배치합니다. 이 경우 품질 비교는 가능하지만 처리 시간은 GPU에 모델 전체를 올린
 환경보다 느립니다. 보고서에서 4B와 12B 속도를 비교할 때 이 실행 조건을 함께 기록해야
 합니다.
+## Qwen3-VL 8B 운영 설정
+
+이미지 모델은 OCR, 장면 설명, 객체와 검색 키워드 추출까지만 담당합니다. 최종 카테고리 분류는 별도 텍스트 모델 `qwen3:8b`가 담당합니다.
+
+최종 MVP 설정은 `config.qwen3vl8b.fast.yaml`과 균형형 프롬프트 `prompts/analyze_image_fast.txt`입니다. 모델 재로딩 방지를 위해 `keep_alive: -1`을 적용합니다.
+
+```powershell
+ollama pull qwen3-vl:8b-instruct
+.\.venv\Scripts\python.exe run_benchmark.py --config config.qwen3vl8b.fast.yaml
+```
+
+## 서비스용 단건 이미지 분석
+
+최종 MVP 설정으로 이미지 한 장을 분석하려면 Ollama 서버를 실행한 뒤 다음 명령을 사용합니다.
+
+```powershell
+cd C:\S15P11C105\ai\ai-image
+.\.venv\Scripts\python.exe analyze_service_image.py datasets\images\샘플이미지.jpg
+```
+
+결과는 제목, 설명, 태그, OCR, 객체, 신뢰도와 실행 메타데이터를 포함한 JSON으로 출력됩니다.
+입출력 및 오류 코드 계약은 `docs/image-ai-contract.md`를 확인하세요.
+
+모델을 실행하지 않고 전처리와 결과 정규화 테스트만 확인하려면:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```

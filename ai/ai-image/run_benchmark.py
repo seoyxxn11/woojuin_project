@@ -10,7 +10,12 @@ from typing import Any
 
 import yaml
 
-from providers import GemmaProvider, GeminiGmsProvider, GmsProvider
+from providers import (
+    GemmaProvider,
+    GeminiGmsProvider,
+    GmsProvider,
+    OllamaVisionProvider,
+)
 from providers.base import ImageModelProvider
 from report import generate_reports
 
@@ -113,6 +118,8 @@ def create_provider(model_config: dict[str, Any]) -> ImageModelProvider:
         return GmsProvider(model_config)
     if provider == "gemini_gms":
         return GeminiGmsProvider(model_config)
+    if provider == "ollama_vision":
+        return OllamaVisionProvider(model_config)
     raise ValueError(f"현재 지원하지 않는 provider입니다: {provider}")
 
 
@@ -170,7 +177,11 @@ def main() -> int:
 
     results_dir = resolve_path(benchmark_config["results_dir"])
     results_dir.mkdir(parents=True, exist_ok=True)
-    safe_model_name = provider.model_id.rsplit("/", maxsplit=1)[-1]
+    safe_model_name = re.sub(
+        r'[^A-Za-z0-9._-]+',
+        "_",
+        provider.model_id.rsplit("/", maxsplit=1)[-1],
+    ).strip("._-")
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     output_path = results_dir / f"{timestamp}-{safe_model_name}.jsonl"
 

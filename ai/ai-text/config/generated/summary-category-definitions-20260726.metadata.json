@@ -1,0 +1,254 @@
+{
+  "model": "qwen3:8b",
+  "promptVersion": "category-description-v1",
+  "createdAt": "2026-07-26T18:53:02.775909+09:00",
+  "output": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\config\\generated\\summary-category-definitions-20260726.json",
+  "generatedCategories": [
+    "건강·운동",
+    "기타",
+    "돈·재테크",
+    "문화·콘텐츠",
+    "생활·할 일",
+    "쇼핑·제품",
+    "아이디어·영감",
+    "여행·장소",
+    "음식·맛집",
+    "음악",
+    "취업·커리어",
+    "학습·지식"
+  ],
+  "sampleRoot": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\dataset\\test",
+  "urlSamplePolicy": "summary 우선, summary가 없으면 content, 둘 다 없으면 제외",
+  "calls": [
+    {
+      "category": "건강·운동",
+      "sampleCount": 5,
+      "sourcePaths": [
+        "URL-001",
+        "URL-002",
+        "URL-003",
+        "URL-004",
+        "URL-005"
+      ],
+      "rawResponse": "{\"description\":\"이 카테고리는 건강 관리와 운동을 통한 체력 향상, 식습관 개선, 운동 기술 및 장비 선택 등에 대한 정보를 제공하는 것을 목적으로 합니다.\",\"examples\":[\"러닝 기록 개선을 위한 코어 운동의 중요성에 대한 설명\",\"다이어트 중 햄버거 선택 시 고려해야 할 영양 성분 비교\",\"러닝화 선택 시 사용자 평가와 신체 조건에 따른 적합성 분석\"]}",
+      "performance": {
+        "totalDurationMs": 26830.8856,
+        "loadDurationMs": 9240.3556,
+        "promptEvalDurationMs": 1268.007,
+        "evalDurationMs": 16293.655,
+        "promptEvalCount": 961,
+        "evalCount": 122,
+        "tokensPerSecond": 7.4875772194759245
+      }
+    },
+    {
+      "category": "기타",
+      "sampleCount": 3,
+      "sourcePaths": [
+        "URL-006",
+        "URL-008",
+        "URL-009"
+      ],
+      "rawResponse": "{\"description\":\"기타 카테고리는 주제나 목적에 따라 명확히 분류되지 않거나, 여러 카테고리와 중복될 수 있는 다양한 정보나 콘텐츠를 포함합니다. 주로 특정 주제에 대한 보도, 일반적인 정보 공유, 또는 특별한 목적을 가진 콘텐츠를 다룹니다.\",\"examples\":[\"다양한 소식을 전하는 뉴스 사이트\",\"국제 시장 진출 관련한 경제 활동 보도\",\"유쾌한 동물 행동을 담은 영상 콘텐츠\"]}",
+      "performance": {
+        "totalDurationMs": 19076.7605,
+        "loadDurationMs": 463.0202,
+        "promptEvalDurationMs": 1165.122,
+        "evalDurationMs": 17347.11,
+        "promptEvalCount": 647,
+        "evalCount": 134,
+        "tokensPerSecond": 7.724629635714536
+      }
+    },
+    {
+      "category": "돈·재테크",
+      "sampleCount": 3,
+      "sourcePaths": [
+        "URL-010",
+        "URL-011",
+        "URL-012"
+      ],
+      "rawResponse": "{\"description\":\"돈·재테크는 개인의 재무 관리, 투자 전략, 자산 형성 및 금융 상품에 대한 정보를 제공하는 카테고리로, 개인의 경제적 안정과 성장에 도움을 주는 내용을 다룹니다.\",\"examples\":[\"투자 수익률 비교 및 자산 배분 전략\", \"청년 주택 구입을 위한 지원 정책 안내\", \"개인 연금 계획 수립 방법\"]}",
+      "performance": {
+        "totalDurationMs": 16657.5559,
+        "loadDurationMs": 466.9791,
+        "promptEvalDurationMs": 1345.066,
+        "evalDurationMs": 14770.161,
+        "promptEvalCount": 651,
+        "evalCount": 111,
+        "tokensPerSecond": 7.515151662869484
+      }
+    },
+    {
+      "category": "문화·콘텐츠",
+      "sampleCount": 4,
+      "sourcePaths": [
+        "MEMO-001",
+        "URL-014",
+        "URL-015",
+        "URL-016"
+      ],
+      "rawResponse": "{\"description\":\"문화·콘텐츠는 예술, 음악, 공연, 콘서트, 콘텐츠 제작 및 관련 정보를 다루는 카테고리로, 문화적 활동과 콘텐츠 소비에 대한 정보를 제공합니다.\",\"examples\":[\"경기도에서 열리는 무료 콘서트 일정 및 장소 정보\",\"뉴진스의 컴백 영상 공유\",\"디지털 콘텐츠 제작 및 관리 방법\"]}",
+      "performance": {
+        "totalDurationMs": 18929.9617,
+        "loadDurationMs": 471.8873,
+        "promptEvalDurationMs": 2591.146,
+        "evalDurationMs": 15782.999,
+        "promptEvalCount": 1443,
+        "evalCount": 113,
+        "tokensPerSecond": 7.159602557156596
+      }
+    },
+    {
+      "category": "생활·할 일",
+      "sampleCount": 2,
+      "sourcePaths": [
+        "MEMO-002",
+        "URL-017"
+      ],
+      "rawResponse": "{\"description\":\"생활·할 일은 일상생활에서 필요한 준비물, 습관 형성, 일정 관리 등을 다루는 콘텐츠를 의미합니다. 일상적인 생활을 돕고, 효율적인 일정을 계획하는 데 초점을 맞춥니다.\",\"examples\":[\"기숙사에 필요한 물품 목록을 정리한 가이드\",\"아이의 생활습관을 길러주는 교육용 동영상\",\"일상생활에서 실용적인 팁을 제공하는 블로그 글\"]}",
+      "performance": {
+        "totalDurationMs": 18514.5847,
+        "loadDurationMs": 480.8988,
+        "promptEvalDurationMs": 1646.643,
+        "evalDurationMs": 16255.385,
+        "promptEvalCount": 879,
+        "evalCount": 122,
+        "tokensPerSecond": 7.505205198154335
+      }
+    },
+    {
+      "category": "쇼핑·제품",
+      "sampleCount": 2,
+      "sourcePaths": [
+        "MEMO-003",
+        "URL-021"
+      ],
+      "rawResponse": "{\"description\":\"쇼핑·제품은 소비자가 구매할 수 있는 상품이나 쇼핑 관련 정보를 제공하는 콘텐츠를 의미합니다. 이 카테고리는 구체적인 상품 목록, 할인 정보, 쇼핑 팁 등 쇼핑 활동을 지원하는 내용을 중심으로 합니다.\",\"examples\":[\"가성비 좋은 상품 추천 리스트\",\"할인 기간 중인 쇼핑몰의 특가 상품 안내\",\"구매할 상품을 정리한 장보기 목록\"]}",
+      "performance": {
+        "totalDurationMs": 19677.1282,
+        "loadDurationMs": 464.4685,
+        "promptEvalDurationMs": 1159.845,
+        "evalDurationMs": 17974.916,
+        "promptEvalCount": 565,
+        "evalCount": 125,
+        "tokensPerSecond": 6.954135418490968
+      }
+    },
+    {
+      "category": "아이디어·영감",
+      "sampleCount": 4,
+      "sourcePaths": [
+        "MEMO-004",
+        "URL-022",
+        "URL-023",
+        "URL-024"
+      ],
+      "rawResponse": "{\"description\":\"이 카테고리는 창의적인 아이디어 도출, 영감 부여, 창의적 사고 방법에 대한 정보를 제공하는 목적을 가진 콘텐츠를 분류합니다.\",\"examples\":[\"창의적인 아이디어를 유도하는 사고 기법에 대한 설명\",\"새로운 아이디어를 떠올리기 위한 실천 방법\",\"영감을 얻기 위한 창의적 사고 프로세스\"]}",
+      "performance": {
+        "totalDurationMs": 16826.9625,
+        "loadDurationMs": 454.0177,
+        "promptEvalDurationMs": 1552.159,
+        "evalDurationMs": 14755.1,
+        "promptEvalCount": 693,
+        "evalCount": 108,
+        "tokensPerSecond": 7.3195030870682
+      }
+    },
+    {
+      "category": "여행·장소",
+      "sampleCount": 2,
+      "sourcePaths": [
+        "URL-026",
+        "URL-027"
+      ],
+      "rawResponse": "{\"description\":\"이 카테고리는 특정 장소나 여행 경험에 대한 정보를 제공하며, 여행 계획 수립, 관광지 탐방, 현지 문화 체험 등에 대한 내용을 다룹니다.\",\"examples\":[\"명소 탐방 및 관광 정보 제공\",\"지역별 여행 팁과 추천 코스 안내\",\"현지 맛집과 카페 추천\"]}",
+      "performance": {
+        "totalDurationMs": 14146.4931,
+        "loadDurationMs": 458.2661,
+        "promptEvalDurationMs": 1477.552,
+        "evalDurationMs": 12126.069,
+        "promptEvalCount": 592,
+        "evalCount": 92,
+        "tokensPerSecond": 7.586959962045409
+      }
+    },
+    {
+      "category": "음식·맛집",
+      "sampleCount": 5,
+      "sourcePaths": [
+        "MEMO-005",
+        "URL-028",
+        "URL-030",
+        "URL-031",
+        "URL-033"
+      ],
+      "rawResponse": "{\"description\":\"음식·맛집은 특정 지역 또는 음식 종류에 대한 식당, 요리, 음식 재료, 맛집 추천, 음식 관련 경험 등을 다루는 카테고리로, 음식을 중심으로 한 정보나 경험 공유를 목적으로 합니다.\",\"examples\":[\"광주 수완지구의 인기 맛집 10곳을 소개한 글\",\"한국 음식을 처음 접하는 외국인의 시도 모습을 담은 영상\",\"특정 음식 재료를 사용한 요리법이나 조합에 대한 설명\"]}",
+      "performance": {
+        "totalDurationMs": 24291.9174,
+        "loadDurationMs": 430.5406,
+        "promptEvalDurationMs": 2711.6,
+        "evalDurationMs": 21083.525,
+        "promptEvalCount": 1749,
+        "evalCount": 139,
+        "tokensPerSecond": 6.592825440717337
+      }
+    },
+    {
+      "category": "음악",
+      "sampleCount": 1,
+      "sourcePaths": [
+        "URL-034"
+      ],
+      "rawResponse": "{\"description\":\"음악 카테고리는 음악 콘텐츠의 제공, 감상, 또는 관련 정보를 다루는 목적을 가진 데이터를 포함합니다.\",\"examples\":[\"음악 앨범의 공식 제공 URL\",\"음악 작곡가의 창작 배경 설명\",\"음악 장르에 따른 분류 기준\"]}",
+      "performance": {
+        "totalDurationMs": 10756.4528,
+        "loadDurationMs": 481.9115,
+        "promptEvalDurationMs": 644.693,
+        "evalDurationMs": 9463.381,
+        "promptEvalCount": 485,
+        "evalCount": 78,
+        "tokensPerSecond": 8.242297335381508
+      }
+    },
+    {
+      "category": "취업·커리어",
+      "sampleCount": 1,
+      "sourcePaths": [
+        "URL-036"
+      ],
+      "rawResponse": "{\"description\":\"취업·커리어 카테고리는 취업 준비, 채용 정보, 경력 개발, 직무 관련 자료 등을 제공하는 콘텐츠를 다룹니다. 이는 개인의 직업적 성장과 경력 관리에 도움을 주는 정보를 중심으로 구성됩니다.\",\"examples\":[\"취업 준비 필수 채용 사이트 안내\",\"직무별 면접 팁 공유\",\"경력 개발을 위한 학습 자료 제공\"]}",
+      "performance": {
+        "totalDurationMs": 17199.7057,
+        "loadDurationMs": 449.7285,
+        "promptEvalDurationMs": 1221.654,
+        "evalDurationMs": 15461.803,
+        "promptEvalCount": 499,
+        "evalCount": 115,
+        "tokensPerSecond": 7.43768369057606
+      }
+    },
+    {
+      "category": "학습·지식",
+      "sampleCount": 6,
+      "sourcePaths": [
+        "URL-038",
+        "URL-039",
+        "URL-040",
+        "URL-041",
+        "URL-042",
+        "URL-043"
+      ],
+      "rawResponse": "{\"description\":\"학습·지식은 새로운 지식을 습득하거나 기존 지식을 체계화하여 개인의 학습과 성장에 도움을 주는 내용을 다룹니다.\",\"examples\":[\"새로운 언어를 배우는 방법에 대한 안내\",\"컴퓨터 공학 전공자가 갖춰야 할 역량에 대한 분석\",\"효과적인 학습 환경을 조성하는 음악 소개\"]}",
+      "performance": {
+        "totalDurationMs": 16576.2422,
+        "loadDurationMs": 458.7706,
+        "promptEvalDurationMs": 1849.634,
+        "evalDurationMs": 14199.121,
+        "promptEvalCount": 925,
+        "evalCount": 102,
+        "tokensPerSecond": 7.183543262994942
+      }
+    }
+  ]
+}

@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from src.url_summary_policy import usable_url_summary
+
 
 DESCRIPTION_SCHEMA: dict[str, Any] = {
     "type": "object",
@@ -66,7 +68,7 @@ def prepare_description_items(items: list[dict[str, Any]]) -> list[dict[str, Any
 
         summary = payload.get("summary")
         content = payload.get("content")
-        summary_text = summary.strip() if isinstance(summary, str) else ""
+        summary_text = usable_url_summary(summary)
         content_text = content.strip() if isinstance(content, str) else ""
         if not summary_text and not content_text:
             continue

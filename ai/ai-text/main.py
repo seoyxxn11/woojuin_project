@@ -47,6 +47,7 @@ from src.response_parser import (
 )
 from src.result_writer import write_csv, write_json
 from src.settings import Settings, load_settings
+from src.url_summary_policy import usable_url_summary
 
 
 ROOT = Path(__file__).resolve().parent
@@ -179,12 +180,45 @@ def write_url_summary(item: dict[str, Any], summary: str) -> Path | None:
     value = json.loads(source.read_text(encoding="utf-8"))
     if not isinstance(value, dict) or str(value.get("type", "")).upper() != "URL":
         raise ValueError(f"URL 테스트 JSON 형식이 아닙니다: {source}")
-    value["summary"] = summary.strip()
+    value["summary"] = usable_url_summary(summary)
     source.write_text(
         json.dumps(value, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
     return source
+
+
+def model_input_for_mode(item: dict[str, Any], mode: str) -> str:
+    """URL 카테고리 분류에는 원문 content 대신 저장된 summary를 사용한다."""
+    original = str(item.get("input", ""))
+    if mode != "category-only" or item.get("inputType") != "url":
+        return original
+    try:
+        value = json.loads(original)
+    except json.JSONDecodeError:
+        return original
+    if not isinstance(value, dict):
+        return original
+    classification_input = {
+        "type": "URL",
+        "url": value.get("url"),
+        "summary": usable_url_summary(value.get("summary")),
+    }
+    return json.dumps(
+        classification_input,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+
+
+def category_classification_eligible(item: dict[str, Any]) -> bool:
+    if item.get("inputType") != "url":
+        return True
+    try:
+        value = json.loads(str(item.get("input", "")))
+    except json.JSONDecodeError:
+        return False
+    return isinstance(value, dict) and bool(usable_url_summary(value.get("summary")))
 
 
 def planned_output(modes: list[str], selector: str) -> Path:
@@ -374,6 +408,14 @@ def run_mode(
     repeat: int,
     write_url_summaries: bool = True,
 ) -> None:
+    if mode == "category-only":
+        before = len(data)
+        data = [item for item in data if category_classification_eligible(item)]
+        excluded = before - len(data)
+        if excluded:
+            print(f"[INFO] 사용 가능한 URL summary가 없어 category-only에서 제외: {excluded}건")
+        if not data:
+            raise ValueError("category-only에 사용할 수 있는 데이터가 없습니다.")
     out.mkdir(parents=True, exist_ok=True)
     providers = make_providers(project_config, settings)
     openai_config = project_config.get("openai", {})
@@ -450,9 +492,10 @@ def run_mode(
                 for run_number in range(1, repeat + 1):
                     request_number += 1
                     print(f"[{request_number}/{len(data) * repeat} 요청] {item['testId']} ({run_number}/{repeat})")
+                    model_input = model_input_for_mode(item, mode)
                     built_prompt = build_prompt(
                         prompt_template,
-                        item["input"],
+                        model_input,
                         categories,
                         item.get("title", ""),
                         definitions,
@@ -494,7 +537,7 @@ def run_mode(
                             "testId": item["testId"],
                             "title": item.get("title", ""),
                             "sourcePath": item.get("sourcePath", ""),
-                            "input": item["input"],
+                            "input": model_input,
                             "expectedCategoryName": item["expected"]["categories"][0],
                             "scenario": "typed-category-classification",
                             "structure": "split",

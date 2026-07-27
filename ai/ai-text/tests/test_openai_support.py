@@ -355,6 +355,67 @@ def test_generated_url_summary_is_written_back_to_test_json(monkeypatch, tmp_pat
     assert saved["content"] == "노래 원문"
 
 
+def test_url_category_classification_uses_summary_without_content():
+    item = {
+        "inputType": "url",
+        "input": json.dumps(
+            {
+                "type": "URL",
+                "title": "개발자 채용 정보",
+                "url": "https://example.com/jobs",
+                "content": "매우 긴 원문 데이터",
+                "summary": "백엔드 개발자 채용 공고를 소개합니다.",
+                "preview": {"description": "미리보기 원문"},
+            },
+            ensure_ascii=False,
+        ),
+    }
+
+    model_input = app.model_input_for_mode(item, "category-only")
+    value = json.loads(model_input)
+
+    assert value == {
+        "type": "URL",
+        "url": "https://example.com/jobs",
+        "summary": "백엔드 개발자 채용 공고를 소개합니다.",
+    }
+    assert "매우 긴 원문 데이터" not in model_input
+    assert "미리보기 원문" not in model_input
+    assert "개발자 채용 정보" not in model_input
+
+
+def test_url_summary_mode_keeps_original_content():
+    original = '{"type":"URL","content":"요약할 원문","summary":null}'
+    item = {"inputType": "url", "input": original}
+
+    assert app.model_input_for_mode(item, "summary-only") == original
+
+
+def test_url_without_usable_summary_is_excluded_from_category_accuracy():
+    missing = {
+        "inputType": "url",
+        "input": '{"type":"URL","summary":null}',
+    }
+    placeholder = {
+        "inputType": "url",
+        "input": json.dumps(
+            {"type": "URL", "summary": "제공된 콘텐츠는 요약할 수 있는 내용이 없습니다."},
+            ensure_ascii=False,
+        ),
+    }
+    usable = {
+        "inputType": "url",
+        "input": json.dumps(
+            {"type": "URL", "summary": "개발자 채용 사이트를 소개합니다."},
+            ensure_ascii=False,
+        ),
+    }
+
+    assert app.category_classification_eligible(missing) is False
+    assert app.category_classification_eligible(placeholder) is False
+    assert app.category_classification_eligible(usable) is True
+
+
 @pytest.mark.integration
 @pytest.mark.requires_openai_api_key
 def test_openai_live_call_requires_explicit_opt_in(monkeypatch):

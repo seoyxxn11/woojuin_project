@@ -73,6 +73,13 @@ URL 데이터를 `summary-only` 또는 `integrated`로 실행하면 성공한 AI
 `dataset/test/<카테고리>/url/*.txt` JSON의 `summary` 필드에도 기록합니다.
 기록하지 않으려면 `--no-write-url-summary`를 사용합니다.
 
+URL `category-only` 분류에서는 원문 `content`와 `preview`를 모델에 전달하지 않고
+`url`과 저장된 `summary`만 사용합니다. 일부 URL의 `title`에는 게시물 원문 전체가
+들어갈 수 있어 카테고리 분류 입력에서 제외합니다. 따라서 먼저 `summary-only`를 실행해
+URL JSON의 `summary`를 채운 뒤 카테고리 분류를 실행하는 순서를 권장합니다.
+`summary`가 비어 있거나 “요약할 내용이 없음”, “정보가 누락됨”처럼 내용 부재를
+알리는 결과인 URL은 category-only 요청과 정확도 계산 분모에서 제외합니다.
+
 실제 모델 테스트에서는 `--dry-run`을 제거합니다. 설명 없이 이름만 비교하려면
 `--no-category-descriptions`를 추가합니다.
 

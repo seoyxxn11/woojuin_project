@@ -353,6 +353,7 @@ def test_generated_url_summary_is_written_back_to_test_json(monkeypatch, tmp_pat
     saved = json.loads(source.read_text(encoding="utf-8"))
     assert saved["summary"] == "AI가 생성한 음악 요약"
     assert saved["content"] == "노래 원문"
+    assert json.loads(item["input"])["summary"] == "AI가 생성한 음악 요약"
 
 
 def test_url_category_classification_uses_summary_without_content():

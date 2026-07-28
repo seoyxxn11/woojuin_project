@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"gmarket.co.kr","url":"https://m.gmarket.co.kr/n/list?category=300010404","content":null,"summary":"gmarket.co.kr의 특정 카테고리 상품 목록 페이지 URL입니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

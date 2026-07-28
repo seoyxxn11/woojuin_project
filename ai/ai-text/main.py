@@ -18,6 +18,7 @@ from src.dataset_loader import (
     load_categories,
     load_category_definitions,
     load_dataset,
+    load_flat_test_dataset,
     load_memo_dataset,
     load_typed_test_dataset,
     validate_expected_categories,
@@ -95,6 +96,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="dataset/test에서 실행할 입력 유형 (기본: all)",
     )
     parser.add_argument(
+        "--dataset-root",
+        type=Path,
+        help="dataset/tester 아래에 구조화한 <카테고리>/*.txt 폴더",
+    )
+    parser.add_argument(
         "--category-descriptions",
         action=argparse.BooleanOptionalAction,
         default=True,
@@ -138,11 +144,17 @@ def load_test_data(options: argparse.Namespace) -> tuple[list[dict], list[str], 
         data = memo_data if not json_data else json_data + memo_data
         dataset_type = "memo+json" if json_data else "memo"
     else:
-        test_root = ROOT / "dataset" / "test"
-        data, categories = load_typed_test_dataset(test_root, options.input_type)
+        test_root = (
+            options.dataset_root.resolve()
+            if options.dataset_root
+            else ROOT / "dataset" / "test"
+        )
+        loader = load_flat_test_dataset if options.dataset_root else load_typed_test_dataset
+        data, categories = loader(test_root, options.input_type)
         definitions = load_category_definitions(definitions_path, test_root)
         selected_types = sorted({item["inputType"] for item in data})
-        dataset_type = "test:" + "+".join(selected_types)
+        prefix = "tester" if options.dataset_root else "test"
+        dataset_type = prefix + ":" + "+".join(selected_types)
     if options.test_ids:
         known = {item["testId"] for item in data}
         unknown = sorted(set(options.test_ids) - known)
@@ -173,7 +185,12 @@ def write_url_summary(item: dict[str, Any], summary: str) -> Path | None:
     """AI가 생성한 URL 요약을 해당 로컬 테스트 JSON에 기록한다."""
     if item.get("inputType") != "url" or not summary.strip():
         return None
-    test_root = (ROOT / "dataset" / "test").resolve()
+    source_root = item.get("sourceRoot")
+    test_root = (
+        Path(str(source_root)).resolve()
+        if source_root
+        else (ROOT / "dataset" / "test").resolve()
+    )
     source = (test_root / str(item.get("sourcePath", ""))).resolve()
     if not source.is_relative_to(test_root) or not source.is_file():
         raise ValueError(f"URL 요약을 기록할 테스트 파일이 없습니다: {source}")
@@ -181,10 +198,9 @@ def write_url_summary(item: dict[str, Any], summary: str) -> Path | None:
     if not isinstance(value, dict) or str(value.get("type", "")).upper() != "URL":
         raise ValueError(f"URL 테스트 JSON 형식이 아닙니다: {source}")
     value["summary"] = usable_url_summary(summary)
-    source.write_text(
-        json.dumps(value, ensure_ascii=False, separators=(",", ":")) + "\n",
-        encoding="utf-8",
-    )
+    serialized = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+    source.write_text(serialized + "\n", encoding="utf-8")
+    item["input"] = serialized
     return source
 
 

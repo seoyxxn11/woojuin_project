@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"www.kkday.com","url":"https://www.kkday.com/ko/blog/15917/asia-korea-gangwon-sokcho-spots-5","content":null,"summary":"","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

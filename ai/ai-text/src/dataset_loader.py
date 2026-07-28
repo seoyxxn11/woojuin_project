@@ -176,6 +176,79 @@ def load_typed_test_dataset(
     return items, categories
 
 
+def load_flat_test_dataset(
+    test_root: Path,
+    input_types: list[str] | tuple[str, ...] = ("all",),
+) -> tuple[list[dict], list[str]]:
+    """<카테고리>/*.txt 구조의 JSON 결과 파일을 공통 테스트 데이터로 읽는다."""
+    categories = load_categories(test_root)
+    requested = {value.lower() for value in input_types}
+    allowed = {"url", "image", "memo", "all"}
+    invalid = requested - allowed
+    if invalid:
+        raise ValueError(f"지원하지 않는 입력 유형: {sorted(invalid)}")
+    selected = {"url", "image", "memo"} if "all" in requested else requested
+    if not selected:
+        raise ValueError("입력 유형을 하나 이상 선택해야 합니다")
+
+    parsed: list[tuple[Path, str, str, str]] = []
+    for category in categories:
+        files = sorted(
+            (path for path in (test_root / category).glob("*.txt") if path.is_file()),
+            key=lambda path: path.name.casefold(),
+        )
+        for path in files:
+            raw = path.read_text(encoding="utf-8").strip()
+            if not raw:
+                raise ValueError(f"빈 테스트 파일입니다: {path}")
+            try:
+                value = json.loads(raw)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"{path}: 구조화 데이터는 JSON 객체여야 합니다") from exc
+            if not isinstance(value, dict):
+                raise ValueError(f"{path}: 구조화 데이터는 JSON 객체여야 합니다")
+            data_type = str(value.get("type", "")).lower()
+            if data_type not in {"url", "image", "memo"}:
+                raise ValueError(f"{path}: 지원하지 않는 result.type입니다: {value.get('type')}")
+            if data_type not in selected:
+                continue
+            title, content = _typed_test_content(path, data_type, raw)
+            parsed.append((path, category, data_type, content))
+
+    counters = {data_type: 0 for data_type in selected}
+    items: list[dict] = []
+    for path, category, data_type, content in parsed:
+        counters[data_type] += 1
+        value = json.loads(content)
+        title = (
+            str(value.get("url", "")).strip()
+            if data_type == "url"
+            else str(value.get("title") or path.stem).strip()
+        )
+        prefix = data_type.upper()
+        items.append({
+            "testId": f"{prefix}-{counters[data_type]:03d}",
+            "type": prefix,
+            "inputType": data_type,
+            "input": content,
+            "title": title,
+            "sourceTitle": title,
+            "sourcePath": path.relative_to(test_root).as_posix(),
+            "sourceRoot": str(test_root.resolve()),
+            "idAutoAssigned": True,
+            "datasetType": f"tester-{data_type}",
+            "expected": {
+                "categories": [category],
+                "requiredKeywords": [],
+                "summaryPoints": [],
+                "forbiddenClaims": [],
+            },
+        })
+    if not items:
+        raise ValueError("선택한 입력 유형에 해당하는 테스트 데이터가 없습니다")
+    return items, categories
+
+
 def _typed_test_content(path: Path, data_type: str, raw: str) -> tuple[str, str]:
     if data_type == "memo":
         return path.stem, raw

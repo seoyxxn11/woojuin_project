@@ -83,6 +83,49 @@ URL JSON의 `summary`를 채운 뒤 카테고리 분류를 실행하는 순서�
 실제 모델 테스트에서는 `--dry-run`을 제거합니다. 설명 없이 이름만 비교하려면
 `--no-category-descriptions`를 추가합니다.
 
+### 내보내기 TXT 구조화
+
+각 행이 `expected`와 `result`를 가진 JSON 객체인 JSONL 형식의 TXT 파일은
+다음 명령으로 카테고리별 파일로 나눌 수 있습니다.
+
+```powershell
+cd ai/ai-text
+.\.venv\Scripts\python.exe .\structure_test_dataset.py "C:\Downloads\export.txt"
+```
+
+입력 파일이 `export.txt`라면 아래처럼 입력 파일명과 정답 카테고리를 기준으로
+폴더를 만들고, 각 `result` 객체를 개별 TXT 파일로 저장합니다.
+
+```text
+dataset/tester/export/
+├── 생활·할 일/
+│   └── 0000-url.txt
+└── 학습·지식/
+    └── 0001-url.txt
+```
+
+여러 TXT 파일을 한 명령에 전달할 수도 있습니다. 같은 입력 파일명으로 생성된
+폴더가 이미 있으면 기본적으로 중단하며, 기존 TXT를 교체하려면 `--overwrite`를
+명시합니다.
+
+구조화한 폴더를 직접 지정해 URL 요약을 생성한 뒤, 저장된 요약으로 카테고리를
+분류하려면 다음 순서로 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\main.py `
+  --dataset-root ".\dataset\tester\<입력 파일명>" `
+  --input-type url `
+  --summary-only
+
+.\.venv\Scripts\python.exe .\main.py `
+  --dataset-root ".\dataset\tester\<입력 파일명>" `
+  --input-type url `
+  --category-only
+```
+
+첫 번째 명령은 생성된 요약을 지정 데이터셋의 각 URL TXT에 기록합니다. 두 작업을
+한 명령으로 모두 실행하려면 `--modes summary-only category-only`를 사용합니다.
+
 ### 카테고리 데이터로 설명 생성
 
 `dataset/test/<카테고리>/<memo|url|image>`의 샘플을 카테고리별로 합쳐 AI가 설명과 대표 예시를 생성할 수 있습니다. URL은 `summary`를 우선 사용하고, 없으면 `content`를 사용합니다. 둘 다 없으면 설명 생성 샘플에서 제외하며, 카테고리에 사용할 샘플이 하나도 없으면 카테고리 이름만 보고 설명을 생성합니다. 기존 `config/categories.json`은 수정하지 않고 `config/generated/` 아래에 재사용 가능한 정의와 생성 이력을 따로 저장합니다.

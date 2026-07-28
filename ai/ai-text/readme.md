@@ -1,15 +1,8 @@
 # AI 텍스트 모델 테스트 도구
 
-동일한 데이터, 프롬프트, JSON Schema, 평가 코드로 Ollama 로컬 모델과 OpenAI API 모델을 비교하는 도구입니다. 기존 Ollama 전용 진입점인 `run_tests.py`는 그대로 유지하고, 설정 기반 공통 실행은 `main.py`를 사용합니다.
+현재 기본 실험은 `qwen3:8b` 하나만 사용해 분리 처리와 통합 처리, 카테고리 설명 사용 여부가 분류 정확도에 미치는 영향을 비교합니다. 실행 진입점은 `run_classification_experiment.py`입니다.
 
-지원 모드는 다음 네 가지입니다.
-
-| 모드 | 모델 출력 | 주요 평가 |
-|---|---|---|
-| `category-only` | `category`, `confidence` | Accuracy, Macro Precision/Recall/F1, 혼동 행렬, confidence |
-| `summary-only` | `summary` | 필수 키워드·핵심 내용 재현율, 금지 표현 |
-| `metadata-only` | `tags`, `keywords` | 개수·중복 제약, 원문 키워드 포함 비율 |
-| `integrated` | 요약, 카테고리, 태그, 키워드 | 분류·요약·메타데이터 통합 평가 |
+기존 Ollama·OpenAI 모델 비교 코드와 결과는 과거 모델 선정 근거를 재현할 수 있도록 보존합니다.
 
 ## 카테고리
 
@@ -30,6 +23,161 @@
 ```
 
 `dataset/memo/<카테고리>/*.txt`의 상위 폴더명이 메모 테스트의 정답입니다. 상세 설명과 예시는 `config/categories.json`에서 관리하며 폴더명과 정의 이름은 정확히 일치해야 합니다. 기술 구현과 개발·IT 참고 내용은 `학습·지식`, 실행 체크리스트는 `생활·할 일`, 발상과 개선 방향은 `아이디어·영감`으로 분류합니다.
+
+### 카테고리 데이터로 설명 생성
+
+카테고리 폴더의 실제 메모를 읽어 AI가 설명과 대표 예시를 생성할 수 있습니다. 기존 `config/categories.json`은 수정하지 않고 `config/generated/` 아래에 재사용 가능한 정의와 생성 이력을 따로 저장합니다.
+
+```powershell
+cd ai/ai-text
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py --dry-run
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py
+```
+
+일부 카테고리만 만들거나 출력 파일을 직접 지정할 수도 있습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py `
+  --categories "학습·지식" "생활·할 일" `
+  --output .\config\generated\my-category-definitions.json
+```
+
+생성된 정의를 분류 비교 실험에서 바로 사용하려면 다음처럼 지정합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+  --category-definitions .\config\generated\my-category-definitions.json
+```
+
+기존 출력 파일은 실수로 덮어쓰지 않으며, 같은 경로를 갱신하려면 `--overwrite`를 명시해야 합니다.
+
+### 카테고리 설명 3조건 비교
+
+동일한 원문 메모를 `AI 생성 설명`, `기존 설명`, `카테고리 이름만`의 세 조건으로 각각 분류할 수 있습니다. 기본 임계값은 `config.yaml`의 `classification.threshold`이며 현재 0.65입니다.
+
+```powershell
+cd ai/ai-text
+.\.venv\Scripts\python.exe .\run_category_description_comparison.py `
+  --generated-definitions .\config\generated\category-descriptions-20260722-164953.json
+```
+
+호출 수와 설정만 먼저 확인하려면 `--dry-run`을 붙입니다. 빠른 검증은 `--limit 3`, 다른 임계값은 `--threshold 0.70`, 결과 위치 지정은 `--output <폴더>`를 사용할 수 있습니다.
+
+결과는 `results/5차 카테고리 설명 비교/<실행시각>/`에 저장합니다. `reports/comparison.md`에서 Top-1, 완화 정확도, fallback 적용 최종 정답률과 평균 시간을 한 표로 확인할 수 있습니다.
+
+## 현재 실험: 8B 다중 카테고리 분류 비교
+
+모델은 카테고리별 `score`(카테고리 적합도 점수)를 반환합니다. 이 값은 통계적으로 보정된 수치로 해석하지 않습니다. 원본 응답을 한 번 저장한 뒤 같은 결과에 여러 임계값을 적용하므로 임계값 수가 늘어나도 모델 호출 수는 늘어나지 않습니다. 현재 데이터의 정답은 메모당 하나이며 ID는 `config/categories.json`에서 관리합니다.
+
+동일한 메모를 다음 네 조건으로 실행합니다. 각 조건은 데이터마다 분류 원본 응답을 한 번만 생성합니다.
+
+| 조건 | 처리 방식 | 카테고리 설명 | 메모당 호출 수 |
+|---|---|---:|---:|
+| `split-with-description` | 분류 단독 | 있음 | 1 |
+| `split-without-description` | 분류 단독 | 없음 | 1 |
+| `integrated-with-description` | 분류·요약·정리 통합 | 있음 | 1 |
+| `integrated-without-description` | 분류·요약·정리 통합 | 없음 | 1 |
+
+먼저 모델을 호출하지 않는 실행 계획을 확인합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py --dry-run
+```
+
+전체 메모를 네 조건으로 한 번씩 실행합니다. 메모 78개 기준 총 312회 호출하고, 기본 임계값 5개에 대한 1,560건 평가는 추가 호출 없이 처리합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py
+```
+
+실제 전체 실행 전에 메모 2개로 연결과 출력 형식을 확인할 수 있습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py --limit 2
+```
+
+실행을 중단한 경우 생성된 상위 결과 폴더를 지정하면 완료된 메모를 건너뛰고 이어서 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+  --resume ".\results\4차 다중 카테고리 분류 비교\20260722-150000"
+```
+
+저장된 원본 결과만 다른 임계값으로 다시 평가할 수 있습니다. 이 명령은 Ollama를 호출하지 않습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_classification_experiment.py `
+  --evaluate-only `
+  --resume ".\results\4차 다중 카테고리 분류 비교\20260722-150000" `
+  --thresholds 0.55 0.60 0.65 0.70
+```
+
+결과는 다음 구조로 저장됩니다.
+
+```text
+results/4차 다중 카테고리 분류 비교/<실행시각>/
+├── raw/<조건>/results.jsonl
+├── threshold/<조건>/<임계값>/
+│   ├── evaluation-results.json
+│   ├── evaluation-results.csv
+│   ├── metrics.json
+│   └── evaluation-metadata.json
+├── reports/
+│   ├── summary.md
+│   ├── threshold-comparison.csv
+│   └── error-analysis.md
+├── json/detailed-results.json
+├── csv/detailed-results.csv
+└── run-metadata.json
+```
+
+주요 지표는 `Relaxed Accuracy`, `Top-1 Accuracy`, `Exact Accuracy`, `Gold Coverage`, `Over-prediction Rate` 순으로 판단합니다. 정답만 선택하면 `EXACT_CORRECT`, 정답과 추가 카테고리 하나를 선택하면 `RELAXED_CORRECT`, 추가 카테고리가 두 개 이상이면 `WRONG_OVER_PREDICTION`입니다. 서비스 최대 2개 제한은 평가를 마친 뒤에만 적용합니다.
+
+현재 테스트 데이터에는 정답 카테고리가 하나만 존재하므로, 정답과 함께 반환된 추가 카테고리가 실제로 적합한지 완전히 검증할 수 없습니다. 따라서 추가 카테고리 1개까지 허용하는 Relaxed Accuracy는 정식 다중 라벨 정확도가 아니라 단일 정답 데이터 기반 완화 지표입니다.
+
+## 메모 임베딩 및 UMAP 3차원 좌표
+
+`text-embedding-3-small`로 현재 메모 78개를 임베딩한 뒤 UMAP으로 3차원 좌표를 생성합니다. 의미 있는 제목은 본문과 함께 사용하고, `텍스트-날짜` 형식의 자동 제목은 제외합니다. API는 `config.yaml`의 SSAFY GMS Base URL과 프로젝트 루트 `.env`의 `GMS_KEY`를 사용합니다.
+
+먼저 API를 호출하지 않는 실행 계획을 확인합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_embedding_umap.py --dry-run
+```
+
+의존성을 설치한 뒤 전체 데이터를 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe .\run_embedding_umap.py
+```
+
+소량으로 형식만 확인하려면 UMAP 변환에 필요한 최소 3개 이상을 지정합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_embedding_umap.py --limit 5
+```
+
+실행 중단 후에는 생성된 결과 폴더를 지정해 저장된 임베딩 다음부터 이어갑니다. 메모 본문이나 모델이 변경된 캐시는 안전을 위해 재사용하지 않습니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_embedding_umap.py `
+  --resume ".\results\4차 임베딩 시각화\20260722-170000"
+```
+
+결과 구조는 다음과 같습니다.
+
+```text
+results/4차 임베딩 시각화/<실행시각>/
+├── raw/
+│   └── embeddings.jsonl  # 배치마다 즉시 저장되는 재개용 벡터
+├── embeddings.json       # 메모 정보와 원본 임베딩 벡터
+├── umap-3d.json          # x, y, z 좌표와 카테고리
+├── umap-3d.csv
+└── run-metadata.json     # 모델, UMAP 설정, 요청·토큰 수
+```
+
+기본값은 API 배치 크기 64, `n_neighbors=15`, `min_dist=0.1`, `metric=cosine`, `random_state=42`입니다. `--batch-size`, `--n-neighbors`, `--min-dist`, `--metric`, `--random-state`로 바꿀 수 있습니다. API 키 값은 결과나 로그에 기록하지 않습니다.
 
 ## 설치
 
@@ -191,7 +339,10 @@ OpenAI 모델에는 호환성을 위해 temperature, seed, Ollama context length
 ```text
 results/
 ├── 1차 통합 테스트/   # 초기 4B·8B 통합 응답 비교
-└── 2차 분류 테스트/   # 분류 정확도 중심의 모드 분리·API 비교
+├── 2차 분류 테스트/   # 분류 정확도 중심의 모드 분리·API 비교
+├── 3차 분류 구조 비교/ # 8B 분리·통합 및 설명 유무 비교
+├── 4차 임베딩 시각화/ # text-embedding-3-small 및 UMAP 3차원 좌표
+└── 4차 다중 카테고리 분류 비교/ # 적합도 임계값 및 단일 정답 완화 평가
 ```
 
 단일 모드는 다음과 같이 저장합니다.

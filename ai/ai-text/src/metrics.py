@@ -30,7 +30,10 @@ def classification_metrics(rows: list[dict], categories: list[str]) -> dict[str,
     for category in categories:
         tp = matrix[category][category]
         fp = sum(matrix[actual][category] for actual in categories if actual != category)
-        fn = sum(matrix[category][predicted] for predicted in categories if predicted != category)
+        fn = sum(
+            row.get("expectedCategory") == category and row.get("generatedCategory") != category
+            for row in eligible
+        )
         support = sum(row.get("expectedCategory") == category for row in eligible)
         precision = tp / (tp + fp) if tp + fp else None
         recall = tp / (tp + fn) if tp + fn else None

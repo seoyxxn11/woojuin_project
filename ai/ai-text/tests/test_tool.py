@@ -119,7 +119,7 @@ def test_category_folders_drive_prompt_and_schema(tmp_path):
 def test_category_definitions_match_folders_and_reach_prompt(tmp_path):
     memo=tmp_path/"memo"; (memo/"학습·지식").mkdir(parents=True)
     path=tmp_path/"categories.json"
-    path.write_text(json.dumps([{"name":"학습·지식","description":"기술과 지식 정리 중심","examples":["JWT 구현"]}],ensure_ascii=False),encoding="utf-8")
+    path.write_text(json.dumps([{"id":"LEARNING_KNOWLEDGE","name":"학습·지식","description":"기술과 지식 정리 중심","examples":["JWT 구현"]}],ensure_ascii=False),encoding="utf-8")
     definitions=load_category_definitions(path,memo)
     prompt=build_prompt("{{CATEGORY_DEFINITIONS}}\n{{TITLE_CONTEXT}}{{CONTENT}}","본문",["학습·지식"],category_definitions=definitions)
     assert "기술과 지식 정리 중심" in prompt and "JWT 구현" in prompt

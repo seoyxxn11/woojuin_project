@@ -5,6 +5,11 @@ Thumbs.db
 *.iml
 .vscode/*
 !.vscode/extensions.json
+backend/.classpath
+backend/.factorypath
+backend/.project
+backend/.settings/
+backend/bin/
 
 # --- Env / Secrets ---
 .env
@@ -30,6 +35,9 @@ backend/out/
 # --- Test / Coverage ---
 coverage/
 *.lcov
+__screenshots__/
+.vitest-attachments/
+test-results/
 
 # --- Docker ---
 docker-volumes/

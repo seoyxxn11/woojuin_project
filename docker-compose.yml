@@ -1,4 +1,4 @@
-# 로컬 개발용 인프라 (PostgreSQL + Redis)
+# 로컬 개발용 인프라 (PostgreSQL + Redis + MinIO)
 # 사용: docker compose up -d
 services:
   postgres:
@@ -19,5 +19,19 @@ services:
     ports:
       - "6379:6379"
 
+  minio:
+    image: minio/minio:latest
+    container_name: woojuin-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: woojuin
+      MINIO_ROOT_PASSWORD: woojuin-local
+    ports:
+      - "9000:9000"   # S3 API
+      - "9001:9001"   # 콘솔
+    volumes:
+      - minio-data:/data
+
 volumes:
   postgres-data:
+  minio-data:

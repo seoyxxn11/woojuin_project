@@ -1,1 +1,34 @@
-cd frontend && npm run type-check
+# 프론트엔드(frontend/) 파일이 변경된 푸시에서만 type-check를 실행한다.
+# 백엔드만 수정한 푸시는 프론트 설치/타입 상태와 무관하게 통과시킨다.
+# git이 pre-push stdin으로 넘겨주는 "<local_ref> <local_sha> <remote_ref> <remote_sha>"를 읽어
+# 이번 푸시가 실제로 건드리는 커밋 범위를 계산한 뒤, 그 안에 frontend/ 변경이 있는지만 본다.
+
+ZERO=0000000000000000000000000000000000000000
+run_check=0
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  # 브랜치 삭제 푸시는 검사할 게 없다.
+  [ "$local_sha" = "$ZERO" ] && continue
+
+  if [ "$remote_sha" = "$ZERO" ]; then
+    # 새 브랜치 푸시: origin의 어느 브랜치에도 없는 새 커밋들만 대상으로 삼는다.
+    new_commits=$(git rev-list "$local_sha" --not --remotes=origin)
+    [ -z "$new_commits" ] && continue
+    oldest=$(printf '%s\n' "$new_commits" | tail -n 1)
+    base="${oldest}^"
+  else
+    # 기존 브랜치 갱신: 원격 tip 이후로 추가되는 부분만 본다.
+    base="$remote_sha"
+  fi
+
+  if git diff --name-only "$base" "$local_sha" 2>/dev/null | grep -q '^frontend/'; then
+    run_check=1
+  fi
+done
+
+if [ "$run_check" -eq 1 ]; then
+  echo "pre-push: 프론트엔드 변경 감지 → type-check 실행"
+  cd frontend && npm run type-check
+else
+  echo "pre-push: 프론트엔드 변경 없음 → type-check 생략"
+fi

@@ -1,0 +1,152 @@
+<svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="60" height="60" fill="black"/>
+
+<!-- 고정: 스파클이 보이기 위한 원형 보조 그라데이션 -->
+<rect x="38" y="8" width="17" height="17" fill="url(#paint0_radial_64_3523)"/>
+
+<!-- 고정: 흰색 궤도선 -->
+<path d="M26.8904 25.2747C31.5656 21.7491 36.1933 19.0839 39.8947 17.6243C41.7456 16.8944 43.3628 16.4672 44.6365 16.3833C45.9128 16.2992 46.831 16.5603 47.3045 17.1881C47.7777 17.816 47.7759 18.7701 47.3442 19.9738C46.9133 21.1754 46.058 22.6128 44.8473 24.1917C42.4263 27.3492 38.5915 31.0657 33.9163 34.5914C29.2409 38.1172 24.6127 40.7828 20.9112 42.2425C19.0602 42.9724 17.4431 43.3995 16.1693 43.4835C14.8933 43.5676 13.9755 43.3069 13.502 42.6794C13.0285 42.0515 13.0299 41.0969 13.4616 39.893C13.8926 38.6913 14.7478 37.254 15.9585 35.675C18.3797 32.5175 22.215 28.8006 26.8904 25.2747Z" stroke="white" stroke-width="0.1"/>
+
+<!--
+  우측 상단 타원형 방사광:
+  중앙 링이 거의 다 커진 뒤에만 짧게 페이드인
+-->
+<ellipse
+  cx="37.939"
+  cy="19.6898"
+  rx="5.94922"
+  ry="3.84292"
+  transform="rotate(35.1926 37.939 19.6898)"
+  fill="url(#paint1_radial_64_3523)"
+  opacity="0"
+>
+  <animate
+    attributeName="opacity"
+    begin="0.70s"
+    dur="0.28s"
+    values="0;1"
+    calcMode="spline"
+    keySplines="0.16 1 0.3 1"
+    fill="freeze"
+  />
+</ellipse>
+
+<!-- 이동: 세로 스파클만 -->
+<g style="mix-blend-mode:color-dodge">
+  <animateMotion
+    begin="0.14s"
+    dur="1.15s"
+    fill="freeze"
+    calcMode="spline"
+    keyTimes="0;1"
+    keyPoints="0;1"
+    keySplines="0.22 1 0.36 1"
+    rotate="0"
+  >
+    <mpath href="#sparkleMotionPath"/>
+  </animateMotion>
+
+  <rect width="1.77083" height="17" transform="translate(45.6147 8)" fill="black"/>
+  <ellipse cx="46.5002" cy="16.5" rx="0.885417" ry="8.5" fill="url(#paint2_radial_64_3523)"/>
+</g>
+
+<!-- 이동: 가로 스파클만 -->
+<g style="mix-blend-mode:color-dodge">
+  <animateMotion
+    begin="0.14s"
+    dur="1.15s"
+    fill="freeze"
+    calcMode="spline"
+    keyTimes="0;1"
+    keyPoints="0;1"
+    keySplines="0.22 1 0.36 1"
+    rotate="0"
+  >
+    <mpath href="#sparkleMotionPath"/>
+  </animateMotion>
+
+  <rect width="1.77083" height="17" transform="translate(38 17.3854) rotate(-90)" fill="black"/>
+  <ellipse cx="46.5" cy="16.5" rx="0.885416" ry="8.5" transform="rotate(-90 46.5 16.5)" fill="url(#paint3_radial_64_3523)"/>
+</g>
+
+<!--
+  중앙 링:
+  transform scale을 사용하지 않고 r 자체를 키운다.
+  따라서 stroke-width="7"은 시작부터 끝까지 그대로 유지된다.
+-->
+<g filter="url(#filter0_d_64_3523)">
+  <circle cx="30" cy="30" r="8" fill="black">
+    <animate
+      attributeName="r"
+      begin="0.05s"
+      dur="0.82s"
+      values="8;15.4;15"
+      keyTimes="0;0.80;1"
+      calcMode="spline"
+      keySplines="0.16 1 0.3 1;0.2 0.8 0.2 1"
+      fill="freeze"
+    />
+  </circle>
+
+  <circle cx="30" cy="30" r="4.5" stroke="white" stroke-width="7">
+    <animate
+      attributeName="r"
+      begin="0.05s"
+      dur="0.82s"
+      values="4.5;11.9;11.5"
+      keyTimes="0;0.80;1"
+      calcMode="spline"
+      keySplines="0.16 1 0.3 1;0.2 0.8 0.2 1"
+      fill="freeze"
+    />
+  </circle>
+</g>
+
+<defs>
+<!-- 반시계방향: 왼쪽 아래에서 시작해 흰 실선의 아래쪽·오른쪽 외곽을 따라 도착 -->
+<path
+  id="sparkleMotionPath"
+  d="
+    M -32.998 26.1794
+    C -32.5245 26.8076 -31.6067 27.0676 -30.3307 26.9835
+    C -29.0569 26.8995 -27.4398 26.4724 -25.5888 25.7425
+    C -21.8873 24.2828 -17.2591 21.6172 -12.5837 18.0914
+    C -7.9085 14.5657 -4.0737 10.8492 -1.6527 7.6917
+    C -0.442 6.1128 0.4133 4.6754 0.8442 3.4738
+    C 1.2759 2.2701 1.2777 1.316 0.8045 0.6881
+    C 0.64 0.47 0.39 0.24 0 0
+  "
+/>
+
+<filter id="filter0_d_64_3523" x="11.2" y="11.2" width="37.6" height="37.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-1" dy="1"/>
+<feGaussianBlur stdDeviation="1.4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_64_3523"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_64_3523" result="shape"/>
+</filter>
+
+<radialGradient id="paint0_radial_64_3523" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.5 16.5) rotate(90) scale(8.5)">
+<stop stop-color="#141414"/>
+<stop offset="1"/>
+</radialGradient>
+
+<radialGradient id="paint1_radial_64_3523" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(37.939 19.6898) rotate(90) scale(3.84292 5.94922)">
+<stop offset="0.168269" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+
+<radialGradient id="paint2_radial_64_3523" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.5002 16.5) rotate(90) scale(8.5 0.885417)">
+<stop offset="0.0364583" stop-color="#FFF1E4"/>
+<stop offset="1" stop-color="#3A71FF" stop-opacity="0"/>
+</radialGradient>
+
+<radialGradient id="paint3_radial_64_3523" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.5 16.5) rotate(90) scale(8.5 0.885416)">
+<stop offset="0.0364583" stop-color="#FFF1E4"/>
+<stop offset="1" stop-color="#3A71FF" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

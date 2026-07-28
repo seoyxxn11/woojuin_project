@@ -8,6 +8,10 @@ import path from 'node:path';
 // 이유: Web Share Target(공유하기 연동) 처리 + FCM 백그라운드 수신 등
 //       커스텀 서비스워커 로직이 필요함 (src/sw.ts)
 export default defineConfig({
+  // .env.example처럼 프론트/백엔드가 레포 루트 .env 하나를 같이 쓰는 구조라서,
+  // Vite 기본값(frontend/.env)이 아니라 루트를 보게 한다. 안 그러면
+  // VITE_API_BASE_URL 등이 매번 undefined로 읽힌다.
+  envDir: path.resolve(__dirname, '..'),
   plugins: [
     react(),
     tailwindcss(),

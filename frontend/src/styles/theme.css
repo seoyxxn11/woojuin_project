@@ -1,0 +1,138 @@
+/**
+ * 우주인(Woojuin) 디자인 토큰 — Tailwind CSS v4 `@theme` + 라이트/다크 테마
+ * 출처: 우주인/v3.5(다크) · v3.5-white(라이트)
+ * 문서: DESIGN.md
+ *
+ * 테마 전환 방식:
+ *   - 기본(:root)          = 다크 (우주 스테이지)
+ *   - :root[data-theme=light] = 라이트 (화이트 모드)
+ *   HTML/JS에서 <html data-theme="light"> / "dark" 로 토글.
+ *
+ * 원리: @theme 안의 --color-*·--shadow-* 는 Tailwind가 :root 에 CSS 변수로 심고,
+ * 유틸(bg-surface 등)은 그 변수를 참조한다. 따라서 :root[data-theme=light] 에서
+ * 같은 변수를 덮어쓰면(특정성 0,2,0 > :root 0,1,0) 런타임에 색만 바뀐다.
+ *
+ * @theme 노출: --color-*→bg/text/border/fill, --radius-*→rounded,
+ *              --font-*→font, --text-*→text(size), --shadow-*→shadow, --width-*→w
+ */
+
+@theme {
+  /* ── 정적 토큰 (테마 무관) ─────────────────────────── */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', sans-serif;
+
+  /*
+   * 모바일/데스크톱을 가르는 유일한 분기점 — 여기가 원본이다.
+   *
+   * `desktop:` 프리픽스가 이 값을 쓰고(예: `desktop:hidden`), JS 는
+   * constants/breakpoints.ts 가 이 변수를 읽어 같은 경계를 본다.
+   * 분기점을 옮길 일이 생기면 바꿀 곳은 여기 한 줄뿐이다.
+   *
+   * Tailwind 기본 sm/md/lg 를 쓰지 않는 이유: 그건 범용 눈금이라
+   * 글자 크기 같은 무관한 규칙들도 함께 쓴다. 셸 분기를 옮기려다
+   * 그것들까지 끌려가지 않도록 전용 이름을 둔다.
+   */
+  --breakpoint-desktop: 640px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --text-hero: clamp(30px, 4.5vw, 44px); /* 랜딩 히어로 */
+  --text-display: 34px; /* 페이지 타이틀 */
+  --text-body: 14.5px; /* 본문 */
+  --text-label: 12px; /* 섹션 라벨 */
+
+  --width-sidebar: 300px;
+  --width-sidebar-collapsed: 72px;
+
+  /* ── 색 토큰 = 다크 기본값 ─────────────────────────── */
+  /* Surface */
+  --color-space: #0e1017; /* 우주 스테이지 */
+  --color-sidebar: #171923;
+  --color-surface: #20242f;
+  --color-surface-2: #2a2e3a;
+  --color-surface-3: #343947;
+  /* Border */
+  --color-border: #313543;
+  --color-border-soft: #24272f;
+  /* Text */
+  --color-text-1: #f0f2f6;
+  --color-text-2: #b0b6c3;
+  --color-text-3: #7b8290;
+  /* Accent */
+  --color-accent: #7c6cf0;
+  --color-accent-hover: #8f80f5;
+  /* Star 팔레트 (밝은 파스텔 — 검은 배경에서 발광) */
+  --color-star-lavender: #c9b8ff;
+  --color-star-blue: #8fb4ff;
+  --color-star-green: #b8e6a3;
+  --color-star-orange: #f5b08a;
+  --color-star-yellow: #f2d96b;
+  --color-star-white: #f5f1e8;
+
+  /* ── Elevation = 다크 기본값 ───────────────────────── */
+  --shadow-pop: 0 14px 40px rgba(0, 0, 0, 0.6);
+  --shadow-float: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-modal: 0 30px 80px rgba(0, 0, 0, 0.7);
+  --shadow-tooltip: 0 16px 50px rgba(0, 0, 0, 0.7);
+  /* 라이브 점 글로우 — accent 를 참조하므로 테마 전환에 자동으로 따라감 */
+  --shadow-live-dot: 0 0 3px var(--color-accent);
+}
+
+/* ── 라이트 테마 오버라이드 ──────────────────────────── */
+/* :root[data-theme=light] 특정성(0,2,0)이 :root(0,1,0)를 이긴다 */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  /* Surface */
+  --color-space: #f4f5f8; /* 라이트 그레이 캔버스 */
+  --color-sidebar: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef0f4;
+  --color-surface-3: #e3e6ec;
+  /* Border */
+  --color-border: #dcdfe6;
+  --color-border-soft: #eaecf1;
+  /* Text */
+  --color-text-1: #1b1e26;
+  --color-text-2: #525a6a;
+  --color-text-3: #8a909c;
+  /* Accent (흰 배경 대비 강화) */
+  --color-accent: #6a58e8;
+  --color-accent-hover: #5847d6;
+  /* Star 팔레트 (진한 파스텔 — 흰 배경에서 가독) */
+  --color-star-lavender: #8b6fe6;
+  --color-star-blue: #4f86e8;
+  --color-star-green: #3fa96a;
+  --color-star-orange: #e07a45;
+  --color-star-yellow: #c99a1e;
+  --color-star-white: #9aa0ac;
+
+  /* Elevation (순수 블랙 → 부드러운 잉크) */
+  --shadow-pop: 0 14px 40px rgba(20, 25, 45, 0.1);
+  --shadow-float: 0 20px 60px rgba(20, 25, 45, 0.1);
+  --shadow-modal: 0 30px 80px rgba(20, 25, 45, 0.14);
+  --shadow-tooltip: 0 16px 50px rgba(20, 25, 45, 0.12);
+}
+
+/* 명시적 다크(토글 왕복용) — 기본값과 동일하지만 color-scheme 지정 */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* ── 앱 기본 스타일 ──────────────────────────────────── */
+@layer base {
+  html {
+    color-scheme: dark; /* 기본 다크 (data-theme 미지정 시) */
+  }
+
+  body {
+    background-color: var(--color-space);
+    color: var(--color-text-1);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

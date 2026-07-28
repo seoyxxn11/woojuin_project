@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+@media (max-width: 639px) {
+  [data-map-panel-collapsed='false'] .woojuin-open-free-map .maplibregl-ctrl-bottom-right {
+    bottom: calc(50% + 100px + env(safe-area-inset-bottom));
+  }
+
+  [data-map-panel-collapsed='true'] .woojuin-open-free-map .maplibregl-ctrl-bottom-right {
+    bottom: calc(212px + env(safe-area-inset-bottom));
+  }
+
+  .woojuin-open-free-map .maplibregl-ctrl-bottom-right {
+    transition: bottom 200ms ease-out;
+  }
+}
+
+@media (min-width: 640px) {
+  .woojuin-open-free-map .maplibregl-ctrl-bottom-right {
+    right: calc(26px + 320px + 12px);
+    bottom: 26px;
+  }
+}
+
+.woojuin-map-marker-anchor {
+  width: 20px;
+  height: 20px;
+}
+
+.woojuin-map-marker {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+  border: 3px solid rgba(255, 255, 255, 0.94);
+  border-radius: 999px;
+  background: var(--marker-color);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);
+  transition:
+    scale 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.woojuin-map-marker:hover,
+.woojuin-map-marker.is-selected {
+  scale: 1.3;
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--marker-color) 28%, transparent),
+    0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.woojuin-map-popup .maplibregl-popup-content {
+  min-width: 220px;
+  padding: 0;
+  overflow: hidden;
+  color: var(--color-text-1);
+  background: rgba(32, 36, 47, 0.94);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-tooltip);
+  backdrop-filter: blur(18px);
+}
+
+.woojuin-map-popup .maplibregl-popup-tip {
+  border-top-color: rgba(32, 36, 47, 0.94);
+}
+
+.woojuin-map-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 13px 15px;
+}
+
+.woojuin-map-popup-content strong {
+  overflow: hidden;
+  font-size: 13.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.woojuin-map-popup-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-2);
+}
+
+.woojuin-map-popup-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+}
+
+.woojuin-map-popup-address {
+  overflow: hidden;
+  font-size: 11px;
+  color: var(--color-text-3);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

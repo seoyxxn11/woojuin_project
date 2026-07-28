@@ -10,6 +10,12 @@ from src.category_description_generator import (
 )
 
 
+def test_parse_args_accepts_custom_dataset_root(tmp_path):
+    options = runner.parse_args(["--dataset-root", str(tmp_path), "--dry-run"])
+
+    assert options.dataset_root == tmp_path
+
+
 ITEMS = [
     {"testId": "TEXT-001", "title": "JWT", "input": "토큰 재발급 구조", "expected": {"categories": ["학습·지식"]}},
     {"testId": "TEXT-002", "title": "Docker", "input": "컨테이너 실행 방법", "expected": {"categories": ["학습·지식"]}},

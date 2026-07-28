@@ -15,7 +15,12 @@ from src.category_description_generator import (
     select_category_samples,
     validate_generated_description,
 )
-from src.dataset_loader import load_categories, load_category_definitions, load_typed_test_dataset
+from src.dataset_loader import (
+    load_categories,
+    load_category_definitions,
+    load_flat_test_dataset,
+    load_typed_test_dataset,
+)
 from src.ollama_client import OllamaClient, OllamaError, performance
 from src.result_writer import write_json
 
@@ -32,6 +37,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--max-items", type=int, default=20, help="카테고리당 최대 샘플 수")
     parser.add_argument("--max-chars-per-item", type=int, default=1200, help="샘플당 최대 글자 수")
     parser.add_argument("--output", help="재사용할 카테고리 정의 JSON 경로")
+    parser.add_argument(
+        "--dataset-root",
+        type=Path,
+        help="<카테고리>/*.txt 구조의 설명 생성용 데이터 폴더",
+    )
     parser.add_argument("--overwrite", action="store_true", help="기존 출력 파일 덮어쓰기")
     parser.add_argument("--dry-run", action="store_true", help="모델 호출 없이 입력 계획 확인")
     return parser.parse_args(argv)
@@ -50,10 +60,15 @@ def main(argv: list[str] | None = None) -> int:
         raise ValueError(f"출력 파일이 이미 있습니다. --overwrite가 필요합니다: {output}")
 
     config = yaml.safe_load((ROOT / "config.yaml").read_text(encoding="utf-8"))
-    test_root = ROOT / "dataset" / "test"
+    test_root = (
+        options.dataset_root.resolve()
+        if options.dataset_root
+        else ROOT / "dataset" / "test"
+    )
     category_names = load_categories(test_root)
     base_definitions = load_category_definitions(ROOT / "config" / "categories.json", test_root)
-    typed_items, _ = load_typed_test_dataset(test_root, ["all"])
+    loader = load_flat_test_dataset if options.dataset_root else load_typed_test_dataset
+    typed_items, _ = loader(test_root, ["all"])
     items = prepare_description_items(typed_items)
     requested = options.categories or category_names
     unknown = set(requested) - set(category_names)

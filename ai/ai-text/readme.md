@@ -126,6 +126,31 @@ dataset/tester/export/
 첫 번째 명령은 생성된 요약을 지정 데이터셋의 각 URL TXT에 기록합니다. 두 작업을
 한 명령으로 모두 실행하려면 `--modes summary-only category-only`를 사용합니다.
 
+### 5-fold 교차검증 데이터
+
+카테고리마다 파일을 균등하게 나눠, 각 데이터가 정확히 한 번씩 분류 평가에
+사용되는 5-fold 데이터는 다음 명령으로 생성합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\create_stratified_folds.py `
+  ".\dataset\tester\<입력 파일명>"
+```
+
+각 Fold의 `category-summary`는 카테고리 설명 생성용, `classification`은 분류
+평가용입니다. Fold 전용 설명은 해당 폴더를 직접 지정해 생성합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\generate_category_descriptions.py `
+  --dataset-root ".\dataset\tester\<입력 파일명>-5fold\fold-1\category-summary" `
+  --output ".\config\generated\fold-1.json"
+
+.\.venv\Scripts\python.exe .\main.py `
+  --dataset-root ".\dataset\tester\<입력 파일명>-5fold\fold-1\classification" `
+  --input-type url `
+  --modes summary-only category-only `
+  --category-definitions ".\config\generated\fold-1.json"
+```
+
 ### 카테고리 데이터로 설명 생성
 
 `dataset/test/<카테고리>/<memo|url|image>`의 샘플을 카테고리별로 합쳐 AI가 설명과 대표 예시를 생성할 수 있습니다. URL은 `summary`를 우선 사용하고, 없으면 `content`를 사용합니다. 둘 다 없으면 설명 생성 샘플에서 제외하며, 카테고리에 사용할 샘플이 하나도 없으면 카테고리 이름만 보고 설명을 생성합니다. 기존 `config/categories.json`은 수정하지 않고 `config/generated/` 아래에 재사용 가능한 정의와 생성 이력을 따로 저장합니다.

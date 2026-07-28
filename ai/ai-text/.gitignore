@@ -22,3 +22,5 @@ results/4차 다중 카테고리 분류 비교/*
 .env.local
 !.env.example
 *.key
+dataset/tester/*-5fold/
+config/generated/*-fold-*.json

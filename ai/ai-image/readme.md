@@ -9,7 +9,7 @@ MVP 모듈입니다. 이미지 모델은 카테고리를 선택하지 않으며,
 - 모델: `qwen3-vl:8b-instruct`
 - 설정: `config.qwen3vl8b.fast.yaml`
 - 프롬프트: `prompts/analyze_image_fast.txt`
-- 입력: JPEG, PNG, WEBP, 최대 20MB
+- 입력: JPEG, MPO, PNG, WEBP, HEIC/HEIF, 최대 20MB
 - 전처리: EXIF 회전 보정, RGB 변환, 최대 2048px 리사이즈
 - 출력: 제목, 설명, 태그, OCR, 객체, 신뢰도, EXIF 메타데이터
 - 오류 처리: 재시도 가능한 오류는 최대 2회 시도
@@ -69,6 +69,30 @@ request = build_ai_analysis_request(image_result, candidate_categories)
 
 `candidate_categories`는 해당 워크스페이스에 실제 존재하는 카테고리 이름 목록이며,
 이미지 모델은 이 값을 판단하거나 변경하지 않습니다.
+
+## 백엔드 연동용 HTTP 서버
+
+Ollama 서버를 먼저 실행한 뒤 이미지 AI 서버를 실행합니다.
+
+```powershell
+cd C:\S15P11C105\ai\ai-image
+.\.venv\Scripts\python.exe -m uvicorn serve_image_ai:app --host 0.0.0.0 --port 8001
+```
+
+백엔드는 `POST /v1/images/analyze`에 이미지 파일을 multipart `file`로 전달합니다.
+성공 응답의 `classificationText`를 현재 백엔드
+`ImageTextExtractor.extract(byte[])`의 반환값으로 사용하면 됩니다.
+
+```powershell
+curl.exe -X POST http://127.0.0.1:8001/v1/images/analyze `
+  -F "file=@C:\path\to\image.jpg"
+```
+
+상태 확인:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8001/health
+```
 
 ## 검증
 

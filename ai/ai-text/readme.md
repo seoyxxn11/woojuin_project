@@ -563,3 +563,59 @@ $env:RUN_OPENAI_INTEGRATION = "1"
 ```
 
 요청 비용을 더 명확하게 통제하려면 통합 테스트 대신 먼저 Dry-run을 확인한 뒤 `main.py --model openai-gpt-5-nano --limit 1`을 직접 실행하세요.
+
+## 이미지 추출 결과 → 카테고리 분류
+
+`ai-mix`를 거치지 않고 `ai-image/results/*.jsonl`의 이미지 추출 결과를
+`qwen3:8b` 카테고리 모델에 직접 전달합니다.
+
+먼저 Ollama와 두 모델을 준비합니다.
+
+```powershell
+ollama pull qwen3-vl:8b-instruct
+ollama pull qwen3:8b
+ollama serve
+```
+
+프로젝트 루트에서 최신 비어 있지 않은 이미지 결과를 자동 선택해 입력만 검증합니다.
+
+```powershell
+ai\ai-text\.venv\Scripts\python.exe `
+  ai\ai-text\run_image_category_test.py `
+  --dry-run
+```
+
+실제 분류:
+
+```powershell
+ai\ai-text\.venv\Scripts\python.exe `
+  ai\ai-text\run_image_category_test.py
+```
+
+특정 이미지 결과를 사용하려면 `--image-result`를 지정합니다.
+
+```powershell
+ai\ai-text\.venv\Scripts\python.exe `
+  ai\ai-text\run_image_category_test.py `
+  --image-result ai\ai-image\results\이미지결과.jsonl
+```
+
+정확도를 계산할 때는 모델 입력과 분리된 정답 JSONL을 사용합니다.
+`category-answer-key.example.jsonl`을 복사해 실제 샘플 ID와 정답으로 작성합니다.
+
+```json
+{"id":"sample-001","category":"음식·맛집"}
+{"id":"sample-002","category":"쇼핑·제품"}
+```
+
+```powershell
+ai\ai-text\.venv\Scripts\python.exe `
+  ai\ai-text\run_image_category_test.py `
+  --image-result ai\ai-image\results\이미지결과.jsonl `
+  --answer-key ai\ai-image\datasets\category-answer-key.jsonl
+```
+
+정답 파일은 평가에만 사용하며 이미지·텍스트 모델 프롬프트에는 전달하지 않습니다.
+정답이 없으면 분류 결과는 생성하지만 정확도는 `N/A`로 표시합니다. 결과는
+`ai/ai-text/results/<실행시각>-image-to-category/`의 `results.jsonl`,
+`details.csv`, `report.md`에 저장됩니다.

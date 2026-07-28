@@ -2,7 +2,7 @@ model:
   provider: ollama_vision
   model_id: qwen3-vl:8b-instruct
   base_url: http://localhost:11434
-  timeout_seconds: 600
+  timeout_seconds: 120
   quantization: Q4_K_M
   context_length: 8192
   max_new_tokens: 2000
@@ -12,7 +12,7 @@ model:
 
 benchmark:
   dataset: datasets/ground_truth.jsonl
-  prompt: prompts/analyze_image.txt
+  prompt: prompts/analyze_image_fast.txt
   max_dimension: 2048
   results_dir: results
   reports_dir: reports

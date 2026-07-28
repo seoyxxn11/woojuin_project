@@ -11,8 +11,14 @@ from PIL import ExifTags, Image, ImageOps, UnidentifiedImageError
 from .errors import ImageAiError, ImageAiErrorCode
 from .models import ImageAnalysisResult
 
+try:
+    from pillow_heif import register_heif_opener
 
-SUPPORTED_FORMATS = {"JPEG", "MPO", "PNG", "WEBP"}
+    register_heif_opener()
+except ImportError:
+    pass
+
+SUPPORTED_FORMATS = {"HEIF", "JPEG", "MPO", "PNG", "WEBP"}
 MAX_SOURCE_BYTES = 20 * 1024 * 1024
 DEFAULT_MAX_DIMENSION = 2048
 REQUIRED_FIELDS = {

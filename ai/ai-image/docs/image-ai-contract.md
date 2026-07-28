@@ -2,7 +2,7 @@
 
 ## 입력
 
-- 파일 형식: JPEG, PNG, WEBP
+- 파일 형식: JPEG, MPO, PNG, WEBP, HEIC/HEIF
 - 최대 원본 크기: 20MB
 - 전처리: EXIF 회전 보정, RGB 변환, 최대 2048px 비율 유지 리사이즈
 - 이미지 모델: `qwen3-vl:8b-instruct`
@@ -35,6 +35,23 @@
 ```
 
 좌표와 촬영시간은 모델 추정값이 아니라 원본 이미지 EXIF에서만 읽는다. EXIF 정보가 없으면 각 값은 `null`이다.
+파일 크기·해상도·토큰·처리시간 등은 벤치마크와 모니터링용 내부 정보이므로
+서비스 전달용 `metadata`에는 포함하지 않는다.
+
+## 촬영 위치 처리 흐름
+
+```text
+원본 사진 EXIF
+→ 이미지 AI가 captured_at, latitude, longitude 추출
+→ 백엔드 지도 어댑터가 좌표를 장소명으로 역지오코딩
+→ Item에 좌표와 장소명을 저장
+→ 프론트 지도뷰에 표시
+```
+
+- 이미지 AI는 EXIF에 기록된 실제 값만 전달한다.
+- EXIF가 없으면 파일 생성일·OCR·시각 정보로 촬영 시각이나 좌표를 추측하지 않는다.
+- `place_name`은 이미지 AI 출력이 아니라 백엔드 지도 어댑터의 역지오코딩 결과다.
+- 특정 지도 SDK/API는 확정 전까지 이미지 AI에 직접 결합하지 않는다.
 
 ## 백엔드 Item 필드 책임
 
@@ -52,6 +69,7 @@
 | `categories` | 텍스트 분류 단계 | 이미지 추출 직후에는 빈 배열 |
 | `latitude`, `longitude` | 이미지 AI(EXIF) | GPS EXIF가 없으면 `null` |
 | `captured_at` | 이미지 AI(EXIF) | 촬영시각 EXIF가 없으면 `null` |
+| `place_name` | 백엔드 지도 어댑터 | 좌표가 있을 때 역지오코딩하여 생성 |
 
 따라서 전달용 테스트 JSON의 `null`은 AI 추출 실패를 뜻하지 않는다. AI 성공 여부는
 `success`, `result` 필수 필드와 `error_code`로 판단한다.
@@ -77,6 +95,39 @@
 
 백엔드 `ItemResponse`는 최종 사용자 응답이며 이미지 모델의 직접 출력 형식이 아니다.
 `itemId`, `status`, `s3Key`, `createdAt` 등을 이미지 AI가 임의로 채워 반환하지 않는다.
+
+## HTTP 연결 계약
+
+- 서버: `serve_image_ai.py`
+- 상태 확인: `GET /health`
+- 이미지 분석: `POST /v1/images/analyze`
+- 요청: `multipart/form-data`, 파일 필드명 `file`
+- 성공: HTTP 200
+- 입력 오류: HTTP 400/413/422
+- 일시적 모델 오류: HTTP 503
+- 실패 응답도 `detail`로 감싸지 않고 아래 계약 객체를 최상위에 반환한다.
+
+성공 응답은 기존 이미지 분석 결과에 `classificationText`를 추가한다.
+백엔드 `ImageTextExtractor` 구현체는 이 값을 반환하면 된다.
+
+```json
+{
+  "success": true,
+  "result": {
+    "title": "이미지 제목",
+    "description": "이미지 설명",
+    "tags": ["태그"],
+    "ocr_text": "인식된 문구",
+    "objects": ["객체"],
+    "confidence": 0.95
+  },
+  "classificationText": "이미지 설명: ...\nOCR 텍스트: ...",
+  "error_code": null,
+  "error_message": null,
+  "retryable": false,
+  "metadata": {}
+}
+```
 
 ## 실패 응답
 

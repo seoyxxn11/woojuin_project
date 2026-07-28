@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import json
+import socket
 import time
 import urllib.error
 import urllib.request
@@ -58,6 +59,8 @@ class OllamaVisionProvider(ImageModelProvider):
             detail = exc.read().decode("utf-8", errors="replace")[:500]
             raise RuntimeError(f"Ollama HTTP {exc.code}: {detail}") from exc
         except urllib.error.URLError as exc:
+            if isinstance(exc.reason, (TimeoutError, socket.timeout)):
+                raise TimeoutError("Ollama 이미지 모델 요청 시간이 초과되었습니다.") from exc
             raise RuntimeError(
                 "Ollama에 연결할 수 없습니다. Ollama 앱 또는 `ollama serve`를 실행하세요. "
                 f"({exc.reason})"

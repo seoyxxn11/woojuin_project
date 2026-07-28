@@ -18,7 +18,7 @@
 | 파일 | 용도 |
 | --- | --- |
 | `config.qwen3vl8b.fast.yaml` | 모델, 타임아웃, 토큰, 이미지 크기 설정 |
-| `prompts/analyze_image.txt` | 서비스용 최종 이미지 분석 프롬프트 |
+| `prompts/analyze_image_fast.txt` | 서비스용 최종 균형형 이미지 분석 프롬프트 |
 | `analyze_service_image.py` | 단건 이미지 분석 진입점 |
 | `image_service/` | 전처리, 결과 검증, 오류 처리, 백엔드 요청 변환 |
 | `providers/ollama_vision.py` | Ollama API 호출 |
@@ -120,7 +120,7 @@ cd C:\S15P11C105\ai\ai-image
 
 | 설정 | 값 | 의미 |
 | --- | ---: | --- |
-| `timeout_seconds` | 600 | Ollama 요청 제한 시간 |
+| `timeout_seconds` | 120 | Ollama 요청 제한 시간 |
 | `context_length` | 8192 | 모델 문맥 크기 |
 | `max_new_tokens` | 2000 | 최대 출력 토큰 |
 | `temperature` | 0.0 | 결과 재현성 우선 |
@@ -146,6 +146,15 @@ GPU 작업과 충돌하면 Ollama에서 모델을 내리거나 서버를 종료�
 이미지 AI 결과의 `metadata.latitude`, `metadata.longitude`,
 `metadata.captured_at`은 EXIF가 없으면 `null`이다. 모델이 위치나 촬영 시각을
 추정해서 채우면 안 된다.
+
+촬영 위치는 다음 책임으로 분리한다.
+
+1. 이미지 AI가 원본 EXIF에서 `captured_at`, `latitude`, `longitude` 추출
+2. 백엔드 지도 어댑터가 좌표를 장소명으로 역지오코딩
+3. 백엔드가 좌표와 장소명을 Item에 저장
+4. 프론트가 저장된 값을 지도뷰에 표시
+
+지도 공급자는 아직 확정되지 않았으므로 이미지 AI 코드에 특정 지도 API를 직접 연결하지 않는다.
 
 ## 8. 오류 처리
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +21,11 @@ CATEGORY_ALIASES = {
     "스크린샷": "SCREENSHOT",
     "기타": "OTHER",
 }
+METADATA_FIELDS = (
+    "latitude",
+    "longitude",
+    "captured_at",
+)
 
 
 def normalize_category(value: str) -> str:
@@ -36,6 +42,18 @@ def latest_result(results_dir: Path) -> Path:
     if not candidates:
         raise FileNotFoundError("검색할 결과 JSONL이 없습니다.")
     return max(candidates, key=lambda path: path.stat().st_mtime)
+
+
+def extract_metadata(record: dict[str, Any]) -> dict[str, Any]:
+    """서비스 응답과 벤치마크 JSONL 양쪽 형식에서 이미지 메타데이터를 보존한다."""
+    nested = record.get("metadata")
+    metadata = dict(nested) if isinstance(nested, dict) else {}
+    for field in METADATA_FIELDS:
+        if field in record:
+            metadata[field] = record[field]
+        else:
+            metadata.setdefault(field, None)
+    return metadata
 
 
 def build_search_index(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -57,6 +75,7 @@ def build_search_index(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "objects": result.get("objects", []),
                 "confidence": result.get("confidence"),
                 "model": record.get("model"),
+                "metadata": extract_metadata(record),
             }
         )
     return index
@@ -94,6 +113,8 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     args = parse_args()
     result_path = args.result or latest_result(ROOT / "results")
     if not result_path.is_absolute():

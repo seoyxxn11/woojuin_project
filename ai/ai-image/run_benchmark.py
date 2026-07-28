@@ -114,6 +114,19 @@ def create_provider(model_config: dict[str, Any]) -> ImageModelProvider:
     raise ValueError(f"현재 지원하지 않는 provider입니다: {provider}")
 
 
+def build_result_metadata(
+    provider_metadata: dict[str, Any],
+    preprocessing_metadata: dict[str, Any],
+) -> dict[str, Any]:
+    """서비스에서 활용하는 원본 이미지 EXIF만 응답용 객체로 묶는다."""
+    del provider_metadata
+    return {
+        "latitude": preprocessing_metadata.get("latitude"),
+        "longitude": preprocessing_metadata.get("longitude"),
+        "captured_at": preprocessing_metadata.get("captured_at"),
+    }
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="로컬 이미지 모델 벤치마크")
     parser.add_argument("--sample-id", help="특정 샘플 ID만 실행")
@@ -200,8 +213,10 @@ def main() -> int:
                     prepared_path = Path(directory) / "prepared.jpg"
                     prepared_path.write_bytes(prepared_image)
                     raw_response, metadata = provider.analyze(prepared_path, prompt)
-                record.update(metadata)
-                record.update(preprocessing)
+                result_metadata = build_result_metadata(metadata, preprocessing)
+                # 기존 보고서 호환을 위해 최상위 필드는 유지한다.
+                record.update(result_metadata)
+                record["metadata"] = result_metadata
                 record["raw_response"] = raw_response
                 record["result"] = extract_json(raw_response)
                 record["json_valid"] = True

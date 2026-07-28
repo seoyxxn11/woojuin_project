@@ -8,3 +8,4 @@ reports/*
 !reports/.gitkeep
 !reports/final-image-model-evaluation.md
 !reports/final-33-evaluation-report.md
+!reports/final-50-mvp-handoff-report.md

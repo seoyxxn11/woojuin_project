@@ -1,0 +1,50 @@
+{"sample_id":"final50-001","category":"음식·맛집","required_concepts":[["국수","면"],["파","대파"],"국물"],"ocr_keywords":[]}
+{"sample_id":"final50-002","category":"기타","required_concepts":[["죽은 어류","어류 사체","죽은 물고기"],["포장도로","콘크리트","바닥"],["부력기","낚시 도구"]],"ocr_keywords":[]}
+{"sample_id":"final50-003","category":"기타","required_concepts":["고양이",["삼색","얼룩무늬"]],"ocr_keywords":[]}
+{"sample_id":"final50-004","category":"기타","required_concepts":["고양이",["스크래처","캣타워"]],"ocr_keywords":[]}
+{"sample_id":"final50-005","category":"문화·콘텐츠","required_concepts":[["우주복 고양이","고양이 우주인"],["우주","우주선"],["그림","일러스트","디지털 아트"]],"ocr_keywords":[]}
+{"sample_id":"final50-006","category":"문화·콘텐츠","required_concepts":["고양이",["분홍 하트","하트"],["리본","장식"],["그림","편집 이미지","디지털 아트"]],"ocr_keywords":[]}
+{"sample_id":"final50-007","category":"음식·맛집","required_concepts":[["국밥","고기국","국"],["뚝배기","그릇"],["파","대파"]],"ocr_keywords":[]}
+{"sample_id":"final50-008","category":"기타","required_concepts":[["잠자는 고양이","누워 있는 고양이"],["침대","이불"]],"ocr_keywords":[]}
+{"sample_id":"final50-009","category":"기타","required_concepts":["고양이",["무지개 끈","리본","장난감"]],"ocr_keywords":[]}
+{"sample_id":"final50-010","category":"쇼핑·제품","required_concepts":[["정보처리기사","자격증 수험서"],["기출문제","문제집"],["책","도서"],["가격","18,000원"]],"ocr_keywords":["정보처리기사","기출문제","1200제",["18000원","18,000원"]]}
+{"sample_id":"final50-011","category":"음식·맛집","required_concepts":[["가츠동","돈가스덮밥","돈까스 덮밥"],["계란","달걀"],["양배추","샐러드"]],"ocr_keywords":[]}
+{"sample_id":"final50-012","category":"쇼핑·제품","required_concepts":[["카드 지갑","카드 월렛"],["맥세이프","MagSafe"],["휴대폰 액세서리","스마트폰 액세서리"]],"ocr_keywords":[["맥세이프 카드 지갑","MagSafe Card Wallet"],["51000원","₩51000","51,000원"]]}
+{"sample_id":"final50-013","category":"생활·할 일","required_concepts":[["규칙","룰"],["하루","1일"],["간식","TMI"]],"ocr_keywords":[["이 셋은 규칙","셋은 규칙"],["1일 1TMI","하루 1TMI"],["1일 1간식","하루 1간식"]]}
+{"sample_id":"final50-014","category":"문화·콘텐츠","required_concepts":[["불상","불교 조각"],["박물관","전시"],["문화재","유물"]],"ocr_keywords":[]}
+{"sample_id":"final50-015","category":"기타","required_concepts":[["강아지","개"],["침대","이불"]],"ocr_keywords":[]}
+{"sample_id":"final50-016","category":"기타","required_concepts":["고양이",["골목","길거리"]],"ocr_keywords":[]}
+{"sample_id":"final50-017","category":"기타","required_concepts":[["봉제 인형","인형","키링"],["줄무늬","스트라이프"]],"ocr_keywords":[]}
+{"sample_id":"final50-018","category":"쇼핑·제품","required_concepts":[["티셔츠","반팔"],["Queen","퀸"],["상품","판매","쇼핑"]],"ocr_keywords":[["QUEEN","퀸"],["SOLD OUT","품절"]]}
+{"sample_id":"final50-019","category":"여행·장소","required_concepts":[["다리","대교"],["야경","밤"],["항구","선박","배"]],"ocr_keywords":[]}
+{"sample_id":"final50-020","category":"건강·운동","required_concepts":[["달리기","러닝"],["구간별 페이스","페이스"],["Nike Run Club","나이키 런 클럽"]],"ocr_keywords":[["Nike Run Club","나이키 런 클럽"],["5'40","5:40"],["5'18","5:18"],["5'32","5:32"]]}
+{"sample_id":"final50-021","category":"건강·운동","required_concepts":[["달리기","러닝"],["3.02km","3.02 km"],["운동 기록","러닝 기록"]],"ocr_keywords":[["3.02km","3.02 km"],"16:36","212","170",["광주광역시","광주 동구"]]}
+{"sample_id":"final50-022","category":"음식·맛집","required_concepts":[["스테이크","고기"],["덮밥","밥"],["반찬","샐러드"]],"ocr_keywords":[]}
+{"sample_id":"final50-023","category":"음식·맛집","required_concepts":[["문어","낙지","해산물"],["구이","그릴"],["옥수수","채소"]],"ocr_keywords":[]}
+{"sample_id":"final50-024","category":"음식·맛집","required_concepts":[["아이스 커피","커피"],["라테","라떼","음료"],["빵","페이스트리","디저트"]],"ocr_keywords":[]}
+{"sample_id":"final50-025","category":"음식·맛집","required_concepts":[["샌드위치","토스트"],["카레","커리"],["볶음밥","밥"]],"ocr_keywords":[]}
+{"sample_id":"final50-026","category":"음식·맛집","required_concepts":["피자",["페퍼로니","햄","베이컨"],["치즈","토핑"]],"ocr_keywords":[]}
+{"sample_id":"final50-027","category":"문화·콘텐츠","required_concepts":[["게임","비디오 게임"],["전투","캐릭터"],["게임 화면","스크린샷"]],"ocr_keywords":[]}
+{"sample_id":"final50-028","category":"문화·콘텐츠","acceptable_categories":["문화·콘텐츠","여행·장소"],"required_concepts":[["영화표","영화 입장권","영화 티켓"],["극장","CGV"],["영화","와일드 씽"]],"ocr_keywords":[["CGV 영화입장권","영화입장권"],["와일드 씽","Wild Thing"],["2026.06.06","2026-06-06"],"19:00",["광주터미널","CGV 광주터미널"]]}
+{"sample_id":"final50-029","category":"문화·콘텐츠","acceptable_categories":["문화·콘텐츠","여행·장소"],"required_concepts":[["야구","야구 경기"],["야구장","경기장"],["관중","선수"]],"ocr_keywords":[]}
+{"sample_id":"final50-030","category":"생활·할 일","required_concepts":[["날씨","기온"],["광주","서울","대구"],["흐림","구름"]],"ocr_keywords":["광주광역시",["31도","31°"],"서울",["29도","29°"],"대구광역시"]}
+{"sample_id":"final50-031","category":"음식·맛집","required_concepts":[["초밥","스시"],["연어","참치"],["모둠","여러 종류"]],"ocr_keywords":[]}
+{"sample_id":"final50-032","category":"취업·커리어","required_concepts":[["취업 사이트","채용 사이트"],["고용24","사람인","잡코리아"],["구직","채용"]],"ocr_keywords":[["취업 유용한 사이트","취업 유용한 사이트 BEST 10"],"고용24","사람인","잡코리아"]}
+{"sample_id":"final50-033","category":"건강·운동","required_concepts":[["달리기 자세","러닝 자세"],["착지","발바닥"],["허벅지","근육"]],"ocr_keywords":["자세가 문제예요",["Running Form Template","러닝 폼 템플릿"]]}
+{"sample_id":"final50-034","category":"학습·지식","required_concepts":[["일반상식","상식 문제"],["문답","퀴즈"],["지식","학습"]],"ocr_keywords":[["필수 일반상식","일반상식"],["세계에서 가장 면적이 큰 나라는","면적이 큰 나라"],"러시아"]}
+{"sample_id":"final50-035","category":"아이디어·영감","required_concepts":[["방 꾸미기","방꾸미기"],["인테리어","침실"],["레퍼런스","참고 이미지"]],"ocr_keywords":[["방꾸미기 레퍼런스","방꾸미기"]]}
+{"sample_id":"final50-036","category":"생활·할 일","required_concepts":[["체크리스트","목록"],["안 해도 되는 일","하지 않아도 되는 일"],["계획","걱정","집착"]],"ocr_keywords":[["안 해도 되는 일 체크 리스트","안 해도 되는 일 체크리스트"],["모든 컨디션을 무시하는 계획","컨디션을 무시하는 계획"],["완벽하려는 집착","완벽하려는"]]}
+{"sample_id":"final50-037","category":"음식·맛집","required_concepts":[["케이크","디저트"],["멜론","과일"],["투썸","TWOSOME"]],"ocr_keywords":[["TWOSOME","투썸"]]}
+{"sample_id":"final50-038","category":"쇼핑·제품","required_concepts":[["닌텐도 스위치","Nintendo Switch"],["조이콘","Joy-Con"],["가격","79,800원"]],"ocr_keywords":[["닌텐도 스위치 조이콘","Nintendo Switch Joy-Con"],["79800원","79,800원"]]}
+{"sample_id":"final50-039","category":"음식·맛집","required_concepts":[["김치볶음밥","볶음밥"],["스팸","햄"],["레시피","재료"]],"ocr_keywords":[["레시피 정리","레시피"],"스팸",["자른 김치","자른김치"],"모짜렐라",["체다 치즈","체다치즈"]]}
+{"sample_id":"final50-040","category":"쇼핑·제품","required_concepts":[["제습기","인버터 제습기"],["23L","18L"],["가격","469,000원","389,000원"]],"ocr_keywords":[["인버터 제습기 23L","제습기 23L"],["469000원","469,000원"],["인버터 제습기 18L","제습기 18L"],["389000원","389,000원"]]}
+{"sample_id":"final50-041","category":"돈·재테크","required_concepts":[["로또","복권"],["당첨 결과","당첨번호"],["낙첨","당첨 여부"]],"ocr_keywords":[["로또 6/45","로또"],["제1225회","1225회"],["8 9 19 25 41 42","8, 9, 19, 25, 41, 42"],["낙첨되었습니다","낙첨"]]}
+{"sample_id":"final50-042","category":"여행·장소","required_concepts":[["해변","바닷가"],["바다","해수욕"],["사람","여행객"]],"ocr_keywords":[]}
+{"sample_id":"final50-043","category":"쇼핑·제품","required_concepts":[["무선 헤드폰","헤드폰"],["비교","제품 비교"],["가격","배터리"]],"ocr_keywords":[["Wireless Headphone Comparison","Headphone Comparison"],["$79.99","79.99"],["$129.99","129.99"],["30 hours","30시간"],["40 hours","40시간"]]}
+{"sample_id":"final50-044","category":"건강·운동","acceptable_categories":["건강·운동","여행·장소"],"required_concepts":[["등산","하이킹"],["등산로","산길"],["청계산","표지판"]],"ocr_keywords":["청계산",["정상 2.1km","정상2.1km"],["매바위 0.4km","매바위0.4km"]]}
+{"sample_id":"final50-045","category":"생활·할 일","required_concepts":[["이사","moving"],["체크리스트","계획"],["상자","박스","평면도"]],"ocr_keywords":[["Moving Plan","이사 계획"],["Checklist","체크리스트"]]}
+{"sample_id":"final50-046","category":"기타","required_concepts":[["사무실","업무 공간"],["서류 작성","문서 작성","서명"],["정장 남성","남성"]],"ocr_keywords":[]}
+{"sample_id":"final50-047","category":"돈·재테크","required_concepts":[["가계부","예산"],["영수증","지출"],["계산기","재무 관리"]],"ocr_keywords":[["Household Budget","가계 예산"],["Income","수입"],["Expenses","지출"]]}
+{"sample_id":"final50-048","category":"건강·운동","required_concepts":[["병원","진료소","클리닉"],["진료 예약","예약표"],["혈압계","건강 검진"]],"ocr_keywords":[["Appointment Slip","진료 예약"],["Reminders","안내"],["Bring valid ID","신분증"]]}
+{"sample_id":"final50-049","category":"학습·지식","required_concepts":[["공부","학습"],["코딩","프로그래밍"],["노트북","책","필기"]],"ocr_keywords":[]}
+{"sample_id":"final50-050","category":"여행·장소","required_concepts":[["기차역","역"],["여행 가방","캐리어","수하물"],["승강장","플랫폼","노선도"]],"ocr_keywords":[]}

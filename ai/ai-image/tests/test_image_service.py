@@ -12,9 +12,10 @@ from image_service import (
     ImageAnalysisService,
     build_ai_analysis_request,
     build_classification_text,
+    build_http_payload,
 )
 from image_service.errors import ImageAiError
-from image_service.models import ImageAnalysisResult
+from image_service.models import ImageAnalysisResponse, ImageAnalysisResult
 from image_service.processing import (
     extract_image_metadata,
     extract_json_object,
@@ -100,6 +101,15 @@ class ProcessingTest(unittest.TestCase):
         self.assertEqual(metadata["sent_width"], 1000)
         self.assertEqual(metadata["sent_height"], 333)
         self.assertTrue(metadata["image_resized"])
+
+    def test_converts_mobile_heif_to_jpeg(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "mobile.heic"
+            Image.new("RGB", (640, 480), "blue").save(path, format="HEIF")
+            prepared, metadata = prepare_image(path)
+        self.assertTrue(prepared.startswith(b"\xff\xd8"))
+        self.assertEqual(metadata["source_format"], "HEIF")
+        self.assertEqual(metadata["sent_format"], "JPEG")
 
     def test_service_returns_common_response(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -211,6 +221,21 @@ class ProcessingTest(unittest.TestCase):
         self.assertEqual(payload["candidateCategories"], ["건강·운동", "기타"])
         self.assertIn("OCR 텍스트: 3.02 킬로미터", payload["text"])
         self.assertIn("주요 객체: 지도, 운동 통계", payload["text"])
+
+    def test_builds_backend_image_extractor_http_payload(self) -> None:
+        result = ImageAnalysisResult(
+            title="러닝 기록",
+            description="강변에서 달린 기록",
+            tags=["러닝", "운동"],
+            ocr_text="5km",
+            objects=["러닝화"],
+            confidence=0.95,
+        )
+        response = ImageAnalysisResponse(success=True, result=result)
+        payload = build_http_payload(response)
+        self.assertTrue(payload["success"])
+        self.assertIn("강변에서 달린 기록", payload["classificationText"])
+        self.assertIn("5km", payload["classificationText"])
 
     def test_classification_text_omits_empty_ocr(self) -> None:
         result = ImageAnalysisResult(

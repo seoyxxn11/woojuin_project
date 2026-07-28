@@ -1,2 +1,6 @@
 Pillow>=11,<12
+pillow-heif>=0.22,<2
 PyYAML>=6,<7
+fastapi>=0.115,<1
+python-multipart>=0.0.20,<1
+uvicorn[standard]>=0.34,<1

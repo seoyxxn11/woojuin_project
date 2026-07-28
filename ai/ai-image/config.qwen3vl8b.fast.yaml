@@ -11,7 +11,7 @@ model:
   keep_alive: -1
 
 benchmark:
-  dataset: datasets/ground_truth.jsonl
+  dataset: datasets/final_50_test.jsonl
   prompt: prompts/analyze_image_fast.txt
   max_dimension: 2048
   results_dir: results

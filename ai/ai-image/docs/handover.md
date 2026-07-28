@@ -1,51 +1,269 @@
-# 이미지 AI 실행 환경 및 인수인계
+# 우주인 이미지 AI 인수인계서
 
-## 1. 담당 범위
+## 1. 최종 구성
 
-이미지를 입력받아 검색과 카테고리 분류에 필요한 정보를 추출한다.
-
-- 모델: `qwen3-vl:8b-instruct`
-- 생성 결과: `title`, `description`, `tags`, `ocr_text`, `objects`, `confidence`
-- 원본 메타데이터: EXIF의 GPS 좌표와 촬영 시각
-- 제외 범위: 카테고리 최종 선택, S3 저장, DB 저장, Item 상태 변경
-
-이미지 AI는 백엔드 저장 요청과 동기 실행하지 않는다. 백엔드는 먼저
-`PROCESSING` 상태로 저장을 완료하고 Redis Streams의 비동기 작업에서 이미지 AI를
-호출해야 한다.
-
-## 2. 확정 파일
-
-| 파일 | 용도 |
+| 역할 | 구성 |
 | --- | --- |
-| `config.qwen3vl8b.fast.yaml` | 모델, 타임아웃, 토큰, 이미지 크기 설정 |
-| `prompts/analyze_image_fast.txt` | 서비스용 최종 균형형 이미지 분석 프롬프트 |
-| `analyze_service_image.py` | 단건 이미지 분석 진입점 |
-| `image_service/` | 전처리, 결과 검증, 오류 처리, 백엔드 요청 변환 |
-| `providers/ollama_vision.py` | Ollama API 호출 |
-| `run_benchmark.py` | 데이터셋 일괄 평가 |
-| `tests/test_image_service.py` | 모델 호출 없는 단위 테스트 |
-| `docs/image-ai-contract.md` | 백엔드 전달 JSON과 오류 코드 |
+| 이미지 정보 추출 | `qwen3-vl:8b-instruct` |
+| 이미지 프롬프트 | `prompts/analyze_image_fast.txt` |
+| 카테고리 분류 | 별도 `qwen3:8b` 텍스트 모델 |
+| 이미지 입력 | JPEG, MPO, PNG, WEBP, HEIC/HEIF, 최대 20MB |
+| 전처리 | EXIF 회전, RGB 변환, 최대 2048px, JPEG 품질 90 |
+| 실행 방식 | Ollama + FastAPI HTTP 서버 |
 
-`results/`와 자동 생성 보고서는 개발 검증 산출물이며 운영 입력으로 사용하지 않는다.
+이미지 모델의 카테고리 선택 제외. 이미지에서 다음 정보만 추출.
 
-## 3. 검증된 개발 환경
+```text
+title, description, tags, ocr_text, objects, confidence
+```
 
-| 항목 | 검증 값 |
+촬영 시각과 GPS는 모델 판단 없이 원본 EXIF에서만 추출.
+
+```text
+captured_at, latitude, longitude
+```
+
+---
+
+## 2. 개발 내용
+
+1. Qwen3-VL 8B 이미지 정보 추출 모델 선정
+2. 상세형·속도형 비교 후 속도와 정보량을 보완한 균형형 프롬프트 확정
+3. 모바일 이미지 형식, 회전, 크기, 색상 형식 통일을 위한 전처리 구현
+4. 모델 JSON 검증·복구, 재시도, 오류 코드 구현
+5. 검색·분류 활용을 위한 OCR·태그·객체 정규화
+6. EXIF 촬영 시각과 GPS 좌표 결과 포함
+7. 단건 실행, HTTP 서버, 50장 회귀 테스트, 카테고리 연계 테스트 구성
+
+---
+
+## 3. 프롬프트 설계
+
+최종 프롬프트:
+
+```text
+prompts/analyze_image_fast.txt
+```
+
+### 설계 원칙
+
+| 원칙 | 적용 내용 |
 | --- | --- |
-| OS | Windows |
+| 역할 제한 | 이미지 저장·검색용 정보 추출기로 역할을 고정 |
+| 분류 분리 | 카테고리 이름을 출력하지 않도록 명시 |
+| 관찰 중심 | 화면에서 직접 확인되는 정보만 사용 |
+| 추측 방지 | 사용자 의도, 신원, 장소, 브랜드를 임의 생성하지 않음 |
+| UI 노이즈 제거 | 상태바, 배터리, 댓글 버튼 등 공통 UI 제외 |
+| 분류 근거 보존 | 객체·행동·OCR 등 서로 다른 근거를 2개 이상 보존 |
+| 검색성 강화 | 구체적 대상, 행동, 장소 유형, 자료 유형, 동의어를 태그에 포함 |
+| 출력 고정 | 키가 정해진 JSON 객체 하나만 출력 |
+
+### 내부 판단 순서
+
+프롬프트에 적용한 모델 판단 순서:
+
+```text
+이미지 유형 판단
+→ 중심 대상·행동·장소·객체 관계 확인
+→ 화면 UI와 실제 본문 구분
+→ 핵심 OCR 추출
+→ 객체와 OCR을 함께 해석
+→ 검색·분류 근거 보존
+→ 필드 간 모순과 JSON 형식 점검
+```
+
+### 필드 작성 기준
+
+- `title`: 핵심 대상과 상황 또는 자료 유형을 한 문장으로 작성
+- `description`: 주제와 자료 유형, 이를 뒷받침하는 시각·OCR 근거를 2~3문장으로 작성
+- `tags`: 검색과 분류에 필요한 핵심어 7~10개를 중요도순으로 작성
+- `ocr_text`: 상품명, 가격, 날짜, 장소명 등 의미 있는 원문만 유지
+- `objects`: 검색·분류에 의미 있는 요소를 중복 없이 최대 10개 작성
+- `confidence`: 전체 추출 결과의 확신도를 `0.0~1.0`으로 작성
+
+정답 카테고리, 테스트 파일명, 특정 이미지 전용 예외 규칙 제외.
+
+---
+
+## 4. 사진 처리 흐름
+
+```text
+원본 이미지
+→ 입력 검증
+→ EXIF 추출
+→ 회전·RGB·크기·형식 전처리
+→ Qwen3-VL 추론
+→ JSON 추출·검증
+→ OCR·태그·객체 정규화
+→ 이미지 분석 JSON 생성
+→ classificationText 생성
+→ qwen3:8b 카테고리 분류
+```
+
+### 4.1 입력과 임시 파일
+
+`serve_image_ai.py`의 HTTP 요청 수신 API:
+
+```http
+POST /v1/images/analyze
+Content-Type: multipart/form-data
+file=<이미지>
+```
+
+수신 이미지는 운영 데이터 폴더에 저장하지 않고 임시 파일로 처리.
+
+```text
+운영체제 임시 폴더/upload.{원본 확장자}
+```
+
+분석 완료 후 임시 폴더와 파일 자동 삭제. 원본 영구 저장은 백엔드 S3 담당 범위.
+
+### 4.2 전처리
+
+`image_service/processing.py`의 `prepare_image()`에서 전처리 수행.
+
+```text
+20MB 이하인지 검사
+→ 이미지 형식 검사
+→ 원본 EXIF 추출
+→ EXIF 방향으로 회전
+→ RGB 변환
+→ 긴 변 최대 2048px 축소
+→ JPEG 품질 90으로 변환
+```
+
+모델 입력 이미지는 임시 `prepared.jpg`로 생성 후 추론 완료 시 삭제. S3 원본은 변경 없음.
+
+### 4.3 모델 추론
+
+`providers/ollama_vision.py`에서 전처리 이미지와 최종 프롬프트를 Ollama에 전달.
+
+```text
+prepared.jpg
++ analyze_image_fast.txt
+→ qwen3-vl:8b-instruct
+```
+
+### 4.4 결과 검증
+
+`image_service/service.py`와 `image_service/processing.py`의 결과 검증 작업:
+
+- JSON 코드 블록 제거
+- JSON 객체 추출
+- 필수 필드와 자료형 검사
+- 태그·객체 중복 제거
+- OCR 문자열 정규화
+- `confidence` 범위 정리
+- 재시도 가능한 오류 최대 2회 시도
+
+### 4.5 카테고리 분류 입력
+
+`image_service/integration.py`에서 이미지 결과를 다음 텍스트로 변환.
+
+```text
+이미지 설명: ...
+OCR 텍스트: ...
+태그: ...
+주요 객체: ...
+```
+
+변환 텍스트, `title`, 워크스페이스 후보 카테고리 목록을 `qwen3:8b`에 전달.
+
+이미지 모델과 텍스트 분류 모델의 분리 목적:
+
+- 이미지 추출 결과의 검색·요약 재사용
+- 카테고리 목록 변경 시 이미지 재분석 방지
+- 사용자 수정 카테고리 데이터의 분류 단계 반영
+
+---
+
+## 5. 폴더 구조
+
+```text
+ai/ai-image/
+├─ config.qwen3vl8b.fast.yaml       # 최종 모델·전처리 설정
+├─ requirements.txt                 # Python 패키지
+├─ serve_image_ai.py                # HTTP 서버
+├─ analyze_service_image.py         # 단건 실행
+├─ run_benchmark.py                 # 데이터셋 실행
+├─ evaluate.py                      # 품질 평가
+├─ prompts/
+│  └─ analyze_image_fast.txt        # 최종 프롬프트
+├─ image_service/
+│  ├─ service.py                    # 전체 분석 흐름
+│  ├─ processing.py                 # 이미지·EXIF 전처리와 결과 정규화
+│  ├─ integration.py                # 분류 입력 생성
+│  ├─ http_contract.py              # HTTP 응답 생성
+│  ├─ models.py                     # 결과 모델
+│  └─ errors.py                     # 오류 코드
+├─ providers/
+│  └─ ollama_vision.py              # Ollama 호출
+├─ datasets/
+│  ├─ final_50_test.jsonl           # 최종 50장 목록
+│  ├─ ground_truth.example.jsonl    # 데이터셋 형식 예시
+│  └─ images/                       # 테스트 이미지, Git 제외
+├─ results/                         # 원본 실행 결과, Git 제외
+├─ reports/
+│  └─ final-50-mvp-handoff-report.md
+├─ tests/
+└─ docs/
+   ├─ handover.md
+   └─ image-ai-contract.md
+```
+
+운영에 필요한 핵심 파일:
+
+```text
+config.qwen3vl8b.fast.yaml
+requirements.txt
+serve_image_ai.py
+prompts/
+image_service/
+providers/
+```
+
+`datasets/`, `results/`, `reports/`, `tests/`는 검증·포트폴리오 용도.
+
+---
+
+## 6. 설치
+
+검증 환경:
+
+| 항목 | 환경 |
+| --- | --- |
+| OS | Windows 11 |
 | Python | 3.12.12 |
 | Ollama | 0.32.1 |
-| GPU | NVIDIA GeForce RTX 4070 Laptop GPU |
+| GPU | RTX 4070 Laptop GPU |
 | VRAM | 8GB |
-| 모델 | `qwen3-vl:8b-instruct` |
-| 양자화 설정 | `Q4_K_M` |
 
-Python 3.11 이상을 기준으로 한다. 8GB 미만 VRAM, CPU 실행 또는 다른 운영체제에서는
-처리 속도와 메모리 사용량을 별도로 확인한다.
+### 모델 설치
 
-## 4. 신규 환경 설치
+```powershell
+ollama pull qwen3-vl:8b-instruct
+```
 
-PowerShell 기준:
+카테고리 분류까지 실행할 경우:
+
+```powershell
+ollama pull qwen3:8b
+```
+
+설치 확인:
+
+```powershell
+ollama list
+```
+
+`ollama` 명령을 찾지 못하면:
+
+```powershell
+$env:Path += ";C:\Users\$env:USERNAME\AppData\Local\Programs\Ollama"
+ollama list
+```
+
+### Python 환경
 
 ```powershell
 cd C:\S15P11C105\ai\ai-image
@@ -53,58 +271,55 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-ollama pull qwen3-vl:8b-instruct
 ```
 
-Ollama가 PATH에 없을 때:
+가상환경 활성화가 제한되면 `.venv`의 Python 직접 사용.
+
+---
+
+## 7. 실행
+
+### Ollama 확인
 
 ```powershell
-$env:Path += ";C:\Users\$env:USERNAME\AppData\Local\Programs\Ollama"
-ollama list
+Invoke-RestMethod http://127.0.0.1:11434/api/tags
 ```
 
-Ollama 앱이 실행 중이 아니면 별도 터미널에서 서버를 유지한다.
+연결되지 않을 때만 별도 터미널에서 실행.
 
 ```powershell
 ollama serve
 ```
 
-정상 여부:
-
-```powershell
-ollama list
-Invoke-RestMethod http://127.0.0.1:11434/api/tags
-```
-
-모델 목록에 `qwen3-vl:8b-instruct`가 표시되어야 한다.
-
-## 5. 실행 방법
-
-### 단건 서비스 확인
+### 이미지 AI 서버
 
 ```powershell
 cd C:\S15P11C105\ai\ai-image
-.\.venv\Scripts\python.exe analyze_service_image.py C:\path\to\image.jpg
+.\.venv\Scripts\python.exe -m uvicorn serve_image_ai:app --host 0.0.0.0 --port 8001
 ```
 
-프로세스 종료 코드는 성공 `0`, 실패 `1`이다. 표준 출력의 JSON에서
-`success`, `error_code`, `retryable`을 확인한다.
-
-### 전체 벤치마크
+상태 확인:
 
 ```powershell
-.\.venv\Scripts\python.exe run_benchmark.py --config config.qwen3vl8b.fast.yaml
+Invoke-RestMethod http://127.0.0.1:8001/health
 ```
 
-특정 샘플:
+### 단건 실행
 
 ```powershell
-.\.venv\Scripts\python.exe run_benchmark.py `
-  --config config.qwen3vl8b.fast.yaml `
-  --sample-id SAMPLE_ID
+.\.venv\Scripts\python.exe analyze_service_image.py "C:\path\to\image.jpg"
 ```
 
-데이터와 설정만 확인:
+HTTP 실행:
+
+```powershell
+curl.exe -X POST http://127.0.0.1:8001/v1/images/analyze `
+  -F "file=@C:\path\to\image.jpg"
+```
+
+### 최종 50장
+
+파일 확인만 수행:
 
 ```powershell
 .\.venv\Scripts\python.exe run_benchmark.py `
@@ -112,101 +327,199 @@ cd C:\S15P11C105\ai\ai-image
   --dry-run
 ```
 
-주의: 현재 `config.yaml`은 없으므로 벤치마크에서는 `--config`를 생략하지 않는다.
+실제 실행:
 
-## 6. 현재 운영 설정
+```powershell
+.\.venv\Scripts\python.exe run_benchmark.py `
+  --config config.qwen3vl8b.fast.yaml
+```
 
-`config.qwen3vl8b.fast.yaml` 기준:
+특정 한 장:
 
-| 설정 | 값 | 의미 |
-| --- | ---: | --- |
-| `timeout_seconds` | 120 | Ollama 요청 제한 시간 |
-| `context_length` | 8192 | 모델 문맥 크기 |
-| `max_new_tokens` | 2000 | 최대 출력 토큰 |
-| `temperature` | 0.0 | 결과 재현성 우선 |
-| `seed` | 42 | 테스트 재현용 |
-| `keep_alive` | -1 | 모델을 메모리에 유지 |
-| `max_dimension` | 2048 | 전처리 후 이미지 최대 변 |
+```powershell
+.\.venv\Scripts\python.exe run_benchmark.py `
+  --config config.qwen3vl8b.fast.yaml `
+  --sample-id final50-001
+```
 
-`keep_alive: -1`은 반복 처리 속도에는 유리하지만 VRAM을 계속 점유한다. 개발 중 다른
-GPU 작업과 충돌하면 Ollama에서 모델을 내리거나 서버를 종료한다. 정확도 재검증 없이
-이미지 크기, 프롬프트, 출력 토큰을 낮추지 않는다.
+---
 
-## 7. 백엔드 연결
+## 8. 결과 확인
 
-백엔드 전달 스펙은 `docs/image-ai-contract.md`를 기준으로 한다.
+### 단건 결과
 
-1. 백엔드가 원본 이미지를 S3에 저장하고 Item을 `PROCESSING`으로 생성
-2. Redis Streams `woojuin:item-processing`에 작업 발행
-3. 워커가 이미지 파일을 준비하고 이미지 AI 실행
-4. 성공 결과를 `build_ai_analysis_request`로 텍스트 분류 입력으로 변환
-5. 텍스트 분류기가 워크스페이스의 후보 카테고리 안에서 분류
-6. 전체 성공 시 `DONE`, 일부만 성공하면 `PARTIAL`, 모두 실패하면 `FAILED`
+단건 명령과 HTTP 요청 결과는 터미널에 출력.
 
-이미지 AI 결과의 `metadata.latitude`, `metadata.longitude`,
-`metadata.captured_at`은 EXIF가 없으면 `null`이다. 모델이 위치나 촬영 시각을
-추정해서 채우면 안 된다.
+```json
+{
+  "success": true,
+  "result": {
+    "title": "러닝 기록 화면",
+    "description": "Nike Run Club 달리기 기록 화면이다.",
+    "tags": ["러닝", "운동 기록", "Nike Run Club"],
+    "ocr_text": "3.02 킬로미터 16:36 212 칼로리",
+    "objects": ["스마트폰 화면", "지도", "달리기 경로"],
+    "confidence": 0.96
+  },
+  "classificationText": "이미지 설명: ...",
+  "metadata": {
+    "captured_at": null,
+    "latitude": null,
+    "longitude": null
+  }
+}
+```
 
-촬영 위치는 다음 책임으로 분리한다.
+스크린샷이나 메신저 저장 사진은 EXIF가 없어 메타데이터 `null`이 정상.
 
-1. 이미지 AI가 원본 EXIF에서 `captured_at`, `latitude`, `longitude` 추출
-2. 백엔드 지도 어댑터가 좌표를 장소명으로 역지오코딩
-3. 백엔드가 좌표와 장소명을 Item에 저장
-4. 프론트가 저장된 값을 지도뷰에 표시
+### 벤치마크 결과
 
-지도 공급자는 아직 확정되지 않았으므로 이미지 AI 코드에 특정 지도 API를 직접 연결하지 않는다.
+```text
+ai/ai-image/results/<실행시각>/
+```
 
-## 8. 오류 처리
+원본 JSONL에 이미지별 추출 결과, 전처리 정보, EXIF, 처리 시간, 오류 저장. 재검토·포트폴리오 근거 자료로 유지.
 
-| 상황 | 확인 및 조치 |
-| --- | --- |
-| `OLLAMA_UNAVAILABLE` | Ollama 앱/서버와 `127.0.0.1:11434` 확인 후 재시도 |
-| `MODEL_NOT_INSTALLED` | `ollama pull qwen3-vl:8b-instruct` 실행 |
-| `MODEL_TIMEOUT` | GPU 사용량과 Ollama 로그 확인 후 큐에서 재시도 |
-| `EMPTY_MODEL_RESPONSE` | 최대 2회 재시도 후 실패 기록 |
-| `INVALID_MODEL_RESPONSE` | 프롬프트·출력 제한·원본 결과 확인 |
-| 이미지 형식/크기 오류 | 재시도하지 않고 사용자 입력 오류로 처리 |
+### 카테고리 결과
 
-재시도 가능한 오류도 무한 재시도하지 않는다. 현재 서비스 내부 최대 시도 횟수는
-2회다. 큐 재처리 횟수와 최종 `FAILED` 전환 기준은 백엔드에서 별도로 제한해야 한다.
+```text
+ai/ai-text/results/<실행시각>-image-to-category/
+├─ results.jsonl
+├─ details.csv
+└─ report.md
+```
 
-## 9. 검증 명령
+- `results.jsonl`: 모델 원본 분류 결과
+- `details.csv`: 이미지별 정답 비교
+- `report.md`: 정확도와 불일치 요약
+
+---
+
+## 9. 품질 결과
+
+### 이미지 추출 50장
+
+| 항목 | 결과 |
+| --- | ---: |
+| 구조화 추출 성공률 | **100.0% (50/50)** |
+| 평균 처리 시간 | **32.20초** |
+| P95 처리 시간 | **49.33초** |
+| 핵심 개념 재현율 | **83.4%** |
+| OCR 핵심어 재현율 | **86.7%** |
+| GPS EXIF 추출 | **12/50** |
+| 촬영 시각 EXIF 추출 | **19/50** |
+
+### 카테고리 분류 50장
+
+| 기준 | 결과 |
+| --- | ---: |
+| 허용 정답 기준 Top-1 | **50/50 (100%)** |
+| 대표 정답 완전 일치 | **47/50 (94%)** |
+| 평균 분류 시간 | **1.84초** |
+
+100%는 개발 데이터의 복수 허용 정답 기준. 신규 사용자 데이터의 동일 정확도 보장을 의미하지 않음.
+
+상세 보고서:
+
+```text
+reports/final-50-mvp-handoff-report.md
+```
+
+---
+
+## 10. 검증 명령
+
+이미지 AI 단위 테스트:
 
 ```powershell
 cd C:\S15P11C105\ai\ai-image
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe -m compileall -q analyze_service_image.py image_service providers tests
-.\.venv\Scripts\python.exe run_benchmark.py --config config.qwen3vl8b.fast.yaml --dry-run
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-실제 모델 인수 테스트에서는 OCR이 있는 스크린샷 1장과 일반 사진 1장을 각각 단건
-실행해 성공 JSON과 처리 시간을 확인한다.
+문법 검사:
 
-## 10. 이미지 → 카테고리 통합 테스트
+```powershell
+.\.venv\Scripts\python.exe -m compileall -q `
+  analyze_service_image.py `
+  serve_image_ai.py `
+  image_service `
+  providers `
+  tests
+```
 
-`ai-mix`는 사용하지 않는다. 이미지 결과를 `ai-text`의 Qwen3 8B 분류기로 직접
-전달한다. 실행 방법과 정답 파일 형식은 `../../ai-text/readme.md`의
-`이미지 추출 결과 → 카테고리 분류` 절을 따른다.
+카테고리 연계 테스트:
 
-정답 카테고리는 별도 answer key에 보관하며 이미지 AI와 텍스트 모델 프롬프트에
-포함하지 않는다. 이를 통해 정답 유출 없이 파이프라인 정확도를 평가한다.
+```powershell
+cd C:\S15P11C105\ai\ai-text
+.\.venv\Scripts\python.exe -m pytest tests\test_image_category_pipeline.py -q
+```
 
-## 11. 알려진 미완료 사항
+최종 확인 결과:
 
-- 실제 백엔드 Redis 워커에서 이미지 AI 프로세스를 호출하는 코드는 별도 연동 필요
-- 운영 배포 환경의 GPU, Ollama 실행 방식, 모델 볼륨 영속화 방식 확정 필요
-- 모니터링 지표와 로그 수집 위치 확정 필요
-- 운영 백엔드에서 이미지 결과를 텍스트 분류기로 전달하는 실제 워커 연동 필요
+```text
+이미지 AI 단위 테스트 23개 통과
+이미지→카테고리 연계 테스트 6개 통과
+최종 50장 dry-run 통과
+```
 
-## 12. 인수 체크리스트
+---
 
-- [ ] 운영 장비에서 Ollama와 모델 자동 시작 확인
-- [ ] 모델 파일 저장 공간과 재시작 후 영속성 확인
-- [ ] 단건 이미지 성공·실패 JSON을 백엔드 DTO와 대조
-- [ ] Redis 작업이 저장 API 응답을 막지 않는지 확인
-- [ ] 재시도 후 `DONE/PARTIAL/FAILED` 상태 전환 확인
-- [ ] 이미지 AI 결과가 텍스트 분류 요청으로 정상 변환되는지 확인
-- [ ] EXIF가 있는 이미지와 없는 이미지 모두 확인
-- [ ] 로그에 원본 이미지, 인증정보, 사용자 개인정보가 남지 않는지 확인
-- [ ] 처리 시간, 성공률, 오류 코드별 발생 건수 모니터링 확인
-- [ ] 배포 전 스모크 테스트 결과 기록
+## 11. 오류 확인
+
+| 오류 | 조치 |
+| --- | --- |
+| `OLLAMA_UNAVAILABLE` | Ollama 프로세스와 `127.0.0.1:11434` 확인 |
+| `MODEL_NOT_INSTALLED` | `ollama pull qwen3-vl:8b-instruct` |
+| `MODEL_TIMEOUT` | GPU·VRAM 사용량과 Ollama 로그 확인 |
+| `IMAGE_TOO_LARGE` | 원본을 20MB 이하로 제한 |
+| `UNSUPPORTED_IMAGE` | 입력 형식과 `pillow-heif` 설치 확인 |
+| `IMAGE_DECODE_FAILED` | 손상 파일 또는 확장자 불일치 확인 |
+| `INVALID_MODEL_RESPONSE` | 원본 모델 응답과 프롬프트 확인 |
+| 첫 장만 느림 | 모델의 최초 VRAM 적재 시간 확인 |
+| 계속 느림 | Ollama가 GPU를 사용하는지 확인 |
+
+---
+
+## 12. 전달 항목
+
+Git으로 전달:
+
+```text
+ai/ai-image/config.qwen3vl8b.fast.yaml
+ai/ai-image/requirements.txt
+ai/ai-image/serve_image_ai.py
+ai/ai-image/analyze_service_image.py
+ai/ai-image/run_benchmark.py
+ai/ai-image/prompts/
+ai/ai-image/image_service/
+ai/ai-image/providers/
+ai/ai-image/tests/
+ai/ai-image/docs/
+ai/ai-image/reports/final-50-mvp-handoff-report.md
+ai/ai-image/datasets/final_50_test.jsonl
+ai/ai-image/datasets/ground_truth.example.jsonl
+```
+
+별도 전달:
+
+```text
+ai/ai-image/datasets/images/
+ai/ai-image/results/
+```
+
+전달하지 않는 파일:
+
+```text
+.venv/
+.env
+실제 API 키
+개인정보가 포함된 로그
+```
+
+인수 장비에서 Ollama 모델 직접 설치.
+
+```powershell
+ollama pull qwen3-vl:8b-instruct
+```
+
+최초 인수 확인 대상: 일반 사진 1장, OCR 스크린샷 1장, EXIF 포함 원본 사진 1장.

@@ -41,7 +41,7 @@ ai-image/
 │  ├─ images/                 # 테스트 이미지 11장
 │  └─ ground_truth.jsonl      # 이미지별 정답 태그 및 분류 근거
 ├─ prompts/
-│  └─ analyze_image.txt       # 모델 공통 프롬프트
+│  └─ analyze_image_fast.txt  # 최종 균형형 프롬프트
 ├─ providers/
 │  ├─ base.py                 # 모델 연결 공통 규격
 │  ├─ gemma.py                # 로컬 Gemma 연결

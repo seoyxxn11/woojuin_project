@@ -12,6 +12,7 @@ model:
 
 benchmark:
   dataset: datasets/ground_truth.jsonl
-  prompt: prompts/analyze_image_fast.txt
+  prompt: prompts/analyze_image.txt
+  max_dimension: 2048
   results_dir: results
   reports_dir: reports

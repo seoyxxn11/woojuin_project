@@ -4,19 +4,16 @@ import argparse
 import json
 import re
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 import yaml
 
-from providers import (
-    GemmaProvider,
-    GeminiGmsProvider,
-    GmsProvider,
-    OllamaVisionProvider,
-)
+from providers import OllamaVisionProvider
 from providers.base import ImageModelProvider
+from image_service.processing import prepare_image
 from report import generate_reports
 
 
@@ -112,12 +109,6 @@ def validate_samples(samples: list[dict[str, Any]]) -> list[str]:
 
 def create_provider(model_config: dict[str, Any]) -> ImageModelProvider:
     provider = model_config.get("provider")
-    if provider == "gemma":
-        return GemmaProvider(model_config)
-    if provider == "gms":
-        return GmsProvider(model_config)
-    if provider == "gemini_gms":
-        return GeminiGmsProvider(model_config)
     if provider == "ollama_vision":
         return OllamaVisionProvider(model_config)
     raise ValueError(f"현재 지원하지 않는 provider입니다: {provider}")
@@ -136,6 +127,10 @@ def parse_args() -> argparse.Namespace:
         help="설정 파일의 model_id를 이번 실행에서만 변경",
     )
     parser.add_argument(
+        "--dataset",
+        help="이번 실행에서만 사용할 JSONL 데이터셋 경로",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="모델을 로드하지 않고 설정과 데이터만 검증",
@@ -149,7 +144,7 @@ def main() -> int:
     if args.model_id:
         config["model"]["model_id"] = args.model_id
     benchmark_config = config["benchmark"]
-    dataset_path = resolve_path(benchmark_config["dataset"])
+    dataset_path = resolve_path(args.dataset or benchmark_config["dataset"])
     samples = load_dataset(dataset_path)
 
     if args.sample_id:
@@ -171,6 +166,7 @@ def main() -> int:
         return 0
 
     prompt = resolve_path(benchmark_config["prompt"]).read_text(encoding="utf-8")
+    max_dimension = int(benchmark_config.get("max_dimension", 2048))
     provider = create_provider(config["model"])
     print(f"모델 로드 중: {provider.model_id}")
     provider.load()
@@ -196,8 +192,16 @@ def main() -> int:
                 "ground_truth": sample,
             }
             try:
-                raw_response, metadata = provider.analyze(image_path, prompt)
+                prepared_image, preprocessing = prepare_image(
+                    image_path,
+                    max_dimension=max_dimension,
+                )
+                with tempfile.TemporaryDirectory() as directory:
+                    prepared_path = Path(directory) / "prepared.jpg"
+                    prepared_path.write_bytes(prepared_image)
+                    raw_response, metadata = provider.analyze(prepared_path, prompt)
                 record.update(metadata)
+                record.update(preprocessing)
                 record["raw_response"] = raw_response
                 record["result"] = extract_json(raw_response)
                 record["json_valid"] = True

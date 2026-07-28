@@ -36,6 +36,48 @@
 
 좌표와 촬영시간은 모델 추정값이 아니라 원본 이미지 EXIF에서만 읽는다. EXIF 정보가 없으면 각 값은 `null`이다.
 
+## 백엔드 Item 필드 책임
+
+이미지 AI는 `title`, `description`, `tags`, `ocr_text`, `objects`, `confidence`와
+원본 EXIF 메타데이터만 생성한다. 아래 값은 AI가 임의로 만들지 않는다.
+
+| 필드 | 담당 | 초기값 또는 의미 |
+| --- | --- | --- |
+| `itemId` | 백엔드 | 저장 시 생성하므로 AI 단독 테스트에서는 `null` |
+| `s3Key` | 백엔드 | S3 업로드 완료 후 입력 |
+| `createdAt` | 백엔드 | DB 저장 시각 |
+| `deletedAt` | 백엔드 | 삭제 전에는 항상 `null` |
+| `url` | 백엔드 | 이미지 타입은 `null` |
+| `preview` | 백엔드 | URL 미리보기용이므로 이미지 타입은 비어 있음 |
+| `categories` | 텍스트 분류 단계 | 이미지 추출 직후에는 빈 배열 |
+| `latitude`, `longitude` | 이미지 AI(EXIF) | GPS EXIF가 없으면 `null` |
+| `captured_at` | 이미지 AI(EXIF) | 촬영시각 EXIF가 없으면 `null` |
+
+따라서 전달용 테스트 JSON의 `null`은 AI 추출 실패를 뜻하지 않는다. AI 성공 여부는
+`success`, `result` 필수 필드와 `error_code`로 판단한다.
+
+## 텍스트 카테고리 분류 연결
+
+최신 백엔드 `AiAnalysisRequest`는 `title`, `text`, `candidateCategories`를 입력으로
+받는다. 이미지 분석 성공 결과는 다음과 같이 변환한다.
+
+```json
+{
+  "title": "이미지 AI가 추출한 제목",
+  "text": "이미지 설명: ...\nOCR 텍스트: ...\n태그: ...\n주요 객체: ...",
+  "candidateCategories": ["워크스페이스에 실제 존재하는 카테고리 이름"]
+}
+```
+
+- `text`에는 설명·OCR·태그·객체를 포함해 분류 근거를 보존한다.
+- OCR이 없는 일반 사진은 빈 OCR 줄을 넣지 않는다.
+- 이미지 AI는 후보 카테고리를 선택하거나 새 카테고리를 만들지 않는다.
+- 텍스트 분류기는 전달받은 후보 안에서만 최대 2개를 선택한다.
+- 변환 함수는 `image_service.integration.build_ai_analysis_request`를 사용한다.
+
+백엔드 `ItemResponse`는 최종 사용자 응답이며 이미지 모델의 직접 출력 형식이 아니다.
+`itemId`, `status`, `s3Key`, `createdAt` 등을 이미지 AI가 임의로 채워 반환하지 않는다.
+
 ## 실패 응답
 
 ```json

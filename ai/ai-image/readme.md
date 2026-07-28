@@ -1,208 +1,94 @@
-# AI Image 로컬 모델 벤치마크
+# 이미지 AI
 
-이미지 분석·OCR·카테고리·태그 생성 성능을 동일한 데이터와 프롬프트로 비교하는
-독립 실행형 실험 코드입니다. 이 폴더 밖의 서비스 코드와는 연결하지 않습니다.
+Qwen3-VL 8B를 사용해 이미지에서 검색·분류에 필요한 텍스트 정보를 추출하는
+MVP 모듈입니다. 이미지 모델은 카테고리를 선택하지 않으며, 추출 결과를 별도의
+텍스트 분류 단계에 전달합니다.
 
-## 기본 모델
+## 확정 구성
 
-- 현재 비교 대상: `google/gemma-3-12b-it`
-- 실행 방식: Hugging Face Transformers
-- 기본 양자화: 4비트
+- 모델: `qwen3-vl:8b-instruct`
+- 설정: `config.qwen3vl8b.fast.yaml`
+- 프롬프트: `prompts/analyze_image_fast.txt`
+- 입력: JPEG, PNG, WEBP, 최대 20MB
+- 전처리: EXIF 회전 보정, RGB 변환, 최대 2048px 리사이즈
+- 출력: 제목, 설명, 태그, OCR, 객체, 신뢰도, EXIF 메타데이터
+- 오류 처리: 재시도 가능한 오류는 최대 2회 시도
+- 실행 위치: 백엔드 저장 요청과 분리된 비동기 작업
 
-Gemma 3 4B 기준 테스트를 완료했으며, 현재는 같은 데이터로 12B 모델을 비교하는
-단계입니다. 8GB VRAM에 모델 전체가 들어가지 않으면 `device_map: auto`가 일부를
-시스템 RAM으로 넘길 수 있어 처리 속도가 크게 느려질 수 있습니다.
+입출력 필드와 오류 코드는 `docs/image-ai-contract.md`를 확인합니다.
 
-## 폴더 구조
+## 환경 준비
 
-```text
-ai-image/
-├─ config.yaml
-├─ requirements.txt
-├─ prompts/analyze_image.txt
-├─ datasets/
-│  ├─ images/
-│  └─ ground_truth.example.jsonl
-├─ providers/
-│  ├─ base.py
-│  └─ gemma.py
-├─ results/
-├─ reports/
-├─ run_benchmark.py
-├─ evaluate.py
-├─ search.py
-└─ report.py
-```
-
-## 1. 환경 준비
-
-Python 3.11 또는 3.12와 NVIDIA 드라이버가 필요합니다.
-
-```powershell
-cd ai/ai-image
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-Hugging Face에서 Gemma 사용 조건에 동의한 뒤 로그인합니다.
-
-```powershell
-huggingface-cli login
-```
-
-토큰을 파일에 저장하고 싶지 않으면 세션 환경변수로 전달할 수 있습니다.
-
-```powershell
-$env:HF_TOKEN="본인의 Hugging Face 토큰"
-```
-
-토큰이나 모델 파일은 Git에 커밋하지 마세요.
-
-## 2. 테스트 이미지 등록
-
-1. 이미지를 `datasets/images/`에 넣습니다.
-2. `ground_truth.example.jsonl`을 복사해 `ground_truth.jsonl`을 만듭니다.
-3. 이미지 한 장당 JSON 한 줄을 작성합니다.
-
-```json
-{"id":"receipt-001","file":"images/receipt-001.jpg","category":"DOCUMENT","ocr_text":"아메리카노 4500원","required_tags":["영수증","카페"]}
-```
-
-`category`는 다음 값 중 하나를 사용합니다.
-
-```text
-DOCUMENT, FOOD, PLACE, PRODUCT, PERSON, SCREENSHOT, OTHER
-```
-
-정답을 아직 만들지 못한 항목은 빈 값으로 둘 수 있습니다.
-
-## 3. 실행
-
-먼저 설정과 데이터만 검증합니다. 이 명령은 모델을 내려받지 않습니다.
-
-```powershell
-python run_benchmark.py --dry-run
-```
-
-전체 데이터셋을 실행합니다.
-
-```powershell
-python run_benchmark.py
-```
-
-특정 이미지 한 장만 실행할 수도 있습니다.
-
-```powershell
-python run_benchmark.py --sample-id receipt-001
-```
-
-결과는 `results/<실행시각>-gemma-3-4b-it.jsonl`에 저장됩니다. 중간에 실패해도
-이미 처리된 결과는 보존됩니다. 실행이 끝나면 기존 결과를 모두 읽어 비교 보고서도
-자동으로 갱신합니다.
-
-```text
-reports/model-comparison.md  # VS Code에서 읽기 좋은 종합 보고서
-reports/model-summary.csv    # 모델·실행별 지표
-reports/sample-details.csv   # 이미지별 정답과 예측 결과
-reports/search-indexes/      # 실행별 검색 가능한 이미지 정보
-```
-
-## 4. 평가
-
-```powershell
-python evaluate.py --result results/<결과파일>.jsonl
-```
-
-다음 지표가 출력됩니다.
-
-- 성공률과 JSON 파싱 성공률
-- 평균 및 P95 처리 시간
-- 카테고리 정확도
-- 카테고리 검색 Precision, Recall, F1
-- OCR 문자 오류율(CER)
-- 필수 태그 재현율
-
-이미지 설명 품질과 환각 여부는 자동 점수만으로 판단하기 어려우므로 결과 파일에
-사람 평가 점수를 추가해 별도로 비교하는 것을 권장합니다.
-
-기존 결과만으로 보고서를 다시 만들고 싶다면 다음 명령을 실행합니다.
-
-```powershell
-python report.py
-```
-
-모델을 비교할 때는 각 모델을 동일한 전체 데이터셋으로 실행해야 합니다. 한 장만
-실행한 결과와 다섯 장을 실행한 결과의 정확도를 직접 비교하면 안 됩니다.
-
-## 5. 카테고리로 이미지 검색
-
-모델 실행 결과에는 이미지 파일, 제목, 설명, 카테고리, 태그, OCR, 주요 객체가
-검색 인덱스로 저장됩니다. 가장 최근 실행 결과에서 문서 이미지를 검색하려면:
-
-```powershell
-python search.py --category DOCUMENT
-python search.py --category 문서
-```
-
-특정 모델 실행 결과를 검색하려면:
-
-```powershell
-python search.py --category FOOD --result results/<결과파일>.jsonl
-```
-
-이 검색은 운영 서비스의 데이터베이스를 대신하는 로컬 테스트입니다. 실제 서비스에서는
-동일 필드를 아이템 레코드와 검색 인덱스에 저장하고 워크스페이스 권한을 검증한 뒤
-검색해야 합니다.
-
-## 설정값
-
-`config.yaml`에서 모델과 생성 옵션을 바꿀 수 있습니다.
-
-```yaml
-model:
-  model_id: google/gemma-3-12b-it
-  quantization: 4bit
-  device_map: gemma_12b_laptop
-  cpu_offload: true
-  max_new_tokens: 512
-  temperature: 0.0
-```
-
-모델을 공정하게 비교하려면 데이터셋과 프롬프트는 유지하고 `model_id` 및 실행
-옵션만 변경하세요.
-
-12B 모델은 8GB VRAM에 전부 들어가지 않으므로 `gemma_12b_laptop` 장치 배치를
-사용합니다. 비전 인코더·임베딩·출력 헤드는 시스템 RAM에, 언어 모델 레이어는 GPU에
-배치합니다. 이 경우 품질 비교는 가능하지만 처리 시간은 GPU에 모델 전체를 올린
-환경보다 느립니다. 보고서에서 4B와 12B 속도를 비교할 때 이 실행 조건을 함께 기록해야
-합니다.
-## Qwen3-VL 8B 운영 설정
-
-이미지 모델은 OCR, 장면 설명, 객체와 검색 키워드 추출까지만 담당합니다. 최종 카테고리 분류는 별도 텍스트 모델 `qwen3:8b`가 담당합니다.
-
-최종 MVP 설정은 `config.qwen3vl8b.fast.yaml`과 균형형 프롬프트 `prompts/analyze_image_fast.txt`입니다. 모델 재로딩 방지를 위해 `keep_alive: -1`을 적용합니다.
-
-```powershell
-ollama pull qwen3-vl:8b-instruct
-.\.venv\Scripts\python.exe run_benchmark.py --config config.qwen3vl8b.fast.yaml
-```
-
-## 서비스용 단건 이미지 분석
-
-최종 MVP 설정으로 이미지 한 장을 분석하려면 Ollama 서버를 실행한 뒤 다음 명령을 사용합니다.
+Python 3.11 이상과 Ollama가 필요합니다. 현재 검증한 개발 환경은 Windows,
+Python 3.12.12, Ollama 0.32.1, RTX 4070 Laptop GPU(8GB VRAM)입니다.
+다른 GPU나 CPU 환경에서는 처리 시간과 메모리 사용량을 다시 확인해야 합니다.
 
 ```powershell
 cd C:\S15P11C105\ai\ai-image
-.\.venv\Scripts\python.exe analyze_service_image.py datasets\images\샘플이미지.jpg
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+ollama pull qwen3-vl:8b-instruct
 ```
 
-결과는 제목, 설명, 태그, OCR, 객체, 신뢰도와 실행 메타데이터를 포함한 JSON으로 출력됩니다.
-입출력 및 오류 코드 계약은 `docs/image-ai-contract.md`를 확인하세요.
-
-모델을 실행하지 않고 전처리와 결과 정규화 테스트만 확인하려면:
+Ollama 앱이 자동 실행되지 않는 환경에서는 서버를 실행합니다.
 
 ```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+ollama serve
 ```
+
+PowerShell에서 `ollama` 명령을 찾지 못하면 Ollama 설치 경로를 현재 터미널의
+PATH에 추가합니다.
+
+```powershell
+$env:Path += ";C:\Users\$env:USERNAME\AppData\Local\Programs\Ollama"
+ollama list
+```
+
+## 단건 실행
+
+```powershell
+cd C:\S15P11C105\ai\ai-image
+.\.venv\Scripts\python.exe analyze_service_image.py C:\path\to\image.jpg
+```
+
+결과 JSON의 `result`에는 제목·설명·태그·OCR·객체·신뢰도가 포함됩니다.
+원본에 EXIF가 있으면 `metadata`에 좌표와 촬영 시간이 추가됩니다.
+
+## 카테고리 분류 연결
+
+이미지 추출 결과는 `build_ai_analysis_request`로 최신 백엔드
+`AiAnalysisRequest(title, text, candidateCategories)` 형식에 맞춥니다.
+
+```python
+from image_service import build_ai_analysis_request
+
+request = build_ai_analysis_request(image_result, candidate_categories)
+```
+
+`candidate_categories`는 해당 워크스페이스에 실제 존재하는 카테고리 이름 목록이며,
+이미지 모델은 이 값을 판단하거나 변경하지 않습니다.
+
+## 검증
+
+모델을 실행하지 않고 전처리·JSON 검증·재시도·연동 변환을 테스트합니다.
+
+```powershell
+cd C:\S15P11C105\ai\ai-image
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m compileall -q analyze_service_image.py image_service providers tests
+```
+
+전체 데이터셋 벤치마크는 설정 파일을 명시해 실행합니다.
+
+```powershell
+.\.venv\Scripts\python.exe run_benchmark.py --config config.qwen3vl8b.fast.yaml
+```
+
+현재 저장소에는 `run_benchmark.py`의 기본 설정명인 `config.yaml`이 없으므로
+`--config`를 생략하면 실행되지 않습니다.
+
+최종 33장 품질 결과는 `reports/final-33-evaluation-report.md`에 정리되어 있습니다.
+설정값, 운영 흐름, 장애 대응과 인수 체크리스트는
+`docs/handover.md`를 확인합니다.

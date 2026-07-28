@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import socket
 import tempfile
 import urllib.error
 from pathlib import Path
@@ -67,6 +68,40 @@ class ImageAnalysisService:
                     last_error = exc
                     if not exc.retryable or attempt >= self.max_attempts:
                         raise
+                except (TimeoutError, socket.timeout) as exc:
+                    last_error = ImageAiError(
+                        ImageAiErrorCode.MODEL_TIMEOUT,
+                        "이미지 모델 요청 시간이 초과되었습니다.",
+                        retryable=True,
+                    )
+                    if attempt >= self.max_attempts:
+                        raise last_error from exc
+                except (urllib.error.URLError, ConnectionError) as exc:
+                    last_error = ImageAiError(
+                        ImageAiErrorCode.OLLAMA_UNAVAILABLE,
+                        "Ollama에 연결할 수 없습니다.",
+                        retryable=True,
+                    )
+                    if attempt >= self.max_attempts:
+                        raise last_error from exc
+                except RuntimeError as exc:
+                    message = str(exc)
+                    if "응답이 비어" in message:
+                        last_error = ImageAiError(
+                            ImageAiErrorCode.EMPTY_MODEL_RESPONSE,
+                            message,
+                            retryable=True,
+                        )
+                    elif "Ollama" in message:
+                        last_error = ImageAiError(
+                            ImageAiErrorCode.OLLAMA_UNAVAILABLE,
+                            message,
+                            retryable=True,
+                        )
+                    else:
+                        raise
+                    if attempt >= self.max_attempts:
+                        raise last_error from exc
             raise last_error or ImageAiError(
                 ImageAiErrorCode.INTERNAL_ERROR,
                 "이미지 분석에 실패했습니다.",
@@ -79,33 +114,8 @@ class ImageAnalysisService:
                 error_message=str(exc),
                 retryable=exc.retryable,
             )
-        except TimeoutError:
-            return self._failure(
-                ImageAiErrorCode.MODEL_TIMEOUT,
-                "이미지 모델 요청 시간이 초과되었습니다.",
-                retryable=True,
-            )
-        except (urllib.error.URLError, ConnectionError):
-            return self._failure(
-                ImageAiErrorCode.OLLAMA_UNAVAILABLE,
-                "Ollama에 연결할 수 없습니다.",
-                retryable=True,
-            )
         except (json.JSONDecodeError, RuntimeError) as exc:
-            message = str(exc)
-            if "응답이 비어" in message:
-                return self._failure(
-                    ImageAiErrorCode.EMPTY_MODEL_RESPONSE,
-                    message,
-                    retryable=True,
-                )
-            if "Ollama" in message:
-                return self._failure(
-                    ImageAiErrorCode.OLLAMA_UNAVAILABLE,
-                    message,
-                    retryable=True,
-                )
-            return self._failure(ImageAiErrorCode.INTERNAL_ERROR, message)
+            return self._failure(ImageAiErrorCode.INTERNAL_ERROR, str(exc))
 
     @staticmethod
     def _failure(

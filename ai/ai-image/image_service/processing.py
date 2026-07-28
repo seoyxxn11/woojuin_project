@@ -12,7 +12,7 @@ from .errors import ImageAiError, ImageAiErrorCode
 from .models import ImageAnalysisResult
 
 
-SUPPORTED_FORMATS = {"JPEG", "PNG", "WEBP"}
+SUPPORTED_FORMATS = {"JPEG", "MPO", "PNG", "WEBP"}
 MAX_SOURCE_BYTES = 20 * 1024 * 1024
 DEFAULT_MAX_DIMENSION = 2048
 REQUIRED_FIELDS = {

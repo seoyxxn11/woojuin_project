@@ -100,6 +100,7 @@
 
 - 서버: `serve_image_ai.py`
 - 상태 확인: `GET /health`
+- 모델 워밍업: `POST /warmup`
 - 이미지 분석: `POST /v1/images/analyze`
 - 요청: `multipart/form-data`, 파일 필드명 `file`
 - 성공: HTTP 200

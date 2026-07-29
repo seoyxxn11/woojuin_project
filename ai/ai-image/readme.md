@@ -8,7 +8,8 @@ MVP 모듈입니다. 이미지 모델은 카테고리를 선택하지 않으며,
 
 - 모델: `qwen3-vl:8b-instruct`
 - 설정: `config.qwen3vl8b.fast.yaml`
-- 프롬프트: `prompts/analyze_image_fast.txt`
+- 프롬프트: `prompts/analyze_image_fast.txt` 축약 균형형
+- 추론 최적화: 컨텍스트 6144, Flash Attention, 모델 워밍업·상주
 - 입력: JPEG, MPO, PNG, WEBP, HEIC/HEIF, 최대 20MB
 - 전처리: EXIF 회전 보정, RGB 변환, 최대 2048px 리사이즈
 - 출력: 제목, 설명, 태그, OCR, 객체, 신뢰도, EXIF 메타데이터
@@ -35,6 +36,7 @@ ollama pull qwen3-vl:8b-instruct
 Ollama 앱이 자동 실행되지 않는 환경에서는 서버를 실행합니다.
 
 ```powershell
+$env:OLLAMA_FLASH_ATTENTION="1"
 ollama serve
 ```
 
@@ -116,3 +118,6 @@ cd C:\S15P11C105\ai\ai-image
 최종 33장 품질 결과는 `reports/final-33-evaluation-report.md`에 정리되어 있습니다.
 설정값, 운영 흐름, 장애 대응과 인수 체크리스트는
 `docs/handover.md`를 확인합니다.
+
+최종 축약 프롬프트의 50장 전체 품질·속도 회귀 결과는
+`reports/final-50-mvp-handoff-report.md`에서 확인합니다.

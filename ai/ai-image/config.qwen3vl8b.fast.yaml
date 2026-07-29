@@ -4,7 +4,7 @@ model:
   base_url: http://localhost:11434
   timeout_seconds: 120
   quantization: Q4_K_M
-  context_length: 8192
+  context_length: 6144
   max_new_tokens: 2000
   temperature: 0.0
   seed: 42

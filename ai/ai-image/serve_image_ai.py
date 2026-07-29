@@ -76,6 +76,23 @@ async def health() -> Any:
     return {"status": "UP", "model": service.provider.model_id}
 
 
+@app.post("/warmup")
+async def warmup() -> Any:
+    try:
+        async with inference_semaphore:
+            metadata = await run_in_threadpool(get_service().warmup)
+    except ImageAiError as exc:
+        return JSONResponse(
+            status_code=503,
+            content=failure_payload(
+                exc.code,
+                str(exc),
+                retryable=exc.retryable,
+            ),
+        )
+    return {"status": "READY", **metadata}
+
+
 @app.post("/v1/images/analyze")
 async def analyze_image(file: UploadFile = File(...)) -> Any:
     image_bytes = await file.read(MAX_SOURCE_BYTES + 1)

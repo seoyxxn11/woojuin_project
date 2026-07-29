@@ -214,6 +214,10 @@ def main() -> int:
                     prepared_path.write_bytes(prepared_image)
                     raw_response, metadata = provider.analyze(prepared_path, prompt)
                 result_metadata = build_result_metadata(metadata, preprocessing)
+                # 서비스 응답의 metadata는 EXIF 핵심값만 유지하되, 벤치마크
+                # JSONL에는 속도·토큰·전처리 통계를 최상위 검증 자료로 보존한다.
+                record.update(metadata)
+                record.update(preprocessing)
                 # 기존 보고서 호환을 위해 최상위 필드는 유지한다.
                 record.update(result_metadata)
                 record["metadata"] = result_metadata

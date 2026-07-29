@@ -17,6 +17,9 @@ class FakeImageService:
     def validate_environment(self) -> None:
         return None
 
+    def warmup(self):
+        return {"model": "fake-vision", "warmup_ms": 10.0}
+
     def analyze(self, _image_path) -> ImageAnalysisResponse:
         return ImageAnalysisResponse(
             success=True,
@@ -50,6 +53,13 @@ class ImageApiTest(unittest.TestCase):
         response = self.client.get("/health")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["status"], "UP")
+
+    @patch("serve_image_ai.get_service", return_value=FakeImageService())
+    def test_warmup(self, _get_service) -> None:
+        response = self.client.post("/warmup")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["status"], "READY")
+        self.assertEqual(response.json()["model"], "fake-vision")
 
     @patch("serve_image_ai.get_service", return_value=FakeImageService())
     def test_analyze_returns_backend_classification_text(self, _get_service) -> None:

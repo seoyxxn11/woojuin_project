@@ -15,6 +15,11 @@ class ImageModelProvider(ABC):
     def load(self) -> None:
         """모델과 프로세서를 메모리에 올립니다."""
 
+    def warmup(self) -> dict[str, Any]:
+        """첫 사용자 요청 전에 모델을 메모리에 올립니다."""
+        self.load()
+        return {"model": self.model_id}
+
     @abstractmethod
     def analyze(self, image_path: Path, prompt: str) -> tuple[str, dict[str, Any]]:
         """원본 응답 문자열과 실행 메타데이터를 반환합니다."""

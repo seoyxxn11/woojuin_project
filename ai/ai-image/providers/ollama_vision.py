@@ -79,6 +79,32 @@ class OllamaVisionProvider(ImageModelProvider):
                 f"먼저 `ollama pull {self.model_id}`를 실행하세요."
             )
 
+    def warmup(self) -> dict[str, Any]:
+        self.load()
+        started = time.perf_counter()
+        response = self._request(
+            "/api/chat",
+            {
+                "model": self.model_id,
+                "messages": [{"role": "user", "content": "준비"}],
+                "stream": False,
+                "options": {
+                    "temperature": 0.0,
+                    "num_ctx": int(self.config.get("context_length", 4096)),
+                    "num_predict": 1,
+                },
+                "keep_alive": self.config.get("keep_alive", "10m"),
+            },
+        )
+        return {
+            "model": self.model_id,
+            "warmup_ms": round((time.perf_counter() - started) * 1000, 2),
+            "load_duration_ms": round(
+                float(response.get("load_duration", 0)) / 1_000_000,
+                2,
+            ),
+        }
+
     def analyze(self, image_path: Path, prompt: str) -> tuple[str, dict[str, Any]]:
         raw_image = image_path.read_bytes()
         encoded_image = base64.b64encode(raw_image).decode("ascii")

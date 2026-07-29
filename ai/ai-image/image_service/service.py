@@ -40,6 +40,22 @@ class ImageAnalysisService:
             )
             raise ImageAiError(code, message, retryable=code == ImageAiErrorCode.OLLAMA_UNAVAILABLE) from exc
 
+    def warmup(self) -> dict[str, Any]:
+        try:
+            return self.provider.warmup()
+        except RuntimeError as exc:
+            message = str(exc)
+            code = (
+                ImageAiErrorCode.MODEL_NOT_INSTALLED
+                if "설치되지 않았습니다" in message
+                else ImageAiErrorCode.OLLAMA_UNAVAILABLE
+            )
+            raise ImageAiError(
+                code,
+                message,
+                retryable=code == ImageAiErrorCode.OLLAMA_UNAVAILABLE,
+            ) from exc
+
     def analyze(self, image_path: Path) -> ImageAnalysisResponse:
         try:
             prepared, preprocessing = prepare_image(

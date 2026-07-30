@@ -18,6 +18,8 @@ from .models import (
     EmbeddingOutput,
     ImageAiSource,
     MemoAiSource,
+    QueryEmbeddingInput,
+    QueryEmbeddingOutput,
     RawCategoryDescription,
     RawCategoryResult,
     TitleSummaryOutput,
@@ -120,6 +122,14 @@ class AiMixService:
             for item, text, vector in zip(items, texts, vectors, strict=True)
         ]
         return EmbeddingBatchOutput(items=outputs)
+
+    def embed_query(self, value: QueryEmbeddingInput) -> QueryEmbeddingOutput:
+        model, vectors = self.client.create_embeddings([value.text])
+        return QueryEmbeddingOutput(
+            embedding_model=model,
+            dimensions=len(vectors[0]),
+            embedding=vectors[0],
+        )
 
     @staticmethod
     def reduce_coordinates(value: Any):

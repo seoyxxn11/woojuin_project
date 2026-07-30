@@ -13,6 +13,18 @@ from .config import Settings
 RETRYABLE_STATUS_CODES = {408, 409, 425, 429, 500, 502, 503, 504, 529}
 
 
+def _strip_code_fence(content: str) -> str:
+    """json_object 폴백 시 모델이 ```json 펜스로 감싸는 경우를 걷어낸다."""
+    stripped = content.strip()
+    if not stripped.startswith("```"):
+        return stripped
+    first_newline = stripped.find("\n")
+    fence_end = stripped.rfind("```")
+    if first_newline < 0 or fence_end <= first_newline:
+        return stripped
+    return stripped[first_newline + 1 : fence_end].strip()
+
+
 class ConfigurationError(RuntimeError):
     """서비스 설정이 누락된 경우."""
 
@@ -32,6 +44,10 @@ class OpenRouterClient:
         self.settings = settings
         self.session = session or requests.Session()
         self.sleeper = sleeper
+        # Structured Outputs(json_schema) 미지원 판정 캐시. qwen3-8b의 유일한 OpenRouter
+        # 프로바이더(Alibaba)가 json_object까지만 지원해, require_parameters를 걸면
+        # "No endpoints found" 404가 난다. 한 번 확인되면 이후 호출은 폴백으로 직행한다.
+        self._structured_outputs_unsupported = False
 
     def chat_json(
         self,
@@ -40,31 +56,70 @@ class OpenRouterClient:
         schema: dict[str, Any],
         schema_name: str,
     ) -> dict[str, Any]:
-        payload = {
-            "model": self.settings.chat_model,
-            "messages": messages,
-            "temperature": 0,
-            "response_format": {
-                "type": "json_schema",
-                "json_schema": {
-                    "name": schema_name,
-                    "strict": True,
-                    "schema": schema,
+        if self._structured_outputs_unsupported:
+            raw = self._post("/chat/completions", self._json_object_payload(messages, schema))
+        else:
+            payload = {
+                "model": self.settings.chat_model,
+                "messages": messages,
+                "temperature": 0,
+                "reasoning": {"effort": "none"},
+                "response_format": {
+                    "type": "json_schema",
+                    "json_schema": {
+                        "name": schema_name,
+                        "strict": True,
+                        "schema": schema,
+                    },
                 },
-            },
-            "provider": {"require_parameters": True},
-        }
-        raw = self._post("/chat/completions", payload)
+                "provider": {"require_parameters": True},
+            }
+            try:
+                raw = self._post("/chat/completions", payload)
+            except OpenRouterError as exc:
+                # 프로바이더가 json_schema를 못 받는 경우에만 폴백한다. 스키마는 프롬프트에
+                # 실어 보내고, 형식 검증은 어차피 호출부의 pydantic 파싱이 한 번 더 한다.
+                if "No endpoints found" not in str(exc):
+                    raise
+                self._structured_outputs_unsupported = True
+                raw = self._post("/chat/completions", self._json_object_payload(messages, schema))
         try:
             content = raw["choices"][0]["message"]["content"]
             if not isinstance(content, str):
                 raise TypeError("message.content가 문자열이 아닙니다")
-            parsed = json.loads(content)
+            parsed = json.loads(_strip_code_fence(content))
         except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
             raise OpenRouterError("OpenRouter의 JSON 응답 형식이 올바르지 않습니다") from exc
+        # json_object 폴백에서 일부 프로바이더(Alibaba)가 객체를 단일 원소 배열로 감싸
+        # 반환하는 경우가 있다(실측). 의미가 같으므로 벗겨서 수용한다.
+        if isinstance(parsed, list) and len(parsed) == 1 and isinstance(parsed[0], dict):
+            parsed = parsed[0]
         if not isinstance(parsed, dict):
             raise OpenRouterError("OpenRouter의 JSON 응답은 객체여야 합니다")
         return parsed
+
+    def _json_object_payload(
+        self, messages: list[dict[str, str]], schema: dict[str, Any]
+    ) -> dict[str, Any]:
+        """프롬프트 지시 기반 JSON 폴백 페이로드.
+
+        response_format을 아예 보내지 않는다 — Alibaba(qwen3-8b의 유일한 프로바이더)는
+        json_object 모드에서 `"strconv"` 같은 깨진 출력을 내는 반면(실측, temperature 0에서도
+        재현), 프롬프트에 스키마를 싣기만 하면 올바른 JSON을 반환했다. 형식 검증은 호출부의
+        pydantic 파싱이 담당한다.
+        """
+        instruction = (
+            "\n\n다음 JSON Schema를 정확히 따르는 유효한 JSON 객체 하나만 반환하세요. "
+            "배열로 감싸지 말고 최상위가 객체({)여야 합니다. 마크다운·주석·설명문을 붙이지 마세요.\n"
+            + json.dumps(schema, ensure_ascii=False)
+        )
+        last = messages[-1]
+        return {
+            "model": self.settings.chat_model,
+            "messages": [*messages[:-1], {"role": last["role"], "content": last["content"] + instruction}],
+            "temperature": 0,
+            "reasoning": {"effort": "none"},
+        }
 
     def create_embeddings(self, texts: list[str]) -> tuple[str, list[list[float]]]:
         if not texts:

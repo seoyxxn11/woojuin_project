@@ -9,6 +9,7 @@ from woojuin_ai.models import (
     EmbeddingInput,
     ImageAiSource,
     MemoAiSource,
+    QueryEmbeddingInput,
     UrlAiSource,
 )
 from woojuin_ai.service import (
@@ -181,6 +182,18 @@ def test_embedding_batch_calls_api_once_and_returns_hashes():
     assert [item.item_id for item in result.items] == [101, 102]
     assert result.items[0].dimensions == 3
     assert result.items[0].input_hash.startswith("sha256:")
+
+
+def test_query_embedding_sends_raw_text():
+    client = FakeClient()
+    result = AiMixService(client, settings()).embed_query(
+        QueryEmbeddingInput(text="일식 코스 요리")
+    )
+    # 아이템 임베딩과 달리 "카테고리:/제목:/요약:" 틀 없이 검색어 원문 그대로 보낸다.
+    assert client.texts == ["일식 코스 요리"]
+    assert result.embedding_model == "openai/text-embedding-3-small"
+    assert result.dimensions == 3
+    assert result.embedding == [1.0, 0.5, -0.5]
 
 
 def test_category_description_supports_empty_samples():

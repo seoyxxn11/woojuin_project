@@ -5,6 +5,7 @@ from woojuin_ai.config import Settings
 from woojuin_ai.models import (
     EmbeddingBatchOutput,
     EmbeddingOutput,
+    QueryEmbeddingOutput,
     TitleSummaryOutput,
 )
 
@@ -12,6 +13,13 @@ from woojuin_ai.models import (
 class FakeService:
     def create_title_summary(self, source_type, source):
         return TitleSummaryOutput(title="회의 메모", summary="검색 기능을 완료한다.")
+
+    def embed_query(self, value):
+        return QueryEmbeddingOutput(
+            embeddingModel="test-embedding",
+            dimensions=3,
+            embedding=[0.1, 0.2, 0.3],
+        )
 
     def create_embeddings(self, items):
         return EmbeddingBatchOutput(
@@ -64,6 +72,16 @@ def test_validation_error_uses_common_response_envelope():
     body = response.json()
     assert body["status"] == 422
     assert body["data"] is None
+
+
+def test_query_embedding_endpoint_has_flat_contract():
+    response = client.post("/v1/embeddings/query", json={"text": "일식 코스 요리"})
+    assert response.status_code == 200
+    assert response.json()["data"] == {
+        "embeddingModel": "test-embedding",
+        "dimensions": 3,
+        "embedding": [0.1, 0.2, 0.3],
+    }
 
 
 def test_single_embedding_endpoint_unwraps_batch_result():

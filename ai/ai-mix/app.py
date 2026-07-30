@@ -24,6 +24,8 @@ from woojuin_ai.models import (
     HealthOutput,
     ImageAiSource,
     MemoAiSource,
+    QueryEmbeddingInput,
+    QueryEmbeddingOutput,
     TitleSummaryOutput,
     UrlAiSource,
 )
@@ -149,6 +151,17 @@ def create_embedding(
     service: AiMixService = Depends(get_service),
 ) -> dict[str, Any]:
     return success(service.create_embeddings([value]).items[0])
+
+
+@app.post(
+    "/v1/embeddings/query",
+    response_model=ApiResponse[QueryEmbeddingOutput],
+)
+def embed_query(
+    value: QueryEmbeddingInput,
+    service: AiMixService = Depends(get_service),
+) -> dict[str, Any]:
+    return success(service.embed_query(value))
 
 
 @app.post(

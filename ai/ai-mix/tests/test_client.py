@@ -50,7 +50,32 @@ def test_chat_uses_structured_output_and_required_parameters():
     payload = session.calls[0][1]["json"]
     assert payload["response_format"]["type"] == "json_schema"
     assert payload["provider"]["require_parameters"] is True
+    assert payload["reasoning"] == {"effort": "none"}
     assert session.calls[0][1]["headers"]["Authorization"] == "Bearer or-test"
+
+
+def test_chat_disables_reasoning_after_structured_output_fallback():
+    session = FakeSession(
+        [
+            FakeResponse(404, {"error": {"message": "No endpoints found"}}),
+            FakeResponse(
+                200,
+                {"choices": [{"message": {"content": '{"title":"t","summary":"s"}'}}]},
+            ),
+        ]
+    )
+    client = OpenRouterClient(settings(), session=session)
+
+    result = client.chat_json(
+        messages=[{"role": "user", "content": "test"}],
+        schema={"type": "object"},
+        schema_name="result",
+    )
+
+    assert result == {"title": "t", "summary": "s"}
+    assert len(session.calls) == 2
+    assert session.calls[0][1]["json"]["reasoning"] == {"effort": "none"}
+    assert session.calls[1][1]["json"]["reasoning"] == {"effort": "none"}
 
 
 def test_embeddings_are_sorted_by_index():

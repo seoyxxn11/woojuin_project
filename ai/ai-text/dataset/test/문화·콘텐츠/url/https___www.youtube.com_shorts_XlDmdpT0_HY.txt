@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"드디어 2년만에 컴백한 뉴진스","url":"https://www.youtube.com/shorts/XlDmdpT0_HY","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/XlDmdpT0_HY/hq2.jpg","description":"미녀 천명 모으기"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

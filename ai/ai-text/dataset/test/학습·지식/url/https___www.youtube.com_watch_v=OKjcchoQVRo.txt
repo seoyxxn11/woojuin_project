@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"[서울대학교 중앙도서관 직촬] 공부할 때 듣는 음악 🌈 집중력 백색소음 ASMR","url":"https://www.youtube.com/watch?v=OKjcchoQVRo","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/OKjcchoQVRo/hqdefault.jpg","description":"공부의신 강성태"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

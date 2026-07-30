@@ -1,1 +1,0 @@
-{"itemId":null,"type":"URL","status":"PARTIAL","title":"apps.apple.com","url":"https://apps.apple.com/kr/app/id1610260075","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

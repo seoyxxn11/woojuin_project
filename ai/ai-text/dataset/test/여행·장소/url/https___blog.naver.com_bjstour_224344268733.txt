@@ -1,1 +1,1 @@
-{"itemId":null,"type":"URL","status":"PARTIAL","title":"여행하는어린왕자 : 네이버 블로그","url":"https://blog.naver.com/bjstour/224344268733","content":null,"summary":"","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"여행하는어린왕자 : 네이버 블로그","url":"https://blog.naver.com/bjstour/224344268733","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

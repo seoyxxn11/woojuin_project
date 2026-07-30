@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"20대에 돈 가장 빨리 모으는 현실적인 방법 (ISA, ETF 활용법)","url":"https://youtu.be/1AFnKX2-rt0?si=ySbLjlVATwHcyGBp","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/1AFnKX2-rt0/hqdefault.jpg","description":"강지영의 동그라미"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

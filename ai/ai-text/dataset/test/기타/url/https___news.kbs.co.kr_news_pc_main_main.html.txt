@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"KBS 뉴스","url":"https://news.kbs.co.kr/news/pc/main/main.html","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://news.kbs.co.kr/resource/image/common/img_meta.png","description":"세상을 담다, 오늘을 보다"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

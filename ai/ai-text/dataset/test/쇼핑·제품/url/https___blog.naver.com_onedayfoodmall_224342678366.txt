@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"원데이푸드몰 공식 블로그 : 네이버 블로그","url":"https://blog.naver.com/onedayfoodmall/224342678366","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

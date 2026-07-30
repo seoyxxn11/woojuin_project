@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"맛잘남 자취 한식요리 : 네이버 블로그","url":"https://blog.naver.com/sinjum77/224347923705","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

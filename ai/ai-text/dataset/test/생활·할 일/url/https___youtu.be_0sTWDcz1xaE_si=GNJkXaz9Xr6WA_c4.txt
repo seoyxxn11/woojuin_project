@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"6화 약속 지키기 | 우리 아이 생활습관 길러주는 뽀로로 | 뽀로로 생활습관","url":"https://youtu.be/0sTWDcz1xaE?si=GNJkXaz9Xr6WA_c4","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/0sTWDcz1xaE/hqdefault.jpg","description":"뽀롱뽀롱 뽀로로 l 이야기・동화"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

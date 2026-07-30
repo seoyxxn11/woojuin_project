@@ -1,1 +1,1 @@
-{"itemId":null,"type":"URL","status":"PARTIAL","title":"coupang.com","url":"https://m.coupang.com/nm/plp/551108","content":null,"summary":"","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"coupang.com","url":"https://m.coupang.com/nm/plp/551108","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

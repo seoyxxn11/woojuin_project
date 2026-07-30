@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"캐논클럽 R50 eosR RP R5 R6 R8 R7 R10 200D 미러리스 여행 중고 : 네이버 카페","url":"https://cafe.naver.com/canon450dclub/649041","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

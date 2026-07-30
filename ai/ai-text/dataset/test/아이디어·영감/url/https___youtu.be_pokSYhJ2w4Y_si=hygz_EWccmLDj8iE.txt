@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"쉽게 아이디어를 내는 방법? / 디자인씽킹(창의적아이디어 발상)시리즈","url":"https://youtu.be/pokSYhJ2w4Y?si=hygz_EWccmLDj8iE","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/pokSYhJ2w4Y/hqdefault.jpg","description":"이츠디자인 It's Design"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

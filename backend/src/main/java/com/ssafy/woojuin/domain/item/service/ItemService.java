@@ -32,6 +32,9 @@ public class ItemService {
     /** 한 번에 조회 가능한 최대 건수. 클라이언트가 size를 크게 보내도 여기서 잘린다. */
     private static final int MAX_PAGE_SIZE = 100;
 
+    /** {@code items.title} 컬럼 길이. 공유 시트가 준 제목이 이걸 넘기면 안 된다. */
+    private static final int MAX_TITLE_LENGTH = 500;
+
     private final ItemRepository itemRepository;
     private final S3Uploader s3Uploader;
     private final ItemQueueProducer itemQueueProducer;
@@ -63,6 +66,7 @@ public class ItemService {
                 .type(request.type())
                 .url(request.url())
                 .content(request.content())
+                .title(sharedTitleOrNull(request.title()))
                 .build();
 
         return save(item, workspaceId);
@@ -86,6 +90,26 @@ public class ItemService {
         // DB 저장이 실패하면 방금 올린 S3 원본이 고아로 남는다 — 저장 실패 시에만
         // 보상 삭제한다(publish 실패는 이미 커밋된 뒤라 대상이 아님, save(Item,Long,Runnable) 참고).
         return save(item, workspaceId, () -> s3Uploader.deleteQuietly(s3Key));
+    }
+
+    /**
+     * 공유 시트가 준 제목을 저장 가능한 형태로 다듬는다 (FR-013).
+     *
+     * <p><b>blank를 null로 눕히는 게 핵심이다.</b> 빈 문자열이 그대로 들어가면
+     * {@link Item#applyPreview}가 "title 있음"으로 보고 크롤링으로 얻은 제목을 채우지 않아,
+     * 제목이 영구히 빈 아이템이 된다 — 공유 시트가 title 파라미터를 빈 값으로 넘기는
+     * 앱이 흔해서 실제로 밟기 쉬운 경로다.
+     *
+     * <p>길이는 {@code @Size(max = 500)}이 이미 400으로 막지만 여기서도 자른다. 검증을 타지
+     * 않는 호출 경로(내부 호출·다른 컨트롤러)가 생겼을 때 {@code items.title}(500자) insert가
+     * 터지는 대신 잘린 제목으로 살아남는 편이 낫다.
+     */
+    private String sharedTitleOrNull(String title) {
+        if (title == null || title.isBlank()) {
+            return null;
+        }
+        String trimmed = title.trim();
+        return trimmed.length() <= MAX_TITLE_LENGTH ? trimmed : trimmed.substring(0, MAX_TITLE_LENGTH);
     }
 
     /**

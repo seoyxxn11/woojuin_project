@@ -128,9 +128,17 @@ public class Item extends BaseTimeEntity {
     }
 
     /**
-     * 트랙 A(미리보기) 결과 반영. title은 사용자가 이미 값을 넣었을 수 있어 덮어쓰지 않고
-     * 비어 있을 때만 채운다 — 저장 시엔 URL 아이템 title이 비어 있는 게 일반적이다.
+     * 트랙 A(미리보기) 결과 반영. title은 이미 값이 있으면 덮어쓰지 않고 비어 있을 때만 채운다.
      * null 인자는 "확보 못 함"이므로 기존 값을 지우지 않는다.
+     *
+     * <p>이 "비어 있을 때만" 규칙이 <b>공유 시트가 준 제목을 지켜주는 장치</b>다(FR-013).
+     * 쿠팡처럼 봇을 막는 쇼핑몰은 크롤링 제목이 host+path 폴백뿐인데, 저장 시점에 공유
+     * 시트에서 받은 상품명이 들어와 있으면 그 폴백이 이걸 밀어내지 않는다. 따라서
+     * <b>공유 제목이 OG 제목보다 우선한다</b> — 둘 다 있을 땐 OG를 버리는 셈이지만, 공유
+     * 제목도 결국 그 페이지의 제목이라 손실이 거의 없고, 지저분한 공유 텍스트는 뒤이어
+     * 실행되는 AI 보강이 다듬어 덮어쓴다({@link com.ssafy.woojuin.domain.ai.AiAnalysis}).
+     *
+     * <p>사용자가 직접 입력한 제목도 같은 규칙으로 보호된다.
      */
     public void applyPreview(String title, String thumbnailUrl, String description) {
         if ((this.title == null || this.title.isBlank()) && title != null && !title.isBlank()) {

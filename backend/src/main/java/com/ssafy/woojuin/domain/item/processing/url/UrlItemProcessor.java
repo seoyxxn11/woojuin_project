@@ -314,6 +314,11 @@ public class UrlItemProcessor implements ItemProcessor {
      *
      * <p>미리보기 실패는 대개 일시적이다(봇 차단·레이트리밋). 그래도 아이템은 남아야 하고,
      * 사용자가 원본 링크로 갈 수 있으면 최소한의 값은 한다.
+     *
+     * <p><b>공유 시트로 저장한 아이템은 여기까지 오더라도 이 제목을 쓰지 않는다</b>(FR-013).
+     * 저장 시점에 이미 상품명이 title에 들어와 있고 {@link Item#applyPreview}가 비어 있을
+     * 때만 채우기 때문이다. 쿠팡·스마트스토어가 그 경로로 제목을 얻는다. 여기 폴백은
+     * 앱에서 URL을 직접 입력해 저장한 경우처럼 공유 제목이 없을 때만 실제로 보인다.
      */
     private String fallbackTitleOf(String url) {
         try {

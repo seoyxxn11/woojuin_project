@@ -87,7 +87,7 @@ class ItemServiceTest {
 
     @Test
     void URL_타입은_url이_없으면_예외() {
-        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, null, null);
+        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, null, null, null);
 
         assertThatThrownBy(() -> itemService.createFromRequest(1L, 1L, request))
                 .isInstanceOf(IllegalArgumentException.class);
@@ -95,7 +95,7 @@ class ItemServiceTest {
 
     @Test
     void URL_타입에_content를_같이_보내면_예외() {
-        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, "https://example.com", "메모");
+        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, "https://example.com", "메모", null);
 
         assertThatThrownBy(() -> itemService.createFromRequest(1L, 1L, request))
                 .isInstanceOf(IllegalArgumentException.class);
@@ -103,7 +103,7 @@ class ItemServiceTest {
 
     @Test
     void MEMO_타입은_content가_없으면_예외() {
-        ItemCreateRequest request = new ItemCreateRequest(ItemType.MEMO, null, null);
+        ItemCreateRequest request = new ItemCreateRequest(ItemType.MEMO, null, null, null);
 
         assertThatThrownBy(() -> itemService.createFromRequest(1L, 1L, request))
                 .isInstanceOf(IllegalArgumentException.class);
@@ -111,13 +111,72 @@ class ItemServiceTest {
 
     @Test
     void URL_저장_성공시_큐에_발행되고_PROCESSING_응답() {
-        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, "https://example.com", null);
+        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, "https://example.com", null, null);
         when(itemRepository.save(any(Item.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         ItemCreateResponse response = itemService.createFromRequest(10L, 1L, request);
 
         assertThat(response.status()).isEqualTo(ItemStatus.PROCESSING);
         verify(itemQueueProducer).publish(response.itemId(), 10L, ItemType.URL);
+    }
+
+    @Test
+    void 공유된_제목은_아이템_title로_저장된다() {
+        ItemCreateRequest request = new ItemCreateRequest(
+                ItemType.URL, "https://www.coupang.com/vp/products/123", null, "무선 이어폰 블루투스 5.3");
+        when(itemRepository.save(any(Item.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        itemService.createFromRequest(10L, 1L, request);
+
+        ArgumentCaptor<Item> captor = ArgumentCaptor.forClass(Item.class);
+        verify(itemRepository).save(captor.capture());
+        assertThat(captor.getValue().getTitle()).isEqualTo("무선 이어폰 블루투스 5.3");
+    }
+
+    @Test
+    void 공유된_제목의_앞뒤_공백은_제거된다() {
+        ItemCreateRequest request = new ItemCreateRequest(
+                ItemType.URL, "https://www.coupang.com/vp/products/123", null, "  무선 이어폰\n");
+        when(itemRepository.save(any(Item.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        itemService.createFromRequest(10L, 1L, request);
+
+        ArgumentCaptor<Item> captor = ArgumentCaptor.forClass(Item.class);
+        verify(itemRepository).save(captor.capture());
+        assertThat(captor.getValue().getTitle()).isEqualTo("무선 이어폰");
+    }
+
+    /**
+     * 빈 문자열이 그대로 저장되면 applyPreview가 "title 있음"으로 보고 크롤링 제목을
+     * 채우지 않아 제목이 영구히 빈 아이템이 된다. 공유 시트가 title을 빈 값으로 넘기는
+     * 앱이 흔해서 실제로 밟기 쉬운 경로다.
+     */
+    @Test
+    void 공백뿐인_공유_제목은_null로_저장돼_크롤링_제목을_막지_않는다() {
+        ItemCreateRequest request = new ItemCreateRequest(
+                ItemType.URL, "https://example.com", null, "   ");
+        when(itemRepository.save(any(Item.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        itemService.createFromRequest(10L, 1L, request);
+
+        ArgumentCaptor<Item> captor = ArgumentCaptor.forClass(Item.class);
+        verify(itemRepository).save(captor.capture());
+        assertThat(captor.getValue().getTitle()).isNull();
+    }
+
+    /** items.title이 500자라 그대로 넣으면 insert가 터진다. @Size를 타지 않는 경로 대비. */
+    @Test
+    void 공유된_제목이_500자를_넘으면_잘린다() {
+        String tooLong = "가".repeat(600);
+        ItemCreateRequest request = new ItemCreateRequest(
+                ItemType.URL, "https://example.com", null, tooLong);
+        when(itemRepository.save(any(Item.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        itemService.createFromRequest(10L, 1L, request);
+
+        ArgumentCaptor<Item> captor = ArgumentCaptor.forClass(Item.class);
+        verify(itemRepository).save(captor.capture());
+        assertThat(captor.getValue().getTitle()).hasSize(500);
     }
 
     @Test
@@ -350,7 +409,7 @@ class ItemServiceTest {
 
     @Test
     void 워크스페이스_멤버가_아니면_생성_403() {
-        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, "https://example.com", null);
+        ItemCreateRequest request = new ItemCreateRequest(ItemType.URL, "https://example.com", null, null);
         when(workspaceMemberRepository.findByWorkspaceIdAndUserId(1L, 999L)).thenReturn(Optional.empty());
 
         assertThatThrownBy(() -> itemService.createFromRequest(1L, 999L, request))

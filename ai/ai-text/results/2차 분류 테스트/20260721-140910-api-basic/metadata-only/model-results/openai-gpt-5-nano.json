@@ -1,0 +1,2680 @@
+{
+  "modelId": "openai-gpt-5-nano",
+  "provider": "openai",
+  "requestedModel": "gpt-5-nano",
+  "resolvedModels": [
+    "gpt-5-nano-2025-08-07"
+  ],
+  "status": "COMPLETED",
+  "requests": [
+    {
+      "testId": "TEXT-001",
+      "datasetKey": "memo:TEXT-001",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-0905",
+      "sourcePath": "개발·IT/001-텍스트-2026.07.20-0905.txt",
+      "expected": {
+        "categories": [
+          "개발·IT"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"스프링 부트\",\"AWS S3 업로드\",\"UUID로 파일명 중복 방지\",\"이미지 URL 및 메타데이터 DB 저장\"],\"keywords\":[\"스프링 부트 이미지 업로드\",\"AWS S3 저장\",\"UUID 중복 방지\",\"이미지 URL 및 메타데이터 DB 저장\",\"파일 크기 확장자 저장\"]}",
+        "parsedOutput": {
+          "tags": [
+            "스프링 부트",
+            "AWS S3 업로드",
+            "UUID로 파일명 중복 방지",
+            "이미지 URL 및 메타데이터 DB 저장"
+          ],
+          "keywords": [
+            "스프링 부트 이미지 업로드",
+            "AWS S3 저장",
+            "UUID 중복 방지",
+            "이미지 URL 및 메타데이터 DB 저장",
+            "파일 크기 확장자 저장"
+          ]
+        },
+        "inputTokens": 293,
+        "outputTokens": 863,
+        "totalTokens": 1156,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 768,
+        "latencyMs": 5860.603799999808,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_4ce2e4f5d08b4d07887b36f3c9313da9",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"스프링 부트\",\"AWS S3 업로드\",\"UUID로 파일명 중복 방지\",\"이미지 URL 및 메타데이터 DB 저장\"],\"keywords\":[\"스프링 부트 이미지 업로드\",\"AWS S3 저장\",\"UUID 중복 방지\",\"이미지 URL 및 메타데이터 DB 저장\",\"파일 크기 확장자 저장\"]}",
+      "parsedResponse": {
+        "tags": [
+          "스프링 부트",
+          "AWS S3 업로드",
+          "UUID로 파일명 중복 방지",
+          "이미지 URL 및 메타데이터 DB 저장"
+        ],
+        "keywords": [
+          "스프링 부트 이미지 업로드",
+          "AWS S3 저장",
+          "UUID 중복 방지",
+          "이미지 URL 및 메타데이터 DB 저장",
+          "파일 크기 확장자 저장"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:17:33.984532+09:00"
+    },
+    {
+      "testId": "TEXT-002",
+      "datasetKey": "memo:TEXT-002",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "JWT 재발급 구조 정리",
+      "sourcePath": "개발·IT/002-JWT 재발급 구조 정리.txt",
+      "expected": {
+        "categories": [
+          "개발·IT"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"JWT 재발급 구조\",\"리프레시 토큰\",\"HttpOnly 쿠키에 저장\",\"토큰 탈취 방지\",\"중복 사용 방지\"],\"keywords\":[\"액세스 토큰 만료\",\"리프레시 토큰으로 새로운 토큰 발급\",\"HttpOnly 쿠키에 저장\",\"토큰 탈취 방지\",\"중복 사용 방지\"]}",
+        "parsedOutput": {
+          "tags": [
+            "JWT 재발급 구조",
+            "리프레시 토큰",
+            "HttpOnly 쿠키에 저장",
+            "토큰 탈취 방지",
+            "중복 사용 방지"
+          ],
+          "keywords": [
+            "액세스 토큰 만료",
+            "리프레시 토큰으로 새로운 토큰 발급",
+            "HttpOnly 쿠키에 저장",
+            "토큰 탈취 방지",
+            "중복 사용 방지"
+          ]
+        },
+        "inputTokens": 317,
+        "outputTokens": 1634,
+        "totalTokens": 1951,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1536,
+        "latencyMs": 11209.877699991921,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_7476fdbc04064d9e8ddc0ea10e307f0a",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"JWT 재발급 구조\",\"리프레시 토큰\",\"HttpOnly 쿠키에 저장\",\"토큰 탈취 방지\",\"중복 사용 방지\"],\"keywords\":[\"액세스 토큰 만료\",\"리프레시 토큰으로 새로운 토큰 발급\",\"HttpOnly 쿠키에 저장\",\"토큰 탈취 방지\",\"중복 사용 방지\"]}",
+      "parsedResponse": {
+        "tags": [
+          "JWT 재발급 구조",
+          "리프레시 토큰",
+          "HttpOnly 쿠키에 저장",
+          "토큰 탈취 방지",
+          "중복 사용 방지"
+        ],
+        "keywords": [
+          "액세스 토큰 만료",
+          "리프레시 토큰으로 새로운 토큰 발급",
+          "HttpOnly 쿠키에 저장",
+          "토큰 탈취 방지",
+          "중복 사용 방지"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.2,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:17:45.196937+09:00"
+    },
+    {
+      "testId": "TEXT-017",
+      "datasetKey": "memo:TEXT-017",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1220",
+      "sourcePath": "건강·운동/017-텍스트-2026.07.20-1220.txt",
+      "expected": {
+        "categories": [
+          "건강·운동"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"허리 스트레칭\",\"고양이 자세\",\"골반 기울이기\",\"무릎 당기기\"],\"keywords\":[\"허리 스트레칭\",\"고양이 자세\",\"무릎 당기기\",\"골반 기울이기\",\"통증 시 중단\"]}",
+        "parsedOutput": {
+          "tags": [
+            "허리 스트레칭",
+            "고양이 자세",
+            "골반 기울이기",
+            "무릎 당기기"
+          ],
+          "keywords": [
+            "허리 스트레칭",
+            "고양이 자세",
+            "무릎 당기기",
+            "골반 기울이기",
+            "통증 시 중단"
+          ]
+        },
+        "inputTokens": 297,
+        "outputTokens": 1232,
+        "totalTokens": 1529,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1152,
+        "latencyMs": 8192.098600004101,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_e878ea4c3f814e5983193c3e145aa312",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"허리 스트레칭\",\"고양이 자세\",\"골반 기울이기\",\"무릎 당기기\"],\"keywords\":[\"허리 스트레칭\",\"고양이 자세\",\"무릎 당기기\",\"골반 기울이기\",\"통증 시 중단\"]}",
+      "parsedResponse": {
+        "tags": [
+          "허리 스트레칭",
+          "고양이 자세",
+          "골반 기울이기",
+          "무릎 당기기"
+        ],
+        "keywords": [
+          "허리 스트레칭",
+          "고양이 자세",
+          "무릎 당기기",
+          "골반 기울이기",
+          "통증 시 중단"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.6,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:17:53.391541+09:00"
+    },
+    {
+      "testId": "TEXT-018",
+      "datasetKey": "memo:TEXT-018",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "주 3회 운동 계획",
+      "sourcePath": "건강·운동/018-주 3회 운동 계획.txt",
+      "expected": {
+        "categories": [
+          "건강·운동"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"주 3회 운동 계획\",\"상체 운동\",\"하체 운동\",\"가벼운 유산소\",\"운동 기록 관리\"],\"keywords\":[\"월요일 상체 운동\",\"수요일 하체 운동\",\"토요일 가벼운 유산소\",\"주별 반복 횟수 증가 및 기록 관리\"]}",
+        "parsedOutput": {
+          "tags": [
+            "주 3회 운동 계획",
+            "상체 운동",
+            "하체 운동",
+            "가벼운 유산소",
+            "운동 기록 관리"
+          ],
+          "keywords": [
+            "월요일 상체 운동",
+            "수요일 하체 운동",
+            "토요일 가벼운 유산소",
+            "주별 반복 횟수 증가 및 기록 관리"
+          ]
+        },
+        "inputTokens": 301,
+        "outputTokens": 1429,
+        "totalTokens": 1730,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1344,
+        "latencyMs": 8516.960000008112,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_a7ce276cd4ee43548f7aa76c4a16c76c",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"주 3회 운동 계획\",\"상체 운동\",\"하체 운동\",\"가벼운 유산소\",\"운동 기록 관리\"],\"keywords\":[\"월요일 상체 운동\",\"수요일 하체 운동\",\"토요일 가벼운 유산소\",\"주별 반복 횟수 증가 및 기록 관리\"]}",
+      "parsedResponse": {
+        "tags": [
+          "주 3회 운동 계획",
+          "상체 운동",
+          "하체 운동",
+          "가벼운 유산소",
+          "운동 기록 관리"
+        ],
+        "keywords": [
+          "월요일 상체 운동",
+          "수요일 하체 운동",
+          "토요일 가벼운 유산소",
+          "주별 반복 횟수 증가 및 기록 관리"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:18:01.921203+09:00"
+    },
+    {
+      "testId": "TEXT-021",
+      "datasetKey": "memo:TEXT-021",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1310",
+      "sourcePath": "기타/021-텍스트-2026.07.20-1310.txt",
+      "expected": {
+        "categories": [
+          "기타"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"충분한 데이터 확인\",\"신중한 판단\",\"회의 전 재확인\",\"데이터 기반 의사결정\"],\"keywords\":[\"결과를 너무 빨리 정하려 하지 말고\",\"충분한 데이터를 확인한 다음 판단\",\"다음 회의 전에 다시 읽어본다\",\"데이터 확인 후 판단\"]}",
+        "parsedOutput": {
+          "tags": [
+            "충분한 데이터 확인",
+            "신중한 판단",
+            "회의 전 재확인",
+            "데이터 기반 의사결정"
+          ],
+          "keywords": [
+            "결과를 너무 빨리 정하려 하지 말고",
+            "충분한 데이터를 확인한 다음 판단",
+            "다음 회의 전에 다시 읽어본다",
+            "데이터 확인 후 판단"
+          ]
+        },
+        "inputTokens": 273,
+        "outputTokens": 1303,
+        "totalTokens": 1576,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1216,
+        "latencyMs": 12363.458100007847,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_de2b9ce14134443baecaf0a968ea0436",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"충분한 데이터 확인\",\"신중한 판단\",\"회의 전 재확인\",\"데이터 기반 의사결정\"],\"keywords\":[\"결과를 너무 빨리 정하려 하지 말고\",\"충분한 데이터를 확인한 다음 판단\",\"다음 회의 전에 다시 읽어본다\",\"데이터 확인 후 판단\"]}",
+      "parsedResponse": {
+        "tags": [
+          "충분한 데이터 확인",
+          "신중한 판단",
+          "회의 전 재확인",
+          "데이터 기반 의사결정"
+        ],
+        "keywords": [
+          "결과를 너무 빨리 정하려 하지 말고",
+          "충분한 데이터를 확인한 다음 판단",
+          "다음 회의 전에 다시 읽어본다",
+          "데이터 확인 후 판단"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.75,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:18:14.286949+09:00"
+    },
+    {
+      "testId": "TEXT-022",
+      "datasetKey": "memo:TEXT-022",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1325",
+      "sourcePath": "기타/022-텍스트-2026.07.20-1325.txt",
+      "expected": {
+        "categories": [
+          "기타"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"자주 저장하지만 다시 찾지 않는 정보\",\"저장 정보 활용 방법\",\"새로운 아이디어 개발\",\"기능 미정\",\"대상 사용자 미정\"],\"keywords\":[\"저장된 정보 활용\",\"다시 찾지 않는 정보\",\"새로운 활용 방법\",\"구체 기능 미정\",\"대상 사용자 미정\"]}",
+        "parsedOutput": {
+          "tags": [
+            "자주 저장하지만 다시 찾지 않는 정보",
+            "저장 정보 활용 방법",
+            "새로운 아이디어 개발",
+            "기능 미정",
+            "대상 사용자 미정"
+          ],
+          "keywords": [
+            "저장된 정보 활용",
+            "다시 찾지 않는 정보",
+            "새로운 활용 방법",
+            "구체 기능 미정",
+            "대상 사용자 미정"
+          ]
+        },
+        "inputTokens": 277,
+        "outputTokens": 1047,
+        "totalTokens": 1324,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 960,
+        "latencyMs": 7455.551499995636,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_c856baa113954096ba22204a40e7adda",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"자주 저장하지만 다시 찾지 않는 정보\",\"저장 정보 활용 방법\",\"새로운 아이디어 개발\",\"기능 미정\",\"대상 사용자 미정\"],\"keywords\":[\"저장된 정보 활용\",\"다시 찾지 않는 정보\",\"새로운 활용 방법\",\"구체 기능 미정\",\"대상 사용자 미정\"]}",
+      "parsedResponse": {
+        "tags": [
+          "자주 저장하지만 다시 찾지 않는 정보",
+          "저장 정보 활용 방법",
+          "새로운 아이디어 개발",
+          "기능 미정",
+          "대상 사용자 미정"
+        ],
+        "keywords": [
+          "저장된 정보 활용",
+          "다시 찾지 않는 정보",
+          "새로운 활용 방법",
+          "구체 기능 미정",
+          "대상 사용자 미정"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.2,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:18:21.745278+09:00"
+    },
+    {
+      "testId": "TEXT-019",
+      "datasetKey": "memo:TEXT-019",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1245",
+      "sourcePath": "문화·콘텐츠/019-텍스트-2026.07.20-1245.txt",
+      "expected": {
+        "categories": [
+          "문화·콘텐츠"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"주말용 코미디\",\"가벼운 분위기의 영화\",\"2시간 이내 상영\",\"넷플릭스에서 시청 가능\",\"디즈니플러스에서 시청 가능\"],\"keywords\":[\"주말에 친구들과 보는 코미디\",\"2시간 이내 상영\",\"무겁지 않거나 잔인하지 않은 코미디\",\"넷플릭스나 디즈니플러스에서 시청 가능\",\"가벼운 분위기의 코미디\"]}",
+        "parsedOutput": {
+          "tags": [
+            "주말용 코미디",
+            "가벼운 분위기의 영화",
+            "2시간 이내 상영",
+            "넷플릭스에서 시청 가능",
+            "디즈니플러스에서 시청 가능"
+          ],
+          "keywords": [
+            "주말에 친구들과 보는 코미디",
+            "2시간 이내 상영",
+            "무겁지 않거나 잔인하지 않은 코미디",
+            "넷플릭스나 디즈니플러스에서 시청 가능",
+            "가벼운 분위기의 코미디"
+          ]
+        },
+        "inputTokens": 291,
+        "outputTokens": 2617,
+        "totalTokens": 2908,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 2496,
+        "latencyMs": 16195.75490000716,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_6e81dbe141904bf6bf8136cd409c9069",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"주말용 코미디\",\"가벼운 분위기의 영화\",\"2시간 이내 상영\",\"넷플릭스에서 시청 가능\",\"디즈니플러스에서 시청 가능\"],\"keywords\":[\"주말에 친구들과 보는 코미디\",\"2시간 이내 상영\",\"무겁지 않거나 잔인하지 않은 코미디\",\"넷플릭스나 디즈니플러스에서 시청 가능\",\"가벼운 분위기의 코미디\"]}",
+      "parsedResponse": {
+        "tags": [
+          "주말용 코미디",
+          "가벼운 분위기의 영화",
+          "2시간 이내 상영",
+          "넷플릭스에서 시청 가능",
+          "디즈니플러스에서 시청 가능"
+        ],
+        "keywords": [
+          "주말에 친구들과 보는 코미디",
+          "2시간 이내 상영",
+          "무겁지 않거나 잔인하지 않은 코미디",
+          "넷플릭스나 디즈니플러스에서 시청 가능",
+          "가벼운 분위기의 코미디"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:18:37.942616+09:00"
+    },
+    {
+      "testId": "TEXT-020",
+      "datasetKey": "memo:TEXT-020",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "읽어볼 개발 에세이",
+      "sourcePath": "문화·콘텐츠/020-읽어볼 개발 에세이.txt",
+      "expected": {
+        "categories": [
+          "문화·콘텐츠"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"개발자 성장 에세이\",\"협업 경험\",\"실패 경험\",\"커리어 고민\",\"팀 소통 방법\"],\"keywords\":[\"개발자의 성장 과정\",\"협업 경험\",\"실패 경험\",\"커리어 고민\",\"팀에서 소통하는 방법\"]}",
+        "parsedOutput": {
+          "tags": [
+            "개발자 성장 에세이",
+            "협업 경험",
+            "실패 경험",
+            "커리어 고민",
+            "팀 소통 방법"
+          ],
+          "keywords": [
+            "개발자의 성장 과정",
+            "협업 경험",
+            "실패 경험",
+            "커리어 고민",
+            "팀에서 소통하는 방법"
+          ]
+        },
+        "inputTokens": 301,
+        "outputTokens": 845,
+        "totalTokens": 1146,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 768,
+        "latencyMs": 6290.352699987125,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_786e1cac466b42ae8df692312caa39c0",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"개발자 성장 에세이\",\"협업 경험\",\"실패 경험\",\"커리어 고민\",\"팀 소통 방법\"],\"keywords\":[\"개발자의 성장 과정\",\"협업 경험\",\"실패 경험\",\"커리어 고민\",\"팀에서 소통하는 방법\"]}",
+      "parsedResponse": {
+        "tags": [
+          "개발자 성장 에세이",
+          "협업 경험",
+          "실패 경험",
+          "커리어 고민",
+          "팀 소통 방법"
+        ],
+        "keywords": [
+          "개발자의 성장 과정",
+          "협업 경험",
+          "실패 경험",
+          "커리어 고민",
+          "팀에서 소통하는 방법"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:18:44.236993+09:00"
+    },
+    {
+      "testId": "TEXT-009",
+      "datasetKey": "memo:TEXT-009",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1035",
+      "sourcePath": "생활·할 일/009-텍스트-2026.07.20-1035.txt",
+      "expected": {
+        "categories": [
+          "생활·할 일"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"병원 예약 확인\",\"택배 발송\",\"Jira 백로그 정리\",\"프로젝트 회의 준비\",\"세탁기 돌리기\"],\"keywords\":[\"병원 예약 시간 확인\",\"택배 보내기\",\"Jira 백로그 정리\",\"프로젝트 회의 준비\",\"세탁기 돌리기\"]}",
+        "parsedOutput": {
+          "tags": [
+            "병원 예약 확인",
+            "택배 발송",
+            "Jira 백로그 정리",
+            "프로젝트 회의 준비",
+            "세탁기 돌리기"
+          ],
+          "keywords": [
+            "병원 예약 시간 확인",
+            "택배 보내기",
+            "Jira 백로그 정리",
+            "프로젝트 회의 준비",
+            "세탁기 돌리기"
+          ]
+        },
+        "inputTokens": 274,
+        "outputTokens": 917,
+        "totalTokens": 1191,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 832,
+        "latencyMs": 6309.58620000456,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_05651de61f044b5ab1e2412471b75e2a",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"병원 예약 확인\",\"택배 발송\",\"Jira 백로그 정리\",\"프로젝트 회의 준비\",\"세탁기 돌리기\"],\"keywords\":[\"병원 예약 시간 확인\",\"택배 보내기\",\"Jira 백로그 정리\",\"프로젝트 회의 준비\",\"세탁기 돌리기\"]}",
+      "parsedResponse": {
+        "tags": [
+          "병원 예약 확인",
+          "택배 발송",
+          "Jira 백로그 정리",
+          "프로젝트 회의 준비",
+          "세탁기 돌리기"
+        ],
+        "keywords": [
+          "병원 예약 시간 확인",
+          "택배 보내기",
+          "Jira 백로그 정리",
+          "프로젝트 회의 준비",
+          "세탁기 돌리기"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:18:50.548526+09:00"
+    },
+    {
+      "testId": "TEXT-010",
+      "datasetKey": "memo:TEXT-010",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "주말 방 정리 계획",
+      "sourcePath": "생활·할 일/010-주말 방 정리 계획.txt",
+      "expected": {
+        "categories": [
+          "생활·할 일"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"책상 정리\",\"서류 분류\",\"전자기기 정리\",\"겨울옷 보관 위치\",\"생필품 목록 작성\"],\"keywords\":[\"서류 분류\",\"전자기기 정리\",\"겨울옷 옮기기\",\"생필품 목록 작성\",\"주말 방 정리 계획\"]}",
+        "parsedOutput": {
+          "tags": [
+            "책상 정리",
+            "서류 분류",
+            "전자기기 정리",
+            "겨울옷 보관 위치",
+            "생필품 목록 작성"
+          ],
+          "keywords": [
+            "서류 분류",
+            "전자기기 정리",
+            "겨울옷 옮기기",
+            "생필품 목록 작성",
+            "주말 방 정리 계획"
+          ]
+        },
+        "inputTokens": 299,
+        "outputTokens": 2330,
+        "totalTokens": 2629,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 2240,
+        "latencyMs": 14234.47720000695,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_4549b70532e94c709ab350b3ce438e44",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"책상 정리\",\"서류 분류\",\"전자기기 정리\",\"겨울옷 보관 위치\",\"생필품 목록 작성\"],\"keywords\":[\"서류 분류\",\"전자기기 정리\",\"겨울옷 옮기기\",\"생필품 목록 작성\",\"주말 방 정리 계획\"]}",
+      "parsedResponse": {
+        "tags": [
+          "책상 정리",
+          "서류 분류",
+          "전자기기 정리",
+          "겨울옷 보관 위치",
+          "생필품 목록 작성"
+        ],
+        "keywords": [
+          "서류 분류",
+          "전자기기 정리",
+          "겨울옷 옮기기",
+          "생필품 목록 작성",
+          "주말 방 정리 계획"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:19:04.785947+09:00"
+    },
+    {
+      "testId": "TEXT-023",
+      "datasetKey": "memo:TEXT-023",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "기숙사 준비물",
+      "sourcePath": "생활·할 일/기숙사 준비물.txt",
+      "expected": {
+        "categories": [
+          "생활·할 일"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"기숙사 준비물\",\"생활 필수품\",\"가전/세면용품\",\"의류 구성\"],\"keywords\":[\"노트북\",\"모니터\",\"샴푸, 린스, 바디워시\",\"수건\",\"신분증\"]}",
+        "parsedOutput": {
+          "tags": [
+            "기숙사 준비물",
+            "생활 필수품",
+            "가전/세면용품",
+            "의류 구성"
+          ],
+          "keywords": [
+            "노트북",
+            "모니터",
+            "샴푸, 린스, 바디워시",
+            "수건",
+            "신분증"
+          ]
+        },
+        "inputTokens": 612,
+        "outputTokens": 1995,
+        "totalTokens": 2607,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1920,
+        "latencyMs": 13349.601399997482,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_cd128a2aebb540f997a42df0708899f0",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"기숙사 준비물\",\"생활 필수품\",\"가전/세면용품\",\"의류 구성\"],\"keywords\":[\"노트북\",\"모니터\",\"샴푸, 린스, 바디워시\",\"수건\",\"신분증\"]}",
+      "parsedResponse": {
+        "tags": [
+          "기숙사 준비물",
+          "생활 필수품",
+          "가전/세면용품",
+          "의류 구성"
+        ],
+        "keywords": [
+          "노트북",
+          "모니터",
+          "샴푸, 린스, 바디워시",
+          "수건",
+          "신분증"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:19:18.137769+09:00"
+    },
+    {
+      "testId": "TEXT-011",
+      "datasetKey": "memo:TEXT-011",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1100",
+      "sourcePath": "쇼핑·제품/011-텍스트-2026.07.20-1100.txt",
+      "expected": {
+        "categories": [
+          "쇼핑·제품"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"개발용 노트북\",\"RAM 32GB 이상\",\"SSD 확장 가능\",\"Docker 로컬 LLM\",\"가격 200만원 이하\"],\"keywords\":[\"RAM 32GB 이상\",\"SSD 확장 가능\",\"Docker 로컬 LLM\",\"GPU 성능 비교\",\"발열 배터리 시간 비교\"]}",
+        "parsedOutput": {
+          "tags": [
+            "개발용 노트북",
+            "RAM 32GB 이상",
+            "SSD 확장 가능",
+            "Docker 로컬 LLM",
+            "가격 200만원 이하"
+          ],
+          "keywords": [
+            "RAM 32GB 이상",
+            "SSD 확장 가능",
+            "Docker 로컬 LLM",
+            "GPU 성능 비교",
+            "발열 배터리 시간 비교"
+          ]
+        },
+        "inputTokens": 293,
+        "outputTokens": 1492,
+        "totalTokens": 1785,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1408,
+        "latencyMs": 10344.768099996145,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_db7e0f00281c4331986d99db2899633e",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"개발용 노트북\",\"RAM 32GB 이상\",\"SSD 확장 가능\",\"Docker 로컬 LLM\",\"가격 200만원 이하\"],\"keywords\":[\"RAM 32GB 이상\",\"SSD 확장 가능\",\"Docker 로컬 LLM\",\"GPU 성능 비교\",\"발열 배터리 시간 비교\"]}",
+      "parsedResponse": {
+        "tags": [
+          "개발용 노트북",
+          "RAM 32GB 이상",
+          "SSD 확장 가능",
+          "Docker 로컬 LLM",
+          "가격 200만원 이하"
+        ],
+        "keywords": [
+          "RAM 32GB 이상",
+          "SSD 확장 가능",
+          "Docker 로컬 LLM",
+          "GPU 성능 비교",
+          "발열 배터리 시간 비교"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.2,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:19:28.486437+09:00"
+    },
+    {
+      "testId": "TEXT-012",
+      "datasetKey": "memo:TEXT-012",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "무선 키보드 구매 후보",
+      "sourcePath": "쇼핑·제품/012-무선 키보드 구매 후보.txt",
+      "expected": {
+        "categories": [
+          "쇼핑·제품"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"사무실용 무선 키보드\",\"저소음 키보드\",\"블루투스 및 USB 리시버 지원\",\"숫자 키패드 포함\",\"다중 기기 전환\"],\"keywords\":[\"저소음 무선 키보드\",\"블루투스\",\"USB 리시버\",\"숫자 키패드\",\"여러 기기를 빠르게 전환할 수 있는\"]}",
+        "parsedOutput": {
+          "tags": [
+            "사무실용 무선 키보드",
+            "저소음 키보드",
+            "블루투스 및 USB 리시버 지원",
+            "숫자 키패드 포함",
+            "다중 기기 전환"
+          ],
+          "keywords": [
+            "저소음 무선 키보드",
+            "블루투스",
+            "USB 리시버",
+            "숫자 키패드",
+            "여러 기기를 빠르게 전환할 수 있는"
+          ]
+        },
+        "inputTokens": 302,
+        "outputTokens": 3881,
+        "totalTokens": 4183,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 3776,
+        "latencyMs": 23011.181900001247,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_276fa022c4a94f53af41d29c2fc8b9d2",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"사무실용 무선 키보드\",\"저소음 키보드\",\"블루투스 및 USB 리시버 지원\",\"숫자 키패드 포함\",\"다중 기기 전환\"],\"keywords\":[\"저소음 무선 키보드\",\"블루투스\",\"USB 리시버\",\"숫자 키패드\",\"여러 기기를 빠르게 전환할 수 있는\"]}",
+      "parsedResponse": {
+        "tags": [
+          "사무실용 무선 키보드",
+          "저소음 키보드",
+          "블루투스 및 USB 리시버 지원",
+          "숫자 키패드 포함",
+          "다중 기기 전환"
+        ],
+        "keywords": [
+          "저소음 무선 키보드",
+          "블루투스",
+          "USB 리시버",
+          "숫자 키패드",
+          "여러 기기를 빠르게 전환할 수 있는"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:19:51.502037+09:00"
+    },
+    {
+      "testId": "TEXT-005",
+      "datasetKey": "memo:TEXT-005",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-0940",
+      "sourcePath": "업무·프로젝트/005-텍스트-2026.07.20-0940.txt",
+      "expected": {
+        "categories": [
+          "업무·프로젝트"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"URL 미리보기 분리 처리\",\"본문 추출 우선 적용\",\"오픈 그래프 활용\",\"oEmbed 활용\",\"Jsoup와 Readability\"],\"keywords\":[\"URL 미리보기\",\"본문 추출\",\"Open Graph\",\"oEmbed\",\"Jsoup과 Readability\"]}",
+        "parsedOutput": {
+          "tags": [
+            "URL 미리보기 분리 처리",
+            "본문 추출 우선 적용",
+            "오픈 그래프 활용",
+            "oEmbed 활용",
+            "Jsoup와 Readability"
+          ],
+          "keywords": [
+            "URL 미리보기",
+            "본문 추출",
+            "Open Graph",
+            "oEmbed",
+            "Jsoup과 Readability"
+          ]
+        },
+        "inputTokens": 299,
+        "outputTokens": 2828,
+        "totalTokens": 3127,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 2752,
+        "latencyMs": 20143.04959999572,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_644ee2eda6b8422bae2b30e6327ee357",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"URL 미리보기 분리 처리\",\"본문 추출 우선 적용\",\"오픈 그래프 활용\",\"oEmbed 활용\",\"Jsoup와 Readability\"],\"keywords\":[\"URL 미리보기\",\"본문 추출\",\"Open Graph\",\"oEmbed\",\"Jsoup과 Readability\"]}",
+      "parsedResponse": {
+        "tags": [
+          "URL 미리보기 분리 처리",
+          "본문 추출 우선 적용",
+          "오픈 그래프 활용",
+          "oEmbed 활용",
+          "Jsoup와 Readability"
+        ],
+        "keywords": [
+          "URL 미리보기",
+          "본문 추출",
+          "Open Graph",
+          "oEmbed",
+          "Jsoup과 Readability"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:20:11.648642+09:00"
+    },
+    {
+      "testId": "TEXT-006",
+      "datasetKey": "memo:TEXT-006",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "1주차 백로그 정리",
+      "sourcePath": "업무·프로젝트/006-1주차 백로그 정리.txt",
+      "expected": {
+        "categories": [
+          "업무·프로젝트"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"이미지 업로드\",\"S3 저장\",\"OCR 처리\",\"AI 카테고리 분류\",\"Jira 등록\"],\"keywords\":[\"이미지 업로드\",\"S3 저장\",\"OCR 처리\",\"AI 카테고리 분류 작업\",\"Jira에 등록\"]}",
+        "parsedOutput": {
+          "tags": [
+            "이미지 업로드",
+            "S3 저장",
+            "OCR 처리",
+            "AI 카테고리 분류",
+            "Jira 등록"
+          ],
+          "keywords": [
+            "이미지 업로드",
+            "S3 저장",
+            "OCR 처리",
+            "AI 카테고리 분류 작업",
+            "Jira에 등록"
+          ]
+        },
+        "inputTokens": 306,
+        "outputTokens": 1418,
+        "totalTokens": 1724,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1344,
+        "latencyMs": 10556.263999998919,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_268c850c5bae49aa9ab6183e1b27264b",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"이미지 업로드\",\"S3 저장\",\"OCR 처리\",\"AI 카테고리 분류\",\"Jira 등록\"],\"keywords\":[\"이미지 업로드\",\"S3 저장\",\"OCR 처리\",\"AI 카테고리 분류 작업\",\"Jira에 등록\"]}",
+      "parsedResponse": {
+        "tags": [
+          "이미지 업로드",
+          "S3 저장",
+          "OCR 처리",
+          "AI 카테고리 분류",
+          "Jira 등록"
+        ],
+        "keywords": [
+          "이미지 업로드",
+          "S3 저장",
+          "OCR 처리",
+          "AI 카테고리 분류 작업",
+          "Jira에 등록"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:20:22.208077+09:00"
+    },
+    {
+      "testId": "TEXT-015",
+      "datasetKey": "memo:TEXT-015",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1150",
+      "sourcePath": "여행·장소/015-텍스트-2026.07.20-1150.txt",
+      "expected": {
+        "categories": [
+          "여행·장소"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"제주도 일정\",\"렌터카 이용\",\"관광지 방문\",\"공항 연계 일정\"],\"keywords\":[\"제주공항\",\"렌터카\",\"애월 카페\",\"협재해수욕장\",\"성산일출봉\"]}",
+        "parsedOutput": {
+          "tags": [
+            "제주도 일정",
+            "렌터카 이용",
+            "관광지 방문",
+            "공항 연계 일정"
+          ],
+          "keywords": [
+            "제주공항",
+            "렌터카",
+            "애월 카페",
+            "협재해수욕장",
+            "성산일출봉"
+          ]
+        },
+        "inputTokens": 296,
+        "outputTokens": 1672,
+        "totalTokens": 1968,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1600,
+        "latencyMs": 12426.170299993828,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_97120b3e23cf4c1e81b4688be050bed5",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"제주도 일정\",\"렌터카 이용\",\"관광지 방문\",\"공항 연계 일정\"],\"keywords\":[\"제주공항\",\"렌터카\",\"애월 카페\",\"협재해수욕장\",\"성산일출봉\"]}",
+      "parsedResponse": {
+        "tags": [
+          "제주도 일정",
+          "렌터카 이용",
+          "관광지 방문",
+          "공항 연계 일정"
+        ],
+        "keywords": [
+          "제주공항",
+          "렌터카",
+          "애월 카페",
+          "협재해수욕장",
+          "성산일출봉"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:20:34.637096+09:00"
+    },
+    {
+      "testId": "TEXT-016",
+      "datasetKey": "memo:TEXT-016",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "서울 전시회 방문 후보",
+      "sourcePath": "여행·장소/016-서울 전시회 방문 후보.txt",
+      "expected": {
+        "categories": [
+          "여행·장소"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"서울 미디어아트 전시회\",\"다음 주 토요일\",\"지하철 접근성\",\"관람 시간 2시간 이내\",\"주변 식사 공간 많음\"],\"keywords\":[\"서울 미디어아트 전시회\",\"다음 주 토요일\",\"지하철 편리성\",\"관람 시간 2시간 이내\",\"식사 가능한 장소 다수\"]}",
+        "parsedOutput": {
+          "tags": [
+            "서울 미디어아트 전시회",
+            "다음 주 토요일",
+            "지하철 접근성",
+            "관람 시간 2시간 이내",
+            "주변 식사 공간 많음"
+          ],
+          "keywords": [
+            "서울 미디어아트 전시회",
+            "다음 주 토요일",
+            "지하철 편리성",
+            "관람 시간 2시간 이내",
+            "식사 가능한 장소 다수"
+          ]
+        },
+        "inputTokens": 299,
+        "outputTokens": 1316,
+        "totalTokens": 1615,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1216,
+        "latencyMs": 8471.318700001575,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_1c8fb23f3b29401cb190142e79cb7bc8",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"서울 미디어아트 전시회\",\"다음 주 토요일\",\"지하철 접근성\",\"관람 시간 2시간 이내\",\"주변 식사 공간 많음\"],\"keywords\":[\"서울 미디어아트 전시회\",\"다음 주 토요일\",\"지하철 편리성\",\"관람 시간 2시간 이내\",\"식사 가능한 장소 다수\"]}",
+      "parsedResponse": {
+        "tags": [
+          "서울 미디어아트 전시회",
+          "다음 주 토요일",
+          "지하철 접근성",
+          "관람 시간 2시간 이내",
+          "주변 식사 공간 많음"
+        ],
+        "keywords": [
+          "서울 미디어아트 전시회",
+          "다음 주 토요일",
+          "지하철 편리성",
+          "관람 시간 2시간 이내",
+          "식사 가능한 장소 다수"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.2,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:20:43.112884+09:00"
+    },
+    {
+      "testId": "TEXT-013",
+      "datasetKey": "memo:TEXT-013",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1125",
+      "sourcePath": "음식·맛집/013-텍스트-2026.07.20-1125.txt",
+      "expected": {
+        "categories": [
+          "음식·맛집"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"광주 상무지구 파스타 맛집\",\"주말 저녁 방문 가능\",\"예약 가능\",\"크림 파스타\",\"스테이크 메뉴\"],\"keywords\":[\"광주 상무지구\",\"파스타 맛집\",\"크림 파스타\",\"스테이크 메뉴\",\"예약 가능\"]}",
+        "parsedOutput": {
+          "tags": [
+            "광주 상무지구 파스타 맛집",
+            "주말 저녁 방문 가능",
+            "예약 가능",
+            "크림 파스타",
+            "스테이크 메뉴"
+          ],
+          "keywords": [
+            "광주 상무지구",
+            "파스타 맛집",
+            "크림 파스타",
+            "스테이크 메뉴",
+            "예약 가능"
+          ]
+        },
+        "inputTokens": 287,
+        "outputTokens": 1680,
+        "totalTokens": 1967,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1600,
+        "latencyMs": 11144.97670000128,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_5c1d9aaa14c34ffeb8e8022d54ea0943",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"광주 상무지구 파스타 맛집\",\"주말 저녁 방문 가능\",\"예약 가능\",\"크림 파스타\",\"스테이크 메뉴\"],\"keywords\":[\"광주 상무지구\",\"파스타 맛집\",\"크림 파스타\",\"스테이크 메뉴\",\"예약 가능\"]}",
+      "parsedResponse": {
+        "tags": [
+          "광주 상무지구 파스타 맛집",
+          "주말 저녁 방문 가능",
+          "예약 가능",
+          "크림 파스타",
+          "스테이크 메뉴"
+        ],
+        "keywords": [
+          "광주 상무지구",
+          "파스타 맛집",
+          "크림 파스타",
+          "스테이크 메뉴",
+          "예약 가능"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:20:54.261217+09:00"
+    },
+    {
+      "testId": "TEXT-014",
+      "datasetKey": "memo:TEXT-014",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "닭가슴살 볶음밥 레시피",
+      "sourcePath": "음식·맛집/014-닭가슴살 볶음밥 레시피.txt",
+      "expected": {
+        "categories": [
+          "음식·맛집"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"닭가슴살 볶음밥\",\"냉동 닭가슴살\",\"남은 채소 활용 요리\",\"간장 볶음밥\"],\"keywords\":[\"냉동 닭가슴살\",\"남은 채소\",\"볶음밥\",\"간장\",\"양파\"]}",
+        "parsedOutput": {
+          "tags": [
+            "닭가슴살 볶음밥",
+            "냉동 닭가슴살",
+            "남은 채소 활용 요리",
+            "간장 볶음밥"
+          ],
+          "keywords": [
+            "냉동 닭가슴살",
+            "남은 채소",
+            "볶음밥",
+            "간장",
+            "양파"
+          ]
+        },
+        "inputTokens": 317,
+        "outputTokens": 1558,
+        "totalTokens": 1875,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1472,
+        "latencyMs": 11608.635500000673,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_08a7e2dfe226403ebc5dd3ceeac6b4a0",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"닭가슴살 볶음밥\",\"냉동 닭가슴살\",\"남은 채소 활용 요리\",\"간장 볶음밥\"],\"keywords\":[\"냉동 닭가슴살\",\"남은 채소\",\"볶음밥\",\"간장\",\"양파\"]}",
+      "parsedResponse": {
+        "tags": [
+          "닭가슴살 볶음밥",
+          "냉동 닭가슴살",
+          "남은 채소 활용 요리",
+          "간장 볶음밥"
+        ],
+        "keywords": [
+          "냉동 닭가슴살",
+          "남은 채소",
+          "볶음밥",
+          "간장",
+          "양파"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:21:05.874110+09:00"
+    },
+    {
+      "testId": "TEXT-007",
+      "datasetKey": "memo:TEXT-007",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-1010",
+      "sourcePath": "취업·커리어/007-텍스트-2026.07.20-1010.txt",
+      "expected": {
+        "categories": [
+          "취업·커리어"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"Spring 의존성 주입\",\"트랜잭션 전파\",\"JPA 영속성 컨텍스트\",\"면접 질문 정리\",\"실무 프로젝트 활용\"],\"keywords\":[\"Spring 의존성 주입\",\"트랜잭션 전파\",\"JPA 영속성 컨텍스트\",\"면접 질문 정리\",\"프로젝트 실무 경험\"]}",
+        "parsedOutput": {
+          "tags": [
+            "Spring 의존성 주입",
+            "트랜잭션 전파",
+            "JPA 영속성 컨텍스트",
+            "면접 질문 정리",
+            "실무 프로젝트 활용"
+          ],
+          "keywords": [
+            "Spring 의존성 주입",
+            "트랜잭션 전파",
+            "JPA 영속성 컨텍스트",
+            "면접 질문 정리",
+            "프로젝트 실무 경험"
+          ]
+        },
+        "inputTokens": 295,
+        "outputTokens": 1951,
+        "totalTokens": 2246,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1856,
+        "latencyMs": 12479.008399997838,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_4aa8880c6e0a4ded9cdee55013651941",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"Spring 의존성 주입\",\"트랜잭션 전파\",\"JPA 영속성 컨텍스트\",\"면접 질문 정리\",\"실무 프로젝트 활용\"],\"keywords\":[\"Spring 의존성 주입\",\"트랜잭션 전파\",\"JPA 영속성 컨텍스트\",\"면접 질문 정리\",\"프로젝트 실무 경험\"]}",
+      "parsedResponse": {
+        "tags": [
+          "Spring 의존성 주입",
+          "트랜잭션 전파",
+          "JPA 영속성 컨텍스트",
+          "면접 질문 정리",
+          "실무 프로젝트 활용"
+        ],
+        "keywords": [
+          "Spring 의존성 주입",
+          "트랜잭션 전파",
+          "JPA 영속성 컨텍스트",
+          "면접 질문 정리",
+          "프로젝트 실무 경험"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.4,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:21:18.355380+09:00"
+    },
+    {
+      "testId": "TEXT-008",
+      "datasetKey": "memo:TEXT-008",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "공기업 채용 공고 확인",
+      "sourcePath": "취업·커리어/008-공기업 채용 공고 확인.txt",
+      "expected": {
+        "categories": [
+          "취업·커리어"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"전산직 공기업 채용\",\"지원 자격 비교\",\"자격증 가산점\",\"마감일 정리\"],\"keywords\":[\"정보처리기사 인정기관\",\"SQLD 인정기관\",\"한국사능력검정시험 인정기관\",\"지원 자격\",\"마감일 정리\"]}",
+        "parsedOutput": {
+          "tags": [
+            "전산직 공기업 채용",
+            "지원 자격 비교",
+            "자격증 가산점",
+            "마감일 정리"
+          ],
+          "keywords": [
+            "정보처리기사 인정기관",
+            "SQLD 인정기관",
+            "한국사능력검정시험 인정기관",
+            "지원 자격",
+            "마감일 정리"
+          ]
+        },
+        "inputTokens": 311,
+        "outputTokens": 1298,
+        "totalTokens": 1609,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1216,
+        "latencyMs": 8506.85920000251,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_34b046cea9ff4a0896bf487010aa68a1",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"전산직 공기업 채용\",\"지원 자격 비교\",\"자격증 가산점\",\"마감일 정리\"],\"keywords\":[\"정보처리기사 인정기관\",\"SQLD 인정기관\",\"한국사능력검정시험 인정기관\",\"지원 자격\",\"마감일 정리\"]}",
+      "parsedResponse": {
+        "tags": [
+          "전산직 공기업 채용",
+          "지원 자격 비교",
+          "자격증 가산점",
+          "마감일 정리"
+        ],
+        "keywords": [
+          "정보처리기사 인정기관",
+          "SQLD 인정기관",
+          "한국사능력검정시험 인정기관",
+          "지원 자격",
+          "마감일 정리"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.2,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:21:26.865010+09:00"
+    },
+    {
+      "testId": "TEXT-003",
+      "datasetKey": "memo:TEXT-003",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "텍스트-2026.07.20-0920",
+      "sourcePath": "학습·지식/003-텍스트-2026.07.20-0920.txt",
+      "expected": {
+        "categories": [
+          "학습·지식"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"OSI 7계층 역할 정리\",\"전송 계층 TCP/UDP\",\"HTTP DNS IP 동작 계층\",\"계층별 예시 학습\"],\"keywords\":[\"OSI 7계층 역할\",\"TCP/UDP 전송 계층 속성\",\"HTTP DNS IP 계층 동작 위치\",\"예시와 함께 복습\"]}",
+        "parsedOutput": {
+          "tags": [
+            "OSI 7계층 역할 정리",
+            "전송 계층 TCP/UDP",
+            "HTTP DNS IP 동작 계층",
+            "계층별 예시 학습"
+          ],
+          "keywords": [
+            "OSI 7계층 역할",
+            "TCP/UDP 전송 계층 속성",
+            "HTTP DNS IP 계층 동작 위치",
+            "예시와 함께 복습"
+          ]
+        },
+        "inputTokens": 289,
+        "outputTokens": 1434,
+        "totalTokens": 1723,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1344,
+        "latencyMs": 9850.090000007185,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_b210d27414a749b58b0c502be7c60442",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"OSI 7계층 역할 정리\",\"전송 계층 TCP/UDP\",\"HTTP DNS IP 동작 계층\",\"계층별 예시 학습\"],\"keywords\":[\"OSI 7계층 역할\",\"TCP/UDP 전송 계층 속성\",\"HTTP DNS IP 계층 동작 위치\",\"예시와 함께 복습\"]}",
+      "parsedResponse": {
+        "tags": [
+          "OSI 7계층 역할 정리",
+          "전송 계층 TCP/UDP",
+          "HTTP DNS IP 동작 계층",
+          "계층별 예시 학습"
+        ],
+        "keywords": [
+          "OSI 7계층 역할",
+          "TCP/UDP 전송 계층 속성",
+          "HTTP DNS IP 계층 동작 위치",
+          "예시와 함께 복습"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 0.25,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:21:36.726423+09:00"
+    },
+    {
+      "testId": "TEXT-004",
+      "datasetKey": "memo:TEXT-004",
+      "datasetType": "memo",
+      "testMode": "metadata-only",
+      "title": "SQLD 시험 공부 계획",
+      "sourcePath": "학습·지식/004-SQLD 시험 공부 계획.txt",
+      "expected": {
+        "categories": [
+          "학습·지식"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "openai",
+        "modelId": "openai-gpt-5-nano",
+        "requestedModel": "gpt-5-nano",
+        "resolvedModel": "gpt-5-nano-2025-08-07",
+        "rawText": "{\"tags\":[\"SQL 기본 문법 복습\",\"조인 학습\",\"서브쿼리 학습\",\"정규화 학습\",\"오답 정리\"],\"keywords\":[\"SQL 기본 문법\",\"조인\",\"서브쿼리\",\"정규화\",\"트랜잭션\"]}",
+        "parsedOutput": {
+          "tags": [
+            "SQL 기본 문법 복습",
+            "조인 학습",
+            "서브쿼리 학습",
+            "정규화 학습",
+            "오답 정리"
+          ],
+          "keywords": [
+            "SQL 기본 문법",
+            "조인",
+            "서브쿼리",
+            "정규화",
+            "트랜잭션"
+          ]
+        },
+        "inputTokens": 305,
+        "outputTokens": 1359,
+        "totalTokens": 1664,
+        "cachedInputTokens": 0,
+        "reasoningTokens": 1280,
+        "latencyMs": 9563.627800001996,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": "req_865aba246c834853b8510be437d8f869",
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "temperatureRequested": 0,
+          "temperatureApplied": null,
+          "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+          "streaming": false,
+          "toolsEnabled": false,
+          "apiMode": "chat_completions",
+          "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1"
+        }
+      },
+      "rawResponse": "{\"tags\":[\"SQL 기본 문법 복습\",\"조인 학습\",\"서브쿼리 학습\",\"정규화 학습\",\"오답 정리\"],\"keywords\":[\"SQL 기본 문법\",\"조인\",\"서브쿼리\",\"정규화\",\"트랜잭션\"]}",
+      "parsedResponse": {
+        "tags": [
+          "SQL 기본 문법 복습",
+          "조인 학습",
+          "서브쿼리 학습",
+          "정규화 학습",
+          "오답 정리"
+        ],
+        "keywords": [
+          "SQL 기본 문법",
+          "조인",
+          "서브쿼리",
+          "정규화",
+          "트랜잭션"
+        ]
+      },
+      "evaluation": {
+        "responseReceived": true,
+        "jsonValid": true,
+        "schemaValid": true,
+        "requiredFieldsPresent": true,
+        "extraTextDetected": false,
+        "thinkingTagDetected": false,
+        "outputConstraintValid": true,
+        "summarySentenceCountValid": null,
+        "categoryValueValid": null,
+        "confidenceValid": null,
+        "tagCountValid": true,
+        "tagDuplicateFree": true,
+        "tagDuplicateCount": 0,
+        "keywordCountValid": true,
+        "keywordDuplicateFree": true,
+        "keywordDuplicateCount": 0,
+        "sourceKeywordRatio": 1.0,
+        "categoryCorrect": null,
+        "requiredKeywordMatchedCount": null,
+        "requiredKeywordTotalCount": 0,
+        "requiredKeywordRecall": null,
+        "summaryPointMatchedCount": null,
+        "summaryPointTotalCount": 0,
+        "summaryPointRecall": null,
+        "forbiddenClaimCount": null,
+        "detectedForbiddenClaims": "",
+        "possibleHallucination": null
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-21T14:21:46.292283+09:00"
+    }
+  ]
+}

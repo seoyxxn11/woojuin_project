@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"집에서 시작할 수 있는 창업 아이디어 20가지","url":"https://underdogs.co.kr/contents/blogs/집에서-시작할-수-있는-창업-아이디어-20가지/","content":null,"summary":"집에서 시작할 수 있는 창업 아이디어 20가지를 소개합니다. 실용적이고 접근성이 높은 아이디어를 확인해보세요.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,42 @@
+{
+  "model": "qwen3:8b",
+  "datasetCount": 78,
+  "repeat": 1,
+  "scenarios": [
+    {
+      "id": "split-with-description",
+      "structure": "split",
+      "category_descriptions": true,
+      "calls_per_item": 2
+    },
+    {
+      "id": "split-without-description",
+      "structure": "split",
+      "category_descriptions": false,
+      "calls_per_item": 2
+    },
+    {
+      "id": "integrated-with-description",
+      "structure": "integrated",
+      "category_descriptions": true,
+      "calls_per_item": 1
+    },
+    {
+      "id": "integrated-without-description",
+      "structure": "integrated",
+      "category_descriptions": false,
+      "calls_per_item": 1
+    }
+  ],
+  "expectedCallCount": 468,
+  "temperature": 0,
+  "seed": 42,
+  "thinking": false,
+  "contextLength": 4096,
+  "status": "COMPLETED",
+  "startedAt": "2026-07-22T11:59:56.214701+09:00",
+  "completedAt": "2026-07-22T12:56:44.807759+09:00",
+  "environment": "Windows 11, Python 3.14.6",
+  "callsCompletedThisRun": 468,
+  "resultCount": 312
+}

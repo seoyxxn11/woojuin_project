@@ -1,0 +1,103 @@
+{
+  "testMode": "category-only",
+  "datasetType": "memo",
+  "datasetCount": 23,
+  "testIds": [
+    "TEXT-001",
+    "TEXT-002",
+    "TEXT-017",
+    "TEXT-018",
+    "TEXT-021",
+    "TEXT-022",
+    "TEXT-019",
+    "TEXT-020",
+    "TEXT-009",
+    "TEXT-010",
+    "TEXT-023",
+    "TEXT-011",
+    "TEXT-012",
+    "TEXT-005",
+    "TEXT-006",
+    "TEXT-015",
+    "TEXT-016",
+    "TEXT-013",
+    "TEXT-014",
+    "TEXT-007",
+    "TEXT-008",
+    "TEXT-003",
+    "TEXT-004"
+  ],
+  "promptVersion": "v1",
+  "promptFile": "category-prompt-v1.txt",
+  "categories": [
+    "개발·IT",
+    "건강·운동",
+    "기타",
+    "문화·콘텐츠",
+    "생활·할 일",
+    "쇼핑·제품",
+    "업무·프로젝트",
+    "여행·장소",
+    "음식·맛집",
+    "취업·커리어",
+    "학습·지식"
+  ],
+  "models": [
+    "openai-gpt-5-nano",
+    "openai-gpt-5-mini"
+  ],
+  "modelConfigs": [
+    {
+      "id": "openai-gpt-5-nano",
+      "provider": "openai",
+      "requestedModel": "gpt-5-nano",
+      "selectionStatus": "READY",
+      "selectionErrorType": null,
+      "selectionErrorMessage": null
+    },
+    {
+      "id": "openai-gpt-5-mini",
+      "provider": "openai",
+      "requestedModel": "gpt-5-mini",
+      "selectionStatus": "READY",
+      "selectionErrorType": null,
+      "selectionErrorMessage": null
+    }
+  ],
+  "startedAt": "2026-07-21T14:05:58.800724+09:00",
+  "completedAt": "2026-07-21T14:09:57.917968+09:00",
+  "status": "COMPLETED",
+  "environment": "Windows 11, Python 3.14.6",
+  "environmentVariables": {
+    "GMS_KEY": "configured"
+  },
+  "options": {
+    "temperatureRequested": 0,
+    "repeat": 1,
+    "streaming": false,
+    "externalSearch": false,
+    "tools": false,
+    "providerDifferences": "GMS OpenAI 호환 Chat Completions에는 temperature/seed/contextLength를 적용하지 않음; 토큰 측정 기준은 provider별로 다를 수 있음",
+    "openaiEndpoint": "https://gms.ssafy.io/gmsapi/api.openai.com/v1",
+    "openaiApiMode": "chat_completions"
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "per_1m_tokens",
+    "updatedAt": null
+  },
+  "structuredOutput": {
+    "openai-gpt-5-nano": {
+      "requested": true,
+      "appliedCount": 23,
+      "fallbackCount": 0,
+      "reasons": []
+    },
+    "openai-gpt-5-mini": {
+      "requested": true,
+      "appliedCount": 23,
+      "fallbackCount": 0,
+      "reasons": []
+    }
+  }
+}

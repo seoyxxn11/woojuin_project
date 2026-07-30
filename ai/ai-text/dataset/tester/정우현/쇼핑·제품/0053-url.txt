@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"gsshop.com","url":"https://m.gsshop.com/search/searchSect.gs?tq=노트북가방\u0026mseq=406355\u0026ab=a","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

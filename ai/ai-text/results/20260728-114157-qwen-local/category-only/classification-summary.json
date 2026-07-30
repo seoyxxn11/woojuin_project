@@ -1,0 +1,50 @@
+[
+  {
+    "inputType": "전체",
+    "count": 9,
+    "correctCount": 8,
+    "top1Accuracy": 0.7777777777777778,
+    "exactAccuracy": 0.5555555555555556,
+    "relaxedAccuracy": 0.8888888888888888,
+    "averageSelectedCategoryCount": 1.3333333333333333,
+    "macroPrecision": 0.7592592592592592,
+    "macroRecall": 0.8888888888888888,
+    "macroF1": 0.8958333333333334
+  },
+  {
+    "inputType": "memo",
+    "count": 0,
+    "correctCount": 0,
+    "top1Accuracy": null,
+    "exactAccuracy": null,
+    "relaxedAccuracy": null,
+    "averageSelectedCategoryCount": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  },
+  {
+    "inputType": "url",
+    "count": 9,
+    "correctCount": 8,
+    "top1Accuracy": 0.7777777777777778,
+    "exactAccuracy": 0.5555555555555556,
+    "relaxedAccuracy": 0.8888888888888888,
+    "averageSelectedCategoryCount": 1.3333333333333333,
+    "macroPrecision": 0.7592592592592592,
+    "macroRecall": 0.8888888888888888,
+    "macroF1": 0.8958333333333334
+  },
+  {
+    "inputType": "image",
+    "count": 0,
+    "correctCount": 0,
+    "top1Accuracy": null,
+    "exactAccuracy": null,
+    "relaxedAccuracy": null,
+    "averageSelectedCategoryCount": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  }
+]

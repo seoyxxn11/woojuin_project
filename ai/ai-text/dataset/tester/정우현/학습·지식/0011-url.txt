@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"프랑스어 강사 정일영 \u0027프랑스에서 살아남기\u0027 특강","url":"https://www.youtube.com/watch?v=3aNtTUHJeDY","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/3aNtTUHJeDY/hqdefault.jpg","description":"침착맨"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

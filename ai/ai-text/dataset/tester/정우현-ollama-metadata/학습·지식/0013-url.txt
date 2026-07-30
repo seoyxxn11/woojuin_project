@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"CS 전공지식 정리: 네트워크 기초","url":"https://velog.io/@jojehuni_9759/CS-전공지식-정리-네트워크-1-네트워크의-기초","content":null,"summary":"CS 전공자용 네트워크 기초 개념 정리 글입니다. 핵심 개념을 체계적으로 정리해두었습니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,112 @@
+{
+  "testMode": "category-only",
+  "datasetType": "tester:url",
+  "datasetCount": 41,
+  "testIds": [
+    "URL-002",
+    "URL-003",
+    "URL-004",
+    "URL-005",
+    "URL-006",
+    "URL-008",
+    "URL-009",
+    "URL-010",
+    "URL-011",
+    "URL-012",
+    "URL-013",
+    "URL-014",
+    "URL-016",
+    "URL-017",
+    "URL-019",
+    "URL-020",
+    "URL-021",
+    "URL-023",
+    "URL-024",
+    "URL-025",
+    "URL-028",
+    "URL-029",
+    "URL-031",
+    "URL-034",
+    "URL-035",
+    "URL-036",
+    "URL-037",
+    "URL-038",
+    "URL-040",
+    "URL-041",
+    "URL-042",
+    "URL-043",
+    "URL-044",
+    "URL-045",
+    "URL-046",
+    "URL-047",
+    "URL-049",
+    "URL-050",
+    "URL-052",
+    "URL-053",
+    "URL-054"
+  ],
+  "promptVersion": "v1",
+  "promptFile": "experiment-category-prompt-v1.txt",
+  "categories": [
+    "건강·운동",
+    "기타",
+    "돈·재테크",
+    "문화·콘텐츠",
+    "생활·할 일",
+    "쇼핑·제품",
+    "아이디어·영감",
+    "여행·장소",
+    "음식·맛집",
+    "취업·커리어",
+    "학습·지식"
+  ],
+  "models": [
+    "qwen-local"
+  ],
+  "modelConfigs": [
+    {
+      "id": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "selectionStatus": "READY",
+      "selectionErrorType": null,
+      "selectionErrorMessage": null
+    }
+  ],
+  "startedAt": "2026-07-28T10:45:35.004163+09:00",
+  "completedAt": "2026-07-28T10:48:42.310695+09:00",
+  "status": "COMPLETED",
+  "environment": "Windows 11, Python 3.14.6",
+  "environmentVariables": {
+    "GMS_KEY": "configured"
+  },
+  "options": {
+    "temperatureRequested": 0,
+    "repeat": 1,
+    "categoryDescriptions": true,
+    "classificationMode": "multi_label",
+    "threshold": 0.65,
+    "serviceMaxCategories": 2,
+    "ensureAtLeastOne": true,
+    "writeUrlSummary": true,
+    "streaming": false,
+    "externalSearch": false,
+    "tools": false,
+    "providerDifferences": "GMS OpenAI 호환 Chat Completions에는 temperature/seed/contextLength를 적용하지 않음; 토큰 측정 기준은 provider별로 다를 수 있음",
+    "openaiEndpoint": "https://gms.ssafy.io/gmsapi/api.openai.com/v1",
+    "openaiApiMode": "chat_completions"
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "per_1m_tokens",
+    "updatedAt": null
+  },
+  "structuredOutput": {
+    "qwen-local": {
+      "requested": true,
+      "appliedCount": 41,
+      "fallbackCount": 0,
+      "reasons": []
+    }
+  }
+}

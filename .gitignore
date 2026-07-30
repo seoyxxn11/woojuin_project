@@ -39,10 +39,5 @@ __screenshots__/
 .vitest-attachments/
 test-results/
 
-# Local AI classification fixtures (keep directory skeletons only)
-ai/ai-text/dataset/test/**
-!ai/ai-text/dataset/test/**/
-!ai/ai-text/dataset/test/**/.gitkeep
-
 # --- Docker ---
 docker-volumes/

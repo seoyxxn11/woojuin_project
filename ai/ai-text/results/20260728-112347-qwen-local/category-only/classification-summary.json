@@ -1,0 +1,50 @@
+[
+  {
+    "inputType": "전체",
+    "count": 7,
+    "correctCount": 7,
+    "top1Accuracy": 1.0,
+    "exactAccuracy": 1.0,
+    "relaxedAccuracy": 1.0,
+    "averageSelectedCategoryCount": 1.0,
+    "macroPrecision": 1.0,
+    "macroRecall": 1.0,
+    "macroF1": 1.0
+  },
+  {
+    "inputType": "memo",
+    "count": 0,
+    "correctCount": 0,
+    "top1Accuracy": null,
+    "exactAccuracy": null,
+    "relaxedAccuracy": null,
+    "averageSelectedCategoryCount": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  },
+  {
+    "inputType": "url",
+    "count": 7,
+    "correctCount": 7,
+    "top1Accuracy": 1.0,
+    "exactAccuracy": 1.0,
+    "relaxedAccuracy": 1.0,
+    "averageSelectedCategoryCount": 1.0,
+    "macroPrecision": 1.0,
+    "macroRecall": 1.0,
+    "macroF1": 1.0
+  },
+  {
+    "inputType": "image",
+    "count": 0,
+    "correctCount": 0,
+    "top1Accuracy": null,
+    "exactAccuracy": null,
+    "relaxedAccuracy": null,
+    "averageSelectedCategoryCount": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  }
+]

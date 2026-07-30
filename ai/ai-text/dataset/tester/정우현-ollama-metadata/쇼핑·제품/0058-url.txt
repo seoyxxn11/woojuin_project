@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"쿠팡 베이비 상품 쇼핑몰","url":"https://www.coupang.com/np/categories/328791","content":null,"summary":"쿠팡에서 구매 가능한 베이비 상품을 한눈에 살펴보는 쇼핑몰입니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

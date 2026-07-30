@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"GQ Korea - 2026년 4월 26일 기사","url":"https://www.gqkorea.co.kr/2026/04/26/","content":null,"summary":"2026년 4월 26일자 GQ Korea 기사입니다. 최신 문화, 패션, 인물 관련 내용을 확인할 수 있습니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

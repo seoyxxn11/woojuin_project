@@ -1,0 +1,28 @@
+{
+  "model": "qwen3:8b",
+  "dataCount": 78,
+  "conditions": [
+    {
+      "id": "ai-generated-description",
+      "label": "AI 생성 설명",
+      "definitions_source": "generated",
+      "include_descriptions": true
+    },
+    {
+      "id": "existing-description",
+      "label": "기존 설명",
+      "definitions_source": "existing",
+      "include_descriptions": true
+    },
+    {
+      "id": "names-only",
+      "label": "카테고리 이름만",
+      "definitions_source": "existing",
+      "include_descriptions": false
+    }
+  ],
+  "expectedCallCount": 234,
+  "threshold": 0.65,
+  "generatedDefinitions": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\config\\generated\\category-descriptions-20260722-164953.json",
+  "completedAt": "2026-07-22T17:21:03.967339+09:00"
+}

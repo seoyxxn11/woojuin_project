@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"캠핑 텐트","url":"https://bodyitlove.com/캠핑-텐트/","content":null,"summary":"캠핑용 텐트의 종류와 선택 방법에 대한 정보를 제공합니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,48 @@
+{
+  "testId": "URL-003",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.8}, {\"categoryId\":\"MONEY_FINANCE\",\"categoryName\":\"돈·재테크\",\"score\":0.7}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.7
+      }
+    ]
+  },
+  "inputTokens": 2329,
+  "outputTokens": 51,
+  "totalTokens": 2380,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3724.2371,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 303.0228,
+    "generationDurationMs": 2938.601,
+    "tokensPerSecond": 17.35519725202571,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

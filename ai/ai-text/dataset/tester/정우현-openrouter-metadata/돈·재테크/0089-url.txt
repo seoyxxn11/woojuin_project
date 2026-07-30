@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"GQ코리아 2026년 4월 26일 기사","url":"https://www.gqkorea.co.kr/2026/04/26/","content":null,"summary":"GQ코리아가 2026년 4월 26일에 게재한 기사입니다. 구체적인 내용은 확인이 필요합니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

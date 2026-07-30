@@ -1,0 +1,342 @@
+[
+  {
+    "model": "qwen-local",
+    "testMode": "summary-only",
+    "callCount": 55,
+    "responseSuccessRate": 0.9454545454545454,
+    "jsonSuccessRate": 0.9454545454545454,
+    "schemaSuccessRate": 0.8727272727272727,
+    "outputConstraintRate": 0.8727272727272727,
+    "categoryAccuracy": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null,
+    "requiredKeywordRecall": null,
+    "summaryPointRecall": null,
+    "forbiddenClaimRate": null,
+    "sourceKeywordRatio": null,
+    "confidence": {},
+    "classification": {},
+    "operational": {
+      "averageResponseTimeMs": 7891.648477083333,
+      "medianResponseTimeMs": 6437.02865,
+      "p95ResponseTimeMs": 17023.34781,
+      "minResponseTimeMs": 1890.0864,
+      "maxResponseTimeMs": 20876.4361,
+      "averageTokensPerSecond": 14.438296839159875,
+      "averagePromptTokens": 1434.6458333333333,
+      "averageOutputTokens": 66.1875,
+      "averageLoadDurationMs": 389.79982291666664,
+      "averageGenerationDurationMs": 5412.525645791667
+    }
+  },
+  {
+    "model": "qwen-local",
+    "testMode": "category-only",
+    "callCount": 41,
+    "responseSuccessRate": null,
+    "jsonSuccessRate": null,
+    "schemaSuccessRate": null,
+    "outputConstraintRate": null,
+    "categoryAccuracy": 0.7317073170731707,
+    "macroPrecision": 0.9212121212121213,
+    "macroRecall": 0.7348484848484849,
+    "macroF1": 0.7674598129143584,
+    "requiredKeywordRecall": null,
+    "summaryPointRecall": null,
+    "forbiddenClaimRate": null,
+    "sourceKeywordRatio": null,
+    "confidence": {
+      "averageConfidence": 0.9121951219512195,
+      "averageConfidenceCorrect": 0.9212121212121213,
+      "averageConfidenceIncorrect": 0.875,
+      "buckets": [
+        {
+          "range": "0.0-0.2",
+          "count": 0,
+          "accuracy": null
+        },
+        {
+          "range": "0.2-0.4",
+          "count": 0,
+          "accuracy": null
+        },
+        {
+          "range": "0.4-0.6",
+          "count": 2,
+          "accuracy": 1.0
+        },
+        {
+          "range": "0.6-0.8",
+          "count": 0,
+          "accuracy": null
+        },
+        {
+          "range": "0.8-1.0",
+          "count": 39,
+          "accuracy": 0.7948717948717948
+        }
+      ]
+    },
+    "classification": {
+      "evaluatedCount": 41,
+      "invalidPredictionCount": 3,
+      "accuracy": 0.7317073170731707,
+      "macroPrecision": 0.9212121212121213,
+      "macroRecall": 0.7348484848484849,
+      "macroF1": 0.7674598129143584,
+      "perCategory": {
+        "건강·운동": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "기타": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "돈·재테크": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "문화·콘텐츠": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "생활·할 일": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "쇼핑·제품": {
+          "support": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "아이디어·영감": {
+          "support": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        "여행·장소": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "음식·맛집": {
+          "support": 5,
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091
+        },
+        "취업·커리어": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "학습·지식": {
+          "support": 3,
+          "precision": 0.3,
+          "recall": 1.0,
+          "f1": 0.4615384615384615
+        }
+      },
+      "confusionMatrix": {
+        "건강·운동": {
+          "건강·운동": 3,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 0
+        },
+        "기타": {
+          "건강·운동": 0,
+          "기타": 2,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 2
+        },
+        "돈·재테크": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 2,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 1
+        },
+        "문화·콘텐츠": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 4,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 0
+        },
+        "생활·할 일": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 3,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 1,
+          "취업·커리어": 0,
+          "학습·지식": 0
+        },
+        "쇼핑·제품": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 2,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 0
+        },
+        "아이디어·영감": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 1,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 2
+        },
+        "여행·장소": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 3,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 0
+        },
+        "음식·맛집": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 5,
+          "취업·커리어": 0,
+          "학습·지식": 0
+        },
+        "취업·커리어": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 2,
+          "학습·지식": 2
+        },
+        "학습·지식": {
+          "건강·운동": 0,
+          "기타": 0,
+          "돈·재테크": 0,
+          "문화·콘텐츠": 0,
+          "생활·할 일": 0,
+          "쇼핑·제품": 0,
+          "아이디어·영감": 0,
+          "여행·장소": 0,
+          "음식·맛집": 0,
+          "취업·커리어": 0,
+          "학습·지식": 3
+        }
+      },
+      "majorConfusions": [
+        {
+          "actual": "기타",
+          "predicted": "학습·지식",
+          "count": 2
+        },
+        {
+          "actual": "아이디어·영감",
+          "predicted": "학습·지식",
+          "count": 2
+        },
+        {
+          "actual": "취업·커리어",
+          "predicted": "학습·지식",
+          "count": 2
+        },
+        {
+          "actual": "돈·재테크",
+          "predicted": "학습·지식",
+          "count": 1
+        },
+        {
+          "actual": "생활·할 일",
+          "predicted": "음식·맛집",
+          "count": 1
+        }
+      ]
+    },
+    "operational": {
+      "averageResponseTimeMs": 2515.4042780487803,
+      "medianResponseTimeMs": 2323.5503,
+      "p95ResponseTimeMs": 3532.5705,
+      "minResponseTimeMs": 1830.7347,
+      "maxResponseTimeMs": 3808.9915,
+      "averageTokensPerSecond": 18.49307208306793,
+      "averagePromptTokens": 1601.3902439024391,
+      "averageOutputTokens": 30.804878048780488,
+      "averageLoadDurationMs": 376.16021219512197,
+      "averageGenerationDurationMs": 1669.6935609756097
+    }
+  }
+]

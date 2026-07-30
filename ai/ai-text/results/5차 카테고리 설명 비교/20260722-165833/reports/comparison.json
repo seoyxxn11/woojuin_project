@@ -1,0 +1,35 @@
+[
+  {
+    "condition": "ai-generated-description",
+    "label": "AI 생성 설명",
+    "threshold": 0.65,
+    "top1Accuracy": 0.8076923076923077,
+    "exactAccuracy": 0.7692307692307693,
+    "relaxedAccuracy": 0.8461538461538461,
+    "serviceFinalAccuracy": 0.9102564102564102,
+    "fallbackUsageRate": 0.0641025641025641,
+    "averageDurationMs": 2688.023493589744
+  },
+  {
+    "condition": "existing-description",
+    "label": "기존 설명",
+    "threshold": 0.65,
+    "top1Accuracy": 0.8076923076923077,
+    "exactAccuracy": 0.7692307692307693,
+    "relaxedAccuracy": 0.8589743589743589,
+    "serviceFinalAccuracy": 0.9230769230769231,
+    "fallbackUsageRate": 0.0641025641025641,
+    "averageDurationMs": 3991.6560948717947
+  },
+  {
+    "condition": "names-only",
+    "label": "카테고리 이름만",
+    "threshold": 0.65,
+    "top1Accuracy": 0.7307692307692307,
+    "exactAccuracy": 0.6923076923076923,
+    "relaxedAccuracy": 0.782051282051282,
+    "serviceFinalAccuracy": 0.8461538461538461,
+    "fallbackUsageRate": 0.0641025641025641,
+    "averageDurationMs": 4477.268915384616
+  }
+]

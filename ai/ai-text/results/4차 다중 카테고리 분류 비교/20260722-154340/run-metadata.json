@@ -1,0 +1,55 @@
+{
+  "model": "qwen3:8b",
+  "classificationMode": "multi_label",
+  "evaluationMode": "single_label_relaxed",
+  "promptVersion": "multi-label-v1",
+  "datasetFingerprint": "f2103ad28fff1c7579424f453f19d5580d62fff5427ad10367e8b9ba79cb7dd1",
+  "datasetCount": 78,
+  "repeat": 1,
+  "scenarios": [
+    {
+      "id": "split-with-description",
+      "structure": "split",
+      "category_descriptions": true,
+      "calls_per_item": 1
+    },
+    {
+      "id": "split-without-description",
+      "structure": "split",
+      "category_descriptions": false,
+      "calls_per_item": 1
+    },
+    {
+      "id": "integrated-with-description",
+      "structure": "integrated",
+      "category_descriptions": true,
+      "calls_per_item": 1
+    },
+    {
+      "id": "integrated-without-description",
+      "structure": "integrated",
+      "category_descriptions": false,
+      "calls_per_item": 1
+    }
+  ],
+  "thresholds": [
+    0.5,
+    0.6,
+    0.65,
+    0.7,
+    0.8
+  ],
+  "expectedCallCount": 312,
+  "status": "COMPLETED",
+  "startedAt": "2026-07-22T15:43:42.546571+09:00",
+  "completedAt": "2026-07-22T16:30:39.743559+09:00",
+  "environment": "Windows 11, Python 3.14.6",
+  "modelRuns": {
+    "split-with-description": "split-with-description-3051fb53bafaa191",
+    "split-without-description": "split-without-description-d960983e50d66627",
+    "integrated-with-description": "integrated-with-description-c8f8e52df8c66a08",
+    "integrated-without-description": "integrated-without-description-d0dae56886a96514"
+  },
+  "callsCompletedThisRun": 312,
+  "detailedEvaluationCount": 1560
+}

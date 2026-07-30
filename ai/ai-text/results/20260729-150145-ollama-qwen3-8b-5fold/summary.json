@@ -1,0 +1,12 @@
+{
+  "model": "qwen3:8b",
+  "provider": "ollama",
+  "dataset": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\dataset\\tester\\정우현-5fold",
+  "descriptionCalls": 55,
+  "classificationCalls": 112,
+  "totalExpectedCalls": 167,
+  "items": 112,
+  "top1Correct": 96,
+  "top1Accuracy": 0.8571428571428571,
+  "createdAt": "2026-07-29T15:36:49.624717+09:00"
+}

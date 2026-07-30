@@ -1,0 +1,50 @@
+[
+  {
+    "inputType": "전체",
+    "count": 43,
+    "correctCount": 26,
+    "top1Accuracy": 0.5348837209302325,
+    "exactAccuracy": 0.4883720930232558,
+    "relaxedAccuracy": 0.6046511627906976,
+    "averageSelectedCategoryCount": 1.1627906976744187,
+    "macroPrecision": 0.6176046176046176,
+    "macroRecall": 0.602579365079365,
+    "macroF1": 0.5921524108689884
+  },
+  {
+    "inputType": "memo",
+    "count": 0,
+    "correctCount": 0,
+    "top1Accuracy": null,
+    "exactAccuracy": null,
+    "relaxedAccuracy": null,
+    "averageSelectedCategoryCount": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  },
+  {
+    "inputType": "url",
+    "count": 43,
+    "correctCount": 26,
+    "top1Accuracy": 0.5348837209302325,
+    "exactAccuracy": 0.4883720930232558,
+    "relaxedAccuracy": 0.6046511627906976,
+    "averageSelectedCategoryCount": 1.1627906976744187,
+    "macroPrecision": 0.6176046176046176,
+    "macroRecall": 0.602579365079365,
+    "macroF1": 0.5921524108689884
+  },
+  {
+    "inputType": "image",
+    "count": 0,
+    "correctCount": 0,
+    "top1Accuracy": null,
+    "exactAccuracy": null,
+    "relaxedAccuracy": null,
+    "averageSelectedCategoryCount": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  }
+]

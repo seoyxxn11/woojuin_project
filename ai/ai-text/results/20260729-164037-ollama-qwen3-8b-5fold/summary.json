@@ -1,0 +1,14 @@
+{
+  "model": "qwen3:8b",
+  "provider": "ollama",
+  "dataset": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\dataset\\tester\\정우현-5fold",
+  "metadataDataset": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\dataset\\tester\\정우현-ollama-metadata",
+  "classificationInput": "category name + category description + title + summary",
+  "descriptionCalls": 55,
+  "classificationCalls": 112,
+  "totalExpectedCalls": 167,
+  "items": 112,
+  "top1Correct": 97,
+  "top1Accuracy": 0.8660714285714286,
+  "createdAt": "2026-07-29T16:57:55.615430+09:00"
+}

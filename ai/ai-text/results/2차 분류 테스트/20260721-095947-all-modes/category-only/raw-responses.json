@@ -1,0 +1,268 @@
+[
+  {
+    "testId": "TEXT-001",
+    "datasetKey": "memo:TEXT-001",
+    "datasetType": "memo",
+    "testMode": "category-only",
+    "title": "텍스트-2026.07.20-0905",
+    "sourcePath": "개발·IT/001-텍스트-2026.07.20-0905.txt",
+    "idAutoAssigned": false,
+    "expected": {
+      "categories": [
+        "개발·IT"
+      ],
+      "requiredKeywords": [],
+      "summaryPoints": [],
+      "forbiddenClaims": []
+    },
+    "model": "qwen3:4b",
+    "runType": "COLD",
+    "runNumber": 0,
+    "promptVersion": "v1",
+    "request": {
+      "model": "qwen3:4b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "당신은 사용자가 저장한 콘텐츠를 분류하는 AI입니다.\n\n입력 제목과 본문을 읽고 가장 적합한 카테고리 하나와 판단 신뢰도를 생성하세요.\n\n카테고리 정의:\n- 개발·IT: 기술 구현, 코드 작성, 서버, 데이터베이스, 인공지능, 인프라와 개발 문제 해결 중심의 내용 (예: Spring Security JWT 인증 구조, Docker 실행 명령어, MySQL 인덱스 성능 비교)\n- 건강·운동: 운동 계획, 신체 활동, 건강 관리, 수면, 식단과 생활 습관 개선에 관한 내용 (예: 주 3회 근력 운동 계획, 건강검진 일정, 수면 시간 개선 기록)\n- 기타: 다른 카테고리로 명확히 분류하기 어렵거나 맥락이 부족한 단편적인 내용 (예: 나중에 다시 확인할 메모, 출처가 불분명한 짧은 기록)\n- 문화·콘텐츠: 책, 영화, 드라마, 음악, 공연, 전시 등 감상하거나 소비하는 문화 콘텐츠 중심의 내용 (예: 읽어볼 개발 에세이, 주말에 본 다큐멘터리 감상, 서울 전시회 후보)\n- 생활·할 일: 개인 일정, 준비물, 청소, 정리, 행정 처리 등 일상에서 해야 할 일 중심의 내용 (예: 주말 방 정리 계획, 기숙사 준비물, 전입 신고 서류 챙기기)\n- 쇼핑·제품: 상품 구매 후보, 제품 비교, 가격과 기능 검토, 구매 의사결정 중심의 내용 (예: 무선 키보드 구매 후보, 이어폰 배터리 성능 비교, 노트북 가격 확인)\n- 업무·프로젝트: 업무 일정, 회의, 백로그, 협업, 담당 작업과 프로젝트 진행 관리 중심의 내용 (예: 1주차 백로그 정리, 팀 회의 액션 아이템, 프로젝트 마감 일정)\n- 여행·장소: 여행 일정, 방문할 장소, 교통, 숙소와 지역 탐방에 관한 내용 (예: 제주 여행 일정, 서울 전시회 방문 후보, 부산 숙소와 교통 계획)\n- 음식·맛집: 요리법, 식재료, 식당, 메뉴, 맛집 방문과 식사 계획에 관한 내용 (예: 닭가슴살 볶음밥 레시피, 성수동 식당 후보, 김치찌개 조리 순서)\n- 취업·커리어: 채용 공고, 자기소개서, 면접, 이력서, 직무 선택과 경력 개발에 관한 내용 (예: 공기업 채용 공고 확인, 백엔드 면접 준비, 자기소개서 수정)\n- 학습·지식: 시험 공부, 강의, 개념 정리, 자격증 준비 등 일반적인 학습과 지식 습득 중심의 내용 (예: SQLD 시험 공부 계획, 운영체제 개념 정리, 강의 복습 노트)\n\n구분 기준:\n- 개발·IT는 기술 구현, 코드, 개발 문제 해결이 중심인 경우입니다.\n- 학습·지식은 시험, 강의, 개념 습득이 중심인 경우입니다.\n- 업무·프로젝트는 일정, 회의, 백로그, 담당 업무가 중심인 경우입니다.\n- 문화·콘텐츠는 책, 영화, 드라마, 전시 등 감상 대상이 중심인 경우입니다.\n- 생활·할 일은 개인 일정, 준비물, 청소, 해야 할 일이 중심인 경우입니다.\n- 쇼핑·제품은 구매 후보, 제품 비교, 구매 결정이 중심인 경우입니다.\n\n규칙:\n1. 반드시 입력된 원문만 근거로 판단하세요.\n2. category는 카테고리 정의에 있는 이름 중 하나만 선택하세요.\n3. confidence는 자신의 판단 신뢰도를 0 이상 1 이하의 숫자로 표현하세요.\n4. 한국어 JSON만 출력하고 설명, Markdown 코드 블록, <think> 내용을 출력하지 마세요.\n5. 지정되지 않은 필드를 추가하지 마세요.\n\n출력 형식:\n{\"category\":\"string\",\"confidence\":0.0}\n\n입력 콘텐츠:\nSpring Boot에서 사용자가 업로드한 이미지 파일을 AWS S3에 저장하는 기능을 구현해야 한다. 파일 이름이 중복되지 않도록 UUID를 붙이고, 업로드가 완료되면 이미지 URL과 파일 크기, 확장자를 데이터베이스에 저장한다.\n"
+        }
+      ],
+      "stream": false,
+      "format": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string",
+            "enum": [
+              "개발·IT",
+              "건강·운동",
+              "기타",
+              "문화·콘텐츠",
+              "생활·할 일",
+              "쇼핑·제품",
+              "업무·프로젝트",
+              "여행·장소",
+              "음식·맛집",
+              "취업·커리어",
+              "학습·지식"
+            ]
+          },
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Confidence",
+            "type": "number"
+          }
+        },
+        "required": [
+          "category",
+          "confidence"
+        ],
+        "title": "CategoryResult",
+        "type": "object"
+      },
+      "options": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 4096
+      },
+      "keep_alive": "10m",
+      "think": false
+    },
+    "ollamaResponse": {
+      "model": "qwen3:4b",
+      "created_at": "2026-07-21T01:00:00.8752307Z",
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 6924804900,
+      "load_duration": 5650175900,
+      "prompt_eval_count": 1159,
+      "prompt_eval_duration": 706155000,
+      "eval_count": 22,
+      "eval_duration": 555594000
+    },
+    "rawResponse": "{\n  \"category\": \"개발·IT\",\n  \"confidence\": 0.95\n}",
+    "parsedResponse": {
+      "category": "개발·IT",
+      "confidence": 0.95
+    },
+    "evaluation": {
+      "responseReceived": true,
+      "jsonValid": true,
+      "schemaValid": true,
+      "requiredFieldsPresent": true,
+      "extraTextDetected": false,
+      "thinkingTagDetected": false,
+      "outputConstraintValid": true,
+      "summarySentenceCountValid": null,
+      "categoryValueValid": true,
+      "confidenceValid": true,
+      "tagCountValid": null,
+      "tagDuplicateFree": null,
+      "tagDuplicateCount": null,
+      "keywordCountValid": null,
+      "keywordDuplicateFree": null,
+      "keywordDuplicateCount": null,
+      "sourceKeywordRatio": null,
+      "categoryCorrect": true,
+      "requiredKeywordMatchedCount": null,
+      "requiredKeywordTotalCount": 0,
+      "requiredKeywordRecall": null,
+      "summaryPointMatchedCount": null,
+      "summaryPointTotalCount": 0,
+      "summaryPointRecall": null,
+      "forbiddenClaimCount": null,
+      "detectedForbiddenClaims": "",
+      "possibleHallucination": null
+    },
+    "performance": {
+      "totalDurationMs": 6924.8049,
+      "loadDurationMs": 5650.1759,
+      "promptEvalDurationMs": 706.155,
+      "evalDurationMs": 555.594,
+      "promptEvalCount": 1159,
+      "evalCount": 22,
+      "tokensPerSecond": 39.59725986961702
+    },
+    "error": {
+      "requestFailed": false,
+      "errorType": "",
+      "errorMessage": ""
+    },
+    "executedAt": "2026-07-21T10:00:00.876888+09:00"
+  },
+  {
+    "testId": "TEXT-001",
+    "datasetKey": "memo:TEXT-001",
+    "datasetType": "memo",
+    "testMode": "category-only",
+    "title": "텍스트-2026.07.20-0905",
+    "sourcePath": "개발·IT/001-텍스트-2026.07.20-0905.txt",
+    "idAutoAssigned": false,
+    "expected": {
+      "categories": [
+        "개발·IT"
+      ],
+      "requiredKeywords": [],
+      "summaryPoints": [],
+      "forbiddenClaims": []
+    },
+    "model": "qwen3:4b",
+    "runType": "WARM",
+    "runNumber": 1,
+    "promptVersion": "v1",
+    "request": {
+      "model": "qwen3:4b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "당신은 사용자가 저장한 콘텐츠를 분류하는 AI입니다.\n\n입력 제목과 본문을 읽고 가장 적합한 카테고리 하나와 판단 신뢰도를 생성하세요.\n\n카테고리 정의:\n- 개발·IT: 기술 구현, 코드 작성, 서버, 데이터베이스, 인공지능, 인프라와 개발 문제 해결 중심의 내용 (예: Spring Security JWT 인증 구조, Docker 실행 명령어, MySQL 인덱스 성능 비교)\n- 건강·운동: 운동 계획, 신체 활동, 건강 관리, 수면, 식단과 생활 습관 개선에 관한 내용 (예: 주 3회 근력 운동 계획, 건강검진 일정, 수면 시간 개선 기록)\n- 기타: 다른 카테고리로 명확히 분류하기 어렵거나 맥락이 부족한 단편적인 내용 (예: 나중에 다시 확인할 메모, 출처가 불분명한 짧은 기록)\n- 문화·콘텐츠: 책, 영화, 드라마, 음악, 공연, 전시 등 감상하거나 소비하는 문화 콘텐츠 중심의 내용 (예: 읽어볼 개발 에세이, 주말에 본 다큐멘터리 감상, 서울 전시회 후보)\n- 생활·할 일: 개인 일정, 준비물, 청소, 정리, 행정 처리 등 일상에서 해야 할 일 중심의 내용 (예: 주말 방 정리 계획, 기숙사 준비물, 전입 신고 서류 챙기기)\n- 쇼핑·제품: 상품 구매 후보, 제품 비교, 가격과 기능 검토, 구매 의사결정 중심의 내용 (예: 무선 키보드 구매 후보, 이어폰 배터리 성능 비교, 노트북 가격 확인)\n- 업무·프로젝트: 업무 일정, 회의, 백로그, 협업, 담당 작업과 프로젝트 진행 관리 중심의 내용 (예: 1주차 백로그 정리, 팀 회의 액션 아이템, 프로젝트 마감 일정)\n- 여행·장소: 여행 일정, 방문할 장소, 교통, 숙소와 지역 탐방에 관한 내용 (예: 제주 여행 일정, 서울 전시회 방문 후보, 부산 숙소와 교통 계획)\n- 음식·맛집: 요리법, 식재료, 식당, 메뉴, 맛집 방문과 식사 계획에 관한 내용 (예: 닭가슴살 볶음밥 레시피, 성수동 식당 후보, 김치찌개 조리 순서)\n- 취업·커리어: 채용 공고, 자기소개서, 면접, 이력서, 직무 선택과 경력 개발에 관한 내용 (예: 공기업 채용 공고 확인, 백엔드 면접 준비, 자기소개서 수정)\n- 학습·지식: 시험 공부, 강의, 개념 정리, 자격증 준비 등 일반적인 학습과 지식 습득 중심의 내용 (예: SQLD 시험 공부 계획, 운영체제 개념 정리, 강의 복습 노트)\n\n구분 기준:\n- 개발·IT는 기술 구현, 코드, 개발 문제 해결이 중심인 경우입니다.\n- 학습·지식은 시험, 강의, 개념 습득이 중심인 경우입니다.\n- 업무·프로젝트는 일정, 회의, 백로그, 담당 업무가 중심인 경우입니다.\n- 문화·콘텐츠는 책, 영화, 드라마, 전시 등 감상 대상이 중심인 경우입니다.\n- 생활·할 일은 개인 일정, 준비물, 청소, 해야 할 일이 중심인 경우입니다.\n- 쇼핑·제품은 구매 후보, 제품 비교, 구매 결정이 중심인 경우입니다.\n\n규칙:\n1. 반드시 입력된 원문만 근거로 판단하세요.\n2. category는 카테고리 정의에 있는 이름 중 하나만 선택하세요.\n3. confidence는 자신의 판단 신뢰도를 0 이상 1 이하의 숫자로 표현하세요.\n4. 한국어 JSON만 출력하고 설명, Markdown 코드 블록, <think> 내용을 출력하지 마세요.\n5. 지정되지 않은 필드를 추가하지 마세요.\n\n출력 형식:\n{\"category\":\"string\",\"confidence\":0.0}\n\n입력 콘텐츠:\nSpring Boot에서 사용자가 업로드한 이미지 파일을 AWS S3에 저장하는 기능을 구현해야 한다. 파일 이름이 중복되지 않도록 UUID를 붙이고, 업로드가 완료되면 이미지 URL과 파일 크기, 확장자를 데이터베이스에 저장한다.\n"
+        }
+      ],
+      "stream": false,
+      "format": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string",
+            "enum": [
+              "개발·IT",
+              "건강·운동",
+              "기타",
+              "문화·콘텐츠",
+              "생활·할 일",
+              "쇼핑·제품",
+              "업무·프로젝트",
+              "여행·장소",
+              "음식·맛집",
+              "취업·커리어",
+              "학습·지식"
+            ]
+          },
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Confidence",
+            "type": "number"
+          }
+        },
+        "required": [
+          "category",
+          "confidence"
+        ],
+        "title": "CategoryResult",
+        "type": "object"
+      },
+      "options": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 4096
+      },
+      "keep_alive": "10m",
+      "think": false
+    },
+    "ollamaResponse": {
+      "model": "qwen3:4b",
+      "created_at": "2026-07-21T01:00:04.1437666Z",
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1216233000,
+      "load_duration": 605376500,
+      "prompt_eval_count": 1159,
+      "prompt_eval_duration": 49741000,
+      "eval_count": 22,
+      "eval_duration": 527767000
+    },
+    "rawResponse": "{\n  \"category\": \"개발·IT\",\n  \"confidence\": 0.95\n}",
+    "parsedResponse": {
+      "category": "개발·IT",
+      "confidence": 0.95
+    },
+    "evaluation": {
+      "responseReceived": true,
+      "jsonValid": true,
+      "schemaValid": true,
+      "requiredFieldsPresent": true,
+      "extraTextDetected": false,
+      "thinkingTagDetected": false,
+      "outputConstraintValid": true,
+      "summarySentenceCountValid": null,
+      "categoryValueValid": true,
+      "confidenceValid": true,
+      "tagCountValid": null,
+      "tagDuplicateFree": null,
+      "tagDuplicateCount": null,
+      "keywordCountValid": null,
+      "keywordDuplicateFree": null,
+      "keywordDuplicateCount": null,
+      "sourceKeywordRatio": null,
+      "categoryCorrect": true,
+      "requiredKeywordMatchedCount": null,
+      "requiredKeywordTotalCount": 0,
+      "requiredKeywordRecall": null,
+      "summaryPointMatchedCount": null,
+      "summaryPointTotalCount": 0,
+      "summaryPointRecall": null,
+      "forbiddenClaimCount": null,
+      "detectedForbiddenClaims": "",
+      "possibleHallucination": null
+    },
+    "performance": {
+      "totalDurationMs": 1216.233,
+      "loadDurationMs": 605.3765,
+      "promptEvalDurationMs": 49.741,
+      "evalDurationMs": 527.767,
+      "promptEvalCount": 1159,
+      "evalCount": 22,
+      "tokensPerSecond": 41.685061779156335
+    },
+    "error": {
+      "requestFailed": false,
+      "errorType": "",
+      "errorMessage": ""
+    },
+    "executedAt": "2026-07-21T10:00:04.146674+09:00"
+  }
+]

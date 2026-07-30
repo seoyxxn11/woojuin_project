@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"테스트잇 test it!","url":"https://test-it.co.kr/","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://test-it.co.kr/imim.png","description":"MBTI 테스트, 성격 테스트, 얼굴인식 테스트 등 재미있는 테스트가 가득한 사이트 입니다."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

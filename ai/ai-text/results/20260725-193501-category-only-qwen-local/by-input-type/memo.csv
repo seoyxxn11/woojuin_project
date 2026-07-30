@@ -1,0 +1,7 @@
+﻿inputType,testId,title,sourcePath,expectedCategory,generatedCategory,categoryCorrect,confidence,status,errorType,errorMessage
+memo,MEMO-001,기숙사 준비물,생활·할 일/memo/기숙사 준비물.txt,생활·할 일,생활·할 일,True,1.0,SUCCESS,,
+memo,MEMO-002,장보기 목록 - 쇼핑·제품,쇼핑·제품/memo/장보기 목록 - 쇼핑·제품.txt,쇼핑·제품,쇼핑·제품,True,1.0,SUCCESS,,
+memo,MEMO-003,동준이의 염감 노트 - 아이디어·영감,아이디어·영감/memo/동준이의 염감 노트 - 아이디어·영감.txt,아이디어·영감,아이디어·영감,True,0.95,SUCCESS,,
+memo,MEMO-004,동준이의 영감 노트 - 아이디어·영감,아이디어·영감/memo/동준이의 영감 노트 - 아이디어·영감.txt,아이디어·영감,아이디어·영감,True,0.95,SUCCESS,,
+memo,MEMO-005,레시피 - 음식·맛집,아이디어·영감/memo/레시피 - 음식·맛집.txt,아이디어·영감,음식·맛집,False,1.0,SUCCESS,,
+memo,MEMO-006,텍스트 노트 0817 - 음식·맛집,아이디어·영감/memo/텍스트 노트 0817 - 음식·맛집.txt,아이디어·영감,음식·맛집,False,0.9,SUCCESS,,

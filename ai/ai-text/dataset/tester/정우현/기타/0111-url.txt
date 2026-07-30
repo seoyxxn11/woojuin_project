@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"16가지 성격 유형 테스트","url":"https://answer.moaform.com/answers/EnPBng","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":"16가지 성격 유형 테스트"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

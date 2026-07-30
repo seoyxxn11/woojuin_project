@@ -1,0 +1,5554 @@
+[
+  {
+    "id": 17,
+    "testId": "TEXT-017",
+    "title": "텍스트-2026.07.20-1220",
+    "sourcePath": "건강·운동/017-텍스트-2026.07.20-1220.txt",
+    "input": "오래 앉아서 작업한 뒤 허리가 뻐근할 때 할 수 있는 스트레칭을 정리한다. 고양이 자세, 무릎 당기기, 골반 기울이기를 각각 30초씩 진행하고 통증이 심하면 운동을 중단한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 8569.0897,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 18,
+    "testId": "TEXT-018",
+    "title": "주 3회 운동 계획",
+    "sourcePath": "건강·운동/018-주 3회 운동 계획.txt",
+    "input": "월요일에는 상체 운동, 수요일에는 하체 운동, 토요일에는 가벼운 유산소 운동을 한다. 무리하게 중량을 올리기보다 운동 기록을 남기면서 매주 반복 횟수를 조금씩 늘린다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1971.3876,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 54,
+    "testId": "TEXT-054",
+    "title": "허리 부담을 줄이는 스쿼트 자세",
+    "sourcePath": "건강·운동/054-허리 부담을 줄이는 스쿼트 자세.txt",
+    "input": "무릎과 발끝 방향을 맞추고 허리가 과하게 굽지 않도록 한다. 통증이 발생하면 동작을 멈추고 가동 범위를 줄여야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2111.8798,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 55,
+    "testId": "TEXT-055",
+    "title": "텍스트-2026-07-13",
+    "sourcePath": "건강·운동/055-텍스트-2026-07-13.txt",
+    "input": "잠들기 한 시간 전에는 밝은 화면을 줄이고, 기상 시간을 일정하게 유지하는 것이 수면 리듬을 맞추는 데 도움이 된다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.8
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.8
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2042.6972,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 56,
+    "testId": "TEXT-056",
+    "title": "러닝 초보자 주간 계획",
+    "sourcePath": "건강·운동/056-러닝 초보자 주간 계획.txt",
+    "input": "첫 주에는 20분 동안 걷기와 가벼운 달리기를 번갈아 진행한다. 연속으로 달리는 시간보다 꾸준히 운동하는 습관을 만드는 것이 중요하다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2105.6702,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 57,
+    "testId": "TEXT-057",
+    "title": "장시간 앉아 있을 때 스트레칭",
+    "sourcePath": "건강·운동/057-장시간 앉아 있을 때 스트레칭.txt",
+    "input": "한 시간에 한 번씩 자리에서 일어나 목과 어깨를 천천히 움직인다. 손목과 고관절도 함께 풀어주면 좋다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2146.2376,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 58,
+    "testId": "TEXT-058",
+    "title": "운동 후 식사 구성",
+    "sourcePath": "건강·운동/058-운동 후 식사 구성.txt",
+    "input": "운동 후에는 단백질만 먹기보다 탄수화물과 수분도 함께 섭취하는 것이 회복에 도움이 된다. 지나치게 늦은 시간에는 소화 부담이 적은 음식을 선택한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "HEALTH_EXERCISE",
+    "expectedCategoryName": "건강·운동",
+    "top1CategoryId": "HEALTH_EXERCISE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.8
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.8
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "HEALTH_EXERCISE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3478.7395,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 21,
+    "testId": "TEXT-021",
+    "title": "텍스트-2026.07.20-1310",
+    "sourcePath": "기타/021-텍스트-2026.07.20-1310.txt",
+    "input": "결과를 너무 빨리 정하려 하지 말고 충분한 데이터를 확인한 다음 판단할 것. 지금 당장 필요하지 않더라도 다음 회의 전에 다시 읽어본다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": "IDEA_INSPIRATION",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "serviceSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3536.4823,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 22,
+    "testId": "TEXT-022",
+    "title": "텍스트-2026.07.20-1325",
+    "sourcePath": "기타/022-텍스트-2026.07.20-1325.txt",
+    "input": "사람들이 자주 저장하지만 다시 찾지 않는 정보를 활용할 새로운 방법이 필요하다. 아직 구체적인 기능이나 대상 사용자는 정하지 않았으므로 생각나는 내용을 계속 추가해본다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": "IDEA_INSPIRATION",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "serviceSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3634.2076,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 74,
+    "testId": "TEXT-074",
+    "title": "텍스트-2026-07-21",
+    "sourcePath": "기타/074-텍스트-2026-07-21.txt",
+    "input": "384729",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": null,
+    "top1Correct": false,
+    "rawPredictions": [],
+    "validPredictions": [],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [],
+    "serviceSelectedCategoryIds": [
+      "OTHER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": true,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 0,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "EMPTY_PREDICTION",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY",
+      "EMPTY_PREDICTION",
+      "FALLBACK_USED"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1023.7943,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 75,
+    "testId": "TEXT-075",
+    "title": "확인할 문자열",
+    "sourcePath": "기타/075-확인할 문자열.txt",
+    "input": "AX7-KQ92-PM",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": null,
+    "top1Correct": false,
+    "rawPredictions": [],
+    "validPredictions": [],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [],
+    "serviceSelectedCategoryIds": [
+      "OTHER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": true,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 0,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "EMPTY_PREDICTION",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY",
+      "EMPTY_PREDICTION",
+      "FALLBACK_USED"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 923.1272,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 76,
+    "testId": "TEXT-076",
+    "title": "텍스트-2026-07-22",
+    "sourcePath": "기타/076-텍스트-2026-07-22.txt",
+    "input": "파란색, 세 번째, 오른쪽 위",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": null,
+    "top1Correct": false,
+    "rawPredictions": [],
+    "validPredictions": [],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [],
+    "serviceSelectedCategoryIds": [
+      "OTHER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": true,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 0,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "EMPTY_PREDICTION",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY",
+      "EMPTY_PREDICTION",
+      "FALLBACK_USED"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 900.2406,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 77,
+    "testId": "TEXT-077",
+    "title": "내용을 확인할 수 없는 링크",
+    "sourcePath": "기타/077-내용을 확인할 수 없는 링크.txt",
+    "input": "페이지 제목과 본문을 가져오지 못했습니다. 원본 주소만 저장되어 있어 내용을 분류할 수 없습니다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": null,
+    "top1Correct": false,
+    "rawPredictions": [],
+    "validPredictions": [],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [],
+    "serviceSelectedCategoryIds": [
+      "OTHER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": true,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 0,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "EMPTY_PREDICTION",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY",
+      "EMPTY_PREDICTION",
+      "FALLBACK_USED"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 960.6076,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 78,
+    "testId": "TEXT-078",
+    "title": "이미지 추출 실패",
+    "sourcePath": "기타/078-이미지 추출 실패.txt",
+    "input": "이미지가 흐리고 글자가 잘려 있어 텍스트와 주요 대상을 확인할 수 없습니다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "OTHER",
+    "expectedCategoryName": "기타",
+    "top1CategoryId": null,
+    "top1Correct": false,
+    "rawPredictions": [],
+    "validPredictions": [],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [],
+    "serviceSelectedCategoryIds": [
+      "OTHER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": true,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 0,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "EMPTY_PREDICTION",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY",
+      "EMPTY_PREDICTION",
+      "FALLBACK_USED"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 927.0928,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 64,
+    "testId": "TEXT-064",
+    "title": "월급 통장 나누는 방법",
+    "sourcePath": "돈·재테크/064-월급 통장 나누는 방법.txt",
+    "input": "급여가 들어오면 생활비, 고정비, 저축, 비상금 계좌로 자동이체되도록 설정한다. 남은 금액을 저축하는 방식보다 먼저 분리하는 편이 관리하기 쉽다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "MONEY_FINANCE",
+    "expectedCategoryName": "돈·재테크",
+    "top1CategoryId": "MONEY_FINANCE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2098.7316,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 65,
+    "testId": "TEXT-065",
+    "title": "텍스트-2026-07-17",
+    "sourcePath": "돈·재테크/065-텍스트-2026-07-17.txt",
+    "input": "정기예금은 가입 기간 동안 금리가 고정되는 상품이 많다. 중도 해지 시 약정 금리보다 낮은 이율이 적용될 수 있으니 확인해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "MONEY_FINANCE",
+    "expectedCategoryName": "돈·재테크",
+    "top1CategoryId": "MONEY_FINANCE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3411.276,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 66,
+    "testId": "TEXT-066",
+    "title": "카드 혜택 비교",
+    "sourcePath": "돈·재테크/066-카드 혜택 비교.txt",
+    "input": "대중교통과 통신비 할인이 크지만 전월 실적 조건이 있다. 할인 한도와 제외 항목을 확인한 뒤 현재 소비 패턴에 맞는지 판단해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "MONEY_FINANCE",
+    "expectedCategoryName": "돈·재테크",
+    "top1CategoryId": "MONEY_FINANCE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3167.7617,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 67,
+    "testId": "TEXT-067",
+    "title": "비상금 규모 정하기",
+    "sourcePath": "돈·재테크/067-비상금 규모 정하기.txt",
+    "input": "고정 지출을 기준으로 최소 3개월에서 6개월 정도의 생활비를 현금성 자산으로 보관하는 방법이 일반적이다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "MONEY_FINANCE",
+    "expectedCategoryName": "돈·재테크",
+    "top1CategoryId": "MONEY_FINANCE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "MONEY_FINANCE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2061.5863,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 68,
+    "testId": "TEXT-068",
+    "title": "보험 가입 전에 확인할 내용",
+    "sourcePath": "돈·재테크/068-보험 가입 전에 확인할 내용.txt",
+    "input": "보장 범위와 면책 조건, 갱신 여부, 납입 기간을 확인한다. 월 보험료가 낮더라도 장기간 납입할 총금액을 함께 비교해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "MONEY_FINANCE",
+    "expectedCategoryName": "돈·재테크",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3182.5687,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 19,
+    "testId": "TEXT-019",
+    "title": "텍스트-2026.07.20-1245",
+    "sourcePath": "문화·콘텐츠/019-텍스트-2026.07.20-1245.txt",
+    "input": "주말에 친구들과 함께 볼 수 있는 두 시간 이내의 코미디 영화를 찾고 있다. 너무 무겁거나 잔인한 작품은 제외하고 넷플릭스나 디즈니플러스에서 볼 수 있는 영화를 우선 확인한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "CULTURE_CONTENT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3424.9987,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 20,
+    "testId": "TEXT-020",
+    "title": "읽어볼 개발 에세이",
+    "sourcePath": "문화·콘텐츠/020-읽어볼 개발 에세이.txt",
+    "input": "개발자의 성장 과정이나 협업 경험을 다룬 에세이를 읽어보고 싶다. 기술 사용법을 설명하는 책보다는 실패 경험, 커리어 고민, 팀에서 소통하는 방법을 다룬 책을 찾아둔다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.7
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.7
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3326.046,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 59,
+    "testId": "TEXT-059",
+    "title": "주말에 볼 영화 후보",
+    "sourcePath": "문화·콘텐츠/059-주말에 볼 영화 후보.txt",
+    "input": "러닝타임이 110분 정도인 미스터리 영화. 지나치게 무겁지 않고 반전이 있다는 후기가 많아 주말 저녁에 보기 좋을 것 같다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "CULTURE_CONTENT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3430.6934,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 60,
+    "testId": "TEXT-060",
+    "title": "텍스트-2026-07-15",
+    "sourcePath": "문화·콘텐츠/060-텍스트-2026-07-15.txt",
+    "input": "다음에 읽을 책으로 인간관계에서 경계를 설정하는 방법을 다룬 에세이를 저장해둔다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2074.1242,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 61,
+    "testId": "TEXT-061",
+    "title": "서울 사진전 정보",
+    "sourcePath": "문화·콘텐츠/061-서울 사진전 정보.txt",
+    "input": "도시의 밤을 주제로 한 사진전이며 전시는 다음 달 말까지 열린다. 평일 저녁에는 관람객이 비교적 적다고 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "CULTURE_CONTENT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3245.5492,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 62,
+    "testId": "TEXT-062",
+    "title": "출근할 때 들을 음악",
+    "sourcePath": "문화·콘텐츠/062-출근할 때 들을 음악.txt",
+    "input": "템포가 빠르지만 너무 시끄럽지 않은 팝 음악 플레이리스트. 아침 이동 시간에 듣기 좋아 보여 저장한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.0
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.2
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.2
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": true,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "THRESHOLD_MISS"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 4292.7377,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 63,
+    "testId": "TEXT-063",
+    "title": "웹툰 추천 목록",
+    "sourcePath": "문화·콘텐츠/063-웹툰 추천 목록.txt",
+    "input": "완결된 작품 중에서 성장물과 판타지 장르 위주로 정리된 추천 글. 작품별 분량과 분위기가 함께 소개되어 있다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CULTURE_CONTENT",
+    "expectedCategoryName": "문화·콘텐츠",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.7
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.7
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": true,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "THRESHOLD_MISS"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3312.4419,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 6,
+    "testId": "TEXT-006",
+    "title": "1주차 백로그 정리",
+    "sourcePath": "생활·할 일/006-1주차 백로그 정리.txt",
+    "input": "이미지 업로드, S3 저장, OCR 처리, AI 카테고리 분류 작업을 각각 스토리와 하위 작업으로 나눠 Jira에 등록해야 한다. 담당자를 나누고 각 작업에 우선순위와 스토리 점수를 설정한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3338.0444,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 9,
+    "testId": "TEXT-009",
+    "title": "텍스트-2026.07.20-1035",
+    "sourcePath": "생활·할 일/009-텍스트-2026.07.20-1035.txt",
+    "input": "오전에는 병원 예약 시간을 확인하고 오후에는 택배를 보내야 한다. 저녁에는 프로젝트 회의 전에 Jira 백로그를 정리하고 세탁기도 돌린다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2066.6236,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 10,
+    "testId": "TEXT-010",
+    "title": "주말 방 정리 계획",
+    "sourcePath": "생활·할 일/010-주말 방 정리 계획.txt",
+    "input": "책상 위에 쌓여 있는 서류를 분류하고 사용하지 않는 전자기기를 박스에 정리한다. 겨울옷은 옷장 위쪽으로 옮기고 필요한 생필품 목록도 함께 작성해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1945.6438,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 24,
+    "testId": "TEXT-024",
+    "title": "이사 전날 확인할 목록",
+    "sourcePath": "생활·할 일/024-이사 전날 확인할 목록.txt",
+    "input": "냉장고 음식 정리, 인터넷 이전 설치 확인, 관리사무소에 엘리베이터 사용 시간 전달, 도시가스 해지 신청하기.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2073.047,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 25,
+    "testId": "TEXT-025",
+    "title": "텍스트-2026-07-01",
+    "sourcePath": "생활·할 일/025-텍스트-2026-07-01.txt",
+    "input": "이번 주 토요일 오전에 세탁소에서 겨울 코트 찾고, 오후에는 주민센터에 들러 전입 관련 서류를 확인해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1965.1902,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 26,
+    "testId": "TEXT-026",
+    "title": "장마철 빨래 냄새 줄이는 방법",
+    "sourcePath": "생활·할 일/026-장마철 빨래 냄새 줄이는 방법.txt",
+    "input": "세탁이 끝난 옷을 세탁기 안에 오래 두지 말고 바로 널어야 한다. 실내 건조 시에는 제습기나 선풍기를 함께 사용하면 좋다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1977.8852,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 27,
+    "testId": "TEXT-027",
+    "title": "다음 주 일정 메모",
+    "sourcePath": "생활·할 일/027-다음 주 일정 메모.txt",
+    "input": "월요일 치과 예약, 수요일 택배 반품 접수, 금요일 자동차 정기검사 예약 시간을 다시 확인한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1958.8469,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 28,
+    "testId": "TEXT-028",
+    "title": "공과금 자동이체 변경 순서",
+    "sourcePath": "생활·할 일/028-공과금 자동이체 변경 순서.txt",
+    "input": "이사 후 전기, 수도, 가스 고객번호를 확인하고 새로운 계좌로 자동이체를 변경한다. 변경 완료 여부도 다음 달 고지서에서 확인한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1989.8781,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 23,
+    "testId": "TEXT-023",
+    "title": "기숙사 준비물",
+    "sourcePath": "생활·할 일/기숙사 준비물.txt",
+    "input": "기숙사 -\n살 것\n면도크림\n바디워시\n\n아침)\n충전기 ㅇ\n버즈 \n슬리퍼 ㅇ\n배게 \n헤어드라이기 ㅇ\n남은 옷 ㅇ\n이불\n\n공통)\n신분증, 카드 ㅇ\n청소도구 ㅇ\n건조대 ㅇ\n운동화, 런닝화 ㅇ\n우산 ㅇ\n필기 도구 ㅇ\n손톱, 발톱 깎이 ㅇ\n빨래바구니 ㅇ\n휴지 ㅇ\n\n식류)\n비타민 ㅇ\n후리가케 ㅇ\n\n기계류)\n노트북(+충전기, 받침대, 인터넷 선) ㅇ\n모니터(+hdml 선) ㅇ\n인터넷 선, 어댑터 ㅇ\n키보드, 마우스 ㅇ\n무선 키보드 ㅇ\n\n세면류)\n샴푸, 린스, 바디워시 ㅇ\n바디타올 ㅇ\n폼클렌징 ㅇ\n수분크림 ㅇ\n양치도구, 혀클리너 ㅇ\n면도기, 크림 \n\n의류)\n모자 1\n옷걸이 5\n이불 1\n수건 8\n팬티 6\n잠옷 디티5, 바지1, 잠바1\n긴바지 5\n반바지 1\n반팔티 검2, 흰3\n반팔 2\n긴팔 검흰 1\n잠바(후드티, 점퍼) 2\n양말 검5, 흰",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LIFE_TASK",
+    "expectedCategoryName": "생활·할 일",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2340.698,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 11,
+    "testId": "TEXT-011",
+    "title": "텍스트-2026.07.20-1100",
+    "sourcePath": "쇼핑·제품/011-텍스트-2026.07.20-1100.txt",
+    "input": "RAM 32GB 이상이고 SSD를 추가할 수 있는 개발용 노트북을 찾아봐야 한다. Docker와 로컬 LLM을 실행할 예정이라 GPU 성능과 발열, 배터리 시간도 비교하고 가격은 200만 원 이하로 확인한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.9
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.9
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3324.9231,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 12,
+    "testId": "TEXT-012",
+    "title": "무선 키보드 구매 후보",
+    "sourcePath": "쇼핑·제품/012-무선 키보드 구매 후보.txt",
+    "input": "사무실에서 사용할 저소음 무선 키보드를 찾는 중이다. 블루투스와 USB 리시버를 모두 지원하고 숫자 키패드가 있으며, 여러 기기를 빠르게 전환할 수 있는 제품을 우선 비교한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.9
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.9
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3316.6953,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 49,
+    "testId": "TEXT-049",
+    "title": "무선 키보드 비교",
+    "sourcePath": "쇼핑·제품/049-무선 키보드 비교.txt",
+    "input": "A 제품은 휴대성이 좋고 여러 기기 전환이 편리하지만 키감이 가볍다. B 제품은 무겁지만 배터리가 오래가고 타건감이 안정적이라는 평가가 많다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2201.1127,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 50,
+    "testId": "TEXT-050",
+    "title": "텍스트-2026-07-11",
+    "sourcePath": "쇼핑·제품/050-텍스트-2026-07-11.txt",
+    "input": "여름용 얇은 셔츠를 살 때는 비침 정도, 세탁 후 수축 여부, 구김이 잘 생기는 소재인지 확인하기.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3343.6056,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 51,
+    "testId": "TEXT-051",
+    "title": "로봇청소기 구매 후보",
+    "sourcePath": "쇼핑·제품/051-로봇청소기 구매 후보.txt",
+    "input": "자동 먼지 비움 기능과 물걸레 세척 기능이 포함되어 있다. 문턱 통과 높이는 2cm이고 소모품 가격을 별도로 확인해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.2
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.2
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2968.5007,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 52,
+    "testId": "TEXT-052",
+    "title": "여행용 보조배터리 확인 사항",
+    "sourcePath": "쇼핑·제품/052-여행용 보조배터리 확인 사항.txt",
+    "input": "항공기 반입 가능한 용량인지 확인하고 무게, 충전 단자 종류, 고속 충전 지원 여부를 비교해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.2
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.2
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3284.5237,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 53,
+    "testId": "TEXT-053",
+    "title": "부모님 선물용 마사지기 후기",
+    "sourcePath": "쇼핑·제품/053-부모님 선물용 마사지기 후기.txt",
+    "input": "조작 버튼이 단순하고 강도 조절이 쉬운 편이다. 다만 무게가 있어 오래 들고 사용하기에는 불편하다는 의견이 있다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "SHOPPING_PRODUCT",
+    "expectedCategoryName": "쇼핑·제품",
+    "top1CategoryId": "SHOPPING_PRODUCT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.8
+      },
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "SHOPPING_PRODUCT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3209.7061,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 5,
+    "testId": "TEXT-005",
+    "title": "텍스트-2026.07.20-0940",
+    "sourcePath": "아이디어·영감/005-텍스트-2026.07.20-0940.txt",
+    "input": "팀 회의에서 URL 미리보기 생성과 본문 추출을 별도의 처리 과정으로 나누기로 했다. 미리보기는 Open Graph와 oEmbed를 사용하고, 본문은 Jsoup과 Readability를 우선 적용한 뒤 실패하면 Playwright를 실행하는 방향을 검토한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "IDEA_INSPIRATION",
+    "expectedCategoryName": "아이디어·영감",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3239.008,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 69,
+    "testId": "TEXT-069",
+    "title": "앱 첫 화면 디자인 참고",
+    "sourcePath": "아이디어·영감/069-앱 첫 화면 디자인 참고.txt",
+    "input": "저장된 자료를 카드 형태로 보여주고, 카드마다 출처 아이콘과 한 줄 요약만 표시하는 구성이 깔끔해 보여 참고하고 싶다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "IDEA_INSPIRATION",
+    "expectedCategoryName": "아이디어·영감",
+    "top1CategoryId": "IDEA_INSPIRATION",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "serviceSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3454.0536,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 70,
+    "testId": "TEXT-070",
+    "title": "텍스트-2026-07-19",
+    "sourcePath": "아이디어·영감/070-텍스트-2026-07-19.txt",
+    "input": "좋은 서비스는 사용자가 기능을 많이 배우게 하는 것이 아니라, 처음부터 무엇을 해야 하는지 고민하지 않게 만든다는 문장이 인상 깊다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "IDEA_INSPIRATION",
+    "expectedCategoryName": "아이디어·영감",
+    "top1CategoryId": "IDEA_INSPIRATION",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "serviceSelectedCategoryIds": [
+      "IDEA_INSPIRATION"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2204.4684,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 71,
+    "testId": "TEXT-071",
+    "title": "방 꾸미기 참고 이미지",
+    "sourcePath": "아이디어·영감/071-방 꾸미기 참고 이미지.txt",
+    "input": "밝은 나무색 가구와 간접 조명을 사용한 작은 원룸 인테리어. 책상 주변 수납을 벽면에 배치한 방식이 마음에 든다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "IDEA_INSPIRATION",
+    "expectedCategoryName": "아이디어·영감",
+    "top1CategoryId": "CULTURE_CONTENT",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3246.5773,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 72,
+    "testId": "TEXT-072",
+    "title": "숏폼 콘텐츠 구성 방식",
+    "sourcePath": "아이디어·영감/072-숏폼 콘텐츠 구성 방식.txt",
+    "input": "첫 3초에 결과 화면을 먼저 보여주고 이후에 과정을 설명하는 영상 구조. 프로젝트 소개 영상에도 적용해볼 수 있을 것 같다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "IDEA_INSPIRATION",
+    "expectedCategoryName": "아이디어·영감",
+    "top1CategoryId": "CULTURE_CONTENT",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.7
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.7
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": true,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "THRESHOLD_MISS"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3400.8163,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 73,
+    "testId": "TEXT-073",
+    "title": "사진 구도 참고",
+    "sourcePath": "아이디어·영감/073-사진 구도 참고.txt",
+    "input": "인물을 화면 중앙에 두지 않고 창문과 그림자를 함께 활용한 사진. 여행 사진을 촬영할 때 비슷한 구도를 시도해보고 싶다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "IDEA_INSPIRATION",
+    "expectedCategoryName": "아이디어·영감",
+    "top1CategoryId": "CULTURE_CONTENT",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.7
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.7
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [
+      "CULTURE_CONTENT"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": true,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "THRESHOLD_MISS"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3544.8386,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 15,
+    "testId": "TEXT-015",
+    "title": "텍스트-2026.07.20-1150",
+    "sourcePath": "여행·장소/015-텍스트-2026.07.20-1150.txt",
+    "input": "첫날에는 제주공항에서 렌터카를 받아 애월 카페와 협재해수욕장을 방문한다. 둘째 날은 성산일출봉과 우도를 둘러보고, 마지막 날에는 동문시장에서 기념품을 산 뒤 공항으로 이동한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.9
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.9
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3108.1299,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 16,
+    "testId": "TEXT-016",
+    "title": "서울 전시회 방문 후보",
+    "sourcePath": "여행·장소/016-서울 전시회 방문 후보.txt",
+    "input": "다음 주 토요일에 서울에서 열리는 미디어아트 전시회를 찾아보고 있다. 지하철로 이동하기 편하고 관람 시간이 두 시간 이내이며, 주변에 식사할 곳이 많은 전시장을 우선 확인한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3275.666,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 39,
+    "testId": "TEXT-039",
+    "title": "부산에서 일몰 보기 좋은 곳",
+    "sourcePath": "여행·장소/039-부산에서 일몰 보기 좋은 곳.txt",
+    "input": "다대포 해수욕장은 해가 바다 쪽으로 지는 모습을 보기 좋고 산책로가 넓다. 일몰 시간보다 30분 정도 일찍 도착하는 것이 좋다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.9
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.1
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.9
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.1
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3208.0476,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 40,
+    "testId": "TEXT-040",
+    "title": "텍스트-2026-07-07",
+    "sourcePath": "여행·장소/040-텍스트-2026-07-07.txt",
+    "input": "제주 동쪽 여행 때 성산일출봉, 광치기해변, 섭지코지를 같은 날 묶으면 이동 동선이 비교적 짧다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.7
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.7
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3268.8756,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 41,
+    "testId": "TEXT-041",
+    "title": "교토 버스 이용 팁",
+    "sourcePath": "여행·장소/041-교토 버스 이용 팁.txt",
+    "input": "관광객이 많은 시간에는 버스보다 지하철과 도보를 함께 이용하는 편이 빠를 수 있다. 교통카드는 대부분의 노선에서 사용할 수 있다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3198.535,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 42,
+    "testId": "TEXT-042",
+    "title": "비 오는 날 서울에서 갈 곳",
+    "sourcePath": "여행·장소/042-비 오는 날 서울에서 갈 곳.txt",
+    "input": "국립중앙박물관은 실내에서 오래 머물기 좋고 전시 공간과 휴식 공간이 넓다. 인근에 산책 가능한 용산가족공원도 있다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3247.4638,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 43,
+    "testId": "TEXT-043",
+    "title": "숙소 예약 전에 확인할 내용",
+    "sourcePath": "여행·장소/043-숙소 예약 전에 확인할 내용.txt",
+    "input": "역과의 실제 도보 거리, 늦은 시간 체크인 가능 여부, 엘리베이터 유무, 짐 보관 서비스와 취소 수수료를 확인한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "TRAVEL_PLACE",
+    "expectedCategoryName": "여행·장소",
+    "top1CategoryId": "LIFE_TASK",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LIFE_TASK"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 1976.0882,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 13,
+    "testId": "TEXT-013",
+    "title": "텍스트-2026.07.20-1125",
+    "sourcePath": "음식·맛집/013-텍스트-2026.07.20-1125.txt",
+    "input": "광주 상무지구에서 주말 저녁에 방문할 수 있는 파스타 맛집을 찾아둔다. 크림 파스타와 스테이크 메뉴가 있고, 6명이 함께 앉을 수 있으며 예약 가능한 곳이면 좋겠다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "FOOD_RESTAURANT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.9
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.9
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3261.6528,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 14,
+    "testId": "TEXT-014",
+    "title": "닭가슴살 볶음밥 레시피",
+    "sourcePath": "음식·맛집/014-닭가슴살 볶음밥 레시피.txt",
+    "input": "냉동 닭가슴살과 남은 채소를 활용해 볶음밥을 만드는 방법이다. 닭가슴살을 먼저 잘게 썰어 볶고 양파, 대파, 당근을 넣은 뒤 밥과 간장을 넣어 마무리한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "FOOD_RESTAURANT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2324.0995,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 44,
+    "testId": "TEXT-044",
+    "title": "성수동 파스타 식당",
+    "sourcePath": "음식·맛집/044-성수동 파스타 식당.txt",
+    "input": "서울숲역에서 걸어서 7분 정도이며 생면 파스타와 라자냐가 인기 메뉴다. 주말에는 대기 시간이 길어 예약이 필요하다는 후기가 많다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "FOOD_RESTAURANT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2203.581,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 45,
+    "testId": "TEXT-045",
+    "title": "텍스트-2026-07-09",
+    "sourcePath": "음식·맛집/045-텍스트-2026-07-09.txt",
+    "input": "감자와 양파를 먼저 볶다가 물과 카레를 넣고 끓인다. 마지막에 우유를 조금 넣으면 맛이 부드러워진다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "FOOD_RESTAURANT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2125.0194,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 46,
+    "testId": "TEXT-046",
+    "title": "광주에서 늦게까지 하는 카페",
+    "sourcePath": "음식·맛집/046-광주에서 늦게까지 하는 카페.txt",
+    "input": "충장로 근처에 자정까지 운영하는 카페. 좌석이 넓고 콘센트가 많아 늦은 시간에도 노트북을 사용하기 좋다고 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "TRAVEL_PLACE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.8
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [
+      "TRAVEL_PLACE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": true,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "THRESHOLD_MISS"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3340.0235,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 47,
+    "testId": "TEXT-047",
+    "title": "냉동 만두를 바삭하게 굽는 방법",
+    "sourcePath": "음식·맛집/047-냉동 만두를 바삭하게 굽는 방법.txt",
+    "input": "팬에 기름을 두르고 만두를 올린 뒤 물을 조금 넣어 뚜껑을 닫는다. 물이 증발하면 뚜껑을 열고 바닥이 노릇해질 때까지 굽는다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "FOOD_RESTAURANT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.9
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.9
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3180.0771,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 48,
+    "testId": "TEXT-048",
+    "title": "제주 고기국수 후보",
+    "sourcePath": "음식·맛집/048-제주 고기국수 후보.txt",
+    "input": "공항에서 멀지 않고 아침부터 영업하는 식당. 고기국수 외에도 돔베고기와 비빔국수를 함께 주문할 수 있다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "FOOD_RESTAURANT",
+    "expectedCategoryName": "음식·맛집",
+    "top1CategoryId": "FOOD_RESTAURANT",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "serviceSelectedCategoryIds": [
+      "FOOD_RESTAURANT"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2185.5646,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 7,
+    "testId": "TEXT-007",
+    "title": "텍스트-2026.07.20-1010",
+    "sourcePath": "취업·커리어/007-텍스트-2026.07.20-1010.txt",
+    "input": "Spring의 의존성 주입, 트랜잭션 전파, JPA 영속성 컨텍스트와 관련된 면접 질문을 정리해야 한다. 단순히 정의만 외우지 말고 프로젝트에서 실제로 사용한 경험과 함께 답변을 준비한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2091.8442,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 8,
+    "testId": "TEXT-008",
+    "title": "공기업 채용 공고 확인",
+    "sourcePath": "취업·커리어/008-공기업 채용 공고 확인.txt",
+    "input": "이번 주에 올라온 전산직 공기업 채용 공고를 찾아 지원 자격과 자격증 가산점을 비교해야 한다. 정보처리기사, SQLD, 한국사능력검정시험이 각각 어느 기관에서 인정되는지 확인하고 마감일 순서로 정리한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "CAREER",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.75
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.75
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3352.1607,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 34,
+    "testId": "TEXT-034",
+    "title": "백엔드 개발자 채용 공고 확인",
+    "sourcePath": "취업·커리어/034-백엔드 개발자 채용 공고 확인.txt",
+    "input": "Java와 Spring Boot 경험을 요구하며 MySQL, Redis, Docker 사용 경험을 우대한다. 지원 마감은 8월 3일이고 포트폴리오 제출은 선택 사항이다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "CAREER",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2139.0475,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 35,
+    "testId": "TEXT-035",
+    "title": "텍스트-2026-07-05",
+    "sourcePath": "취업·커리어/035-텍스트-2026-07-05.txt",
+    "input": "면접에서 프로젝트 성과만 말하지 말고 어떤 문제를 발견했고, 왜 그 방법을 선택했으며, 결과를 어떻게 측정했는지 순서대로 설명하기.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "CAREER",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2098.6151,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 36,
+    "testId": "TEXT-036",
+    "title": "자기소개서 수정할 부분",
+    "sourcePath": "취업·커리어/036-자기소개서 수정할 부분.txt",
+    "input": "기술을 나열하는 문장은 줄이고 검색 성능 개선 경험에서 직접 비교한 수치와 판단 근거를 강조한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": false,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": false,
+    "rawGoldPresent": false,
+    "extraCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "extraCategoryCount": 1,
+    "selectedCategoryCount": 1,
+    "exactCorrect": false,
+    "relaxedCorrect": false,
+    "evaluationStatus": "WRONG_MISSING_GOLD",
+    "overPrediction": false,
+    "missingGold": true,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": false,
+    "serviceGoldIncluded": false,
+    "serviceExactCorrect": false,
+    "serviceRelaxedCorrect": false,
+    "errorTypes": [
+      "MISSING_GOLD_CATEGORY"
+    ],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2158.2965,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 37,
+    "testId": "TEXT-037",
+    "title": "이직 전 확인할 조건",
+    "sourcePath": "취업·커리어/037-이직 전 확인할 조건.txt",
+    "input": "연봉만 비교하지 말고 담당 업무, 기술 환경, 온보딩 방식, 야근 빈도, 성장 기회와 평가 체계를 함께 확인해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "CAREER",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2158.3307,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 38,
+    "testId": "TEXT-038",
+    "title": "포트폴리오 프로젝트 설명 방식",
+    "sourcePath": "취업·커리어/038-포트폴리오 프로젝트 설명 방식.txt",
+    "input": "프로젝트 소개에는 담당 역할, 기술 선택 이유, 발생한 문제, 해결 과정, 개선 결과를 포함한다. 팀 전체 기능과 자신의 기여를 구분해서 작성한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "CAREER",
+    "expectedCategoryName": "취업·커리어",
+    "top1CategoryId": "CAREER",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.9
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.9
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "serviceSelectedCategoryIds": [
+      "CAREER"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2089.2889,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 1,
+    "testId": "TEXT-001",
+    "title": "텍스트-2026.07.20-0905",
+    "sourcePath": "학습·지식/001-텍스트-2026.07.20-0905.txt",
+    "input": "Spring Boot에서 사용자가 업로드한 이미지 파일을 AWS S3에 저장하는 기능을 구현해야 한다. 파일 이름이 중복되지 않도록 UUID를 붙이고, 업로드가 완료되면 이미지 URL과 파일 크기, 확장자를 데이터베이스에 저장한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3199.6655,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 2,
+    "testId": "TEXT-002",
+    "title": "JWT 재발급 구조 정리",
+    "sourcePath": "학습·지식/002-JWT 재발급 구조 정리.txt",
+    "input": "액세스 토큰이 만료되면 리프레시 토큰을 이용해 새로운 토큰을 발급하는 구조를 다시 확인해야 한다. 리프레시 토큰은 HttpOnly 쿠키에 저장하고, 재발급 과정에서 토큰 탈취와 중복 사용을 방지할 방법도 찾아본다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3397.0953,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 3,
+    "testId": "TEXT-003",
+    "title": "텍스트-2026.07.20-0920",
+    "sourcePath": "학습·지식/003-텍스트-2026.07.20-0920.txt",
+    "input": "OSI 7계층에서 각 계층이 담당하는 역할을 정리한다. TCP와 UDP가 전송 계층에 속하는 이유와 HTTP, DNS, IP가 각각 어느 계층에서 동작하는지도 예시와 함께 복습해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2119.3176,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 4,
+    "testId": "TEXT-004",
+    "title": "SQLD 시험 공부 계획",
+    "sourcePath": "학습·지식/004-SQLD 시험 공부 계획.txt",
+    "input": "이번 주에는 SQL 기본 문법과 조인, 서브쿼리를 복습하고 다음 주에는 정규화와 트랜잭션을 공부한다. 시험 전날에는 오답 문제만 다시 확인할 수 있도록 틀린 문제를 별도로 정리해둔다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2176.2868,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 29,
+    "testId": "TEXT-029",
+    "title": "Redis 큐에서 작업이 중복될 수 있는 이유",
+    "sourcePath": "학습·지식/029-Redis 큐에서 작업이 중복될 수 있는 이유.txt",
+    "input": "Worker가 작업을 완료한 뒤 ACK를 보내기 전에 종료되면 동일한 메시지가 다시 전달될 수 있다. 따라서 처리 로직은 멱등성을 고려해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.6
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3349.5272,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 30,
+    "testId": "TEXT-030",
+    "title": "텍스트-2026-07-03",
+    "sourcePath": "학습·지식/030-텍스트-2026-07-03.txt",
+    "input": "영어에서 현재완료는 과거의 일이 현재와 연결될 때 사용한다. 경험, 계속, 완료, 결과의 의미로 나눠서 예문을 정리해두기.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2139.3783,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 31,
+    "testId": "TEXT-031",
+    "title": "사진 촬영에서 조리개의 역할",
+    "sourcePath": "학습·지식/031-사진 촬영에서 조리개의 역할.txt",
+    "input": "조리개 값이 낮을수록 더 많은 빛이 들어오고 배경 흐림이 강해진다. 풍경 사진에서는 전체를 선명하게 만들기 위해 비교적 높은 조리개 값을 사용한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.1
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.9
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.1
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 3513.1013,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 32,
+    "testId": "TEXT-032",
+    "title": "전세와 월세의 차이 정리",
+    "sourcePath": "학습·지식/032-전세와 월세의 차이 정리.txt",
+    "input": "전세는 큰 보증금을 맡기고 계약 종료 시 돌려받는 방식이고, 월세는 보증금과 함께 매월 임대료를 납부하는 방식이다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2277.8551,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  },
+  {
+    "id": 33,
+    "testId": "TEXT-033",
+    "title": "좋은 발표 자료의 정보 구조",
+    "sourcePath": "학습·지식/033-좋은 발표 자료의 정보 구조.txt",
+    "input": "한 페이지에는 하나의 핵심 메시지만 배치하고, 결론을 먼저 보여준 뒤 근거를 제시한다. 장식보다 내용의 우선순위가 명확해야 한다.",
+    "scenario": "split-without-description",
+    "structure": "split",
+    "categoryDescriptions": false,
+    "repeatNumber": 1,
+    "model": "qwen3:8b",
+    "expectedCategoryId": "LEARNING_KNOWLEDGE",
+    "expectedCategoryName": "학습·지식",
+    "top1CategoryId": "LEARNING_KNOWLEDGE",
+    "top1Correct": true,
+    "rawPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "validPredictions": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "invalidPredictions": [],
+    "threshold": 0.8,
+    "thresholdSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "serviceSelectedCategoryIds": [
+      "LEARNING_KNOWLEDGE"
+    ],
+    "ensureAtLeastOneUsed": false,
+    "fallbackUsed": false,
+    "serviceLimitApplied": false,
+    "goldIncluded": true,
+    "rawGoldPresent": true,
+    "extraCategoryIds": [],
+    "extraCategoryCount": 0,
+    "selectedCategoryCount": 1,
+    "exactCorrect": true,
+    "relaxedCorrect": true,
+    "evaluationStatus": "EXACT_CORRECT",
+    "overPrediction": false,
+    "missingGold": false,
+    "thresholdMiss": false,
+    "hasInvalidPrediction": false,
+    "modelCorrectBeforeFallback": true,
+    "serviceGoldIncluded": true,
+    "serviceExactCorrect": true,
+    "serviceRelaxedCorrect": true,
+    "errorTypes": [],
+    "categoryParseSuccess": true,
+    "summaryParseSuccess": null,
+    "organizationParseSuccess": null,
+    "requestFailed": false,
+    "totalDurationMs": 2286.7647,
+    "generatedSummary": "",
+    "generatedTags": [],
+    "generatedKeywords": []
+  }
+]

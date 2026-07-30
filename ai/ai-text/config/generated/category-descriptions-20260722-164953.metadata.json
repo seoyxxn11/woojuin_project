@@ -1,0 +1,275 @@
+{
+  "model": "qwen3:8b",
+  "promptVersion": "category-description-v1",
+  "createdAt": "2026-07-22T16:49:53.680645+09:00",
+  "output": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\config\\generated\\category-descriptions-20260722-164953.json",
+  "generatedCategories": [
+    "건강·운동",
+    "기타",
+    "돈·재테크",
+    "문화·콘텐츠",
+    "생활·할 일",
+    "쇼핑·제품",
+    "아이디어·영감",
+    "여행·장소",
+    "음식·맛집",
+    "취업·커리어",
+    "학습·지식"
+  ],
+  "calls": [
+    {
+      "category": "건강·운동",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-017",
+        "TEXT-018",
+        "TEXT-054",
+        "TEXT-055",
+        "TEXT-056",
+        "TEXT-057",
+        "TEXT-058"
+      ],
+      "rawResponse": "{\"description\":\"운동 계획 및 실천 방법에 대한 정보를 제공하는 내용으로, 특정 운동의 수행 방법, 빈도, 주의 사항 등을 포함한다.\",\"examples\":[\"주 3회 운동을 계획하고, 매주 반복 횟수를 늘리는 방법\",\"운동 후에는 탄수화물과 수분을 함께 섭취하는 것이 좋다\",\"장시간 앉아 있을 때마다 스트레칭을 하는 것이 중요하다\"]}",
+      "performance": {
+        "totalDurationMs": 14084.9203,
+        "loadDurationMs": 7605.1272,
+        "promptEvalDurationMs": 974.953,
+        "evalDurationMs": 5493.435,
+        "promptEvalCount": 917,
+        "evalCount": 105,
+        "tokensPerSecond": 19.113723926832666
+      }
+    },
+    {
+      "category": "기타",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-021",
+        "TEXT-022",
+        "TEXT-074",
+        "TEXT-075",
+        "TEXT-076",
+        "TEXT-077",
+        "TEXT-078"
+      ],
+      "rawResponse": "{\"description\":\"기타 카테고리는 주어진 내용이 특정 분류 기준에 부합하지 않거나, 정보가 부족하거나 불분명하여 다른 카테고리에 속하지 않는 경우에 사용됩니다. 이는 주로 의미가 모호하거나 분류 가능한 구체적인 내용이 없는 데이터를 포괄합니다.\",\"examples\":[\"불분명한 주제나 목적의 메모\", \"분류할 수 없는 비정형 데이터\", \"내용이 부족하거나 해석이 어려운 정보\"]}",
+      "performance": {
+        "totalDurationMs": 7439.935,
+        "loadDurationMs": 385.6944,
+        "promptEvalDurationMs": 947.889,
+        "evalDurationMs": 6039.933,
+        "promptEvalCount": 705,
+        "evalCount": 117,
+        "tokensPerSecond": 19.371075804979956
+      }
+    },
+    {
+      "category": "돈·재테크",
+      "sampleCount": 5,
+      "sourcePaths": [
+        "TEXT-064",
+        "TEXT-065",
+        "TEXT-066",
+        "TEXT-067",
+        "TEXT-068"
+      ],
+      "rawResponse": "{\"description\":\"재무 관리 및 자산 분배 전략을 수립하고 실행하는 방법에 대한 정보를 제공합니다. 주로 수입 분할, 저축 전략, 자산 배분, 보험 및 예금 상품의 특징을 설명하며, 개인 재무 계획 수립에 도움을 줍니다.\",\"examples\":[\"월급을 생활비, 저축, 비상금 등으로 나누는 방법\",\"정기예금 상품의 금리와 중도 해지 시 이자 차이\",\"보험 가입 시 보장 범위와 납입 기간을 비교하는 방법\"]}",
+      "performance": {
+        "totalDurationMs": 8744.0,
+        "loadDurationMs": 407.9513,
+        "promptEvalDurationMs": 976.21,
+        "evalDurationMs": 7304.707,
+        "promptEvalCount": 723,
+        "evalCount": 138,
+        "tokensPerSecond": 18.891928177269808
+      }
+    },
+    {
+      "category": "문화·콘텐츠",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-019",
+        "TEXT-020",
+        "TEXT-059",
+        "TEXT-060",
+        "TEXT-061",
+        "TEXT-062",
+        "TEXT-063"
+      ],
+      "rawResponse": "{\"description\":\"문화·콘텐츠 카테고리는 영화, 음악, 책, 사진전, 웹툰 등 예술적, 정보적 콘텐츠를 감상하거나 소비하기 위한 계획이나 추천을 다루는 분야입니다. 주로 개인이 즐길 수 있는 문화적 자산에 대한 정보를 기록하는 목적입니다.\",\"examples\":[\"영화 장르나 플랫폼에 따른 감상 계획 기록\",\"음악 장르나 플레이리스트에 대한 개인적 선호 기록\",\"서적의 주제나 장르에 따른 읽기 계획 기록\"]}",
+      "performance": {
+        "totalDurationMs": 9324.9263,
+        "loadDurationMs": 416.3373,
+        "promptEvalDurationMs": 1041.519,
+        "evalDurationMs": 7810.883,
+        "promptEvalCount": 834,
+        "evalCount": 142,
+        "tokensPerSecond": 18.179762774580034
+      }
+    },
+    {
+      "category": "생활·할 일",
+      "sampleCount": 9,
+      "sourcePaths": [
+        "TEXT-006",
+        "TEXT-009",
+        "TEXT-010",
+        "TEXT-024",
+        "TEXT-025",
+        "TEXT-026",
+        "TEXT-027",
+        "TEXT-028",
+        "TEXT-023"
+      ],
+      "rawResponse": "{\"description\":\"일상적인 일정 관리 및 할 일 목록을 기록하는 메모로, 일정 계획, 업무 처리, 생활 준비 등과 관련된 내용을 포함합니다.\",\"examples\":[\"이번 주 토요일 오전에 세탁소에서 겨울 코트 찾고, 오후에는 주민센터에 들러 전입 관련 서류를 확인해야 한다.\",\"월요일 치과 예약, 수요일 택배 반품 접수, 금요일 자동차 정기검사 예약 시간을 다시 확인한다.\",\"이사 후 전기, 수도, 가스 고객번호를 확인하고 새로운 계좌로 자동이체를 변경한다.\"]}",
+      "performance": {
+        "totalDurationMs": 10814.3097,
+        "loadDurationMs": 415.9388,
+        "promptEvalDurationMs": 1468.247,
+        "evalDurationMs": 8863.722,
+        "promptEvalCount": 1317,
+        "evalCount": 158,
+        "tokensPerSecond": 17.82546880418858
+      }
+    },
+    {
+      "category": "쇼핑·제품",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-011",
+        "TEXT-012",
+        "TEXT-049",
+        "TEXT-050",
+        "TEXT-051",
+        "TEXT-052",
+        "TEXT-053"
+      ],
+      "rawResponse": "{\"description\":\"제품을 구매하거나 사용할 때의 고려 사항, 비교 기준, 또는 구매 전 검토 사항을 기록한 내용을 다룹니다. 구매 결정을 위한 정보 수집 및 분석 목적입니다.\",\"examples\":[\"제품의 성능, 가격, 사용 편의성 등을 비교해 보는 기준을 정리합니다.\",\"구매 시 주의할 점이나 특정 기능의 필요성을 판단하는 내용을 기록합니다.\",\"제품의 장단점을 분석하고, 최종 선택에 영향을 미치는 요소를 정리합니다.\"]}",
+      "performance": {
+        "totalDurationMs": 8932.8707,
+        "loadDurationMs": 433.4586,
+        "promptEvalDurationMs": 909.104,
+        "evalDurationMs": 7481.941,
+        "promptEvalCount": 873,
+        "evalCount": 134,
+        "tokensPerSecond": 17.909791055556305
+      }
+    },
+    {
+      "category": "아이디어·영감",
+      "sampleCount": 6,
+      "sourcePaths": [
+        "TEXT-005",
+        "TEXT-069",
+        "TEXT-070",
+        "TEXT-071",
+        "TEXT-072",
+        "TEXT-073"
+      ],
+      "rawResponse": "{\"description\":\"사용자 경험 개선을 위한 아이디어나 참고 사례를 담은 내용을 의미합니다. 기존 서비스나 디자인에 대한 영감을 얻거나, 사용자 편의를 고려한 새로운 접근 방식을 제시하는 경우에 해당합니다.\",\"examples\":[\"사용자가 기능을 배우게 하기보다는 즉시 행동할 수 있도록 설계하는 서비스 방식\",\"카드 형태로 자료를 정리하고 출처 아이콘을 추가한 디자인 구성\",\"영상의 시작 부분에 결과를 먼저 보여주는 콘텐츠 구조\"]}",
+      "performance": {
+        "totalDurationMs": 8738.029,
+        "loadDurationMs": 412.7207,
+        "promptEvalDurationMs": 941.693,
+        "evalDurationMs": 7313.339,
+        "promptEvalCount": 809,
+        "evalCount": 139,
+        "tokensPerSecond": 19.006366312295928
+      }
+    },
+    {
+      "category": "여행·장소",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-015",
+        "TEXT-016",
+        "TEXT-039",
+        "TEXT-040",
+        "TEXT-041",
+        "TEXT-042",
+        "TEXT-043"
+      ],
+      "rawResponse": "{\"description\":\"이 카테고리는 특정 장소를 방문하거나 여행 계획을 수립하는 내용을 다룹니다. 주로 여행 일정, 방문 장소, 이동 경로, 관람 시간, 추천 장소 등과 관련된 정보를 포함합니다.\",\"examples\":[\"제주에서 성산일출봉과 우도를 방문하는 일정을 계획 중입니다.\",\"서울에서 열리는 미디어아트 전시회를 찾아볼 계획입니다.\",\"부산에서 일몰을 감상하기 좋은 해수욕장을 추천합니다.\"]}",
+      "performance": {
+        "totalDurationMs": 7987.068,
+        "loadDurationMs": 392.3519,
+        "promptEvalDurationMs": 1000.887,
+        "evalDurationMs": 6514.649,
+        "promptEvalCount": 893,
+        "evalCount": 125,
+        "tokensPerSecond": 19.187526450005212
+      }
+    },
+    {
+      "category": "음식·맛집",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-013",
+        "TEXT-014",
+        "TEXT-044",
+        "TEXT-045",
+        "TEXT-046",
+        "TEXT-047",
+        "TEXT-048"
+      ],
+      "rawResponse": "{\"description\":\"음식·맛집은 특정 음식이나 식당에 대한 정보, 레시피, 또는 방문할 만한 장소를 소개하는 내용을 다룹니다. 주로 음식 관련 경험, 추천, 조리 방법, 또는 식당 위치 및 특징을 포함합니다.\",\"examples\":[\"서울숲역 근처에 위치한 파스타 식당에서 생면 파스타와 라자냐가 인기 메뉴입니다.\",\"감자와 양파를 볶고 카레와 우유를 넣어 부드러운 맛을 만드는 레시피입니다.\",\"충장로 근처에 자정까지 운영하는 카페로 노트북 사용이 가능한 좌석이 있습니다.\"]}",
+      "performance": {
+        "totalDurationMs": 11169.9091,
+        "loadDurationMs": 424.5456,
+        "promptEvalDurationMs": 974.36,
+        "evalDurationMs": 9690.429,
+        "promptEvalCount": 908,
+        "evalCount": 171,
+        "tokensPerSecond": 17.646277579661334
+      }
+    },
+    {
+      "category": "취업·커리어",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "TEXT-007",
+        "TEXT-008",
+        "TEXT-034",
+        "TEXT-035",
+        "TEXT-036",
+        "TEXT-037",
+        "TEXT-038"
+      ],
+      "rawResponse": "{\"description\":\"직무 역량과 경험을 기반으로 한 면접 준비 및 자기소개서 작성에 관한 내용을 다룹니다. 구체적인 기술 스택, 프로젝트 경험, 성과 측정 방법, 자기 성찰 등을 중심으로 구성된 메모입니다.\",\"examples\":[\"면접에서 프로젝트 성과만 말하지 말고 어떤 문제를 발견했고, 왜 그 방법을 선택했으며, 결과를 어떻게 측정했는지 순서대로 설명하기\",\"기술을 나열하는 문장은 줄이고 검색 성능 개선 경험에서 직접 비교한 수치와 판단 근거를 강조한다\",\"프로젝트 소개에는 담당 역할, 기술 선택 이유, 발생한 문제, 해결 과정, 개선 결과를 포함한다\"]}",
+      "performance": {
+        "totalDurationMs": 11639.0637,
+        "loadDurationMs": 387.1626,
+        "promptEvalDurationMs": 959.544,
+        "evalDurationMs": 10200.59,
+        "promptEvalCount": 889,
+        "evalCount": 183,
+        "tokensPerSecond": 17.94013875667976
+      }
+    },
+    {
+      "category": "학습·지식",
+      "sampleCount": 9,
+      "sourcePaths": [
+        "TEXT-001",
+        "TEXT-002",
+        "TEXT-003",
+        "TEXT-004",
+        "TEXT-029",
+        "TEXT-030",
+        "TEXT-031",
+        "TEXT-032",
+        "TEXT-033"
+      ],
+      "rawResponse": "{\"description\":\"학습·지식 카테고리는 특정 주제나 기술에 대한 이론적 이해, 개념 정리, 공부 계획, 복습 방법 등을 다루는 내용을 의미합니다. 이는 지식의 체계화와 학습 전략에 초점을 맞춥니다.\",\"examples\":[\"특정 기술의 핵심 개념을 정리한 문서\",\"공부 계획을 세우며 복습할 내용을 나열한 메모\",\"어휘나 문법 규칙을 분류하여 정리한 학습 자료\"]}",
+      "performance": {
+        "totalDurationMs": 8982.6188,
+        "loadDurationMs": 407.3484,
+        "promptEvalDurationMs": 1308.833,
+        "evalDurationMs": 7187.536,
+        "promptEvalCount": 1105,
+        "evalCount": 128,
+        "tokensPerSecond": 17.808606454284195
+      }
+    }
+  ]
+}

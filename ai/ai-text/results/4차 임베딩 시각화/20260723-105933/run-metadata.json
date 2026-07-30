@@ -1,0 +1,30 @@
+{
+  "status": "FAILED",
+  "createdAt": "2026-07-23T10:59:42.958333+09:00",
+  "pythonVersion": "3.14.6",
+  "model": "text-embedding-3-small",
+  "itemCount": 86,
+  "sourceItemCount": 78,
+  "embeddingInputStructure": "제목 + 원본 본문 + 카테고리",
+  "classificationResults": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\results\\4차 다중 카테고리 분류 비교\\20260722-154340\\threshold\\split-with-description\\0.65\\evaluation-results.json",
+  "batchSize": 64,
+  "requestedDimensions": null,
+  "embeddingDimensions": null,
+  "apiKeyEnv": "GMS_KEY",
+  "baseUrl": "https://gms.ssafy.io/gmsapi/api.openai.com/v1",
+  "cachedItemCount": 0,
+  "apiRequestCount": 0,
+  "usage": {
+    "promptTokens": 0,
+    "totalTokens": 0
+  },
+  "umap": {
+    "nComponents": 3,
+    "nNeighbors": 15,
+    "effectiveNNeighbors": null,
+    "minDist": 0.1,
+    "metric": "cosine",
+    "randomState": 42
+  },
+  "error": "Connection error."
+}

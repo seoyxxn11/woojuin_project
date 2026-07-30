@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"쿠팡 실내 텐트 검색 결과","url":"https://www.coupang.com/np/search?q=실내텐트","content":null,"summary":"쿠팡에서 실내용 텐트를 검색한 결과입니다. 다양한 제품을 비교해보세요.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

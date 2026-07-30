@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"쿠팡 라이프 스타일 카테고리","url":"https://www.coupang.com/np/categories/328791","content":null,"summary":"쿠팡에서 제공하는 라이프 스타일 관련 상품 카테고리입니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

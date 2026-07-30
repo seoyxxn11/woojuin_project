@@ -1,0 +1,2525 @@
+[
+  {
+    "fold": "fold-1",
+    "file": "0062-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.75
+      },
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.25
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3077,
+      "completion_tokens": 70,
+      "total_tokens": 3147
+    },
+    "latencyMs": 11035.39
+  },
+  {
+    "fold": "fold-1",
+    "file": "0067-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.95
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1765,
+      "completion_tokens": 28,
+      "total_tokens": 1793
+    },
+    "latencyMs": 4437.25
+  },
+  {
+    "fold": "fold-1",
+    "file": "0072-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3765,
+      "completion_tokens": 27,
+      "total_tokens": 3792
+    },
+    "latencyMs": 6761.3
+  },
+  {
+    "fold": "fold-1",
+    "file": "0103-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2009,
+      "completion_tokens": 21,
+      "total_tokens": 2030
+    },
+    "latencyMs": 4530.55
+  },
+  {
+    "fold": "fold-1",
+    "file": "0108-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1788,
+      "completion_tokens": 21,
+      "total_tokens": 1809
+    },
+    "latencyMs": 4080.21
+  },
+  {
+    "fold": "fold-1",
+    "file": "0083-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.75
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.2
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3091,
+      "completion_tokens": 74,
+      "total_tokens": 3165
+    },
+    "latencyMs": 9458.98
+  },
+  {
+    "fold": "fold-1",
+    "file": "0088-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.95
+      },
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.05
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3859,
+      "completion_tokens": 45,
+      "total_tokens": 3904
+    },
+    "latencyMs": 8563.38
+  },
+  {
+    "fold": "fold-1",
+    "file": "0073-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.8
+      }
+    ],
+    "top1": "기타",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 1815,
+      "completion_tokens": 21,
+      "total_tokens": 1836
+    },
+    "latencyMs": 4394.96
+  },
+  {
+    "fold": "fold-1",
+    "file": "0078-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5311,
+      "completion_tokens": 27,
+      "total_tokens": 5338
+    },
+    "latencyMs": 9126.92
+  },
+  {
+    "fold": "fold-1",
+    "file": "0001-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.15
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 6059,
+      "completion_tokens": 80,
+      "total_tokens": 6139
+    },
+    "latencyMs": 15891.57
+  },
+  {
+    "fold": "fold-1",
+    "file": "0006-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.95
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.75
+      },
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.45
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2606,
+      "completion_tokens": 71,
+      "total_tokens": 2677
+    },
+    "latencyMs": 9403.26
+  },
+  {
+    "fold": "fold-1",
+    "file": "0051-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.75
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.65
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 4769,
+      "completion_tokens": 74,
+      "total_tokens": 4843
+    },
+    "latencyMs": 12621.36
+  },
+  {
+    "fold": "fold-1",
+    "file": "0056-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1767,
+      "completion_tokens": 26,
+      "total_tokens": 1793
+    },
+    "latencyMs": 4785.51
+  },
+  {
+    "fold": "fold-1",
+    "file": "0061-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.8
+      }
+    ],
+    "top1": "기타",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 1957,
+      "completion_tokens": 21,
+      "total_tokens": 1978
+    },
+    "latencyMs": 4317.82
+  },
+  {
+    "fold": "fold-1",
+    "file": "0093-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.95
+      }
+    ],
+    "top1": "아이디어·영감",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1814,
+      "completion_tokens": 31,
+      "total_tokens": 1845
+    },
+    "latencyMs": 4689.44
+  },
+  {
+    "fold": "fold-1",
+    "file": "0098-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 1.0
+      }
+    ],
+    "top1": "아이디어·영감",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1774,
+      "completion_tokens": 30,
+      "total_tokens": 1804
+    },
+    "latencyMs": 4819.46
+  },
+  {
+    "fold": "fold-1",
+    "file": "0032-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.75
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.25
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 6009,
+      "completion_tokens": 86,
+      "total_tokens": 6095
+    },
+    "latencyMs": 16340.64
+  },
+  {
+    "fold": "fold-1",
+    "file": "0037-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.75
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.3
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.2
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4939,
+      "completion_tokens": 94,
+      "total_tokens": 5033
+    },
+    "latencyMs": 15925.69
+  },
+  {
+    "fold": "fold-1",
+    "file": "0041-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1864,
+      "completion_tokens": 29,
+      "total_tokens": 1893
+    },
+    "latencyMs": 4992.95
+  },
+  {
+    "fold": "fold-1",
+    "file": "0046-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1861,
+      "completion_tokens": 29,
+      "total_tokens": 1890
+    },
+    "latencyMs": 4792.5
+  },
+  {
+    "fold": "fold-1",
+    "file": "0022-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 4098,
+      "completion_tokens": 28,
+      "total_tokens": 4126
+    },
+    "latencyMs": 7620.86
+  },
+  {
+    "fold": "fold-1",
+    "file": "0027-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 2780,
+      "completion_tokens": 52,
+      "total_tokens": 2832
+    },
+    "latencyMs": 8055.44
+  },
+  {
+    "fold": "fold-1",
+    "file": "0011-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1780,
+      "completion_tokens": 29,
+      "total_tokens": 1809
+    },
+    "latencyMs": 4711.48
+  },
+  {
+    "fold": "fold-1",
+    "file": "0016-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4720,
+      "completion_tokens": 28,
+      "total_tokens": 4748
+    },
+    "latencyMs": 8317.66
+  },
+  {
+    "fold": "fold-1",
+    "file": "0021-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.65
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3542,
+      "completion_tokens": 78,
+      "total_tokens": 3620
+    },
+    "latencyMs": 11545.09
+  },
+  {
+    "fold": "fold-2",
+    "file": "0063-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2929,
+      "completion_tokens": 27,
+      "total_tokens": 2956
+    },
+    "latencyMs": 7943.78
+  },
+  {
+    "fold": "fold-2",
+    "file": "0068-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3914,
+      "completion_tokens": 27,
+      "total_tokens": 3941
+    },
+    "latencyMs": 7338.27
+  },
+  {
+    "fold": "fold-2",
+    "file": "0104-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1665,
+      "completion_tokens": 21,
+      "total_tokens": 1686
+    },
+    "latencyMs": 4214.63
+  },
+  {
+    "fold": "fold-2",
+    "file": "0109-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1630,
+      "completion_tokens": 21,
+      "total_tokens": 1651
+    },
+    "latencyMs": 4118.29
+  },
+  {
+    "fold": "fold-2",
+    "file": "0084-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4658,
+      "completion_tokens": 27,
+      "total_tokens": 4685
+    },
+    "latencyMs": 8451.44
+  },
+  {
+    "fold": "fold-2",
+    "file": "0089-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.8
+      }
+    ],
+    "top1": "기타",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 1619,
+      "completion_tokens": 21,
+      "total_tokens": 1640
+    },
+    "latencyMs": 4279.18
+  },
+  {
+    "fold": "fold-2",
+    "file": "0074-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.05
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 2508,
+      "completion_tokens": 50,
+      "total_tokens": 2558
+    },
+    "latencyMs": 6770.63
+  },
+  {
+    "fold": "fold-2",
+    "file": "0079-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2400,
+      "completion_tokens": 27,
+      "total_tokens": 2427
+    },
+    "latencyMs": 5364.62
+  },
+  {
+    "fold": "fold-2",
+    "file": "0002-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.05
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3636,
+      "completion_tokens": 50,
+      "total_tokens": 3686
+    },
+    "latencyMs": 8995.17
+  },
+  {
+    "fold": "fold-2",
+    "file": "0007-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [],
+    "top1": null,
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 1613,
+      "completion_tokens": 5,
+      "total_tokens": 1618
+    },
+    "latencyMs": 3232.97
+  },
+  {
+    "fold": "fold-2",
+    "file": "0052-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2693,
+      "completion_tokens": 26,
+      "total_tokens": 2719
+    },
+    "latencyMs": 5608.15
+  },
+  {
+    "fold": "fold-2",
+    "file": "0057-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3648,
+      "completion_tokens": 26,
+      "total_tokens": 3674
+    },
+    "latencyMs": 7210.88
+  },
+  {
+    "fold": "fold-2",
+    "file": "0094-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.75
+      }
+    ],
+    "top1": "아이디어·영감",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5711,
+      "completion_tokens": 85,
+      "total_tokens": 5796
+    },
+    "latencyMs": 15565.46
+  },
+  {
+    "fold": "fold-2",
+    "file": "0099-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      },
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.65
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.45
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 2980,
+      "completion_tokens": 101,
+      "total_tokens": 3081
+    },
+    "latencyMs": 12132.62
+  },
+  {
+    "fold": "fold-2",
+    "file": "0033-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.65
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.6
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.45
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5905,
+      "completion_tokens": 109,
+      "total_tokens": 6014
+    },
+    "latencyMs": 18828.86
+  },
+  {
+    "fold": "fold-2",
+    "file": "0038-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.15
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5914,
+      "completion_tokens": 81,
+      "total_tokens": 5995
+    },
+    "latencyMs": 15974.25
+  },
+  {
+    "fold": "fold-2",
+    "file": "0042-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4720,
+      "completion_tokens": 29,
+      "total_tokens": 4749
+    },
+    "latencyMs": 8946.1
+  },
+  {
+    "fold": "fold-2",
+    "file": "0047-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1714,
+      "completion_tokens": 29,
+      "total_tokens": 1743
+    },
+    "latencyMs": 4993.17
+  },
+  {
+    "fold": "fold-2",
+    "file": "0023-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.75
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5668,
+      "completion_tokens": 83,
+      "total_tokens": 5751
+    },
+    "latencyMs": 15575.78
+  },
+  {
+    "fold": "fold-2",
+    "file": "0028-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1621,
+      "completion_tokens": 27,
+      "total_tokens": 1648
+    },
+    "latencyMs": 4858.84
+  },
+  {
+    "fold": "fold-2",
+    "file": "0012-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5373,
+      "completion_tokens": 52,
+      "total_tokens": 5425
+    },
+    "latencyMs": 11846.83
+  },
+  {
+    "fold": "fold-2",
+    "file": "0017-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1629,
+      "completion_tokens": 28,
+      "total_tokens": 1657
+    },
+    "latencyMs": 4751.65
+  },
+  {
+    "fold": "fold-3",
+    "file": "0064-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.85
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 3015,
+      "completion_tokens": 52,
+      "total_tokens": 3067
+    },
+    "latencyMs": 9343.85
+  },
+  {
+    "fold": "fold-3",
+    "file": "0069-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3671,
+      "completion_tokens": 27,
+      "total_tokens": 3698
+    },
+    "latencyMs": 6639.75
+  },
+  {
+    "fold": "fold-3",
+    "file": "0105-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2886,
+      "completion_tokens": 21,
+      "total_tokens": 2907
+    },
+    "latencyMs": 5608.81
+  },
+  {
+    "fold": "fold-3",
+    "file": "0110-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4351,
+      "completion_tokens": 21,
+      "total_tokens": 4372
+    },
+    "latencyMs": 7065.93
+  },
+  {
+    "fold": "fold-3",
+    "file": "0085-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4489,
+      "completion_tokens": 27,
+      "total_tokens": 4516
+    },
+    "latencyMs": 7843.88
+  },
+  {
+    "fold": "fold-3",
+    "file": "0090-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2510,
+      "completion_tokens": 27,
+      "total_tokens": 2537
+    },
+    "latencyMs": 5375.42
+  },
+  {
+    "fold": "fold-3",
+    "file": "0075-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4131,
+      "completion_tokens": 27,
+      "total_tokens": 4158
+    },
+    "latencyMs": 7364.6
+  },
+  {
+    "fold": "fold-3",
+    "file": "0080-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5616,
+      "completion_tokens": 27,
+      "total_tokens": 5643
+    },
+    "latencyMs": 9404.57
+  },
+  {
+    "fold": "fold-3",
+    "file": "0003-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2876,
+      "completion_tokens": 25,
+      "total_tokens": 2901
+    },
+    "latencyMs": 5817.06
+  },
+  {
+    "fold": "fold-3",
+    "file": "0008-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.05
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 6228,
+      "completion_tokens": 50,
+      "total_tokens": 6278
+    },
+    "latencyMs": 12120.14
+  },
+  {
+    "fold": "fold-3",
+    "file": "0053-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1863,
+      "completion_tokens": 26,
+      "total_tokens": 1889
+    },
+    "latencyMs": 4672.56
+  },
+  {
+    "fold": "fold-3",
+    "file": "0058-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1849,
+      "completion_tokens": 26,
+      "total_tokens": 1875
+    },
+    "latencyMs": 4335.67
+  },
+  {
+    "fold": "fold-3",
+    "file": "0095-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.75
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 6010,
+      "completion_tokens": 76,
+      "total_tokens": 6086
+    },
+    "latencyMs": 14517.89
+  },
+  {
+    "fold": "fold-3",
+    "file": "0100-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.85
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.75
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 3351,
+      "completion_tokens": 76,
+      "total_tokens": 3427
+    },
+    "latencyMs": 10566.09
+  },
+  {
+    "fold": "fold-3",
+    "file": "0034-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.85
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.15
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4359,
+      "completion_tokens": 75,
+      "total_tokens": 4434
+    },
+    "latencyMs": 11622.06
+  },
+  {
+    "fold": "fold-3",
+    "file": "0039-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.75
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.65
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.45
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3272,
+      "completion_tokens": 97,
+      "total_tokens": 3369
+    },
+    "latencyMs": 12290.03
+  },
+  {
+    "fold": "fold-3",
+    "file": "0043-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4042,
+      "completion_tokens": 29,
+      "total_tokens": 4071
+    },
+    "latencyMs": 7343.05
+  },
+  {
+    "fold": "fold-3",
+    "file": "0048-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1950,
+      "completion_tokens": 29,
+      "total_tokens": 1979
+    },
+    "latencyMs": 4716.04
+  },
+  {
+    "fold": "fold-3",
+    "file": "0024-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1970,
+      "completion_tokens": 27,
+      "total_tokens": 1997
+    },
+    "latencyMs": 4681.27
+  },
+  {
+    "fold": "fold-3",
+    "file": "0029-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.85
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.65
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4028,
+      "completion_tokens": 78,
+      "total_tokens": 4106
+    },
+    "latencyMs": 11563.91
+  },
+  {
+    "fold": "fold-3",
+    "file": "0013-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1871,
+      "completion_tokens": 28,
+      "total_tokens": 1899
+    },
+    "latencyMs": 4664.5
+  },
+  {
+    "fold": "fold-3",
+    "file": "0018-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3383,
+      "completion_tokens": 28,
+      "total_tokens": 3411
+    },
+    "latencyMs": 6409.45
+  },
+  {
+    "fold": "fold-4",
+    "file": "0065-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.95
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5342,
+      "completion_tokens": 28,
+      "total_tokens": 5370
+    },
+    "latencyMs": 10977.03
+  },
+  {
+    "fold": "fold-4",
+    "file": "0070-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2622,
+      "completion_tokens": 27,
+      "total_tokens": 2649
+    },
+    "latencyMs": 6014.62
+  },
+  {
+    "fold": "fold-4",
+    "file": "0106-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5427,
+      "completion_tokens": 21,
+      "total_tokens": 5448
+    },
+    "latencyMs": 8821.92
+  },
+  {
+    "fold": "fold-4",
+    "file": "0111-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1644,
+      "completion_tokens": 21,
+      "total_tokens": 1665
+    },
+    "latencyMs": 4292.34
+  },
+  {
+    "fold": "fold-4",
+    "file": "0086-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2299,
+      "completion_tokens": 27,
+      "total_tokens": 2326
+    },
+    "latencyMs": 5254.11
+  },
+  {
+    "fold": "fold-4",
+    "file": "0091-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.95
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.05
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3103,
+      "completion_tokens": 54,
+      "total_tokens": 3157
+    },
+    "latencyMs": 8169.55
+  },
+  {
+    "fold": "fold-4",
+    "file": "0076-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 6014,
+      "completion_tokens": 45,
+      "total_tokens": 6059
+    },
+    "latencyMs": 11437.71
+  },
+  {
+    "fold": "fold-4",
+    "file": "0081-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5224,
+      "completion_tokens": 27,
+      "total_tokens": 5251
+    },
+    "latencyMs": 9436.77
+  },
+  {
+    "fold": "fold-4",
+    "file": "0004-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4605,
+      "completion_tokens": 25,
+      "total_tokens": 4630
+    },
+    "latencyMs": 8228.07
+  },
+  {
+    "fold": "fold-4",
+    "file": "0009-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.15
+      },
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.1
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5885,
+      "completion_tokens": 83,
+      "total_tokens": 5968
+    },
+    "latencyMs": 15682.15
+  },
+  {
+    "fold": "fold-4",
+    "file": "0054-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1625,
+      "completion_tokens": 26,
+      "total_tokens": 1651
+    },
+    "latencyMs": 4593.5
+  },
+  {
+    "fold": "fold-4",
+    "file": "0059-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1622,
+      "completion_tokens": 26,
+      "total_tokens": 1648
+    },
+    "latencyMs": 4491.61
+  },
+  {
+    "fold": "fold-4",
+    "file": "0096-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.65
+      }
+    ],
+    "top1": "아이디어·영감",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3582,
+      "completion_tokens": 76,
+      "total_tokens": 3658
+    },
+    "latencyMs": 10773.76
+  },
+  {
+    "fold": "fold-4",
+    "file": "0101-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.05
+      }
+    ],
+    "top1": "아이디어·영감",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5105,
+      "completion_tokens": 54,
+      "total_tokens": 5159
+    },
+    "latencyMs": 11449.83
+  },
+  {
+    "fold": "fold-4",
+    "file": "0035-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.85
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.15
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3428,
+      "completion_tokens": 76,
+      "total_tokens": 3504
+    },
+    "latencyMs": 10854.96
+  },
+  {
+    "fold": "fold-4",
+    "file": "0040-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 1.0
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 6202,
+      "completion_tokens": 45,
+      "total_tokens": 6247
+    },
+    "latencyMs": 15221.28
+  },
+  {
+    "fold": "fold-4",
+    "file": "0044-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3738,
+      "completion_tokens": 29,
+      "total_tokens": 3767
+    },
+    "latencyMs": 7344.71
+  },
+  {
+    "fold": "fold-4",
+    "file": "0049-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1736,
+      "completion_tokens": 29,
+      "total_tokens": 1765
+    },
+    "latencyMs": 4783.47
+  },
+  {
+    "fold": "fold-4",
+    "file": "0025-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.85
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.15
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3107,
+      "completion_tokens": 74,
+      "total_tokens": 3181
+    },
+    "latencyMs": 9857.2
+  },
+  {
+    "fold": "fold-4",
+    "file": "0030-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2483,
+      "completion_tokens": 28,
+      "total_tokens": 2511
+    },
+    "latencyMs": 5535.61
+  },
+  {
+    "fold": "fold-4",
+    "file": "0014-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1626,
+      "completion_tokens": 28,
+      "total_tokens": 1654
+    },
+    "latencyMs": 4419.65
+  },
+  {
+    "fold": "fold-4",
+    "file": "0019-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 4178,
+      "completion_tokens": 27,
+      "total_tokens": 4205
+    },
+    "latencyMs": 7537.02
+  },
+  {
+    "fold": "fold-5",
+    "file": "0066-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3291,
+      "completion_tokens": 27,
+      "total_tokens": 3318
+    },
+    "latencyMs": 8058.81
+  },
+  {
+    "fold": "fold-5",
+    "file": "0071-url.txt",
+    "expected": "건강·운동",
+    "predicted": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 1.0
+      }
+    ],
+    "top1": "건강·운동",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2521,
+      "completion_tokens": 27,
+      "total_tokens": 2548
+    },
+    "latencyMs": 5157.73
+  },
+  {
+    "fold": "fold-5",
+    "file": "0107-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1937,
+      "completion_tokens": 21,
+      "total_tokens": 1958
+    },
+    "latencyMs": 4230.71
+  },
+  {
+    "fold": "fold-5",
+    "file": "0112-url.txt",
+    "expected": "기타",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ],
+    "top1": "기타",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2704,
+      "completion_tokens": 21,
+      "total_tokens": 2725
+    },
+    "latencyMs": 4919.22
+  },
+  {
+    "fold": "fold-5",
+    "file": "0087-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 5398,
+      "completion_tokens": 27,
+      "total_tokens": 5425
+    },
+    "latencyMs": 8927.73
+  },
+  {
+    "fold": "fold-5",
+    "file": "0092-url.txt",
+    "expected": "돈·재테크",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.95
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.05
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3111,
+      "completion_tokens": 54,
+      "total_tokens": 3165
+    },
+    "latencyMs": 8113.35
+  },
+  {
+    "fold": "fold-5",
+    "file": "0077-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4034,
+      "completion_tokens": 27,
+      "total_tokens": 4061
+    },
+    "latencyMs": 6995.52
+  },
+  {
+    "fold": "fold-5",
+    "file": "0082-url.txt",
+    "expected": "문화·콘텐츠",
+    "predicted": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 1.0
+      }
+    ],
+    "top1": "문화·콘텐츠",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4443,
+      "completion_tokens": 27,
+      "total_tokens": 4470
+    },
+    "latencyMs": 7913.86
+  },
+  {
+    "fold": "fold-5",
+    "file": "0005-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1880,
+      "completion_tokens": 25,
+      "total_tokens": 1905
+    },
+    "latencyMs": 4480.37
+  },
+  {
+    "fold": "fold-5",
+    "file": "0010-url.txt",
+    "expected": "생활·할 일",
+    "predicted": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ],
+    "top1": "생활·할 일",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2279,
+      "completion_tokens": 25,
+      "total_tokens": 2304
+    },
+    "latencyMs": 4648.23
+  },
+  {
+    "fold": "fold-5",
+    "file": "0055-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3617,
+      "completion_tokens": 26,
+      "total_tokens": 3643
+    },
+    "latencyMs": 6427.56
+  },
+  {
+    "fold": "fold-5",
+    "file": "0060-url.txt",
+    "expected": "쇼핑·제품",
+    "predicted": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.9
+      }
+    ],
+    "top1": "쇼핑·제품",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1857,
+      "completion_tokens": 26,
+      "total_tokens": 1883
+    },
+    "latencyMs": 4299.17
+  },
+  {
+    "fold": "fold-5",
+    "file": "0097-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ],
+    "top1": "돈·재테크",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 2238,
+      "completion_tokens": 27,
+      "total_tokens": 2265
+    },
+    "latencyMs": 4847.14
+  },
+  {
+    "fold": "fold-5",
+    "file": "0102-url.txt",
+    "expected": "아이디어·영감",
+    "predicted": [],
+    "top1": null,
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 1862,
+      "completion_tokens": 5,
+      "total_tokens": 1867
+    },
+    "latencyMs": 2995.98
+  },
+  {
+    "fold": "fold-5",
+    "file": "0036-url.txt",
+    "expected": "여행·장소",
+    "predicted": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.95
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.85
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.15
+      }
+    ],
+    "top1": "여행·장소",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3657,
+      "completion_tokens": 75,
+      "total_tokens": 3732
+    },
+    "latencyMs": 10354.65
+  },
+  {
+    "fold": "fold-5",
+    "file": "0045-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1875,
+      "completion_tokens": 29,
+      "total_tokens": 1904
+    },
+    "latencyMs": 4788.16
+  },
+  {
+    "fold": "fold-5",
+    "file": "0050-url.txt",
+    "expected": "음식·맛집",
+    "predicted": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ],
+    "top1": "음식·맛집",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 1978,
+      "completion_tokens": 29,
+      "total_tokens": 2007
+    },
+    "latencyMs": 4541.53
+  },
+  {
+    "fold": "fold-5",
+    "file": "0026-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.7
+      }
+    ],
+    "top1": "기타",
+    "correct": false,
+    "usage": {
+      "prompt_tokens": 1856,
+      "completion_tokens": 21,
+      "total_tokens": 1877
+    },
+    "latencyMs": 3966.11
+  },
+  {
+    "fold": "fold-5",
+    "file": "0031-url.txt",
+    "expected": "취업·커리어",
+    "predicted": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.95
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.85
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.1
+      }
+    ],
+    "top1": "취업·커리어",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 2980,
+      "completion_tokens": 73,
+      "total_tokens": 3053
+    },
+    "latencyMs": 9080.47
+  },
+  {
+    "fold": "fold-5",
+    "file": "0015-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 4450,
+      "completion_tokens": 28,
+      "total_tokens": 4478
+    },
+    "latencyMs": 7931.58
+  },
+  {
+    "fold": "fold-5",
+    "file": "0020-url.txt",
+    "expected": "학습·지식",
+    "predicted": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.95
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.85
+      }
+    ],
+    "top1": "학습·지식",
+    "correct": true,
+    "usage": {
+      "prompt_tokens": 3419,
+      "completion_tokens": 52,
+      "total_tokens": 3471
+    },
+    "latencyMs": 8795.86
+  }
+]

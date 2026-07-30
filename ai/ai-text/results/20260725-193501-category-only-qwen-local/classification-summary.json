@@ -1,0 +1,38 @@
+[
+  {
+    "inputType": "전체",
+    "count": 49,
+    "correctCount": 24,
+    "accuracy": 0.4897959183673469,
+    "macroPrecision": 0.5950757575757576,
+    "macroRecall": 0.5188492063492064,
+    "macroF1": 0.5167388167388167
+  },
+  {
+    "inputType": "memo",
+    "count": 6,
+    "correctCount": 4,
+    "accuracy": 0.6666666666666666,
+    "macroPrecision": 0.75,
+    "macroRecall": 0.8333333333333334,
+    "macroF1": 0.8888888888888888
+  },
+  {
+    "inputType": "url",
+    "count": 43,
+    "correctCount": 20,
+    "accuracy": 0.46511627906976744,
+    "macroPrecision": 0.5954545454545455,
+    "macroRecall": 0.46924603174603174,
+    "macroF1": 0.48575225943646994
+  },
+  {
+    "inputType": "image",
+    "count": 0,
+    "correctCount": 0,
+    "accuracy": null,
+    "macroPrecision": null,
+    "macroRecall": null,
+    "macroF1": null
+  }
+]

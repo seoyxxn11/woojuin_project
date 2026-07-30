@@ -132,11 +132,20 @@ export async function deleteItem(itemId: number) {
   await api.delete(`/items/${itemId}`);
 }
 
-export async function saveUrl(workspaceId: number, url: string) {
+/**
+ * title 은 공유 시트가 준 제목(FR-013). 쿠팡처럼 봇을 막는 쇼핑몰은 서버가 제목을
+ * 크롤링할 수 없어서, 공유 텍스트에서 건진 상품명을 함께 보낸다. 서버는 크롤링이
+ * 실패했을 때만 이 값을 쓰는 게 아니라 크롤링 제목보다 우선해서 쓴다 — 자세한 건
+ * 백엔드 Item.applyPreview javadoc 참고. 직접 URL 을 입력해 저장할 땐 넘기지 않는다.
+ */
+export async function saveUrl(workspaceId: number, url: string, title?: string | null) {
   // 즉시 200 응답 (status: PROCESSING) — "저장은 1초" (NFR-001)
   const res = await api.post<ApiResponse<ItemCreateResponse>>(`/workspaces/${workspaceId}/items`, {
     type: 'URL',
     url,
+    // 없을 때 키를 아예 빼는 이유: 빈 문자열을 보내면 서버가 blank 를 null 로 눕히긴
+    // 하지만, 애초에 안 보내는 쪽이 의도가 분명하다
+    ...(title ? { title } : {}),
   });
   return res.data.data;
 }

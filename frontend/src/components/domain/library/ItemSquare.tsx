@@ -1,6 +1,6 @@
 import type { Item } from '@/types/item';
 import { LinkArrowIcon } from '@/assets/icons';
-import { resolveThumbnail } from '@/utils/itemThumbnail';
+import { resolveBrand, resolveThumbnail } from '@/utils/itemThumbnail';
 import Spinner from '@/components/ui/Spinner';
 import Thumbnail from './Thumbnail';
 import MemoSkeleton from './MemoSkeleton';
@@ -25,7 +25,12 @@ const ItemSquare = ({ item }: { item: Item }) => {
 
   return (
     <>
-      <Thumbnail src={resolveThumbnail(item)} seed={item.itemId} className="absolute inset-0" />
+      <Thumbnail
+        src={resolveThumbnail(item)}
+        brand={resolveBrand(item)}
+        seed={item.itemId}
+        className="absolute inset-0"
+      />
       {/* URL 은 항상 우상단 링크 배지 (목업 dashboard.html) */}
       {item.type === 'URL' && (
         <div className="absolute right-[7px] top-[7px] grid h-5 w-5 place-items-center rounded-md bg-space/70 [&>svg]:h-3 [&>svg]:w-3">

@@ -1,0 +1,11 @@
+﻿inputType,testId,title,sourcePath,expectedCategory,top1CategoryName,top1Correct,thresholdSelectedCategoryNames,serviceSelectedCategoryNames,serviceExactCorrect,serviceRelaxedCorrect,threshold,fallbackUsed,serviceLimitApplied,status,errorType,errorMessage
+url,URL-001,https://kormedi.com/1341895/,건강·운동/0061-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-002,https://brunch.co.kr/@tenbody/1122,건강·운동/0062-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-003,https://en.wikipedia.org/wiki/Nerve_glide,건강·운동/0063-url.txt,건강·운동,학습·지식,False,['학습·지식'],['학습·지식'],False,False,0.65,False,False,SUCCESS,,
+url,URL-004,https://www.emotiv.com/ko/neuroscience/insomnia,건강·운동/0064-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-005,https://www.psychiatricnews.net/news/articleView.html?idxno=36398,건강·운동/0065-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-006,https://healthlab.ai.kr/수면의-질-높이는-7가지-과학적-방법/,건강·운동/0066-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-007,https://yuyuteijin.co.kr/blog/7368ecdf-a987-4315-9e31-e7a3dfe2e6ee/,건강·운동/0067-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-008,https://namu.wiki/w/유산소%20운동,건강·운동/0068-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-009,https://brunch.co.kr/@tenbody/743,건강·운동/0069-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,
+url,URL-010,https://www.nhis.or.kr/magazin/168/html/sub7.html,건강·운동/0070-url.txt,건강·운동,건강·운동,True,['건강·운동'],['건강·운동'],True,True,0.65,False,False,SUCCESS,,

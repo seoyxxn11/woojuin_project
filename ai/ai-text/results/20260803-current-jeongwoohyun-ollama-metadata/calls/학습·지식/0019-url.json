@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "요즘 프론트엔드 디자인 패턴, 뭐가 정답일까?",
+    "summary": "프론트엔드에서 사용되는 디자인 패턴의 필요성과 최근 주목받는 패턴들을 정리한 글입니다. 상황에 따라 적절한 패턴을 선택하는 것이 중요합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"요즘 프론트엔드 디자인 패턴, 뭐가 정답일까?\",\"summary\":\"프론트엔드에서 사용되는 디자인 패턴의 필요성과 최근 주목받는 패턴들을 정리한 글입니다. 상황에 따라 적절한 패턴을 선택하는 것이 중요합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2161,
+    "completion_tokens": 93,
+    "total_tokens": 2254
+  },
+  "latencyMs": 32634.5,
+  "model": "qwen3:8b"
+}

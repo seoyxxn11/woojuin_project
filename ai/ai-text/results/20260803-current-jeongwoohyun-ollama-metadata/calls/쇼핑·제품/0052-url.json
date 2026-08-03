@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "노트북가방 검색 결과",
+    "summary": "노트북가방 관련 상품 검색 결과입니다. 다양한 스타일과 기능을 확인해보세요.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"노트북가방 검색 결과\",\"summary\":\"노트북가방 관련 상품 검색 결과입니다. 다양한 스타일과 기능을 확인해보세요.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 622,
+    "completion_tokens": 56,
+    "total_tokens": 678
+  },
+  "latencyMs": 58675.94,
+  "model": "qwen3:8b"
+}

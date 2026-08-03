@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 서울시립미술관 전시회 추천",
+    "summary": "서울시립미술관에서 열리는 2026년 전시회를 추천합니다. 다양한 예술 작품과 체험형 전시를 통해 관람객에게 감성 충전의 기회를 제공합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"2026년 서울시립미술관 전시회 추천\",\"summary\":\"서울시립미술관에서 열리는 2026년 전시회를 추천합니다. 다양한 예술 작품과 체험형 전시를 통해 관람객에게 감성 충전의 기회를 제공합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4157,
+    "completion_tokens": 89,
+    "total_tokens": 4246
+  },
+  "latencyMs": 94279.62,
+  "model": "qwen3:8b"
+}

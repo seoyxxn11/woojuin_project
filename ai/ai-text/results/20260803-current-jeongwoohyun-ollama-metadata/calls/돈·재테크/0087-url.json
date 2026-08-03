@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "청약 경쟁률 총정리 | 2026 청약 일정·무순위(줍줍)·임대청약 한눈에",
+    "summary": "2026년 청약 경쟁률과 일정, 무순위(줍줍), 임대청약 정보를 한눈에 정리한 글입니다. 서울·경기·인천 지역의 주요 청약 현황을 제공합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"청약 경쟁률 총정리 | 2026 청약 일정·무순위(줍줍)·임대청약 한눈에\",\"summary\":\"2026년 청약 경쟁률과 일정, 무순위(줍줍), 임대청약 정보를 한눈에 정리한 글입니다. 서울·경기·인천 지역의 주요 청약 현황을 제공합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2705,
+    "completion_tokens": 114,
+    "total_tokens": 2819
+  },
+  "latencyMs": 95479.74,
+  "model": "qwen3:8b"
+}

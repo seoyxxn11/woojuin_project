@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "유튜브 - 동영상과 음악 공유 플랫폼",
+    "summary": "유튜브는 사용자가 동영상과 음악을 감상하고, 직접 콘텐츠를 업로드해 전 세계 사람들과 공유할 수 있는 플랫폼입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"유튜브 - 동영상과 음악 공유 플랫폼\",\"summary\":\"유튜브는 사용자가 동영상과 음악을 감상하고, 직접 콘텐츠를 업로드해 전 세계 사람들과 공유할 수 있는 플랫폼입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 804,
+    "completion_tokens": 80,
+    "total_tokens": 884
+  },
+  "latencyMs": 20147.43,
+  "model": "qwen3:8b"
+}

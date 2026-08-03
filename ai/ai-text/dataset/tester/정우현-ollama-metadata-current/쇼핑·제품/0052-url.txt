@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"노트북가방 검색 결과","url":"https://m.gsshop.com/search/searchSect.gs?tq=노트북가방&mseq=406355&ab=a","content":null,"summary":"노트북가방 관련 상품 검색 결과입니다. 다양한 스타일과 기능을 확인해보세요.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

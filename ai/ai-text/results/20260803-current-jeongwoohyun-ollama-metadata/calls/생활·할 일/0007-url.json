@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "자취생의 자취생활과 요리 팁",
+    "summary": "자취생이 자취생활을 하며 겪는 어려움과 요리에 대한 팁을 정리한 글입니다. 자취생의 삶을 이해하고, 식재료 절약법, 주방 도구 선택 등 실용적인 조언을 제공합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"자취생의 자취생활과 요리 팁\", \"summary\":\"자취생이 자취생활을 하며 겪는 어려움과 요리에 대한 팁을 정리한 글입니다. 자취생의 삶을 이해하고, 식재료 절약법, 주방 도구 선택 등 실용적인 조언을 제공합니다.\", \"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 9170,
+    "completion_tokens": 98,
+    "total_tokens": 9268
+  },
+  "latencyMs": 70796.56,
+  "model": "qwen3:8b"
+}

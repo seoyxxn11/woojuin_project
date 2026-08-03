@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "2018 평창, 미리 가보는 강원도 해안 마을 여행",
+    "summary": "2018 평창 동계올림픽과 겨울바다 여행을 함께 즐길 수 있는 강원도 해안 마을 여행을 소개합니다. 자연과 문화, 맛집을 즐길 수 있는 에어비앤비 숙소를 추천합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"2018 평창, 미리 가보는 강원도 해안 마을 여행\",\"summary\":\"2018 평창 동계올림픽과 겨울바다 여행을 함께 즐길 수 있는 강원도 해안 마을 여행을 소개합니다. 자연과 문화, 맛집을 즐길 수 있는 에어비앤비 숙소를 추천합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2026,
+    "completion_tokens": 105,
+    "total_tokens": 2131
+  },
+  "latencyMs": 58233.85,
+  "model": "qwen3:8b"
+}

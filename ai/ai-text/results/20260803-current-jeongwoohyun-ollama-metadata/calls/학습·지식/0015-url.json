@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "[CS] 네트워크 요약 정리",
+    "summary": "네트워크 기초 개념인 OSI 7계층과 TCP/IP 4계층의 구조, 캡슐화, TCP/UDP 프로토콜, HTTP 프로토콜의 작동 방식 및 상태 코드에 대해 정리한 문서입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"[CS] 네트워크 요약 정리\",\"summary\":\"네트워크 기초 개념인 OSI 7계층과 TCP/IP 4계층의 구조, 캡슐화, TCP/UDP 프로토콜, HTTP 프로토콜의 작동 방식 및 상태 코드에 대해 정리한 문서입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4916,
+    "completion_tokens": 90,
+    "total_tokens": 5006
+  },
+  "latencyMs": 35918.55,
+  "model": "qwen3:8b"
+}

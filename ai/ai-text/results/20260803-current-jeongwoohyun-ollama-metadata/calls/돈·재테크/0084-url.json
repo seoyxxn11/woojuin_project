@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "2026 부동산 트렌드, 8인 전문가가 제시하는 생존 전략",
+    "summary": "2026년 부동산 시장의 변화를 예측하고, 실수요자와 투자자에게 실전 전략을 제시하는 신간 도서입니다. 데이터와 현장 경험을 바탕으로 시장 분석과 리스크 경고를 담고 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"2026 부동산 트렌드, 8인 전문가가 제시하는 생존 전략\",\"summary\":\"2026년 부동산 시장의 변화를 예측하고, 실수요자와 투자자에게 실전 전략을 제시하는 신간 도서입니다. 데이터와 현장 경험을 바탕으로 시장 분석과 리스크 경고를 담고 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3244,
+    "completion_tokens": 112,
+    "total_tokens": 3356
+  },
+  "latencyMs": 89967.42,
+  "model": "qwen3:8b"
+}

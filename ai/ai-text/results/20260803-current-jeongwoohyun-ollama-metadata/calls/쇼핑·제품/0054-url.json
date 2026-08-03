@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "대용량 노트북가방 2024 TOP8 추천 및 구매후기",
+    "summary": "2024년 대용량 노트북가방 TOP8을 소개합니다. 판매량, 가성비, 리뷰 등을 기준으로 선정한 제품들로 구매에 도움이 되는 정보를 제공합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"대용량 노트북가방 2024 TOP8 추천 및 구매후기\",\"summary\":\"2024년 대용량 노트북가방 TOP8을 소개합니다. 판매량, 가성비, 리뷰 등을 기준으로 선정한 제품들로 구매에 도움이 되는 정보를 제공합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2359,
+    "completion_tokens": 95,
+    "total_tokens": 2454
+  },
+  "latencyMs": 29787.27,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "내가 바란 것은 다정한 말 한마디였소 [𝐏𝐋𝐀𝐘𝐋𝐈𝐒𝐓]",
+    "summary": "호정이 참여한 플레이리스트를 소개하는 음악 영상입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"내가 바란 것은 다정한 말 한마디였소 [𝐏𝐋𝐀𝐘𝐋𝐈𝐒𝐓]\",\"summary\":\"호정이 참여한 플레이리스트를 소개하는 음악 영상입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 664,
+    "completion_tokens": 63,
+    "total_tokens": 727
+  },
+  "latencyMs": 66072.9,
+  "model": "qwen3:8b"
+}

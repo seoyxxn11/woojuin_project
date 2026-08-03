@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "[Programmers] 코딩테스트와 실무 역량 모두 잡는 알고리즘 스터디 후기",
+    "summary": "2년차 개발자가 알고리즘 스터디를 통해 실무 역량을 향상시키는 과정을 공유한 후기입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"[Programmers] 코딩테스트와 실무 역량 모두 잡는 알고리즘 스터디 후기\",\"summary\":\"2년차 개발자가 알고리즘 스터디를 통해 실무 역량을 향상시키는 과정을 공유한 후기입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1722,
+    "completion_tokens": 81,
+    "total_tokens": 1803
+  },
+  "latencyMs": 40599.41,
+  "model": "qwen3:8b"
+}

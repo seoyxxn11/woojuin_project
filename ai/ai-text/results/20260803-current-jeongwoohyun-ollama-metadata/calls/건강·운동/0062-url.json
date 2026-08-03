@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "어깨 통증 해소를 위한 스트레칭 자세 6가지",
+    "summary": "어깨 통증을 완화하고 유연성을 높이기 위한 스트레칭 자세 6가지를 소개합니다. 혈액순환 개선과 부상 예방에 도움이 됩니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"어깨 통증 해소를 위한 스트레칭 자세 6가지\",\"summary\":\"어깨 통증을 완화하고 유연성을 높이기 위한 스트레칭 자세 6가지를 소개합니다. 혈액순환 개선과 부상 예방에 도움이 됩니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1920,
+    "completion_tokens": 87,
+    "total_tokens": 2007
+  },
+  "latencyMs": 20436.82,
+  "model": "qwen3:8b"
+}

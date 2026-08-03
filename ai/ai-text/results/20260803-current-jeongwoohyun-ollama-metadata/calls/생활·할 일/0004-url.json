@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "1인 가구 라이프 매거진",
+    "summary": "1인 가구의 일상과 삶의 방식을 다룬 매거진입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"1인 가구 라이프 매거진\",\"summary\":\"1인 가구의 일상과 삶의 방식을 다룬 매거진입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 51,
+    "total_tokens": 675
+  },
+  "latencyMs": 35568.7,
+  "model": "qwen3:8b"
+}

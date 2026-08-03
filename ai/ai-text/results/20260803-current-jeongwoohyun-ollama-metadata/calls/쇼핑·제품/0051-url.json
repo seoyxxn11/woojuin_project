@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "노트북용 가방 추천 및 컴퓨존 서비스 안내",
+    "summary": "노트북용 가방을 추천하며 컴퓨존의 조립PC, 견적 서비스, 빠른 배송, 프리미엄 설치&A/S 등 다양한 혜택을 안내합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"노트북용 가방 추천 및 컴퓨존 서비스 안내\",\"summary\":\"노트북용 가방을 추천하며 컴퓨존의 조립PC, 견적 서비스, 빠른 배송, 프리미엄 설치&A/S 등 다양한 혜택을 안내합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1684,
+    "completion_tokens": 80,
+    "total_tokens": 1764
+  },
+  "latencyMs": 34275.35,
+  "model": "qwen3:8b"
+}

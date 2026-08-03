@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "심심할 땐? 봉봉! 재밌는 무료 심리 테스트 맛집",
+    "summary": "MBTI, 연애, 궁합, 운세 등 다양한 심리 테스트를 무료로 제공하는 사이트입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"심심할 땐? 봉봉! 재밌는 무료 심리 테스트 맛집\",\"summary\":\"MBTI, 연애, 궁합, 운세 등 다양한 심리 테스트를 무료로 제공하는 사이트입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 680,
+    "completion_tokens": 74,
+    "total_tokens": 754
+  },
+  "latencyMs": 68241.0,
+  "model": "qwen3:8b"
+}

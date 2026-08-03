@@ -1,0 +1,422 @@
+[
+  {
+    "file": "건강·운동\\0061-url.txt",
+    "originalTitle": "아침 건강식 견과류가 ‘독’이 되는 경우 - 코메디닷컴",
+    "titleAction": "KEEP",
+    "finalTitle": "아침 건강식 견과류가 ‘독’이 되는 경우 - 코메디닷컴",
+    "summary": "견과류는 건강에 좋은 식품이지만, 과다 섭취나 부적절한 보관으로 인해 독소가 발생할 수 있어 주의가 필요하다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 39145.66,
+    "usage": {
+      "prompt_tokens": 1923,
+      "completion_tokens": 87,
+      "total_tokens": 2010
+    }
+  },
+  {
+    "file": "건강·운동\\0065-url.txt",
+    "originalTitle": "﻿수면의 질 높이는 의료적 접근 방법",
+    "titleAction": "KEEP",
+    "finalTitle": "﻿수면의 질 높이는 의료적 접근 방법",
+    "summary": "수면 장애는 신체 및 정신 건강에 심각한 영향을 미치며, 만성 불면증은 전문 치료가 필요합니다. 수면 위생과 CBT-I를 통해 수면 질을 개선할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 21517.52,
+    "usage": {
+      "prompt_tokens": 2033,
+      "completion_tokens": 91,
+      "total_tokens": 2124
+    }
+  },
+  {
+    "file": "건강·운동\\0069-url.txt",
+    "originalTitle": "대표적인 유산소 운동 걷기 효과 2배 높이는 방법",
+    "titleAction": "KEEP",
+    "finalTitle": "대표적인 유산소 운동 걷기 효과 2배 높이는 방법",
+    "summary": "걷기 운동 효과를 2~3배 높이기 위한 방법 5가지 소개합니다. 속도 조절, 하루 3번 20분 걷기, 15,000 걸음, 오르막 걷기, 근력 운동 추가 등이 포함됩니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 78709.71,
+    "usage": {
+      "prompt_tokens": 1603,
+      "completion_tokens": 111,
+      "total_tokens": 1714
+    }
+  },
+  {
+    "file": "기타\\0103-url.txt",
+    "originalTitle": "주간별자리운세 - 무료운세 ㅣ 네이트 운세",
+    "titleAction": "KEEP",
+    "finalTitle": "주간별자리운세 - 무료운세 ㅣ 네이트 운세",
+    "summary": "12개의 별자리를 통해 알아보는 주간 운세 정보입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 69411.4,
+    "usage": {
+      "prompt_tokens": 658,
+      "completion_tokens": 57,
+      "total_tokens": 715
+    }
+  },
+  {
+    "file": "기타\\0107-url.txt",
+    "originalTitle": "테스트잇 test it!",
+    "titleAction": "REPLACE",
+    "finalTitle": "테스트잇 MBTI 테스트 사이트",
+    "summary": "MBTI, 성격, 얼굴인식 등 다양한 테스트가 포함된 재미있는 사이트입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 64711.83,
+    "usage": {
+      "prompt_tokens": 636,
+      "completion_tokens": 55,
+      "total_tokens": 691
+    }
+  },
+  {
+    "file": "기타\\0111-url.txt",
+    "originalTitle": "심리테스트",
+    "titleAction": "REPLACE",
+    "finalTitle": "심리테스트 사이트 - 다양한 심리검사 제공",
+    "summary": "심리테스트 사이트에서 다양한 심리검사를 무료로 제공합니다. 성격, 감성, 지능 등 다양한 분야의 테스트를 통해 자신을 알아보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 74371.76,
+    "usage": {
+      "prompt_tokens": 1445,
+      "completion_tokens": 76,
+      "total_tokens": 1521
+    }
+  },
+  {
+    "file": "돈·재테크\\0085-url.txt",
+    "originalTitle": "너나위의 2026 내집마련 성공공식 | 월급쟁이부자들",
+    "titleAction": "REPLACE",
+    "finalTitle": "월급쟁이부자들, 내집마련 성공 전략 공개",
+    "summary": "월급쟁이부자들이 내집마련을 위한 실전 전략을 공유하며, 재테크와 부동산 투자에 대한 지식을 전달합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 97538.14,
+    "usage": {
+      "prompt_tokens": 1280,
+      "completion_tokens": 80,
+      "total_tokens": 1360
+    }
+  },
+  {
+    "file": "돈·재테크\\0089-url.txt",
+    "originalTitle": "사회초년생 재테크 하기 전 저축하는 습관부터 기르자",
+    "titleAction": "KEEP",
+    "finalTitle": "사회초년생 재테크 하기 전 저축하는 습관부터 기르자",
+    "summary": "저축 습관을 기르는 방법을 소개합니다. 가계부 작성, 통장 분리, 신용카드 사용 자제, 예금 적금 습관 등 실용적인 재테크 팁을 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 68453.08,
+    "usage": {
+      "prompt_tokens": 1265,
+      "completion_tokens": 91,
+      "total_tokens": 1356
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0073-url.txt",
+    "originalTitle": "2026년대한민국콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com",
+    "titleAction": "KEEP",
+    "finalTitle": "2026년대한민국콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com",
+    "summary": "2026년 대한민국 콘서트 일정 및 티켓 정보를 제공합니다. 개최 도시, 날짜, 장소, 가격 등을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 97426.4,
+    "usage": {
+      "prompt_tokens": 1498,
+      "completion_tokens": 100,
+      "total_tokens": 1598
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0077-url.txt",
+    "originalTitle": "2026년 서울시립미술관 전시회 추천| Trip Moments",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 서울시립미술관 전시회 추천",
+    "summary": "서울시립미술관에서 열리는 2026년 전시회를 추천합니다. 다양한 예술 작품과 체험형 전시를 통해 관람객에게 감성 충전의 기회를 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 94279.62,
+    "usage": {
+      "prompt_tokens": 4157,
+      "completion_tokens": 89,
+      "total_tokens": 4246
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0081-url.txt",
+    "originalTitle": "2026년에는 어떤 영화가 개봉될까? 맘 설레게하는 영화 12편",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 기대 영화 12편: 블록버스터부터 감성 드라마까지",
+    "summary": "2026년 개봉 예정인 영화 12편을 소개합니다. 블록버스터, 감성 드라마, 애니메이션 등 다양한 장르의 기대작들이 관객을 기다리고 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 73210.37,
+    "usage": {
+      "prompt_tokens": 3185,
+      "completion_tokens": 106,
+      "total_tokens": 3291
+    }
+  },
+  {
+    "file": "생활·할 일\\0003-url.txt",
+    "originalTitle": "집정리 나도 쉽게 할 수 있을까? 집정리 방법, 노하우 : 정리꿀팁 저장소",
+    "titleAction": "REPLACE",
+    "finalTitle": "집 정리 꿀팁: 공간 역할 정리와 추억 물건 관리",
+    "summary": "혼자 살고 있는 1인 가구의 집 정리 방법을 소개합니다. 공간 역할을 정리하고, 필요 없는 물건은 버리거나 사진으로 저장해 정리하는 노하우를 공유합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 31571.0,
+    "usage": {
+      "prompt_tokens": 3586,
+      "completion_tokens": 90,
+      "total_tokens": 3676
+    }
+  },
+  {
+    "file": "생활·할 일\\0007-url.txt",
+    "originalTitle": "01화 잘 먹고 잘 사는 자취생(自炊生)을 위하여",
+    "titleAction": "REPLACE",
+    "finalTitle": "자취생의 자취생활과 요리 팁",
+    "summary": "자취생이 자취생활을 하며 겪는 어려움과 요리에 대한 팁을 정리한 글입니다. 자취생의 삶을 이해하고, 식재료 절약법, 주방 도구 선택 등 실용적인 조언을 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 70796.56,
+    "usage": {
+      "prompt_tokens": 9170,
+      "completion_tokens": 98,
+      "total_tokens": 9268
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0051-url.txt",
+    "originalTitle": "노트북용 가방 : 컴퓨존",
+    "titleAction": "REPLACE",
+    "finalTitle": "노트북용 가방 추천 및 컴퓨존 서비스 안내",
+    "summary": "노트북용 가방을 추천하며 컴퓨존의 조립PC, 견적 서비스, 빠른 배송, 프리미엄 설치&A/S 등 다양한 혜택을 안내합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 34275.35,
+    "usage": {
+      "prompt_tokens": 1684,
+      "completion_tokens": 80,
+      "total_tokens": 1764
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0055-url.txt",
+    "originalTitle": "shinsegaemall.ssg.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "명품 노트북 가방 검색 결과",
+    "summary": "신세계몰에서 명품 노트북 가방을 검색한 결과입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 33570.12,
+    "usage": {
+      "prompt_tokens": 618,
+      "completion_tokens": 49,
+      "total_tokens": 667
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0059-url.txt",
+    "originalTitle": "bodyitlove.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "캠핑 텐트 리뷰 및 추천",
+    "summary": "캠핑 텐트의 종류와 선택 방법을 소개하며, 추천 제품을 비교한 리뷰입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 21682.45,
+    "usage": {
+      "prompt_tokens": 602,
+      "completion_tokens": 57,
+      "total_tokens": 659
+    }
+  },
+  {
+    "file": "아이디어·영감\\0094-url.txt",
+    "originalTitle": "스마트스토어, 지금 시작해도 \"무조건\" 성공할 수 있는 이유...3000명 퇴사시킨 쇼핑몰 일타강사 '단아쌤' 인터뷰 - 모비인사이드 MOBIINSIDE",
+    "titleAction": "REPLACE",
+    "finalTitle": "단아쌤, 3000명 퇴사시킨 쇼핑몰 창업 전략 공개",
+    "summary": "단아쌤은 쇼핑몰 창업을 통해 3000명의 수강생을 퇴사시켰으며, 네이버 스마트스토어 성공 전략과 리뷰 노출 AI 솔루션을 소개했습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 66256.02,
+    "usage": {
+      "prompt_tokens": 6807,
+      "completion_tokens": 110,
+      "total_tokens": 6917
+    }
+  },
+  {
+    "file": "아이디어·영감\\0098-url.txt",
+    "originalTitle": "Claire's Class - 클레어의 정보 나눔",
+    "titleAction": "REPLACE",
+    "finalTitle": "보험계리사 시험 준비 및 현실 정리",
+    "summary": "보험계리사 1차, 2차 시험 준비 방법과 연봉, 현실 문제 등을 다룬 글입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 40616.96,
+    "usage": {
+      "prompt_tokens": 1970,
+      "completion_tokens": 59,
+      "total_tokens": 2029
+    }
+  },
+  {
+    "file": "여행·장소\\0031-url.txt",
+    "originalTitle": "부산 2박3일 여행코스 추천 가볼만한곳 총정리",
+    "titleAction": "KEEP",
+    "finalTitle": "부산 2박3일 여행코스 추천 가볼만한곳 총정리",
+    "summary": "부산 2박 3일 여행코스를 소개합니다. 초량밀면, 더베이 101, 광안리 드론쇼, 민락회타운 등 다양한 명소와 맛집을 포함한 여행 일정을 확인해보세요.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 53313.95,
+    "usage": {
+      "prompt_tokens": 4856,
+      "completion_tokens": 105,
+      "total_tokens": 4961
+    }
+  },
+  {
+    "file": "여행·장소\\0035-url.txt",
+    "originalTitle": "속초 바다뷰 카페 추천 오션뷰 디저트 맛집 셜터 SHLTR🌊 : UH 플랫 더 속초 | 속초 호텔 숙박 후기, 여행코스 추천",
+    "titleAction": "REPLACE",
+    "finalTitle": "속초 바다뷰 카페 셜터 SHLTR 후기, 오션뷰 디저트 맛집",
+    "summary": "속초 청호해안길에 위치한 바다뷰 카페 셜터 SHLTR에서의 생생한 방문 후기입니다. 인테리어와 바다 전망이 아름다운 공간에서 커피와 디저트를 즐길 수 있으며, 다양한 층에서 바다를 감상할 수 있는 포토존으로 추천됩니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 60707.32,
+    "usage": {
+      "prompt_tokens": 2399,
+      "completion_tokens": 133,
+      "total_tokens": 2532
+    }
+  },
+  {
+    "file": "여행·장소\\0039-url.txt",
+    "originalTitle": "2026년 강원특별자치도 완벽 가이드 추천| Trip Moments",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 강원특별자치도 여행 가이드 | Trip Moments",
+    "summary": "강원특별자치도 여행을 위한 실시간 후기와 추천 명소, 숙소, 교통 정보를 담은 가이드입니다. 2026년 7월 여행객들의 경험을 바탕으로 한 인기 명소와 여행 팁을 확인해보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 66958.15,
+    "usage": {
+      "prompt_tokens": 9663,
+      "completion_tokens": 105,
+      "total_tokens": 9768
+    }
+  },
+  {
+    "file": "음식·맛집\\0043-url.txt",
+    "originalTitle": "www.welfarehello.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "전주 콩나물국밥 맛집 탐방",
+    "summary": "전주 대표 음식인 콩나물국밥 맛집을 소개합니다. 삼번집과 미가옥 등 전주 현지인 추천 맛집을 살펴보며, 콩나물국밥의 조리법과 맛을 즐길 수 있는 방법을 알아보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 42570.72,
+    "usage": {
+      "prompt_tokens": 2721,
+      "completion_tokens": 108,
+      "total_tokens": 2829
+    }
+  },
+  {
+    "file": "음식·맛집\\0047-url.txt",
+    "originalTitle": "강남역 삼 맛집 Top100 - 다이닝코드",
+    "titleAction": "KEEP",
+    "finalTitle": "강남역 삼 맛집 Top100 - 다이닝코드",
+    "summary": "강남역 삼 맛집 100곳 순위와 리뷰, 사진 등을 확인할 수 있는 페이지입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 22331.84,
+    "usage": {
+      "prompt_tokens": 707,
+      "completion_tokens": 65,
+      "total_tokens": 772
+    }
+  },
+  {
+    "file": "취업·커리어\\0022-url.txt",
+    "originalTitle": "삼성 SSAFY 합격 후기 모음집 (ft. 합격 후기, 인재상, 합격 스펙, 코딩 테스트 등) - 링커리어 커뮤니티",
+    "titleAction": "REPLACE",
+    "finalTitle": "삼성 SSAFY 합격 후기 및 인재상, 스펙, 코딩 테스트 안내",
+    "summary": "삼성 SSAFY 합격 후기, 인재상, 합격 스펙, 코딩 테스트 준비 방법을 정리한 글입니다. 지원 과정 및 커리큘럼도 함께 소개합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 54548.51,
+    "usage": {
+      "prompt_tokens": 6545,
+      "completion_tokens": 99,
+      "total_tokens": 6644
+    }
+  },
+  {
+    "file": "취업·커리어\\0026-url.txt",
+    "originalTitle": "알고리즘 스터디-진행방식",
+    "titleAction": "REPLACE",
+    "finalTitle": "알고리즘 스터디 진행 방식",
+    "summary": "취준생들이 함께하는 알고리즘 스터디의 진행 방식과 계획을 소개합니다. 문제 풀이, 코드 리뷰, 발표 등을 통해 학습을 진행합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 31393.2,
+    "usage": {
+      "prompt_tokens": 1627,
+      "completion_tokens": 73,
+      "total_tokens": 1700
+    }
+  },
+  {
+    "file": "취업·커리어\\0030-url.txt",
+    "originalTitle": "[Programmers] 코딩테스트와 실무 역량 모두 잡는 알고리즘 스터디 후기",
+    "titleAction": "KEEP",
+    "finalTitle": "[Programmers] 코딩테스트와 실무 역량 모두 잡는 알고리즘 스터디 후기",
+    "summary": "2년차 개발자가 알고리즘 스터디를 통해 실무 역량을 향상시키는 과정을 공유한 후기입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 40599.41,
+    "usage": {
+      "prompt_tokens": 1722,
+      "completion_tokens": 81,
+      "total_tokens": 1803
+    }
+  },
+  {
+    "file": "학습·지식\\0013-url.txt",
+    "originalTitle": "velog.io",
+    "titleAction": "REPLACE",
+    "finalTitle": "네트워크 CS 정리1탄",
+    "summary": "네트워크 기초 개념 정리한 글입니다. 핵심 내용을 체계적으로 정리해두었습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 39681.59,
+    "usage": {
+      "prompt_tokens": 611,
+      "completion_tokens": 57,
+      "total_tokens": 668
+    }
+  },
+  {
+    "file": "학습·지식\\0017-url.txt",
+    "originalTitle": "백엔드 개발 기술면접 정리 (Java 추가중)",
+    "titleAction": "REPLACE",
+    "finalTitle": "백엔드 개발 기술면접 정리 (Java)",
+    "summary": "OOP 개념과 장단점, 클래스와 객체의 차이, 자바 특징, 데이터 구조 비교 등 기술면접 준비 자료입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 38136.38,
+    "usage": {
+      "prompt_tokens": 2138,
+      "completion_tokens": 67,
+      "total_tokens": 2205
+    }
+  }
+]

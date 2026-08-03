@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "Mac Studio",
+    "summary": "Mac Studio는 M4 Max 또는 M3 Ultra 칩을 탑재한 고성능 프로용 데스크탑으로, 빠른 처리 속도와 강력한 AI 기능을 제공합니다. 다양한 디스플레이와 외장 장치 연결이 가능하며, 환경에 유리한 설계로 주목받고 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"Mac Studio\",\"summary\":\"Mac Studio는 M4 Max 또는 M3 Ultra 칩을 탑재한 고성능 프로용 데스크탑으로, 빠른 처리 속도와 강력한 AI 기능을 제공합니다. 다양한 디스플레이와 외장 장치 연결이 가능하며, 환경에 유리한 설계로 주목받고 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3615,
+    "completion_tokens": 102,
+    "total_tokens": 3717
+  },
+  "latencyMs": 82926.31,
+  "model": "qwen3:8b"
+}

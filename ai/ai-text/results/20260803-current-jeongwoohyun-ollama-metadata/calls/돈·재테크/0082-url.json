@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "ETF 투자 방법과 랩어카운트 활용 전략",
+    "summary": "ETF 투자 방법과 랩어카운트 활용 전략을 소개합니다. 초보 투자자에게 유용한 ETF 운용 방식과 자동매매 서비스를 설명합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"ETF 투자 방법과 랩어카운트 활용 전략\",\"summary\":\"ETF 투자 방법과 랩어카운트 활용 전략을 소개합니다. 초보 투자자에게 유용한 ETF 운용 방식과 자동매매 서비스를 설명합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1938,
+    "completion_tokens": 84,
+    "total_tokens": 2022
+  },
+  "latencyMs": 65842.11,
+  "model": "qwen3:8b"
+}

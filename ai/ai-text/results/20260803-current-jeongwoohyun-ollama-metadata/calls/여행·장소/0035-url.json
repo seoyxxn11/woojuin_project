@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "속초 바다뷰 카페 셜터 SHLTR 후기, 오션뷰 디저트 맛집",
+    "summary": "속초 청호해안길에 위치한 바다뷰 카페 셜터 SHLTR에서의 생생한 방문 후기입니다. 인테리어와 바다 전망이 아름다운 공간에서 커피와 디저트를 즐길 수 있으며, 다양한 층에서 바다를 감상할 수 있는 포토존으로 추천됩니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"속초 바다뷰 카페 셜터 SHLTR 후기, 오션뷰 디저트 맛집\",\"summary\":\"속초 청호해안길에 위치한 바다뷰 카페 셜터 SHLTR에서의 생생한 방문 후기입니다. 인테리어와 바다 전망이 아름다운 공간에서 커피와 디저트를 즐길 수 있으며, 다양한 층에서 바다를 감상할 수 있는 포토존으로 추천됩니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2399,
+    "completion_tokens": 133,
+    "total_tokens": 2532
+  },
+  "latencyMs": 60707.32,
+  "model": "qwen3:8b"
+}

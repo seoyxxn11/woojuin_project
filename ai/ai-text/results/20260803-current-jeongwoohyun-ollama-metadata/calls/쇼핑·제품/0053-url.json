@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "쿠팡 노트북 가방 검색 결과",
+    "summary": "쿠팡에서 노트북 가방을 검색한 결과입니다. 다양한 스타일과 기능을 비교해 보세요.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"쿠팡 노트북 가방 검색 결과\",\"summary\":\"쿠팡에서 노트북 가방을 검색한 결과입니다. 다양한 스타일과 기능을 비교해 보세요.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 610,
+    "completion_tokens": 64,
+    "total_tokens": 674
+  },
+  "latencyMs": 56135.33,
+  "model": "qwen3:8b"
+}

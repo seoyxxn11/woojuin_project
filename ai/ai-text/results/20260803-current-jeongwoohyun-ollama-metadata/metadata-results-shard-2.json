@@ -1,0 +1,422 @@
+[
+  {
+    "file": "건강·운동\\0063-url.txt",
+    "originalTitle": "Nerve glide - Wikipedia",
+    "titleAction": "KEEP",
+    "finalTitle": "Nerve glide - Wikipedia",
+    "summary": "신경 이동 운동은 신경을 스트레칭하여 주변 조직의 압박을 완화하고, 손목 통증, 팔 통증 등의 증상을 완화하는 물리치료법입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 23780.98,
+    "usage": {
+      "prompt_tokens": 3708,
+      "completion_tokens": 76,
+      "total_tokens": 3784
+    }
+  },
+  {
+    "file": "건강·운동\\0067-url.txt",
+    "originalTitle": "유유테이진 | 2026년 활력을 채우는 수면의 질 개선법: 숙면을 위한 5가지 필수 습관",
+    "titleAction": "KEEP",
+    "finalTitle": "유유테이진 | 2026년 활력을 채우는 수면의 질 개선법: 숙면을 위한 5가지 필수 습관",
+    "summary": "수면의 질을 높여 건강한 생활을 위한 5가지 습관을 소개합니다. 규칙적인 수면 리듬, 최적의 수면 환경, 디지털 디톡스, 식습관 관리, 낮 활동 등을 통해 숙면을 유도하는 방법을 정리했습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 30898.76,
+    "usage": {
+      "prompt_tokens": 2904,
+      "completion_tokens": 141,
+      "total_tokens": 3045
+    }
+  },
+  {
+    "file": "건강·운동\\0071-url.txt",
+    "originalTitle": "같은 시간 걸어도 ‘이렇게’ 걸으면 효과 두 배 - 하이닥",
+    "titleAction": "REPLACE",
+    "finalTitle": "걷기 효과 극대화하는 방법과 건강 이점",
+    "summary": "걷기는 심혈관 건강과 체중 관리에 효과적이며, 올바른 자세와 속도 조절로 운동 효과를 높일 수 있습니다. 자연 속에서 걷는 것도 정신 건강에 도움이 됩니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 54579.16,
+    "usage": {
+      "prompt_tokens": 2612,
+      "completion_tokens": 96,
+      "total_tokens": 2708
+    }
+  },
+  {
+    "file": "기타\\0105-url.txt",
+    "originalTitle": "오늘의 운세 - 띠별·별자리·재물 운세 무료보기 | 아파트미",
+    "titleAction": "REPLACE",
+    "finalTitle": "오늘의 운세 - 띠별·별자리·재물 운세 무료보기",
+    "summary": "오늘의 띠별 운세와 별자리 운세를 무료로 제공합니다. 재물운, 건강운, 주식 매수·매도 타이밍 등 다양한 운세 정보를 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 81876.91,
+    "usage": {
+      "prompt_tokens": 4408,
+      "completion_tokens": 94,
+      "total_tokens": 4502
+    }
+  },
+  {
+    "file": "기타\\0109-url.txt",
+    "originalTitle": "무료 심리 테스트·MBTI 테스트 모음 | 테몬",
+    "titleAction": "REPLACE",
+    "finalTitle": "MBTI 테스트 모음·성격 테스트 사이트 테몬",
+    "summary": "테몬은 무료로 이용 가능한 MBTI 테스트와 다양한 성격, 취향 테스트 사이트로, 2~3분 내에 결과를 확인할 수 있습니다. 결과는 자기 이해와 대화 소재로 활용할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 65139.04,
+    "usage": {
+      "prompt_tokens": 3105,
+      "completion_tokens": 93,
+      "total_tokens": 3198
+    }
+  },
+  {
+    "file": "돈·재테크\\0083-url.txt",
+    "originalTitle": "ETF 투자 초보자 쉬운 시작 방법! 2026년 성공 전략 7가지",
+    "titleAction": "KEEP",
+    "finalTitle": "ETF 투자 초보자 쉬운 시작 방법! 2026년 성공 전략 7가지",
+    "summary": "2026년 ETF 투자 초보자에게 실용적인 전략 7가지를 제시하며, 분산 투자, 리스크 관리, 증권사 선택 등 성공적인 투자 방법을 안내합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 70637.94,
+    "usage": {
+      "prompt_tokens": 3649,
+      "completion_tokens": 105,
+      "total_tokens": 3754
+    }
+  },
+  {
+    "file": "돈·재테크\\0087-url.txt",
+    "originalTitle": "청약 경쟁률 총정리 | 2026 청약 일정·무순위(줍줍)·임대청약 한눈에",
+    "titleAction": "KEEP",
+    "finalTitle": "청약 경쟁률 총정리 | 2026 청약 일정·무순위(줍줍)·임대청약 한눈에",
+    "summary": "2026년 청약 경쟁률과 일정, 무순위(줍줍), 임대청약 정보를 한눈에 정리한 글입니다. 서울·경기·인천 지역의 주요 청약 현황을 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 95479.74,
+    "usage": {
+      "prompt_tokens": 2705,
+      "completion_tokens": 114,
+      "total_tokens": 2819
+    }
+  },
+  {
+    "file": "돈·재테크\\0091-url.txt",
+    "originalTitle": "초보 직장인도 따라 할 수 있는 간단한 저축 습관",
+    "titleAction": "KEEP",
+    "finalTitle": "초보 직장인도 따라 할 수 있는 간단한 저축 습관",
+    "summary": "초보 직장인도 쉽게 실천할 수 있는 저축 습관 6가지를 소개합니다. 자동저축, 소액 저축, 잔돈 모으기 등으로 재정적 스트레스를 줄이고 장기적인 재테크 기반을 마련할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 68737.79,
+    "usage": {
+      "prompt_tokens": 1853,
+      "completion_tokens": 105,
+      "total_tokens": 1958
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0075-url.txt",
+    "originalTitle": "2026년 서울시립미술관 가이드 추천| Trip Moments",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 서울시립미술관 가이드 | 서울 박물관 추천",
+    "summary": "서울시립미술관과 주변 박물관을 소개하며, 무료 전시, 관람 팁, 교통 정보 등을 포함한 여행 가이드입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 95714.09,
+    "usage": {
+      "prompt_tokens": 9308,
+      "completion_tokens": 83,
+      "total_tokens": 9391
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0079-url.txt",
+    "originalTitle": "2026년 서울전시 일정",
+    "titleAction": "KEEP",
+    "finalTitle": "2026년 서울전시 일정",
+    "summary": "2026년 서울에서 진행되는 다양한 예술 전시 일정을 정리한 안내입니다. 무료입장 전시도 포함되어 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 83150.57,
+    "usage": {
+      "prompt_tokens": 4371,
+      "completion_tokens": 63,
+      "total_tokens": 4434
+    }
+  },
+  {
+    "file": "생활·할 일\\0001-url.txt",
+    "originalTitle": "정리정돈 잘 하는 방법 | 홈런",
+    "titleAction": "REPLACE",
+    "finalTitle": "정리정돈의 3가지 원칙과 아이템별 정리 방법",
+    "summary": "정리정돈은 필요 물건을 쉽게 찾을 수 있도록 배치하는 것이 중요합니다. 3가지 원칙과 옷, 책, 식기 등 아이템별 정리 방법을 소개합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 88724.4,
+    "usage": {
+      "prompt_tokens": 2627,
+      "completion_tokens": 85,
+      "total_tokens": 2712
+    }
+  },
+  {
+    "file": "생활·할 일\\0005-url.txt",
+    "originalTitle": "냉장고 파먹기 : 레시피, 냉장고 관리, 집밥, 냉파 - Google Play 앱",
+    "titleAction": "REPLACE",
+    "finalTitle": "냉장고 파먹기 앱 - 재료 관리와 맞춤 레시피 추천",
+    "summary": "냉장고에 있는 재료로 맛있는 집밥을 만들고, 유통기한 관리와 식비 절약을 도와주는 앱입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 32343.45,
+    "usage": {
+      "prompt_tokens": 1453,
+      "completion_tokens": 82,
+      "total_tokens": 1535
+    }
+  },
+  {
+    "file": "생활·할 일\\0009-url.txt",
+    "originalTitle": "프로자취러 | 자취14년차의 핵꿀팁 (@prozachi) on Threads",
+    "titleAction": "REPLACE",
+    "finalTitle": "자취생 필수 생활꿀팁 10가지",
+    "summary": "자취생이라면 꼭 알아야 할 생활 팁 10가지를 정리한 글입니다. 실용적인 조언으로 생활의 질을 높일 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 53899.51,
+    "usage": {
+      "prompt_tokens": 1020,
+      "completion_tokens": 78,
+      "total_tokens": 1098
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0053-url.txt",
+    "originalTitle": "www.coupang.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "쿠팡 노트북 가방 검색 결과",
+    "summary": "쿠팡에서 노트북 가방을 검색한 결과입니다. 다양한 스타일과 기능을 비교해 보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 56135.33,
+    "usage": {
+      "prompt_tokens": 610,
+      "completion_tokens": 64,
+      "total_tokens": 674
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0057-url.txt",
+    "originalTitle": "www.coupang.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "쿠팡 베이비 상품 쇼핑몰",
+    "summary": "쿠팡에서 구매 가능한 베이비 상품을 한눈에 살펴보는 쇼핑몰입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 38299.6,
+    "usage": {
+      "prompt_tokens": 608,
+      "completion_tokens": 64,
+      "total_tokens": 672
+    }
+  },
+  {
+    "file": "아이디어·영감\\0092-url.txt",
+    "originalTitle": "솔비나의 브런치",
+    "titleAction": "KEEP",
+    "finalTitle": "솔비나의 브런치",
+    "summary": "솔로비즈니스나이트는 외부 투자 없이 성공한 온라인 1인 창업 스토리를 모은 브런치입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 21034.37,
+    "usage": {
+      "prompt_tokens": 663,
+      "completion_tokens": 74,
+      "total_tokens": 737
+    }
+  },
+  {
+    "file": "아이디어·영감\\0096-url.txt",
+    "originalTitle": "실행하랏",
+    "titleAction": "REPLACE",
+    "finalTitle": "2025년 3차 부동산 대책 요약",
+    "summary": "2025년 10월 15일 발표된 3차 부동산 대책 요약 내용입니다. 규제지역 확대, 주택담보대출 한도 조정, 전세대출 DSR 반영 등 주요 내용을 정리했습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 43108.14,
+    "usage": {
+      "prompt_tokens": 979,
+      "completion_tokens": 96,
+      "total_tokens": 1075
+    }
+  },
+  {
+    "file": "아이디어·영감\\0100-url.txt",
+    "originalTitle": "네이버 스마트스토어 운영 2년 차, 그녀는 소문대로 돈을 벌었을까?",
+    "titleAction": "KEEP",
+    "finalTitle": "네이버 스마트스토어 운영 2년 차, 그녀는 소문대로 돈을 벌었을까?",
+    "summary": "네이버 스마트스토어 운영 2년차의 초보 판매자가 온라인 창업의 현실을 고백하며, 수익성과 노동량의 균형을 짚는 내용이다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 61324.97,
+    "usage": {
+      "prompt_tokens": 4086,
+      "completion_tokens": 101,
+      "total_tokens": 4187
+    }
+  },
+  {
+    "file": "여행·장소\\0033-url.txt",
+    "originalTitle": "색다른 부산 여행을 위한 2박 3일 추천 코스",
+    "titleAction": "KEEP",
+    "finalTitle": "색다른 부산 여행을 위한 2박 3일 추천 코스",
+    "summary": "부산의 숨겨진 매력을 탐험하는 2박 3일 코스. 해수욕장, 포구, 카페, 공원 등 다양한 명소를 소개하며, 인생 사진 명소와 맛집도 포함된 여행 계획서.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 41469.59,
+    "usage": {
+      "prompt_tokens": 3114,
+      "completion_tokens": 100,
+      "total_tokens": 3214
+    }
+  },
+  {
+    "file": "여행·장소\\0037-url.txt",
+    "originalTitle": "2026 베스트 루이스 해밀턴 호텔 해운대 | 부산 호텔: 코스 및 여행자 사진 | 트립 모먼트",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026 베스트 루이스 해밀턴 호텔 해운대 여행 후기 및 팁",
+    "summary": "부산 해운대의 베스트 루이스 해밀턴 호텔에서의 3일간 여행 일정과 실용적인 팁을 소개합니다. 호텔 체크인, 식사, 관광 명소 탐방, 호캉스 등 다양한 경험을 공유합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 64254.26,
+    "usage": {
+      "prompt_tokens": 4905,
+      "completion_tokens": 111,
+      "total_tokens": 5016
+    }
+  },
+  {
+    "file": "음식·맛집\\0041-url.txt",
+    "originalTitle": "무엇과도 비교할 수 없는 깊고 시원한 맛 ‘전주 콩나물국밥’ > 여행기사 :대한민국 구석구석",
+    "titleAction": "REPLACE",
+    "finalTitle": "전주 콩나물국밥의 깊고 시원한 맛을 경험해보세요",
+    "summary": "전주 콩나물국밥은 담백하면서도 깊은 맛이 특징으로, 육수, 콩나물, 썰이김치의 조화가 완성합니다. 단순해 보이지만 그 맛은 매우 특별합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 48603.44,
+    "usage": {
+      "prompt_tokens": 3711,
+      "completion_tokens": 106,
+      "total_tokens": 3817
+    }
+  },
+  {
+    "file": "음식·맛집\\0045-url.txt",
+    "originalTitle": "강남 20대 맛집 Top100 - 다이닝코드",
+    "titleAction": "KEEP",
+    "finalTitle": "강남 20대 맛집 Top100 - 다이닝코드",
+    "summary": "강남 지역에서 20대를 위한 맛집 100곳을 소개하는 리스트입니다. 식당 정보와 방문자 리뷰, 사진 등을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 25338.27,
+    "usage": {
+      "prompt_tokens": 710,
+      "completion_tokens": 79,
+      "total_tokens": 789
+    }
+  },
+  {
+    "file": "음식·맛집\\0049-url.txt",
+    "originalTitle": "강남역 돼지고기 가성비 맛집 Top70 - 다이닝코드",
+    "titleAction": "KEEP",
+    "finalTitle": "강남역 돼지고기 가성비 맛집 Top70 - 다이닝코드",
+    "summary": "강남역에서 가성비 좋은 돼지고기 맛집 70곳을 소개합니다. 식당 정보, 리뷰, 사진 등을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 28632.77,
+    "usage": {
+      "prompt_tokens": 722,
+      "completion_tokens": 79,
+      "total_tokens": 801
+    }
+  },
+  {
+    "file": "취업·커리어\\0024-url.txt",
+    "originalTitle": "삼성 청년SW∙AI아카데미(SSAFY) | 사회공헌 프로그램 | 삼성전자 사회공헌",
+    "titleAction": "REPLACE",
+    "finalTitle": "삼성 청년SW·AI아카데미(SSAFY) - 취업 지원 프로그램",
+    "summary": "삼성 청년SW·AI아카데미는 취업 준비 청년들을 위한 SW·AI 교육과 취업 지원 서비스를 제공하는 프로그램입니다. 85%의 수료생이 취업에 성공하며, AI 기술을 활용한 실무 프로젝트를 통해 실전 역량을 강화합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 38595.71,
+    "usage": {
+      "prompt_tokens": 2088,
+      "completion_tokens": 121,
+      "total_tokens": 2209
+    }
+  },
+  {
+    "file": "취업·커리어\\0028-url.txt",
+    "originalTitle": "[MEMO] 알고리즘 잡스 후기",
+    "titleAction": "REPLACE",
+    "finalTitle": "알고리즘 잡스 수강 후기 - 비전공자 취업 준비 경험",
+    "summary": "비전공자 프론트엔드 개발자가 알고리즘 잡스를 통해 코딩테스트 준비 경험을 공유하며, 교육 시스템과 코치의 역할에 대해 설명합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 44390.65,
+    "usage": {
+      "prompt_tokens": 2783,
+      "completion_tokens": 89,
+      "total_tokens": 2872
+    }
+  },
+  {
+    "file": "학습·지식\\0011-url.txt",
+    "originalTitle": "cs 과목 길잡이",
+    "titleAction": "REPLACE",
+    "finalTitle": "컴퓨터공학 과목 학습 가이드",
+    "summary": "전자, 미디어 트랙별로 컴퓨터공학 기본 과목을 정리한 학습 가이드입니다. 프로그래밍 언어, 알고리즘, 네트워크, 운영체제, 데이터베이스 등 핵심 과목의 강의 및 서적 정보를 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 40756.88,
+    "usage": {
+      "prompt_tokens": 4364,
+      "completion_tokens": 106,
+      "total_tokens": 4470
+    }
+  },
+  {
+    "file": "학습·지식\\0015-url.txt",
+    "originalTitle": "[CS] 네트워크 요약 정리",
+    "titleAction": "KEEP",
+    "finalTitle": "[CS] 네트워크 요약 정리",
+    "summary": "네트워크 기초 개념인 OSI 7계층과 TCP/IP 4계층의 구조, 캡슐화, TCP/UDP 프로토콜, HTTP 프로토콜의 작동 방식 및 상태 코드에 대해 정리한 문서입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 35918.55,
+    "usage": {
+      "prompt_tokens": 4916,
+      "completion_tokens": 90,
+      "total_tokens": 5006
+    }
+  },
+  {
+    "file": "학습·지식\\0019-url.txt",
+    "originalTitle": "요즘 프론트엔드 디자인 패턴, 뭐가 정답일까?",
+    "titleAction": "KEEP",
+    "finalTitle": "요즘 프론트엔드 디자인 패턴, 뭐가 정답일까?",
+    "summary": "프론트엔드에서 사용되는 디자인 패턴의 필요성과 최근 주목받는 패턴들을 정리한 글입니다. 상황에 따라 적절한 패턴을 선택하는 것이 중요합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 32634.5,
+    "usage": {
+      "prompt_tokens": 2161,
+      "completion_tokens": 93,
+      "total_tokens": 2254
+    }
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "직장인 스마트스토어 1년차 수익 현실 후기",
+    "summary": "1년간의 스마트스토어 운영 경험을 공유하며, 초기 실패 후 사입 전략으로 매출 1000만원 달성한 성과와 꾸준함의 중요성을 강조합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"직장인 스마트스토어 1년차 수익 현실 후기\",\"summary\":\"1년간의 스마트스토어 운영 경험을 공유하며, 초기 실패 후 사입 전략으로 매출 1000만원 달성한 성과와 꾸준함의 중요성을 강조합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2106,
+    "completion_tokens": 91,
+    "total_tokens": 2197
+  },
+  "latencyMs": 53881.52,
+  "model": "qwen3:8b"
+}

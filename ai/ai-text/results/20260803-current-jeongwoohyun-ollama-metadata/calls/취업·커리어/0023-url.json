@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "[취업후기] SSAFY 에서 느낀 감사함, 저도 베풀래요",
+    "summary": "SSAFY에서 느낀 감사함을 공유하며, 저도 베풀겠다는 취업 후기입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"[취업후기] SSAFY 에서 느낀 감사함, 저도 베풀래요\",\"summary\":\"SSAFY에서 느낀 감사함을 공유하며, 저도 베풀겠다는 취업 후기입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 727,
+    "completion_tokens": 71,
+    "total_tokens": 798
+  },
+  "latencyMs": 38465.67,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 서울시립미술관 가이드 | 서울 박물관 추천",
+    "summary": "서울시립미술관과 주변 박물관을 소개하며, 무료 전시, 관람 팁, 교통 정보 등을 포함한 여행 가이드입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"2026년 서울시립미술관 가이드 | 서울 박물관 추천\", \"summary\":\"서울시립미술관과 주변 박물관을 소개하며, 무료 전시, 관람 팁, 교통 정보 등을 포함한 여행 가이드입니다.\", \"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 9308,
+    "completion_tokens": 83,
+    "total_tokens": 9391
+  },
+  "latencyMs": 95714.09,
+  "model": "qwen3:8b"
+}

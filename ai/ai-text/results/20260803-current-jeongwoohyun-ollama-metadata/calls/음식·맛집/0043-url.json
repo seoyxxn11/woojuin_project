@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "전주 콩나물국밥 맛집 탐방",
+    "summary": "전주 대표 음식인 콩나물국밥 맛집을 소개합니다. 삼번집과 미가옥 등 전주 현지인 추천 맛집을 살펴보며, 콩나물국밥의 조리법과 맛을 즐길 수 있는 방법을 알아보세요.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"전주 콩나물국밥 맛집 탐방\",\"summary\":\"전주 대표 음식인 콩나물국밥 맛집을 소개합니다. 삼번집과 미가옥 등 전주 현지인 추천 맛집을 살펴보며, 콩나물국밥의 조리법과 맛을 즐길 수 있는 방법을 알아보세요.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2721,
+    "completion_tokens": 108,
+    "total_tokens": 2829
+  },
+  "latencyMs": 42570.72,
+  "model": "qwen3:8b"
+}

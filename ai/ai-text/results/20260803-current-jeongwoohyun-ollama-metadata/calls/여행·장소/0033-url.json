@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "색다른 부산 여행을 위한 2박 3일 추천 코스",
+    "summary": "부산의 숨겨진 매력을 탐험하는 2박 3일 코스. 해수욕장, 포구, 카페, 공원 등 다양한 명소를 소개하며, 인생 사진 명소와 맛집도 포함된 여행 계획서.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"색다른 부산 여행을 위한 2박 3일 추천 코스\",\"summary\":\"부산의 숨겨진 매력을 탐험하는 2박 3일 코스. 해수욕장, 포구, 카페, 공원 등 다양한 명소를 소개하며, 인생 사진 명소와 맛집도 포함된 여행 계획서.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3114,
+    "completion_tokens": 100,
+    "total_tokens": 3214
+  },
+  "latencyMs": 41469.59,
+  "model": "qwen3:8b"
+}

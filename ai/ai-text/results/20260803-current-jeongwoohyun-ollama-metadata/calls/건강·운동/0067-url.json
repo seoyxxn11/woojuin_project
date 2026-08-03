@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "유유테이진 | 2026년 활력을 채우는 수면의 질 개선법: 숙면을 위한 5가지 필수 습관",
+    "summary": "수면의 질을 높여 건강한 생활을 위한 5가지 습관을 소개합니다. 규칙적인 수면 리듬, 최적의 수면 환경, 디지털 디톡스, 식습관 관리, 낮 활동 등을 통해 숙면을 유도하는 방법을 정리했습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"유유테이진 | 2026년 활력을 채우는 수면의 질 개선법: 숙면을 위한 5가지 필수 습관\",\"summary\":\"수면의 질을 높여 건강한 생활을 위한 5가지 습관을 소개합니다. 규칙적인 수면 리듬, 최적의 수면 환경, 디지털 디톡스, 식습관 관리, 낮 활동 등을 통해 숙면을 유도하는 방법을 정리했습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2904,
+    "completion_tokens": 141,
+    "total_tokens": 3045
+  },
+  "latencyMs": 30898.76,
+  "model": "qwen3:8b"
+}

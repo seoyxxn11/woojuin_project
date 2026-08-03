@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "앱스토어 앱 정보 페이지",
+    "summary": "앱스토어에서 특정 앱의 상세 정보를 제공하는 페이지입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"앱스토어 앱 정보 페이지\",\"summary\":\"앱스토어에서 특정 앱의 상세 정보를 제공하는 페이지입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 608,
+    "completion_tokens": 46,
+    "total_tokens": 654
+  },
+  "latencyMs": 28670.22,
+  "model": "qwen3:8b"
+}

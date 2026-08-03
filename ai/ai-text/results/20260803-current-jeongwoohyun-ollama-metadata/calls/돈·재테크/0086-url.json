@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "내집마련 고민 BEST 3, 전세 vs 매매 전략",
+    "summary": "내집을 사는 데 고민하는 사람들을 위한 실전 전략. 전세와 매매의 차이, 예산 관리, 대출 전략 등을 다루며 내집마련을 성공적으로 이끌어가는 방법을 안내합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"내집마련 고민 BEST 3, 전세 vs 매매 전략\",\"summary\":\"내집을 사는 데 고민하는 사람들을 위한 실전 전략. 전세와 매매의 차이, 예산 관리, 대출 전략 등을 다루며 내집마련을 성공적으로 이끌어가는 방법을 안내합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4139,
+    "completion_tokens": 94,
+    "total_tokens": 4233
+  },
+  "latencyMs": 100531.21,
+  "model": "qwen3:8b"
+}

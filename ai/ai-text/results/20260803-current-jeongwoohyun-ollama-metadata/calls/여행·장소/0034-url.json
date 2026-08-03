@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "속초 해변 근처 감성 카페 TOP10 : 오션뷰, 디저트, 인생샷까지 완벽 정복!",
+    "summary": "속초 해변 근처에서 가볼 만한 감성 카페 10곳을 소개합니다. 오션뷰, 인테리어, 맛있는 디저트, 인생샷 명소까지 모두 갖춘 카페로 여행이나 힐링에 추천합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"속초 해변 근처 감성 카페 TOP10 : 오션뷰, 디저트, 인생샷까지 완벽 정복!\",\"summary\":\"속초 해변 근처에서 가볼 만한 감성 카페 10곳을 소개합니다. 오션뷰, 인테리어, 맛있는 디저트, 인생샷 명소까지 모두 갖춘 카페로 여행이나 힐링에 추천합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2409,
+    "completion_tokens": 121,
+    "total_tokens": 2530
+  },
+  "latencyMs": 63492.8,
+  "model": "qwen3:8b"
+}

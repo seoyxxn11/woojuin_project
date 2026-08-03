@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "네이버 스마트스토어 운영 2년 차, 그녀는 소문대로 돈을 벌었을까?",
+    "summary": "네이버 스마트스토어 운영 2년차의 초보 판매자가 온라인 창업의 현실을 고백하며, 수익성과 노동량의 균형을 짚는 내용이다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"네이버 스마트스토어 운영 2년 차, 그녀는 소문대로 돈을 벌었을까?\",\"summary\":\"네이버 스마트스토어 운영 2년차의 초보 판매자가 온라인 창업의 현실을 고백하며, 수익성과 노동량의 균형을 짚는 내용이다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4086,
+    "completion_tokens": 101,
+    "total_tokens": 4187
+  },
+  "latencyMs": 61324.97,
+  "model": "qwen3:8b"
+}

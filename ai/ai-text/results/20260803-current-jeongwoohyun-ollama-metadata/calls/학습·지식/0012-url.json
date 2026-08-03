@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "CS 전공지식 정리: 네트워크 기초",
+    "summary": "CS 전공자용 네트워크 기초 개념 정리 글입니다. 핵심 개념을 체계적으로 정리해두었습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"CS 전공지식 정리: 네트워크 기초\",\"summary\":\"CS 전공자용 네트워크 기초 개념 정리 글입니다. 핵심 개념을 체계적으로 정리해두었습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 630,
+    "completion_tokens": 68,
+    "total_tokens": 698
+  },
+  "latencyMs": 37694.02,
+  "model": "qwen3:8b"
+}

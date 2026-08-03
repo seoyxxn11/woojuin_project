@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "프랑스어 강사 정일영 '프랑스에서 살아남기' 특강",
+    "summary": "프랑스어 강사 정일영이 프랑스 생활 팁을 공유하는 특강입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"프랑스어 강사 정일영 '프랑스에서 살아남기' 특강\",\"summary\":\"프랑스어 강사 정일영이 프랑스 생활 팁을 공유하는 특강입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 629,
+    "completion_tokens": 64,
+    "total_tokens": 693
+  },
+  "latencyMs": 40239.96,
+  "model": "qwen3:8b"
+}

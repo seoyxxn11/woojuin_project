@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "전주 콩나물국밥의 깊고 시원한 맛을 경험해보세요",
+    "summary": "전주 콩나물국밥은 담백하면서도 깊은 맛이 특징으로, 육수, 콩나물, 썰이김치의 조화가 완성합니다. 단순해 보이지만 그 맛은 매우 특별합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"전주 콩나물국밥의 깊고 시원한 맛을 경험해보세요\",\"summary\":\"전주 콩나물국밥은 담백하면서도 깊은 맛이 특징으로, 육수, 콩나물, 썰이김치의 조화가 완성합니다. 단순해 보이지만 그 맛은 매우 특별합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3711,
+    "completion_tokens": 106,
+    "total_tokens": 3817
+  },
+  "latencyMs": 48603.44,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "단아쌤, 3000명 퇴사시킨 쇼핑몰 창업 전략 공개",
+    "summary": "단아쌤은 쇼핑몰 창업을 통해 3000명의 수강생을 퇴사시켰으며, 네이버 스마트스토어 성공 전략과 리뷰 노출 AI 솔루션을 소개했습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"단아쌤, 3000명 퇴사시킨 쇼핑몰 창업 전략 공개\",\"summary\":\"단아쌤은 쇼핑몰 창업을 통해 3000명의 수강생을 퇴사시켰으며, 네이버 스마트스토어 성공 전략과 리뷰 노출 AI 솔루션을 소개했습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 6807,
+    "completion_tokens": 110,
+    "total_tokens": 6917
+  },
+  "latencyMs": 66256.02,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "삼성 청년SW·AI아카데미(SSAFY) - 취업 지원 프로그램",
+    "summary": "삼성 청년SW·AI아카데미는 취업 준비 청년들을 위한 SW·AI 교육과 취업 지원 서비스를 제공하는 프로그램입니다. 85%의 수료생이 취업에 성공하며, AI 기술을 활용한 실무 프로젝트를 통해 실전 역량을 강화합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"삼성 청년SW·AI아카데미(SSAFY) - 취업 지원 프로그램\",\"summary\":\"삼성 청년SW·AI아카데미는 취업 준비 청년들을 위한 SW·AI 교육과 취업 지원 서비스를 제공하는 프로그램입니다. 85%의 수료생이 취업에 성공하며, AI 기술을 활용한 실무 프로젝트를 통해 실전 역량을 강화합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2088,
+    "completion_tokens": 121,
+    "total_tokens": 2209
+  },
+  "latencyMs": 38595.71,
+  "model": "qwen3:8b"
+}

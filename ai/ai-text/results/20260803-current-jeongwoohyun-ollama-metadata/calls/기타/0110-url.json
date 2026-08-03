@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "16가지 성격 유형 테스트",
+    "summary": "자신의 성격 유형을 알아보는 테스트입니다. 성격 유형을 파악해 자신을 더 잘 이해해보세요.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"16가지 성격 유형 테스트\",\"summary\":\"자신의 성격 유형을 알아보는 테스트입니다. 성격 유형을 파악해 자신을 더 잘 이해해보세요.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 627,
+    "completion_tokens": 63,
+    "total_tokens": 690
+  },
+  "latencyMs": 62207.18,
+  "model": "qwen3:8b"
+}

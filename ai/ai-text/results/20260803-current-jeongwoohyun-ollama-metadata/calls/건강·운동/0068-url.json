@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "유산소 운동",
+    "summary": "유산소 운동은 심폐력 향상과 체지방 감량에 효과적이며, 근육 손실을 유발하지 않으나 운동 방식과 강도에 따라 결과가 달라진다. 무산소 운동과 병행하는 것이 중요하다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"유산소 운동\",\"summary\":\"유산소 운동은 심폐력 향상과 체지방 감량에 효과적이며, 근육 손실을 유발하지 않으나 운동 방식과 강도에 따라 결과가 달라진다. 무산소 운동과 병행하는 것이 중요하다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2426,
+    "completion_tokens": 94,
+    "total_tokens": 2520
+  },
+  "latencyMs": 18070.19,
+  "model": "qwen3:8b"
+}

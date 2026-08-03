@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "명품 노트북 가방, 매일 들 수 있는 5가지 선택지 - CHIC 블로그",
+    "summary": "출퇴근용 명품 노트북 가방 5가지를 소개합니다. 디올, 고야드, 생로랑 등 각 브랜드의 실용성과 스타일을 살펴보며, 일상에 잘 어울리는 선택지를 제시합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"명품 노트북 가방, 매일 들 수 있는 5가지 선택지 - CHIC 블로그\",\"summary\":\"출퇴근용 명품 노트북 가방 5가지를 소개합니다. 디올, 고야드, 생로랑 등 각 브랜드의 실용성과 스타일을 살펴보며, 일상에 잘 어울리는 선택지를 제시합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2639,
+    "completion_tokens": 110,
+    "total_tokens": 2749
+  },
+  "latencyMs": 38221.88,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "[React-Query] useInfiniteQuery 사용해서 무한스크롤 구현하기",
+    "summary": "React-Query의 useInfiniteQuery를 활용해 무한스크롤 기능을 구현한 방법을 소개합니다. 데이터 로딩, 페이지네이션, 스켈레톤 처리 등 실제 구현 사례를 포함한 설명입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"[React-Query] useInfiniteQuery 사용해서 무한스크롤 구현하기\",\"summary\":\"React-Query의 useInfiniteQuery를 활용해 무한스크롤 기능을 구현한 방법을 소개합니다. 데이터 로딩, 페이지네이션, 스켈레톤 처리 등 실제 구현 사례를 포함한 설명입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3954,
+    "completion_tokens": 89,
+    "total_tokens": 4043
+  },
+  "latencyMs": 31192.52,
+  "model": "qwen3:8b"
+}

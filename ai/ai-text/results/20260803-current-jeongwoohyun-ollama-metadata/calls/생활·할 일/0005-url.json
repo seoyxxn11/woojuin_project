@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "냉장고 파먹기 앱 - 재료 관리와 맞춤 레시피 추천",
+    "summary": "냉장고에 있는 재료로 맛있는 집밥을 만들고, 유통기한 관리와 식비 절약을 도와주는 앱입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"냉장고 파먹기 앱 - 재료 관리와 맞춤 레시피 추천\",\"summary\":\"냉장고에 있는 재료로 맛있는 집밥을 만들고, 유통기한 관리와 식비 절약을 도와주는 앱입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1453,
+    "completion_tokens": 82,
+    "total_tokens": 1535
+  },
+  "latencyMs": 32343.45,
+  "model": "qwen3:8b"
+}

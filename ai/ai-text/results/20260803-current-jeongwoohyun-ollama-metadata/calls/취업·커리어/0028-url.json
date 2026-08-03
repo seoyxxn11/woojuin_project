@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "알고리즘 잡스 수강 후기 - 비전공자 취업 준비 경험",
+    "summary": "비전공자 프론트엔드 개발자가 알고리즘 잡스를 통해 코딩테스트 준비 경험을 공유하며, 교육 시스템과 코치의 역할에 대해 설명합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"알고리즘 잡스 수강 후기 - 비전공자 취업 준비 경험\",\"summary\":\"비전공자 프론트엔드 개발자가 알고리즘 잡스를 통해 코딩테스트 준비 경험을 공유하며, 교육 시스템과 코치의 역할에 대해 설명합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2783,
+    "completion_tokens": 89,
+    "total_tokens": 2872
+  },
+  "latencyMs": 44390.65,
+  "model": "qwen3:8b"
+}

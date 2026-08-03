@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "테스트잇 MBTI 테스트 사이트",
+    "summary": "MBTI, 성격, 얼굴인식 등 다양한 테스트가 포함된 재미있는 사이트입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"테스트잇 MBTI 테스트 사이트\",\"summary\":\"MBTI, 성격, 얼굴인식 등 다양한 테스트가 포함된 재미있는 사이트입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 636,
+    "completion_tokens": 55,
+    "total_tokens": 691
+  },
+  "latencyMs": 64711.83,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "집 정리 잘하는 5가지 노하우",
+    "summary": "집 정리 시 시간 관리와 분류, 수납 방법 등을 통해 체계적으로 정리하는 노하우 5가지를 소개합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"집 정리 잘하는 5가지 노하우\",\"summary\":\"집 정리 시 시간 관리와 분류, 수납 방법 등을 통해 체계적으로 정리하는 노하우 5가지를 소개합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1633,
+    "completion_tokens": 64,
+    "total_tokens": 1697
+  },
+  "latencyMs": 51516.21,
+  "model": "qwen3:8b"
+}

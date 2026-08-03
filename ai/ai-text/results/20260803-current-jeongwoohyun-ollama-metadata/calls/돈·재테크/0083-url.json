@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "ETF 투자 초보자 쉬운 시작 방법! 2026년 성공 전략 7가지",
+    "summary": "2026년 ETF 투자 초보자에게 실용적인 전략 7가지를 제시하며, 분산 투자, 리스크 관리, 증권사 선택 등 성공적인 투자 방법을 안내합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"ETF 투자 초보자 쉬운 시작 방법! 2026년 성공 전략 7가지\",\"summary\":\"2026년 ETF 투자 초보자에게 실용적인 전략 7가지를 제시하며, 분산 투자, 리스크 관리, 증권사 선택 등 성공적인 투자 방법을 안내합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3649,
+    "completion_tokens": 105,
+    "total_tokens": 3754
+  },
+  "latencyMs": 70637.94,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "Nerve glide - Wikipedia",
+    "summary": "신경 이동 운동은 신경을 스트레칭하여 주변 조직의 압박을 완화하고, 손목 통증, 팔 통증 등의 증상을 완화하는 물리치료법입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"Nerve glide - Wikipedia\",\"summary\":\"신경 이동 운동은 신경을 스트레칭하여 주변 조직의 압박을 완화하고, 손목 통증, 팔 통증 등의 증상을 완화하는 물리치료법입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3708,
+    "completion_tokens": 76,
+    "total_tokens": 3784
+  },
+  "latencyMs": 23780.98,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "주간별자리운세 - 무료운세 ㅣ 네이트 운세",
+    "summary": "12개의 별자리를 통해 알아보는 주간 운세 정보입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"주간별자리운세 - 무료운세 ㅣ 네이트 운세\",\"summary\":\"12개의 별자리를 통해 알아보는 주간 운세 정보입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 658,
+    "completion_tokens": 57,
+    "total_tokens": 715
+  },
+  "latencyMs": 69411.4,
+  "model": "qwen3:8b"
+}

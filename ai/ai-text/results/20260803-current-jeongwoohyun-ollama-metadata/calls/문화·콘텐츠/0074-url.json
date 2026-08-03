@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "2026년콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com",
+    "summary": "2026년 콘서트 일정 및 티켓 정보를 제공하는 Trip.com의 글입니다. 주요 아티스트들의 투어 일정과 개최 장소, 가격 등을 확인할 수 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"2026년콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com\",\"summary\":\"2026년 콘서트 일정 및 티켓 정보를 제공하는 Trip.com의 글입니다. 주요 아티스트들의 투어 일정과 개최 장소, 가격 등을 확인할 수 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2885,
+    "completion_tokens": 104,
+    "total_tokens": 2989
+  },
+  "latencyMs": 73906.77,
+  "model": "qwen3:8b"
+}

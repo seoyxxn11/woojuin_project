@@ -1,0 +1,15 @@
+{
+  "provider": "ollama",
+  "model": "qwen3:8b",
+  "items": 28,
+  "titleChanged": 19,
+  "titleKept": 9,
+  "contentSufficient": 28,
+  "contentInsufficient": 0,
+  "shardIndex": 0,
+  "shardCount": 4,
+  "totalDatasetItems": 112,
+  "output": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\results\\20260803-current-jeongwoohyun-ollama-metadata",
+  "enrichedDataset": "C:\\Users\\SSAFY\\IdeaProjects\\S15P11C105\\ai\\ai-text\\dataset\\tester\\정우현-ollama-metadata-current",
+  "createdAt": "2026-08-03T15:40:28.213003+09:00"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "주식·투자: 스마트스토어 6개월 후기",
+    "summary": "직장인의 관점에서 스마트스토어 부업 6개월간의 경험을 공유하며, 수익성, 노동강도, 마진 등을 분석한 후기입니다. 부수입을 목표로 하는 독자에게 실용적인 조언을 제공합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"주식·투자: 스마트스토어 6개월 후기\",\"summary\":\"직장인의 관점에서 스마트스토어 부업 6개월간의 경험을 공유하며, 수익성, 노동강도, 마진 등을 분석한 후기입니다. 부수입을 목표로 하는 독자에게 실용적인 조언을 제공합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2563,
+    "completion_tokens": 104,
+    "total_tokens": 2667
+  },
+  "latencyMs": 40336.86,
+  "model": "qwen3:8b"
+}

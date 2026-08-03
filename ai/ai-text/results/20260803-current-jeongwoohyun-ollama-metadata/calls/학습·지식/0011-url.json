@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "컴퓨터공학 과목 학습 가이드",
+    "summary": "전자, 미디어 트랙별로 컴퓨터공학 기본 과목을 정리한 학습 가이드입니다. 프로그래밍 언어, 알고리즘, 네트워크, 운영체제, 데이터베이스 등 핵심 과목의 강의 및 서적 정보를 제공합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"컴퓨터공학 과목 학습 가이드\",\"summary\":\"전자, 미디어 트랙별로 컴퓨터공학 기본 과목을 정리한 학습 가이드입니다. 프로그래밍 언어, 알고리즘, 네트워크, 운영체제, 데이터베이스 등 핵심 과목의 강의 및 서적 정보를 제공합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4364,
+    "completion_tokens": 106,
+    "total_tokens": 4470
+  },
+  "latencyMs": 40756.88,
+  "model": "qwen3:8b"
+}

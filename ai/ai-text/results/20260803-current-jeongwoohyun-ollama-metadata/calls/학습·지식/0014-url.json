@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "네트워크 구성과 IP 주소 개념 정리",
+    "summary": "이 글은 네트워크의 기본 구성 요소와 IP 주소, 서브넷 마스크에 대한 설명을 정리한 내용입니다. 네트워크 계층, 호스트 식별 방법, 주소 할당 방식 등을 다룹니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"네트워크 구성과 IP 주소 개념 정리\",\"summary\":\"이 글은 네트워크의 기본 구성 요소와 IP 주소, 서브넷 마스크에 대한 설명을 정리한 내용입니다. 네트워크 계층, 호스트 식별 방법, 주소 할당 방식 등을 다룹니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3192,
+    "completion_tokens": 91,
+    "total_tokens": 3283
+  },
+  "latencyMs": 43447.45,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "집 정리 꿀팁: 공간 역할 정리와 추억 물건 관리",
+    "summary": "혼자 살고 있는 1인 가구의 집 정리 방법을 소개합니다. 공간 역할을 정리하고, 필요 없는 물건은 버리거나 사진으로 저장해 정리하는 노하우를 공유합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"집 정리 꿀팁: 공간 역할 정리와 추억 물건 관리\",\"summary\":\"혼자 살고 있는 1인 가구의 집 정리 방법을 소개합니다. 공간 역할을 정리하고, 필요 없는 물건은 버리거나 사진으로 저장해 정리하는 노하우를 공유합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3586,
+    "completion_tokens": 90,
+    "total_tokens": 3676
+  },
+  "latencyMs": 31571.0,
+  "model": "qwen3:8b"
+}

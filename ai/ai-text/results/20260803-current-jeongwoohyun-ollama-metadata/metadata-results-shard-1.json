@@ -1,0 +1,422 @@
+[
+  {
+    "file": "건강·운동\\0062-url.txt",
+    "originalTitle": "어깨 통증 해소를 위한 스트레칭 자세 6가지",
+    "titleAction": "KEEP",
+    "finalTitle": "어깨 통증 해소를 위한 스트레칭 자세 6가지",
+    "summary": "어깨 통증을 완화하고 유연성을 높이기 위한 스트레칭 자세 6가지를 소개합니다. 혈액순환 개선과 부상 예방에 도움이 됩니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 20436.82,
+    "usage": {
+      "prompt_tokens": 1920,
+      "completion_tokens": 87,
+      "total_tokens": 2007
+    }
+  },
+  {
+    "file": "건강·운동\\0066-url.txt",
+    "originalTitle": "healthlab.ai.kr",
+    "titleAction": "REPLACE",
+    "finalTitle": "수면의 질 높이는 7가지 과학적 방법",
+    "summary": "수면의 질을 높이기 위한 7가지 과학적 방법을 소개합니다. 건강한 수면을 위한 실용적인 팁을 확인해보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 15146.75,
+    "usage": {
+      "prompt_tokens": 615,
+      "completion_tokens": 79,
+      "total_tokens": 694
+    }
+  },
+  {
+    "file": "건강·운동\\0070-url.txt",
+    "originalTitle": "건강iN 4월호 magazine",
+    "titleAction": "REPLACE",
+    "finalTitle": "걷기 운동법과 건강 효과",
+    "summary": "걷기는 심폐 기능 향상과 질병 예방에 효과적입니다. 올바른 자세와 방법으로 걷는 것이 중요합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 32365.86,
+    "usage": {
+      "prompt_tokens": 1265,
+      "completion_tokens": 66,
+      "total_tokens": 1331
+    }
+  },
+  {
+    "file": "기타\\0104-url.txt",
+    "originalTitle": "띠별 별자리 사주 타로 무료 운세ㅣ포춘에이드 운세",
+    "titleAction": "REPLACE",
+    "finalTitle": "별자리 운세 및 타로 무료 운세 정보",
+    "summary": "포춘에이드에서 제공하는 별자리, 띠별, 타로 등 다양한 무료 운세 정보를 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 77320.93,
+    "usage": {
+      "prompt_tokens": 1641,
+      "completion_tokens": 67,
+      "total_tokens": 1708
+    }
+  },
+  {
+    "file": "기타\\0108-url.txt",
+    "originalTitle": "Explore Your Universe, Poomang",
+    "titleAction": "REPLACE",
+    "finalTitle": "Poomang - Personality Tests & Quizzes",
+    "summary": "개인성 테스트, 트렌드 퀴즈, 사랑 심리, 운세, 타로 등 다양한 콘텐츠를 제공하는 플랫폼입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 66589.77,
+    "usage": {
+      "prompt_tokens": 623,
+      "completion_tokens": 72,
+      "total_tokens": 695
+    }
+  },
+  {
+    "file": "돈·재테크\\0082-url.txt",
+    "originalTitle": "전국투자자교육협의회",
+    "titleAction": "REPLACE",
+    "finalTitle": "ETF 투자 방법과 랩어카운트 활용 전략",
+    "summary": "ETF 투자 방법과 랩어카운트 활용 전략을 소개합니다. 초보 투자자에게 유용한 ETF 운용 방식과 자동매매 서비스를 설명합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 65842.11,
+    "usage": {
+      "prompt_tokens": 1938,
+      "completion_tokens": 84,
+      "total_tokens": 2022
+    }
+  },
+  {
+    "file": "돈·재테크\\0086-url.txt",
+    "originalTitle": "이렇게 내집마련 했더니 후회막심 BEST 3",
+    "titleAction": "REPLACE",
+    "finalTitle": "내집마련 고민 BEST 3, 전세 vs 매매 전략",
+    "summary": "내집을 사는 데 고민하는 사람들을 위한 실전 전략. 전세와 매매의 차이, 예산 관리, 대출 전략 등을 다루며 내집마련을 성공적으로 이끌어가는 방법을 안내합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 100531.21,
+    "usage": {
+      "prompt_tokens": 4139,
+      "completion_tokens": 94,
+      "total_tokens": 4233
+    }
+  },
+  {
+    "file": "돈·재테크\\0090-url.txt",
+    "originalTitle": "BNP파리바 카디프생명",
+    "titleAction": "REPLACE",
+    "finalTitle": "가계부 작성법 8가지, 부자 되는 첫걸음",
+    "summary": "가계부 작성법 8가지로 재정 관리를 시작해보세요. 매일의 작은 기록이 큰 부를 이끕니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 72291.92,
+    "usage": {
+      "prompt_tokens": 2086,
+      "completion_tokens": 71,
+      "total_tokens": 2157
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0074-url.txt",
+    "originalTitle": "2026년콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com",
+    "titleAction": "KEEP",
+    "finalTitle": "2026년콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com",
+    "summary": "2026년 콘서트 일정 및 티켓 정보를 제공하는 Trip.com의 글입니다. 주요 아티스트들의 투어 일정과 개최 장소, 가격 등을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 73906.77,
+    "usage": {
+      "prompt_tokens": 2885,
+      "completion_tokens": 104,
+      "total_tokens": 2989
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0078-url.txt",
+    "originalTitle": "현대미술부터 박신양까지, 2026 전시 모음",
+    "titleAction": "KEEP",
+    "finalTitle": "현대미술부터 박신양까지, 2026 전시 모음",
+    "summary": "2026년 전시 일정이 풍성해졌습니다. 병오년 '말의 해' 기획전, 패션 아트 전시, 자연과 생명을 주제로 한 전시, 박신양의 전시 등 다양한 전시를 소개합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 105222.11,
+    "usage": {
+      "prompt_tokens": 1390,
+      "completion_tokens": 104,
+      "total_tokens": 1494
+    }
+  },
+  {
+    "file": "생활·할 일\\0000-url.txt",
+    "originalTitle": "정리정돈 잘 하려면… “40세 넘으면 하루에 하나씩 버려야”",
+    "titleAction": "REPLACE",
+    "finalTitle": "40세 이후 정리의 중요성과 방법",
+    "summary": "40세 이후 정리는 추억과 물건의 정리로 어려움이 많지만, 시니어 라이프 오거나이저 김민주 이사의 조언을 통해 효과적으로 정리할 수 있습니다. 일일 한 가지 버리기로 시작해 삶을 정리하고, 자식에게 짐이 되지 않도록 주의해야 합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 99399.84,
+    "usage": {
+      "prompt_tokens": 5320,
+      "completion_tokens": 114,
+      "total_tokens": 5434
+    }
+  },
+  {
+    "file": "생활·할 일\\0004-url.txt",
+    "originalTitle": "1인 가구 라이프 매거진",
+    "titleAction": "KEEP",
+    "finalTitle": "1인 가구 라이프 매거진",
+    "summary": "1인 가구의 일상과 삶의 방식을 다룬 매거진입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 35568.7,
+    "usage": {
+      "prompt_tokens": 624,
+      "completion_tokens": 51,
+      "total_tokens": 675
+    }
+  },
+  {
+    "file": "생활·할 일\\0008-url.txt",
+    "originalTitle": "자취/조언",
+    "titleAction": "REPLACE",
+    "finalTitle": "자취 생활비 절약 및 생활 팁",
+    "summary": "자취 생활비 절약 방법과 생활 팁을 정리한 문서로, 전기·가스 절약, 식비 관리, 보일러 사용법, 애완동물 고려 사항 등을 다룹니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 53828.3,
+    "usage": {
+      "prompt_tokens": 9275,
+      "completion_tokens": 89,
+      "total_tokens": 9364
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0052-url.txt",
+    "originalTitle": "gsshop.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "노트북가방 검색 결과",
+    "summary": "노트북가방 관련 상품 검색 결과입니다. 다양한 스타일과 기능을 확인해보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 58675.94,
+    "usage": {
+      "prompt_tokens": 622,
+      "completion_tokens": 56,
+      "total_tokens": 678
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0056-url.txt",
+    "originalTitle": "명품 노트북 가방, 매일 들 수 있는 5가지 선택지 - CHIC 블로그",
+    "titleAction": "KEEP",
+    "finalTitle": "명품 노트북 가방, 매일 들 수 있는 5가지 선택지 - CHIC 블로그",
+    "summary": "출퇴근용 명품 노트북 가방 5가지를 소개합니다. 디올, 고야드, 생로랑 등 각 브랜드의 실용성과 스타일을 살펴보며, 일상에 잘 어울리는 선택지를 제시합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 38221.88,
+    "usage": {
+      "prompt_tokens": 2639,
+      "completion_tokens": 110,
+      "total_tokens": 2749
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0060-url.txt",
+    "originalTitle": "- YouTube",
+    "titleAction": "REPLACE",
+    "finalTitle": "유튜브 - 동영상과 음악 공유 플랫폼",
+    "summary": "유튜브는 사용자가 동영상과 음악을 감상하고, 직접 콘텐츠를 업로드해 전 세계 사람들과 공유할 수 있는 플랫폼입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 20147.43,
+    "usage": {
+      "prompt_tokens": 804,
+      "completion_tokens": 80,
+      "total_tokens": 884
+    }
+  },
+  {
+    "file": "아이디어·영감\\0095-url.txt",
+    "originalTitle": "주식·투자: 스마트스토어 6개월 후기",
+    "titleAction": "KEEP",
+    "finalTitle": "주식·투자: 스마트스토어 6개월 후기",
+    "summary": "직장인의 관점에서 스마트스토어 부업 6개월간의 경험을 공유하며, 수익성, 노동강도, 마진 등을 분석한 후기입니다. 부수입을 목표로 하는 독자에게 실용적인 조언을 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 40336.86,
+    "usage": {
+      "prompt_tokens": 2563,
+      "completion_tokens": 104,
+      "total_tokens": 2667
+    }
+  },
+  {
+    "file": "아이디어·영감\\0099-url.txt",
+    "originalTitle": "직장인 스마트스토어 1년차 수익 현실 후기",
+    "titleAction": "KEEP",
+    "finalTitle": "직장인 스마트스토어 1년차 수익 현실 후기",
+    "summary": "1년간의 스마트스토어 운영 경험을 공유하며, 초기 실패 후 사입 전략으로 매출 1000만원 달성한 성과와 꾸준함의 중요성을 강조합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 53881.52,
+    "usage": {
+      "prompt_tokens": 2106,
+      "completion_tokens": 91,
+      "total_tokens": 2197
+    }
+  },
+  {
+    "file": "여행·장소\\0032-url.txt",
+    "originalTitle": "부산 해운대 2박 3일 여행 코스 추천! 해리단길 편집샵부터 해운대 호텔 추천, 카페까지",
+    "titleAction": "REPLACE",
+    "finalTitle": "부산 해운대 2박 3일 여행 코스 추천",
+    "summary": "부산 해운대와 광안리 지역의 숙박, 맛집, 카페, 쇼핑 등 2박 3일 여행 코스를 정리한 가이드입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 42633.58,
+    "usage": {
+      "prompt_tokens": 4896,
+      "completion_tokens": 86,
+      "total_tokens": 4982
+    }
+  },
+  {
+    "file": "여행·장소\\0036-url.txt",
+    "originalTitle": "부산 혼자 여행 2박 3일 코스 일정 총정리 | 트립닷컴",
+    "titleAction": "REPLACE",
+    "finalTitle": "부산 혼자 여행 2박 3일 코스 정리",
+    "summary": "부산 혼자 여행 준비 방법, 일정, 예산, 맛집, 숙소 추천 및 안전 팁을 정리한 가이드입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 59713.81,
+    "usage": {
+      "prompt_tokens": 3786,
+      "completion_tokens": 74,
+      "total_tokens": 3860
+    }
+  },
+  {
+    "file": "음식·맛집\\0040-url.txt",
+    "originalTitle": "전주 콩나물국밥 맛집 Top100 - 다이닝코드",
+    "titleAction": "KEEP",
+    "finalTitle": "전주 콩나물국밥 맛집 Top100 - 다이닝코드",
+    "summary": "전주 콩나물국밥 맛집 100곳을 소개하는 리스트입니다. 식당 정보와 방문자 리뷰, 사진 등을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 52384.07,
+    "usage": {
+      "prompt_tokens": 713,
+      "completion_tokens": 81,
+      "total_tokens": 794
+    }
+  },
+  {
+    "file": "음식·맛집\\0044-url.txt",
+    "originalTitle": "guide.michelin.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "광화문 국밥 Seoul",
+    "summary": "광화문 지역의 국밥 맛집을 소개하는 글입니다. 서울 중심부에서 쉽게 찾을 수 있는 인기 메뉴입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 29711.01,
+    "usage": {
+      "prompt_tokens": 621,
+      "completion_tokens": 57,
+      "total_tokens": 678
+    }
+  },
+  {
+    "file": "음식·맛집\\0048-url.txt",
+    "originalTitle": "강남 무한리필 맛집 Top100 - 다이닝코드",
+    "titleAction": "KEEP",
+    "finalTitle": "강남 무한리필 맛집 Top100 - 다이닝코드",
+    "summary": "강남 지역의 인기 무한리필 맛집 100곳을 소개합니다. 식당 정보, 리뷰, 사진 등을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 29956.58,
+    "usage": {
+      "prompt_tokens": 719,
+      "completion_tokens": 75,
+      "total_tokens": 794
+    }
+  },
+  {
+    "file": "취업·커리어\\0023-url.txt",
+    "originalTitle": "[취업후기] SSAFY 에서 느낀 감사함, 저도 베풀래요",
+    "titleAction": "KEEP",
+    "finalTitle": "[취업후기] SSAFY 에서 느낀 감사함, 저도 베풀래요",
+    "summary": "SSAFY에서 느낀 감사함을 공유하며, 저도 베풀겠다는 취업 후기입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 38465.67,
+    "usage": {
+      "prompt_tokens": 727,
+      "completion_tokens": 71,
+      "total_tokens": 798
+    }
+  },
+  {
+    "file": "취업·커리어\\0027-url.txt",
+    "originalTitle": "velog.io",
+    "titleAction": "REPLACE",
+    "finalTitle": "코딩테스트 스타디 1주차 회고",
+    "summary": "코딩테스트 스타디 1주차의 핵심 내용과 배운 점을 정리한 회고 글입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 44670.03,
+    "usage": {
+      "prompt_tokens": 616,
+      "completion_tokens": 67,
+      "total_tokens": 683
+    }
+  },
+  {
+    "file": "학습·지식\\0010-url.txt",
+    "originalTitle": "프랑스어 강사 정일영 '프랑스에서 살아남기' 특강",
+    "titleAction": "KEEP",
+    "finalTitle": "프랑스어 강사 정일영 '프랑스에서 살아남기' 특강",
+    "summary": "프랑스어 강사 정일영이 프랑스 생활 팁을 공유하는 특강입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 40239.96,
+    "usage": {
+      "prompt_tokens": 629,
+      "completion_tokens": 64,
+      "total_tokens": 693
+    }
+  },
+  {
+    "file": "학습·지식\\0014-url.txt",
+    "originalTitle": "네트워크 정리1",
+    "titleAction": "REPLACE",
+    "finalTitle": "네트워크 구성과 IP 주소 개념 정리",
+    "summary": "이 글은 네트워크의 기본 구성 요소와 IP 주소, 서브넷 마스크에 대한 설명을 정리한 내용입니다. 네트워크 계층, 호스트 식별 방법, 주소 할당 방식 등을 다룹니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 43447.45,
+    "usage": {
+      "prompt_tokens": 3192,
+      "completion_tokens": 91,
+      "total_tokens": 3283
+    }
+  },
+  {
+    "file": "학습·지식\\0018-url.txt",
+    "originalTitle": "신입 백엔드 면접 질문 Ver. 2.0.7",
+    "titleAction": "KEEP",
+    "finalTitle": "신입 백엔드 면접 질문 Ver. 2.0.7",
+    "summary": "백엔드 개발자 면접에서 자주 등장하는 질문들을 정리한 글로, 취업 준비생에게 도움을 주고 있다. 내용은 질문 목록과 답변 예시를 포함하고 있으며, 지속적으로 업데이트될 예정이다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 34590.75,
+    "usage": {
+      "prompt_tokens": 3159,
+      "completion_tokens": 98,
+      "total_tokens": 3257
+    }
+  }
+]

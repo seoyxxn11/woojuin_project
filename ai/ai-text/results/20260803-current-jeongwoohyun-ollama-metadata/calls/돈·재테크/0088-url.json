@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "GQ Korea - 2026년 4월 26일 기사",
+    "summary": "2026년 4월 26일자 GQ Korea 기사입니다. 최신 문화, 패션, 인물 관련 내용을 확인할 수 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"GQ Korea - 2026년 4월 26일 기사\",\"summary\":\"2026년 4월 26일자 GQ Korea 기사입니다. 최신 문화, 패션, 인물 관련 내용을 확인할 수 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 613,
+    "completion_tokens": 78,
+    "total_tokens": 691
+  },
+  "latencyMs": 84361.88,
+  "model": "qwen3:8b"
+}

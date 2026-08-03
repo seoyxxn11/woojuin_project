@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "부산 해운대 2박 3일 여행 코스 추천",
+    "summary": "부산 해운대와 광안리 지역의 숙박, 맛집, 카페, 쇼핑 등 2박 3일 여행 코스를 정리한 가이드입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"부산 해운대 2박 3일 여행 코스 추천\",\"summary\":\"부산 해운대와 광안리 지역의 숙박, 맛집, 카페, 쇼핑 등 2박 3일 여행 코스를 정리한 가이드입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4896,
+    "completion_tokens": 86,
+    "total_tokens": 4982
+  },
+  "latencyMs": 42633.58,
+  "model": "qwen3:8b"
+}

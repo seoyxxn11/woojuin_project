@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "아침 건강식 견과류가 ‘독’이 되는 경우 - 코메디닷컴",
+    "summary": "견과류는 건강에 좋은 식품이지만, 과다 섭취나 부적절한 보관으로 인해 독소가 발생할 수 있어 주의가 필요하다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"아침 건강식 견과류가 ‘독’이 되는 경우 - 코메디닷컴\",\"summary\":\"견과류는 건강에 좋은 식품이지만, 과다 섭취나 부적절한 보관으로 인해 독소가 발생할 수 있어 주의가 필요하다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1923,
+    "completion_tokens": 87,
+    "total_tokens": 2010
+  },
+  "latencyMs": 39145.66,
+  "model": "qwen3:8b"
+}

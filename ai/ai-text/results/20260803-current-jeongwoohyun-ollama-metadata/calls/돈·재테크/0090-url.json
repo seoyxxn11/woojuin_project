@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "가계부 작성법 8가지, 부자 되는 첫걸음",
+    "summary": "가계부 작성법 8가지로 재정 관리를 시작해보세요. 매일의 작은 기록이 큰 부를 이끕니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"가계부 작성법 8가지, 부자 되는 첫걸음\",\"summary\":\"가계부 작성법 8가지로 재정 관리를 시작해보세요. 매일의 작은 기록이 큰 부를 이끕니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2086,
+    "completion_tokens": 71,
+    "total_tokens": 2157
+  },
+  "latencyMs": 72291.92,
+  "model": "qwen3:8b"
+}

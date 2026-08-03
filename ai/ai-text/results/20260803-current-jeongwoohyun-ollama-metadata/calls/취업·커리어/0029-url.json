@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "99클럽 코딩테스트 스터디 4기 후기",
+    "summary": "비전공자로 코딩테스트 스터디에 참여하며 학습한 경험과 후기입니다. 문제 구성과 스터디 방식에 대한 평가와 개선점도 포함되어 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"99클럽 코딩테스트 스터디 4기 후기\",\"summary\":\"비전공자로 코딩테스트 스터디에 참여하며 학습한 경험과 후기입니다. 문제 구성과 스터디 방식에 대한 평가와 개선점도 포함되어 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1464,
+    "completion_tokens": 84,
+    "total_tokens": 1548
+  },
+  "latencyMs": 34911.87,
+  "model": "qwen3:8b"
+}

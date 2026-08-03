@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "쿠팡 베이비 상품 쇼핑몰",
+    "summary": "쿠팡에서 구매 가능한 베이비 상품을 한눈에 살펴보는 쇼핑몰입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"쿠팡 베이비 상품 쇼핑몰\",\"summary\":\"쿠팡에서 구매 가능한 베이비 상품을 한눈에 살펴보는 쇼핑몰입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 608,
+    "completion_tokens": 64,
+    "total_tokens": 672
+  },
+  "latencyMs": 38299.6,
+  "model": "qwen3:8b"
+}

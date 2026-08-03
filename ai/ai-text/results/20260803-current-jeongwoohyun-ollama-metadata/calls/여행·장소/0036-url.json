@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "부산 혼자 여행 2박 3일 코스 정리",
+    "summary": "부산 혼자 여행 준비 방법, 일정, 예산, 맛집, 숙소 추천 및 안전 팁을 정리한 가이드입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"부산 혼자 여행 2박 3일 코스 정리\",\"summary\":\"부산 혼자 여행 준비 방법, 일정, 예산, 맛집, 숙소 추천 및 안전 팁을 정리한 가이드입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3786,
+    "completion_tokens": 74,
+    "total_tokens": 3860
+  },
+  "latencyMs": 59713.81,
+  "model": "qwen3:8b"
+}

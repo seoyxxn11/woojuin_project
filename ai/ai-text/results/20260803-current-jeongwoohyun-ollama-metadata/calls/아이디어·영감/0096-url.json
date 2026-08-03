@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "2025년 3차 부동산 대책 요약",
+    "summary": "2025년 10월 15일 발표된 3차 부동산 대책 요약 내용입니다. 규제지역 확대, 주택담보대출 한도 조정, 전세대출 DSR 반영 등 주요 내용을 정리했습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"2025년 3차 부동산 대책 요약\",\"summary\":\"2025년 10월 15일 발표된 3차 부동산 대책 요약 내용입니다. 규제지역 확대, 주택담보대출 한도 조정, 전세대출 DSR 반영 등 주요 내용을 정리했습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 979,
+    "completion_tokens": 96,
+    "total_tokens": 1075
+  },
+  "latencyMs": 43108.14,
+  "model": "qwen3:8b"
+}

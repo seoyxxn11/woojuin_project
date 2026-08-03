@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "명품 노트북 가방 검색 결과",
+    "summary": "신세계몰에서 명품 노트북 가방을 검색한 결과입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"명품 노트북 가방 검색 결과\",\"summary\":\"신세계몰에서 명품 노트북 가방을 검색한 결과입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 49,
+    "total_tokens": 667
+  },
+  "latencyMs": 33570.12,
+  "model": "qwen3:8b"
+}

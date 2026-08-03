@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "초보 직장인도 따라 할 수 있는 간단한 저축 습관",
+    "summary": "초보 직장인도 쉽게 실천할 수 있는 저축 습관 6가지를 소개합니다. 자동저축, 소액 저축, 잔돈 모으기 등으로 재정적 스트레스를 줄이고 장기적인 재테크 기반을 마련할 수 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"초보 직장인도 따라 할 수 있는 간단한 저축 습관\",\"summary\":\"초보 직장인도 쉽게 실천할 수 있는 저축 습관 6가지를 소개합니다. 자동저축, 소액 저축, 잔돈 모으기 등으로 재정적 스트레스를 줄이고 장기적인 재테크 기반을 마련할 수 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1853,
+    "completion_tokens": 105,
+    "total_tokens": 1958
+  },
+  "latencyMs": 68737.79,
+  "model": "qwen3:8b"
+}

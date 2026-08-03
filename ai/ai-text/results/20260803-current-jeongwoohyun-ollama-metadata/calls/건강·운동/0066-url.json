@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "수면의 질 높이는 7가지 과학적 방법",
+    "summary": "수면의 질을 높이기 위한 7가지 과학적 방법을 소개합니다. 건강한 수면을 위한 실용적인 팁을 확인해보세요.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"수면의 질 높이는 7가지 과학적 방법\",\"summary\":\"수면의 질을 높이기 위한 7가지 과학적 방법을 소개합니다. 건강한 수면을 위한 실용적인 팁을 확인해보세요.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 615,
+    "completion_tokens": 79,
+    "total_tokens": 694
+  },
+  "latencyMs": 15146.75,
+  "model": "qwen3:8b"
+}

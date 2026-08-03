@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "2026년대한민국콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com",
+    "summary": "2026년 대한민국 콘서트 일정 및 티켓 정보를 제공합니다. 개최 도시, 날짜, 장소, 가격 등을 확인할 수 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"2026년대한민국콘서트: 날짜, 일정 및 티켓 가격(7월 업데이트) | Trip.com\",\"summary\":\"2026년 대한민국 콘서트 일정 및 티켓 정보를 제공합니다. 개최 도시, 날짜, 장소, 가격 등을 확인할 수 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1498,
+    "completion_tokens": 100,
+    "total_tokens": 1598
+  },
+  "latencyMs": 97426.4,
+  "model": "qwen3:8b"
+}

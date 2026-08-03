@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "2026년 대한민국의 영화 목록 - 위키백과, 우리 모두의 백과사전",
+    "summary": "2026년에 개봉 예정인 대한민국 영화 목록을 정리한 문서입니다. 개봉일, 제목, 감독, 출연진, 장르 등 정보가 포함되어 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"2026년 대한민국의 영화 목록 - 위키백과, 우리 모두의 백과사전\",\"summary\":\"2026년에 개봉 예정인 대한민국 영화 목록을 정리한 문서입니다. 개봉일, 제목, 감독, 출연진, 장르 등 정보가 포함되어 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4207,
+    "completion_tokens": 93,
+    "total_tokens": 4300
+  },
+  "latencyMs": 98897.88,
+  "model": "qwen3:8b"
+}

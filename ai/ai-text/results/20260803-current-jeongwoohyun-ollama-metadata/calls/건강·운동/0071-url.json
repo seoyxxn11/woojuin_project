@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "걷기 효과 극대화하는 방법과 건강 이점",
+    "summary": "걷기는 심혈관 건강과 체중 관리에 효과적이며, 올바른 자세와 속도 조절로 운동 효과를 높일 수 있습니다. 자연 속에서 걷는 것도 정신 건강에 도움이 됩니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"걷기 효과 극대화하는 방법과 건강 이점\",\"summary\":\"걷기는 심혈관 건강과 체중 관리에 효과적이며, 올바른 자세와 속도 조절로 운동 효과를 높일 수 있습니다. 자연 속에서 걷는 것도 정신 건강에 도움이 됩니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2612,
+    "completion_tokens": 96,
+    "total_tokens": 2708
+  },
+  "latencyMs": 54579.16,
+  "model": "qwen3:8b"
+}

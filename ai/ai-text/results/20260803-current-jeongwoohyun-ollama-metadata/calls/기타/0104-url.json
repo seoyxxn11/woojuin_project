@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "별자리 운세 및 타로 무료 운세 정보",
+    "summary": "포춘에이드에서 제공하는 별자리, 띠별, 타로 등 다양한 무료 운세 정보를 확인할 수 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"별자리 운세 및 타로 무료 운세 정보\",\"summary\":\"포춘에이드에서 제공하는 별자리, 띠별, 타로 등 다양한 무료 운세 정보를 확인할 수 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1641,
+    "completion_tokens": 67,
+    "total_tokens": 1708
+  },
+  "latencyMs": 77320.93,
+  "model": "qwen3:8b"
+}

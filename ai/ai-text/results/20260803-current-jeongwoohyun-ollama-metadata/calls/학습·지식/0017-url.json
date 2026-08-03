@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "백엔드 개발 기술면접 정리 (Java)",
+    "summary": "OOP 개념과 장단점, 클래스와 객체의 차이, 자바 특징, 데이터 구조 비교 등 기술면접 준비 자료입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"백엔드 개발 기술면접 정리 (Java)\",\"summary\":\"OOP 개념과 장단점, 클래스와 객체의 차이, 자바 특징, 데이터 구조 비교 등 기술면접 준비 자료입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2138,
+    "completion_tokens": 67,
+    "total_tokens": 2205
+  },
+  "latencyMs": 38136.38,
+  "model": "qwen3:8b"
+}

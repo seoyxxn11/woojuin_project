@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "자취생 필수 생활꿀팁 10가지",
+    "summary": "자취생이라면 꼭 알아야 할 생활 팁 10가지를 정리한 글입니다. 실용적인 조언으로 생활의 질을 높일 수 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"자취생 필수 생활꿀팁 10가지\",\"summary\":\"자취생이라면 꼭 알아야 할 생활 팁 10가지를 정리한 글입니다. 실용적인 조언으로 생활의 질을 높일 수 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1020,
+    "completion_tokens": 78,
+    "total_tokens": 1098
+  },
+  "latencyMs": 53899.51,
+  "model": "qwen3:8b"
+}

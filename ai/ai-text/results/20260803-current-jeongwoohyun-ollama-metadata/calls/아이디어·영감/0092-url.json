@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "솔비나의 브런치",
+    "summary": "솔로비즈니스나이트는 외부 투자 없이 성공한 온라인 1인 창업 스토리를 모은 브런치입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"솔비나의 브런치\",\"summary\":\"솔로비즈니스나이트는 외부 투자 없이 성공한 온라인 1인 창업 스토리를 모은 브런치입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 663,
+    "completion_tokens": 74,
+    "total_tokens": 737
+  },
+  "latencyMs": 21034.37,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "삼성csr 뉴스룸",
+    "summary": "삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 페이지입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"삼성csr 뉴스룸\",\"summary\":\"삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 페이지입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 601,
+    "completion_tokens": 55,
+    "total_tokens": 656
+  },
+  "latencyMs": 45616.61,
+  "model": "qwen3:8b"
+}

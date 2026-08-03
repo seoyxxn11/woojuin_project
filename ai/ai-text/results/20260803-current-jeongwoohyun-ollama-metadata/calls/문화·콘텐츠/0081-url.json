@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 기대 영화 12편: 블록버스터부터 감성 드라마까지",
+    "summary": "2026년 개봉 예정인 영화 12편을 소개합니다. 블록버스터, 감성 드라마, 애니메이션 등 다양한 장르의 기대작들이 관객을 기다리고 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"2026년 기대 영화 12편: 블록버스터부터 감성 드라마까지\",\"summary\":\"2026년 개봉 예정인 영화 12편을 소개합니다. 블록버스터, 감성 드라마, 애니메이션 등 다양한 장르의 기대작들이 관객을 기다리고 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 3185,
+    "completion_tokens": 106,
+    "total_tokens": 3291
+  },
+  "latencyMs": 73210.37,
+  "model": "qwen3:8b"
+}

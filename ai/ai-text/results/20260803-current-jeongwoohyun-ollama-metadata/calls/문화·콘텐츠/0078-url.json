@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "현대미술부터 박신양까지, 2026 전시 모음",
+    "summary": "2026년 전시 일정이 풍성해졌습니다. 병오년 '말의 해' 기획전, 패션 아트 전시, 자연과 생명을 주제로 한 전시, 박신양의 전시 등 다양한 전시를 소개합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"현대미술부터 박신양까지, 2026 전시 모음\",\"summary\":\"2026년 전시 일정이 풍성해졌습니다. 병오년 '말의 해' 기획전, 패션 아트 전시, 자연과 생명을 주제로 한 전시, 박신양의 전시 등 다양한 전시를 소개합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1390,
+    "completion_tokens": 104,
+    "total_tokens": 1494
+  },
+  "latencyMs": 105222.11,
+  "model": "qwen3:8b"
+}

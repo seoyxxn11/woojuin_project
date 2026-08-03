@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "캠핑 텐트 리뷰 및 추천",
+    "summary": "캠핑 텐트의 종류와 선택 방법을 소개하며, 추천 제품을 비교한 리뷰입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"캠핑 텐트 리뷰 및 추천\",\"summary\":\"캠핑 텐트의 종류와 선택 방법을 소개하며, 추천 제품을 비교한 리뷰입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 602,
+    "completion_tokens": 57,
+    "total_tokens": 659
+  },
+  "latencyMs": 21682.45,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "불면증 이해하고 극복하기",
+    "summary": "불면증은 수면에 어려움을 겪는 질환으로, 피로, 집중력 저하, 건강 문제 등 다양한 영향을 미칩니다. 치료에는 인지행동치료(CBT-I)와 약물치료가 있으며, 생활습관 개선도 중요합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"불면증 이해하고 극복하기\",\"summary\":\"불면증은 수면에 어려움을 겪는 질환으로, 피로, 집중력 저하, 건강 문제 등 다양한 영향을 미칩니다. 치료에는 인지행동치료(CBT-I)와 약물치료가 있으며, 생활습관 개선도 중요합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 5204,
+    "completion_tokens": 98,
+    "total_tokens": 5302
+  },
+  "latencyMs": 32639.29,
+  "model": "qwen3:8b"
+}

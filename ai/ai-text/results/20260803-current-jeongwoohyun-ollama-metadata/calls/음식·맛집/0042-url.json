@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "40년간 콩나물국밥 하나만 팔아온 전주 왱이집",
+    "summary": "전주 한옥마을 근처에 위치한 왱이집은 40년간 콩나물국밥만 팔아온 맛집으로, 체인점 없이 고집을 지키며 유명하다. 자연스러운 육수와 아삭한 콩나물의 식감으로 사랑받고 있으며, 주차장도 넓어 편리하다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"40년간 콩나물국밥 하나만 팔아온 전주 왱이집\",\"summary\":\"전주 한옥마을 근처에 위치한 왱이집은 40년간 콩나물국밥만 팔아온 맛집으로, 체인점 없이 고집을 지키며 유명하다. 자연스러운 육수와 아삭한 콩나물의 식감으로 사랑받고 있으며, 주차장도 넓어 편리하다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 2797,
+    "completion_tokens": 137,
+    "total_tokens": 2934
+  },
+  "latencyMs": 18807.55,
+  "model": "qwen3:8b"
+}

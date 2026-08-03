@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "부산 2박3일 여행코스 추천 가볼만한곳 총정리",
+    "summary": "부산 2박 3일 여행코스를 소개합니다. 초량밀면, 더베이 101, 광안리 드론쇼, 민락회타운 등 다양한 명소와 맛집을 포함한 여행 일정을 확인해보세요.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"부산 2박3일 여행코스 추천 가볼만한곳 총정리\",\"summary\":\"부산 2박 3일 여행코스를 소개합니다. 초량밀면, 더베이 101, 광안리 드론쇼, 민락회타운 등 다양한 명소와 맛집을 포함한 여행 일정을 확인해보세요.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4856,
+    "completion_tokens": 105,
+    "total_tokens": 4961
+  },
+  "latencyMs": 53313.95,
+  "model": "qwen3:8b"
+}

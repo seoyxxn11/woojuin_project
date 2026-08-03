@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "네트워크 CS 정리1탄",
+    "summary": "네트워크 기초 개념 정리한 글입니다. 핵심 내용을 체계적으로 정리해두었습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"네트워크 CS 정리1탄\",\"summary\":\"네트워크 기초 개념 정리한 글입니다. 핵심 내용을 체계적으로 정리해두었습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 611,
+    "completion_tokens": 57,
+    "total_tokens": 668
+  },
+  "latencyMs": 39681.59,
+  "model": "qwen3:8b"
+}

@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "걷기 운동법과 건강 효과",
+    "summary": "걷기는 심폐 기능 향상과 질병 예방에 효과적입니다. 올바른 자세와 방법으로 걷는 것이 중요합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"걷기 운동법과 건강 효과\",\"summary\":\"걷기는 심폐 기능 향상과 질병 예방에 효과적입니다. 올바른 자세와 방법으로 걷는 것이 중요합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1265,
+    "completion_tokens": 66,
+    "total_tokens": 1331
+  },
+  "latencyMs": 32365.86,
+  "model": "qwen3:8b"
+}

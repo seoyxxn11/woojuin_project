@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "보험계리사 시험 준비 및 현실 정리",
+    "summary": "보험계리사 1차, 2차 시험 준비 방법과 연봉, 현실 문제 등을 다룬 글입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"보험계리사 시험 준비 및 현실 정리\",\"summary\":\"보험계리사 1차, 2차 시험 준비 방법과 연봉, 현실 문제 등을 다룬 글입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 1970,
+    "completion_tokens": 59,
+    "total_tokens": 2029
+  },
+  "latencyMs": 40616.96,
+  "model": "qwen3:8b"
+}

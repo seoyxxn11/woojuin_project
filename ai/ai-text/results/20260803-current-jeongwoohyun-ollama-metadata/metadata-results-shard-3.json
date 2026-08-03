@@ -1,0 +1,422 @@
+[
+  {
+    "file": "건강·운동\\0064-url.txt",
+    "originalTitle": "불면증 이해하고 극복하기",
+    "titleAction": "KEEP",
+    "finalTitle": "불면증 이해하고 극복하기",
+    "summary": "불면증은 수면에 어려움을 겪는 질환으로, 피로, 집중력 저하, 건강 문제 등 다양한 영향을 미칩니다. 치료에는 인지행동치료(CBT-I)와 약물치료가 있으며, 생활습관 개선도 중요합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 32639.29,
+    "usage": {
+      "prompt_tokens": 5204,
+      "completion_tokens": 98,
+      "total_tokens": 5302
+    }
+  },
+  {
+    "file": "건강·운동\\0068-url.txt",
+    "originalTitle": "유산소 운동",
+    "titleAction": "KEEP",
+    "finalTitle": "유산소 운동",
+    "summary": "유산소 운동은 심폐력 향상과 체지방 감량에 효과적이며, 근육 손실을 유발하지 않으나 운동 방식과 강도에 따라 결과가 달라진다. 무산소 운동과 병행하는 것이 중요하다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 18070.19,
+    "usage": {
+      "prompt_tokens": 2426,
+      "completion_tokens": 94,
+      "total_tokens": 2520
+    }
+  },
+  {
+    "file": "기타\\0102-url.txt",
+    "originalTitle": "이번 주 별자리 운세",
+    "titleAction": "KEEP",
+    "finalTitle": "이번 주 별자리 운세",
+    "summary": "별자리별 이번 주 운세를 확인할 수 있는 페이지입니다. 재물, 연애, 타로, 토정비결 등 다양한 운세 정보가 제공됩니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 76485.38,
+    "usage": {
+      "prompt_tokens": 856,
+      "completion_tokens": 69,
+      "total_tokens": 925
+    }
+  },
+  {
+    "file": "기타\\0106-url.txt",
+    "originalTitle": "심심할 땐? 봉봉! 재밌는 무료 심리 테스트 맛집",
+    "titleAction": "KEEP",
+    "finalTitle": "심심할 땐? 봉봉! 재밌는 무료 심리 테스트 맛집",
+    "summary": "MBTI, 연애, 궁합, 운세 등 다양한 심리 테스트를 무료로 제공하는 사이트입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 68241.0,
+    "usage": {
+      "prompt_tokens": 680,
+      "completion_tokens": 74,
+      "total_tokens": 754
+    }
+  },
+  {
+    "file": "기타\\0110-url.txt",
+    "originalTitle": "16가지 성격 유형 테스트",
+    "titleAction": "KEEP",
+    "finalTitle": "16가지 성격 유형 테스트",
+    "summary": "자신의 성격 유형을 알아보는 테스트입니다. 성격 유형을 파악해 자신을 더 잘 이해해보세요.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 62207.18,
+    "usage": {
+      "prompt_tokens": 627,
+      "completion_tokens": 63,
+      "total_tokens": 690
+    }
+  },
+  {
+    "file": "돈·재테크\\0084-url.txt",
+    "originalTitle": "[신간소개] 내집마련 트랜드 2026 - 부동산 시장 대전환, 8인 전문가가 제시하는 생존 전략 - 얼리어답터뉴스 - 얼리어답터신문",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026 부동산 트렌드, 8인 전문가가 제시하는 생존 전략",
+    "summary": "2026년 부동산 시장의 변화를 예측하고, 실수요자와 투자자에게 실전 전략을 제시하는 신간 도서입니다. 데이터와 현장 경험을 바탕으로 시장 분석과 리스크 경고를 담고 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 89967.42,
+    "usage": {
+      "prompt_tokens": 3244,
+      "completion_tokens": 112,
+      "total_tokens": 3356
+    }
+  },
+  {
+    "file": "돈·재테크\\0088-url.txt",
+    "originalTitle": "www.gqkorea.co.kr",
+    "titleAction": "REPLACE",
+    "finalTitle": "GQ Korea - 2026년 4월 26일 기사",
+    "summary": "2026년 4월 26일자 GQ Korea 기사입니다. 최신 문화, 패션, 인물 관련 내용을 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 84361.88,
+    "usage": {
+      "prompt_tokens": 613,
+      "completion_tokens": 78,
+      "total_tokens": 691
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0072-url.txt",
+    "originalTitle": "내가 바란 것은 다정한 말 한마디였소 [𝐏𝐋𝐀𝐘𝐋𝐈𝐒𝐓]",
+    "titleAction": "KEEP",
+    "finalTitle": "내가 바란 것은 다정한 말 한마디였소 [𝐏𝐋𝐀𝐘𝐋𝐈𝐒𝐓]",
+    "summary": "호정이 참여한 플레이리스트를 소개하는 음악 영상입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 66072.9,
+    "usage": {
+      "prompt_tokens": 664,
+      "completion_tokens": 63,
+      "total_tokens": 727
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0076-url.txt",
+    "originalTitle": "2026 트로트 콘서트 7월 8월 공연 일정 티켓 예매방법",
+    "titleAction": "REPLACE",
+    "finalTitle": "2026년 트로트 콘서트 및 축제 일정과 티켓 예매 방법",
+    "summary": "2026년 7월부터 전국에서 열리는 트로트 콘서트와 축제의 일정, 공연장소, 티켓 가격 및 예매 방법을 정리한 글입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 109237.7,
+    "usage": {
+      "prompt_tokens": 2776,
+      "completion_tokens": 101,
+      "total_tokens": 2877
+    }
+  },
+  {
+    "file": "문화·콘텐츠\\0080-url.txt",
+    "originalTitle": "2026년 대한민국의 영화 목록 - 위키백과, 우리 모두의 백과사전",
+    "titleAction": "KEEP",
+    "finalTitle": "2026년 대한민국의 영화 목록 - 위키백과, 우리 모두의 백과사전",
+    "summary": "2026년에 개봉 예정인 대한민국 영화 목록을 정리한 문서입니다. 개봉일, 제목, 감독, 출연진, 장르 등 정보가 포함되어 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 98897.88,
+    "usage": {
+      "prompt_tokens": 4207,
+      "completion_tokens": 93,
+      "total_tokens": 4300
+    }
+  },
+  {
+    "file": "생활·할 일\\0002-url.txt",
+    "originalTitle": "집 정리 잘하는 5가지 노하우",
+    "titleAction": "KEEP",
+    "finalTitle": "집 정리 잘하는 5가지 노하우",
+    "summary": "집 정리 시 시간 관리와 분류, 수납 방법 등을 통해 체계적으로 정리하는 노하우 5가지를 소개합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 51516.21,
+    "usage": {
+      "prompt_tokens": 1633,
+      "completion_tokens": 64,
+      "total_tokens": 1697
+    }
+  },
+  {
+    "file": "생활·할 일\\0006-url.txt",
+    "originalTitle": "apps.apple.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "앱스토어 앱 정보 페이지",
+    "summary": "앱스토어에서 특정 앱의 상세 정보를 제공하는 페이지입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 28670.22,
+    "usage": {
+      "prompt_tokens": 608,
+      "completion_tokens": 46,
+      "total_tokens": 654
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0050-url.txt",
+    "originalTitle": "Mac Studio",
+    "titleAction": "KEEP",
+    "finalTitle": "Mac Studio",
+    "summary": "Mac Studio는 M4 Max 또는 M3 Ultra 칩을 탑재한 고성능 프로용 데스크탑으로, 빠른 처리 속도와 강력한 AI 기능을 제공합니다. 다양한 디스플레이와 외장 장치 연결이 가능하며, 환경에 유리한 설계로 주목받고 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 82926.31,
+    "usage": {
+      "prompt_tokens": 3615,
+      "completion_tokens": 102,
+      "total_tokens": 3717
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0054-url.txt",
+    "originalTitle": "대용량 노트북가방 추천 2024 BEST 8 가성비, 디시 할인상품 구매후기,판매량,가격비교,리뷰제공",
+    "titleAction": "REPLACE",
+    "finalTitle": "대용량 노트북가방 2024 TOP8 추천 및 구매후기",
+    "summary": "2024년 대용량 노트북가방 TOP8을 소개합니다. 판매량, 가성비, 리뷰 등을 기준으로 선정한 제품들로 구매에 도움이 되는 정보를 제공합니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 29787.27,
+    "usage": {
+      "prompt_tokens": 2359,
+      "completion_tokens": 95,
+      "total_tokens": 2454
+    }
+  },
+  {
+    "file": "쇼핑·제품\\0058-url.txt",
+    "originalTitle": "www.coupang.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "쿠팡 실내 텐트 검색 결과",
+    "summary": "쿠팡에서 실내용 텐트를 검색한 결과입니다. 다양한 모델과 가격대를 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 27084.79,
+    "usage": {
+      "prompt_tokens": 607,
+      "completion_tokens": 65,
+      "total_tokens": 672
+    }
+  },
+  {
+    "file": "아이디어·영감\\0093-url.txt",
+    "originalTitle": "온라인 1인 창업, 어떤 아이템으로 시작해야 할까요?",
+    "titleAction": "KEEP",
+    "finalTitle": "온라인 1인 창업, 어떤 아이템으로 시작해야 할까요?",
+    "summary": "1인 창업 아이템을 찾기 어려운 분들을 위한 5가지 질문을 통해 관심사, 시장성, 타깃을 좁혀가며 창업 아이템을 정리하는 방법을 소개합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 33774.05,
+    "usage": {
+      "prompt_tokens": 5297,
+      "completion_tokens": 91,
+      "total_tokens": 5388
+    }
+  },
+  {
+    "file": "아이디어·영감\\0097-url.txt",
+    "originalTitle": "underdogs.co.kr",
+    "titleAction": "REPLACE",
+    "finalTitle": "집에서 시작할 수 있는 창업 아이디어 20가지",
+    "summary": "집에서 시작할 수 있는 창업 아이디어 20가지를 소개합니다. 실용적이고 접근성이 높은 아이디어를 확인해보세요.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 56239.64,
+    "usage": {
+      "prompt_tokens": 624,
+      "completion_tokens": 76,
+      "total_tokens": 700
+    }
+  },
+  {
+    "file": "아이디어·영감\\0101-url.txt",
+    "originalTitle": "apps.apple.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "앱스토어 - 앱 정보",
+    "summary": "앱스토어에서 제공되는 앱의 상세 정보를 확인할 수 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 37370.47,
+    "usage": {
+      "prompt_tokens": 608,
+      "completion_tokens": 47,
+      "total_tokens": 655
+    }
+  },
+  {
+    "file": "여행·장소\\0034-url.txt",
+    "originalTitle": "속초 해변 근처 감성 카페 TOP10 : 오션뷰, 디저트, 인생샷까지 완벽 정복!",
+    "titleAction": "REPLACE",
+    "finalTitle": "속초 해변 근처 감성 카페 TOP10 : 오션뷰, 디저트, 인생샷까지 완벽 정복!",
+    "summary": "속초 해변 근처에서 가볼 만한 감성 카페 10곳을 소개합니다. 오션뷰, 인테리어, 맛있는 디저트, 인생샷 명소까지 모두 갖춘 카페로 여행이나 힐링에 추천합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 63492.8,
+    "usage": {
+      "prompt_tokens": 2409,
+      "completion_tokens": 121,
+      "total_tokens": 2530
+    }
+  },
+  {
+    "file": "여행·장소\\0038-url.txt",
+    "originalTitle": "2018 평창, 미리 가보는 강원도 해안 마을 여행",
+    "titleAction": "KEEP",
+    "finalTitle": "2018 평창, 미리 가보는 강원도 해안 마을 여행",
+    "summary": "2018 평창 동계올림픽과 겨울바다 여행을 함께 즐길 수 있는 강원도 해안 마을 여행을 소개합니다. 자연과 문화, 맛집을 즐길 수 있는 에어비앤비 숙소를 추천합니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 58233.85,
+    "usage": {
+      "prompt_tokens": 2026,
+      "completion_tokens": 105,
+      "total_tokens": 2131
+    }
+  },
+  {
+    "file": "음식·맛집\\0042-url.txt",
+    "originalTitle": "40년간 콩나물국밥 하나만 팔아온 전주 왱이집",
+    "titleAction": "KEEP",
+    "finalTitle": "40년간 콩나물국밥 하나만 팔아온 전주 왱이집",
+    "summary": "전주 한옥마을 근처에 위치한 왱이집은 40년간 콩나물국밥만 팔아온 맛집으로, 체인점 없이 고집을 지키며 유명하다. 자연스러운 육수와 아삭한 콩나물의 식감으로 사랑받고 있으며, 주차장도 넓어 편리하다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 18807.55,
+    "usage": {
+      "prompt_tokens": 2797,
+      "completion_tokens": 137,
+      "total_tokens": 2934
+    }
+  },
+  {
+    "file": "음식·맛집\\0046-url.txt",
+    "originalTitle": "강남구 맛집 Top100 - 다이닝코드",
+    "titleAction": "KEEP",
+    "finalTitle": "강남구 맛집 Top100 - 다이닝코드",
+    "summary": "강남구 맛집 100곳 순위와 리뷰, 사진 등을 확인할 수 있는 페이지입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 29115.41,
+    "usage": {
+      "prompt_tokens": 707,
+      "completion_tokens": 61,
+      "total_tokens": 768
+    }
+  },
+  {
+    "file": "취업·커리어\\0021-url.txt",
+    "originalTitle": "[React-Query] useInfiniteQuery 사용해서 무한스크롤 구현하기",
+    "titleAction": "KEEP",
+    "finalTitle": "[React-Query] useInfiniteQuery 사용해서 무한스크롤 구현하기",
+    "summary": "React-Query의 useInfiniteQuery를 활용해 무한스크롤 기능을 구현한 방법을 소개합니다. 데이터 로딩, 페이지네이션, 스켈레톤 처리 등 실제 구현 사례를 포함한 설명입니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 31192.52,
+    "usage": {
+      "prompt_tokens": 3954,
+      "completion_tokens": 89,
+      "total_tokens": 4043
+    }
+  },
+  {
+    "file": "취업·커리어\\0025-url.txt",
+    "originalTitle": "csr.samsung.com",
+    "titleAction": "REPLACE",
+    "finalTitle": "삼성csr 뉴스룸",
+    "summary": "삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 페이지입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 45616.61,
+    "usage": {
+      "prompt_tokens": 601,
+      "completion_tokens": 55,
+      "total_tokens": 656
+    }
+  },
+  {
+    "file": "취업·커리어\\0029-url.txt",
+    "originalTitle": "99클럽 코딩테스트 스터디 4기 후기",
+    "titleAction": "KEEP",
+    "finalTitle": "99클럽 코딩테스트 스터디 4기 후기",
+    "summary": "비전공자로 코딩테스트 스터디에 참여하며 학습한 경험과 후기입니다. 문제 구성과 스터디 방식에 대한 평가와 개선점도 포함되어 있습니다.",
+    "contentSufficient": true,
+    "titleChanged": false,
+    "latencyMs": 34911.87,
+    "usage": {
+      "prompt_tokens": 1464,
+      "completion_tokens": 84,
+      "total_tokens": 1548
+    }
+  },
+  {
+    "file": "학습·지식\\0012-url.txt",
+    "originalTitle": "velog.io",
+    "titleAction": "REPLACE",
+    "finalTitle": "CS 전공지식 정리: 네트워크 기초",
+    "summary": "CS 전공자용 네트워크 기초 개념 정리 글입니다. 핵심 개념을 체계적으로 정리해두었습니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 37694.02,
+    "usage": {
+      "prompt_tokens": 630,
+      "completion_tokens": 68,
+      "total_tokens": 698
+    }
+  },
+  {
+    "file": "학습·지식\\0016-url.txt",
+    "originalTitle": "velog.io",
+    "titleAction": "REPLACE",
+    "finalTitle": "신입 백엔드 개발자 기술 면접 질문 정리",
+    "summary": "신입 백엔드 개발자에게 필요한 기술 면접 질문을 정리한 글입니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 38655.56,
+    "usage": {
+      "prompt_tokens": 624,
+      "completion_tokens": 61,
+      "total_tokens": 685
+    }
+  },
+  {
+    "file": "학습·지식\\0020-url.txt",
+    "originalTitle": "🧑‍💻[백엔드] 자기소개서/면접 꿀Tip",
+    "titleAction": "REPLACE",
+    "finalTitle": "백엔드 자기소개서 및 면접 팁",
+    "summary": "백엔드 개발자로서 자기소개서와 면접 준비 팁을 정리한 글입니다. 수상 경력 작성, 면접 질문 대응 전략, 코딩 테스트 전략 등을 다룹니다.",
+    "contentSufficient": true,
+    "titleChanged": true,
+    "latencyMs": 44252.76,
+    "usage": {
+      "prompt_tokens": 2389,
+      "completion_tokens": 86,
+      "total_tokens": 2475
+    }
+  }
+]

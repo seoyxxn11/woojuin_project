@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "코딩테스트 스타디 1주차 회고",
+    "summary": "코딩테스트 스타디 1주차의 핵심 내용과 배운 점을 정리한 회고 글입니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"코딩테스트 스타디 1주차 회고\",\"summary\":\"코딩테스트 스타디 1주차의 핵심 내용과 배운 점을 정리한 회고 글입니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 616,
+    "completion_tokens": 67,
+    "total_tokens": 683
+  },
+  "latencyMs": 44670.03,
+  "model": "qwen3:8b"
+}

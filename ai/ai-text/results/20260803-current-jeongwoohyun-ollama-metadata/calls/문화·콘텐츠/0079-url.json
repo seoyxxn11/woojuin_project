@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "KEEP",
+    "finalTitle": "2026년 서울전시 일정",
+    "summary": "2026년 서울에서 진행되는 다양한 예술 전시 일정을 정리한 안내입니다. 무료입장 전시도 포함되어 있습니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"KEEP\",\"finalTitle\":\"2026년 서울전시 일정\",\"summary\":\"2026년 서울에서 진행되는 다양한 예술 전시 일정을 정리한 안내입니다. 무료입장 전시도 포함되어 있습니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4371,
+    "completion_tokens": 63,
+    "total_tokens": 4434
+  },
+  "latencyMs": 83150.57,
+  "model": "qwen3:8b"
+}

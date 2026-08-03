@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "2026 베스트 루이스 해밀턴 호텔 해운대 여행 후기 및 팁",
+    "summary": "부산 해운대의 베스트 루이스 해밀턴 호텔에서의 3일간 여행 일정과 실용적인 팁을 소개합니다. 호텔 체크인, 식사, 관광 명소 탐방, 호캉스 등 다양한 경험을 공유합니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"2026 베스트 루이스 해밀턴 호텔 해운대 여행 후기 및 팁\",\"summary\":\"부산 해운대의 베스트 루이스 해밀턴 호텔에서의 3일간 여행 일정과 실용적인 팁을 소개합니다. 호텔 체크인, 식사, 관광 명소 탐방, 호캉스 등 다양한 경험을 공유합니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 4905,
+    "completion_tokens": 111,
+    "total_tokens": 5016
+  },
+  "latencyMs": 64254.26,
+  "model": "qwen3:8b"
+}

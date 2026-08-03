@@ -1,0 +1,16 @@
+{
+  "parsed": {
+    "titleAction": "REPLACE",
+    "finalTitle": "자취 생활비 절약 및 생활 팁",
+    "summary": "자취 생활비 절약 방법과 생활 팁을 정리한 문서로, 전기·가스 절약, 식비 관리, 보일러 사용법, 애완동물 고려 사항 등을 다룹니다.",
+    "contentSufficient": true
+  },
+  "rawText": "{\"titleAction\":\"REPLACE\",\"finalTitle\":\"자취 생활비 절약 및 생활 팁\",\"summary\":\"자취 생활비 절약 방법과 생활 팁을 정리한 문서로, 전기·가스 절약, 식비 관리, 보일러 사용법, 애완동물 고려 사항 등을 다룹니다.\",\"contentSufficient\":true}",
+  "usage": {
+    "prompt_tokens": 9275,
+    "completion_tokens": 89,
+    "total_tokens": 9364
+  },
+  "latencyMs": 53828.3,
+  "model": "qwen3:8b"
+}

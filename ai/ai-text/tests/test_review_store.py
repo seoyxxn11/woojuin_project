@@ -8,6 +8,7 @@ from src.review_store import (
     create_review_state,
     discover_draft_files,
     discover_draft_folders,
+    discover_review_conditions,
     read_json_or_jsonl,
     summarize_draft,
 )
@@ -203,3 +204,17 @@ def test_draft_folder_discovery_and_summary(tmp_path: Path):
     assert summary["ready"] is True
     assert summary["matchedItemCount"] == 2
     assert summary["categoryCount"] == 2
+
+
+def test_review_conditions_exclude_raw_response_folders(tmp_path: Path):
+    group = tmp_path / "results" / "run-001"
+    condition = group / "existing11-ai"
+    raw = condition / "raw-responses"
+    raw.mkdir(parents=True)
+    (condition / "review-draft.json").write_text(
+        json.dumps({"items": []}), encoding="utf-8"
+    )
+    (raw / "URL-001.json").write_text(json.dumps({"raw": "value"}), encoding="utf-8")
+    (group / "run-summary.json").write_text(json.dumps({"scenarios": []}), encoding="utf-8")
+
+    assert discover_review_conditions(group) == [condition.resolve()]

@@ -126,6 +126,22 @@ def discover_draft_files(folder: Path) -> list[Path]:
     )
 
 
+def discover_review_conditions(group: Path) -> list[Path]:
+    """실행 폴더에서 원시 응답 폴더를 제외하고 실제 검토 조건만 반환합니다."""
+    folders = discover_draft_folders([group])
+    preferred_names = {
+        "review-draft.json",
+        "review-draft.jsonl",
+        "evaluation-results.json",
+    }
+    preferred = [
+        folder
+        for folder in folders
+        if any(path.name in preferred_names for path in discover_draft_files(folder))
+    ]
+    return preferred or folders
+
+
 def _dataset_item(path: Path, dataset_dir: Path) -> dict[str, Any]:
     raw = path.read_text(encoding="utf-8-sig").strip()
     relative = path.relative_to(dataset_dir).as_posix()

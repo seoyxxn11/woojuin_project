@@ -31,6 +31,102 @@ python main.py `
   --concurrency 4
 ```
 
+### 동적 카테고리 7개 조건 테스트
+
+`run_dynamic_category_experiments.py`는 기존 기준 테스트 코드를 보존하면서 다음
+7개 조건을 각각 또는 한 번에 실행합니다.
+
+```text
+0. baseline11     기존 11개만 사용 (기준 테스트)
+1. existing11-ai  기존 11개 + 필요할 때 AI 카테고리 생성
+2. ai-only        기존 카테고리 없이 AI 카테고리 생성
+3. existing3-ai   기존 3개 + 필요할 때 AI 카테고리 생성
+4. existing5-ai   기존 5개 + 필요할 때 AI 카테고리 생성
+5. existing7-ai   기존 7개 + 필요할 때 AI 카테고리 생성
+6. cumulative     생성된 카테고리를 다음 데이터의 선택지에 누적
+```
+
+인자 없이 실행하면 번호를 고르는 메뉴가 표시됩니다.
+
+```powershell
+python run_dynamic_category_experiments.py
+```
+
+목록만 확인하거나 원하는 조건 하나를 직접 실행할 수도 있습니다.
+
+```powershell
+python run_dynamic_category_experiments.py --list-scenarios
+
+python run_dynamic_category_experiments.py `
+  --scenario existing11-ai `
+  --limit 10
+```
+
+3개·5개·7개 조건만 연속 실행하려면 `reduced-ai`, 기준 테스트를 포함한 7개
+조건을 모두 실행하려면 `all`을 선택합니다.
+
+```powershell
+# 3개/5개/7개 + AI 생성
+python run_dynamic_category_experiments.py `
+  --scenario reduced-ai `
+  --model openrouter-qwen3-8b `
+  --dataset-root ".\dataset\tester\정우현" `
+  --input-type url `
+  --limit 10 `
+  --concurrency 4
+
+# 기준 테스트를 포함한 전체 7개 조건
+python run_dynamic_category_experiments.py `
+  --scenario all `
+  --model openrouter-qwen3-8b `
+  --dataset-root ".\dataset\tester\정우현" `
+  --input-type url `
+  --limit 10 `
+  --concurrency 4
+```
+
+API를 호출하기 전에 조건, 실제 시작 카테고리와 예상 요청 수를 확인하려면
+`--dry-run`을 추가합니다. `cumulative`는 앞 데이터에서 생성한 카테고리를 다음
+프롬프트에 넣어야 하므로 이 조건만 요청 순서를 보장하기 위해 동시 요청 수 1로
+실행됩니다. 누적 조건도 기존 카테고리와 함께 시작하려면
+`--cumulative-seed-count 3`, `5`, `7`, `11` 중 하나를 지정합니다.
+
+기존 3개·5개·7개는 `config/categories.json`의 순서 중 현재 데이터셋 폴더에
+실제로 존재하는 카테고리만 사용합니다. 정우현 데이터는 `기타`를 포함한 11개
+폴더이므로 기준 테스트와 `existing11-ai` 모두 정확히 그 11개로 시작합니다.
+
+기준 테스트는 별도로 유지된 기존 명령으로도 이전과 똑같이 실행할 수 있습니다.
+
+```powershell
+python main.py `
+  --model openrouter-qwen3-8b `
+  --dataset-root ".\dataset\tester\정우현" `
+  --input-type url `
+  --category-only `
+  --limit 10 `
+  --repeat 1 `
+  --concurrency 4
+```
+
+전체 실행 결과는 하나의 상위 폴더 아래 조건별로 분리됩니다.
+
+```text
+results/<시각>-dynamic-categories-openrouter-qwen3-8b/
+├── baseline11/
+├── existing11-ai/
+├── ai-only/
+├── existing3-ai/
+├── existing5-ai/
+├── existing7-ai/
+├── cumulative/
+└── run-summary.json
+```
+
+동적 조건 폴더에는 GUI가 우선 인식하는 `review-draft.json`과 전체 실행 정보,
+원시 응답, CSV 및 보고서가 함께 저장됩니다. 검토 GUI에서는 위의
+`<시각>-dynamic-categories-...` 상위 폴더를 선택한 뒤 조건을 고르면 됩니다.
+원시 응답 폴더와 실행 메타데이터 폴더는 조건 목록에서 자동으로 제외됩니다.
+
 한 번의 테스트에서 비교한 조건을 각각 하위 폴더로 저장합니다.
 
 ```text

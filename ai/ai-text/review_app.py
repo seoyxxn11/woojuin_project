@@ -15,7 +15,7 @@ from src.review_store import (
     ReviewStore,
     create_review_state,
     discover_draft_files,
-    discover_draft_folders,
+    discover_review_conditions,
     discover_result_groups,
     read_json_or_jsonl,
     summarize_draft,
@@ -189,9 +189,7 @@ group = selection_col.selectbox(
     groups,
     format_func=display_path,
 )
-conditions = discover_draft_folders([group])
-if discover_draft_files(group):
-    conditions = [group, *(path for path in conditions if path != group)]
+conditions = discover_review_conditions(group)
 condition = condition_col.selectbox(
     "실험 조건",
     conditions,

@@ -5,6 +5,7 @@ import json
 import platform
 import statistics
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -76,6 +77,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--test-ids", nargs="+")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--repeat", type=int, default=1)
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        default=1,
+        help="API 모델의 동시 요청 수 (기본: 1, OpenRouter 권장: 4)",
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--memo-only", action="store_true")
     parser.add_argument("--include-json", action="store_true")
@@ -271,7 +278,7 @@ def print_suites(suites: dict[str, tuple[str, ...]]) -> None:
 
 def print_dry_run(
     modes: list[str], selections_by_mode: dict[str, list[ModelSelection]], data: list[dict],
-    repeat: int, settings: Settings, output: Path, api_key_env: str,
+    repeat: int, settings: Settings, output: Path, api_key_env: str, concurrency: int = 1,
 ) -> None:
     print("[DRY-RUN] 실제 모델 호출과 결과 파일 생성을 수행하지 않습니다.")
     print(f"테스트 모드: {', '.join(modes)}")
@@ -294,12 +301,18 @@ def print_dry_run(
         for mode in modes
     )
     print(f"전체 예상 요청 수: {total}")
-    needs_openai = any(
-        selection.config and selection.config.provider == "openai"
-        for mode in modes for selection in selections_by_mode[mode]
-    )
-    print(f"필요한 환경 변수: {api_key_env if needs_openai else '없음'}")
-    print(f"{api_key_env}: {'configured' if settings.key_configured(api_key_env) else 'missing'}")
+    api_envs: list[str] = []
+    for mode in modes:
+        for selection in selections_by_mode[mode]:
+            if selection.config and selection.config.provider == "openai":
+                api_envs.append(api_key_env)
+            elif selection.config and selection.config.provider == "openrouter":
+                api_envs.append("OPENROUTER_API_KEY")
+    api_envs = list(dict.fromkeys(api_envs))
+    print(f"필요한 환경 변수: {', '.join(api_envs) if api_envs else '없음'}")
+    for env_name in api_envs:
+        print(f"{env_name}: {'configured' if settings.key_configured(env_name) else 'missing'}")
+    print(f"API 동시 요청 수: {concurrency}")
     print(f"결과 저장 예정 경로: {output}")
 
 
@@ -307,18 +320,44 @@ def _model_available(wanted: str, installed: list[str]) -> bool:
     return wanted in installed or any(name.split(":")[0] == wanted for name in installed)
 
 
-def make_providers(config: dict[str, Any], settings: Settings) -> dict[str, Any]:
-    client = OllamaClient(config["ollamaBaseUrl"], config["connectTimeoutSeconds"], config["readTimeoutSeconds"])
+def make_providers(
+    config: dict[str, Any],
+    settings: Settings,
+    provider_names: set[str] | None = None,
+) -> dict[str, Any]:
+    requested = provider_names or {"ollama", "openai"}
+    providers: dict[str, Any] = {}
+    if "ollama" in requested:
+        client = OllamaClient(
+            config["ollamaBaseUrl"],
+            config["connectTimeoutSeconds"],
+            config["readTimeoutSeconds"],
+        )
+        providers["ollama"] = OllamaProvider(
+            client,
+            config["keepAlive"],
+            config.get("seed"),
+            config.get("contextLength"),
+            config.get("thinking"),
+        )
     openai_config = config.get("openai", {})
     api_key_env = openai_config.get("apiKeyEnv", "OPENAI_API_KEY")
-    return {
-        "ollama": OllamaProvider(client, config["keepAlive"], config.get("seed"), config.get("contextLength"), config.get("thinking")),
-        "openai": OpenAIProvider(
+    if "openai" in requested:
+        providers["openai"] = OpenAIProvider(
             settings.key_for(api_key_env),
             base_url=openai_config.get("baseUrl"),
             api_mode=openai_config.get("apiMode", "responses"),
-        ),
-    }
+        )
+    openrouter_config = config.get("openrouter", {})
+    openrouter_api_key_env = openrouter_config.get("apiKeyEnv", "OPENROUTER_API_KEY")
+    if "openrouter" in requested:
+        providers["openrouter"] = OpenAIProvider(
+            settings.key_for(openrouter_api_key_env),
+            base_url=openrouter_config.get("baseUrl", "https://openrouter.ai/api/v1"),
+            api_mode=openrouter_config.get("apiMode", "chat_completions"),
+            provider_name="openrouter",
+        )
+    return providers
 
 
 def preflight(
@@ -336,8 +375,12 @@ def preflight(
         config = selection.config
         if selection.status != "READY" or config is None:
             result.append(selection)
-        elif config.provider == "openai" and not settings.key_configured(api_key_env):
-            result.append(ModelSelection(config.id, config, "SKIPPED", "MISSING_API_KEY", f"{api_key_env} is not configured"))
+        elif config.provider in {"openai", "openrouter"}:
+            required_env = "OPENROUTER_API_KEY" if config.provider == "openrouter" else api_key_env
+            if not settings.key_configured(required_env):
+                result.append(ModelSelection(config.id, config, "SKIPPED", "MISSING_API_KEY", f"{required_env} is not configured"))
+            else:
+                result.append(selection)
         elif config.provider == "ollama" and ollama_error:
             result.append(ModelSelection(config.id, config, "SKIPPED", "CONNECTION_ERROR", ollama_error))
         elif config.provider == "ollama" and installed is not None and not _model_available(config.model, installed):
@@ -423,6 +466,7 @@ def run_mode(
     settings: Settings,
     repeat: int,
     write_url_summaries: bool = True,
+    concurrency: int = 1,
 ) -> None:
     if mode == "category-only":
         before = len(data)
@@ -433,7 +477,12 @@ def run_mode(
         if not data:
             raise ValueError("category-only에 사용할 수 있는 데이터가 없습니다.")
     out.mkdir(parents=True, exist_ok=True)
-    providers = make_providers(project_config, settings)
+    required_providers = {
+        selection.config.provider
+        for selection in selections
+        if selection.status == "READY" and selection.config is not None
+    }
+    providers = make_providers(project_config, settings, required_providers)
     openai_config = project_config.get("openai", {})
     api_key_env = openai_config.get("apiKeyEnv", "OPENAI_API_KEY")
     selections = preflight(selections, providers, settings, api_key_env)
@@ -463,7 +512,12 @@ def run_mode(
         ],
         "startedAt": started.isoformat(), "completedAt": None, "status": "RUNNING",
         "environment": f"{platform.system()} {platform.release()}, Python {platform.python_version()}",
-        "environmentVariables": {api_key_env: "configured" if settings.key_configured(api_key_env) else "missing"},
+        "environmentVariables": {
+            api_key_env: "configured" if settings.key_configured(api_key_env) else "missing",
+            "OPENROUTER_API_KEY": (
+                "configured" if settings.key_configured("OPENROUTER_API_KEY") else "missing"
+            ),
+        },
         "options": {
             "temperatureRequested": project_config.get("temperature"), "repeat": repeat,
             "categoryDescriptions": project_config.get("includeCategoryDescriptions", True),
@@ -472,6 +526,7 @@ def run_mode(
             "serviceMaxCategories": project_config.get("classification", {}).get("service_max_categories"),
             "ensureAtLeastOne": project_config.get("classification", {}).get("ensure_at_least_one"),
             "writeUrlSummary": write_url_summaries,
+            "concurrencyRequested": concurrency,
             "streaming": False, "externalSearch": False, "tools": False,
             "providerDifferences": "GMS OpenAI 호환 Chat Completions에는 temperature/seed/contextLength를 적용하지 않음; 토큰 측정 기준은 provider별로 다를 수 있음",
             "openaiEndpoint": openai_config.get("baseUrl", "default"),
@@ -503,30 +558,64 @@ def run_mode(
                 print(f"[SKIPPED] {selection.error_type}: {selection.error_message}")
                 continue
             provider = providers[config.provider]
+            prepared_requests: list[ModelRequest] = []
+            for prepared_item in data:
+                for prepared_run_number in range(1, repeat + 1):
+                    prepared_input = model_input_for_mode(prepared_item, mode)
+                    prepared_prompt = build_prompt(
+                        prompt_template,
+                        prepared_input,
+                        categories,
+                        prepared_item.get("title", ""),
+                        definitions,
+                        include_category_descriptions=project_config.get(
+                            "includeCategoryDescriptions", True
+                        ),
+                    )
+                    prepared_requests.append(ModelRequest(
+                        prepared_prompt,
+                        schema,
+                        mode,
+                        prepared_item["testId"],
+                        project_config.get("temperature"),
+                    ))
+
+            effective_concurrency = concurrency if config.provider in {"openai", "openrouter"} else 1
+            metadata["options"].setdefault("concurrencyApplied", {})[config.id] = effective_concurrency
+            print(f"[INFO] 동시 요청 수: {effective_concurrency}")
+
+            def generate_safely(prepared_request: ModelRequest) -> ModelResponse:
+                try:
+                    return provider.generate(prepared_request, config)
+                except Exception as exc:
+                    return ModelResponse(
+                        provider=config.provider, model_id=config.id, requested_model=config.model,
+                        status="FAILED", error_type="UNKNOWN_ERROR", error_message=sanitize_error(exc),
+                    )
+
+            executor: ThreadPoolExecutor | None = None
+            response_futures = None
+            if effective_concurrency > 1:
+                executor = ThreadPoolExecutor(
+                    max_workers=effective_concurrency,
+                    thread_name_prefix=f"{safe_filename(config.id)}-api",
+                )
+                response_futures = [
+                    executor.submit(generate_safely, prepared_request)
+                    for prepared_request in prepared_requests
+                ]
             request_number = 0
             for item in data:
                 for run_number in range(1, repeat + 1):
                     request_number += 1
                     print(f"[{request_number}/{len(data) * repeat} 요청] {item['testId']} ({run_number}/{repeat})")
                     model_input = model_input_for_mode(item, mode)
-                    built_prompt = build_prompt(
-                        prompt_template,
-                        model_input,
-                        categories,
-                        item.get("title", ""),
-                        definitions,
-                        include_category_descriptions=project_config.get(
-                            "includeCategoryDescriptions", True
-                        ),
+                    request = prepared_requests[request_number - 1]
+                    response = (
+                        response_futures[request_number - 1].result()
+                        if response_futures is not None
+                        else generate_safely(request)
                     )
-                    request = ModelRequest(built_prompt, schema, mode, item["testId"], project_config.get("temperature"))
-                    try:
-                        response = provider.generate(request, config)
-                    except Exception as exc:
-                        response = ModelResponse(
-                            provider=config.provider, model_id=config.id, requested_model=config.model,
-                            status="FAILED", error_type="UNKNOWN_ERROR", error_message=sanitize_error(exc),
-                        )
                     info = (
                         parse_multi_label_response(response.raw_text, definitions, integrated=False)
                         if mode == "category-only"
@@ -615,6 +704,8 @@ def run_mode(
                             "errorType": response.error_type, "errorMessage": response.error_message,
                         })
                     print(f"[{response.status}] {response.error_type or 'OK'} | {response.latency_ms:.1f}ms")
+            if executor is not None:
+                executor.shutdown(wait=True)
             model_status = "COMPLETED" if all(r["response"]["status"] == "SUCCESS" for r in model_records) else "COMPLETED_WITH_FAILURES"
             write_json(out / "model-results" / f"{safe_filename(config.id)}.json", {
                 "modelId": config.id, "provider": config.provider, "requestedModel": config.model,
@@ -1042,6 +1133,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if options.repeat < 1:
             raise ValueError("--repeat은 1 이상이어야 합니다")
+        if options.concurrency < 1:
+            raise ValueError("--concurrency는 1 이상이어야 합니다.")
         models = load_models(ROOT / "config" / "models.yaml")
         suites = load_suites(ROOT / "config" / "model-suites.yaml")
         pricing = load_pricing(ROOT / "config" / "model-pricing.yaml")
@@ -1067,7 +1160,10 @@ def main(argv: list[str] | None = None) -> int:
         output = planned_output(modes, selector)
         api_key_env = project_config.get("openai", {}).get("apiKeyEnv", "OPENAI_API_KEY")
         if options.dry_run:
-            print_dry_run(modes, selections_by_mode, data, options.repeat, settings, output, api_key_env)
+            print_dry_run(
+                modes, selections_by_mode, data, options.repeat, settings, output,
+                api_key_env, options.concurrency,
+            )
             return 0
         if len(modes) > 1:
             output.mkdir(parents=True)
@@ -1078,7 +1174,7 @@ def main(argv: list[str] | None = None) -> int:
             run_mode(
                 mode, mode_out, selections_by_mode[mode], data, categories,
                 definitions, dataset_type, project_config, pricing, settings,
-                options.repeat, options.write_url_summary,
+                options.repeat, options.write_url_summary, options.concurrency,
             )
         if len(modes) > 1:
             report_output = generate_multi_mode_report(output, modes)

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import threading
+import time
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -306,6 +308,74 @@ def test_model_failure_does_not_stop_next_model(monkeypatch, tmp_path):
     assert good_row["threshold"] == 0.65
     assert good_row["serviceSelectedCategoryIds"] == ["LEARNING_KNOWLEDGE"]
     assert good_row["serviceRelaxedCorrect"] is True
+
+
+def test_openrouter_requests_run_with_requested_concurrency(monkeypatch, tmp_path):
+    class Provider:
+        def __init__(self):
+            self.active = 0
+            self.max_active = 0
+            self.lock = threading.Lock()
+
+        def generate(self, _request, config):
+            with self.lock:
+                self.active += 1
+                self.max_active = max(self.max_active, self.active)
+            time.sleep(0.05)
+            with self.lock:
+                self.active -= 1
+            return ModelResponse(
+                "openrouter",
+                config.id,
+                config.model,
+                raw_text='{"categories":[{"categoryId":"STUDY","categoryName":"Study","score":0.9}]}',
+                status="SUCCESS",
+                structured_output_applied=True,
+            )
+
+    provider = Provider()
+    monkeypatch.setattr(app, "make_providers", lambda *_: {"openrouter": provider})
+    config = ModelConfig(
+        "openrouter-test", "openrouter", "qwen/qwen3-8b", True, "test",
+        ("text",), ("category-only",),
+    )
+    selections = [app.ModelSelection(config.id, config)]
+    data = [
+        {
+            "testId": f"TEXT-{index:03d}",
+            "datasetType": "memo",
+            "input": f"memo {index}",
+            "expected": {
+                "categories": ["Study"],
+                "requiredKeywords": [],
+                "summaryPoints": [],
+                "forbiddenClaims": [],
+            },
+        }
+        for index in range(1, 5)
+    ]
+    definitions = [
+        {"id": "STUDY", "name": "Study", "description": "Study notes", "examples": []},
+        {"id": "OTHER", "name": "기타", "description": "Other notes", "examples": []},
+    ]
+    app.run_mode(
+        "category-only",
+        tmp_path,
+        selections,
+        data,
+        ["Study"],
+        definitions,
+        "memo",
+        app.load_project_config(),
+        PricingConfig("USD", "per_1m_tokens", None, {}),
+        Settings(openrouter_api_key="test-key"),
+        1,
+        concurrency=4,
+    )
+
+    assert provider.max_active == 4
+    rows = json.loads((tmp_path / "evaluation-results.json").read_text(encoding="utf-8"))
+    assert [row["testId"] for row in rows] == [f"TEXT-{index:03d}" for index in range(1, 5)]
 
 
 def test_api_key_is_not_written_to_results(monkeypatch, tmp_path):

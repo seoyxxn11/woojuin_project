@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 class Settings:
     openai_api_key: str | None = None
     gms_key: str | None = None
+    openrouter_api_key: str | None = None
 
     @property
     def openai_api_key_configured(self) -> bool:
@@ -21,6 +22,8 @@ class Settings:
             return self.gms_key
         if env_name == "OPENAI_API_KEY":
             return self.openai_api_key
+        if env_name == "OPENROUTER_API_KEY":
+            return self.openrouter_api_key
         return None
 
     def key_configured(self, env_name: str) -> bool:
@@ -42,4 +45,9 @@ def load_settings(root: Path | None = None) -> Settings:
         load_dotenv(dotenv_path=env_path, override=False)
     openai_value = os.getenv("OPENAI_API_KEY", "").strip()
     gms_value = os.getenv("GMS_KEY", "").strip() or openai_value
-    return Settings(openai_api_key=openai_value or None, gms_key=gms_value or None)
+    openrouter_value = os.getenv("OPENROUTER_API_KEY", "").strip()
+    return Settings(
+        openai_api_key=openai_value or None,
+        gms_key=gms_value or None,
+        openrouter_api_key=openrouter_value or None,
+    )

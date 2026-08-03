@@ -37,3 +37,16 @@ models:
       - summary-only
       - metadata-only
       - integrated
+
+  - id: openrouter-qwen3-8b
+    provider: openrouter
+    model: qwen/qwen3-8b
+    enabled: true
+    purpose: OpenRouter API를 통한 Qwen3 8B 병렬 테스트
+    inputTypes:
+      - text
+    testModes:
+      - category-only
+      - summary-only
+      - metadata-only
+      - integrated

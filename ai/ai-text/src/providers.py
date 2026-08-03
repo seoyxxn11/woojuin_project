@@ -65,6 +65,7 @@ SECRET_PATTERNS = (
     re.compile(r"\bsk-[A-Za-z0-9_-]{8,}\b"),
     re.compile(r"(?i)(OPENAI_API_KEY\s*[:=]\s*)[^\s,;]+"),
     re.compile(r"(?i)(GMS_KEY\s*[:=]\s*)[^\s,;]+"),
+    re.compile(r"(?i)(OPENROUTER_API_KEY\s*[:=]\s*)[^\s,;]+"),
     re.compile(r"(?i)(incorrect api key provided:\s*)[^\s,'\"}]+"),
 )
 
@@ -80,6 +81,7 @@ def sanitize_error(value: object, secrets: tuple[str, ...] = ()) -> str:
     text = SECRET_PATTERNS[3].sub(r"\1[REDACTED]", text)
     text = SECRET_PATTERNS[4].sub(r"\1[REDACTED]", text)
     text = SECRET_PATTERNS[5].sub(r"\1[REDACTED]", text)
+    text = SECRET_PATTERNS[6].sub(r"\1[REDACTED]", text)
     return text[:1000]
 
 
@@ -161,11 +163,13 @@ class OpenAIProvider:
         max_retries: int = 2,
         backoff_seconds: float = 1.0,
         sleeper: Callable[[float], None] = time.sleep,
+        provider_name: str = "openai",
     ):
         self.api_key = api_key
         self.max_retries = max_retries
         self.backoff_seconds = backoff_seconds
         self.sleeper = sleeper
+        self.provider_name = provider_name
         if api_mode not in {"responses", "chat_completions"}:
             raise ValueError(f"지원하지 않는 OpenAI API 모드: {api_mode}")
         self.api_mode = api_mode
@@ -184,9 +188,13 @@ class OpenAIProvider:
     def generate(self, request: ModelRequest, model_config: ModelConfig) -> ModelResponse:
         if not self.api_key:
             return ModelResponse(
-                provider="openai", model_id=model_config.id, requested_model=model_config.model,
+                provider=self.provider_name, model_id=model_config.id, requested_model=model_config.model,
                 status="SKIPPED", error_type="MISSING_API_KEY",
-                error_message="OPENAI_API_KEY is not configured",
+                error_message=(
+                    "OPENROUTER_API_KEY is not configured"
+                    if self.provider_name == "openrouter"
+                    else "OPENAI_API_KEY is not configured"
+                ),
             )
         started = time.perf_counter()
         attempts = 0
@@ -219,7 +227,7 @@ class OpenAIProvider:
                         structured, fallback, fallback_reason, raw_text=raw_text,
                     )
                 return ModelResponse(
-                    provider="openai", model_id=model_config.id, requested_model=model_config.model,
+                    provider=self.provider_name, model_id=model_config.id, requested_model=model_config.model,
                     resolved_model=getattr(response, "model", None) or model_config.model,
                     raw_text=raw_text, input_tokens=input_tokens, output_tokens=output_tokens,
                     total_tokens=total_tokens if total_tokens is not None else _sum_optional(input_tokens, output_tokens),
@@ -231,8 +239,16 @@ class OpenAIProvider:
                     structured_output_fallback_reason=fallback_reason,
                     provider_metadata={
                         "temperatureRequested": request.temperature,
-                        "temperatureApplied": None,
-                        "note": "OpenAI Responses API 호출에는 temperature를 적용하지 않음",
+                        "temperatureApplied": (
+                            request.temperature
+                            if self.provider_name == "openrouter" and self.api_mode == "chat_completions"
+                            else None
+                        ),
+                        "note": (
+                            "OpenRouter Chat Completions에 temperature 적용"
+                            if self.provider_name == "openrouter" and self.api_mode == "chat_completions"
+                            else "OpenAI Responses API 호출에는 temperature를 적용하지 않음"
+                        ),
                         "streaming": False,
                         "toolsEnabled": False,
                         "apiMode": self.api_mode,
@@ -271,6 +287,8 @@ class OpenAIProvider:
                 "messages": [{"role": "user", "content": request.prompt}],
                 "stream": False,
             }
+            if self.provider_name == "openrouter" and request.temperature is not None:
+                kwargs["temperature"] = request.temperature
             if structured:
                 kwargs["response_format"] = {
                     "type": "json_schema",
@@ -293,8 +311,8 @@ class OpenAIProvider:
             }
         return self.client.responses.create(**kwargs)
 
-    @staticmethod
     def _failure(
+        self,
         config: ModelConfig,
         started: float,
         attempts: int,
@@ -306,7 +324,7 @@ class OpenAIProvider:
         raw_text: str = "",
     ) -> ModelResponse:
         return ModelResponse(
-            provider="openai", model_id=config.id, requested_model=config.model,
+            provider=self.provider_name, model_id=config.id, requested_model=config.model,
             raw_text=raw_text, latency_ms=(time.perf_counter() - started) * 1000,
             attempt_count=attempts, status="FAILED", error_type=error_type,
             error_message=message, structured_output_applied=structured_applied,

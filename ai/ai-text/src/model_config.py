@@ -7,7 +7,7 @@ from typing import Any
 import yaml
 
 
-SUPPORTED_PROVIDERS = {"ollama", "openai"}
+SUPPORTED_PROVIDERS = {"ollama", "openai", "openrouter"}
 SUPPORTED_TEST_MODES = {"category-only", "summary-only", "metadata-only", "integrated"}
 REQUIRED_FIELDS = {"id", "provider", "model", "enabled", "purpose", "inputTypes", "testModes"}
 

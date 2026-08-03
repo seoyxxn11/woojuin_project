@@ -13,6 +13,10 @@ openai:
   apiKeyEnv: GMS_KEY
   baseUrl: https://gms.ssafy.io/gmsapi/api.openai.com/v1
   apiMode: chat_completions
+openrouter:
+  apiKeyEnv: OPENROUTER_API_KEY
+  baseUrl: https://openrouter.ai/api/v1
+  apiMode: chat_completions
 embedding:
   model: text-embedding-3-small
   batchSize: 64

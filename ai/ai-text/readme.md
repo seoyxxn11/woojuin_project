@@ -4,6 +4,86 @@
 
 기존 Ollama·OpenAI 모델 비교 코드와 결과는 과거 모델 선정 근거를 재현할 수 있도록 보존합니다.
 
+## 로컬 AI 카테고리 검토 GUI
+
+자동 카테고리 실험 결과를 사람이 승인하거나 직접 수정할 때 Streamlit
+기반 로컬 GUI를 사용합니다.
+
+```powershell
+cd ai\ai-text
+python -m pip install -r requirements.txt
+python -m streamlit run review_app.py
+```
+
+### OpenRouter 병렬 실행
+
+`.env`에 `OPENROUTER_API_KEY`를 설정한 뒤 `openrouter-qwen3-8b` 모델을 선택합니다.
+`--concurrency 4`는 같은 모델에 최대 4개 요청을 동시에 보내며, 결과 파일은 입력 순서대로 저장합니다.
+
+```powershell
+python main.py `
+  --model openrouter-qwen3-8b `
+  --dataset-root ".\dataset\tester\정우현" `
+  --input-type url `
+  --category-only `
+  --limit 10 `
+  --repeat 1 `
+  --concurrency 4
+```
+
+한 번의 테스트에서 비교한 조건을 각각 하위 폴더로 저장합니다.
+
+```text
+review-inputs/
+└── WS-001/
+    └── 20260803-auto-category-test/
+        ├── existing-11-plus-ai/
+        │   └── review-draft.json
+        ├── ai-only/
+        │   └── review-draft.json
+        └── existing-5-plus-ai/
+            └── review-draft.json
+```
+
+GUI에서 상위 결과 폴더를 고른 다음 검토할 실험 조건과 JSON을 선택합니다.
+각 데이터에는 제목, AI 요약, 초기 카테고리만 표시됩니다.
+
+- `승인하고 다음으로`: 초기 카테고리를 그대로 사용합니다.
+- `거부하고 이 이름으로 변경`: 사람이 입력한 카테고리명을 최종값으로
+  저장합니다. 기존 이름과 새로운 이름을 모두 사용할 수 있습니다.
+
+검토용 JSON은 다음 형식을 권장합니다.
+
+```json
+{
+  "items": [
+    {
+      "sourcePath": "학습·지식/0100-url.txt",
+      "title": "Spring Security 정리",
+      "generatedSummary": "Spring Security의 인증 흐름을 설명합니다.",
+      "generatedCategory": "백엔드 개발"
+    }
+  ]
+}
+```
+
+항목 식별자는 `itemId`, `testId`, `id`, `localId`, `sourcePath` 중 하나를
+사용합니다. 생성 카테고리는 `aiCategory`, `generatedCategory`,
+`category`, `parsedResponse.category` 순서로, 요약은 `summary`,
+`generatedSummary`, `aiSummary`, `parsedResponse.summary` 순서로
+인식합니다.
+
+검토가 끝나면 다음 표 두 개를 화면에 표시하고 CSV와 JSON으로 받을 수
+있습니다.
+
+- 카테고리 결과표: 초기 카테고리, 초기 데이터 수, 승인·거부 수와 비율
+- 데이터 상세표: 제목, 요약, 초기 카테고리, 승인·거부 결과, 거부 후
+  카테고리와 최종 카테고리
+
+검토 상태는 `review-data/WS-001/reviews/<실험 조건>/`에 자동 저장되어
+브라우저를 닫아도 이어서 할 수 있습니다. 다른 저장 위치는
+`WOOJUIN_REVIEW_ROOT`, 추가 탐색 위치는 `WOOJUIN_DRAFT_ROOTS`로 지정합니다.
+
 ## 카테고리
 
 최종 카테고리는 다음 12개입니다.

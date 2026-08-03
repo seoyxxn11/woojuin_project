@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"커리어 지식 플랫폼, 서핏","url":"https://surfit.io/","content":"매일 만나는 커리어 성장 커스텀 피드","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://cdn.surfit.io/og-image.png","description":"커리어 플랫폼"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

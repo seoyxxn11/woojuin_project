@@ -1,0 +1,43 @@
+{
+  "testId": "URL-016",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":1.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 1.0
+      }
+    ]
+  },
+  "inputTokens": 2052,
+  "outputTokens": 29,
+  "totalTokens": 2081,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2739.8345,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 540.383,
+    "generationDurationMs": 1794.875,
+    "tokensPerSecond": 16.157114005153563,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

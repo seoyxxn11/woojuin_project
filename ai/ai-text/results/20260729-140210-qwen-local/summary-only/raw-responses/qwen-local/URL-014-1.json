@@ -1,0 +1,37 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"지친 일상 속에서 따뜻한 위로와 동기부여를 주는 감성 에세이 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "지친 일상 속에서 따뜻한 위로와 동기부여를 주는 감성 에세이 글입니다."
+  },
+  "inputTokens": 314,
+  "outputTokens": 33,
+  "totalTokens": 347,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3024.2123,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 434.4091,
+    "generationDurationMs": 2034.47,
+    "tokensPerSecond": 16.220440704458657,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[]}",
+  "parsedOutput": {
+    "categories": []
+  },
+  "inputTokens": 1979,
+  "outputTokens": 5,
+  "totalTokens": 1984,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 1200.702,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 443.851,
+    "generationDurationMs": 320.383,
+    "tokensPerSecond": 15.606321184332502,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

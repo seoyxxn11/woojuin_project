@@ -1,0 +1,37 @@
+{
+  "testId": "URL-006",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"미국 배당주 투자 전략으로 월 50만원의 배당금을 목표로 하는 포트폴리오 구성 방법과 세금 처리 방법을 다룹니다.\"}",
+  "parsedOutput": {
+    "summary": "미국 배당주 투자 전략으로 월 50만원의 배당금을 목표로 하는 포트폴리오 구성 방법과 세금 처리 방법을 다룹니다."
+  },
+  "inputTokens": 316,
+  "outputTokens": 50,
+  "totalTokens": 366,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4043.662,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 407.3922,
+    "generationDurationMs": 3085.341,
+    "tokensPerSecond": 16.205664138907174,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

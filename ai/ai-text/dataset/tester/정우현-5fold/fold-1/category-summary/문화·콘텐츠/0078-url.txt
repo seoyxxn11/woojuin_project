@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"Lofi Hip Hop Radio - Beats to Relax/Study to","url":"https://www.youtube.com/watch?v=chilled_cow_lofi","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/chilled_cow_lofi/hqdefault.jpg","description":"Lofi Girl"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,43 @@
+{
+  "testId": "URL-011",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":0.9}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.9
+      }
+    ]
+  },
+  "inputTokens": 2048,
+  "outputTokens": 26,
+  "totalTokens": 2074,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2596.2564,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 403.9375,
+    "generationDurationMs": 1825.776,
+    "tokensPerSecond": 14.240520195248486,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-021",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"전자트랙 과목은 강의 계획서를 바탕으로 작성되었으며, 인터넷프로토콜과 tcp/ip프로토콜과 유사한 내용을 다룹니다.\"}",
+  "parsedOutput": {
+    "summary": "전자트랙 과목은 강의 계획서를 바탕으로 작성되었으며, 인터넷프로토콜과 tcp/ip프로토콜과 유사한 내용을 다룹니다."
+  },
+  "inputTokens": 313,
+  "outputTokens": 49,
+  "totalTokens": 362,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3689.4885,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 421.7998,
+    "generationDurationMs": 2735.358,
+    "tokensPerSecond": 17.913560126316188,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

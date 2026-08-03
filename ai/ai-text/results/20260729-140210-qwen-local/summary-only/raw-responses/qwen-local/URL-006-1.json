@@ -1,0 +1,37 @@
+{
+  "testId": "URL-006",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"직장인이라면 월 100만원 수익을 올릴 수 있는 현실적인 부업 3가지를 소개하는 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "직장인이라면 월 100만원 수익을 올릴 수 있는 현실적인 부업 3가지를 소개하는 영상입니다."
+  },
+  "inputTokens": 282,
+  "outputTokens": 40,
+  "totalTokens": 322,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3487.1061,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 459.0741,
+    "generationDurationMs": 2504.315,
+    "tokensPerSecond": 15.972431583087591,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

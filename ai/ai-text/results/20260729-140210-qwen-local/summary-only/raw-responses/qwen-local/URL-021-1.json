@@ -1,0 +1,37 @@
+{
+  "testId": "URL-021",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"프론트엔드에서 디자인 패턴의 필요성에 대해 최근 등장한 패턴들과 관련된 간단한 의견을 정리한 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "프론트엔드에서 디자인 패턴의 필요성에 대해 최근 등장한 패턴들과 관련된 간단한 의견을 정리한 글입니다."
+  },
+  "inputTokens": 377,
+  "outputTokens": 45,
+  "totalTokens": 422,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3753.6668,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.3075,
+    "generationDurationMs": 2767.174,
+    "tokensPerSecond": 16.262078206863755,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

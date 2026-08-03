@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"굽은 등 펴는 폼롤러 10분 스트레칭 루틴","url":"https://www.youtube.com/watch?v=foam_roller_stretching","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/foam_roller_stretching/hqdefault.jpg","description":"빵느"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

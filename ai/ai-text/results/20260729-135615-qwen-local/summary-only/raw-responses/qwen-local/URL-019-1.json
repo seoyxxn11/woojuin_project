@@ -1,0 +1,37 @@
+{
+  "testId": "URL-019",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"삼성 청년SW∙AI아카데미는 미취업 청년들에게 SW 교육과 취업 연계 서비스를 지원하는 사회공헌 프로그램입니다.\"}",
+  "parsedOutput": {
+    "summary": "삼성 청년SW∙AI아카데미는 미취업 청년들에게 SW 교육과 취업 연계 서비스를 지원하는 사회공헌 프로그램입니다."
+  },
+  "inputTokens": 318,
+  "outputTokens": 45,
+  "totalTokens": 363,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3752.0234,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 429.8223,
+    "generationDurationMs": 2817.865,
+    "tokensPerSecond": 15.96953722055528,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

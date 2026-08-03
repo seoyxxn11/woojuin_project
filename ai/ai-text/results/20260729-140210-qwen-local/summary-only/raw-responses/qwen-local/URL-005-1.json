@@ -1,0 +1,37 @@
+{
+  "testId": "URL-005",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"연말정산 시 소득공제 한도를 채우기 위해 신용카드와 체크카드의 사용 비율을 조절하는 지출 노하우를 소개합니다.\"}",
+  "parsedOutput": {
+    "summary": "연말정산 시 소득공제 한도를 채우기 위해 신용카드와 체크카드의 사용 비율을 조절하는 지출 노하우를 소개합니다."
+  },
+  "inputTokens": 323,
+  "outputTokens": 50,
+  "totalTokens": 373,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4112.9847,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 432.3238,
+    "generationDurationMs": 3137.699,
+    "tokensPerSecond": 15.935244266578788,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

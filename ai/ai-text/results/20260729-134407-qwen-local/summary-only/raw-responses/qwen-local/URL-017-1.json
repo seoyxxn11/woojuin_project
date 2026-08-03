@@ -1,0 +1,37 @@
+{
+  "testId": "URL-017",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"매콤한 크림 파스타와 오므라이스가 특징인 성수동 맛집 '성수다락'을 소개합니다.\"}",
+  "parsedOutput": {
+    "summary": "매콤한 크림 파스타와 오므라이스가 특징인 성수동 맛집 '성수다락'을 소개합니다."
+  },
+  "inputTokens": 325,
+  "outputTokens": 37,
+  "totalTokens": 362,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2885.4858,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 408.3664,
+    "generationDurationMs": 1931.69,
+    "tokensPerSecond": 19.15421211478032,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

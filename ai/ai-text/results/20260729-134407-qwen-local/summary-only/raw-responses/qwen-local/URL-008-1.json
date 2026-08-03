@@ -1,0 +1,37 @@
+{
+  "testId": "URL-008",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"Lofi Hip Hop Radio - Beats to Relax/Study to라는 제목의 유튜브 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "Lofi Hip Hop Radio - Beats to Relax/Study to라는 제목의 유튜브 영상입니다."
+  },
+  "inputTokens": 269,
+  "outputTokens": 28,
+  "totalTokens": 297,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2618.4639,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.229,
+    "generationDurationMs": 1688.476,
+    "tokensPerSecond": 16.58300147588713,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

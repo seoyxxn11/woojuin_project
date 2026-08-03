@@ -1,0 +1,43 @@
+{
+  "testId": "URL-004",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"OTHER\",\"categoryName\":\"기타\",\"score\":1.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 1.0
+      }
+    ]
+  },
+  "inputTokens": 1980,
+  "outputTokens": 21,
+  "totalTokens": 2001,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2117.2772,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 454.9594,
+    "generationDurationMs": 1231.048,
+    "tokensPerSecond": 17.05863621889642,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

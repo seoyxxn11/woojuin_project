@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"트리플 - 다낭 3박 4일 가이드","url":"https://www.triple.guide/cities/123","content":"다낭 가볼 만한 곳, 핑크성당, 바나힐 투어 총정리","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://triple.img/danang.jpg","description":"다낭 여행 가이드"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

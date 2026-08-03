@@ -1,0 +1,37 @@
+{
+  "testId": "URL-012",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"갤럭시 S24 울트라의 카메라 AI 기능의 장단점을 분석하는 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "갤럭시 S24 울트라의 카메라 AI 기능의 장단점을 분석하는 영상입니다."
+  },
+  "inputTokens": 285,
+  "outputTokens": 34,
+  "totalTokens": 319,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3052.9809,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 435.838,
+    "generationDurationMs": 2108.469,
+    "tokensPerSecond": 16.125444576135575,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

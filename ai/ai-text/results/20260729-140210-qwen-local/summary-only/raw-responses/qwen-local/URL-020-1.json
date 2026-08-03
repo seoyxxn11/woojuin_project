@@ -1,0 +1,37 @@
+{
+  "testId": "URL-020",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"본 포스팅은 널널한 개발자님의 네트워크 강의를 보고 정리한 내용입니다.\"}",
+  "parsedOutput": {
+    "summary": "본 포스팅은 널널한 개발자님의 네트워크 강의를 보고 정리한 내용입니다."
+  },
+  "inputTokens": 361,
+  "outputTokens": 35,
+  "totalTokens": 396,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3161.0966,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 419.7201,
+    "generationDurationMs": 2166.084,
+    "tokensPerSecond": 16.158191464412276,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

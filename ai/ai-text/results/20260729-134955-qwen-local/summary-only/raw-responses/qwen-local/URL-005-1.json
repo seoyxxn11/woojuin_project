@@ -1,0 +1,37 @@
+{
+  "testId": "URL-005",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"서울 청년 안심주택의 신청 조건과 임대료에 대한 정보를 정리한 글로, 역세권 1인 가구 청년의 주택 서류 준비 팁을 제공합니다.\"}",
+  "parsedOutput": {
+    "summary": "서울 청년 안심주택의 신청 조건과 임대료에 대한 정보를 정리한 글로, 역세권 1인 가구 청년의 주택 서류 준비 팁을 제공합니다."
+  },
+  "inputTokens": 314,
+  "outputTokens": 56,
+  "totalTokens": 370,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4473.0786,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 419.6648,
+    "generationDurationMs": 3524.508,
+    "tokensPerSecond": 15.888742485475987,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-001",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"체중 감량 중 먹기 좋은 질리지 않는 건강 레시피로 단백질 듬뿍 오트밀 죽과 닭가슴살 요리가 소개되었습니다.\"}",
+  "parsedOutput": {
+    "summary": "체중 감량 중 먹기 좋은 질리지 않는 건강 레시피로 단백질 듬뿍 오트밀 죽과 닭가슴살 요리가 소개되었습니다."
+  },
+  "inputTokens": 322,
+  "outputTokens": 50,
+  "totalTokens": 372,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3829.5241,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 427.5803,
+    "generationDurationMs": 2785.823,
+    "tokensPerSecond": 17.948017515829253,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

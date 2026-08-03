@@ -1,0 +1,37 @@
+{
+  "testId": "URL-006",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"하루만 맡겨도 이자가 쌓이는 비상금 통장으로 파킹통장 금리 비교 BEST 4를 추천합니다.\"}",
+  "parsedOutput": {
+    "summary": "하루만 맡겨도 이자가 쌓이는 비상금 통장으로 파킹통장 금리 비교 BEST 4를 추천합니다."
+  },
+  "inputTokens": 323,
+  "outputTokens": 40,
+  "totalTokens": 363,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3051.7072,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 431.5718,
+    "generationDurationMs": 2152.301,
+    "tokensPerSecond": 18.584761146326652,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,48 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.9},{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":0.6}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.9
+      },
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 0.6
+      }
+    ]
+  },
+  "inputTokens": 2069,
+  "outputTokens": 48,
+  "totalTokens": 2117,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4368.6841,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 411.3659,
+    "generationDurationMs": 3532.77,
+    "tokensPerSecond": 13.587071901086116,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

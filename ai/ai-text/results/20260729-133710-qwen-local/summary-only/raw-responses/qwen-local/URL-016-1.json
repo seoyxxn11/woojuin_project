@@ -1,0 +1,37 @@
+{
+  "testId": "URL-016",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"스티브 잡스가 스탠퍼드 대학에서 발표한 연설에서 'Stay Hungry Stay Foolish'이라는 메시지를 전하며 자신의 삶과 성공에 대한 철학을 공유합니다.\"}",
+  "parsedOutput": {
+    "summary": "스티브 잡스가 스탠퍼드 대학에서 발표한 연설에서 'Stay Hungry Stay Foolish'이라는 메시지를 전하며 자신의 삶과 성공에 대한 철학을 공유합니다."
+  },
+  "inputTokens": 283,
+  "outputTokens": 57,
+  "totalTokens": 340,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4426.7897,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 404.0653,
+    "generationDurationMs": 3532.373,
+    "tokensPerSecond": 16.136461240078553,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

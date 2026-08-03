@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"치지직 스트리머 레전드 게임 하이라이트 모음집","url":"https://www.youtube.com/watch?v=chzzk_stream_highlights","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/chzzk_stream_highlights/hqdefault.jpg","description":"치지직 튜브"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

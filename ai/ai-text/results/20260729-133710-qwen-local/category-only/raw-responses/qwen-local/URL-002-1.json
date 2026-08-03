@@ -1,0 +1,43 @@
+{
+  "testId": "URL-002",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":0.9}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.9
+      }
+    ]
+  },
+  "inputTokens": 2146,
+  "outputTokens": 27,
+  "totalTokens": 2173,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2898.7261,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 427.3552,
+    "generationDurationMs": 1945.74,
+    "tokensPerSecond": 13.876468592926084,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

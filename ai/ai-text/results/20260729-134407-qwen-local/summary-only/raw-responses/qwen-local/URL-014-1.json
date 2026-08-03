@@ -1,0 +1,37 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"사람들의 클릭을 유도하는 헤드라인 작성법 7가지에 대해 마케팅 심리학을 활용한 제목 짓기 스킬과 문구 모음을 소개합니다.\"}",
+  "parsedOutput": {
+    "summary": "사람들의 클릭을 유도하는 헤드라인 작성법 7가지에 대해 마케팅 심리학을 활용한 제목 짓기 스킬과 문구 모음을 소개합니다."
+  },
+  "inputTokens": 322,
+  "outputTokens": 54,
+  "totalTokens": 376,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3785.9128,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 392.3337,
+    "generationDurationMs": 2937.377,
+    "tokensPerSecond": 18.383748493979493,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

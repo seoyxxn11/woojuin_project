@@ -1,0 +1,43 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":0.8}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      }
+    ]
+  },
+  "inputTokens": 2085,
+  "outputTokens": 30,
+  "totalTokens": 2115,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2825.6334,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 441.4868,
+    "generationDurationMs": 1958.945,
+    "tokensPerSecond": 15.31436564068925,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

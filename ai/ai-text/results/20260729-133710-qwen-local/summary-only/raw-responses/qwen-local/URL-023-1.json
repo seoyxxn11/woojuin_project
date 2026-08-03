@@ -1,0 +1,37 @@
+{
+  "testId": "URL-023",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"프랑스어 강사 정일영이 '프랑스에서 살아남기'에 대해 특강하는 유튜브 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "프랑스어 강사 정일영이 '프랑스에서 살아남기'에 대해 특강하는 유튜브 영상입니다."
+  },
+  "inputTokens": 281,
+  "outputTokens": 36,
+  "totalTokens": 317,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2760.1689,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 394.1727,
+    "generationDurationMs": 1852.644,
+    "tokensPerSecond": 19.43168790118339,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

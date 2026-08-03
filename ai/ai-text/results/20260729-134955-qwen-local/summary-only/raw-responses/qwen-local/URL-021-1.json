@@ -1,0 +1,37 @@
+{
+  "testId": "URL-021",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"네트워크의 기초에 대한 내용을 다루며, 네트워크의 정의, 구성 요소, 기능 등에 대해 설명하고 있다.\"}",
+  "parsedOutput": {
+    "summary": "네트워크의 기초에 대한 내용을 다루며, 네트워크의 정의, 구성 요소, 기능 등에 대해 설명하고 있다."
+  },
+  "inputTokens": 294,
+  "outputTokens": 42,
+  "totalTokens": 336,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3746.0001,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 424.8309,
+    "generationDurationMs": 2647.779,
+    "tokensPerSecond": 15.862351049691082,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

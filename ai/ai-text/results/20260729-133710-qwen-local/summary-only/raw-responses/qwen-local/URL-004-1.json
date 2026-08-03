@@ -1,0 +1,37 @@
+{
+  "testId": "URL-004",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"세계적인 검색 엔진 구글의 메인 화면입니다.\"}",
+  "parsedOutput": {
+    "summary": "세계적인 검색 엔진 구글의 메인 화면입니다."
+  },
+  "inputTokens": 262,
+  "outputTokens": 23,
+  "totalTokens": 285,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 1970.4937,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 406.5474,
+    "generationDurationMs": 1135.41,
+    "tokensPerSecond": 20.256999674126526,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

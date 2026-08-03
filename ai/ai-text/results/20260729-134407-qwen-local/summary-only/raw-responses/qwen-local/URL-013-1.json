@@ -1,0 +1,37 @@
+{
+  "testId": "URL-013",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"스티브 잡스가 추구한 미학적 단순함과 마케팅 혁신을 중심으로 애플 브랜딩 전략이 분석되었다.\"}",
+  "parsedOutput": {
+    "summary": "스티브 잡스가 추구한 미학적 단순함과 마케팅 혁신을 중심으로 애플 브랜딩 전략이 분석되었다."
+  },
+  "inputTokens": 329,
+  "outputTokens": 47,
+  "totalTokens": 376,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3869.4037,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 408.1126,
+    "generationDurationMs": 2888.775,
+    "tokensPerSecond": 16.26987217765316,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

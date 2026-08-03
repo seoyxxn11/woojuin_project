@@ -1,0 +1,37 @@
+{
+  "testId": "URL-013",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"TED 강연에서 창의성을 끌어올리는 15분 일상 습관에 대해 소개합니다.\"}",
+  "parsedOutput": {
+    "summary": "TED 강연에서 창의성을 끌어올리는 15분 일상 습관에 대해 소개합니다."
+  },
+  "inputTokens": 286,
+  "outputTokens": 33,
+  "totalTokens": 319,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2968.6168,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 419.2872,
+    "generationDurationMs": 2045.219,
+    "tokensPerSecond": 16.135191390261873,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-001",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"러닝 초보가 무릎에 무리를 주지 않도록 올바른 주법을 배우는 방법에 대해 설명하는 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "러닝 초보가 무릎에 무리를 주지 않도록 올바른 주법을 배우는 방법에 대해 설명하는 영상입니다."
+  },
+  "inputTokens": 271,
+  "outputTokens": 38,
+  "totalTokens": 309,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3233.3517,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.1488,
+    "generationDurationMs": 2292.244,
+    "tokensPerSecond": 16.577641821725784,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

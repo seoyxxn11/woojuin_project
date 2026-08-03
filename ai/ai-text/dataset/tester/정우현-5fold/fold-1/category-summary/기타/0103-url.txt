@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"NAVER","url":"https://www.naver.com/","content":"대한민국 포털 사이트 네이버 메인","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png","description":"네이버 메인"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

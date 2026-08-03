@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"비트코인 반감기 이후 흐름 예측과 알트코인 분석","url":"https://www.youtube.com/watch?v=cryptocurrency_bitcoin_halving","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/cryptocurrency_bitcoin_halving/hqdefault.jpg","description":"알타리"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

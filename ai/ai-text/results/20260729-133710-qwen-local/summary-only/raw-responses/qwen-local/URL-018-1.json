@@ -1,0 +1,37 @@
+{
+  "testId": "URL-018",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"도톤보리 도보 5분 거리에 위치한 깔끔하고 리뷰가 좋은 가성비 호텔입니다.\"}",
+  "parsedOutput": {
+    "summary": "도톤보리 도보 5분 거리에 위치한 깔끔하고 리뷰가 좋은 가성비 호텔입니다."
+  },
+  "inputTokens": 304,
+  "outputTokens": 33,
+  "totalTokens": 337,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2924.397,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 393.8197,
+    "generationDurationMs": 1999.823,
+    "tokensPerSecond": 16.501460379243564,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

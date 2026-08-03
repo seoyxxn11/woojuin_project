@@ -1,0 +1,37 @@
+{
+  "testId": "URL-009",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"1인 가구 라이프 매거진은 1인 가구를 위한 생활 팁과 관련된 콘텐츠를 제공하는 브런치 매거진입니다.\"}",
+  "parsedOutput": {
+    "summary": "1인 가구 라이프 매거진은 1인 가구를 위한 생활 팁과 관련된 콘텐츠를 제공하는 브런치 매거진입니다."
+  },
+  "inputTokens": 277,
+  "outputTokens": 49,
+  "totalTokens": 326,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4014.4597,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 440.4568,
+    "generationDurationMs": 3088.139,
+    "tokensPerSecond": 15.867161419871321,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

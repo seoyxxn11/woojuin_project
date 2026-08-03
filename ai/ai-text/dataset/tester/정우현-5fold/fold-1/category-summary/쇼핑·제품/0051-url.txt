@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"쿠팡! | 애플 2024 맥북 프로 16 M3 Max","url":"https://www.coupang.com/vp/products/87654321","content":"스페이스 블랙 36GB RAM 1TB SSD 로켓배송 최저가","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://thumbnail10.coupangcdn.com/macbook.jpg","description":"맥북 프로 16"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

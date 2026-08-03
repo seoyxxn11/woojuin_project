@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"Google","url":"https://www.google.com/","content":"세계적인 검색 엔진 구글 메인 화면","summary":"세계적인 검색 엔진 구글의 메인 화면입니다.","s3Key":null,"preview":{"thumbnailUrl":"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x91dp.png","description":"구글 검색"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

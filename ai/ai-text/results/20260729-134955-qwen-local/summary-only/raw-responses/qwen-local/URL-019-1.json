@@ -1,0 +1,37 @@
+{
+  "testId": "URL-019",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"[취업후기] SSAFY에서 느낀 감사함, 저도 베풀래요라는 제목의 글이 있으며, 해당 글의 미리보기 설명은 [SSAFY에서 느낀 감사함]입니다.\"}",
+  "parsedOutput": {
+    "summary": "[취업후기] SSAFY에서 느낀 감사함, 저도 베풀래요라는 제목의 글이 있으며, 해당 글의 미리보기 설명은 [SSAFY에서 느낀 감사함]입니다."
+  },
+  "inputTokens": 428,
+  "outputTokens": 58,
+  "totalTokens": 486,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4367.9213,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.4457,
+    "generationDurationMs": 3309.444,
+    "tokensPerSecond": 17.525602487910355,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

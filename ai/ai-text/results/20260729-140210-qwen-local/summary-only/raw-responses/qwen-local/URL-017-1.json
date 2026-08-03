@@ -1,0 +1,37 @@
+{
+  "testId": "URL-017",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"에어프라이어로 만드는 치킨 요리의 신세계를 경험할 수 있는 TOP 5 레시피를 소개하는 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "에어프라이어로 만드는 치킨 요리의 신세계를 경험할 수 있는 TOP 5 레시피를 소개하는 영상입니다."
+  },
+  "inputTokens": 289,
+  "outputTokens": 43,
+  "totalTokens": 332,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3672.3576,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 461.3224,
+    "generationDurationMs": 2705.482,
+    "tokensPerSecond": 15.893655917873414,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

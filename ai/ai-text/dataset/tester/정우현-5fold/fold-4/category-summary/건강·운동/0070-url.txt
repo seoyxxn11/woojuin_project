@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"[클라이밍 입문] 볼더링 규칙 & 암벽화 선택하는 법","url":"https://m.blog.naver.com/climbing_log/223481928491","content":"실내 클라이밍 난이도 표 보는 법과 준비물 총정리","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://blogpfthumb-phinf.pstatic.net/climbing.jpg","description":"클라이밍 기초"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

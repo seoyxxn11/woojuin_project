@@ -1,0 +1,37 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"가평에서 계곡이 가까운 캠핑장 5곳을 비교해 초보 캠핑객을 위한 추천을 소개합니다.\"}",
+  "parsedOutput": {
+    "summary": "가평에서 계곡이 가까운 캠핑장 5곳을 비교해 초보 캠핑객을 위한 추천을 소개합니다."
+  },
+  "inputTokens": 311,
+  "outputTokens": 40,
+  "totalTokens": 351,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3028.8733,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 452.4085,
+    "generationDurationMs": 2121.092,
+    "tokensPerSecond": 18.8582107706785,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

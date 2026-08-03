@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"S&P500 vs QQQ 어디에 적립식 투자해야 할까?","url":"https://www.youtube.com/watch?v=sukaem_etf_spy_qqq","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/sukaem_etf_spy_qqq/hqdefault.jpg","description":"신사임당"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

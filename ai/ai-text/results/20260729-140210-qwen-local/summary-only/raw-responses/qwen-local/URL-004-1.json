@@ -1,0 +1,37 @@
+{
+  "testId": "URL-004",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"네이버 날씨는 전국 날씨 정보, 미세먼지 지수, 주간 예보 등을 제공하는 서비스입니다.\"}",
+  "parsedOutput": {
+    "summary": "네이버 날씨는 전국 날씨 정보, 미세먼지 지수, 주간 예보 등을 제공하는 서비스입니다."
+  },
+  "inputTokens": 262,
+  "outputTokens": 36,
+  "totalTokens": 298,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3224.2827,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 424.2949,
+    "generationDurationMs": 2258.563,
+    "tokensPerSecond": 15.939338420048498,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

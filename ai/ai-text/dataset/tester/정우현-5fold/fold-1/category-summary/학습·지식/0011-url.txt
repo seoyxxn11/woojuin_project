@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"cs 과목 길잡이","url":"https://velog.io/@1w2k/cs-과목-길잡이","content":"참고 전자트랙 과목은 제가 들은게 별로 없어 강의 계획서 내용을 바탕으로 작성하였습니다.","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://images.velog.io/velog.png","description":"전자 : 인터넷프로토콜(유사), tcp/ip프로토콜 (유사)"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

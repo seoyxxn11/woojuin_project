@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"백종원의 집밥 레시피 : 초간단 계란볶음밥","url":"https://www.youtube.com/watch?v=paik_bakery_001","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/paik_bakery_001/hqdefault.jpg","description":"백종원 PAIK"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

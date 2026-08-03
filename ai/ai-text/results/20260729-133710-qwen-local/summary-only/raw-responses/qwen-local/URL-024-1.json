@@ -1,0 +1,37 @@
+{
+  "testId": "URL-024",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"OSI 7계층과 TCP/IP 4계층에 대한 네트워크 관련 요약 정리 내용을 다룹니다.\"}",
+  "parsedOutput": {
+    "summary": "OSI 7계층과 TCP/IP 4계층에 대한 네트워크 관련 요약 정리 내용을 다룹니다."
+  },
+  "inputTokens": 341,
+  "outputTokens": 36,
+  "totalTokens": 377,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2717.1383,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 396.8715,
+    "generationDurationMs": 1864.298,
+    "tokensPerSecond": 19.31021757251255,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

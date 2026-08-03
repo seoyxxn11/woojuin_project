@@ -1,0 +1,37 @@
+{
+  "testId": "URL-004",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"OpenAI의 대화형 인공지능 서비스인 챗GPT의 메인 페이지입니다.\"}",
+  "parsedOutput": {
+    "summary": "OpenAI의 대화형 인공지능 서비스인 챗GPT의 메인 페이지입니다."
+  },
+  "inputTokens": 253,
+  "outputTokens": 28,
+  "totalTokens": 281,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2552.7892,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 416.6677,
+    "generationDurationMs": 1711.711,
+    "tokensPerSecond": 16.357901538285375,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

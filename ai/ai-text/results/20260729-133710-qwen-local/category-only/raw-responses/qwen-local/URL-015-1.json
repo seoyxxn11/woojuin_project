@@ -1,0 +1,48 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":0.8}, {\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":0.6}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.8
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.6
+      }
+    ]
+  },
+  "inputTokens": 2146,
+  "outputTokens": 53,
+  "totalTokens": 2199,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4810.1487,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 415.8871,
+    "generationDurationMs": 3907.401,
+    "tokensPerSecond": 13.56400328504804,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"Speedtest by Ookla - 글로벌 인터넷 속도 측정","url":"https://www.speedtest.net/","content":"초고속 인터넷 및 5G 모바일 속도 측정 서비스","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://www.speedtest.net/images/share-logo.png","description":"스피드테스트"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

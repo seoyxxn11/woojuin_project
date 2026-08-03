@@ -1,0 +1,37 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"도쿄 4박 5일 여행 일정과 신주쿠, 시부야, 아사쿠사 중심의 추천 코스를 소개합니다.\"}",
+  "parsedOutput": {
+    "summary": "도쿄 4박 5일 여행 일정과 신주쿠, 시부야, 아사쿠사 중심의 추천 코스를 소개합니다."
+  },
+  "inputTokens": 331,
+  "outputTokens": 40,
+  "totalTokens": 371,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3033.6797,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 407.3246,
+    "generationDurationMs": 2080.074,
+    "tokensPerSecond": 19.23008508351145,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

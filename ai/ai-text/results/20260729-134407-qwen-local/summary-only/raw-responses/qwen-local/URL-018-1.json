@@ -1,0 +1,37 @@
+{
+  "testId": "URL-018",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"미쉐린 가이드 스시 오마카세 캐치테이블 단독 예약이 가능한 '스시코우지'의 예약 정보입니다.\"}",
+  "parsedOutput": {
+    "summary": "미쉐린 가이드 스시 오마카세 캐치테이블 단독 예약이 가능한 '스시코우지'의 예약 정보입니다."
+  },
+  "inputTokens": 288,
+  "outputTokens": 43,
+  "totalTokens": 331,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3106.3,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 405.2396,
+    "generationDurationMs": 2268.7,
+    "tokensPerSecond": 18.95358575395601,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

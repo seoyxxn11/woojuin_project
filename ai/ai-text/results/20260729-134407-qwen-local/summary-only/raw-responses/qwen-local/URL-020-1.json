@@ -1,0 +1,37 @@
+{
+  "testId": "URL-020",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"개발자 취업 관련 아티클 모음이 포함된 '개발자 취업의 모든 것'이라는 제목의 콘텐츠입니다.\"}",
+  "parsedOutput": {
+    "summary": "개발자 취업 관련 아티클 모음이 포함된 '개발자 취업의 모든 것'이라는 제목의 콘텐츠입니다."
+  },
+  "inputTokens": 317,
+  "outputTokens": 38,
+  "totalTokens": 355,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3273.411,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 412.8064,
+    "generationDurationMs": 2323.549,
+    "tokensPerSecond": 16.354292506850513,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

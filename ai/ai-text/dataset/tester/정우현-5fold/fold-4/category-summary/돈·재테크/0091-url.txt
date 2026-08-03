@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"직장인 월 100만원 추가 수익 만드는 현실적인 부업 3가지","url":"https://www.youtube.com/watch?v=salary_man_side_job","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/salary_man_side_job/hqdefault.jpg","description":"N잡러 억대 연봉"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

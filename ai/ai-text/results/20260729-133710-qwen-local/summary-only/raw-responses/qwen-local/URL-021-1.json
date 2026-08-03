@@ -1,0 +1,37 @@
+{
+  "testId": "URL-021",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"React-Query의 useInfiniteQuery를 활용해 쉽게 무한스크롤 기능을 구현할 수 있다.\"}",
+  "parsedOutput": {
+    "summary": "React-Query의 useInfiniteQuery를 활용해 쉽게 무한스크롤 기능을 구현할 수 있다."
+  },
+  "inputTokens": 374,
+  "outputTokens": 30,
+  "totalTokens": 404,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2797.5639,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 387.7847,
+    "generationDurationMs": 1830.135,
+    "tokensPerSecond": 16.39223335983411,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

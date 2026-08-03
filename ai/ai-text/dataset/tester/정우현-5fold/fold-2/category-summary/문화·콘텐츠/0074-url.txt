@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"CGV | 영화 상세 - 인사이드 아웃 2 IMAX 예매","url":"https://www.cgv.co.kr/movies/detail-view/?midx=88990","content":"디즈니 픽사의 새로운 감정 불안이 등장! 상영 시간표","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://img.cgv.co.kr/InsideOut2.jpg","description":"인사이드 아웃 2"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

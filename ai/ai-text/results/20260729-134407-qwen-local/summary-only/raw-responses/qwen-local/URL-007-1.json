@@ -1,0 +1,37 @@
+{
+  "testId": "URL-007",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"영화 '파묘'의 결말 해석과 숨겨진 항일 메시지에 대한 리뷰를 다룬 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "영화 '파묘'의 결말 해석과 숨겨진 항일 메시지에 대한 리뷰를 다룬 글입니다."
+  },
+  "inputTokens": 322,
+  "outputTokens": 36,
+  "totalTokens": 358,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3149.2941,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 419.4496,
+    "generationDurationMs": 2204.081,
+    "tokensPerSecond": 16.333338021606284,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-018",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"인천 송도의 브런치 맛집인 센트럴파크 카페에서 테라스 브런치를 즐길 수 있으며, 에그베네딕트와 에이드를 추천합니다.\"}",
+  "parsedOutput": {
+    "summary": "인천 송도의 브런치 맛집인 센트럴파크 카페에서 테라스 브런치를 즐길 수 있으며, 에그베네딕트와 에이드를 추천합니다."
+  },
+  "inputTokens": 332,
+  "outputTokens": 61,
+  "totalTokens": 393,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4401.208,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 421.5872,
+    "generationDurationMs": 3452.836,
+    "tokensPerSecond": 17.66663693265478,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

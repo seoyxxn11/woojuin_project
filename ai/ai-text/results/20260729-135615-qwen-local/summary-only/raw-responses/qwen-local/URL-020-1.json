@@ -1,0 +1,37 @@
+{
+  "testId": "URL-020",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"점핏은 개발자 커리어 성장을 위한 전문 채용 서비스로, 개발자 전용 채용 플랫폼을 제공합니다.\"}",
+  "parsedOutput": {
+    "summary": "점핏은 개발자 커리어 성장을 위한 전문 채용 서비스로, 개발자 전용 채용 플랫폼을 제공합니다."
+  },
+  "inputTokens": 287,
+  "outputTokens": 44,
+  "totalTokens": 331,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3705.9186,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 424.5645,
+    "generationDurationMs": 2751.257,
+    "tokensPerSecond": 15.992689886840816,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

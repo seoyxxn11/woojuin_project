@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"[인천 송도 맛집] 브런치 먹기 좋은 센트럴파크 카페","url":"https://m.blog.naver.com/yeonsu_matzip/223610940501","content":"햇살 맛집 테라스 브런치 에그베네딕트 & 에이드 후기","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://blogpfthumb-phinf.pstatic.net/songdo.jpg","description":"송도 브런치"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

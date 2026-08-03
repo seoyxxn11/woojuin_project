@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"네이버는 대한민국의 주요 포털 사이트로, 메인 페이지를 통해 다양한 정보와 서비스를 제공합니다.\"}",
+  "parsedOutput": {
+    "summary": "네이버는 대한민국의 주요 포털 사이트로, 메인 페이지를 통해 다양한 정보와 서비스를 제공합니다."
+  },
+  "inputTokens": 274,
+  "outputTokens": 34,
+  "totalTokens": 308,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2977.3762,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 410.5997,
+    "generationDurationMs": 2077.752,
+    "tokensPerSecond": 16.363839380253275,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

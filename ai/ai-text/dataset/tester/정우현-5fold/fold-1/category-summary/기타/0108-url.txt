@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"ChatGPT","url":"https://chatgpt.com/","content":"OpenAI의 대화형 인공지능 서비스 챗GPT","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://chatgpt.com/static/og-image.png","description":"챗GPT 메인"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-011",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"아이패드 에어 6세대 M2 13인치를 구입한 후 사고 후회한 이유에 대해 다룹니다.\"}",
+  "parsedOutput": {
+    "summary": "아이패드 에어 6세대 M2 13인치를 구입한 후 사고 후회한 이유에 대해 다룹니다."
+  },
+  "inputTokens": 279,
+  "outputTokens": 39,
+  "totalTokens": 318,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3408.6957,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 419.3929,
+    "generationDurationMs": 2432.279,
+    "tokensPerSecond": 16.034344744167917,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

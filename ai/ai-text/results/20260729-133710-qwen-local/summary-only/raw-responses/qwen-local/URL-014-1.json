@@ -1,0 +1,37 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"KREAM 플랫폼에서 나이키 에어포스 1 '07 로우 화이트의 한정판 거래 시세 및 드로우 최저가 정보를 제공합니다.\"}",
+  "parsedOutput": {
+    "summary": "KREAM 플랫폼에서 나이키 에어포스 1 '07 로우 화이트의 한정판 거래 시세 및 드로우 최저가 정보를 제공합니다."
+  },
+  "inputTokens": 293,
+  "outputTokens": 51,
+  "totalTokens": 344,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3738.8294,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 412.9347,
+    "generationDurationMs": 2863.656,
+    "tokensPerSecond": 17.809401687912235,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

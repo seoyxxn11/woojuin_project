@@ -1,0 +1,37 @@
+{
+  "testId": "URL-002",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"하루 8시간 앉아 있는 직장인을 위한 비타민 B, C, D, 오메가3, 유산균 등 영양제의 효과적인 복용 방법이 추천되었다.\"}",
+  "parsedOutput": {
+    "summary": "하루 8시간 앉아 있는 직장인을 위한 비타민 B, C, D, 오메가3, 유산균 등 영양제의 효과적인 복용 방법이 추천되었다."
+  },
+  "inputTokens": 320,
+  "outputTokens": 52,
+  "totalTokens": 372,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3763.2476,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 398.0701,
+    "generationDurationMs": 2838.161,
+    "tokensPerSecond": 18.32172311577814,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

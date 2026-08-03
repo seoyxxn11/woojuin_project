@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"29CM | 키티버니포니 가방 / 파우치 세트","url":"https://www.29cm.co.kr/product/123987","content":"감성적인 패턴 패브릭 스트링 파우치 선물 추천","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://img.29cm.co.kr/kbp.jpg","description":"29CM 파우치"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

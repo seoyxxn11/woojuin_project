@@ -1,0 +1,37 @@
+{
+  "testId": "URL-020",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"연남동 카페에서 두바이 초콜릿 케이크가 유행하며, 바삭한 카다이프와 피스타치오 스프레드가 들어간 감성 디저트를 추천합니다.\"}",
+  "parsedOutput": {
+    "summary": "연남동 카페에서 두바이 초콜릿 케이크가 유행하며, 바삭한 카다이프와 피스타치오 스프레드가 들어간 감성 디저트를 추천합니다."
+  },
+  "inputTokens": 338,
+  "outputTokens": 61,
+  "totalTokens": 399,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4753.9209,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 405.8031,
+    "generationDurationMs": 3792.059,
+    "tokensPerSecond": 16.086247603215035,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

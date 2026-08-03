@@ -1,0 +1,37 @@
+{
+  "testId": "URL-012",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"29CM에서 출시한 키티버니포니 가방과 파우치 세트가 감성적인 패턴 패브릭 스트링 파우치로 선물 추천 상품으로 소개되었습니다.\"}",
+  "parsedOutput": {
+    "summary": "29CM에서 출시한 키티버니포니 가방과 파우치 세트가 감성적인 패턴 패브릭 스트링 파우치로 선물 추천 상품으로 소개되었습니다."
+  },
+  "inputTokens": 298,
+  "outputTokens": 58,
+  "totalTokens": 356,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4122.0833,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 403.5702,
+    "generationDurationMs": 3214.473,
+    "tokensPerSecond": 18.043393116072217,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

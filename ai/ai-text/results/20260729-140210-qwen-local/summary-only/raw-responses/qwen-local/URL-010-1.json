@@ -1,0 +1,37 @@
+{
+  "testId": "URL-010",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"자취생이라면 꼭 알아야 할 생활꿀팁 10가지로, 휴지, 이불, 세탁기, 전자레인지 등 구매 시 주의사항과 생활 팁을 담고 있다.\"}",
+  "parsedOutput": {
+    "summary": "자취생이라면 꼭 알아야 할 생활꿀팁 10가지로, 휴지, 이불, 세탁기, 전자레인지 등 구매 시 주의사항과 생활 팁을 담고 있다."
+  },
+  "inputTokens": 557,
+  "outputTokens": 61,
+  "totalTokens": 618,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 5364.5577,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.4553,
+    "generationDurationMs": 3957.728,
+    "tokensPerSecond": 15.412883351256074,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

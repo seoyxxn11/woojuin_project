@@ -1,0 +1,37 @@
+{
+  "testId": "URL-010",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"자취를 시작하면 많은 비용이 들고, 생활비 절약, 인간관계, 건강 등 다양한 조언이 필요하다.\"}",
+  "parsedOutput": {
+    "summary": "자취를 시작하면 많은 비용이 들고, 생활비 절약, 인간관계, 건강 등 다양한 조언이 필요하다."
+  },
+  "inputTokens": 472,
+  "outputTokens": 37,
+  "totalTokens": 509,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3177.9109,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 445.8148,
+    "generationDurationMs": 1978.377,
+    "tokensPerSecond": 18.702198822570217,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-007",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"아이유 2024 월드투어 콘서트 서울 앙코르 공연 후기로, 상암 월드컵경기장에서의 시야, 드레스코드, 드론쇼, 세트리스트 등이 소개되었다.\"}",
+  "parsedOutput": {
+    "summary": "아이유 2024 월드투어 콘서트 서울 앙코르 공연 후기로, 상암 월드컵경기장에서의 시야, 드레스코드, 드론쇼, 세트리스트 등이 소개되었다."
+  },
+  "inputTokens": 329,
+  "outputTokens": 69,
+  "totalTokens": 398,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 5376.0223,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.0078,
+    "generationDurationMs": 4402.7,
+    "tokensPerSecond": 15.67220114929475,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

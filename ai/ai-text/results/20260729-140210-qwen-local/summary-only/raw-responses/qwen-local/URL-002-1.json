@@ -1,0 +1,37 @@
+{
+  "testId": "URL-002",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"실내 클라이밍 난이도 표 보는 법과 준비물에 대해 소개한 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "실내 클라이밍 난이도 표 보는 법과 준비물에 대해 소개한 글입니다."
+  },
+  "inputTokens": 314,
+  "outputTokens": 28,
+  "totalTokens": 342,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2930.0846,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 454.3792,
+    "generationDurationMs": 1772.119,
+    "tokensPerSecond": 15.800293321159584,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

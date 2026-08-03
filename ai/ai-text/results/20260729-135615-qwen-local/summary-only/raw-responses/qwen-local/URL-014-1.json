@@ -1,0 +1,37 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"인공지능이 바꿀 10년 후 우리의 삶에 대한 내용을 다룬 다큐멘터리입니다.\"}",
+  "parsedOutput": {
+    "summary": "인공지능이 바꿀 10년 후 우리의 삶에 대한 내용을 다룬 다큐멘터리입니다."
+  },
+  "inputTokens": 275,
+  "outputTokens": 35,
+  "totalTokens": 310,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2840.1808,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 429.2436,
+    "generationDurationMs": 1882.98,
+    "tokensPerSecond": 18.587558019734676,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

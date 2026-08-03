@@ -1,0 +1,37 @@
+{
+  "testId": "URL-011",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"소니 WH-1000XM5 헤드폰의 노이즈 캔슬링 성능이 매우 우수하지만, 착용감과 단점에 대해 솔직하게 후기하고 있다.\"}",
+  "parsedOutput": {
+    "summary": "소니 WH-1000XM5 헤드폰의 노이즈 캔슬링 성능이 매우 우수하지만, 착용감과 단점에 대해 솔직하게 후기하고 있다."
+  },
+  "inputTokens": 335,
+  "outputTokens": 56,
+  "totalTokens": 391,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4175.2388,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 430.8014,
+    "generationDurationMs": 3169.731,
+    "tokensPerSecond": 17.66711433872464,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

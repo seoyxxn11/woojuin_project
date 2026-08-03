@@ -1,0 +1,37 @@
+{
+  "testId": "URL-016",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"강릉 안목해변에 위치한 바다 뷰가 멋진 디저트 카페 3곳에 대한 솔직한 후기를 담은 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "강릉 안목해변에 위치한 바다 뷰가 멋진 디저트 카페 3곳에 대한 솔직한 후기를 담은 글입니다."
+  },
+  "inputTokens": 324,
+  "outputTokens": 47,
+  "totalTokens": 371,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3887.7374,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 420.9013,
+    "generationDurationMs": 2943.021,
+    "tokensPerSecond": 15.969984583868074,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

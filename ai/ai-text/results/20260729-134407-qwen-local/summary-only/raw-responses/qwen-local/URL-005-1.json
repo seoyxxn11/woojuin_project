@@ -1,0 +1,37 @@
+{
+  "testId": "URL-005",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"2024년 ISA 계좌 절세 혜택에 대한 총정리를 다룬 콘텐츠로, 사회초년생에게 필수적인 정보를 제공합니다.\"}",
+  "parsedOutput": {
+    "summary": "2024년 ISA 계좌 절세 혜택에 대한 총정리를 다룬 콘텐츠로, 사회초년생에게 필수적인 정보를 제공합니다."
+  },
+  "inputTokens": 285,
+  "outputTokens": 48,
+  "totalTokens": 333,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3863.1307,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 397.1855,
+    "generationDurationMs": 2972.633,
+    "tokensPerSecond": 16.14730106272789,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

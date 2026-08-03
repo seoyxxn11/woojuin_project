@@ -1,0 +1,43 @@
+{
+  "testId": "URL-020",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":1.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 1.0
+      }
+    ]
+  },
+  "inputTokens": 2060,
+  "outputTokens": 28,
+  "totalTokens": 2088,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2547.7307,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 403.6797,
+    "generationDurationMs": 1763.634,
+    "tokensPerSecond": 15.876309937322597,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

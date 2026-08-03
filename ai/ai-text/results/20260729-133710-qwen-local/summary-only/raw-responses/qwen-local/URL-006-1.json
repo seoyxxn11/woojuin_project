@@ -1,0 +1,37 @@
+{
+  "testId": "URL-006",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"엔비디아(NVDA)가 AI 반도체 시장에서 독점 가속화를 목표로 하고 있으며, 주가 분석이 이루어지고 있다.\"}",
+  "parsedOutput": {
+    "summary": "엔비디아(NVDA)가 AI 반도체 시장에서 독점 가속화를 목표로 하고 있으며, 주가 분석이 이루어지고 있다."
+  },
+  "inputTokens": 317,
+  "outputTokens": 43,
+  "totalTokens": 360,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3557.8096,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 408.7322,
+    "generationDurationMs": 2638.956,
+    "tokensPerSecond": 16.294322451757438,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

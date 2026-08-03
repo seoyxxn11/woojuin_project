@@ -1,0 +1,37 @@
+{
+  "testId": "URL-007",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"디즈니 픽사의 새로운 감정 불안이 등장하는 영화 '인사이드 아웃 2'의 상영 시간표가 공개되었습니다.\"}",
+  "parsedOutput": {
+    "summary": "디즈니 픽사의 새로운 감정 불안이 등장하는 영화 '인사이드 아웃 2'의 상영 시간표가 공개되었습니다."
+  },
+  "inputTokens": 302,
+  "outputTokens": 41,
+  "totalTokens": 343,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3535.4963,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 432.2234,
+    "generationDurationMs": 2550.386,
+    "tokensPerSecond": 16.075997907767686,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

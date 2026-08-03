@@ -1,0 +1,37 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"2024 스타트업 브랜드 아이덴티티 포트폴리오로 로고 디자인, 패키징, 그래픽 가이드 등 시각 자료를 포함하고 있습니다.\"}",
+  "parsedOutput": {
+    "summary": "2024 스타트업 브랜드 아이덴티티 포트폴리오로 로고 디자인, 패키징, 그래픽 가이드 등 시각 자료를 포함하고 있습니다."
+  },
+  "inputTokens": 317,
+  "outputTokens": 57,
+  "totalTokens": 374,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4689.2774,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 411.751,
+    "generationDurationMs": 3636.672,
+    "tokensPerSecond": 15.673670872709994,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

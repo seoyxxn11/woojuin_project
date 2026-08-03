@@ -1,0 +1,93 @@
+{
+  "testId": "URL-011",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":0.0},{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":0.0},{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0},{\"categoryId\":\"CAREER\",\"categoryName\":\"취업·커리어\",\"score\":0.0},{\"categoryId\":\"LIFE_TASK\",\"categoryName\":\"생활·할 일\",\"score\":0.0},{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.0},{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.0},{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":0.0},{\"categoryId\":\"MONEY_FINANCE\",\"categoryName\":\"돈·재테크\",\"score\":0.0},{\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":0.0},{\"categoryId\":\"OTHER\",\"categoryName\":\"기타\",\"score\":0.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "SHOPPING_PRODUCT",
+        "categoryName": "쇼핑·제품",
+        "score": 1.0
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.0
+      },
+      {
+        "categoryId": "HEALTH_EXERCISE",
+        "categoryName": "건강·운동",
+        "score": 0.0
+      },
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 0.0
+      },
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 0.0
+      },
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.0
+      },
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.0
+      },
+      {
+        "categoryId": "IDEA_INSPIRATION",
+        "categoryName": "아이디어·영감",
+        "score": 0.0
+      },
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 0.0
+      },
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.0
+      },
+      {
+        "categoryId": "OTHER",
+        "categoryName": "기타",
+        "score": 0.0
+      }
+    ]
+  },
+  "inputTokens": 2047,
+  "outputTokens": 244,
+  "totalTokens": 2291,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 19171.4265,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 420.0691,
+    "generationDurationMs": 18283.109,
+    "tokensPerSecond": 13.345651442541858,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

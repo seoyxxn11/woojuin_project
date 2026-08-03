@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"KREAM | 나이키 에어포스 1 '07 로우 화이트","url":"https://www.kream.co.kr/products/12345","content":"한정판 거래 플랫폼 크림 시세 및 드로우 최저가","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://kream-phinf.pstatic.net/airforce.jpg","description":"크림 나이키"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"간헐적 단식 16:8 방식을 효과적으로 유지하기 위한 노하우에 대해 설명하는 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "간헐적 단식 16:8 방식을 효과적으로 유지하기 위한 노하우에 대해 설명하는 영상입니다."
+  },
+  "inputTokens": 283,
+  "outputTokens": 34,
+  "totalTokens": 317,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2825.1342,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 536.2349,
+    "generationDurationMs": 1758.397,
+    "tokensPerSecond": 19.335792770347084,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

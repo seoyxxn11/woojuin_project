@@ -1,0 +1,37 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"후쿠오카 필수 코스로 유후인, 벳푸, 다자이후 일일 버스 투어를 제공하는 투어 예약 정보입니다.\"}",
+  "parsedOutput": {
+    "summary": "후쿠오카 필수 코스로 유후인, 벳푸, 다자이후 일일 버스 투어를 제공하는 투어 예약 정보입니다."
+  },
+  "inputTokens": 321,
+  "outputTokens": 48,
+  "totalTokens": 369,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3959.6974,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 417.7513,
+    "generationDurationMs": 2992.433,
+    "tokensPerSecond": 16.04045938538975,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

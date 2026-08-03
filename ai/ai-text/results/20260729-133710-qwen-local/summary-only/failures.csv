@@ -1,0 +1,5 @@
+﻿modelId,testId,status,errorType,errorMessage
+qwen-local,URL-010,FAILED,SCHEMA_ERROR,"1 validation error for SummaryResult
+summary
+  Value error, 요약은 1~3문장이어야 합니다 [type=value_error, input_value=""나이를 먹을수록 '...요해질 전망이다."", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error"

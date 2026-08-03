@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"Daum","url":"https://www.daum.net/","content":"카카오가 운영하는 포털 사이트 다음 메인","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://t1.daumcdn.net/daumtop_chan/op/op_daum.png","description":"다음 메인"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

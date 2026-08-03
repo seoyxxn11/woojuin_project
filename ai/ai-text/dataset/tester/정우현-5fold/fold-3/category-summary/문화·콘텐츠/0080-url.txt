@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"[전시회 추천] DDP 반 고흐 몰입형 미디어아트 전시 후기","url":"https://www.chuniverse.com/exhibition/1234","content":"빛과 소리로 감상하는 반 고흐의 명작 얼리버드 티켓","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://ddp.or.kr/gogh.jpg","description":"반고흐 미디어아트"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

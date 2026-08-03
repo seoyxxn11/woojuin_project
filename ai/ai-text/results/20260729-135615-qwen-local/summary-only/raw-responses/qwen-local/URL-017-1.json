@@ -1,0 +1,37 @@
+{
+  "testId": "URL-017",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"해운대 수변최고돼지국밥의 예약법과 후기를 소개하며, 부산 1티어 수준의 돼지국밥을 맛볼 수 있는 곳으로 추천한다.\"}",
+  "parsedOutput": {
+    "summary": "해운대 수변최고돼지국밥의 예약법과 후기를 소개하며, 부산 1티어 수준의 돼지국밥을 맛볼 수 있는 곳으로 추천한다."
+  },
+  "inputTokens": 332,
+  "outputTokens": 53,
+  "totalTokens": 385,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4324.4581,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 424.2383,
+    "generationDurationMs": 3349.548,
+    "tokensPerSecond": 15.823030450675732,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,43 @@
+{
+  "testId": "URL-014",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":0.8}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "CULTURE_CONTENT",
+        "categoryName": "문화·콘텐츠",
+        "score": 0.8
+      }
+    ]
+  },
+  "inputTokens": 2062,
+  "outputTokens": 27,
+  "totalTokens": 2089,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2579.9277,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 397.5493,
+    "generationDurationMs": 1798.479,
+    "tokensPerSecond": 15.012685719432922,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

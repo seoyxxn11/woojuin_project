@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"Dribbble - AI 대시보드 모바일 앱 시안","url":"https://dribbble.com/shots/1234567-Dashboard-Analytics-App","content":"네온 그라데이션과 카드 레이아웃이 돋보이는 콘셉트 시안","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://cdn.dribbble.com/app_shot.jpg","description":"Dribbble 시안"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

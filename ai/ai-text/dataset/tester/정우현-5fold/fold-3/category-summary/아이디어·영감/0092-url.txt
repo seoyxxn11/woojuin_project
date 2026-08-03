@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"핀터레스트 - 2024 모던 웹 UI/UX 디자인 레퍼런스","url":"https://www.pinterest.com/pin/1234567890/","content":"다크모드 미니멀리즘 인터랙티브 웹 디자인 무드보드","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.pinimg.com/ui_design.jpg","description":"UIUX 디자인"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

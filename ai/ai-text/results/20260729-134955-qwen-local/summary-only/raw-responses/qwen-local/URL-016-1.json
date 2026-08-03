@@ -1,0 +1,37 @@
+{
+  "testId": "URL-016",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"클룩에서 제공하는 싱가포르 센토사 섬 유니버설 스튜디오 즉시 확정 티켓을 확인할 수 있습니다.\"}",
+  "parsedOutput": {
+    "summary": "클룩에서 제공하는 싱가포르 센토사 섬 유니버설 스튜디오 즉시 확정 티켓을 확인할 수 있습니다."
+  },
+  "inputTokens": 304,
+  "outputTokens": 43,
+  "totalTokens": 347,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3678.1079,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 406.9722,
+    "generationDurationMs": 2730.542,
+    "tokensPerSecond": 15.74778926674631,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

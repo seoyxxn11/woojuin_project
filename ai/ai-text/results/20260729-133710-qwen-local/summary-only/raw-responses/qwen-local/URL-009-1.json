@@ -1,0 +1,37 @@
+{
+  "testId": "URL-009",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"자신의 모든 것이었던 소녀를 추적해 탑에 들어온 소년이라는 내용을 가진 네이버 웹툰 '신의 탑'의 정보입니다.\"}",
+  "parsedOutput": {
+    "summary": "자신의 모든 것이었던 소녀를 추적해 탑에 들어온 소년이라는 내용을 가진 네이버 웹툰 '신의 탑'의 정보입니다."
+  },
+  "inputTokens": 303,
+  "outputTokens": 46,
+  "totalTokens": 349,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3463.7892,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 420.5842,
+    "generationDurationMs": 2501.795,
+    "tokensPerSecond": 18.386798278835794,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

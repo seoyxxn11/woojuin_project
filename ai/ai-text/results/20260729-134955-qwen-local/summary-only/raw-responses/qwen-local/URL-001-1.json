@@ -1,0 +1,37 @@
+{
+  "testId": "URL-001",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"굽은 등 펴는 폼롤러 10분 스트레칭 루틴이라는 제목의 유튜브 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "굽은 등 펴는 폼롤러 10분 스트레칭 루틴이라는 제목의 유튜브 영상입니다."
+  },
+  "inputTokens": 283,
+  "outputTokens": 39,
+  "totalTokens": 322,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3375.118,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 404.2498,
+    "generationDurationMs": 2371.412,
+    "tokensPerSecond": 16.44589805567316,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

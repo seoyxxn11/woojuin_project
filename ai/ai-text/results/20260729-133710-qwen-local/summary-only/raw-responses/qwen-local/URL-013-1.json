@@ -1,0 +1,37 @@
+{
+  "testId": "URL-013",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"32인치 고중량 지원 피벗 클램프형 엘레베이션 모니터 암 거치대를 추천하는 제품입니다.\"}",
+  "parsedOutput": {
+    "summary": "32인치 고중량 지원 피벗 클램프형 엘레베이션 모니터 암 거치대를 추천하는 제품입니다."
+  },
+  "inputTokens": 300,
+  "outputTokens": 40,
+  "totalTokens": 340,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3002.2027,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 415.6206,
+    "generationDurationMs": 2098.043,
+    "tokensPerSecond": 19.06538617178008,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

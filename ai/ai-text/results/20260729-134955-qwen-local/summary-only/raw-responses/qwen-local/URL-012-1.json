@@ -1,0 +1,37 @@
+{
+  "testId": "URL-012",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"독거미 AULA F75 기계식 키보드에 대해 가성비와 조용한 타건감, 황축, 무선 블루투스 지원 등을 강조한 후기를 담고 있습니다.\"}",
+  "parsedOutput": {
+    "summary": "독거미 AULA F75 기계식 키보드에 대해 가성비와 조용한 타건감, 황축, 무선 블루투스 지원 등을 강조한 후기를 담고 있습니다."
+  },
+  "inputTokens": 328,
+  "outputTokens": 58,
+  "totalTokens": 386,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 4226.9397,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 428.648,
+    "generationDurationMs": 3266.304,
+    "tokensPerSecond": 17.75707343835724,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

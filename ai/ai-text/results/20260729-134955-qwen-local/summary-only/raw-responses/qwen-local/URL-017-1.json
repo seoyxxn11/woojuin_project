@@ -1,0 +1,37 @@
+{
+  "testId": "URL-017",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"원팬으로 쉽게 완성할 수 있는 원조 파스타 레시피를 소개하는 유튜브 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "원팬으로 쉽게 완성할 수 있는 원조 파스타 레시피를 소개하는 유튜브 영상입니다."
+  },
+  "inputTokens": 280,
+  "outputTokens": 34,
+  "totalTokens": 314,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2687.8815,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 421.2898,
+    "generationDurationMs": 1765.029,
+    "tokensPerSecond": 19.263139585808506,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

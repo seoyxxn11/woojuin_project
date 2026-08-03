@@ -1,0 +1,37 @@
+{
+  "testId": "URL-013",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"네온 그라데이션과 카드 레이아웃이 돋보이는 AI 대시보드 모바일 앱의 콘셉트 시안입니다.\"}",
+  "parsedOutput": {
+    "summary": "네온 그라데이션과 카드 레이아웃이 돋보이는 AI 대시보드 모바일 앱의 콘셉트 시안입니다."
+  },
+  "inputTokens": 308,
+  "outputTokens": 46,
+  "totalTokens": 354,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3851.5868,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 429.5492,
+    "generationDurationMs": 2878.016,
+    "tokensPerSecond": 15.983232893771264,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

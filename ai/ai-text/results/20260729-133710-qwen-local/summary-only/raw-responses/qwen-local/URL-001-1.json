@@ -1,0 +1,37 @@
+{
+  "testId": "URL-001",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"전신 다이어트 운동 루틴으로 칼로리 폭탄을 맞는 층간소음 없는 홈 운동 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "전신 다이어트 운동 루틴으로 칼로리 폭탄을 맞는 층간소음 없는 홈 운동 영상입니다."
+  },
+  "inputTokens": 282,
+  "outputTokens": 42,
+  "totalTokens": 324,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3765.795,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 409.3514,
+    "generationDurationMs": 2247.836,
+    "tokensPerSecond": 18.684637135449385,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

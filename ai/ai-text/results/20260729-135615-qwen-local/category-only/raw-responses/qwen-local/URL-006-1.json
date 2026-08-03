@@ -1,0 +1,43 @@
+{
+  "testId": "URL-006",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"MONEY_FINANCE\",\"categoryName\":\"돈·재테크\",\"score\":1.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "MONEY_FINANCE",
+        "categoryName": "돈·재테크",
+        "score": 1.0
+      }
+    ]
+  },
+  "inputTokens": 2112,
+  "outputTokens": 27,
+  "totalTokens": 2139,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2647.2332,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 433.9845,
+    "generationDurationMs": 1794.178,
+    "tokensPerSecond": 15.048674100340099,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

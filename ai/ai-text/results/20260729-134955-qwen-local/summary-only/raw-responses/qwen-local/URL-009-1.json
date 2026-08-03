@@ -1,0 +1,37 @@
+{
+  "testId": "URL-009",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"집 정리 잘하는 5가지 노하우로 시간을 정해 구역별로 작업하고, 남길 것과 버릴 것을 구분하며 수납 지도를 그려 공간을 효율적으로 활용하고, 물건의 자리를 정해 유지하는 방법을 제시했다.\"}",
+  "parsedOutput": {
+    "summary": "집 정리 잘하는 5가지 노하우로 시간을 정해 구역별로 작업하고, 남길 것과 버릴 것을 구분하며 수납 지도를 그려 공간을 효율적으로 활용하고, 물건의 자리를 정해 유지하는 방법을 제시했다."
+  },
+  "inputTokens": 1315,
+  "outputTokens": 69,
+  "totalTokens": 1384,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 7041.513,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 429.2173,
+    "generationDurationMs": 4730.445,
+    "tokensPerSecond": 14.586365553346463,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

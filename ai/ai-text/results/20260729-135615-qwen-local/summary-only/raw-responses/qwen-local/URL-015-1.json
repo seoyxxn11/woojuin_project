@@ -1,0 +1,37 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"트리플 가이드에 따르면 다낭 여행에서는 핑크성당과 바나힐 투어를 꼭 방문할 만한 명소로 추천됩니다.\"}",
+  "parsedOutput": {
+    "summary": "트리플 가이드에 따르면 다낭 여행에서는 핑크성당과 바나힐 투어를 꼭 방문할 만한 명소로 추천됩니다."
+  },
+  "inputTokens": 288,
+  "outputTokens": 47,
+  "totalTokens": 335,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3459.8245,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.7624,
+    "generationDurationMs": 2548.451,
+    "tokensPerSecond": 18.442575509593865,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

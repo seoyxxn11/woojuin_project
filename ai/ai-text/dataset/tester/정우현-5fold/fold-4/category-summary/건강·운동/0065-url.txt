@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"러닝 초보가 무릎 안 아프게 달리는 방법 (올바른 주법)","url":"https://www.youtube.com/watch?v=running_form_guide","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/running_form_guide/hqdefault.jpg","description":"마라토닉"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

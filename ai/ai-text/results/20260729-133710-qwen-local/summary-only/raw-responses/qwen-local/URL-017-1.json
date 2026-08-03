@@ -1,0 +1,37 @@
+{
+  "testId": "URL-017",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"제주도 3박 4일 여행 코스로 에메랄드빛 바다와 예쁜 카페 탐방을 추천하는 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "제주도 3박 4일 여행 코스로 에메랄드빛 바다와 예쁜 카페 탐방을 추천하는 글입니다."
+  },
+  "inputTokens": 330,
+  "outputTokens": 42,
+  "totalTokens": 372,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3574.3695,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 404.9114,
+    "generationDurationMs": 2604.001,
+    "tokensPerSecond": 16.129026064122097,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

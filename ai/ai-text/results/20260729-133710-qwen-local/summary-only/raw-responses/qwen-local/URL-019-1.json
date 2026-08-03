@@ -1,0 +1,37 @@
+{
+  "testId": "URL-019",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"돼지고기 듬뿍 넣은 진한 국물의 김치찌개 레시피를 소개한 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "돼지고기 듬뿍 넣은 진한 국물의 김치찌개 레시피를 소개한 글입니다."
+  },
+  "inputTokens": 316,
+  "outputTokens": 34,
+  "totalTokens": 350,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3050.8303,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 400.6204,
+    "generationDurationMs": 2111.184,
+    "tokensPerSecond": 16.104707121690954,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

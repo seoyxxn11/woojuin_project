@@ -1,0 +1,43 @@
+{
+  "testId": "URL-010",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"LIFE_TASK\",\"categoryName\":\"생활·할 일\",\"score\":1.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "LIFE_TASK",
+        "categoryName": "생활·할 일",
+        "score": 1.0
+      }
+    ]
+  },
+  "inputTokens": 2089,
+  "outputTokens": 25,
+  "totalTokens": 2114,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2567.8761,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 441.9736,
+    "generationDurationMs": 1692.361,
+    "tokensPerSecond": 14.77226194647596,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

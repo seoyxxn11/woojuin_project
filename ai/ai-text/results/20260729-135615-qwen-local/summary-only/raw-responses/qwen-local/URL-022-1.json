@@ -1,0 +1,37 @@
+{
+  "testId": "URL-022",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"주기적으로 면접에서 받은 질문을 적고, 답을 업데이트하는 내용을 정리한 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "주기적으로 면접에서 받은 질문을 적고, 답을 업데이트하는 내용을 정리한 글입니다."
+  },
+  "inputTokens": 347,
+  "outputTokens": 34,
+  "totalTokens": 381,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3092.9573,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 412.8722,
+    "generationDurationMs": 2102.858,
+    "tokensPerSecond": 16.16847167045992,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

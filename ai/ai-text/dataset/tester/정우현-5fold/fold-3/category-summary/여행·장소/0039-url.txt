@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"[강릉 여행] 안목해변 커피거리 감성 카페 3곳","url":"https://m.blog.naver.com/gangneung_food/223298104812","content":"바다 뷰가 멋진 안목해변 디저트 카페 솔직 후기","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://blogpfthumb-phinf.pstatic.net/gangneung.jpg","description":"강릉 카페 추천"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"SSAFY Job Portal","url":"https://job.ssafy.com/job/jobNotice/jobNoticeDetail.do?notice_seq=15440&list_type=NOTICE&searchWord=","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

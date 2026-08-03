@@ -1,0 +1,37 @@
+{
+  "testId": "URL-019",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"커리어 성장에 도움을 주는 커스텀 피드를 제공하는 플랫폼입니다.\"}",
+  "parsedOutput": {
+    "summary": "커리어 성장에 도움을 주는 커스텀 피드를 제공하는 플랫폼입니다."
+  },
+  "inputTokens": 262,
+  "outputTokens": 31,
+  "totalTokens": 293,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2843.1999,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 410.7336,
+    "generationDurationMs": 1923.714,
+    "tokensPerSecond": 16.11466153492671,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

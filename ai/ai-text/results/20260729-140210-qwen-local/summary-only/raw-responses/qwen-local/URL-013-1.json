@@ -1,0 +1,37 @@
+{
+  "testId": "URL-013",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"10평 원룸 인테리어를 감성 있게 꾸민 자취방 가구 배치를 소개한 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "10평 원룸 인테리어를 감성 있게 꾸민 자취방 가구 배치를 소개한 글입니다."
+  },
+  "inputTokens": 332,
+  "outputTokens": 35,
+  "totalTokens": 367,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3160.223,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 417.1144,
+    "generationDurationMs": 2185.019,
+    "tokensPerSecond": 16.018167347743887,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

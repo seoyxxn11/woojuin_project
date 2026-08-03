@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"[감성 에세이] 무기력한 날 나를 다독이는 3가지 문장","url":"https://m.blog.naver.com/essay_log/223291039281","content":"지친 일상 속에서 따뜻한 위로와 동기부여를 전하는 글","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://blogpfthumb-phinf.pstatic.net/essay.jpg","description":"감성 에세이"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

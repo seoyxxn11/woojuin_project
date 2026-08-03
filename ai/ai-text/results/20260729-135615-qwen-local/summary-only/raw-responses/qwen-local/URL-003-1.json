@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"GitHub은 전 세계 개발자들이 코드를 저장하고 협업할 수 있는 플랫폼입니다.\"}",
+  "parsedOutput": {
+    "summary": "GitHub은 전 세계 개발자들이 코드를 저장하고 협업할 수 있는 플랫폼입니다."
+  },
+  "inputTokens": 260,
+  "outputTokens": 29,
+  "totalTokens": 289,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2351.9326,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 419.4395,
+    "generationDurationMs": 1479.819,
+    "tokensPerSecond": 19.596991253660075,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

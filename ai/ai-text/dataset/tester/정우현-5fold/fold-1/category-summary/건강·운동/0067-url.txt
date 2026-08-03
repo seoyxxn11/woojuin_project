@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"목 통증 교정! 거북목 일자목 교정 스트레칭 BEST 3","url":"https://www.youtube.com/watch?v=turtle_neck_stretch","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/turtle_neck_stretch/hqdefault.jpg","description":"피지컬갤러리"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-009",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"1인가구가 늘어나면서 집안 정리가 중요해졌고, 공간 역할을 정의해 물건을 분류하고, 필요 없는 물건은 버리거나 사진으로 저장하는 방법을 통해 효율적으로 정리하는 것이 필요하다.\"}",
+  "parsedOutput": {
+    "summary": "1인가구가 늘어나면서 집안 정리가 중요해졌고, 공간 역할을 정의해 물건을 분류하고, 필요 없는 물건은 버리거나 사진으로 저장하는 방법을 통해 효율적으로 정리하는 것이 필요하다."
+  },
+  "inputTokens": 1820,
+  "outputTokens": 64,
+  "totalTokens": 1884,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 7751.6894,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 425.2616,
+    "generationDurationMs": 4682.357,
+    "tokensPerSecond": 13.668329860367333,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

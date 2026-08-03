@@ -1,0 +1,37 @@
+{
+  "testId": "URL-016",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"백종원의 집밥 레시피 영상에서 초간단 계란볶음밥의 조리 방법이 소개되었습니다.\"}",
+  "parsedOutput": {
+    "summary": "백종원의 집밥 레시피 영상에서 초간단 계란볶음밥의 조리 방법이 소개되었습니다."
+  },
+  "inputTokens": 289,
+  "outputTokens": 35,
+  "totalTokens": 324,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3242.1711,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 499.6506,
+    "generationDurationMs": 2190.548,
+    "tokensPerSecond": 15.977737077662757,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

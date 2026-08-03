@@ -1,0 +1,37 @@
+{
+  "testId": "URL-018",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"집에서 프라이팬으로 굽는 완벽한 미디엄 레어 스테이크를 만드는 방법에 대한 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "집에서 프라이팬으로 굽는 완벽한 미디엄 레어 스테이크를 만드는 방법에 대한 영상입니다."
+  },
+  "inputTokens": 280,
+  "outputTokens": 41,
+  "totalTokens": 321,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3193.1488,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 424.8618,
+    "generationDurationMs": 2224.234,
+    "tokensPerSecond": 18.43331232235457,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

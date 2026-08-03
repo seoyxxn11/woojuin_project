@@ -1,0 +1,37 @@
+{
+  "testId": "URL-010",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"자취생의 부엌과 생활을 돌아보며, 자취생활의 의미를 생각해보는 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "자취생의 부엌과 생활을 돌아보며, 자취생활의 의미를 생각해보는 글입니다."
+  },
+  "inputTokens": 394,
+  "outputTokens": 32,
+  "totalTokens": 426,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2736.4893,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 409.5671,
+    "generationDurationMs": 1653.889,
+    "tokensPerSecond": 19.348335952412768,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

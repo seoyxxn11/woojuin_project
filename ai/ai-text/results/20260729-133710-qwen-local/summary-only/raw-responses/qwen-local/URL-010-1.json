@@ -1,0 +1,37 @@
+{
+  "testId": "URL-010",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\": \"나이를 먹을수록 '정리'는 점점 어려워진다. 어떤 물건이든, 사람이든 '추억'이 배어 있기 때문이다. 그렇다고 정리하지 않고 모아두면 의미 있던 물건도 쓰레기로 변할 수 있다. 김 이사는 살아 있을 때 '정리'가 중요하다고 강조하며, 자식들에게 짐이 되지 않도록 하기 위해 물건을 정리하는 것이 필요하다. 집에서 쉽게 따라할 수 있는 정리 팁으로는 사용하지 않는 박스나 쇼핑백을 활용해 수납 도구를 만들 수 있다. 또한, 트로트 가수들이 '비바 브라보 콘서트'에서 세대를 잇는 트로트의 힘을 보여줄 예정이며, 실버타운에서의 삶은 '3무(無)'의 자유로움을 느끼는 것이 특징이다. 시니어 라이프 정리 교육은 앞으로 더욱 중요해질 전망이다.\"}",
+  "parsedOutput": {
+    "summary": "나이를 먹을수록 '정리'는 점점 어려워진다. 어떤 물건이든, 사람이든 '추억'이 배어 있기 때문이다. 그렇다고 정리하지 않고 모아두면 의미 있던 물건도 쓰레기로 변할 수 있다. 김 이사는 살아 있을 때 '정리'가 중요하다고 강조하며, 자식들에게 짐이 되지 않도록 하기 위해 물건을 정리하는 것이 필요하다. 집에서 쉽게 따라할 수 있는 정리 팁으로는 사용하지 않는 박스나 쇼핑백을 활용해 수납 도구를 만들 수 있다. 또한, 트로트 가수들이 '비바 브라보 콘서트'에서 세대를 잇는 트로트의 힘을 보여줄 예정이며, 실버타운에서의 삶은 '3무(無)'의 자유로움을 느끼는 것이 특징이다. 시니어 라이프 정리 교육은 앞으로 더욱 중요해질 전망이다."
+  },
+  "inputTokens": 2050,
+  "outputTokens": 246,
+  "totalTokens": 2296,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 21312.4002,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "FAILED",
+  "errorType": "SCHEMA_ERROR",
+  "errorMessage": "1 validation error for SummaryResult\nsummary\n  Value error, 요약은 1~3문장이어야 합니다 [type=value_error, input_value=\"나이를 먹을수록 '...요해질 전망이다.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 392.9375,
+    "generationDurationMs": 18394.709,
+    "tokensPerSecond": 13.373410799812055,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

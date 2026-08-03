@@ -1,0 +1,37 @@
+{
+  "testId": "URL-022",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"기술면접 질문 리스트를 정리한 글로, 자바 관련 내용을 추가 중인 글입니다.\"}",
+  "parsedOutput": {
+    "summary": "기술면접 질문 리스트를 정리한 글로, 자바 관련 내용을 추가 중인 글입니다."
+  },
+  "inputTokens": 366,
+  "outputTokens": 28,
+  "totalTokens": 394,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2759.9367,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 423.6825,
+    "generationDurationMs": 1720.275,
+    "tokensPerSecond": 16.276467425266308,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

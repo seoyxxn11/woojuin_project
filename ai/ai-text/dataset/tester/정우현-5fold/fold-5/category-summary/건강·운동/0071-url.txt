@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"간헐적 단식 16:8 방식을 가장 효과적으로 유지하는 노하우","url":"https://www.youtube.com/watch?v=fasting_16_8","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/fasting_16_8/hqdefault.jpg","description":"지식한식당"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

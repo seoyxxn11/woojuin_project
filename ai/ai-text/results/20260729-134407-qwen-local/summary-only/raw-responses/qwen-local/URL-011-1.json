@@ -1,0 +1,37 @@
+{
+  "testId": "URL-011",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"쿠팡에서 애플 2024 맥북 프로 16 인치 M3 Max 모델이 36GB RAM 1TB SSD로 최저가로 로켓배송 중입니다.\"}",
+  "parsedOutput": {
+    "summary": "쿠팡에서 애플 2024 맥북 프로 16 인치 M3 Max 모델이 36GB RAM 1TB SSD로 최저가로 로켓배송 중입니다."
+  },
+  "inputTokens": 313,
+  "outputTokens": 56,
+  "totalTokens": 369,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3986.2124,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 417.568,
+    "generationDurationMs": 3050.038,
+    "tokensPerSecond": 18.360426984844125,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

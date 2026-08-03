@@ -1,0 +1,37 @@
+{
+  "testId": "URL-007",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"치피치피 차파차파 고양이 밈 1시간 연속 재생이라는 제목의 유튜브 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "치피치피 차파차파 고양이 밈 1시간 연속 재생이라는 제목의 유튜브 영상입니다."
+  },
+  "inputTokens": 277,
+  "outputTokens": 36,
+  "totalTokens": 313,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2830.5954,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 433.6801,
+    "generationDurationMs": 1914.216,
+    "tokensPerSecond": 18.806655048333106,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-008",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"치지직 스트리머 레전드 게임 하이라이트 모음집 영상입니다.\"}",
+  "parsedOutput": {
+    "summary": "치지직 스트리머 레전드 게임 하이라이트 모음집 영상입니다."
+  },
+  "inputTokens": 281,
+  "outputTokens": 30,
+  "totalTokens": 311,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2808.8591,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 417.6945,
+    "generationDurationMs": 1841.612,
+    "tokensPerSecond": 16.290076302717402,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

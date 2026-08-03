@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"네이버 지도 - 강릉 경포대 해수욕장","url":"https://map.naver.com/v5/entry/place/12345678","content":"강원도 강릉시 안현동 경포대 해변 지도 및 위치 정보","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://map.naver.com/og_kyungpo.jpg","description":"경포대 해수욕장"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

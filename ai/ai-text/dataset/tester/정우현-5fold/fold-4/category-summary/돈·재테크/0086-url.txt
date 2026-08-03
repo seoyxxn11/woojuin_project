@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"[연말정산 꿀팁] 13월의 월급 늘리는 신용카드 vs 체크카드 비율","url":"https://m.blog.naver.com/tax_helper/223348192830","content":"소득공제 한도 채우는 가장 현명한 지출 노하우","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://blogpfthumb-phinf.pstatic.net/tax.jpg","description":"연말정산 공제"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

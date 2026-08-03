@@ -1,0 +1,43 @@
+{
+  "testId": "URL-022",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"categories\":[{\"categoryId\":\"CAREER\",\"categoryName\":\"취업·커리어\",\"score\":1.0}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "CAREER",
+        "categoryName": "취업·커리어",
+        "score": 1.0
+      }
+    ]
+  },
+  "inputTokens": 2138,
+  "outputTokens": 27,
+  "totalTokens": 2165,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2502.8576,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 410.1438,
+    "generationDurationMs": 1666.128,
+    "tokensPerSecond": 16.205237532770592,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

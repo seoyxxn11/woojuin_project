@@ -1,0 +1,3621 @@
+{
+  "modelId": "qwen-local",
+  "provider": "ollama",
+  "requestedModel": "qwen3:8b",
+  "resolvedModels": [
+    "qwen3:8b"
+  ],
+  "status": "COMPLETED",
+  "requests": [
+    {
+      "testId": "URL-001",
+      "datasetKey": "tester-url:URL-001",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.youtube.com/watch?v=home_workout_fullbody",
+      "sourcePath": "건강·운동/0061-url.txt",
+      "expected": {
+        "categories": [
+          "건강·운동"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "HEALTH_EXERCISE",
+              "categoryName": "건강·운동",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2110,
+        "outputTokens": 27,
+        "totalTokens": 2137,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 5152.225,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 438.0635,
+          "generationDurationMs": 1949.522,
+          "tokensPerSecond": 13.849548761183511,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 1,
+        "testId": "URL-001",
+        "title": "https://www.youtube.com/watch?v=home_workout_fullbody",
+        "sourcePath": "건강·운동/0061-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.youtube.com/watch?v=home_workout_fullbody\",\"summary\":\"전신 다이어트 운동 루틴으로 칼로리 폭탄을 맞는 층간소음 없는 홈 운동 영상입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "HEALTH_EXERCISE",
+        "expectedCategoryName": "건강·운동",
+        "top1CategoryId": "HEALTH_EXERCISE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "HEALTH_EXERCISE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "HEALTH_EXERCISE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 5152.225,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "건강·운동"
+        ],
+        "serviceSelectedCategoryNames": [
+          "건강·운동"
+        ],
+        "top1CategoryName": "건강·운동"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:10.589503+09:00"
+    },
+    {
+      "testId": "URL-002",
+      "datasetKey": "tester-url:URL-002",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://m.health.chosun.com/svc/news_view.html?idx=2024010201",
+      "sourcePath": "건강·운동/0066-url.txt",
+      "expected": {
+        "categories": [
+          "건강·운동"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":0.9}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "HEALTH_EXERCISE",
+              "categoryName": "건강·운동",
+              "score": 0.9
+            }
+          ]
+        },
+        "inputTokens": 2146,
+        "outputTokens": 27,
+        "totalTokens": 2173,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2898.7261,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 427.3552,
+          "generationDurationMs": 1945.74,
+          "tokensPerSecond": 13.876468592926084,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":0.9}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 0.9
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 2,
+        "testId": "URL-002",
+        "title": "https://m.health.chosun.com/svc/news_view.html?idx=2024010201",
+        "sourcePath": "건강·운동/0066-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://m.health.chosun.com/svc/news_view.html?idx=2024010201\",\"summary\":\"하루 8시간 앉아 있는 직장인을 위한 비타민 B, C, D, 오메가3, 유산균 등 영양제의 효과적인 복용 방법이 추천되었다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "HEALTH_EXERCISE",
+        "expectedCategoryName": "건강·운동",
+        "top1CategoryId": "HEALTH_EXERCISE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 0.9
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 0.9
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "HEALTH_EXERCISE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "HEALTH_EXERCISE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2898.7261,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "건강·운동"
+        ],
+        "serviceSelectedCategoryNames": [
+          "건강·운동"
+        ],
+        "top1CategoryName": "건강·운동"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:15.521477+09:00"
+    },
+    {
+      "testId": "URL-003",
+      "datasetKey": "tester-url:URL-003",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.youtube.com/watch?v=fasting_16_8",
+      "sourcePath": "건강·운동/0071-url.txt",
+      "expected": {
+        "categories": [
+          "건강·운동"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":0.9}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "HEALTH_EXERCISE",
+              "categoryName": "건강·운동",
+              "score": 0.9
+            }
+          ]
+        },
+        "inputTokens": 2106,
+        "outputTokens": 27,
+        "totalTokens": 2133,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2786.1346,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 409.0391,
+          "generationDurationMs": 1961.82,
+          "tokensPerSecond": 13.762730525736307,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"HEALTH_EXERCISE\",\"categoryName\":\"건강·운동\",\"score\":0.9}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 0.9
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 3,
+        "testId": "URL-003",
+        "title": "https://www.youtube.com/watch?v=fasting_16_8",
+        "sourcePath": "건강·운동/0071-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.youtube.com/watch?v=fasting_16_8\",\"summary\":\"간헐적 단식 16:8 방식을 효과적으로 유지하기 위한 노하우에 대해 설명하는 영상입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "HEALTH_EXERCISE",
+        "expectedCategoryName": "건강·운동",
+        "top1CategoryId": "HEALTH_EXERCISE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 0.9
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "HEALTH_EXERCISE",
+            "categoryName": "건강·운동",
+            "score": 0.9
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "HEALTH_EXERCISE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "HEALTH_EXERCISE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2786.1346,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "건강·운동"
+        ],
+        "serviceSelectedCategoryNames": [
+          "건강·운동"
+        ],
+        "top1CategoryName": "건강·운동"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:20.345019+09:00"
+    },
+    {
+      "testId": "URL-004",
+      "datasetKey": "tester-url:URL-004",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.google.com/",
+      "sourcePath": "기타/0102-url.txt",
+      "expected": {
+        "categories": [
+          "기타"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[]}",
+        "parsedOutput": {
+          "categories": []
+        },
+        "inputTokens": 2076,
+        "outputTokens": 5,
+        "totalTokens": 2081,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 1020.9491,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 405.3889,
+          "generationDurationMs": 257.72,
+          "tokensPerSecond": 19.40090020176936,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[]}",
+      "parsedResponse": {
+        "categories": []
+      },
+      "evaluation": {
+        "id": 4,
+        "testId": "URL-004",
+        "title": "https://www.google.com/",
+        "sourcePath": "기타/0102-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.google.com/\",\"summary\":\"세계적인 검색 엔진 구글의 메인 화면입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "OTHER",
+        "expectedCategoryName": "기타",
+        "top1CategoryId": null,
+        "top1Correct": false,
+        "rawPredictions": [],
+        "validPredictions": [],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [],
+        "serviceSelectedCategoryIds": [
+          "OTHER"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": true,
+        "serviceLimitApplied": false,
+        "goldIncluded": false,
+        "rawGoldPresent": false,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 0,
+        "exactCorrect": false,
+        "relaxedCorrect": false,
+        "evaluationStatus": "EMPTY_PREDICTION",
+        "overPrediction": false,
+        "missingGold": true,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": false,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [
+          "MISSING_GOLD_CATEGORY",
+          "EMPTY_PREDICTION",
+          "FALLBACK_USED"
+        ],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 1020.9491,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [],
+        "serviceSelectedCategoryNames": [
+          "기타"
+        ],
+        "top1CategoryName": ""
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:23.403666+09:00"
+    },
+    {
+      "testId": "URL-005",
+      "datasetKey": "tester-url:URL-005",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.notion.so/",
+      "sourcePath": "기타/0107-url.txt",
+      "expected": {
+        "categories": [
+          "기타"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"OTHER\",\"categoryName\":\"기타\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "OTHER",
+              "categoryName": "기타",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2102,
+        "outputTokens": 21,
+        "totalTokens": 2123,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2116.9194,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 429.4105,
+          "generationDurationMs": 1269.108,
+          "tokensPerSecond": 16.547055096965742,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"OTHER\",\"categoryName\":\"기타\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "OTHER",
+            "categoryName": "기타",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 5,
+        "testId": "URL-005",
+        "title": "https://www.notion.so/",
+        "sourcePath": "기타/0107-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.notion.so/\",\"summary\":\"노션은 개인 및 팀을 위한 오rganizing 도구로, 메모, 작업, 프로젝트를 통합한 올인원 워크스페이스입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "OTHER",
+        "expectedCategoryName": "기타",
+        "top1CategoryId": "OTHER",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "OTHER",
+            "categoryName": "기타",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "OTHER",
+            "categoryName": "기타",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "OTHER"
+        ],
+        "serviceSelectedCategoryIds": [
+          "OTHER"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2116.9194,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "기타"
+        ],
+        "serviceSelectedCategoryNames": [
+          "기타"
+        ],
+        "top1CategoryName": "기타"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:27.586091+09:00"
+    },
+    {
+      "testId": "URL-006",
+      "datasetKey": "tester-url:URL-006",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://m.blog.naver.com/stock_invest/223301928391",
+      "sourcePath": "돈·재테크/0082-url.txt",
+      "expected": {
+        "categories": [
+          "돈·재테크"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"MONEY_FINANCE\",\"categoryName\":\"돈·재테크\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "MONEY_FINANCE",
+              "categoryName": "돈·재테크",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2133,
+        "outputTokens": 27,
+        "totalTokens": 2160,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2673.5825,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 449.826,
+          "generationDurationMs": 1785.193,
+          "tokensPerSecond": 15.124415119261615,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"MONEY_FINANCE\",\"categoryName\":\"돈·재테크\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "MONEY_FINANCE",
+            "categoryName": "돈·재테크",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 6,
+        "testId": "URL-006",
+        "title": "https://m.blog.naver.com/stock_invest/223301928391",
+        "sourcePath": "돈·재테크/0082-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://m.blog.naver.com/stock_invest/223301928391\",\"summary\":\"엔비디아(NVDA)가 AI 반도체 시장에서 독점 가속화를 목표로 하고 있으며, 주가 분석이 이루어지고 있다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "MONEY_FINANCE",
+        "expectedCategoryName": "돈·재테크",
+        "top1CategoryId": "MONEY_FINANCE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "MONEY_FINANCE",
+            "categoryName": "돈·재테크",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "MONEY_FINANCE",
+            "categoryName": "돈·재테크",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "MONEY_FINANCE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "MONEY_FINANCE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2673.5825,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "돈·재테크"
+        ],
+        "serviceSelectedCategoryNames": [
+          "돈·재테크"
+        ],
+        "top1CategoryName": "돈·재테크"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:32.321868+09:00"
+    },
+    {
+      "testId": "URL-007",
+      "datasetKey": "tester-url:URL-007",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.youtube.com/watch?v=cryptocurrency_bitcoin_halving",
+      "sourcePath": "돈·재테크/0087-url.txt",
+      "expected": {
+        "categories": [
+          "돈·재테크"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.9}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "LEARNING_KNOWLEDGE",
+              "categoryName": "학습·지식",
+              "score": 0.9
+            }
+          ]
+        },
+        "inputTokens": 2105,
+        "outputTokens": 28,
+        "totalTokens": 2133,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2506.8977,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 415.9839,
+          "generationDurationMs": 1714.43,
+          "tokensPerSecond": 16.331958726807162,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.9}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 7,
+        "testId": "URL-007",
+        "title": "https://www.youtube.com/watch?v=cryptocurrency_bitcoin_halving",
+        "sourcePath": "돈·재테크/0087-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.youtube.com/watch?v=cryptocurrency_bitcoin_halving\",\"summary\":\"비트코인 반감기 이후 시장 흐름과 알트코인에 대한 분석을 다룬 영상입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "MONEY_FINANCE",
+        "expectedCategoryName": "돈·재테크",
+        "top1CategoryId": "LEARNING_KNOWLEDGE",
+        "top1Correct": false,
+        "rawPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": false,
+        "rawGoldPresent": false,
+        "extraCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "extraCategoryCount": 1,
+        "selectedCategoryCount": 1,
+        "exactCorrect": false,
+        "relaxedCorrect": false,
+        "evaluationStatus": "WRONG_MISSING_GOLD",
+        "overPrediction": false,
+        "missingGold": true,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": false,
+        "serviceGoldIncluded": false,
+        "serviceExactCorrect": false,
+        "serviceRelaxedCorrect": false,
+        "errorTypes": [
+          "MISSING_GOLD_CATEGORY"
+        ],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2506.8977,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "serviceSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "top1CategoryName": "학습·지식"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:36.885254+09:00"
+    },
+    {
+      "testId": "URL-008",
+      "datasetKey": "tester-url:URL-008",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.netflix.com/kr/title/81234567",
+      "sourcePath": "문화·콘텐츠/0072-url.txt",
+      "expected": {
+        "categories": [
+          "문화·콘텐츠"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "CULTURE_CONTENT",
+              "categoryName": "문화·콘텐츠",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2118,
+        "outputTokens": 27,
+        "totalTokens": 2145,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2490.5054,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 411.6419,
+          "generationDurationMs": 1667.476,
+          "tokensPerSecond": 16.192137098225103,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 8,
+        "testId": "URL-008",
+        "title": "https://www.netflix.com/kr/title/81234567",
+        "sourcePath": "문화·콘텐츠/0072-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.netflix.com/kr/title/81234567\",\"summary\":\"넷플릭스의 오징어 게임 시즌 2 공식 페이지에서 더 가혹해진 게임과 이정재의 반격이 소개되고 있습니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "CULTURE_CONTENT",
+        "expectedCategoryName": "문화·콘텐츠",
+        "top1CategoryId": "CULTURE_CONTENT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "CULTURE_CONTENT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "CULTURE_CONTENT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2490.5054,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "문화·콘텐츠"
+        ],
+        "serviceSelectedCategoryNames": [
+          "문화·콘텐츠"
+        ],
+        "top1CategoryName": "문화·콘텐츠"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:41.439394+09:00"
+    },
+    {
+      "testId": "URL-009",
+      "datasetKey": "tester-url:URL-009",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://comic.naver.com/webtoon/list?titleId=183559",
+      "sourcePath": "문화·콘텐츠/0077-url.txt",
+      "expected": {
+        "categories": [
+          "문화·콘텐츠"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "CULTURE_CONTENT",
+              "categoryName": "문화·콘텐츠",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2128,
+        "outputTokens": 27,
+        "totalTokens": 2155,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2477.2763,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 403.8332,
+          "generationDurationMs": 1658.596,
+          "tokensPerSecond": 16.278828599610755,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 9,
+        "testId": "URL-009",
+        "title": "https://comic.naver.com/webtoon/list?titleId=183559",
+        "sourcePath": "문화·콘텐츠/0077-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://comic.naver.com/webtoon/list?titleId=183559\",\"summary\":\"자신의 모든 것이었던 소녀를 추적해 탑에 들어온 소년이라는 내용을 가진 네이버 웹툰 '신의 탑'의 정보입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "CULTURE_CONTENT",
+        "expectedCategoryName": "문화·콘텐츠",
+        "top1CategoryId": "CULTURE_CONTENT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "CULTURE_CONTENT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "CULTURE_CONTENT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2477.2763,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "문화·콘텐츠"
+        ],
+        "serviceSelectedCategoryNames": [
+          "문화·콘텐츠"
+        ],
+        "top1CategoryName": "문화·콘텐츠"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:45.972495+09:00"
+    },
+    {
+      "testId": "URL-011",
+      "datasetKey": "tester-url:URL-011",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://play.google.com/store/apps/details?id=com.lazyheroes.erfe&hl=ko",
+      "sourcePath": "생활·할 일/0005-url.txt",
+      "expected": {
+        "categories": [
+          "생활·할 일"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"LIFE_TASK\",\"categoryName\":\"생활·할 일\",\"score\":0.95},{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":0.85}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "LIFE_TASK",
+              "categoryName": "생활·할 일",
+              "score": 0.95
+            },
+            {
+              "categoryId": "SHOPPING_PRODUCT",
+              "categoryName": "쇼핑·제품",
+              "score": 0.85
+            }
+          ]
+        },
+        "inputTokens": 2138,
+        "outputTokens": 48,
+        "totalTokens": 2186,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 4232.212,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 423.7114,
+          "generationDurationMs": 3344.711,
+          "tokensPerSecond": 14.351015678185648,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"LIFE_TASK\",\"categoryName\":\"생활·할 일\",\"score\":0.95},{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":0.85}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "LIFE_TASK",
+            "categoryName": "생활·할 일",
+            "score": 0.95
+          },
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 0.85
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 11,
+        "testId": "URL-011",
+        "title": "https://play.google.com/store/apps/details?id=com.lazyheroes.erfe&hl=ko",
+        "sourcePath": "생활·할 일/0005-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://play.google.com/store/apps/details?id=com.lazyheroes.erfe&hl=ko\",\"summary\":\"냉장고 파먹기 앱은 재료 관리와 맞춤 레시피 추천을 통해 식단 고민을 해결하고, 식비 절약과 환경 보호를 동시에 도와주는 앱입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "LIFE_TASK",
+        "expectedCategoryName": "생활·할 일",
+        "top1CategoryId": "LIFE_TASK",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "LIFE_TASK",
+            "categoryName": "생활·할 일",
+            "score": 0.95
+          },
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 0.85
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "LIFE_TASK",
+            "categoryName": "생활·할 일",
+            "score": 0.95
+          },
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 0.85
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "LIFE_TASK",
+          "SHOPPING_PRODUCT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "LIFE_TASK",
+          "SHOPPING_PRODUCT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "extraCategoryCount": 1,
+        "selectedCategoryCount": 2,
+        "exactCorrect": false,
+        "relaxedCorrect": true,
+        "evaluationStatus": "RELAXED_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": false,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 4232.212,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "생활·할 일",
+          "쇼핑·제품"
+        ],
+        "serviceSelectedCategoryNames": [
+          "생활·할 일",
+          "쇼핑·제품"
+        ],
+        "top1CategoryName": "생활·할 일"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:52.262440+09:00"
+    },
+    {
+      "testId": "URL-012",
+      "datasetKey": "tester-url:URL-012",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://brand.naver.com/logitech/products/12345678",
+      "sourcePath": "쇼핑·제품/0050-url.txt",
+      "expected": {
+        "categories": [
+          "쇼핑·제품"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "SHOPPING_PRODUCT",
+              "categoryName": "쇼핑·제품",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2129,
+        "outputTokens": 26,
+        "totalTokens": 2155,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2762.2747,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 441.7099,
+          "generationDurationMs": 1862.962,
+          "tokensPerSecond": 13.95626963942367,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 12,
+        "testId": "URL-012",
+        "title": "https://brand.naver.com/logitech/products/12345678",
+        "sourcePath": "쇼핑·제품/0050-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://brand.naver.com/logitech/products/12345678\",\"summary\":\"로지텍 MX Master 3S는 개발자를 위한 고성능 무선 마우스로, 최고의 초고속 스크롤과 무소음 클릭 기능을 제공합니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "SHOPPING_PRODUCT",
+        "expectedCategoryName": "쇼핑·제품",
+        "top1CategoryId": "SHOPPING_PRODUCT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2762.2747,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "쇼핑·제품"
+        ],
+        "serviceSelectedCategoryNames": [
+          "쇼핑·제품"
+        ],
+        "top1CategoryName": "쇼핑·제품"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:40:57.085712+09:00"
+    },
+    {
+      "testId": "URL-013",
+      "datasetKey": "tester-url:URL-013",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://smartstore.naver.com/desk_setup/products/998877",
+      "sourcePath": "쇼핑·제품/0055-url.txt",
+      "expected": {
+        "categories": [
+          "쇼핑·제품"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "SHOPPING_PRODUCT",
+              "categoryName": "쇼핑·제품",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2118,
+        "outputTokens": 26,
+        "totalTokens": 2144,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2718.5444,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 400.067,
+          "generationDurationMs": 1877.927,
+          "tokensPerSecond": 13.845053614970125,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 13,
+        "testId": "URL-013",
+        "title": "https://smartstore.naver.com/desk_setup/products/998877",
+        "sourcePath": "쇼핑·제품/0055-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://smartstore.naver.com/desk_setup/products/998877\",\"summary\":\"32인치 고중량 지원 피벗 클램프형 엘레베이션 모니터 암 거치대를 추천하는 제품입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "SHOPPING_PRODUCT",
+        "expectedCategoryName": "쇼핑·제품",
+        "top1CategoryId": "SHOPPING_PRODUCT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2718.5444,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "쇼핑·제품"
+        ],
+        "serviceSelectedCategoryNames": [
+          "쇼핑·제품"
+        ],
+        "top1CategoryName": "쇼핑·제품"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:01.855575+09:00"
+    },
+    {
+      "testId": "URL-014",
+      "datasetKey": "tester-url:URL-014",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.kream.co.kr/products/12345",
+      "sourcePath": "쇼핑·제품/0060-url.txt",
+      "expected": {
+        "categories": [
+          "쇼핑·제품"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "SHOPPING_PRODUCT",
+              "categoryName": "쇼핑·제품",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2121,
+        "outputTokens": 26,
+        "totalTokens": 2147,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2832.1228,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 416.5723,
+          "generationDurationMs": 1960.216,
+          "tokensPerSecond": 13.263844392658768,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"SHOPPING_PRODUCT\",\"categoryName\":\"쇼핑·제품\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 14,
+        "testId": "URL-014",
+        "title": "https://www.kream.co.kr/products/12345",
+        "sourcePath": "쇼핑·제품/0060-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.kream.co.kr/products/12345\",\"summary\":\"KREAM 플랫폼에서 나이키 에어포스 1 '07 로우 화이트의 한정판 거래 시세 및 드로우 최저가 정보를 제공합니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "SHOPPING_PRODUCT",
+        "expectedCategoryName": "쇼핑·제품",
+        "top1CategoryId": "SHOPPING_PRODUCT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "SHOPPING_PRODUCT",
+            "categoryName": "쇼핑·제품",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "SHOPPING_PRODUCT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2832.1228,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "쇼핑·제품"
+        ],
+        "serviceSelectedCategoryNames": [
+          "쇼핑·제품"
+        ],
+        "top1CategoryName": "쇼핑·제품"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:06.721065+09:00"
+    },
+    {
+      "testId": "URL-015",
+      "datasetKey": "tester-url:URL-015",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.pinterest.com/pin/1234567890/",
+      "sourcePath": "아이디어·영감/0092-url.txt",
+      "expected": {
+        "categories": [
+          "아이디어·영감"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":0.8}, {\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":0.6}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "IDEA_INSPIRATION",
+              "categoryName": "아이디어·영감",
+              "score": 0.8
+            },
+            {
+              "categoryId": "CULTURE_CONTENT",
+              "categoryName": "문화·콘텐츠",
+              "score": 0.6
+            }
+          ]
+        },
+        "inputTokens": 2146,
+        "outputTokens": 53,
+        "totalTokens": 2199,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 4810.1487,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 415.8871,
+          "generationDurationMs": 3907.401,
+          "tokensPerSecond": 13.56400328504804,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":0.8}, {\"categoryId\":\"CULTURE_CONTENT\",\"categoryName\":\"문화·콘텐츠\",\"score\":0.6}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "IDEA_INSPIRATION",
+            "categoryName": "아이디어·영감",
+            "score": 0.8
+          },
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 0.6
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 15,
+        "testId": "URL-015",
+        "title": "https://www.pinterest.com/pin/1234567890/",
+        "sourcePath": "아이디어·영감/0092-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.pinterest.com/pin/1234567890/\",\"summary\":\"핀터레스트에서 제공하는 2024 모던 웹 UI/UX 디자인 레퍼런스는 다크모드와 미니멀리즘, 인터랙티브 요소를 강조한 무드보드입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "IDEA_INSPIRATION",
+        "expectedCategoryName": "아이디어·영감",
+        "top1CategoryId": "IDEA_INSPIRATION",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "IDEA_INSPIRATION",
+            "categoryName": "아이디어·영감",
+            "score": 0.8
+          },
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 0.6
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "IDEA_INSPIRATION",
+            "categoryName": "아이디어·영감",
+            "score": 0.8
+          },
+          {
+            "categoryId": "CULTURE_CONTENT",
+            "categoryName": "문화·콘텐츠",
+            "score": 0.6
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "IDEA_INSPIRATION"
+        ],
+        "serviceSelectedCategoryIds": [
+          "IDEA_INSPIRATION"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 4810.1487,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "아이디어·영감"
+        ],
+        "serviceSelectedCategoryNames": [
+          "아이디어·영감"
+        ],
+        "top1CategoryName": "아이디어·영감"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:13.564540+09:00"
+    },
+    {
+      "testId": "URL-016",
+      "datasetKey": "tester-url:URL-016",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.youtube.com/watch?v=steve_jobs_stanford_speech",
+      "sourcePath": "아이디어·영감/0097-url.txt",
+      "expected": {
+        "categories": [
+          "아이디어·영감"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "IDEA_INSPIRATION",
+              "categoryName": "아이디어·영감",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2129,
+        "outputTokens": 30,
+        "totalTokens": 2159,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 3075.1312,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 409.5262,
+          "generationDurationMs": 2185.408,
+          "tokensPerSecond": 13.727413828447595,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"IDEA_INSPIRATION\",\"categoryName\":\"아이디어·영감\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "IDEA_INSPIRATION",
+            "categoryName": "아이디어·영감",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 16,
+        "testId": "URL-016",
+        "title": "https://www.youtube.com/watch?v=steve_jobs_stanford_speech",
+        "sourcePath": "아이디어·영감/0097-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.youtube.com/watch?v=steve_jobs_stanford_speech\",\"summary\":\"스티브 잡스가 스탠퍼드 대학에서 발표한 연설에서 'Stay Hungry Stay Foolish'이라는 메시지를 전하며 자신의 삶과 성공에 대한 철학을 공유합니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "IDEA_INSPIRATION",
+        "expectedCategoryName": "아이디어·영감",
+        "top1CategoryId": "IDEA_INSPIRATION",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "IDEA_INSPIRATION",
+            "categoryName": "아이디어·영감",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "IDEA_INSPIRATION",
+            "categoryName": "아이디어·영감",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "IDEA_INSPIRATION"
+        ],
+        "serviceSelectedCategoryIds": [
+          "IDEA_INSPIRATION"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 3075.1312,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "아이디어·영감"
+        ],
+        "serviceSelectedCategoryNames": [
+          "아이디어·영감"
+        ],
+        "top1CategoryName": "아이디어·영감"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:18.678524+09:00"
+    },
+    {
+      "testId": "URL-017",
+      "datasetKey": "tester-url:URL-017",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://m.blog.naver.com/trip_maker/223154829101",
+      "sourcePath": "여행·장소/0031-url.txt",
+      "expected": {
+        "categories": [
+          "여행·장소"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.95},{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":0.85}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "TRAVEL_PLACE",
+              "categoryName": "여행·장소",
+              "score": 0.95
+            },
+            {
+              "categoryId": "FOOD_RESTAURANT",
+              "categoryName": "음식·맛집",
+              "score": 0.85
+            }
+          ]
+        },
+        "inputTokens": 2130,
+        "outputTokens": 53,
+        "totalTokens": 2183,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 4768.855,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 435.8363,
+          "generationDurationMs": 3888.284,
+          "tokensPerSecond": 13.630691585285437,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.95},{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":0.85}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.95
+          },
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 0.85
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 17,
+        "testId": "URL-017",
+        "title": "https://m.blog.naver.com/trip_maker/223154829101",
+        "sourcePath": "여행·장소/0031-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://m.blog.naver.com/trip_maker/223154829101\",\"summary\":\"제주도 3박 4일 여행 코스로 에메랄드빛 바다와 예쁜 카페 탐방을 추천하는 글입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "TRAVEL_PLACE",
+        "expectedCategoryName": "여행·장소",
+        "top1CategoryId": "TRAVEL_PLACE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.95
+          },
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 0.85
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.95
+          },
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 0.85
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "TRAVEL_PLACE",
+          "FOOD_RESTAURANT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "TRAVEL_PLACE",
+          "FOOD_RESTAURANT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [
+          "FOOD_RESTAURANT"
+        ],
+        "extraCategoryCount": 1,
+        "selectedCategoryCount": 2,
+        "exactCorrect": false,
+        "relaxedCorrect": true,
+        "evaluationStatus": "RELAXED_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": false,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 4768.855,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "여행·장소",
+          "음식·맛집"
+        ],
+        "serviceSelectedCategoryNames": [
+          "여행·장소",
+          "음식·맛집"
+        ],
+        "top1CategoryName": "여행·장소"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:25.487415+09:00"
+    },
+    {
+      "testId": "URL-018",
+      "datasetKey": "tester-url:URL-018",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.agoda.com/ko-kr/hotel-example/hotel/osaka-jp.html",
+      "sourcePath": "여행·장소/0036-url.txt",
+      "expected": {
+        "categories": [
+          "여행·장소"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.9}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "TRAVEL_PLACE",
+              "categoryName": "여행·장소",
+              "score": 0.9
+            }
+          ]
+        },
+        "inputTokens": 2115,
+        "outputTokens": 27,
+        "totalTokens": 2142,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2820.2871,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 414.0308,
+          "generationDurationMs": 1956.202,
+          "tokensPerSecond": 13.80225559528106,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.9}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.9
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 18,
+        "testId": "URL-018",
+        "title": "https://www.agoda.com/ko-kr/hotel-example/hotel/osaka-jp.html",
+        "sourcePath": "여행·장소/0036-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.agoda.com/ko-kr/hotel-example/hotel/osaka-jp.html\",\"summary\":\"도톤보리 도보 5분 거리에 위치한 깔끔하고 리뷰가 좋은 가성비 호텔입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "TRAVEL_PLACE",
+        "expectedCategoryName": "여행·장소",
+        "top1CategoryId": "TRAVEL_PLACE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.9
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.9
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "TRAVEL_PLACE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "TRAVEL_PLACE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2820.2871,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "여행·장소"
+        ],
+        "serviceSelectedCategoryNames": [
+          "여행·장소"
+        ],
+        "top1CategoryName": "여행·장소"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:30.337897+09:00"
+    },
+    {
+      "testId": "URL-019",
+      "datasetKey": "tester-url:URL-019",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.1000song.com/recipe/12345",
+      "sourcePath": "음식·맛집/0040-url.txt",
+      "expected": {
+        "categories": [
+          "음식·맛집"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "FOOD_RESTAURANT",
+              "categoryName": "음식·맛집",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2112,
+        "outputTokens": 29,
+        "totalTokens": 2141,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2548.9888,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 419.4516,
+          "generationDurationMs": 1775.174,
+          "tokensPerSecond": 16.336426739012627,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 19,
+        "testId": "URL-019",
+        "title": "https://www.1000song.com/recipe/12345",
+        "sourcePath": "음식·맛집/0040-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.1000song.com/recipe/12345\",\"summary\":\"돼지고기 듬뿍 넣은 진한 국물의 김치찌개 레시피를 소개한 글입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "FOOD_RESTAURANT",
+        "expectedCategoryName": "음식·맛집",
+        "top1CategoryId": "FOOD_RESTAURANT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "FOOD_RESTAURANT"
+        ],
+        "serviceSelectedCategoryIds": [
+          "FOOD_RESTAURANT"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2548.9888,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "음식·맛집"
+        ],
+        "serviceSelectedCategoryNames": [
+          "음식·맛집"
+        ],
+        "top1CategoryName": "음식·맛집"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:34.933596+09:00"
+    },
+    {
+      "testId": "URL-020",
+      "datasetKey": "tester-url:URL-020",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://m.blog.naver.com/dessert_lover/223512940123",
+      "sourcePath": "음식·맛집/0045-url.txt",
+      "expected": {
+        "categories": [
+          "음식·맛집"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":0.95},{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.65}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "FOOD_RESTAURANT",
+              "categoryName": "음식·맛집",
+              "score": 0.95
+            },
+            {
+              "categoryId": "TRAVEL_PLACE",
+              "categoryName": "여행·장소",
+              "score": 0.65
+            }
+          ]
+        },
+        "inputTokens": 2153,
+        "outputTokens": 53,
+        "totalTokens": 2206,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 4428.9869,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 400.7371,
+          "generationDurationMs": 3578.376,
+          "tokensPerSecond": 14.811188092028338,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":0.95},{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.65}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 0.95
+          },
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.65
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 20,
+        "testId": "URL-020",
+        "title": "https://m.blog.naver.com/dessert_lover/223512940123",
+        "sourcePath": "음식·맛집/0045-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://m.blog.naver.com/dessert_lover/223512940123\",\"summary\":\"연남동 카페에서 두바이 초콜릿 케이크가 유행하며, 바삭한 카다이프와 피스타치오 스프레드가 들어간 감성 디저트를 추천합니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "FOOD_RESTAURANT",
+        "expectedCategoryName": "음식·맛집",
+        "top1CategoryId": "FOOD_RESTAURANT",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 0.95
+          },
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.65
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "FOOD_RESTAURANT",
+            "categoryName": "음식·맛집",
+            "score": 0.95
+          },
+          {
+            "categoryId": "TRAVEL_PLACE",
+            "categoryName": "여행·장소",
+            "score": 0.65
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "FOOD_RESTAURANT",
+          "TRAVEL_PLACE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "FOOD_RESTAURANT",
+          "TRAVEL_PLACE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [
+          "TRAVEL_PLACE"
+        ],
+        "extraCategoryCount": 1,
+        "selectedCategoryCount": 2,
+        "exactCorrect": false,
+        "relaxedCorrect": true,
+        "evaluationStatus": "RELAXED_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": false,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 4428.9869,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "음식·맛집",
+          "여행·장소"
+        ],
+        "serviceSelectedCategoryNames": [
+          "음식·맛집",
+          "여행·장소"
+        ],
+        "top1CategoryName": "음식·맛집"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:41.394138+09:00"
+    },
+    {
+      "testId": "URL-021",
+      "datasetKey": "tester-url:URL-021",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://velog.io/@ahn-sujin/React-Query-useInfiniteQuery-사용해서-무한스크롤-구현하기",
+      "sourcePath": "취업·커리어/0021-url.txt",
+      "expected": {
+        "categories": [
+          "취업·커리어"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "LEARNING_KNOWLEDGE",
+              "categoryName": "학습·지식",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2134,
+        "outputTokens": 28,
+        "totalTokens": 2162,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2601.6172,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 420.7772,
+          "generationDurationMs": 1726.166,
+          "tokensPerSecond": 16.220919656626304,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 21,
+        "testId": "URL-021",
+        "title": "https://velog.io/@ahn-sujin/React-Query-useInfiniteQuery-사용해서-무한스크롤-구현하기",
+        "sourcePath": "취업·커리어/0021-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://velog.io/@ahn-sujin/React-Query-useInfiniteQuery-사용해서-무한스크롤-구현하기\",\"summary\":\"React-Query의 useInfiniteQuery를 활용해 쉽게 무한스크롤 기능을 구현할 수 있다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "CAREER",
+        "expectedCategoryName": "취업·커리어",
+        "top1CategoryId": "LEARNING_KNOWLEDGE",
+        "top1Correct": false,
+        "rawPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": false,
+        "rawGoldPresent": false,
+        "extraCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "extraCategoryCount": 1,
+        "selectedCategoryCount": 1,
+        "exactCorrect": false,
+        "relaxedCorrect": false,
+        "evaluationStatus": "WRONG_MISSING_GOLD",
+        "overPrediction": false,
+        "missingGold": true,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": false,
+        "serviceGoldIncluded": false,
+        "serviceExactCorrect": false,
+        "serviceRelaxedCorrect": false,
+        "errorTypes": [
+          "MISSING_GOLD_CATEGORY"
+        ],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2601.6172,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "serviceSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "top1CategoryName": "학습·지식"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:46.049053+09:00"
+    },
+    {
+      "testId": "URL-022",
+      "datasetKey": "tester-url:URL-022",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://job.ssafy.com/job/jobNotice/jobNoticeDetail.do?notice_seq=15440&list_type=NOTICE&searchWord=",
+      "sourcePath": "취업·커리어/0026-url.txt",
+      "expected": {
+        "categories": [
+          "취업·커리어"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"CAREER\",\"categoryName\":\"취업·커리어\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "CAREER",
+              "categoryName": "취업·커리어",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2138,
+        "outputTokens": 27,
+        "totalTokens": 2165,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2502.8576,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 410.1438,
+          "generationDurationMs": 1666.128,
+          "tokensPerSecond": 16.205237532770592,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"CAREER\",\"categoryName\":\"취업·커리어\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "CAREER",
+            "categoryName": "취업·커리어",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 22,
+        "testId": "URL-022",
+        "title": "https://job.ssafy.com/job/jobNotice/jobNoticeDetail.do?notice_seq=15440&list_type=NOTICE&searchWord=",
+        "sourcePath": "취업·커리어/0026-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://job.ssafy.com/job/jobNotice/jobNoticeDetail.do?notice_seq=15440&list_type=NOTICE&searchWord=\",\"summary\":\"SSAFY Job Portal의 공고 상세 페이지로, 특정 공고의 정보를 확인할 수 있는 URL입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "CAREER",
+        "expectedCategoryName": "취업·커리어",
+        "top1CategoryId": "CAREER",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "CAREER",
+            "categoryName": "취업·커리어",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "CAREER",
+            "categoryName": "취업·커리어",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "CAREER"
+        ],
+        "serviceSelectedCategoryIds": [
+          "CAREER"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2502.8576,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "취업·커리어"
+        ],
+        "serviceSelectedCategoryNames": [
+          "취업·커리어"
+        ],
+        "top1CategoryName": "취업·커리어"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:50.606812+09:00"
+    },
+    {
+      "testId": "URL-023",
+      "datasetKey": "tester-url:URL-023",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://www.youtube.com/watch?v=3aNtTUHJeDY",
+      "sourcePath": "학습·지식/0010-url.txt",
+      "expected": {
+        "categories": [
+          "학습·지식"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.9}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "LEARNING_KNOWLEDGE",
+              "categoryName": "학습·지식",
+              "score": 0.9
+            }
+          ]
+        },
+        "inputTokens": 2108,
+        "outputTokens": 28,
+        "totalTokens": 2136,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2563.2925,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 409.8892,
+          "generationDurationMs": 1727.413,
+          "tokensPerSecond": 16.209209957317675,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.9}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 23,
+        "testId": "URL-023",
+        "title": "https://www.youtube.com/watch?v=3aNtTUHJeDY",
+        "sourcePath": "학습·지식/0010-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://www.youtube.com/watch?v=3aNtTUHJeDY\",\"summary\":\"프랑스어 강사 정일영이 '프랑스에서 살아남기'에 대해 특강하는 유튜브 영상입니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "LEARNING_KNOWLEDGE",
+        "expectedCategoryName": "학습·지식",
+        "top1CategoryId": "LEARNING_KNOWLEDGE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2563.2925,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "serviceSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "top1CategoryName": "학습·지식"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:55.219612+09:00"
+    },
+    {
+      "testId": "URL-024",
+      "datasetKey": "tester-url:URL-024",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://velog.io/@jincode93/CS-네트워크-요약-정리",
+      "sourcePath": "학습·지식/0015-url.txt",
+      "expected": {
+        "categories": [
+          "학습·지식"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":1.0}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "LEARNING_KNOWLEDGE",
+              "categoryName": "학습·지식",
+              "score": 1.0
+            }
+          ]
+        },
+        "inputTokens": 2124,
+        "outputTokens": 28,
+        "totalTokens": 2152,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2603.4612,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 411.2025,
+          "generationDurationMs": 1773.16,
+          "tokensPerSecond": 15.79101716709152,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":1.0}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 1.0
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 24,
+        "testId": "URL-024",
+        "title": "https://velog.io/@jincode93/CS-네트워크-요약-정리",
+        "sourcePath": "학습·지식/0015-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://velog.io/@jincode93/CS-네트워크-요약-정리\",\"summary\":\"OSI 7계층과 TCP/IP 4계층에 대한 네트워크 관련 요약 정리 내용을 다룹니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "LEARNING_KNOWLEDGE",
+        "expectedCategoryName": "학습·지식",
+        "top1CategoryId": "LEARNING_KNOWLEDGE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 1.0
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 1.0
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2603.4612,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "serviceSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "top1CategoryName": "학습·지식"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:41:59.867971+09:00"
+    },
+    {
+      "testId": "URL-025",
+      "datasetKey": "tester-url:URL-025",
+      "datasetType": "tester-url",
+      "testMode": "category-only",
+      "title": "https://velog.io/@oojoo/백엔드-자기소개서면접-꿀Tip",
+      "sourcePath": "학습·지식/0020-url.txt",
+      "expected": {
+        "categories": [
+          "학습·지식"
+        ],
+        "requiredKeywords": [],
+        "summaryPoints": [],
+        "forbiddenClaims": []
+      },
+      "modelId": "qwen-local",
+      "provider": "ollama",
+      "requestedModel": "qwen3:8b",
+      "runNumber": 1,
+      "promptVersion": "v1",
+      "response": {
+        "provider": "ollama",
+        "modelId": "qwen-local",
+        "requestedModel": "qwen3:8b",
+        "resolvedModel": "qwen3:8b",
+        "rawText": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.9}]}",
+        "parsedOutput": {
+          "categories": [
+            {
+              "categoryId": "LEARNING_KNOWLEDGE",
+              "categoryName": "학습·지식",
+              "score": 0.9
+            }
+          ]
+        },
+        "inputTokens": 2124,
+        "outputTokens": 28,
+        "totalTokens": 2152,
+        "cachedInputTokens": null,
+        "reasoningTokens": null,
+        "latencyMs": 2602.6983,
+        "attemptCount": 1,
+        "finishReason": "stop",
+        "requestId": null,
+        "status": "SUCCESS",
+        "errorType": null,
+        "errorMessage": null,
+        "structuredOutputRequested": true,
+        "structuredOutputApplied": true,
+        "structuredOutputFallbackUsed": false,
+        "structuredOutputFallbackReason": null,
+        "providerMetadata": {
+          "loadDurationMs": 468.5972,
+          "generationDurationMs": 1747.99,
+          "tokensPerSecond": 16.01839827458967,
+          "temperatureRequested": 0,
+          "temperatureApplied": 0,
+          "streaming": false,
+          "toolsEnabled": false
+        }
+      },
+      "rawResponse": "{\"categories\":[{\"categoryId\":\"LEARNING_KNOWLEDGE\",\"categoryName\":\"학습·지식\",\"score\":0.9}]}",
+      "parsedResponse": {
+        "categories": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ]
+      },
+      "evaluation": {
+        "id": 25,
+        "testId": "URL-025",
+        "title": "https://velog.io/@oojoo/백엔드-자기소개서면접-꿀Tip",
+        "sourcePath": "학습·지식/0020-url.txt",
+        "input": "{\"type\":\"URL\",\"url\":\"https://velog.io/@oojoo/백엔드-자기소개서면접-꿀Tip\",\"summary\":\"자기소개서와 면접 준비 팁을 소개하며, 일찍 알아두는 것이 중요하다고 강조합니다.\"}",
+        "scenario": "typed-category-classification",
+        "structure": "split",
+        "categoryDescriptions": true,
+        "repeatNumber": 1,
+        "model": "qwen-local",
+        "expectedCategoryId": "LEARNING_KNOWLEDGE",
+        "expectedCategoryName": "학습·지식",
+        "top1CategoryId": "LEARNING_KNOWLEDGE",
+        "top1Correct": true,
+        "rawPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ],
+        "validPredictions": [
+          {
+            "categoryId": "LEARNING_KNOWLEDGE",
+            "categoryName": "학습·지식",
+            "score": 0.9
+          }
+        ],
+        "invalidPredictions": [],
+        "threshold": 0.65,
+        "thresholdSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "serviceSelectedCategoryIds": [
+          "LEARNING_KNOWLEDGE"
+        ],
+        "ensureAtLeastOneUsed": false,
+        "fallbackUsed": false,
+        "serviceLimitApplied": false,
+        "goldIncluded": true,
+        "rawGoldPresent": true,
+        "extraCategoryIds": [],
+        "extraCategoryCount": 0,
+        "selectedCategoryCount": 1,
+        "exactCorrect": true,
+        "relaxedCorrect": true,
+        "evaluationStatus": "EXACT_CORRECT",
+        "overPrediction": false,
+        "missingGold": false,
+        "thresholdMiss": false,
+        "hasInvalidPrediction": false,
+        "modelCorrectBeforeFallback": true,
+        "serviceGoldIncluded": true,
+        "serviceExactCorrect": true,
+        "serviceRelaxedCorrect": true,
+        "errorTypes": [],
+        "categoryParseSuccess": true,
+        "summaryParseSuccess": null,
+        "organizationParseSuccess": null,
+        "requestFailed": false,
+        "totalDurationMs": 2602.6983,
+        "generatedSummary": "",
+        "generatedTags": [],
+        "generatedKeywords": [],
+        "thresholdSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "serviceSelectedCategoryNames": [
+          "학습·지식"
+        ],
+        "top1CategoryName": "학습·지식"
+      },
+      "estimatedCost": null,
+      "executedAt": "2026-07-29T13:42:04.498530+09:00"
+    }
+  ]
+}

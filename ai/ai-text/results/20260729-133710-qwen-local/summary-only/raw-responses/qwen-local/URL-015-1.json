@@ -1,0 +1,37 @@
+{
+  "testId": "URL-015",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"핀터레스트에서 제공하는 2024 모던 웹 UI/UX 디자인 레퍼런스는 다크모드와 미니멀리즘, 인터랙티브 요소를 강조한 무드보드입니다.\"}",
+  "parsedOutput": {
+    "summary": "핀터레스트에서 제공하는 2024 모던 웹 UI/UX 디자인 레퍼런스는 다크모드와 미니멀리즘, 인터랙티브 요소를 강조한 무드보드입니다."
+  },
+  "inputTokens": 310,
+  "outputTokens": 65,
+  "totalTokens": 375,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 5201.6704,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 420.5661,
+    "generationDurationMs": 4075.186,
+    "tokensPerSecond": 15.950192212085533,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

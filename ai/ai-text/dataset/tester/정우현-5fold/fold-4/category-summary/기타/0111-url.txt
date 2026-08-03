@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"네이버 날씨","url":"https://weather.naver.com/","content":"전국 날씨 정보, 미세먼지 지수, 주간 예보 제공","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://ssl.pstatic.net/static/weather/m/og_weather.png","description":"네이버 날씨"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

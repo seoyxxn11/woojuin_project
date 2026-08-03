@@ -1,0 +1,37 @@
+{
+  "testId": "URL-005",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"S&P500과 QQQ 중 어느 ETF에 적립식 투자해야 할지에 대한 내용을 다루고 있습니다.\"}",
+  "parsedOutput": {
+    "summary": "S&P500과 QQQ 중 어느 ETF에 적립식 투자해야 할지에 대한 내용을 다루고 있습니다."
+  },
+  "inputTokens": 286,
+  "outputTokens": 36,
+  "totalTokens": 322,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2784.454,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 434.5115,
+    "generationDurationMs": 1880.983,
+    "tokensPerSecond": 19.13892895363754,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

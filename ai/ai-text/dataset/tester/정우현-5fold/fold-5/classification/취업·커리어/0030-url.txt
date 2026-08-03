@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"커리어 지식 플랫폼, 서핏","url":"https://surfit.io/","content":"매일 만나는 커리어 성장 커스텀 피드","summary":"커리어 성장에 도움을 주는 커스텀 피드를 제공하는 플랫폼입니다.","s3Key":null,"preview":{"thumbnailUrl":"https://cdn.surfit.io/og-image.png","description":"커리어 플랫폼"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

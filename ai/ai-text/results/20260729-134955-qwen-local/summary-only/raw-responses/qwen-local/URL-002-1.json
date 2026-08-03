@@ -1,0 +1,37 @@
+{
+  "testId": "URL-002",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"필라테스를 3개월간 진행하면서 코어 강화, 체형 교정, 자세 개선 등의 효과를 경험했다는 후기입니다.\"}",
+  "parsedOutput": {
+    "summary": "필라테스를 3개월간 진행하면서 코어 강화, 체형 교정, 자세 개선 등의 효과를 경험했다는 후기입니다."
+  },
+  "inputTokens": 315,
+  "outputTokens": 43,
+  "totalTokens": 358,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3720.8743,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 420.5232,
+    "generationDurationMs": 2744.376,
+    "tokensPerSecond": 15.66840695298312,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

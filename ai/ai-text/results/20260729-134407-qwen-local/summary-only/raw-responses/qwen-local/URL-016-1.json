@@ -1,0 +1,37 @@
+{
+  "testId": "URL-016",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"네이버 지도에서 강원도 강릉시 안현동 경포대 해변의 위치 정보를 제공합니다.\"}",
+  "parsedOutput": {
+    "summary": "네이버 지도에서 강원도 강릉시 안현동 경포대 해변의 위치 정보를 제공합니다."
+  },
+  "inputTokens": 299,
+  "outputTokens": 32,
+  "totalTokens": 331,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2499.5455,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 406.1797,
+    "generationDurationMs": 1613.419,
+    "tokensPerSecond": 19.83365759297492,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

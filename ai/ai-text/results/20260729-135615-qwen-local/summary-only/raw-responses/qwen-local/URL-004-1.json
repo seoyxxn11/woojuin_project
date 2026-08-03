@@ -1,0 +1,37 @@
+{
+  "testId": "URL-004",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"Speedtest by Ookla는 글로벌 인터넷 속도를 측정하는 서비스로, 초고속 인터넷 및 5G 모바일 속도를 확인할 수 있습니다.\"}",
+  "parsedOutput": {
+    "summary": "Speedtest by Ookla는 글로벌 인터넷 속도를 측정하는 서비스로, 초고속 인터넷 및 5G 모바일 속도를 확인할 수 있습니다."
+  },
+  "inputTokens": 273,
+  "outputTokens": 51,
+  "totalTokens": 324,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3771.4179,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 413.7852,
+    "generationDurationMs": 2868.461,
+    "tokensPerSecond": 17.77956890471929,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

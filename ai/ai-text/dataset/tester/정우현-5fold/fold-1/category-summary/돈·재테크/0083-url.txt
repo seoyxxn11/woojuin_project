@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"2024년 ISA 계좌 절세 혜택 총정리 (사회초년생 필수)","url":"https://www.youtube.com/watch?v=sukaem_etf_isa","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://i.ytimg.com/vi/sukaem_etf_isa/hqdefault.jpg","description":"김작가 TV"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

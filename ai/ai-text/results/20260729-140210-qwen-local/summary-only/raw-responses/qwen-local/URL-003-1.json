@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"스택오버플로우는 개발자들이 질문과 답변을 나누며 학습하고 성장할 수 있는 커뮤니티 웹사이트입니다.\"}",
+  "parsedOutput": {
+    "summary": "스택오버플로우는 개발자들이 질문과 답변을 나누며 학습하고 성장할 수 있는 커뮤니티 웹사이트입니다."
+  },
+  "inputTokens": 270,
+  "outputTokens": 43,
+  "totalTokens": 313,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3542.7931,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 410.4065,
+    "generationDurationMs": 2666.838,
+    "tokensPerSecond": 16.12396403531073,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

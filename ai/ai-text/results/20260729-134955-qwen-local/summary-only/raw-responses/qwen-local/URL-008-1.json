@@ -1,0 +1,37 @@
+{
+  "testId": "URL-008",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"인생과 돈에 대한 명쾌하고 솔직한 통찰을 담은 베스트셀러 독후감을 다룬 서평입니다.\"}",
+  "parsedOutput": {
+    "summary": "인생과 돈에 대한 명쾌하고 솔직한 통찰을 담은 베스트셀러 독후감을 다룬 서평입니다."
+  },
+  "inputTokens": 324,
+  "outputTokens": 41,
+  "totalTokens": 365,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 3527.472,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 405.2836,
+    "generationDurationMs": 2583.83,
+    "tokensPerSecond": 15.86791700692383,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

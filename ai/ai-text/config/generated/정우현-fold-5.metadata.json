@@ -1,0 +1,267 @@
+{
+  "model": "qwen3:8b",
+  "promptVersion": "category-description-v1",
+  "createdAt": "2026-07-29T14:00:12.576397+09:00",
+  "output": "C:\\Users\\SSAFY\\ssafy\\ai\\ai-text\\config\\generated\\정우현-fold-5.json",
+  "generatedCategories": [
+    "건강·운동",
+    "기타",
+    "돈·재테크",
+    "문화·콘텐츠",
+    "생활·할 일",
+    "쇼핑·제품",
+    "아이디어·영감",
+    "여행·장소",
+    "음식·맛집",
+    "취업·커리어",
+    "학습·지식"
+  ],
+  "sampleRoot": "C:\\Users\\SSAFY\\ssafy\\ai\\ai-text\\dataset\\tester\\정우현-5fold\\fold-5\\category-summary",
+  "urlSamplePolicy": "summary 우선, summary가 없으면 content, 둘 다 없으면 제외",
+  "calls": [
+    {
+      "category": "건강·운동",
+      "sampleCount": 4,
+      "sourcePaths": [
+        "URL-002",
+        "URL-004",
+        "URL-005",
+        "URL-007"
+      ],
+      "rawResponse": "{\"description\":\"건강·운동 카테고리는 신체 건강 관리, 운동 방법, 영양 섭취 및 관련 건강 정보를 제공하는 콘텐츠를 다룹니다.\",\"examples\":[\"운동 자세 개선을 위한 실천 기록\",\"체중 감량을 위한 건강한 식단 제안\",\"영양소 복용 방법에 대한 설명\"]}",
+      "performance": {
+        "totalDurationMs": 6594.5825,
+        "loadDurationMs": 449.7789,
+        "promptEvalDurationMs": 465.634,
+        "evalDurationMs": 5410.29,
+        "promptEvalCount": 640,
+        "evalCount": 88,
+        "tokensPerSecond": 16.265301859974233
+      }
+    },
+    {
+      "category": "기타",
+      "sampleCount": 8,
+      "sourcePaths": [
+        "URL-010",
+        "URL-011",
+        "URL-012",
+        "URL-013",
+        "URL-014",
+        "URL-015",
+        "URL-016",
+        "URL-017"
+      ],
+      "rawResponse": "{\"description\":\"기타 카테고리는 주요 주제에 해당하지 않거나, 특정 목적에 맞춰 분류되지 않은 일반적인 정보나 서비스를 포함합니다. 이는 주요 주제 범주에 속하지 않으나, 일반적인 정보나 도구를 제공하는 사이트를 의미합니다.\",\"examples\":[\"일반적인 정보 제공 사이트\", \"도구 및 플랫폼 서비스\", \"기타 유형의 인터넷 서비스\"]}",
+      "performance": {
+        "totalDurationMs": 7203.8163,
+        "loadDurationMs": 421.5064,
+        "promptEvalDurationMs": 407.19,
+        "evalDurationMs": 6279.11,
+        "promptEvalCount": 672,
+        "evalCount": 102,
+        "tokensPerSecond": 16.24434036033769
+      }
+    },
+    {
+      "category": "돈·재테크",
+      "sampleCount": 4,
+      "sourcePaths": [
+        "URL-018",
+        "URL-020",
+        "URL-023",
+        "URL-025"
+      ],
+      "rawResponse": "{\"description\":\"재테크 전략, 투자 방법, 자산 운용 및 금융 상품에 대한 정보를 제공하는 카테고리로, 개인의 재정 상태를 개선하고 자산을 관리하는 데 초점을 맞춥니다.\",\"examples\":[\"주식 투자 전략과 수익률 분석\",\"부동산 매매 시 주의 사항과 세금 계산 방법\",\"은행 상품의 이자율 비교 및 자산 배분 전략\"]}",
+      "performance": {
+        "totalDurationMs": 8290.4372,
+        "loadDurationMs": 408.9324,
+        "promptEvalDurationMs": 475.046,
+        "evalDurationMs": 7312.188,
+        "promptEvalCount": 627,
+        "evalCount": 113,
+        "tokensPerSecond": 15.453650808759294
+      }
+    },
+    {
+      "category": "문화·콘텐츠",
+      "sampleCount": 6,
+      "sourcePaths": [
+        "URL-026",
+        "URL-027",
+        "URL-028",
+        "URL-030",
+        "URL-032",
+        "URL-033"
+      ],
+      "rawResponse": "{\"description\":\"문화·콘텐츠는 영화, 드라마, 웹툰, 예술 전시 등 대중문화 및 창의적 콘텐츠에 대한 정보와 분석을 다룹니다.\",\"examples\":[\"신작 영화의 상영 일정 및 감상 리뷰\",\"웹툰의 줄거리와 주요 인물 소개\",\"예술 전시의 특별 티켓 정보 및 감상 방법\"]}",
+      "performance": {
+        "totalDurationMs": 7256.111,
+        "loadDurationMs": 416.8169,
+        "promptEvalDurationMs": 488.593,
+        "evalDurationMs": 6256.887,
+        "promptEvalCount": 732,
+        "evalCount": 95,
+        "tokensPerSecond": 15.183269251945896
+      }
+    },
+    {
+      "category": "생활·할 일",
+      "sampleCount": 7,
+      "sourcePaths": [
+        "URL-034",
+        "URL-035",
+        "URL-036",
+        "URL-037",
+        "URL-038",
+        "URL-040",
+        "URL-041"
+      ],
+      "rawResponse": "{\"description\":\"자취 생활을 위한 실용적인 조언과 집안 정리, 냉장고 재료 관리, 효율적인 수납 방법에 대한 정보\",\"examples\":[\"자취방에서 공간을 효율적으로 활용하고 정리하는 방법\",\"냉장고에 있는 재료를 바탕으로 맞춤형 레시피를 추천해주는 앱 사용법\",\"혼자 살 때 필요한 생활비 절약 팁과 건강 관리 방법\"]}",
+      "performance": {
+        "totalDurationMs": 11503.8238,
+        "loadDurationMs": 425.7309,
+        "promptEvalDurationMs": 2833.762,
+        "evalDurationMs": 8166.259,
+        "promptEvalCount": 2050,
+        "evalCount": 108,
+        "tokensPerSecond": 13.225149973812979
+      }
+    },
+    {
+      "category": "쇼핑·제품",
+      "sampleCount": 9,
+      "sourcePaths": [
+        "URL-042",
+        "URL-043",
+        "URL-044",
+        "URL-045",
+        "URL-046",
+        "URL-047",
+        "URL-048",
+        "URL-049",
+        "URL-050"
+      ],
+      "rawResponse": "{\"description\":\"쇼핑·제품 카테고리는 제품의 구매 정보, 스펙, 가격, 특징 등 제품에 대한 구체적인 설명과 관련된 콘텐츠를 다룹니다. 사용자는 제품을 선택하거나 구매 결정을 내릴 때 필요한 정보를 얻을 수 있도록 합니다.\",\"examples\":[\"무선 마우스의 고성능 스크롤과 무소음 클릭 기능 설명\",\"로켓배송으로 제공되는 36GB RAM 1TB SSD 제품 정보\",\"가성비 뛰어난 무선 블루투스 키보드의 타건감 평가\"]}",
+      "performance": {
+        "totalDurationMs": 10728.5684,
+        "loadDurationMs": 419.3927,
+        "promptEvalDurationMs": 567.015,
+        "evalDurationMs": 9520.56,
+        "promptEvalCount": 907,
+        "evalCount": 148,
+        "tokensPerSecond": 15.545304057744502
+      }
+    },
+    {
+      "category": "아이디어·영감",
+      "sampleCount": 5,
+      "sourcePaths": [
+        "URL-051",
+        "URL-052",
+        "URL-054",
+        "URL-056",
+        "URL-057"
+      ],
+      "rawResponse": "{\"description\":\"아이디어·영감 카테고리는 창의적 아이디어, 디자인, 마케팅 전략 등이 담긴 영감을 주는 콘텐츠를 다룹니다. 이는 단순한 정보 전달이 아닌, 창의적 사고와 실행 방향을 제시하는 내용을 중심으로 합니다.\",\"examples\":[\"미니멀리즘 디자인 트렌드 분석\", \"브랜드 아이덴티티 구축 전략\", \"마케팅 제목 작성 기법\"]}",
+      "performance": {
+        "totalDurationMs": 9325.7589,
+        "loadDurationMs": 437.7712,
+        "promptEvalDurationMs": 524.241,
+        "evalDurationMs": 8243.28,
+        "promptEvalCount": 700,
+        "evalCount": 126,
+        "tokensPerSecond": 15.285177744781203
+      }
+    },
+    {
+      "category": "여행·장소",
+      "sampleCount": 8,
+      "sourcePaths": [
+        "URL-059",
+        "URL-060",
+        "URL-061",
+        "URL-062",
+        "URL-063",
+        "URL-064",
+        "URL-065",
+        "URL-066"
+      ],
+      "rawResponse": "{\"description\":\"이 카테고리는 여행지의 방문 경로, 추천 명소, 관광 코스, 숙소 정보, 지도 위치 등을 제공하여 여행 계획 수립에 도움을 주는 콘텐츠를 다룹니다.\",\"examples\":[\"도쿄의 주요 관광지별 일정 안내\",\"싱가포르 센토사 섬 관광 티켓 예약 정보\",\"강릉 해변 주변의 숙소 위치 및 추천\"]}",
+      "performance": {
+        "totalDurationMs": 8820.9079,
+        "loadDurationMs": 429.5027,
+        "promptEvalDurationMs": 942.775,
+        "evalDurationMs": 7343.88,
+        "promptEvalCount": 884,
+        "evalCount": 111,
+        "tokensPerSecond": 15.114626055981306
+      }
+    },
+    {
+      "category": "음식·맛집",
+      "sampleCount": 6,
+      "sourcePaths": [
+        "URL-067",
+        "URL-068",
+        "URL-070",
+        "URL-071",
+        "URL-072",
+        "URL-074"
+      ],
+      "rawResponse": "{\"description\":\"음식·맛집은 특정 음식이나 식당을 중심으로 한 맛집 리뷰, 레시피 공유, 예약 정보, 또는 음식 관련 경험을 소개하는 콘텐츠를 다룹니다.\",\"examples\":[\"부산의 고급스러운 돼지국밥 집의 예약 방법을 안내한 글\",\"매콤한 크림 파스타와 오므라이스로 유명한 성수동 식당 리뷰\",\"감성 디저트 투어로 추천된 특별한 디저트 메뉴 소개\"]}",
+      "performance": {
+        "totalDurationMs": 10248.054,
+        "loadDurationMs": 417.2772,
+        "promptEvalDurationMs": 760.495,
+        "evalDurationMs": 8968.203,
+        "promptEvalCount": 775,
+        "evalCount": 135,
+        "tokensPerSecond": 15.053182895168629
+      }
+    },
+    {
+      "category": "취업·커리어",
+      "sampleCount": 6,
+      "sourcePaths": [
+        "URL-075",
+        "URL-076",
+        "URL-078",
+        "URL-080",
+        "URL-081",
+        "URL-082"
+      ],
+      "rawResponse": "{\"description\":\"취업·커리어는 취업 준비, 채용 정보, 커리어 성장 관련 내용을 다룹니다.\",\"examples\":[\"개발자 취업을 위한 채용 플랫폼 소개\",\"취업 경쟁력 향상을 위한 교육 프로그램 안내\",\"개발자 커리어 성장에 필요한 채용 서비스 정보\"]}",
+      "performance": {
+        "totalDurationMs": 6850.9012,
+        "loadDurationMs": 414.1186,
+        "promptEvalDurationMs": 614.404,
+        "evalDurationMs": 5692.06,
+        "promptEvalCount": 713,
+        "evalCount": 87,
+        "tokensPerSecond": 15.28444886385597
+      }
+    },
+    {
+      "category": "학습·지식",
+      "sampleCount": 5,
+      "sourcePaths": [
+        "URL-084",
+        "URL-087",
+        "URL-089",
+        "URL-090",
+        "URL-091"
+      ],
+      "rawResponse": "{\"description\":\"학습·지식은 특정 분야의 지식, 기술, 경험을 정리하여 공유하거나 학습 자료를 제공하는 내용을 다룹니다.\",\"examples\":[\"컴퓨터 과학 관련 강의 계획서 요약\",\"기술 면접 질문 및 답변 정리\",\"자기소개서 작성 팁 제공\"]}",
+      "performance": {
+        "totalDurationMs": 6290.9535,
+        "loadDurationMs": 418.519,
+        "promptEvalDurationMs": 642.86,
+        "evalDurationMs": 5139.875,
+        "promptEvalCount": 694,
+        "evalCount": 79,
+        "tokensPerSecond": 15.370023590067852
+      }
+    }
+  ]
+}

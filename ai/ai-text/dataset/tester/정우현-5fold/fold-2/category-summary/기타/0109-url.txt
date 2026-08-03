@@ -1,0 +1,1 @@
+{"itemId":null,"type":"URL","status":"DONE","title":"Claude","url":"https://claude.ai/","content":"Anthropic의 인공지능 어시스턴트 클로드","summary":null,"s3Key":null,"preview":{"thumbnailUrl":"https://claude.ai/static/og-image.png","description":"클로드 메인"},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-018",
+  "provider": "ollama",
+  "modelId": "qwen-local",
+  "requestedModel": "qwen3:8b",
+  "resolvedModel": "qwen3:8b",
+  "rawText": "{\"summary\":\"SSAFY Job Portal의 공고 상세 페이지 URL입니다.\"}",
+  "parsedOutput": {
+    "summary": "SSAFY Job Portal의 공고 상세 페이지 URL입니다."
+  },
+  "inputTokens": 279,
+  "outputTokens": 19,
+  "totalTokens": 298,
+  "cachedInputTokens": null,
+  "reasoningTokens": null,
+  "latencyMs": 2150.0826,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "loadDurationMs": 418.9446,
+    "generationDurationMs": 1161.211,
+    "tokensPerSecond": 16.362228742235477,
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "streaming": false,
+    "toolsEnabled": false
+  },
+  "estimatedCost": null
+}

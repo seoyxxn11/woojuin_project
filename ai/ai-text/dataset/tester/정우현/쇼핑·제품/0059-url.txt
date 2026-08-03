@@ -1,1 +1,1 @@
-{"itemId":null,"type":"URL","status":"PARTIAL","title":"bodyitlove.com","url":"https://bodyitlove.com/캠핑-텐트/","content":null,"summary":null,"s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}
+{"itemId":null,"type":"URL","status":"PARTIAL","title":"캠핑 텐트 리뷰 및 추천","url":"https://bodyitlove.com/캠핑-텐트/","content":null,"summary":"캠핑 텐트의 종류와 선택 방법을 소개하며, 추천 제품을 비교한 리뷰입니다.","s3Key":null,"preview":{"thumbnailUrl":null,"description":null},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -68,10 +68,116 @@ def resolve_scenarios(values: Iterable[str]) -> list[DynamicCategoryScenario]:
     return [SCENARIOS[value] for value in dict.fromkeys(expanded)]
 
 
+PRESET_SEEDS: dict[int, list[dict[str, Any]]] = {
+    7: [
+        {
+            "id": "LIFE_HEALTH",
+            "name": "생활·건강",
+            "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+            "examples": ["주말 방 정리 계획", "기숙사 준비물", "주 3회 근력 운동 계획"],
+        },
+        {
+            "id": "LEARNING_CAREER",
+            "name": "학습·커리어",
+            "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+            "examples": ["SQLD 시험 공부 계획", "JWT 재발급 구조 정리", "백엔드 면접 준비"],
+        },
+        {
+            "id": "TRAVEL_PLACE",
+            "name": "여행·장소",
+            "description": "여행 일정, 방문할 장소, 교통, 숙소와 지역 탐방에 관한 내용",
+            "examples": ["제주 여행 일정", "서울 전시회 방문 후보", "부산 숙소와 교통 계획"],
+        },
+        {
+            "id": "FOOD_RESTAURANT",
+            "name": "음식·맛집",
+            "description": "요리법, 식재료, 식당, 메뉴, 맛집 방문과 식사 계획에 관한 내용",
+            "examples": ["닭가슴살 볶음밥 레시피", "성수동 식당 후보", "김치찌개 조리 순서"],
+        },
+        {
+            "id": "SHOPPING_PRODUCT",
+            "name": "쇼핑·제품",
+            "description": "상품 구매 후보, 제품 비교, 가격과 기능 검토, 구매 의사결정 중심의 내용",
+            "examples": ["무선 키보드 구매 후보", "이어폰 배터리 성능 비교", "노트북 가격 확인"],
+        },
+        {
+            "id": "MONEY_FINANCE",
+            "name": "돈·재테크",
+            "description": "예산, 저축, 투자, 보험, 세금, 대출과 자산 관리 등 개인 금융 중심의 내용",
+            "examples": ["월간 예산 정리", "적금 금리 비교", "ETF 투자 기록"],
+        },
+        {
+            "id": "CULTURE_IDEA",
+            "name": "문화·아이디어",
+            "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+            "examples": ["읽어볼 개발 에세이", "앱 기능 아이디어", "콘텐츠 기획 메모"],
+        },
+    ],
+    5: [
+        {
+            "id": "LIFE_HEALTH",
+            "name": "생활·건강",
+            "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+            "examples": ["주말 방 정리 계획", "기숙사 준비물", "주 3회 근력 운동 계획"],
+        },
+        {
+            "id": "LEARNING_CAREER",
+            "name": "학습·커리어",
+            "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+            "examples": ["SQLD 시험 공부 계획", "JWT 재발급 구조 정리", "백엔드 면접 준비"],
+        },
+        {
+            "id": "PLACE_FOOD",
+            "name": "장소·먹거리",
+            "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+            "examples": ["제주 여행 일정", "성수동 식당 후보", "닭가슴살 볶음밥 레시피"],
+        },
+        {
+            "id": "CONSUMPTION_FINANCE",
+            "name": "소비·금융",
+            "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+            "examples": ["무선 키보드 구매 후보", "월간 예산 정리", "적금 금리 비교"],
+        },
+        {
+            "id": "CULTURE_IDEA",
+            "name": "문화·아이디어",
+            "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+            "examples": ["읽어볼 개발 에세이", "앱 기능 아이디어", "콘텐츠 기획 메모"],
+        },
+    ],
+    3: [
+        {
+            "id": "LIFE_MANAGEMENT",
+            "name": "생활·관리",
+            "description": "일상 할 일, 건강 관리, 운동, 예산 및 지출 관리 등 일상 생활 유지와 관리에 관한 내용",
+            "examples": ["주말 방 정리 계획", "주 3회 근력 운동 계획", "월간 예산 정리"],
+        },
+        {
+            "id": "LEARNING_GROWTH",
+            "name": "학습·성장",
+            "description": "공부, 강의, 개발 학습, 자격증, 채용 공고, 면접 등 자기계발과 성장에 관한 내용",
+            "examples": ["SQLD 시험 공부 계획", "JWT 재발급 구조 정리", "백엔드 면접 준비"],
+        },
+        {
+            "id": "INTEREST_EXPLORATION",
+            "name": "관심·탐색",
+            "description": "여행지, 맛집, 카페, 쇼핑 제품, 영화·드라마 등 문화 콘텐츠 및 아이디어 탐색에 관한 내용",
+            "examples": [
+                "제주 여행 일정",
+                "성수동 식당 후보",
+                "무선 키보드 구매 후보",
+                "읽어볼 개발 에세이",
+                "앱 기능 아이디어",
+            ],
+        },
+    ],
+}
+
+
 def seed_definitions(
     definitions: list[dict[str, Any]], seed_count: int
 ) -> list[dict[str, Any]]:
-    """현재 데이터셋에 존재하는 카테고리의 설정 파일 순서를 사용한다."""
+    """축소 실험 조건(3개, 5개, 7개)의 통합 카테고리 프리셋 또는 기존 카테고리를 반환한다."""
     candidates = [dict(item) for item in definitions]
     if seed_count < 0:
         raise ValueError("기존 카테고리 개수는 0 이상이어야 합니다.")
@@ -80,6 +186,8 @@ def seed_definitions(
             f"기존 카테고리 {seed_count}개가 필요하지만 사용 가능한 카테고리는 "
             f"{len(candidates)}개입니다."
         )
+    if seed_count in PRESET_SEEDS:
+        return [dict(item) for item in PRESET_SEEDS[seed_count]]
     return candidates[:seed_count]
 
 

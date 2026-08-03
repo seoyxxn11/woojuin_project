@@ -5,3 +5,7 @@ __pycache__/
 .env.local
 !.env.example
 *.key
+results/
+review-data/
+review-inputs/
+

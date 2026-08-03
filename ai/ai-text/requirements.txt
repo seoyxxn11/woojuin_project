@@ -7,3 +7,4 @@ pandas>=2.1
 umap-learn>=0.5.8
 psutil>=5.9
 pytest>=8.0
+streamlit>=1.37

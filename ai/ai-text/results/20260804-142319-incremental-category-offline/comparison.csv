@@ -1,0 +1,4 @@
+﻿order,finalFormalCategoryCount,aiPromotedCategoryCount,createdCandidateCount,reusedCandidateEventCount,promotedCandidateCount,readyToPromoteCandidateCount,mergedCandidateCount,singleLinkCandidateCount,reclassifiedItemCount,exceededMaxFormalCategories
+original,10,5,88,4,6,0,0,77,18,False
+shuffle-42,10,5,88,4,5,1,0,77,15,False
+shuffle-84,10,5,88,3,5,1,0,77,15,False

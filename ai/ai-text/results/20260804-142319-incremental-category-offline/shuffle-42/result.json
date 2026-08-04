@@ -1,0 +1,5994 @@
+{
+  "order": "shuffle-42",
+  "randomSeed": 42,
+  "workspaceId": 10,
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2
+  },
+  "summary": {
+    "finalFormalCategoryCount": 10,
+    "aiPromotedCategoryCount": 5,
+    "createdCandidateCount": 88,
+    "reusedCandidateEventCount": 4,
+    "newCandidateEventCount": 88,
+    "promotedCandidateCount": 5,
+    "readyToPromoteCandidateCount": 1,
+    "mergedCandidateCount": 0,
+    "singleLinkCandidateCount": 77,
+    "reclassifiedItemCount": 15,
+    "exceededMaxFormalCategories": false,
+    "totalItems": 112,
+    "order": "shuffle-42",
+    "randomSeed": 42
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 22,
+        "itemIds": [
+          "URL-002",
+          "URL-009",
+          "URL-073",
+          "URL-051",
+          "URL-011",
+          "URL-062",
+          "URL-007",
+          "URL-111",
+          "URL-043",
+          "URL-067",
+          "URL-040",
+          "URL-008",
+          "URL-006",
+          "URL-081",
+          "URL-097",
+          "URL-098",
+          "URL-058",
+          "URL-100",
+          "URL-026",
+          "URL-072",
+          "URL-005",
+          "URL-004"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 22,
+        "itemIds": [
+          "URL-027",
+          "URL-077",
+          "URL-085",
+          "URL-057",
+          "URL-050",
+          "URL-060",
+          "URL-107",
+          "URL-069",
+          "URL-038",
+          "URL-112",
+          "URL-003",
+          "URL-037",
+          "URL-092",
+          "URL-034",
+          "URL-045",
+          "URL-103",
+          "URL-044",
+          "URL-108",
+          "URL-101",
+          "URL-030",
+          "URL-099",
+          "URL-109"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 8,
+        "itemIds": [
+          "URL-079",
+          "URL-061",
+          "URL-074",
+          "URL-090",
+          "URL-091",
+          "URL-093",
+          "URL-087",
+          "URL-082"
+        ]
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 14,
+        "itemIds": [
+          "URL-048",
+          "URL-053",
+          "URL-089",
+          "URL-102",
+          "URL-088",
+          "URL-105",
+          "URL-059",
+          "URL-056",
+          "URL-041",
+          "URL-025",
+          "URL-054",
+          "URL-055",
+          "URL-104",
+          "URL-032"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 15,
+        "itemIds": [
+          "URL-033",
+          "URL-083",
+          "URL-042",
+          "URL-039",
+          "URL-052",
+          "URL-096",
+          "URL-086",
+          "URL-075",
+          "URL-046",
+          "URL-094",
+          "URL-080",
+          "URL-078",
+          "URL-028",
+          "URL-110",
+          "URL-095"
+        ]
+      },
+      {
+        "id": "AI-D2DE6C63A9",
+        "name": "재테크",
+        "description": "재테크 관련 반복 주제 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "URL-031",
+        "itemCount": 7,
+        "itemIds": [
+          "URL-031",
+          "URL-010",
+          "URL-063",
+          "URL-022",
+          "URL-023",
+          "URL-024",
+          "URL-029"
+        ]
+      },
+      {
+        "id": "AI-4C2DEE5181",
+        "name": "창업",
+        "description": "창업 관련 반복 주제 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "URL-071",
+        "itemCount": 6,
+        "itemIds": [
+          "URL-071",
+          "URL-066",
+          "URL-068",
+          "URL-064",
+          "URL-065",
+          "URL-070"
+        ]
+      },
+      {
+        "id": "AI-56A5BF88EA",
+        "name": "심리",
+        "description": "심리 관련 반복 주제 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "URL-016",
+        "itemCount": 8,
+        "itemIds": [
+          "URL-016",
+          "URL-017",
+          "URL-019",
+          "URL-035",
+          "URL-020",
+          "URL-021",
+          "URL-106",
+          "URL-076"
+        ]
+      },
+      {
+        "id": "AI-6F0EF0B54E",
+        "name": "레시피",
+        "description": "레시피 관련 반복 주제 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "URL-047",
+        "itemCount": 4,
+        "itemIds": [
+          "URL-047",
+          "URL-049",
+          "URL-001",
+          "URL-084"
+        ]
+      },
+      {
+        "id": "AI-025FA0A8B1",
+        "name": "운세",
+        "description": "운세 관련 반복 주제 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "URL-013",
+        "itemCount": 6,
+        "itemIds": [
+          "URL-013",
+          "URL-012",
+          "URL-014",
+          "URL-018",
+          "URL-036",
+          "URL-015"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "심리",
+        "description": "심리 관련 반복 주제 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:01+09:00",
+        "updatedAt": "2026-08-04T22:01:43+09:00",
+        "createdAtItemId": "URL-016",
+        "linkedItemIds": [
+          "URL-016",
+          "URL-017",
+          "URL-019"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-56A5BF88EA",
+        "lastReviewReason": "후보 내부 일관성 충족 (평균 0.87)"
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "앱스토어에서·특정",
+        "description": "앱스토어에서·특정 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:03+09:00",
+        "updatedAt": "2026-08-04T22:00:04+09:00",
+        "createdAtItemId": "URL-048",
+        "linkedItemIds": [
+          "URL-048"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "재테크",
+        "description": "재테크 관련 반복 주제 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:05+09:00",
+        "updatedAt": "2026-08-04T22:00:51+09:00",
+        "createdAtItemId": "URL-031",
+        "linkedItemIds": [
+          "URL-031",
+          "URL-010",
+          "URL-063"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-D2DE6C63A9",
+        "lastReviewReason": "후보 내부 일관성 충족 (평균 0.55)"
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "어깨·통증을",
+        "description": "어깨·통증을 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:08+09:00",
+        "updatedAt": "2026-08-04T22:00:09+09:00",
+        "createdAtItemId": "URL-002",
+        "linkedItemIds": [
+          "URL-002"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "2026년·청약",
+        "description": "2026년·청약 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:11+09:00",
+        "updatedAt": "2026-08-04T22:00:12+09:00",
+        "createdAtItemId": "URL-027",
+        "linkedItemIds": [
+          "URL-027"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 6,
+        "workspaceId": 10,
+        "suggestedName": "속초·청호해안길에",
+        "description": "속초·청호해안길에 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:13+09:00",
+        "updatedAt": "2026-08-04T22:00:14+09:00",
+        "createdAtItemId": "URL-077",
+        "linkedItemIds": [
+          "URL-077"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 7,
+        "workspaceId": 10,
+        "suggestedName": "노트북용·가방을",
+        "description": "노트북용·가방을 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:15+09:00",
+        "updatedAt": "2026-08-04T22:00:16+09:00",
+        "createdAtItemId": "URL-053",
+        "linkedItemIds": [
+          "URL-053"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 8,
+        "workspaceId": 10,
+        "suggestedName": "전주·대표",
+        "description": "전주·대표 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:17+09:00",
+        "updatedAt": "2026-08-04T22:00:18+09:00",
+        "createdAtItemId": "URL-085",
+        "linkedItemIds": [
+          "URL-085"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 9,
+        "workspaceId": 10,
+        "suggestedName": "강남역·맛집",
+        "description": "강남역·맛집 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:19+09:00",
+        "updatedAt": "2026-08-04T22:00:25+09:00",
+        "createdAtItemId": "URL-089",
+        "linkedItemIds": [
+          "URL-089",
+          "URL-088"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 10,
+        "workspaceId": 10,
+        "suggestedName": "부산·해운대의",
+        "description": "부산·해운대의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:21+09:00",
+        "updatedAt": "2026-08-04T22:00:22+09:00",
+        "createdAtItemId": "URL-079",
+        "linkedItemIds": [
+          "URL-079"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 11,
+        "workspaceId": 10,
+        "suggestedName": "프랑스어·강사",
+        "description": "프랑스어·강사 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:23+09:00",
+        "updatedAt": "2026-08-04T22:00:24+09:00",
+        "createdAtItemId": "URL-102",
+        "linkedItemIds": [
+          "URL-102"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 12,
+        "workspaceId": 10,
+        "suggestedName": "2026년·대한민국",
+        "description": "2026년·대한민국 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:26+09:00",
+        "updatedAt": "2026-08-04T22:00:27+09:00",
+        "createdAtItemId": "URL-033",
+        "linkedItemIds": [
+          "URL-033"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 13,
+        "workspaceId": 10,
+        "suggestedName": "신세계몰에서·명품",
+        "description": "신세계몰에서·명품 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:28+09:00",
+        "updatedAt": "2026-08-04T22:00:29+09:00",
+        "createdAtItemId": "URL-057",
+        "linkedItemIds": [
+          "URL-057"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 14,
+        "workspaceId": 10,
+        "suggestedName": "전주·콩나물국밥은",
+        "description": "전주·콩나물국밥은 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:30+09:00",
+        "updatedAt": "2026-08-04T22:00:31+09:00",
+        "createdAtItemId": "URL-083",
+        "linkedItemIds": [
+          "URL-083"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 15,
+        "workspaceId": 10,
+        "suggestedName": "걷기·운동",
+        "description": "걷기·운동 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:32+09:00",
+        "updatedAt": "2026-08-04T22:00:33+09:00",
+        "createdAtItemId": "URL-009",
+        "linkedItemIds": [
+          "URL-009"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 16,
+        "workspaceId": 10,
+        "suggestedName": "자취·생활비",
+        "description": "자취·생활비 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:34+09:00",
+        "updatedAt": "2026-08-04T22:00:35+09:00",
+        "createdAtItemId": "URL-050",
+        "linkedItemIds": [
+          "URL-050"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 17,
+        "workspaceId": 10,
+        "suggestedName": "40세·이후",
+        "description": "40세·이후 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:36+09:00",
+        "updatedAt": "2026-08-04T22:00:37+09:00",
+        "createdAtItemId": "URL-042",
+        "linkedItemIds": [
+          "URL-042"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 18,
+        "workspaceId": 10,
+        "suggestedName": "캠핑·텐트의",
+        "description": "캠핑·텐트의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:38+09:00",
+        "updatedAt": "2026-08-04T22:00:39+09:00",
+        "createdAtItemId": "URL-061",
+        "linkedItemIds": [
+          "URL-061"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 19,
+        "workspaceId": 10,
+        "suggestedName": "쿠팡에서·실내용",
+        "description": "쿠팡에서·실내용 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:40+09:00",
+        "updatedAt": "2026-08-04T22:00:41+09:00",
+        "createdAtItemId": "URL-060",
+        "linkedItemIds": [
+          "URL-060"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 20,
+        "workspaceId": 10,
+        "suggestedName": "네트워크·기초",
+        "description": "네트워크·기초 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:42+09:00",
+        "updatedAt": "2026-08-04T22:01:10+09:00",
+        "createdAtItemId": "URL-107",
+        "linkedItemIds": [
+          "URL-107",
+          "URL-105"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 21,
+        "workspaceId": 10,
+        "suggestedName": "보험계리사·1차",
+        "description": "보험계리사·1차 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:44+09:00",
+        "updatedAt": "2026-08-04T22:00:45+09:00",
+        "createdAtItemId": "URL-069",
+        "linkedItemIds": [
+          "URL-069"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 22,
+        "workspaceId": 10,
+        "suggestedName": "부산·2박",
+        "description": "부산·2박 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:46+09:00",
+        "updatedAt": "2026-08-04T22:00:47+09:00",
+        "createdAtItemId": "URL-073",
+        "linkedItemIds": [
+          "URL-073"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 23,
+        "workspaceId": 10,
+        "suggestedName": "부산·해운대와",
+        "description": "부산·해운대와 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:48+09:00",
+        "updatedAt": "2026-08-04T22:00:49+09:00",
+        "createdAtItemId": "URL-074",
+        "linkedItemIds": [
+          "URL-074"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 24,
+        "workspaceId": 10,
+        "suggestedName": "강남·지역의",
+        "description": "강남·지역의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:52+09:00",
+        "updatedAt": "2026-08-04T22:00:53+09:00",
+        "createdAtItemId": "URL-090",
+        "linkedItemIds": [
+          "URL-090"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 25,
+        "workspaceId": 10,
+        "suggestedName": "2026년·전시",
+        "description": "2026년·전시 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:54+09:00",
+        "updatedAt": "2026-08-04T22:00:55+09:00",
+        "createdAtItemId": "URL-038",
+        "linkedItemIds": [
+          "URL-038"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 26,
+        "workspaceId": 10,
+        "suggestedName": "강남역에서·가성비",
+        "description": "강남역에서·가성비 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:56+09:00",
+        "updatedAt": "2026-08-04T22:00:57+09:00",
+        "createdAtItemId": "URL-091",
+        "linkedItemIds": [
+          "URL-091"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 27,
+        "workspaceId": 10,
+        "suggestedName": "2026년·서울에서",
+        "description": "2026년·서울에서 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:00:58+09:00",
+        "updatedAt": "2026-08-04T22:00:59+09:00",
+        "createdAtItemId": "URL-039",
+        "linkedItemIds": [
+          "URL-039"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 28,
+        "workspaceId": 10,
+        "suggestedName": "창업",
+        "description": "창업 관련 반복 주제 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:00+09:00",
+        "updatedAt": "2026-08-04T22:01:31+09:00",
+        "createdAtItemId": "URL-071",
+        "linkedItemIds": [
+          "URL-071",
+          "URL-066",
+          "URL-068"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-4C2DEE5181",
+        "lastReviewReason": "후보 내부 일관성 충족 (평균 0.54)"
+      },
+      {
+        "candidateId": 29,
+        "workspaceId": 10,
+        "suggestedName": "자취생이라면·알아야",
+        "description": "자취생이라면·알아야 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:02+09:00",
+        "updatedAt": "2026-08-04T22:01:03+09:00",
+        "createdAtItemId": "URL-051",
+        "linkedItemIds": [
+          "URL-051"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 30,
+        "workspaceId": 10,
+        "suggestedName": "걷기는·심혈관",
+        "description": "걷기는·심혈관 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:04+09:00",
+        "updatedAt": "2026-08-04T22:01:05+09:00",
+        "createdAtItemId": "URL-011",
+        "linkedItemIds": [
+          "URL-011"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 31,
+        "workspaceId": 10,
+        "suggestedName": "mac·studio는",
+        "description": "mac·studio는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:06+09:00",
+        "updatedAt": "2026-08-04T22:01:07+09:00",
+        "createdAtItemId": "URL-052",
+        "linkedItemIds": [
+          "URL-052"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 32,
+        "workspaceId": 10,
+        "suggestedName": "유튜브는·사용자가",
+        "description": "유튜브는·사용자가 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:08+09:00",
+        "updatedAt": "2026-08-04T22:01:09+09:00",
+        "createdAtItemId": "URL-062",
+        "linkedItemIds": [
+          "URL-062"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 33,
+        "workspaceId": 10,
+        "suggestedName": "쿠팡에서·구매",
+        "description": "쿠팡에서·구매 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:11+09:00",
+        "updatedAt": "2026-08-04T22:01:12+09:00",
+        "createdAtItemId": "URL-059",
+        "linkedItemIds": [
+          "URL-059"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 34,
+        "workspaceId": 10,
+        "suggestedName": "수면의·질을",
+        "description": "수면의·질을 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:13+09:00",
+        "updatedAt": "2026-08-04T22:01:55+09:00",
+        "createdAtItemId": "URL-007",
+        "linkedItemIds": [
+          "URL-007",
+          "URL-006"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 35,
+        "workspaceId": 10,
+        "suggestedName": "백엔드·개발자로서",
+        "description": "백엔드·개발자로서 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:16+09:00",
+        "updatedAt": "2026-08-04T22:01:17+09:00",
+        "createdAtItemId": "URL-112",
+        "linkedItemIds": [
+          "URL-112"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 36,
+        "workspaceId": 10,
+        "suggestedName": "2024년·대용량",
+        "description": "2024년·대용량 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:18+09:00",
+        "updatedAt": "2026-08-04T22:01:19+09:00",
+        "createdAtItemId": "URL-056",
+        "linkedItemIds": [
+          "URL-056"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 37,
+        "workspaceId": 10,
+        "suggestedName": "프론트엔드에서·사용되는",
+        "description": "프론트엔드에서·사용되는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:20+09:00",
+        "updatedAt": "2026-08-04T22:01:21+09:00",
+        "createdAtItemId": "URL-111",
+        "linkedItemIds": [
+          "URL-111"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 38,
+        "workspaceId": 10,
+        "suggestedName": "정리정돈은·필요",
+        "description": "정리정돈은·필요 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:22+09:00",
+        "updatedAt": "2026-08-04T22:01:23+09:00",
+        "createdAtItemId": "URL-043",
+        "linkedItemIds": [
+          "URL-043"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 39,
+        "workspaceId": 10,
+        "suggestedName": "신경·이동",
+        "description": "신경·이동 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:24+09:00",
+        "updatedAt": "2026-08-04T22:01:25+09:00",
+        "createdAtItemId": "URL-003",
+        "linkedItemIds": [
+          "URL-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 40,
+        "workspaceId": 10,
+        "suggestedName": "삼성그룹의·사회공헌",
+        "description": "삼성그룹의·사회공헌 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:26+09:00",
+        "updatedAt": "2026-08-04T22:01:27+09:00",
+        "createdAtItemId": "URL-096",
+        "linkedItemIds": [
+          "URL-096"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 41,
+        "workspaceId": 10,
+        "suggestedName": "2025년·10월",
+        "description": "2025년·10월 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:28+09:00",
+        "updatedAt": "2026-08-04T22:01:29+09:00",
+        "createdAtItemId": "URL-067",
+        "linkedItemIds": [
+          "URL-067"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 42,
+        "workspaceId": 10,
+        "suggestedName": "서울시립미술관에서·열리",
+        "description": "서울시립미술관에서·열리는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:32+09:00",
+        "updatedAt": "2026-08-04T22:01:33+09:00",
+        "createdAtItemId": "URL-037",
+        "linkedItemIds": [
+          "URL-037"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 43,
+        "workspaceId": 10,
+        "suggestedName": "재테크",
+        "description": "재테크 관련 반복 주제 후보",
+        "status": "READY_TO_PROMOTE",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:34+09:00",
+        "updatedAt": "2026-08-04T22:03:09+09:00",
+        "createdAtItemId": "URL-024",
+        "linkedItemIds": [
+          "URL-024",
+          "URL-025",
+          "URL-029"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": "정식 카테고리 상한으로 승격 대기"
+      },
+      {
+        "candidateId": 44,
+        "workspaceId": 10,
+        "suggestedName": "2026년에·개봉",
+        "description": "2026년에·개봉 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:36+09:00",
+        "updatedAt": "2026-08-04T22:01:37+09:00",
+        "createdAtItemId": "URL-040",
+        "linkedItemIds": [
+          "URL-040"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 45,
+        "workspaceId": 10,
+        "suggestedName": "2026년·개봉",
+        "description": "2026년·개봉 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:38+09:00",
+        "updatedAt": "2026-08-04T22:01:39+09:00",
+        "createdAtItemId": "URL-041",
+        "linkedItemIds": [
+          "URL-041"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 46,
+        "workspaceId": 10,
+        "suggestedName": "광화문·지역의",
+        "description": "광화문·지역의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:40+09:00",
+        "updatedAt": "2026-08-04T22:01:41+09:00",
+        "createdAtItemId": "URL-086",
+        "linkedItemIds": [
+          "URL-086"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 47,
+        "workspaceId": 10,
+        "suggestedName": "부산의·숨겨진",
+        "description": "부산의·숨겨진 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:44+09:00",
+        "updatedAt": "2026-08-04T22:01:45+09:00",
+        "createdAtItemId": "URL-075",
+        "linkedItemIds": [
+          "URL-075"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 48,
+        "workspaceId": 10,
+        "suggestedName": "유산소·운동은",
+        "description": "유산소·운동은 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:47+09:00",
+        "updatedAt": "2026-08-04T22:01:48+09:00",
+        "createdAtItemId": "URL-008",
+        "linkedItemIds": [
+          "URL-008"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 49,
+        "workspaceId": 10,
+        "suggestedName": "서울시립미술관과·주변",
+        "description": "서울시립미술관과·주변 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:49+09:00",
+        "updatedAt": "2026-08-04T22:01:50+09:00",
+        "createdAtItemId": "URL-035",
+        "linkedItemIds": [
+          "URL-035"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 50,
+        "workspaceId": 10,
+        "suggestedName": "react·query의",
+        "description": "react·query의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:51+09:00",
+        "updatedAt": "2026-08-04T22:01:52+09:00",
+        "createdAtItemId": "URL-092",
+        "linkedItemIds": [
+          "URL-092"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 51,
+        "workspaceId": 10,
+        "suggestedName": "레시피",
+        "description": "레시피 관련 반복 주제 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:53+09:00",
+        "updatedAt": "2026-08-04T22:02:20+09:00",
+        "createdAtItemId": "URL-047",
+        "linkedItemIds": [
+          "URL-047",
+          "URL-049",
+          "URL-001"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-6F0EF0B54E",
+        "lastReviewReason": "후보 내부 일관성 충족 (평균 0.52)"
+      },
+      {
+        "candidateId": 52,
+        "workspaceId": 10,
+        "suggestedName": "2026년·콘서트",
+        "description": "2026년·콘서트 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:56+09:00",
+        "updatedAt": "2026-08-04T22:01:57+09:00",
+        "createdAtItemId": "URL-034",
+        "linkedItemIds": [
+          "URL-034"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 53,
+        "workspaceId": 10,
+        "suggestedName": "혼자·살고",
+        "description": "혼자·살고 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:01:58+09:00",
+        "updatedAt": "2026-08-04T22:01:59+09:00",
+        "createdAtItemId": "URL-045",
+        "linkedItemIds": [
+          "URL-045"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 54,
+        "workspaceId": 10,
+        "suggestedName": "1인·가구의",
+        "description": "1인·가구의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:00+09:00",
+        "updatedAt": "2026-08-04T22:02:01+09:00",
+        "createdAtItemId": "URL-046",
+        "linkedItemIds": [
+          "URL-046"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 55,
+        "workspaceId": 10,
+        "suggestedName": "운세",
+        "description": "운세 관련 반복 주제 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:02+09:00",
+        "updatedAt": "2026-08-04T22:03:06+09:00",
+        "createdAtItemId": "URL-013",
+        "linkedItemIds": [
+          "URL-013",
+          "URL-012",
+          "URL-014"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-025FA0A8B1",
+        "lastReviewReason": "후보 내부 일관성 충족 (평균 0.78)"
+      },
+      {
+        "candidateId": 56,
+        "workspaceId": 10,
+        "suggestedName": "ssafy에서·느낀",
+        "description": "ssafy에서·느낀 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:05+09:00",
+        "updatedAt": "2026-08-04T22:02:06+09:00",
+        "createdAtItemId": "URL-094",
+        "linkedItemIds": [
+          "URL-094"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 57,
+        "workspaceId": 10,
+        "suggestedName": "전자·미디어",
+        "description": "전자·미디어 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:07+09:00",
+        "updatedAt": "2026-08-04T22:02:08+09:00",
+        "createdAtItemId": "URL-103",
+        "linkedItemIds": [
+          "URL-103"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 58,
+        "workspaceId": 10,
+        "suggestedName": "강원특별자치도·여행을",
+        "description": "강원특별자치도·여행을 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:09+09:00",
+        "updatedAt": "2026-08-04T22:02:10+09:00",
+        "createdAtItemId": "URL-081",
+        "linkedItemIds": [
+          "URL-081"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 59,
+        "workspaceId": 10,
+        "suggestedName": "삼성·ssafy",
+        "description": "삼성·ssafy 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:11+09:00",
+        "updatedAt": "2026-08-04T22:02:12+09:00",
+        "createdAtItemId": "URL-093",
+        "linkedItemIds": [
+          "URL-093"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 60,
+        "workspaceId": 10,
+        "suggestedName": "평창·동계올림픽과",
+        "description": "평창·동계올림픽과 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:13+09:00",
+        "updatedAt": "2026-08-04T22:02:14+09:00",
+        "createdAtItemId": "URL-080",
+        "linkedItemIds": [
+          "URL-080"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 61,
+        "workspaceId": 10,
+        "suggestedName": "정리·시간",
+        "description": "정리·시간 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:15+09:00",
+        "updatedAt": "2026-08-04T22:02:16+09:00",
+        "createdAtItemId": "URL-044",
+        "linkedItemIds": [
+          "URL-044"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 62,
+        "workspaceId": 10,
+        "suggestedName": "취준생들이·함께하는",
+        "description": "취준생들이·함께하는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:17+09:00",
+        "updatedAt": "2026-08-04T22:02:18+09:00",
+        "createdAtItemId": "URL-097",
+        "linkedItemIds": [
+          "URL-097"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 63,
+        "workspaceId": 10,
+        "suggestedName": "신입·백엔드",
+        "description": "신입·백엔드 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:21+09:00",
+        "updatedAt": "2026-08-04T22:02:22+09:00",
+        "createdAtItemId": "URL-108",
+        "linkedItemIds": [
+          "URL-108"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 64,
+        "workspaceId": 10,
+        "suggestedName": "코딩테스트·스타디",
+        "description": "코딩테스트·스타디 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:23+09:00",
+        "updatedAt": "2026-08-04T22:02:24+09:00",
+        "createdAtItemId": "URL-098",
+        "linkedItemIds": [
+          "URL-098"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 65,
+        "workspaceId": 10,
+        "suggestedName": "출퇴근용·명품",
+        "description": "출퇴근용·명품 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:25+09:00",
+        "updatedAt": "2026-08-04T22:02:26+09:00",
+        "createdAtItemId": "URL-058",
+        "linkedItemIds": [
+          "URL-058"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 66,
+        "workspaceId": 10,
+        "suggestedName": "글은·네트워크의",
+        "description": "글은·네트워크의 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:27+09:00",
+        "updatedAt": "2026-08-04T22:02:28+09:00",
+        "createdAtItemId": "URL-106",
+        "linkedItemIds": [
+          "URL-106"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 67,
+        "workspaceId": 10,
+        "suggestedName": "노트북가방·상품",
+        "description": "노트북가방·상품 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:29+09:00",
+        "updatedAt": "2026-08-04T22:02:30+09:00",
+        "createdAtItemId": "URL-054",
+        "linkedItemIds": [
+          "URL-054"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 68,
+        "workspaceId": 10,
+        "suggestedName": "비전공자로·코딩테스트",
+        "description": "비전공자로·코딩테스트 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:31+09:00",
+        "updatedAt": "2026-08-04T22:02:32+09:00",
+        "createdAtItemId": "URL-100",
+        "linkedItemIds": [
+          "URL-100"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 69,
+        "workspaceId": 10,
+        "suggestedName": "전주·한옥마을",
+        "description": "전주·한옥마을 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:33+09:00",
+        "updatedAt": "2026-08-04T22:02:34+09:00",
+        "createdAtItemId": "URL-084",
+        "linkedItemIds": [
+          "URL-084"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 70,
+        "workspaceId": 10,
+        "suggestedName": "내집을·사는",
+        "description": "내집을·사는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:35+09:00",
+        "updatedAt": "2026-08-04T22:02:36+09:00",
+        "createdAtItemId": "URL-026",
+        "linkedItemIds": [
+          "URL-026"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 71,
+        "workspaceId": 10,
+        "suggestedName": "앱스토어에서·제공되는",
+        "description": "앱스토어에서·제공되는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:37+09:00",
+        "updatedAt": "2026-08-04T22:02:38+09:00",
+        "createdAtItemId": "URL-072",
+        "linkedItemIds": [
+          "URL-072"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 72,
+        "workspaceId": 10,
+        "suggestedName": "2년차·개발자가",
+        "description": "2년차·개발자가 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:39+09:00",
+        "updatedAt": "2026-08-04T22:02:40+09:00",
+        "createdAtItemId": "URL-101",
+        "linkedItemIds": [
+          "URL-101"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 73,
+        "workspaceId": 10,
+        "suggestedName": "부산·혼자",
+        "description": "부산·혼자 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:41+09:00",
+        "updatedAt": "2026-08-04T22:02:42+09:00",
+        "createdAtItemId": "URL-078",
+        "linkedItemIds": [
+          "URL-078"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 74,
+        "workspaceId": 10,
+        "suggestedName": "창업",
+        "description": "창업 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:43+09:00",
+        "updatedAt": "2026-08-04T22:03:00+09:00",
+        "createdAtItemId": "URL-065",
+        "linkedItemIds": [
+          "URL-065",
+          "URL-070"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 75,
+        "workspaceId": 10,
+        "suggestedName": "가계부·작성법",
+        "description": "가계부·작성법 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:45+09:00",
+        "updatedAt": "2026-08-04T22:02:46+09:00",
+        "createdAtItemId": "URL-030",
+        "linkedItemIds": [
+          "URL-030"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 76,
+        "workspaceId": 10,
+        "suggestedName": "2026년·4월",
+        "description": "2026년·4월 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:47+09:00",
+        "updatedAt": "2026-08-04T22:02:48+09:00",
+        "createdAtItemId": "URL-028",
+        "linkedItemIds": [
+          "URL-028"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 77,
+        "workspaceId": 10,
+        "suggestedName": "비전공자·프론트엔드",
+        "description": "비전공자·프론트엔드 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:49+09:00",
+        "updatedAt": "2026-08-04T22:02:50+09:00",
+        "createdAtItemId": "URL-099",
+        "linkedItemIds": [
+          "URL-099"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 78,
+        "workspaceId": 10,
+        "suggestedName": "백엔드·개발자",
+        "description": "백엔드·개발자 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:51+09:00",
+        "updatedAt": "2026-08-04T22:02:52+09:00",
+        "createdAtItemId": "URL-110",
+        "linkedItemIds": [
+          "URL-110"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 79,
+        "workspaceId": 10,
+        "suggestedName": "수면·장애는",
+        "description": "수면·장애는 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:53+09:00",
+        "updatedAt": "2026-08-04T22:02:54+09:00",
+        "createdAtItemId": "URL-005",
+        "linkedItemIds": [
+          "URL-005"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 80,
+        "workspaceId": 10,
+        "suggestedName": "쿠팡에서·노트북",
+        "description": "쿠팡에서·노트북 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:55+09:00",
+        "updatedAt": "2026-08-04T22:02:56+09:00",
+        "createdAtItemId": "URL-055",
+        "linkedItemIds": [
+          "URL-055"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 81,
+        "workspaceId": 10,
+        "suggestedName": "속초·해변",
+        "description": "속초·해변 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:02:57+09:00",
+        "updatedAt": "2026-08-04T22:02:58+09:00",
+        "createdAtItemId": "URL-076",
+        "linkedItemIds": [
+          "URL-076"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 82,
+        "workspaceId": 10,
+        "suggestedName": "cs·전공자용",
+        "description": "cs·전공자용 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:01+09:00",
+        "updatedAt": "2026-08-04T22:03:02+09:00",
+        "createdAtItemId": "URL-104",
+        "linkedItemIds": [
+          "URL-104"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 83,
+        "workspaceId": 10,
+        "suggestedName": "강남·지역에서",
+        "description": "강남·지역에서 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:03+09:00",
+        "updatedAt": "2026-08-04T22:03:18+09:00",
+        "createdAtItemId": "URL-087",
+        "linkedItemIds": [
+          "URL-087",
+          "URL-082"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 84,
+        "workspaceId": 10,
+        "suggestedName": "oop·개념과",
+        "description": "oop·개념과 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:07+09:00",
+        "updatedAt": "2026-08-04T22:03:08+09:00",
+        "createdAtItemId": "URL-109",
+        "linkedItemIds": [
+          "URL-109"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 85,
+        "workspaceId": 10,
+        "suggestedName": "호정이·참여한",
+        "description": "호정이·참여한 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:10+09:00",
+        "updatedAt": "2026-08-04T22:03:11+09:00",
+        "createdAtItemId": "URL-032",
+        "linkedItemIds": [
+          "URL-032"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 86,
+        "workspaceId": 10,
+        "suggestedName": "2026년·7월부터",
+        "description": "2026년·7월부터 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:12+09:00",
+        "updatedAt": "2026-08-04T22:03:13+09:00",
+        "createdAtItemId": "URL-036",
+        "linkedItemIds": [
+          "URL-036"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 87,
+        "workspaceId": 10,
+        "suggestedName": "삼성·청년sw",
+        "description": "삼성·청년sw 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:14+09:00",
+        "updatedAt": "2026-08-04T22:03:15+09:00",
+        "createdAtItemId": "URL-095",
+        "linkedItemIds": [
+          "URL-095"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 88,
+        "workspaceId": 10,
+        "suggestedName": "불면증은·수면에",
+        "description": "불면증은·수면에 관련 반복 주제 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 512,
+        "createdAt": "2026-08-04T22:03:16+09:00",
+        "updatedAt": "2026-08-04T22:03:17+09:00",
+        "createdAtItemId": "URL-004",
+        "linkedItemIds": [
+          "URL-004"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "URL-016",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 2,
+        "itemId": "URL-048",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "URL-031",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 1,
+        "itemId": "URL-017",
+        "similarity": 0.8276
+      },
+      {
+        "candidateId": 4,
+        "itemId": "URL-002",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "URL-010",
+        "similarity": 0.3172
+      },
+      {
+        "candidateId": 5,
+        "itemId": "URL-027",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 6,
+        "itemId": "URL-077",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 7,
+        "itemId": "URL-053",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 8,
+        "itemId": "URL-085",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 9,
+        "itemId": "URL-089",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 10,
+        "itemId": "URL-079",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 11,
+        "itemId": "URL-102",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 9,
+        "itemId": "URL-088",
+        "similarity": 0.8704
+      },
+      {
+        "candidateId": 12,
+        "itemId": "URL-033",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 13,
+        "itemId": "URL-057",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 14,
+        "itemId": "URL-083",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 15,
+        "itemId": "URL-009",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 16,
+        "itemId": "URL-050",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 17,
+        "itemId": "URL-042",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 18,
+        "itemId": "URL-061",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 19,
+        "itemId": "URL-060",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 20,
+        "itemId": "URL-107",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 21,
+        "itemId": "URL-069",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 22,
+        "itemId": "URL-073",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 23,
+        "itemId": "URL-074",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "URL-063",
+        "similarity": 0.3915
+      },
+      {
+        "candidateId": 24,
+        "itemId": "URL-090",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 25,
+        "itemId": "URL-038",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 26,
+        "itemId": "URL-091",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 27,
+        "itemId": "URL-039",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 28,
+        "itemId": "URL-071",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 29,
+        "itemId": "URL-051",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 30,
+        "itemId": "URL-011",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 31,
+        "itemId": "URL-052",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 32,
+        "itemId": "URL-062",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 20,
+        "itemId": "URL-105",
+        "similarity": 0.059
+      },
+      {
+        "candidateId": 33,
+        "itemId": "URL-059",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 34,
+        "itemId": "URL-007",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 28,
+        "itemId": "URL-066",
+        "similarity": 0.2595
+      },
+      {
+        "candidateId": 35,
+        "itemId": "URL-112",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 36,
+        "itemId": "URL-056",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 37,
+        "itemId": "URL-111",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 38,
+        "itemId": "URL-043",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 39,
+        "itemId": "URL-003",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 40,
+        "itemId": "URL-096",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 41,
+        "itemId": "URL-067",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 28,
+        "itemId": "URL-068",
+        "similarity": 0.4241
+      },
+      {
+        "candidateId": 42,
+        "itemId": "URL-037",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 43,
+        "itemId": "URL-024",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 44,
+        "itemId": "URL-040",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 45,
+        "itemId": "URL-041",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 46,
+        "itemId": "URL-086",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 1,
+        "itemId": "URL-019",
+        "similarity": 0.8394
+      },
+      {
+        "candidateId": 47,
+        "itemId": "URL-075",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 43,
+        "itemId": "URL-025",
+        "similarity": 0.3629
+      },
+      {
+        "candidateId": 48,
+        "itemId": "URL-008",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 49,
+        "itemId": "URL-035",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 50,
+        "itemId": "URL-092",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 51,
+        "itemId": "URL-047",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 34,
+        "itemId": "URL-006",
+        "similarity": 0.2171
+      },
+      {
+        "candidateId": 52,
+        "itemId": "URL-034",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 53,
+        "itemId": "URL-045",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 54,
+        "itemId": "URL-046",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 55,
+        "itemId": "URL-013",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 51,
+        "itemId": "URL-049",
+        "similarity": 0.2799
+      },
+      {
+        "candidateId": 56,
+        "itemId": "URL-094",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 57,
+        "itemId": "URL-103",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 58,
+        "itemId": "URL-081",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 59,
+        "itemId": "URL-093",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 60,
+        "itemId": "URL-080",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 61,
+        "itemId": "URL-044",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 62,
+        "itemId": "URL-097",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 51,
+        "itemId": "URL-001",
+        "similarity": 0.3454
+      },
+      {
+        "candidateId": 63,
+        "itemId": "URL-108",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 64,
+        "itemId": "URL-098",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 65,
+        "itemId": "URL-058",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 66,
+        "itemId": "URL-106",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 67,
+        "itemId": "URL-054",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 68,
+        "itemId": "URL-100",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 69,
+        "itemId": "URL-084",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 70,
+        "itemId": "URL-026",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 71,
+        "itemId": "URL-072",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 72,
+        "itemId": "URL-101",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 73,
+        "itemId": "URL-078",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 74,
+        "itemId": "URL-065",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 75,
+        "itemId": "URL-030",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 76,
+        "itemId": "URL-028",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 77,
+        "itemId": "URL-099",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 78,
+        "itemId": "URL-110",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 79,
+        "itemId": "URL-005",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 80,
+        "itemId": "URL-055",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 81,
+        "itemId": "URL-076",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 55,
+        "itemId": "URL-012",
+        "similarity": 0.6632
+      },
+      {
+        "candidateId": 74,
+        "itemId": "URL-070",
+        "similarity": 0.3114
+      },
+      {
+        "candidateId": 82,
+        "itemId": "URL-104",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 83,
+        "itemId": "URL-087",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 55,
+        "itemId": "URL-014",
+        "similarity": 0.7488
+      },
+      {
+        "candidateId": 84,
+        "itemId": "URL-109",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 43,
+        "itemId": "URL-029",
+        "similarity": 0.426
+      },
+      {
+        "candidateId": 85,
+        "itemId": "URL-032",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 86,
+        "itemId": "URL-036",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 87,
+        "itemId": "URL-095",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 88,
+        "itemId": "URL-004",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 83,
+        "itemId": "URL-082",
+        "similarity": 0.8141
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "URL-016",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-048",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-031",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-017",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-010",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-027",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-077",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-053",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-085",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 8,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-089",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-079",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 10,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-102",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 11,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-088",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-033",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 12,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-057",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 13,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-083",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 14,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-009",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 15,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-050",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 16,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-042",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 17,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-061",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 18,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-060",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 19,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-107",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 20,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-069",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 21,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-073",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 22,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-074",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 23,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-063",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-090",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 24,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-022",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "URL-038",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 25,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-091",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 26,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-039",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 27,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-071",
+        "formalCategoryId": "AI-4C2DEE5181",
+        "formalCategoryIds": [
+          "AI-4C2DEE5181",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 28,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-023",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "URL-051",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 29,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-011",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 30,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-052",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 31,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-062",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 32,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-105",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 20,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-059",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 33,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-007",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 34,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-066",
+        "formalCategoryId": "AI-4C2DEE5181",
+        "formalCategoryIds": [
+          "AI-4C2DEE5181",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 28,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-112",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 35,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-056",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 36,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-111",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 37,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-043",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 38,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-003",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 39,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-096",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 40,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-067",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 41,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-068",
+        "formalCategoryId": "AI-4C2DEE5181",
+        "formalCategoryIds": [
+          "AI-4C2DEE5181",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 28,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-037",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 42,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-024",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9"
+        ],
+        "candidateId": 43,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-040",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 44,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-041",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 45,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-086",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 46,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-019",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-075",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 47,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-064",
+        "formalCategoryId": "AI-4C2DEE5181",
+        "formalCategoryIds": [
+          "AI-4C2DEE5181"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "URL-025",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 43,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-008",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 48,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-035",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA"
+        ],
+        "candidateId": 49,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-092",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 50,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-047",
+        "formalCategoryId": "AI-6F0EF0B54E",
+        "formalCategoryIds": [
+          "AI-6F0EF0B54E",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 51,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-006",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 34,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-034",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 52,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-045",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 53,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-046",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 54,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-013",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 55,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-049",
+        "formalCategoryId": "AI-6F0EF0B54E",
+        "formalCategoryIds": [
+          "AI-6F0EF0B54E",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 51,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-094",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 56,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-103",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 57,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-081",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 58,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-093",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 59,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-020",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "URL-080",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 60,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-044",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 61,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-097",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 62,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-021",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "URL-001",
+        "formalCategoryId": "AI-6F0EF0B54E",
+        "formalCategoryIds": [
+          "AI-6F0EF0B54E",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 51,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-108",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 63,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-098",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 64,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-058",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 65,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-106",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA"
+        ],
+        "candidateId": 66,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-054",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 67,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-100",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 68,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-084",
+        "formalCategoryId": "AI-6F0EF0B54E",
+        "formalCategoryIds": [
+          "AI-6F0EF0B54E"
+        ],
+        "candidateId": 69,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-026",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 70,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-072",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 71,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-101",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 72,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-078",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 73,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-065",
+        "formalCategoryId": "AI-4C2DEE5181",
+        "formalCategoryIds": [
+          "AI-4C2DEE5181"
+        ],
+        "candidateId": 74,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-030",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 75,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-028",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 76,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-099",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 77,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-110",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 78,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 79,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-055",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 80,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-076",
+        "formalCategoryId": "AI-56A5BF88EA",
+        "formalCategoryIds": [
+          "AI-56A5BF88EA"
+        ],
+        "candidateId": 81,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-012",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 55,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-070",
+        "formalCategoryId": "AI-4C2DEE5181",
+        "formalCategoryIds": [
+          "AI-4C2DEE5181"
+        ],
+        "candidateId": 74,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-104",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 82,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-087",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 83,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-014",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 55,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-109",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 84,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-018",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "AI-56A5BF88EA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "URL-029",
+        "formalCategoryId": "AI-D2DE6C63A9",
+        "formalCategoryIds": [
+          "AI-D2DE6C63A9",
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 43,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-032",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 85,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-036",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1"
+        ],
+        "candidateId": 86,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-095",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 87,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-004",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 88,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "URL-015",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "URL-082",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 83,
+        "classificationStatus": "CANDIDATE_LINKED"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "URL-016",
+      "title": "https://kr.vonvon.me/ko/",
+      "inputType": "url",
+      "formalTopScore": 0.4797,
+      "formalScoreGap": 0.03,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 1,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 1,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 1
+    },
+    {
+      "itemId": "URL-048",
+      "title": "https://apps.apple.com/kr/app/id6745560834",
+      "inputType": "url",
+      "formalTopScore": 0.0369,
+      "formalScoreGap": 0.0121,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 2,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 2,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 2
+    },
+    {
+      "itemId": "URL-031",
+      "title": "https://info-pickle.co.kr/79",
+      "inputType": "url",
+      "formalTopScore": 0.5134,
+      "formalScoreGap": 0.2813,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 3,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 3,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 3
+    },
+    {
+      "itemId": "URL-017",
+      "title": "https://test-it.co.kr/",
+      "inputType": "url",
+      "formalTopScore": 0.444,
+      "formalScoreGap": 0.0428,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": true,
+      "linkedCandidateId": 1,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 3,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 4
+    },
+    {
+      "itemId": "URL-002",
+      "title": "https://brunch.co.kr/@tenbody/1122",
+      "inputType": "url",
+      "formalTopScore": 0.1596,
+      "formalScoreGap": 0.0065,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 4,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 4,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 5
+    },
+    {
+      "itemId": "URL-010",
+      "title": "https://www.nhis.or.kr/magazin/168/html/sub7.html",
+      "inputType": "url",
+      "formalTopScore": 0.3256,
+      "formalScoreGap": 0.1781,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 3,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 4,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 6
+    },
+    {
+      "itemId": "URL-027",
+      "title": "https://homedubu.com/10754/",
+      "inputType": "url",
+      "formalTopScore": 0.1036,
+      "formalScoreGap": 0.0308,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 5,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 5,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 7
+    },
+    {
+      "itemId": "URL-077",
+      "title": "https://uhflat.co.kr/badamaul/?bmode=view&idx=127804469",
+      "inputType": "url",
+      "formalTopScore": 0.1052,
+      "formalScoreGap": 0.0238,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 6,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 6,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 8
+    },
+    {
+      "itemId": "URL-053",
+      "title": "https://m.compuzone.co.kr/product/product_list.htm?BigDivNo=2&MediumDivNo=1076",
+      "inputType": "url",
+      "formalTopScore": 0.1548,
+      "formalScoreGap": 0.0641,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 7,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 7,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 9
+    },
+    {
+      "itemId": "URL-085",
+      "title": "https://www.welfarehello.com/community/hometownNews/048b6105-e854-469d-ad91-cbdb86808393",
+      "inputType": "url",
+      "formalTopScore": 0.1491,
+      "formalScoreGap": 0.0133,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 8,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 8,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 10
+    },
+    {
+      "itemId": "URL-089",
+      "title": "https://www.diningcode.com/list.dc?query=강남역+삼겡살",
+      "inputType": "url",
+      "formalTopScore": 0.0563,
+      "formalScoreGap": 0.0138,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 9,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 9,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 11
+    },
+    {
+      "itemId": "URL-079",
+      "title": "https://kr.trip.com/moments/poi-best-louis-hamilton-hotel-haeundae-21485227",
+      "inputType": "url",
+      "formalTopScore": 0.1146,
+      "formalScoreGap": 0.0434,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 10,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 10,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 12
+    },
+    {
+      "itemId": "URL-102",
+      "title": "https://www.youtube.com/watch?v=3aNtTUHJeDY",
+      "inputType": "url",
+      "formalTopScore": 0.069,
+      "formalScoreGap": 0.0151,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 11,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 11,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 13
+    },
+    {
+      "itemId": "URL-088",
+      "title": "https://www.diningcode.com/list.dc?query=강남구+삼겡살",
+      "inputType": "url",
+      "formalTopScore": 0.0588,
+      "formalScoreGap": 0.0193,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": true,
+      "linkedCandidateId": 9,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 11,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 14
+    },
+    {
+      "itemId": "URL-033",
+      "title": "https://kr.trip.com/events/9109368-2026-south-korea-concerts-collection/",
+      "inputType": "url",
+      "formalTopScore": 0.1043,
+      "formalScoreGap": 0.0467,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 12,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 12,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 15
+    },
+    {
+      "itemId": "URL-057",
+      "title": "https://shinsegaemall.ssg.com/search.ssg?query=명품노트북가방",
+      "inputType": "url",
+      "formalTopScore": 0.0623,
+      "formalScoreGap": 0.0021,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 13,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 13,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 16
+    },
+    {
+      "itemId": "URL-083",
+      "title": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=a2bfb276-ce31-4dd3-8154-4866e408664b",
+      "inputType": "url",
+      "formalTopScore": 0.0917,
+      "formalScoreGap": 0.0126,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 14,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 14,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 17
+    },
+    {
+      "itemId": "URL-009",
+      "title": "https://brunch.co.kr/@tenbody/743",
+      "inputType": "url",
+      "formalTopScore": 0.2146,
+      "formalScoreGap": 0.1702,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 15,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 15,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 18
+    },
+    {
+      "itemId": "URL-050",
+      "title": "https://namu.wiki/w/자취/조언",
+      "inputType": "url",
+      "formalTopScore": 0.1115,
+      "formalScoreGap": 0.034,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 16,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 16,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 19
+    },
+    {
+      "itemId": "URL-042",
+      "title": "https://bravo.etoday.co.kr/view/atc_view/13057",
+      "inputType": "url",
+      "formalTopScore": 0.1605,
+      "formalScoreGap": 0.054,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 17,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 17,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 20
+    },
+    {
+      "itemId": "URL-061",
+      "title": "https://bodyitlove.com/캠핑-텐트/",
+      "inputType": "url",
+      "formalTopScore": 0.0207,
+      "formalScoreGap": 0.0207,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 18,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 18,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 21
+    },
+    {
+      "itemId": "URL-060",
+      "title": "https://www.coupang.com/np/search?q=실내텐트",
+      "inputType": "url",
+      "formalTopScore": 0.046,
+      "formalScoreGap": 0.046,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 19,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 19,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 22
+    },
+    {
+      "itemId": "URL-107",
+      "title": "https://velog.io/@jincode93/CS-네트워크-요약-정리",
+      "inputType": "url",
+      "formalTopScore": 0.135,
+      "formalScoreGap": 0.0411,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 20,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 20,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 23
+    },
+    {
+      "itemId": "URL-069",
+      "title": "https://claireclass.com/",
+      "inputType": "url",
+      "formalTopScore": 0.2385,
+      "formalScoreGap": 0.1763,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 21,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 21,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 24
+    },
+    {
+      "itemId": "URL-073",
+      "title": "https://v.daum.net/v/7RSTWNtnjC",
+      "inputType": "url",
+      "formalTopScore": 0.0789,
+      "formalScoreGap": 0.0188,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 22,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 22,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 25
+    },
+    {
+      "itemId": "URL-074",
+      "title": "https://www.yeogi.com/content/dom-ko-busan-hotel-bx2-busan-haeundae-travel-course",
+      "inputType": "url",
+      "formalTopScore": 0.0827,
+      "formalScoreGap": 0.0026,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 23,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 5,
+      "candidateCount": 23,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 26
+    },
+    {
+      "itemId": "URL-063",
+      "title": "https://brunch.co.kr/@solobiznight",
+      "inputType": "url",
+      "formalTopScore": 0.6282,
+      "formalScoreGap": 0.2142,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 3,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 3,
+      "promoted": true,
+      "reclassified": true,
+      "candidateError": null,
+      "promotedFormalCategoryId": "AI-D2DE6C63A9",
+      "formalCategoryCount": 6,
+      "candidateCount": 22,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 27
+    },
+    {
+      "itemId": "URL-090",
+      "title": "https://www.diningcode.com/list.dc?query=강남+삼겡살무한리필",
+      "inputType": "url",
+      "formalTopScore": 0.0677,
+      "formalScoreGap": 0.0173,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 24,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 23,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 28
+    },
+    {
+      "itemId": "URL-022",
+      "title": "https://www.kcie.or.kr/mobile/guide/3/18/web_view?content_idx=902",
+      "inputType": "url",
+      "formalTopScore": 0.9139,
+      "formalScoreGap": 0.1175,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-D2DE6C63A9",
+      "selectedFormalCategoryIds": [
+        "AI-D2DE6C63A9",
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 23,
+      "classificationStatus": "MULTI_LABEL_FORMAL",
+      "inputOrder": 29
+    },
+    {
+      "itemId": "URL-038",
+      "title": "https://www.marieclairekorea.com/pinpage/2026/01/2026-exhibition/",
+      "inputType": "url",
+      "formalTopScore": 0.101,
+      "formalScoreGap": 0.0131,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 25,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 24,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 30
+    },
+    {
+      "itemId": "URL-091",
+      "title": "https://www.diningcode.com/list.dc?query=강남역+돼지고기+가성비",
+      "inputType": "url",
+      "formalTopScore": 0.0677,
+      "formalScoreGap": 0.0173,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 26,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 25,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 31
+    },
+    {
+      "itemId": "URL-039",
+      "title": "https://ddoing.co.kr/ddoing_exhibition_schedule",
+      "inputType": "url",
+      "formalTopScore": 0.069,
+      "formalScoreGap": 0.001,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 27,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 26,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 32
+    },
+    {
+      "itemId": "URL-071",
+      "title": "https://www.junsungki.com/magazine/post-detail.do?id=2744",
+      "inputType": "url",
+      "formalTopScore": 0.2587,
+      "formalScoreGap": 0.0803,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 28,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 27,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 33
+    },
+    {
+      "itemId": "URL-023",
+      "title": "https://finance.greatsisyphus.com/2026/07/etf-investing-for-beginners-easy-start.html",
+      "inputType": "url",
+      "formalTopScore": 0.9382,
+      "formalScoreGap": 0.1116,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-D2DE6C63A9",
+      "selectedFormalCategoryIds": [
+        "AI-D2DE6C63A9",
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 27,
+      "classificationStatus": "MULTI_LABEL_FORMAL",
+      "inputOrder": 34
+    },
+    {
+      "itemId": "URL-051",
+      "title": "https://www.threads.com/@prozachi/post/DIuf95oNelD/",
+      "inputType": "url",
+      "formalTopScore": 0.0954,
+      "formalScoreGap": 0.0191,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 29,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 28,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 35
+    },
+    {
+      "itemId": "URL-011",
+      "title": "https://news.hidoc.co.kr/news/articleView.html?idxno=44199",
+      "inputType": "url",
+      "formalTopScore": 0.1877,
+      "formalScoreGap": 0.058,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 30,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 29,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 36
+    },
+    {
+      "itemId": "URL-052",
+      "title": "https://www.apple.com/kr/mac-studio/",
+      "inputType": "url",
+      "formalTopScore": 0.1122,
+      "formalScoreGap": 0.0227,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 31,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 30,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 37
+    },
+    {
+      "itemId": "URL-062",
+      "title": "https://www.youtube.com/watch?v=mJTE8JBOkkw",
+      "inputType": "url",
+      "formalTopScore": 0.11,
+      "formalScoreGap": 0.0287,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 32,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 31,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 38
+    },
+    {
+      "itemId": "URL-105",
+      "title": "https://velog.io/@dbwlgns98/네트워크-CS정리1탄",
+      "inputType": "url",
+      "formalTopScore": 0.2602,
+      "formalScoreGap": 0.0637,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 20,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 31,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 39
+    },
+    {
+      "itemId": "URL-059",
+      "title": "https://www.coupang.com/np/categories/328791",
+      "inputType": "url",
+      "formalTopScore": 0.069,
+      "formalScoreGap": 0.0151,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 33,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 32,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 40
+    },
+    {
+      "itemId": "URL-007",
+      "title": "https://yuyuteijin.co.kr/blog/7368ecdf-a987-4315-9e31-e7a3dfe2e6ee/",
+      "inputType": "url",
+      "formalTopScore": 0.1261,
+      "formalScoreGap": 0.0258,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 34,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 33,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 41
+    },
+    {
+      "itemId": "URL-066",
+      "title": "https://www.teamblind.com/kr/post/HHomJcfW",
+      "inputType": "url",
+      "formalTopScore": 0.1882,
+      "formalScoreGap": 0.0012,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 28,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 33,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 42
+    },
+    {
+      "itemId": "URL-112",
+      "title": "https://velog.io/@oojoo/백엔드-자기소개서면접-꿀Tip",
+      "inputType": "url",
+      "formalTopScore": 0.203,
+      "formalScoreGap": 0.0591,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 35,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 34,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 43
+    },
+    {
+      "itemId": "URL-056",
+      "title": "https://dorishop.oopy.io/397d87ba-6a5e-4dd3-ba9f-601eed0eef18",
+      "inputType": "url",
+      "formalTopScore": 0.1305,
+      "formalScoreGap": 0.0339,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 36,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 35,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 44
+    },
+    {
+      "itemId": "URL-111",
+      "title": "https://velog.io/@namdaeun/요즘-프론트엔드-디자인-패턴-뭐가-정답일까",
+      "inputType": "url",
+      "formalTopScore": 0.2092,
+      "formalScoreGap": 0.1017,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 37,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 36,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 45
+    },
+    {
+      "itemId": "URL-043",
+      "title": "https://www.home-learn.co.kr/newsroom/news/A/2069",
+      "inputType": "url",
+      "formalTopScore": 0.1481,
+      "formalScoreGap": 0.006,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 38,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 37,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 46
+    },
+    {
+      "itemId": "URL-003",
+      "title": "https://en.wikipedia.org/wiki/Nerve_glide",
+      "inputType": "url",
+      "formalTopScore": 0.0671,
+      "formalScoreGap": 0.0238,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 39,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 38,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 47
+    },
+    {
+      "itemId": "URL-096",
+      "title": "https://csr.samsung.com/ko/newsroom/news/",
+      "inputType": "url",
+      "formalTopScore": 0.0589,
+      "formalScoreGap": 0.0098,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 40,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 39,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 48
+    },
+    {
+      "itemId": "URL-067",
+      "title": "https://bepractice01.com/",
+      "inputType": "url",
+      "formalTopScore": 0.1177,
+      "formalScoreGap": 0.0268,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 41,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 6,
+      "candidateCount": 40,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 49
+    },
+    {
+      "itemId": "URL-068",
+      "title": "https://underdogs.co.kr/contents/blogs/집에서-시작할-수-있는-창업-아이디어-20가지/",
+      "inputType": "url",
+      "formalTopScore": 0.2937,
+      "formalScoreGap": 0.0111,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 28,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 3,
+      "promoted": true,
+      "reclassified": true,
+      "candidateError": null,
+      "promotedFormalCategoryId": "AI-4C2DEE5181",
+      "formalCategoryCount": 7,
+      "candidateCount": 39,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 50
+    },
+    {
+      "itemId": "URL-037",
+      "title": "https://kr.trip.com/moments/theme/poi-sema-seoul-museum-of-art-95224-exhibitions-990362/",
+      "inputType": "url",
+      "formalTopScore": 0.1395,
+      "formalScoreGap": 0.0384,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 42,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 7,
+      "candidateCount": 40,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 51
+    },
+    {
+      "itemId": "URL-024",
+      "title": "https://eanews.kr/news/932322",
+      "inputType": "url",
+      "formalTopScore": 0.2716,
+      "formalScoreGap": 0.0327,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-D2DE6C63A9",
+      "selectedFormalCategoryIds": [
+        "AI-D2DE6C63A9"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 43,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 7,
+      "candidateCount": 41,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 52
+    },
+    {
+      "itemId": "URL-040",
+      "title": "https://ko.wikipedia.org/wiki/2026년_대한민국의_영화_목록",
+      "inputType": "url",
+      "formalTopScore": 0.1556,
+      "formalScoreGap": 0.049,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 44,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 7,
+      "candidateCount": 42,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 53
+    },
+    {
+      "itemId": "URL-041",
+      "title": "https://www.d-art.co.kr/news/articleView.html?idxno=4764",
+      "inputType": "url",
+      "formalTopScore": 0.1666,
+      "formalScoreGap": 0.0294,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 45,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 7,
+      "candidateCount": 43,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 54
+    },
+    {
+      "itemId": "URL-086",
+      "title": "https://guide.michelin.com/kr/ko/seoul-capital-area/kr-seoul/restaurant/gwanghwamun-gukbap",
+      "inputType": "url",
+      "formalTopScore": 0.0945,
+      "formalScoreGap": 0.0537,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 46,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 7,
+      "candidateCount": 44,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 55
+    },
+    {
+      "itemId": "URL-019",
+      "title": "https://temon.kr/",
+      "inputType": "url",
+      "formalTopScore": 0.4104,
+      "formalScoreGap": 0.0113,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": true,
+      "linkedCandidateId": 1,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 3,
+      "promoted": true,
+      "reclassified": true,
+      "candidateError": null,
+      "promotedFormalCategoryId": "AI-56A5BF88EA",
+      "formalCategoryCount": 8,
+      "candidateCount": 43,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 56
+    },
+    {
+      "itemId": "URL-075",
+      "title": "https://triple.guide/articles/fd0068b5-08c8-4949-8ff4-874233fe2ff5",
+      "inputType": "url",
+      "formalTopScore": 0.14,
+      "formalScoreGap": 0.0082,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 47,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 44,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 57
+    },
+    {
+      "itemId": "URL-064",
+      "title": "https://brunch.co.kr/@solobiznight/33",
+      "inputType": "url",
+      "formalTopScore": 0.8585,
+      "formalScoreGap": 0.5302,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-4C2DEE5181",
+      "selectedFormalCategoryIds": [
+        "AI-4C2DEE5181"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 44,
+      "classificationStatus": "FORMAL_ONLY",
+      "inputOrder": 58
+    },
+    {
+      "itemId": "URL-025",
+      "title": "https://weolbu.com/product/5237",
+      "inputType": "url",
+      "formalTopScore": 0.3183,
+      "formalScoreGap": 0.013,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 43,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 44,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 59
+    },
+    {
+      "itemId": "URL-008",
+      "title": "https://namu.wiki/w/유산소%20운동",
+      "inputType": "url",
+      "formalTopScore": 0.1873,
+      "formalScoreGap": 0.0506,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 48,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 45,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 60
+    },
+    {
+      "itemId": "URL-035",
+      "title": "https://kr.trip.com/moments/theme/poi-sema-seoul-museum-of-art-95224-guides-993135/",
+      "inputType": "url",
+      "formalTopScore": 0.1273,
+      "formalScoreGap": 0.0196,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-56A5BF88EA",
+      "selectedFormalCategoryIds": [
+        "AI-56A5BF88EA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 49,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 46,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 61
+    },
+    {
+      "itemId": "URL-092",
+      "title": "https://velog.io/@ahn-sujin/React-Query-useInfiniteQuery-사용해서-무한스크롤-구현하기",
+      "inputType": "url",
+      "formalTopScore": 0.0947,
+      "formalScoreGap": 0.0375,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 50,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 47,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 62
+    },
+    {
+      "itemId": "URL-047",
+      "title": "https://play.google.com/store/apps/details?id=com.lazyheroes.erfe&hl=ko",
+      "inputType": "url",
+      "formalTopScore": 0.5898,
+      "formalScoreGap": 0.325,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 51,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 48,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 63
+    },
+    {
+      "itemId": "URL-006",
+      "title": "https://healthlab.ai.kr/수면의-질-높이는-7가지-과학적-방법/",
+      "inputType": "url",
+      "formalTopScore": 0.1043,
+      "formalScoreGap": 0.0626,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 34,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 48,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 64
+    },
+    {
+      "itemId": "URL-034",
+      "title": "https://kr.trip.com/events/8867097-2026-concerts-collection/",
+      "inputType": "url",
+      "formalTopScore": 0.0783,
+      "formalScoreGap": 0.0026,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 52,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 49,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 65
+    },
+    {
+      "itemId": "URL-045",
+      "title": "https://www.woowarhanclean.com/honeyinfotidy/?bmode=view&idx=7086792",
+      "inputType": "url",
+      "formalTopScore": 0.114,
+      "formalScoreGap": 0.0148,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 53,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 50,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 66
+    },
+    {
+      "itemId": "URL-046",
+      "title": "https://brunch.co.kr/magazine/single-person",
+      "inputType": "url",
+      "formalTopScore": 0.0668,
+      "formalScoreGap": 0.0668,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 54,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 51,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 67
+    },
+    {
+      "itemId": "URL-013",
+      "title": "https://fortune.nate.com/contents/freeunse/freeunseframe.nate?freeUnseId=week02",
+      "inputType": "url",
+      "formalTopScore": 0.3295,
+      "formalScoreGap": 0.0124,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 55,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 52,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 68
+    },
+    {
+      "itemId": "URL-049",
+      "title": "https://brunch.co.kr/@ylangylang/116",
+      "inputType": "url",
+      "formalTopScore": 0.2974,
+      "formalScoreGap": 0.0452,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 51,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 52,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 69
+    },
+    {
+      "itemId": "URL-094",
+      "title": "https://www.ssafy.com/ksp/servlet/swp.board.controller.SwpBoardServlet?p_process=select-board-view&p_menu_cd=M0204&p_tabseq=226509&p_seq=80&p_pageno=2",
+      "inputType": "url",
+      "formalTopScore": 0.0625,
+      "formalScoreGap": 0.028,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 56,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 53,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 70
+    },
+    {
+      "itemId": "URL-103",
+      "title": "https://velog.io/@1w2k/cs-과목-길잡이",
+      "inputType": "url",
+      "formalTopScore": 0.1637,
+      "formalScoreGap": 0.059,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 57,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 54,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 71
+    },
+    {
+      "itemId": "URL-081",
+      "title": "https://kr.trip.com/moments/theme/destination-gangwon-state-1185-thorough-guides-993136",
+      "inputType": "url",
+      "formalTopScore": 0.2392,
+      "formalScoreGap": 0.1155,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 58,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 55,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 72
+    },
+    {
+      "itemId": "URL-093",
+      "title": "https://community.linkareer.com/employment_data/4953814",
+      "inputType": "url",
+      "formalTopScore": 0.209,
+      "formalScoreGap": 0.0709,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 59,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 56,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 73
+    },
+    {
+      "itemId": "URL-020",
+      "title": "https://answer.moaform.com/answers/EnPBng",
+      "inputType": "url",
+      "formalTopScore": 0.8781,
+      "formalScoreGap": 0.459,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-56A5BF88EA",
+      "selectedFormalCategoryIds": [
+        "AI-56A5BF88EA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 56,
+      "classificationStatus": "FORMAL_ONLY",
+      "inputOrder": 74
+    },
+    {
+      "itemId": "URL-080",
+      "title": "https://news.airbnb.com/ko/2018-coastal-side-listings/",
+      "inputType": "url",
+      "formalTopScore": 0.1493,
+      "formalScoreGap": 0.0872,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 60,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 57,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 75
+    },
+    {
+      "itemId": "URL-044",
+      "title": "https://www.seouland.com/arti/society/society_general/2749.html",
+      "inputType": "url",
+      "formalTopScore": 0.2387,
+      "formalScoreGap": 0.0629,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 61,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 58,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 76
+    },
+    {
+      "itemId": "URL-097",
+      "title": "https://velog.io/@hyeseong-int/알고리즘-스터디-진행방식",
+      "inputType": "url",
+      "formalTopScore": 0.1131,
+      "formalScoreGap": 0.0195,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 62,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 59,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 77
+    },
+    {
+      "itemId": "URL-021",
+      "title": "https://simritest.com/",
+      "inputType": "url",
+      "formalTopScore": 0.7508,
+      "formalScoreGap": 0.3941,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-56A5BF88EA",
+      "selectedFormalCategoryIds": [
+        "AI-56A5BF88EA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 8,
+      "candidateCount": 59,
+      "classificationStatus": "FORMAL_ONLY",
+      "inputOrder": 78
+    },
+    {
+      "itemId": "URL-001",
+      "title": "https://kormedi.com/1341895/",
+      "inputType": "url",
+      "formalTopScore": 0.2987,
+      "formalScoreGap": 0.126,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 51,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 3,
+      "promoted": true,
+      "reclassified": true,
+      "candidateError": null,
+      "promotedFormalCategoryId": "AI-6F0EF0B54E",
+      "formalCategoryCount": 9,
+      "candidateCount": 58,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 79
+    },
+    {
+      "itemId": "URL-108",
+      "title": "https://velog.io/@munhyojin7338/신입-백엔드-개발자-기술-면접-질문-정리",
+      "inputType": "url",
+      "formalTopScore": 0.2542,
+      "formalScoreGap": 0.1363,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 63,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 59,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 80
+    },
+    {
+      "itemId": "URL-098",
+      "title": "https://velog.io/@cmh2806/코딩테스트-스타디-1주차-회고",
+      "inputType": "url",
+      "formalTopScore": 0.0933,
+      "formalScoreGap": 0.0373,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 64,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 60,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 81
+    },
+    {
+      "itemId": "URL-058",
+      "title": "https://chicpap.com/blog/명품-노트북-가방-매일-들-수-있는-5가지-선택지",
+      "inputType": "url",
+      "formalTopScore": 0.1877,
+      "formalScoreGap": 0.0127,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 65,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 61,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 82
+    },
+    {
+      "itemId": "URL-106",
+      "title": "https://velog.io/@dbstjrwnekd/네트워크-정리1",
+      "inputType": "url",
+      "formalTopScore": 0.1668,
+      "formalScoreGap": 0.0769,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-56A5BF88EA",
+      "selectedFormalCategoryIds": [
+        "AI-56A5BF88EA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 66,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 62,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 83
+    },
+    {
+      "itemId": "URL-054",
+      "title": "https://m.gsshop.com/search/searchSect.gs?tq=노트북가방&mseq=406355&ab=a",
+      "inputType": "url",
+      "formalTopScore": 0.1301,
+      "formalScoreGap": 0.0793,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 67,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 63,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 84
+    },
+    {
+      "itemId": "URL-100",
+      "title": "https://velog.io/@rimgosu/99클럽-코딩테스트-스터디-4기-후기",
+      "inputType": "url",
+      "formalTopScore": 0.1094,
+      "formalScoreGap": 0.0048,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 68,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 64,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 85
+    },
+    {
+      "itemId": "URL-084",
+      "title": "https://brunch.co.kr/@bakilhong66uhji/513",
+      "inputType": "url",
+      "formalTopScore": 0.1926,
+      "formalScoreGap": 0.0125,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-6F0EF0B54E",
+      "selectedFormalCategoryIds": [
+        "AI-6F0EF0B54E"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 69,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 65,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 86
+    },
+    {
+      "itemId": "URL-026",
+      "title": "https://weolbu.com/community/2613662/",
+      "inputType": "url",
+      "formalTopScore": 0.1734,
+      "formalScoreGap": 0.0613,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 70,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 66,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 87
+    },
+    {
+      "itemId": "URL-072",
+      "title": "https://apps.apple.com/kr/app/id1610260075",
+      "inputType": "url",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 71,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 67,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 88
+    },
+    {
+      "itemId": "URL-101",
+      "title": "https://velog.io/@jkseo50/Programmers-코딩테스트와-실무-역량-모두-잡는-알고리즘-스터디-후기",
+      "inputType": "url",
+      "formalTopScore": 0.0735,
+      "formalScoreGap": 0.0024,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 72,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 68,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 89
+    },
+    {
+      "itemId": "URL-078",
+      "title": "https://kr.trip.com/guide/theme/부산+혼자+여행.html",
+      "inputType": "url",
+      "formalTopScore": 0.1162,
+      "formalScoreGap": 0.0462,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 73,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 69,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 90
+    },
+    {
+      "itemId": "URL-065",
+      "title": "https://www.mobiinside.co.kr/2023/05/03/dana-smartstore-interview/",
+      "inputType": "url",
+      "formalTopScore": 0.3963,
+      "formalScoreGap": 0.2593,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-4C2DEE5181",
+      "selectedFormalCategoryIds": [
+        "AI-4C2DEE5181"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 74,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 70,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 91
+    },
+    {
+      "itemId": "URL-030",
+      "title": "https://www.cardif.co.kr/life-stage/rich-daily-account-book-tips.do",
+      "inputType": "url",
+      "formalTopScore": 0.1388,
+      "formalScoreGap": 0.0522,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 75,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 71,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 92
+    },
+    {
+      "itemId": "URL-028",
+      "title": "https://www.gqkorea.co.kr/2026/04/26/",
+      "inputType": "url",
+      "formalTopScore": 0.1369,
+      "formalScoreGap": 0.0865,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 76,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 72,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 93
+    },
+    {
+      "itemId": "URL-099",
+      "title": "https://velog.io/@0715yk/MEMO-알고리즘-잡스-후기",
+      "inputType": "url",
+      "formalTopScore": 0.1391,
+      "formalScoreGap": 0.0594,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 77,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 73,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 94
+    },
+    {
+      "itemId": "URL-110",
+      "title": "https://velog.io/@yukina1418/최근-면접을-다니면서-받았던-질문들",
+      "inputType": "url",
+      "formalTopScore": 0.1627,
+      "formalScoreGap": 0.0383,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 78,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 74,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 95
+    },
+    {
+      "itemId": "URL-005",
+      "title": "https://www.psychiatricnews.net/news/articleView.html?idxno=36398",
+      "inputType": "url",
+      "formalTopScore": 0.1802,
+      "formalScoreGap": 0.0962,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 79,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 75,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 96
+    },
+    {
+      "itemId": "URL-055",
+      "title": "https://www.coupang.com/np/search?q=노트북가방백팝",
+      "inputType": "url",
+      "formalTopScore": 0.0617,
+      "formalScoreGap": 0.0135,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 80,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 76,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 97
+    },
+    {
+      "itemId": "URL-076",
+      "title": "https://studio24.kr/3077",
+      "inputType": "url",
+      "formalTopScore": 0.166,
+      "formalScoreGap": 0.0046,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-56A5BF88EA",
+      "selectedFormalCategoryIds": [
+        "AI-56A5BF88EA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 81,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 77,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 98
+    },
+    {
+      "itemId": "URL-012",
+      "title": "https://unse.daily.co.kr/?p=horoscope",
+      "inputType": "url",
+      "formalTopScore": 0.322,
+      "formalScoreGap": 0.0338,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 55,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 77,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 99
+    },
+    {
+      "itemId": "URL-070",
+      "title": "https://brunch.co.kr/@e8362cab2f0c484/45",
+      "inputType": "url",
+      "formalTopScore": 0.3365,
+      "formalScoreGap": 0.1117,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-4C2DEE5181",
+      "selectedFormalCategoryIds": [
+        "AI-4C2DEE5181"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 74,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 77,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 100
+    },
+    {
+      "itemId": "URL-104",
+      "title": "https://velog.io/@jojehuni_9759/CS-전공지식-정리-네트워크-1-네트워크의-기초",
+      "inputType": "url",
+      "formalTopScore": 0.2648,
+      "formalScoreGap": 0.0349,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 82,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 78,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 101
+    },
+    {
+      "itemId": "URL-087",
+      "title": "https://diningcode.com/list.dc?keyword=20대&query=강남+삼겡살",
+      "inputType": "url",
+      "formalTopScore": 0.1112,
+      "formalScoreGap": 0.0639,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 83,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 9,
+      "candidateCount": 79,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 102
+    },
+    {
+      "itemId": "URL-014",
+      "title": "https://m.fortunade.com/unse/free/star/daily.php?gtype=2",
+      "inputType": "url",
+      "formalTopScore": 0.3634,
+      "formalScoreGap": 0.0362,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 55,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 3,
+      "promoted": true,
+      "reclassified": true,
+      "candidateError": null,
+      "promotedFormalCategoryId": "AI-025FA0A8B1",
+      "formalCategoryCount": 10,
+      "candidateCount": 78,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 103
+    },
+    {
+      "itemId": "URL-109",
+      "title": "https://velog.io/@kk1112k/백엔드-개발-기술면접-정리-Java-추가중",
+      "inputType": "url",
+      "formalTopScore": 0.2291,
+      "formalScoreGap": 0.0775,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LEARNING_CAREER",
+      "selectedFormalCategoryIds": [
+        "LEARNING_CAREER"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 84,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 79,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 104
+    },
+    {
+      "itemId": "URL-018",
+      "title": "https://poomang.com/en-US",
+      "inputType": "url",
+      "formalTopScore": 0.8608,
+      "formalScoreGap": 0.1878,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-025FA0A8B1",
+      "selectedFormalCategoryIds": [
+        "AI-025FA0A8B1",
+        "AI-56A5BF88EA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 79,
+      "classificationStatus": "MULTI_LABEL_FORMAL",
+      "inputOrder": 105
+    },
+    {
+      "itemId": "URL-029",
+      "title": "https://www.jobkorea.co.kr/goodjob/tip/view?News_No=11223",
+      "inputType": "url",
+      "formalTopScore": 0.8404,
+      "formalScoreGap": 0.0804,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-D2DE6C63A9",
+      "selectedFormalCategoryIds": [
+        "AI-D2DE6C63A9",
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 43,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 3,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 79,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 106
+    },
+    {
+      "itemId": "URL-032",
+      "title": "https://www.youtube.com/watch?v=8sDiWUV46FI&list=RD8sDiWUV46FI&start_radio=1&t=18s",
+      "inputType": "url",
+      "formalTopScore": 0.0797,
+      "formalScoreGap": 0.0797,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CONSUMPTION_FINANCE",
+      "selectedFormalCategoryIds": [
+        "CONSUMPTION_FINANCE"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 85,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 80,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 107
+    },
+    {
+      "itemId": "URL-036",
+      "title": "https://jcks100.com/entry/2025-트로트-콘서트-4월-5월-페스티벌-공연-티켓-예매",
+      "inputType": "url",
+      "formalTopScore": 0.1965,
+      "formalScoreGap": 0.0305,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "AI-025FA0A8B1",
+      "selectedFormalCategoryIds": [
+        "AI-025FA0A8B1"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 86,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 81,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 108
+    },
+    {
+      "itemId": "URL-095",
+      "title": "https://csr.samsung.com/ko/programViewSSWA.do",
+      "inputType": "url",
+      "formalTopScore": 0.1347,
+      "formalScoreGap": 0.0476,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "CULTURE_IDEA",
+      "selectedFormalCategoryIds": [
+        "CULTURE_IDEA"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 87,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 82,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 109
+    },
+    {
+      "itemId": "URL-004",
+      "title": "https://www.emotiv.com/ko/neuroscience/insomnia",
+      "inputType": "url",
+      "formalTopScore": 0.1773,
+      "formalScoreGap": 0.0332,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "LIFE_HEALTH",
+      "selectedFormalCategoryIds": [
+        "LIFE_HEALTH"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": 88,
+      "newCandidateCreated": true,
+      "candidateSupportCount": 1,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 83,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 110
+    },
+    {
+      "itemId": "URL-015",
+      "title": "https://apt2.me/saju/saju.jsp",
+      "inputType": "url",
+      "formalTopScore": 0.897,
+      "formalScoreGap": 0.4393,
+      "ambiguous": false,
+      "selectedFormalCategoryId": "AI-025FA0A8B1",
+      "selectedFormalCategoryIds": [
+        "AI-025FA0A8B1"
+      ],
+      "matchedExistingCandidate": false,
+      "linkedCandidateId": null,
+      "newCandidateCreated": false,
+      "candidateSupportCount": null,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 83,
+      "classificationStatus": "FORMAL_ONLY",
+      "inputOrder": 111
+    },
+    {
+      "itemId": "URL-082",
+      "title": "https://www.diningcode.com/list.dc?query=전주+콩나물국밥",
+      "inputType": "url",
+      "formalTopScore": 0.1015,
+      "formalScoreGap": 0.0511,
+      "ambiguous": true,
+      "selectedFormalCategoryId": "PLACE_FOOD",
+      "selectedFormalCategoryIds": [
+        "PLACE_FOOD"
+      ],
+      "matchedExistingCandidate": true,
+      "linkedCandidateId": 83,
+      "newCandidateCreated": false,
+      "candidateSupportCount": 2,
+      "promoted": false,
+      "reclassified": false,
+      "candidateError": null,
+      "formalCategoryCount": 10,
+      "candidateCount": 83,
+      "classificationStatus": "CANDIDATE_LINKED",
+      "inputOrder": 112
+    }
+  ]
+}

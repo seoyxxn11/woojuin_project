@@ -1,0 +1,115 @@
+증분 카테고리 실행: original
+
+요약
+- 최종 정식 카테고리 수: 10
+- AI 승격 카테고리 수: 5
+- 생성된 임시 후보 수: 88
+- 기존 후보 재사용 횟수: 4
+- 승격된 후보 수: 6
+- 승격 대기 후보 수: 0
+- 병합된 후보 수: 0
+- 1건만 연결된 후보 수: 77
+- 재분류된 데이터 수: 18
+- 정식 카테고리 10개 초과 여부: 아니오
+
+정식 카테고리
+- [SEED] 생활·건강 (데이터 22건)
+- [SEED] 학습·커리어 (데이터 18건)
+- [SEED] 장소·먹거리 (데이터 6건)
+- [SEED] 소비·금융 (데이터 12건)
+- [SEED] 문화·아이디어 (데이터 14건)
+- [PROMOTED] 운세 (데이터 12건)
+- [PROMOTED] 심리 (데이터 11건)
+- [PROMOTED] 재테크 (데이터 6건)
+- [PROMOTED] 레시피 (데이터 3건)
+- [PROMOTED] 창업 (데이터 8건)
+
+임시 후보
+- 레시피 [PROMOTED] 지지 3건
+- 어깨·통증을 [PENDING] 지지 1건
+- 신경·이동 [PENDING] 지지 1건
+- 불면증은·수면에 [PENDING] 지지 1건
+- 수면·장애는 [PENDING] 지지 1건
+- 수면의·질을 [PENDING] 지지 2건
+- 유산소·운동은 [PENDING] 지지 1건
+- 걷기·운동 [PENDING] 지지 1건
+- 재테크 [PROMOTED] 지지 3건
+- 걷기는·심혈관 [PENDING] 지지 1건
+- 운세 [PROMOTED] 지지 3건
+- 심리 [PROMOTED] 지지 3건
+- 내집을·사는 [PENDING] 지지 1건
+- 2026년·청약 [PENDING] 지지 1건
+- 2026년·4월 [PENDING] 지지 1건
+- 재테크 [PROMOTED] 지지 3건
+- 가계부·작성법 [PENDING] 지지 1건
+- 호정이·참여한 [PENDING] 지지 1건
+- 2026년·대한민국 [PENDING] 지지 1건
+- 2026년·콘서트 [PENDING] 지지 1건
+- 서울시립미술관과·주변 [PENDING] 지지 1건
+- 2026년·7월부터 [PENDING] 지지 1건
+- 서울시립미술관에서·열리 [PENDING] 지지 1건
+- 2026년·전시 [PENDING] 지지 1건
+- 2026년·서울에서 [PENDING] 지지 1건
+- 2026년에·개봉 [PENDING] 지지 1건
+- 2026년·개봉 [PENDING] 지지 1건
+- 40세·이후 [PENDING] 지지 1건
+- 정리정돈은·필요 [PENDING] 지지 1건
+- 정리·시간 [PENDING] 지지 1건
+- 혼자·살고 [PENDING] 지지 1건
+- 1인·가구의 [PENDING] 지지 1건
+- 앱스토어에서·특정 [PENDING] 지지 1건
+- 자취·생활비 [PENDING] 지지 1건
+- 자취생이라면·알아야 [PENDING] 지지 1건
+- mac·studio는 [PENDING] 지지 1건
+- 노트북용·가방을 [PENDING] 지지 1건
+- 노트북가방·상품 [PENDING] 지지 1건
+- 쿠팡에서·노트북 [PENDING] 지지 1건
+- 2024년·대용량 [PENDING] 지지 1건
+- 신세계몰에서·명품 [PENDING] 지지 1건
+- 출퇴근용·명품 [PENDING] 지지 1건
+- 쿠팡에서·구매 [PENDING] 지지 1건
+- 쿠팡에서·실내용 [PENDING] 지지 1건
+- 캠핑·텐트의 [PENDING] 지지 1건
+- 유튜브는·사용자가 [PENDING] 지지 1건
+- 창업 [PROMOTED] 지지 3건
+- 2025년·10월 [PENDING] 지지 1건
+- 보험계리사·1차 [PENDING] 지지 1건
+- 창업 [PENDING] 지지 2건
+- 앱스토어에서·제공되는 [PENDING] 지지 1건
+- 부산·2박 [PENDING] 지지 1건
+- 부산·해운대와 [PENDING] 지지 1건
+- 부산의·숨겨진 [PENDING] 지지 1건
+- 속초·해변 [PENDING] 지지 1건
+- 속초·청호해안길에 [PENDING] 지지 1건
+- 부산·혼자 [PENDING] 지지 1건
+- 부산·해운대의 [PENDING] 지지 1건
+- 평창·동계올림픽과 [PENDING] 지지 1건
+- 강원특별자치도·여행을 [PENDING] 지지 1건
+- 전주·콩나물국밥 [PENDING] 지지 2건
+- 전주·콩나물국밥은 [PENDING] 지지 1건
+- 전주·한옥마을 [PENDING] 지지 1건
+- 전주·대표 [PENDING] 지지 1건
+- 광화문·지역의 [PENDING] 지지 1건
+- 강남구·맛집 [PENDING] 지지 2건
+- 강남·지역의 [PENDING] 지지 1건
+- 강남역에서·가성비 [PENDING] 지지 1건
+- react·query의 [PENDING] 지지 1건
+- 삼성·ssafy [PENDING] 지지 1건
+- ssafy에서·느낀 [PENDING] 지지 1건
+- 삼성·청년sw [PENDING] 지지 1건
+- 삼성그룹의·사회공헌 [PENDING] 지지 1건
+- 취준생들이·함께하는 [PENDING] 지지 1건
+- 코딩테스트·스타디 [PENDING] 지지 1건
+- 비전공자·프론트엔드 [PENDING] 지지 1건
+- 비전공자로·코딩테스트 [PENDING] 지지 1건
+- 2년차·개발자가 [PENDING] 지지 1건
+- 프랑스어·강사 [PENDING] 지지 1건
+- 전자·미디어 [PENDING] 지지 1건
+- cs·전공자용 [PENDING] 지지 1건
+- 네트워크·기초 [PENDING] 지지 2건
+- 글은·네트워크의 [PENDING] 지지 1건
+- 신입·백엔드 [PENDING] 지지 1건
+- oop·개념과 [PENDING] 지지 1건
+- 백엔드·개발자 [PENDING] 지지 1건
+- 프론트엔드에서·사용되는 [PENDING] 지지 1건
+- 백엔드·개발자로서 [PENDING] 지지 1건

@@ -1,0 +1,10 @@
+﻿candidateId,suggestedName,description,status,supportCount,createdAtItemId,mergedIntoCandidateId,promotedFormalCategoryId,linkedItemIds
+1,운세·예측,운세 및 예측 정보 제공,PENDING,1,URL-012,,,URL-012
+2,운세 정보,일일 운세 및 개인 맞춤형 예측 정보 제공,PENDING,1,URL-015,,,URL-015
+3,심리·자기개발,심리 테스트 및 자기 평가 도구,PENDING,2,URL-016,,,URL-016;URL-017
+4,자기성찰,자기성찰을 위한 성격 테스트,PENDING,1,URL-020,,,URL-020
+5,앱·서비스,앱 스토어에서 특정 앱의 상세 정보를 제공하는 페이지,PENDING,2,URL-048,,,URL-048;URL-072
+6,기술·하드웨어,고성능 컴퓨터 하드웨어 및 AI 기반 프로페셔널 기기,PENDING,1,URL-052,,,URL-052
+7,디지털 플랫폼,디지털 플랫폼 운영 및 콘텐츠 공유,PENDING,1,URL-062,,,URL-062
+8,커뮤니티·공유,공동체 내에서의 감사와 공유의 의식,PENDING,1,URL-094,,,URL-094
+9,사회공헌,기업의 사회공헌 활동 및 관련 정보,PENDING,1,URL-096,,,URL-096

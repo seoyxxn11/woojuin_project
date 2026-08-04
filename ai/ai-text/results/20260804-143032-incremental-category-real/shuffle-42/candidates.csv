@@ -1,0 +1,13 @@
+﻿candidateId,suggestedName,description,status,supportCount,createdAtItemId,mergedIntoCandidateId,promotedFormalCategoryId,linkedItemIds
+1,심리·자기성찰,심리 테스트 및 자기 성찰 도구,PROMOTED,3,URL-016,,AI-EE95C86A6D,URL-016;URL-017;URL-018
+2,앱·디지털,앱 스토어에서 특정 앱의 상세 정보를 제공하는 페이지,PENDING,2,URL-048,,,URL-048;URL-072
+3,기술·하드웨어,고성능 컴퓨터 하드웨어 및 AI 기반 프로페셔널 기기,PENDING,1,URL-052,,,URL-052
+4,콘텐츠 플랫폼,사용자 생성 콘텐츠 공유 및 상품 판매 플랫폼,PENDING,1,URL-062,,,URL-062
+5,사회공헌,기업의 사회공헌 활동 및 관련 소식,PENDING,1,URL-096,,,URL-096
+6,운세·타로,주간 별자리 기반의 운세 정보,PENDING,1,URL-013,,,URL-013
+7,공동체·기여,공동체·기여,PENDING,1,URL-094,,,URL-094
+8,자기 이해,자기 이해,PENDING,1,URL-020,,,URL-020
+9,심리검사,다양한 심리검사를 제공하는 서비스,PENDING,1,URL-021,,,URL-021
+10,실용 디자인,명품 액세서리,PENDING,1,URL-058,,,URL-058
+11,가방·패션,가방 및 패션 액세서리,PENDING,1,URL-054,,,URL-054
+12,운세·예측,운세 및 예측 정보 제공,PENDING,2,URL-012,,,URL-012;URL-015

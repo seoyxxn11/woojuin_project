@@ -1,0 +1,70 @@
+{
+  "mode": "real",
+  "datasetRoot": "C:\\Users\\SSAFY\\ssafy\\ai\\ai-text\\dataset\\tester\\정우현",
+  "datasetCount": 112,
+  "orders": [
+    "original",
+    "shuffle-42",
+    "shuffle-84"
+  ],
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2
+  },
+  "summaries": [
+    {
+      "finalFormalCategoryCount": 5,
+      "aiPromotedCategoryCount": 0,
+      "createdCandidateCount": 9,
+      "reusedCandidateEventCount": 2,
+      "newCandidateEventCount": 9,
+      "promotedCandidateCount": 0,
+      "readyToPromoteCandidateCount": 0,
+      "mergedCandidateCount": 0,
+      "singleLinkCandidateCount": 7,
+      "reclassifiedItemCount": 0,
+      "exceededMaxFormalCategories": false,
+      "totalItems": 112,
+      "order": "original",
+      "randomSeed": null
+    },
+    {
+      "finalFormalCategoryCount": 6,
+      "aiPromotedCategoryCount": 1,
+      "createdCandidateCount": 12,
+      "reusedCandidateEventCount": 2,
+      "newCandidateEventCount": 12,
+      "promotedCandidateCount": 1,
+      "readyToPromoteCandidateCount": 0,
+      "mergedCandidateCount": 0,
+      "singleLinkCandidateCount": 9,
+      "reclassifiedItemCount": 3,
+      "exceededMaxFormalCategories": false,
+      "totalItems": 112,
+      "order": "shuffle-42",
+      "randomSeed": 42
+    },
+    {
+      "finalFormalCategoryCount": 5,
+      "aiPromotedCategoryCount": 0,
+      "createdCandidateCount": 12,
+      "reusedCandidateEventCount": 1,
+      "newCandidateEventCount": 12,
+      "promotedCandidateCount": 0,
+      "readyToPromoteCandidateCount": 0,
+      "mergedCandidateCount": 0,
+      "singleLinkCandidateCount": 11,
+      "reclassifiedItemCount": 0,
+      "exceededMaxFormalCategories": false,
+      "totalItems": 112,
+      "order": "shuffle-84",
+      "randomSeed": 84
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+﻿candidateId,suggestedName,description,status,supportCount,createdAtItemId,mergedIntoCandidateId,promotedFormalCategoryId,linkedItemIds
+1,디지털 콘텐츠,앱스토어에서 특정 앱의 상세 정보를 제공하는 페이지,PENDING,2,URL-048,,,URL-048;URL-072
+2,디지털 플랫폼,유저가 콘텐츠를 생성하고 공유하는 디지털 플랫폼 및 관련 상업 활동,PENDING,1,URL-062,,,URL-062
+3,운세·예측,운세 및 예측 정보 제공,PENDING,1,URL-012,,,URL-012
+4,운세·타로,주간 별자리 기반의 운세 정보,PENDING,1,URL-013,,,URL-013
+5,운세,일일 운세 및 별자리 기반의 운명 예측 정보 제공 서비스,PENDING,1,URL-015,,,URL-015
+6,자기성찰,"자기성찰을 위한 테스트, 심리 콘텐츠, 운세 등 개인의 내면 탐색을 돕는 플랫폼",PENDING,1,URL-018,,,URL-018
+7,사회공헌,기업의 사회적 책임 활동 관련 정보,PENDING,1,URL-096,,,URL-096
+8,기술·하드웨어,고성능 컴퓨터 하드웨어 및 AI 기반 프로페셔널 기기,PENDING,1,URL-052,,,URL-052
+9,창업스토리,창업 경험 공유,PENDING,1,URL-070,,,URL-070
+10,자기 이해,자기 이해,PENDING,1,URL-020,,,URL-020
+11,육아 쇼핑,육아 관련 상품 쇼핑몰,PENDING,1,URL-059,,,URL-059
+12,커뮤니티·공유,공동체 내에서의 감사와 공유의 의식,PENDING,1,URL-094,,,URL-094

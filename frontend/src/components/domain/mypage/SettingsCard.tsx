@@ -37,15 +37,16 @@ const SettingsCard = ({
     : aiUsageLoading
       ? '사용량을 불러오는 중입니다.'
       : '아이템 1개를 저장할 때마다 AI가 제목·요약·카테고리를 생성해요.';
+  const showUsageBar = Boolean(aiUsage && aiUsage.limitEnabled && !aiUsage.unlimited);
+  // 진행바가 보일 땐 우측 값을 접는다 — 바 아래 "N회 저장 / N회 한도"와 겹쳐 같은 숫자가 두 번 적힌다.
+  // 바가 없는 상태(무제한·제한 없음·로딩·오류)에서는 이 값이 유일한 표시라 남긴다.
   const usageValue = aiUsageLoading
     ? '—'
     : aiUsageError
       ? '확인 불가'
       : aiUsage?.unlimited
         ? `${aiUsage.used.toLocaleString('ko-KR')}회`
-        : aiUsage?.limitEnabled
-          ? `${aiUsage.used.toLocaleString('ko-KR')} / ${aiUsage.limit.toLocaleString('ko-KR')}회`
-          : '제한 없음';
+        : '제한 없음';
 
   return (
     <>
@@ -94,9 +95,11 @@ const SettingsCard = ({
               </h2>
               <p className="mt-2 text-xs text-text-3">{usageDescription}</p>
             </div>
-            <span className="shrink-0 text-[18px] font-extrabold tabular-nums text-text-1">
-              {usageValue}
-            </span>
+            {!showUsageBar && (
+              <span className="shrink-0 text-[18px] font-extrabold tabular-nums text-text-1">
+                {usageValue}
+              </span>
+            )}
           </div>
 
           {aiUsage?.limitEnabled && !aiUsage.unlimited && (

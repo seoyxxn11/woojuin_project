@@ -35,11 +35,13 @@ describe('마이페이지 설정 카드', () => {
     const { container } = await renderSettingsCard(limitedUsage);
 
     expect(container.textContent).toContain('이번 달 AI 사용량');
-    expect(container.textContent).toContain('2 / 500회');
     expect(container.textContent).toContain(
       '아이템 1개를 저장할 때마다 AI가 제목·요약·카테고리를 생성해요.',
     );
+    expect(container.textContent).toContain('2회 저장');
     expect(container.textContent).toContain('500회 한도');
+    // 같은 숫자를 두 번 적지 않는다 — 진행바가 보이면 우측 요약 값은 접는다
+    expect(container.textContent).not.toContain('2 / 500회');
 
     const progress = container.querySelector('[role="progressbar"]');
     expect(progress?.getAttribute('aria-valuenow')).toBe('2');

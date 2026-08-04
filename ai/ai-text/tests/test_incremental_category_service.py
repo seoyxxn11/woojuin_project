@@ -88,6 +88,10 @@ class FakeBackend:
             "confidence": 0.8, "reason": "새 세부주제",
         }
 
+    def review_signal_conversion(self, item, signal_info):
+        return {"convert": True, "name": signal_info.get("suggestedName") or "세부주제",
+                "description": "설명", "confidence": 0.9, "reason": "두 번째 유사 데이터"}
+
 
 def make_engine(backend, config=None, workspace_id=10):
     clock = itertools.count()
@@ -273,16 +277,20 @@ import json as _json
 class VectorBackend:
     """itemId별 임베딩 벡터와 재사용 판단을 직접 통제하는 백엔드."""
 
-    def __init__(self, vectors, names=None, reuse_decision=None, promote=False):
+    def __init__(self, vectors, names=None, reuse_decision=None, promote=False, confident=False, convert=True):
         self.vectors = vectors
         self.names = names or {}
         self.reuse_decision = reuse_decision
         self.promote = promote
+        self.confident = confident
+        self.convert = convert
         self._current = None
 
     def classify_formal(self, item, formal_categories):
         self._current = item["testId"]
-        return [{"categoryId": c["id"], "score": 0.2} for c in formal_categories]  # 항상 애매
+        if self.confident:  # 첫 카테고리에 확신 분류(top 0.9, 큰 gap)
+            return [{"categoryId": c["id"], "score": (0.9 if i == 0 else 0.1)} for i, c in enumerate(formal_categories)]
+        return [{"categoryId": c["id"], "score": 0.2} for c in formal_categories]  # 애매
 
     def embed(self, text):
         return l2_normalize(list(self.vectors[self._current]))
@@ -313,6 +321,10 @@ class VectorBackend:
             "name": name, "description": "d",
             "confidence": dec.get("confidence", 0.8), "reason": dec.get("reason", ""),
         }
+
+    def review_signal_conversion(self, item, signal_info):
+        return {"convert": bool(self.convert), "name": signal_info.get("suggestedName") or item["testId"],
+                "description": "d", "confidence": 0.9, "reason": "전환"}
 
     def review_promotion(self, candidate, linked_items):
         return {"promote": self.promote, "reason": "테스트"}
@@ -414,6 +426,56 @@ def test_final_dedup_reuses_candidate_with_same_proposed_name():
     log_d = engine.submit_item(vec_item("D"))
     assert log_d["candidateAction"] == "REUSE_FINAL_DEDUP"
     assert len([c for c in engine.candidates if c.status == PENDING]) == 1
+
+
+# ---- 생성 지연(잠정 신호) 정책 ----
+
+
+def test_confident_singleton_defers_to_signal_not_candidate():
+    backend = VectorBackend(vectors={"A": [1, 0, 0]}, confident=True)
+    config = ServiceConfig(center_similarity_threshold=0.75, item_similarity_threshold=0.78,
+                           signal_similarity_threshold=0.55, candidate_min_support_count=3)
+    engine = _engine(backend, config)
+    log = engine.submit_item(vec_item("A"))
+    # 확신 분류 단발 데이터 → 후보가 아니라 잠정 신호로만 보류
+    assert log["signalAction"] == "STORE_SIGNAL"
+    assert log["candidateAction"] == "FORMAL_ONLY"
+    assert engine.candidates == []
+    assert len(engine.signals) == 1 and engine.signals[0].status == "WAITING"
+
+
+def test_second_similar_confident_converts_signal_and_third_promotes():
+    backend = VectorBackend(
+        vectors={"A": [1, 0, 0], "B": [0.9, 0.436, 0], "C": [0.85, 0.527, 0]},
+        confident=True, promote=True, convert=True,
+    )
+    config = ServiceConfig(center_similarity_threshold=0.75, item_similarity_threshold=0.78,
+                           signal_similarity_threshold=0.55, candidate_min_support_count=3)
+    engine = _engine(backend, config)
+    engine.submit_item(vec_item("A"))            # 잠정 신호
+    log_b = engine.submit_item(vec_item("B"))    # 2번째 유사 → 신호 전환, support 2
+    assert log_b["signalAction"] == "CONVERTED"
+    assert log_b["candidateAction"] == "CONVERT_SIGNAL"
+    active = [c for c in engine.candidates if c.status in {PENDING, PROMOTED}]
+    assert len(active) == 1 and active[0].supportCount == 2
+    assert engine.signals[0].status == "CONVERTED"
+    log_c = engine.submit_item(vec_item("C"))    # 3번째 → support 3 → 승격
+    assert log_c["candidateAction"] == "REUSE_EMBEDDING"
+    assert log_c["promoted"] is True
+
+
+def test_signal_expires_after_ttl_without_reuse():
+    backend = VectorBackend(
+        vectors={"A": [1, 0, 0], "B": [0, 1, 0], "C": [0, 0, 1]}, confident=True,
+    )
+    config = ServiceConfig(signal_similarity_threshold=0.55, signal_ttl_items=1)
+    engine = _engine(backend, config)
+    engine.submit_item(vec_item("A"))  # input 1, expiresAtInput 2
+    engine.submit_item(vec_item("B"))  # input 2 (서로 다른 주제) → A 아직 WAITING
+    engine.submit_item(vec_item("C"))  # input 3 > 2 → A 만료
+    a_signal = next(s for s in engine.signals if s.itemId == "A")
+    assert a_signal.status == "EXPIRED"
+    assert engine.candidates == []  # 재사용 없이 만료 → 후보 미생성
 
 
 def test_build_service_text_drops_url_and_content_tokens_filter_numbers():

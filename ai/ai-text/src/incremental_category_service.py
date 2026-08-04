@@ -20,7 +20,7 @@ import math
 import re
 import threading
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, Callable, Protocol
 
 from .dynamic_category_experiment import (
@@ -44,6 +44,12 @@ FORMAL_ONLY = "FORMAL_ONLY"
 MULTI_LABEL_FORMAL = "MULTI_LABEL_FORMAL"
 CANDIDATE_LINKED = "CANDIDATE_LINKED"
 
+# ---- 잠정 신호 상태 ----
+SIGNAL_WAITING = "WAITING"
+SIGNAL_CONVERTED = "CONVERTED"
+SIGNAL_EXPIRED = "EXPIRED"
+SIGNAL_STATUSES = (SIGNAL_WAITING, SIGNAL_CONVERTED, SIGNAL_EXPIRED)
+
 # ---- 카테고리 출처 ----
 SEED = "SEED"
 PROMOTED_ORIGIN = "PROMOTED"
@@ -65,6 +71,9 @@ class ServiceConfig:
     center_similarity_threshold: float = 0.75
     item_similarity_threshold: float = 0.78
     ai_review_lower_bound: float = 0.60
+    # 생성 지연(잠정 신호) 정책용
+    signal_similarity_threshold: float = 0.55
+    signal_ttl_items: int = 100
 
     @classmethod
     def from_mapping(cls, mapping: dict[str, Any] | None) -> "ServiceConfig":
@@ -134,6 +143,22 @@ class ServiceConfig:
                     "ai-review-lower-bound", "ai_review_lower_bound", default=0.60
                 )
             ),
+            signal_similarity_threshold=float(
+                pick_candidate(
+                    "signal-similarity-threshold",
+                    "signal_similarity_threshold",
+                    default=float(
+                        pick_candidate(
+                            "center-similarity-threshold",
+                            "center_similarity_threshold",
+                            default=legacy_similarity,
+                        )
+                    ),
+                )
+            ),
+            signal_ttl_items=int(
+                pick_candidate("signal-ttl-items", "signal_ttl_items", default=100)
+            ),
         )
 
 
@@ -191,6 +216,43 @@ class ItemClassification:
     classificationStatus: str
 
 
+@dataclass
+class ProvisionalSignal:
+    """확신 분류된 단발 데이터를 후보로 바로 만들지 않고 보류해 두는 잠정 신호.
+
+    사용자에게 노출하지 않으며, 유사한 2번째 데이터가 오면 후보로 전환한다.
+    """
+
+    signalId: int
+    itemId: str
+    workspaceId: int
+    formalCategoryId: str
+    suggestedName: str
+    suggestedDescription: str
+    embedding: list[float]
+    createdAt: str
+    expiresAt: str
+    createdAtInput: int
+    expiresAtInput: int
+    status: str = SIGNAL_WAITING
+
+    def public_dict(self) -> dict[str, Any]:
+        return {
+            "signalId": self.signalId,
+            "itemId": self.itemId,
+            "workspaceId": self.workspaceId,
+            "formalCategoryId": self.formalCategoryId,
+            "suggestedName": self.suggestedName,
+            "suggestedDescription": self.suggestedDescription,
+            "embeddingDim": len(self.embedding),
+            "createdAt": self.createdAt,
+            "expiresAt": self.expiresAt,
+            "createdAtInput": self.createdAtInput,
+            "expiresAtInput": self.expiresAtInput,
+            "status": self.status,
+        }
+
+
 # ---- 백엔드 프로토콜 ----
 
 
@@ -242,6 +304,19 @@ class ServiceBackend(Protocol):
         - REUSE: 기존 세부주제 후보와 같음 → 그 후보에 병행 연결
         - CREATE: 정식 카테고리보다 구체적이고 반복될 세부 주제 → 신규 후보
         - SKIP: 그냥 정식 카테고리의 일반적인 데이터 → 후보 만들지 않음
+        """
+        ...
+
+    def review_signal_conversion(
+        self, item: dict[str, Any], signal_info: dict[str, Any]
+    ) -> dict[str, Any]:
+        """유사한 2번째 데이터가 왔을 때, 잠정 신호를 실제 후보로 전환할지 검토한다.
+
+        signal_info: {signalId, suggestedName, suggestedDescription, formalCategoryName,
+                      firstItem:{title, summary}, similarity}
+        반환: {"convert": bool, "name": str, "description": str, "confidence": float, "reason": str}
+        - 두 데이터가 같은 세부 주제이고, 정식 카테고리보다 구체적으로 분리할 가치가 있으며,
+          이후에도 반복될 만하면 convert=True.
         """
         ...
 
@@ -546,6 +621,20 @@ class DeterministicBackend:
             "reason": f"'{formal_category_name}'의 일반적인 데이터",
         }
 
+    def review_signal_conversion(self, item, signal_info) -> dict[str, Any]:
+        # 이미 임베딩 유사로 매칭된 2번째 데이터 → 같은 세부 주제로 보고 전환
+        sim = float(signal_info.get("similarity", 0.0))
+        if sim >= 0.6:
+            name = signal_info.get("suggestedName") or "세부주제"
+            return {
+                "convert": True,
+                "name": name,
+                "description": signal_info.get("suggestedDescription") or f"{name} 관련 반복 주제",
+                "confidence": round(sim, 3),
+                "reason": f"잠정 신호 '{name}'와 두 번째 유사 데이터 확인(유사도 {sim:.2f})",
+            }
+        return {"convert": False, "name": "", "description": "", "confidence": round(1 - sim, 3), "reason": "유사도 부족"}
+
 
 def _default_clock() -> datetime:
     return datetime.now(timezone.utc).astimezone()
@@ -596,6 +685,10 @@ class WorkspaceCategoryEngine:
         self._item_embeddings: dict[str, list[float]] = {}  # maxItemSimilarity 계산용
         self._next_candidate_id = 1
         self.reclassified_item_ids: set[str] = set()
+        # 생성 지연: 잠정 신호
+        self.signals: list[ProvisionalSignal] = []
+        self._next_signal_id = 1
+        self._input_counter = 0
 
     # ---- 조회 헬퍼 ----
 
@@ -623,6 +716,8 @@ class WorkspaceCategoryEngine:
             if item_id in self.item_classifications:
                 return self._log_for(item_id, note="ALREADY_PROCESSED")
             self._items[item_id] = item
+            self._input_counter += 1
+            self._expire_signals()
 
             # 1~2. 정식 카테고리 분류 (AI 점수)
             scores = self.backend.classify_formal(item, self._formal_snapshot())
@@ -663,6 +758,8 @@ class WorkspaceCategoryEngine:
                 "maxItemSimilarity": None,
                 "candidateEntryDecision": None,
                 "candidateEntryReason": None,
+                "signalAction": None,
+                "signalId": None,
                 "promoted": False,
                 "reclassified": False,
                 "candidateError": None,
@@ -734,6 +831,101 @@ class WorkspaceCategoryEngine:
             "maxItemSimilarity": round(max_item, 4),
         }
 
+    def _formal_name(self, category_id: str) -> str:
+        formal = self._formal_by_id(str(category_id))
+        return str(formal["name"]) if formal else ""
+
+    def _predict_subtopic_name(self, item: dict[str, Any]) -> str:
+        tokens: list[str] = []
+        for token in content_tokens(build_service_text(item)):
+            if token not in tokens:
+                tokens.append(token)
+            if len(tokens) >= 2:
+                break
+        if tokens:
+            return "·".join(tokens)[:12]
+        return (str(item.get("title", "")).strip()[:12]) or "세부주제"
+
+    def _best_signal(self, embedding: list[float]) -> tuple[ProvisionalSignal | None, float]:
+        best: ProvisionalSignal | None = None
+        best_sim = -1.0
+        for signal in self.signals:
+            if signal.status != SIGNAL_WAITING:
+                continue
+            sim = cosine_similarity(embedding, signal.embedding)
+            if sim > best_sim:
+                best, best_sim = signal, sim
+        return best, best_sim
+
+    def _expire_signals(self) -> None:
+        for signal in self.signals:
+            if signal.status == SIGNAL_WAITING and self._input_counter > signal.expiresAtInput:
+                signal.status = SIGNAL_EXPIRED
+
+    def _store_signal(
+        self, item: dict[str, Any], item_id: str, formal_category_id: str, embedding: list[float]
+    ) -> ProvisionalSignal:
+        name = self._predict_subtopic_name(item)
+        now = self._now()
+        signal = ProvisionalSignal(
+            signalId=self._next_signal_id,
+            itemId=item_id,
+            workspaceId=self.workspace_id,
+            formalCategoryId=str(formal_category_id),
+            suggestedName=name,
+            suggestedDescription=f"{name} 관련 반복 가능 세부 주제(잠정)",
+            embedding=list(embedding),
+            createdAt=now.isoformat(),
+            expiresAt=(now + timedelta(minutes=self.config.signal_ttl_items)).isoformat(),
+            createdAtInput=self._input_counter,
+            expiresAtInput=self._input_counter + self.config.signal_ttl_items,
+            status=SIGNAL_WAITING,
+        )
+        self._next_signal_id += 1
+        self.signals.append(signal)
+        return signal
+
+    def _attach_candidate(
+        self,
+        candidate: TemporaryCandidate,
+        item_id: str,
+        embedding: list[float],
+        classification: ItemClassification,
+        log: dict[str, Any],
+        action: str,
+    ) -> None:
+        log["candidateAction"] = action
+        log["matchedExistingCandidate"] = action in {"REUSE_EMBEDDING", "REUSE_AI"}
+        self._link_item(candidate, item_id, embedding)
+        classification.candidateId = candidate.candidateId
+        classification.classificationStatus = CANDIDATE_LINKED
+        log["linkedCandidateId"] = candidate.candidateId
+        log["candidateName"] = candidate.suggestedName
+        log["candidateSupportCount"] = candidate.supportCount
+        self._maybe_promote(candidate, log)
+
+    def _convert_signal(
+        self,
+        signal: ProvisionalSignal,
+        second_item_id: str,
+        second_embedding: list[float],
+        decision: dict[str, Any],
+    ) -> TemporaryCandidate:
+        """잠정 신호를 실제 후보로 전환하고 첫 번째(신호) 데이터를 연결한다(supportCount=1)."""
+        name = decision.get("name") or signal.suggestedName
+        description = decision.get("description") or signal.suggestedDescription
+        first_embedding = self._item_embeddings.get(signal.itemId, second_embedding)
+        candidate, _created = self._create_or_reuse_candidate(
+            signal.itemId, first_embedding, {"name": name, "description": description}
+        )
+        self._link_item(candidate, signal.itemId, first_embedding)
+        first_classification = self.item_classifications.get(signal.itemId)
+        if first_classification is not None:
+            first_classification.candidateId = candidate.candidateId
+            first_classification.classificationStatus = CANDIDATE_LINKED
+        signal.status = SIGNAL_CONVERTED
+        return candidate
+
     def _handle_candidate(
         self,
         item: dict[str, Any],
@@ -754,25 +946,48 @@ class WorkspaceCategoryEngine:
 
         center_thr = self.config.center_similarity_threshold
         item_thr = self.config.item_similarity_threshold
-        candidate: TemporaryCandidate | None = None
-        action: str | None = None
 
-        # 1. 임베딩 기준(centerSimilarity 또는 maxItemSimilarity) 재사용 — 확신 분류든 아니든
-        #    기존 세부주제 후보와 충분히 유사하면 바로 병행 연결한다.
+        # 1. 기존 후보와 임베딩 유사 → 확신 분류든 아니든 병행 연결
         eligible = [s for s in sims if s[1] >= center_thr or s[2] >= item_thr]
         if eligible:
             best = max(eligible, key=lambda s: max(s[1], s[2]))
-            candidate = best[0]
-            action = "REUSE_EMBEDDING"
-            log["matchedExistingCandidate"] = True
-        else:
-            # 2. 임베딩만으로 애매 → AI가 진입 판단: REUSE(기존 후보) / CREATE(새 세부주제) / SKIP(일반 데이터)
-            formal = self._formal_by_id(str(classification.formalCategoryId))
+            self._attach_candidate(best[0], item_id, embedding, classification, log, "REUSE_EMBEDDING")
+            return
+
+        # 2. WAITING 잠정 신호와 비교 → 유사한 2번째 데이터면 후보로 전환
+        best_signal, sig_sim = self._best_signal(embedding)
+        if best_signal is not None and sig_sim >= self.config.signal_similarity_threshold:
+            log["signalId"] = best_signal.signalId
+            first = self._items.get(best_signal.itemId, {})
+            info = {
+                "signalId": best_signal.signalId,
+                "suggestedName": best_signal.suggestedName,
+                "suggestedDescription": best_signal.suggestedDescription,
+                "formalCategoryName": self._formal_name(best_signal.formalCategoryId),
+                "firstItem": {
+                    "title": str(first.get("title", "")),
+                    "summary": str(first.get("summary") or _summary_from_input(first))[:200],
+                },
+                "similarity": round(sig_sim, 4),
+            }
+            decision = self.backend.review_signal_conversion(item, info)
+            log["candidateEntryReason"] = str(decision.get("reason", ""))
+            if decision.get("convert"):
+                candidate = self._convert_signal(best_signal, item_id, embedding, decision)
+                log["signalAction"] = "CONVERTED"
+                log["newCandidateCreated"] = True
+                self._attach_candidate(
+                    candidate, item_id, embedding, classification, log, "CONVERT_SIGNAL"
+                )
+                return
+            log["signalAction"] = "CONVERSION_REJECTED"
+
+        # 3. 후보·신호 매칭 없음
+        formal_name = self._formal_name(str(classification.formalCategoryId))
+        if ambiguous:
+            # 정식 분류가 애매하면 기존처럼 첫 데이터에서 바로 후보 생성 가능
             decision = self.backend.review_candidate_entry(
-                item,
-                str(formal["name"]) if formal else "",
-                [self._ai_candidate_info(s) for s in sims],
-                formal_confident=not ambiguous,
+                item, formal_name, [self._ai_candidate_info(s) for s in sims], formal_confident=False
             )
             act = str(decision.get("action", "SKIP")).upper()
             log["candidateEntryDecision"] = act
@@ -780,32 +995,27 @@ class WorkspaceCategoryEngine:
             if act == "REUSE" and decision.get("candidateId") is not None:
                 picked = self._candidate_by_id(int(decision["candidateId"]))
                 if picked is not None and picked.status in {PENDING, READY_TO_PROMOTE}:
-                    candidate, action = picked, "REUSE_AI"
-                    log["matchedExistingCandidate"] = True
-            elif act == "CREATE":
+                    self._attach_candidate(picked, item_id, embedding, classification, log, "REUSE_AI")
+                    return
+            if act == "CREATE":
                 proposal = {
-                    "name": decision.get("name") or f"후보-{item_id}",
+                    "name": decision.get("name") or self._predict_subtopic_name(item),
                     "description": decision.get("description") or "",
                 }
                 candidate, created = self._create_or_reuse_candidate(item_id, embedding, proposal)
-                action = "CREATE" if created else "REUSE_FINAL_DEDUP"
                 log["newCandidateCreated"] = created
-                log["matchedExistingCandidate"] = not created
-            # act == SKIP(또는 무효 응답) → 후보 없음, 정식 카테고리에만 유지
+                self._attach_candidate(
+                    candidate, item_id, embedding, classification, log,
+                    "CREATE" if created else "REUSE_FINAL_DEDUP",
+                )
+            return  # SKIP → 정식 카테고리에만 유지
 
-        if candidate is None:
-            return  # FORMAL_ONLY: 가장 가까운 정식 카테고리에만 표시
-
-        log["candidateAction"] = action
-        self._link_item(candidate, item_id, embedding)
-        classification.candidateId = candidate.candidateId
-        classification.classificationStatus = CANDIDATE_LINKED
-        log["linkedCandidateId"] = candidate.candidateId
-        log["candidateName"] = candidate.suggestedName
-        log["candidateSupportCount"] = candidate.supportCount
-
-        # 7~8. 승격 검토
-        self._maybe_promote(candidate, log)
+        # 확신 분류 + 매칭 없음 → 첫 데이터로는 후보를 만들지 않고 잠정 신호로 보류(생성 지연)
+        signal = self._store_signal(item, item_id, str(classification.formalCategoryId), embedding)
+        log["signalAction"] = "STORE_SIGNAL"
+        log["signalId"] = signal.signalId
+        log["candidateEntryDecision"] = "DEFER_SIGNAL"
+        log["candidateEntryReason"] = f"확신 분류 단발 데이터 → 잠정 신호 보류('{signal.suggestedName}')"
 
     def _create_or_reuse_candidate(
         self, item_id: str, embedding: list[float], proposal: dict[str, Any]
@@ -987,6 +1197,7 @@ class WorkspaceCategoryEngine:
                 for category in self.formal_categories
             ],
             "candidates": [candidate.public_dict() for candidate in self.candidates],
+            "signals": [signal.public_dict() for signal in self.signals],
             "links": [
                 {"candidateId": link.candidateId, "itemId": link.itemId, "similarity": link.similarity}
                 for link in self.links
@@ -1038,4 +1249,8 @@ def summarize_run(engine: WorkspaceCategoryEngine) -> dict[str, Any]:
         "reclassifiedItemCount": len(engine.reclassified_item_ids),
         "exceededMaxFormalCategories": len(formal) > engine.config.max_count,
         "totalItems": len(engine.item_classifications),
+        "provisionalSignalCount": len(engine.signals),
+        "waitingSignalCount": sum(1 for s in engine.signals if s.status == SIGNAL_WAITING),
+        "convertedSignalCount": sum(1 for s in engine.signals if s.status == SIGNAL_CONVERTED),
+        "expiredSignalCount": sum(1 for s in engine.signals if s.status == SIGNAL_EXPIRED),
     }

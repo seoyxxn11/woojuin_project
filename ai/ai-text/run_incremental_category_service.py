@@ -383,6 +383,40 @@ class RealServiceBackend:
             "reason": str(parsed.get("reason", "")).strip(),
         }
 
+    def review_signal_conversion(self, item, signal_info):
+        from src.incremental_category_service import build_service_text
+
+        first = signal_info.get("firstItem", {})
+        prompt = (
+            "같은 정식 카테고리에 확신 분류된 두 데이터가 있다. 이 둘이 '기존 정식 카테고리보다 구체적이고 "
+            "앞으로도 반복될 세부 주제'로 묶을 가치가 있는지 판단하라. 형식만 비슷하고 목적이 다르면 convert=false.\n"
+            f"예상 세부주제: {signal_info.get('suggestedName','')} / 정식: {signal_info.get('formalCategoryName','')}\n"
+            f"첫 번째 데이터: 제목 {first.get('title','')} · 요약 {first.get('summary','')}\n"
+            f"두 번째 데이터: 제목 {item.get('title','')} · 내용 {build_service_text(item)[:600]}\n"
+            "JSON만: {\"convert\":true|false,\"name\":\"2~12자\",\"description\":\"\",\"confidence\":0.0,\"reason\":\"\"}"
+        )
+        schema = {
+            "type": "object",
+            "properties": {
+                "convert": {"type": "boolean"},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "confidence": {"type": "number"},
+                "reason": {"type": "string"},
+            },
+            "required": ["convert", "reason"],
+        }
+        parsed = self._ask(prompt, schema)
+        if not parsed:
+            return {"convert": False, "name": "", "description": "", "confidence": 0.0, "reason": "AI 응답 실패"}
+        return {
+            "convert": bool(parsed.get("convert")),
+            "name": str(parsed.get("name", "")).strip(),
+            "description": str(parsed.get("description", "")).strip(),
+            "confidence": float(parsed.get("confidence", 0.0) or 0.0),
+            "reason": str(parsed.get("reason", "")).strip(),
+        }
+
 
 # ---- 실행 및 보고서 ----
 

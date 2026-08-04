@@ -1,0 +1,56 @@
+{
+  "testId": "URL-010",
+  "availableCategories": [
+    "건강 영향",
+    "운동 건강",
+    "수면 건강"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"걷기 운동이 심폐 기능 향상과 질병 예방에 미치는 영향\",\n\"categoryName\":\"운동 건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"걷기는 운동의 일종으로 신체 유연성 및 통증 완화 효과와 관련된 운동 건강 카테고리에 해당하며, 심폐 기능 향상은 운동의 일반적인 건강 효과로 분류 가능\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 469,
+    "outputTokens": 1096,
+    "totalTokens": 1565,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 983,
+    "latencyMs": 20167.14629996568,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"걷기 운동이 심폐 기능 향상과 질병 예방에 미치는 영향\",\n\"categoryName\":\"운동 건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"걷기는 운동의 일종으로 신체 유연성 및 통증 완화 효과와 관련된 운동 건강 카테고리에 해당하며, 심폐 기능 향상은 운동의 일반적인 건강 효과로 분류 가능\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "운동 건강",
+      "categoryDescription": "걷기 운동이 심폐 기능 향상과 질병 예방에 미치는 영향",
+      "reason": "걷기는 운동의 일종으로 신체 유연성 및 통증 완화 효과와 관련된 운동 건강 카테고리에 해당하며, 심폐 기능 향상은 운동의 일반적인 건강 효과로 분류 가능"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

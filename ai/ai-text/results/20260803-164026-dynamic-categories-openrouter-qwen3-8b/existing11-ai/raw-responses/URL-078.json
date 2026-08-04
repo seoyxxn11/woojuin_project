@@ -1,0 +1,64 @@
+{
+  "testId": "URL-078",
+  "availableCategories": [
+    "생활·할 일",
+    "학습·지식",
+    "취업·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "건강·운동",
+    "문화·콘텐츠",
+    "돈·재테크",
+    "아이디어·영감",
+    "기타"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"혼자 여행을 계획할 때 필요한 일정, 예산, 숙소 및 맛집 추천 등 여행 준비 정보를 제공하는 가이드\",\n\"categoryName\":\"여행·장소\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"혼자 여행 관련 준비 방법, 일정, 예산, 숙소, 맛집 등은 '여행·장소' 카테고리의 범위인 여행 일정 및 지역 탐방 관련 내용에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 854,
+    "outputTokens": 380,
+    "totalTokens": 1234,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 264,
+    "latencyMs": 10125.851699966006,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"혼자 여행을 계획할 때 필요한 일정, 예산, 숙소 및 맛집 추천 등 여행 준비 정보를 제공하는 가이드\",\n\"categoryName\":\"여행·장소\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"혼자 여행 관련 준비 방법, 일정, 예산, 숙소, 맛집 등은 '여행·장소' 카테고리의 범위인 여행 일정 및 지역 탐방 관련 내용에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "여행·장소",
+      "categoryDescription": "혼자 여행을 계획할 때 필요한 일정, 예산, 숙소 및 맛집 추천 등 여행 준비 정보를 제공하는 가이드",
+      "reason": "혼자 여행 관련 준비 방법, 일정, 예산, 숙소, 맛집 등은 '여행·장소' 카테고리의 범위인 여행 일정 및 지역 탐방 관련 내용에 해당합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

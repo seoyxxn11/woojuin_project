@@ -1,0 +1,52 @@
+{
+  "testId": "URL-008",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"심폐력 향상과 체지방 감량에 효과적인 운동 유형\",\"categoryName\":\"유산소 운동\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠가 유산소 운동의 정의와 효과에 대한 정보를 담고 있으며, 기존 카테고리에 해당하지 않아 새 카테고리 생성이 필요함\"}",
+    "parsedOutput": null,
+    "inputTokens": 429,
+    "outputTokens": 1185,
+    "totalTokens": 1614,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 1086,
+    "latencyMs": 29800.216100062244,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"심폐력 향상과 체지방 감량에 효과적인 운동 유형\",\"categoryName\":\"유산소 운동\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠가 유산소 운동의 정의와 효과에 대한 정보를 담고 있으며, 기존 카테고리에 해당하지 않아 새 카테고리 생성이 필요함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "유산소 운동",
+      "categoryDescription": "심폐력 향상과 체지방 감량에 효과적인 운동 유형",
+      "reason": "제공된 콘텐츠가 유산소 운동의 정의와 효과에 대한 정보를 담고 있으며, 기존 카테고리에 해당하지 않아 새 카테고리 생성이 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

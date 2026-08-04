@@ -1,0 +1,64 @@
+{
+  "testId": "URL-105",
+  "availableCategories": [
+    "생활·할 일",
+    "학습·지식",
+    "취업·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "건강·운동",
+    "문화·콘텐츠",
+    "돈·재테크",
+    "아이디어·영감",
+    "기타"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"컴퓨터 네트워크 기초 개념을 체계적으로 정리한 학습 자료\",\n\"categoryName\":\"학습·지식\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"네트워크 관련 기초 지식 정리 및 핵심 내용 체계화에 해당하므로 '학습·지식' 카테고리가 적절함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 853,
+    "outputTokens": 266,
+    "totalTokens": 1119,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 170,
+    "latencyMs": 8470.770100015216,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"컴퓨터 네트워크 기초 개념을 체계적으로 정리한 학습 자료\",\n\"categoryName\":\"학습·지식\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"네트워크 관련 기초 지식 정리 및 핵심 내용 체계화에 해당하므로 '학습·지식' 카테고리가 적절함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·지식",
+      "categoryDescription": "컴퓨터 네트워크 기초 개념을 체계적으로 정리한 학습 자료",
+      "reason": "네트워크 관련 기초 지식 정리 및 핵심 내용 체계화에 해당하므로 '학습·지식' 카테고리가 적절함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

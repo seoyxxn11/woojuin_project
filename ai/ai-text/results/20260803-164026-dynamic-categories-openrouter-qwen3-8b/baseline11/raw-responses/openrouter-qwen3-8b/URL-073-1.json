@@ -1,0 +1,48 @@
+{
+  "testId": "URL-073",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"categories\":[{\"categoryId\":\"TRAVEL_PLACE\",\"categoryName\":\"여행·장소\",\"score\":0.7},{\"categoryId\":\"FOOD_RESTAURANT\",\"categoryName\":\"음식·맛집\",\"score\":0.3}]}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "TRAVEL_PLACE",
+        "categoryName": "여행·장소",
+        "score": 0.7
+      },
+      {
+        "categoryId": "FOOD_RESTAURANT",
+        "categoryName": "음식·맛집",
+        "score": 0.3
+      }
+    ]
+  },
+  "inputTokens": 1580,
+  "outputTokens": 462,
+  "totalTokens": 2042,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 407,
+  "latencyMs": 8701.478500035591,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

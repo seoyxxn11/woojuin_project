@@ -1,0 +1,58 @@
+{
+  "testId": "URL-100",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"코딩테스트 준비와 스터디 경험에 대한 학습 후기 및 평가 내용\",\n\"categoryName\":\"학습·커리어\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"코딩테스트 스터디 참여 경험과 학습 방법에 대한 내용은 '학습·커리어' 카테고리의 시험 공부 및 기술 구현 관련 항목에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 677,
+    "outputTokens": 514,
+    "totalTokens": 1191,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 412,
+    "latencyMs": 11236.489100032486,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"코딩테스트 준비와 스터디 경험에 대한 학습 후기 및 평가 내용\",\n\"categoryName\":\"학습·커리어\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"코딩테스트 스터디 참여 경험과 학습 방법에 대한 내용은 '학습·커리어' 카테고리의 시험 공부 및 기술 구현 관련 항목에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·커리어",
+      "categoryDescription": "코딩테스트 준비와 스터디 경험에 대한 학습 후기 및 평가 내용",
+      "reason": "코딩테스트 스터디 참여 경험과 학습 방법에 대한 내용은 '학습·커리어' 카테고리의 시험 공부 및 기술 구현 관련 항목에 해당합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

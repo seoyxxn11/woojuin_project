@@ -1,0 +1,56 @@
+{
+  "testId": "URL-006",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"건강한 수면을 위한 실용적인 팁 제공\",\"categoryName\":\"생활·관리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"수면 질 개선 방법은 일상 생활 유지와 관리에 관한 건강 관리 내용으로 분류 가능\"}",
+    "parsedOutput": null,
+    "inputTokens": 545,
+    "outputTokens": 281,
+    "totalTokens": 826,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 216,
+    "latencyMs": 8313.727500033565,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"건강한 수면을 위한 실용적인 팁 제공\",\"categoryName\":\"생활·관리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"수면 질 개선 방법은 일상 생활 유지와 관리에 관한 건강 관리 내용으로 분류 가능\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "생활·관리",
+      "categoryDescription": "건강한 수면을 위한 실용적인 팁 제공",
+      "reason": "수면 질 개선 방법은 일상 생활 유지와 관리에 관한 건강 관리 내용으로 분류 가능"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

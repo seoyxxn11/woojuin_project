@@ -1,0 +1,52 @@
+{
+  "testId": "URL-030",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"재정 관리에 대한 팁 및 전략을 제공하는 콘텐츠\",\"categoryName\":\"재정 관리\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 가계부 작성법을 통해 재정 관리를 시작하는 방법에 관한 정보로, 재정 관리 관련 주제에 해당하므로 새로운 카테고리 생성이 필요합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 400,
+    "outputTokens": 899,
+    "totalTokens": 1299,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 803,
+    "latencyMs": 18485.323500004597,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"재정 관리에 대한 팁 및 전략을 제공하는 콘텐츠\",\"categoryName\":\"재정 관리\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 가계부 작성법을 통해 재정 관리를 시작하는 방법에 관한 정보로, 재정 관리 관련 주제에 해당하므로 새로운 카테고리 생성이 필요합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "재정 관리",
+      "categoryDescription": "재정 관리에 대한 팁 및 전략을 제공하는 콘텐츠",
+      "reason": "제공된 콘텐츠는 가계부 작성법을 통해 재정 관리를 시작하는 방법에 관한 정보로, 재정 관리 관련 주제에 해당하므로 새로운 카테고리 생성이 필요합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

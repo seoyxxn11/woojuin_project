@@ -1,0 +1,64 @@
+{
+  "testId": "URL-089",
+  "availableCategories": [
+    "생활·할 일",
+    "학습·지식",
+    "취업·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "건강·운동",
+    "문화·콘텐츠",
+    "돈·재테크",
+    "아이디어·영감",
+    "기타"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"음식점 리뷰 및 식사 장소 정보\",\n\"categoryName\":\"음식·맛집\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주어진 콘텐츠는 강남역 주변의 삼겹살 맛집 리스트와 리뷰, 사진 등을 제공하는 음식 관련 정보로, '음식·맛집' 카테고리에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 847,
+    "outputTokens": 300,
+    "totalTokens": 1147,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 203,
+    "latencyMs": 8007.646000012755,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"음식점 리뷰 및 식사 장소 정보\",\n\"categoryName\":\"음식·맛집\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주어진 콘텐츠는 강남역 주변의 삼겹살 맛집 리스트와 리뷰, 사진 등을 제공하는 음식 관련 정보로, '음식·맛집' 카테고리에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "음식·맛집",
+      "categoryDescription": "음식점 리뷰 및 식사 장소 정보",
+      "reason": "주어진 콘텐츠는 강남역 주변의 삼겹살 맛집 리스트와 리뷰, 사진 등을 제공하는 음식 관련 정보로, '음식·맛집' 카테고리에 해당합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

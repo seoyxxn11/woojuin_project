@@ -1,0 +1,57 @@
+{
+  "testId": "URL-013",
+  "availableCategories": [
+    "건강 영향",
+    "운동 건강",
+    "수면 건강",
+    "운세 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"별자리 기반의 주간 운세 예측 정보를 제공하는 콘텐츠\",\n\"categoryName\":\"운세 정보\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주간 운세 정보는 별자리와 관련된 운세 예측을 제공하는 기존 카테고리와 정확히 일치합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 495,
+    "outputTokens": 495,
+    "totalTokens": 990,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 410,
+    "latencyMs": 11333.201000001281,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"별자리 기반의 주간 운세 예측 정보를 제공하는 콘텐츠\",\n\"categoryName\":\"운세 정보\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주간 운세 정보는 별자리와 관련된 운세 예측을 제공하는 기존 카테고리와 정확히 일치합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "운세 정보",
+      "categoryDescription": "별자리 기반의 주간 운세 예측 정보를 제공하는 콘텐츠",
+      "reason": "주간 운세 정보는 별자리와 관련된 운세 예측을 제공하는 기존 카테고리와 정확히 일치합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

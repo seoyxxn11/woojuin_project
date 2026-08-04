@@ -1,0 +1,56 @@
+{
+  "testId": "URL-101",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"알고리즘 스터디를 통한 코딩테스트 및 실무 역량 향상에 관한 내용\",\"categoryName\":\"학습·성장\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"알고리즘 스터디와 실무 역량 개발은 자기계발과 학습 성장에 해당하는 주제로 기존 '학습·성장' 카테고리에 부합함\"}",
+    "parsedOutput": null,
+    "inputTokens": 574,
+    "outputTokens": 394,
+    "totalTokens": 968,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 291,
+    "latencyMs": 11370.10379997082,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"알고리즘 스터디를 통한 코딩테스트 및 실무 역량 향상에 관한 내용\",\"categoryName\":\"학습·성장\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"알고리즘 스터디와 실무 역량 개발은 자기계발과 학습 성장에 해당하는 주제로 기존 '학습·성장' 카테고리에 부합함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·성장",
+      "categoryDescription": "알고리즘 스터디를 통한 코딩테스트 및 실무 역량 향상에 관한 내용",
+      "reason": "알고리즘 스터디와 실무 역량 개발은 자기계발과 학습 성장에 해당하는 주제로 기존 '학습·성장' 카테고리에 부합함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

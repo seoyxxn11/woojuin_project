@@ -1,0 +1,64 @@
+{
+  "testId": "URL-033",
+  "availableCategories": [
+    "생활·할 일",
+    "학습·지식",
+    "취업·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "건강·운동",
+    "문화·콘텐츠",
+    "돈·재테크",
+    "아이디어·영감",
+    "기타"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"2026년 대한민국 콘서트 일정, 개최 도시 및 티켓 정보를 제공하는 여행 관련 이벤트 데이터\",\n\"categoryName\":\"여행·장소\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"콘서트 개최 도시, 날짜, 장소 등 여행 계획과 관련된 정보를 제공하므로 '여행·장소' 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 880,
+    "outputTokens": 446,
+    "totalTokens": 1326,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 341,
+    "latencyMs": 10858.933900017291,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"2026년 대한민국 콘서트 일정, 개최 도시 및 티켓 정보를 제공하는 여행 관련 이벤트 데이터\",\n\"categoryName\":\"여행·장소\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"콘서트 개최 도시, 날짜, 장소 등 여행 계획과 관련된 정보를 제공하므로 '여행·장소' 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "여행·장소",
+      "categoryDescription": "2026년 대한민국 콘서트 일정, 개최 도시 및 티켓 정보를 제공하는 여행 관련 이벤트 데이터",
+      "reason": "콘서트 개최 도시, 날짜, 장소 등 여행 계획과 관련된 정보를 제공하므로 '여행·장소' 카테고리에 해당"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

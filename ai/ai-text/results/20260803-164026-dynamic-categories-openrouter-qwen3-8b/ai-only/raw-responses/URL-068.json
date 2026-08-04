@@ -1,0 +1,52 @@
+{
+  "testId": "URL-068",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"실용적이고 접근성이 높은 홈 기반 창업 아이디어를 제공하는 콘텐츠\",\n\"categoryName\":\"홈 기반 창업 아이디어\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 집에서 시작할 수 있는 창업 아이디어 20가지를 다루고 있으며, '홈 기반 창업 아이디어'라는 이름이 해당 주제를 정확히 반영하면서도 너무 좁은 범위를 가지지 않는 가장 적절한 카테고리명으로 판단됨\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 437,
+    "outputTokens": 323,
+    "totalTokens": 760,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 180,
+    "latencyMs": 9959.263299941085,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"실용적이고 접근성이 높은 홈 기반 창업 아이디어를 제공하는 콘텐츠\",\n\"categoryName\":\"홈 기반 창업 아이디어\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 집에서 시작할 수 있는 창업 아이디어 20가지를 다루고 있으며, '홈 기반 창업 아이디어'라는 이름이 해당 주제를 정확히 반영하면서도 너무 좁은 범위를 가지지 않는 가장 적절한 카테고리명으로 판단됨\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "홈 기반 창업 아이디어",
+      "categoryDescription": "실용적이고 접근성이 높은 홈 기반 창업 아이디어를 제공하는 콘텐츠",
+      "reason": "제공된 콘텐츠는 집에서 시작할 수 있는 창업 아이디어 20가지를 다루고 있으며, '홈 기반 창업 아이디어'라는 이름이 해당 주제를 정확히 반영하면서도 너무 좁은 범위를 가지지 않는 가장 적절한 카테고리명으로 판단됨"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,56 @@
+{
+  "testId": "URL-074",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"부산 해운대 및 광안리 지역의 여행 코스와 관광 정보를 제공하는 가이드\", \"categoryName\":\"관심·탐색\", \"categoryOrigin\":\"EXISTING\", \"reason\":\"여행지, 맛집, 카페, 쇼핑 등 문화 콘텐츠 탐색에 해당하는 내용으로 기존 '관심·탐색' 카테고리와 의미가 일치합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 555,
+    "outputTokens": 350,
+    "totalTokens": 905,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 239,
+    "latencyMs": 10311.28180003725,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"부산 해운대 및 광안리 지역의 여행 코스와 관광 정보를 제공하는 가이드\", \"categoryName\":\"관심·탐색\", \"categoryOrigin\":\"EXISTING\", \"reason\":\"여행지, 맛집, 카페, 쇼핑 등 문화 콘텐츠 탐색에 해당하는 내용으로 기존 '관심·탐색' 카테고리와 의미가 일치합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "관심·탐색",
+      "categoryDescription": "부산 해운대 및 광안리 지역의 여행 코스와 관광 정보를 제공하는 가이드",
+      "reason": "여행지, 맛집, 카페, 쇼핑 등 문화 콘텐츠 탐색에 해당하는 내용으로 기존 '관심·탐색' 카테고리와 의미가 일치합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

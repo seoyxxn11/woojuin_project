@@ -1,0 +1,52 @@
+{
+  "testId": "URL-079",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"호텔 체크인, 식사, 관광 등 호텔 기반 여행 팁을 제공하는 콘텐츠\",\"categoryName\":\"호텔 여행 팁\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"콘텐츠는 호텔 체크인부터 호캉스까지 다양한 경험을 바탕으로 실용적인 여행 팁을 제공하고 있어 '호텔 여행 팁'이라는 범위가 적절함\"}",
+    "parsedOutput": null,
+    "inputTokens": 457,
+    "outputTokens": 574,
+    "totalTokens": 1031,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 473,
+    "latencyMs": 13163.96989999339,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"호텔 체크인, 식사, 관광 등 호텔 기반 여행 팁을 제공하는 콘텐츠\",\"categoryName\":\"호텔 여행 팁\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"콘텐츠는 호텔 체크인부터 호캉스까지 다양한 경험을 바탕으로 실용적인 여행 팁을 제공하고 있어 '호텔 여행 팁'이라는 범위가 적절함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "호텔 여행 팁",
+      "categoryDescription": "호텔 체크인, 식사, 관광 등 호텔 기반 여행 팁을 제공하는 콘텐츠",
+      "reason": "콘텐츠는 호텔 체크인부터 호캉스까지 다양한 경험을 바탕으로 실용적인 여행 팁을 제공하고 있어 '호텔 여행 팁'이라는 범위가 적절함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,52 @@
+{
+  "testId": "URL-004",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"수면에 어려움을 겪는 질환과 관련된 정보\",\"categoryName\":\"수면장애\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"입력 콘텐츠는 불면증의 정의, 증상, 치료 방법 등을 다루고 있어 수면장애라는 더 넓은 범주에 해당하므로 새로운 카테고리로 분류함\"}",
+    "parsedOutput": null,
+    "inputTokens": 429,
+    "outputTokens": 789,
+    "totalTokens": 1218,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 694,
+    "latencyMs": 16064.782700035721,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"수면에 어려움을 겪는 질환과 관련된 정보\",\"categoryName\":\"수면장애\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"입력 콘텐츠는 불면증의 정의, 증상, 치료 방법 등을 다루고 있어 수면장애라는 더 넓은 범주에 해당하므로 새로운 카테고리로 분류함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "수면장애",
+      "categoryDescription": "수면에 어려움을 겪는 질환과 관련된 정보",
+      "reason": "입력 콘텐츠는 불면증의 정의, 증상, 치료 방법 등을 다루고 있어 수면장애라는 더 넓은 범주에 해당하므로 새로운 카테고리로 분류함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

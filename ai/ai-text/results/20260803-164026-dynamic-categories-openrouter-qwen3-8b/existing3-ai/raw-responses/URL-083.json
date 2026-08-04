@@ -1,0 +1,56 @@
+{
+  "testId": "URL-083",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"문화 콘텐츠 및 아이디어 탐색에 관한 내용\",\"categoryName\":\"관심·탐색\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 전주 콩나물국밥이라는 맛집 정보로, 문화 콘텐츠 및 음식 탐색에 해당하므로 '관심·탐색' 카테고리에 포함됨\"}",
+    "parsedOutput": null,
+    "inputTokens": 611,
+    "outputTokens": 444,
+    "totalTokens": 1055,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 342,
+    "latencyMs": 12908.472200040706,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"문화 콘텐츠 및 아이디어 탐색에 관한 내용\",\"categoryName\":\"관심·탐색\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 전주 콩나물국밥이라는 맛집 정보로, 문화 콘텐츠 및 음식 탐색에 해당하므로 '관심·탐색' 카테고리에 포함됨\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "관심·탐색",
+      "categoryDescription": "문화 콘텐츠 및 아이디어 탐색에 관한 내용",
+      "reason": "입력된 콘텐츠는 전주 콩나물국밥이라는 맛집 정보로, 문화 콘텐츠 및 음식 탐색에 해당하므로 '관심·탐색' 카테고리에 포함됨"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

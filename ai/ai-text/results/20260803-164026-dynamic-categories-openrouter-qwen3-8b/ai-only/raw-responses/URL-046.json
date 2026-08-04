@@ -1,0 +1,52 @@
+{
+  "testId": "URL-046",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"1인 가구의 일상과 삶의 방식을 다루는 콘텐츠\",\n\"categoryName\":\"1인 가구 생활\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 카테고리 중 의미에 부합하는 것이 없어 새 카테고리를 생성했으며, 1인 가구 관련 주제를 포괄적으로 표현할 수 있는 이름으로 설정했습니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 372,
+    "outputTokens": 434,
+    "totalTokens": 806,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 332,
+    "latencyMs": 11556.250100024045,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"1인 가구의 일상과 삶의 방식을 다루는 콘텐츠\",\n\"categoryName\":\"1인 가구 생활\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 카테고리 중 의미에 부합하는 것이 없어 새 카테고리를 생성했으며, 1인 가구 관련 주제를 포괄적으로 표현할 수 있는 이름으로 설정했습니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "1인 가구 생활",
+      "categoryDescription": "1인 가구의 일상과 삶의 방식을 다루는 콘텐츠",
+      "reason": "제공된 카테고리 중 의미에 부합하는 것이 없어 새 카테고리를 생성했으며, 1인 가구 관련 주제를 포괄적으로 표현할 수 있는 이름으로 설정했습니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

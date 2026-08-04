@@ -1,0 +1,52 @@
+{
+  "testId": "URL-082",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"식당 정보 및 리뷰를 포함한 리스트\",\n\"categoryName\":\"식당 목록\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"사용자가 제공한 콘텐츠는 전주 콩나물국밥 맛집의 식당 정보와 리뷰, 사진 등을 포함한 리스트로, 기존 카테고리에 해당하지 않아 새 카테고리를 생성했습니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 409,
+    "outputTokens": 750,
+    "totalTokens": 1159,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 650,
+    "latencyMs": 15588.950399891473,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"식당 정보 및 리뷰를 포함한 리스트\",\n\"categoryName\":\"식당 목록\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"사용자가 제공한 콘텐츠는 전주 콩나물국밥 맛집의 식당 정보와 리뷰, 사진 등을 포함한 리스트로, 기존 카테고리에 해당하지 않아 새 카테고리를 생성했습니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "식당 목록",
+      "categoryDescription": "식당 정보 및 리뷰를 포함한 리스트",
+      "reason": "사용자가 제공한 콘텐츠는 전주 콩나물국밥 맛집의 식당 정보와 리뷰, 사진 등을 포함한 리스트로, 기존 카테고리에 해당하지 않아 새 카테고리를 생성했습니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

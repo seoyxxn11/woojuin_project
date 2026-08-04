@@ -1,0 +1,52 @@
+{
+  "testId": "URL-081",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"실시간 후기와 추천 정보를 포함한 여행 가이드 콘텐츠\",\"categoryName\":\"여행 가이드\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 특정 지역(강원도)에 대한 여행 팁, 명소, 숙소 등 실용적인 정보를 담은 가이드형 글로 새로운 카테고리가 필요함\"}",
+    "parsedOutput": null,
+    "inputTokens": 458,
+    "outputTokens": 636,
+    "totalTokens": 1094,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 536,
+    "latencyMs": 14042.387300054543,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"실시간 후기와 추천 정보를 포함한 여행 가이드 콘텐츠\",\"categoryName\":\"여행 가이드\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 특정 지역(강원도)에 대한 여행 팁, 명소, 숙소 등 실용적인 정보를 담은 가이드형 글로 새로운 카테고리가 필요함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "여행 가이드",
+      "categoryDescription": "실시간 후기와 추천 정보를 포함한 여행 가이드 콘텐츠",
+      "reason": "제공된 콘텐츠는 특정 지역(강원도)에 대한 여행 팁, 명소, 숙소 등 실용적인 정보를 담은 가이드형 글로 새로운 카테고리가 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

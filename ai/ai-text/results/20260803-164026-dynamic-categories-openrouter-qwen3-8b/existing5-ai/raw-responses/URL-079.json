@@ -1,0 +1,58 @@
+{
+  "testId": "URL-079",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"호텔 체크인, 식사, 관광 명소 탐방 등 여행 일정과 실용 팁을 담은 콘텐츠\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"여행 일정, 숙소(호텔), 식사, 관광 명소 등 장소와 관련된 경험을 다루고 있어 '장소·먹거리' 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 697,
+    "outputTokens": 374,
+    "totalTokens": 1071,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 260,
+    "latencyMs": 10444.336600019597,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"호텔 체크인, 식사, 관광 명소 탐방 등 여행 일정과 실용 팁을 담은 콘텐츠\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"여행 일정, 숙소(호텔), 식사, 관광 명소 등 장소와 관련된 경험을 다루고 있어 '장소·먹거리' 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "장소·먹거리",
+      "categoryDescription": "호텔 체크인, 식사, 관광 명소 탐방 등 여행 일정과 실용 팁을 담은 콘텐츠",
+      "reason": "여행 일정, 숙소(호텔), 식사, 관광 명소 등 장소와 관련된 경험을 다루고 있어 '장소·먹거리' 카테고리에 해당"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

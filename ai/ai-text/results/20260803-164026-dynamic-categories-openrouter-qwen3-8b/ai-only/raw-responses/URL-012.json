@@ -1,0 +1,52 @@
+{
+  "testId": "URL-012",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"별자리별 이번 주 운세 및 다양한 운세 정보를 제공하는 페이지입니다.\",\n\"categoryName\":\"운세 정보\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"콘텐츠가 별자리별 운세와 재물, 연애, 타로 등 다양한 운세 정보를 제공하는 페이지이므로 '운세 정보' 카테고리가 적절합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 394,
+    "outputTokens": 776,
+    "totalTokens": 1170,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 682,
+    "latencyMs": 16930.02600001637,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"별자리별 이번 주 운세 및 다양한 운세 정보를 제공하는 페이지입니다.\",\n\"categoryName\":\"운세 정보\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"콘텐츠가 별자리별 운세와 재물, 연애, 타로 등 다양한 운세 정보를 제공하는 페이지이므로 '운세 정보' 카테고리가 적절합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "운세 정보",
+      "categoryDescription": "별자리별 이번 주 운세 및 다양한 운세 정보를 제공하는 페이지입니다.",
+      "reason": "콘텐츠가 별자리별 운세와 재물, 연애, 타로 등 다양한 운세 정보를 제공하는 페이지이므로 '운세 정보' 카테고리가 적절합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

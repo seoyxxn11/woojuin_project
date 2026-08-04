@@ -1,0 +1,52 @@
+{
+  "testId": "URL-025",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"부동산 투자와 재테크 전략에 대한 정보를 제공하는 콘텐츠\",\n\"categoryName\":\"부동산 투자 전략\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 주택 구매 전략과 재테크, 부동산 투자 관련 지식을 다루고 있어 '부동산 투자 전략'이라는 카테고리가 가장 중심적인 분류가 됨\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 395,
+    "outputTokens": 627,
+    "totalTokens": 1022,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 506,
+    "latencyMs": 13415.496099973097,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"부동산 투자와 재테크 전략에 대한 정보를 제공하는 콘텐츠\",\n\"categoryName\":\"부동산 투자 전략\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 주택 구매 전략과 재테크, 부동산 투자 관련 지식을 다루고 있어 '부동산 투자 전략'이라는 카테고리가 가장 중심적인 분류가 됨\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "부동산 투자 전략",
+      "categoryDescription": "부동산 투자와 재테크 전략에 대한 정보를 제공하는 콘텐츠",
+      "reason": "제공된 콘텐츠는 주택 구매 전략과 재테크, 부동산 투자 관련 지식을 다루고 있어 '부동산 투자 전략'이라는 카테고리가 가장 중심적인 분류가 됨"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

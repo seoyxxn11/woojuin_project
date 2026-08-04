@@ -1,0 +1,2 @@
+{"workspaceId": "WS-001", "occurredAt": "2026-08-03T17:42:27+09:00", "action": "INITIALIZE", "mode": "ai_review", "itemCount": 112, "categoryCount": 103}
+{"workspaceId": "WS-001", "occurredAt": "2026-08-03T17:42:37+09:00", "action": "ITEM_REVIEW", "itemId": "정우현-0061", "before": {"decision": "PENDING", "finalCategoryId": "AI-5DAFA54399", "reviewNote": ""}, "after": {"decision": "APPROVE", "finalCategoryId": "AI-5DAFA54399", "reviewNote": ""}}

@@ -1,0 +1,52 @@
+{
+  "testId": "URL-090",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"무한리필 식당 정보 및 리뷰를 제공하는 콘텐츠\",\n\"categoryName\":\"무한리필 식당\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 강남 지역의 무한리필 식당 관련 정보를 담고 있으며, '없음' 카테고리는 의미가 맞지 않아 새 카테고리 생성\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 410,
+    "outputTokens": 908,
+    "totalTokens": 1318,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 805,
+    "latencyMs": 21549.435299937613,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"무한리필 식당 정보 및 리뷰를 제공하는 콘텐츠\",\n\"categoryName\":\"무한리필 식당\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 강남 지역의 무한리필 식당 관련 정보를 담고 있으며, '없음' 카테고리는 의미가 맞지 않아 새 카테고리 생성\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "무한리필 식당",
+      "categoryDescription": "무한리필 식당 정보 및 리뷰를 제공하는 콘텐츠",
+      "reason": "제공된 콘텐츠는 강남 지역의 무한리필 식당 관련 정보를 담고 있으며, '없음' 카테고리는 의미가 맞지 않아 새 카테고리 생성"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,58 @@
+{
+  "testId": "URL-058",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"상품 비교 및 선택에 관한 내용\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"노트북 가방의 브랜드별 실용성과 스타일 비교는 제품 선택 시 고려해야 할 요소로, 소비 관련 결정 과정에 해당하기 때문\"}",
+    "parsedOutput": null,
+    "inputTokens": 704,
+    "outputTokens": 464,
+    "totalTokens": 1168,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 384,
+    "latencyMs": 12005.72680006735,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"상품 비교 및 선택에 관한 내용\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"노트북 가방의 브랜드별 실용성과 스타일 비교는 제품 선택 시 고려해야 할 요소로, 소비 관련 결정 과정에 해당하기 때문\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "소비·금융",
+      "categoryDescription": "상품 비교 및 선택에 관한 내용",
+      "reason": "노트북 가방의 브랜드별 실용성과 스타일 비교는 제품 선택 시 고려해야 할 요소로, 소비 관련 결정 과정에 해당하기 때문"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,52 @@
+{
+  "testId": "URL-077",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"바다 전망이 좋은 카페의 방문 후기 및 인테리어 정보를 포함한 리뷰 데이터\",\n\"categoryName\":\"카페 리뷰\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 바다 전망이 우수한 카페에 대한 방문 후기로, 카페 관련 리뷰 데이터에 해당하므로 새로운 카테고리 생성\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 467,
+    "outputTokens": 703,
+    "totalTokens": 1170,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 602,
+    "latencyMs": 22530.440100003034,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"바다 전망이 좋은 카페의 방문 후기 및 인테리어 정보를 포함한 리뷰 데이터\",\n\"categoryName\":\"카페 리뷰\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 바다 전망이 우수한 카페에 대한 방문 후기로, 카페 관련 리뷰 데이터에 해당하므로 새로운 카테고리 생성\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "카페 리뷰",
+      "categoryDescription": "바다 전망이 좋은 카페의 방문 후기 및 인테리어 정보를 포함한 리뷰 데이터",
+      "reason": "제공된 콘텐츠는 바다 전망이 우수한 카페에 대한 방문 후기로, 카페 관련 리뷰 데이터에 해당하므로 새로운 카테고리 생성"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

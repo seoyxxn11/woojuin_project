@@ -1,0 +1,58 @@
+{
+  "testId": "URL-062",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"유튜브와 같은 동영상 및 음악 공유 플랫폼에 대한 정보\",\n\"categoryName\":\"온라인 콘텐츠 플랫폼\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"입력된 콘텐츠는 동영상 및 음악 공유 플랫폼에 관한 설명으로, 기존 카테고리와는 차별화된 주제이므로 새로운 카테고리가 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 643,
+    "outputTokens": 470,
+    "totalTokens": 1113,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 359,
+    "latencyMs": 11858.003699919209,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"유튜브와 같은 동영상 및 음악 공유 플랫폼에 대한 정보\",\n\"categoryName\":\"온라인 콘텐츠 플랫폼\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"입력된 콘텐츠는 동영상 및 음악 공유 플랫폼에 관한 설명으로, 기존 카테고리와는 차별화된 주제이므로 새로운 카테고리가 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "온라인 콘텐츠 플랫폼",
+      "categoryDescription": "유튜브와 같은 동영상 및 음악 공유 플랫폼에 대한 정보",
+      "reason": "입력된 콘텐츠는 동영상 및 음악 공유 플랫폼에 관한 설명으로, 기존 카테고리와는 차별화된 주제이므로 새로운 카테고리가 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

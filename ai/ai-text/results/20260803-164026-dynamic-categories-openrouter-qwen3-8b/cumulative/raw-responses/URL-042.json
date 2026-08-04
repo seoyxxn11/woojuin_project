@@ -1,0 +1,66 @@
+{
+  "testId": "URL-042",
+  "availableCategories": [
+    "건강 영향",
+    "운동 건강",
+    "수면 건강",
+    "운세 정보",
+    "성격 테스트",
+    "투자 전략",
+    "부동산 투자 전략",
+    "주택청약 정보",
+    "문화 패션 인물",
+    "재정 관리 팁",
+    "음악 및 콘서트 정보",
+    "문화 여행 가이드",
+    "영화 개봉 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"생활 정리 팁을 제공하는 콘텐츠\",\"categoryName\":\"생활 정리 팁\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"기사 내용은 40세 이후 생활 정리와 물건 정리 방법, 자식에게 짐이 되지 않도록 하는 전략에 관한 것이므로 기존 카테고리와는 다른 새로운 주제로 분류해야 함\"}",
+    "parsedOutput": null,
+    "inputTokens": 853,
+    "outputTokens": 531,
+    "totalTokens": 1384,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 435,
+    "latencyMs": 10995.961599983275,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"생활 정리 팁을 제공하는 콘텐츠\",\"categoryName\":\"생활 정리 팁\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"기사 내용은 40세 이후 생활 정리와 물건 정리 방법, 자식에게 짐이 되지 않도록 하는 전략에 관한 것이므로 기존 카테고리와는 다른 새로운 주제로 분류해야 함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "생활 정리 팁",
+      "categoryDescription": "생활 정리 팁을 제공하는 콘텐츠",
+      "reason": "기사 내용은 40세 이후 생활 정리와 물건 정리 방법, 자식에게 짐이 되지 않도록 하는 전략에 관한 것이므로 기존 카테고리와는 다른 새로운 주제로 분류해야 함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

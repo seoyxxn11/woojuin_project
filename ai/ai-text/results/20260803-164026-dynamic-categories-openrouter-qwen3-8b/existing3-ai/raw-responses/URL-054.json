@@ -1,0 +1,56 @@
+{
+  "testId": "URL-054",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"쇼핑 제품 및 관련 정보 탐색에 관한 내용\",\n\"categoryName\":\"관심·탐색\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"노트북 가방 상품 검색 결과는 쇼핑 제품 탐색에 해당하며, 기존 '관심·탐색' 카테고리 범위에 포함됩니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 544,
+    "outputTokens": 589,
+    "totalTokens": 1133,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 502,
+    "latencyMs": 12146.38950000517,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"쇼핑 제품 및 관련 정보 탐색에 관한 내용\",\n\"categoryName\":\"관심·탐색\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"노트북 가방 상품 검색 결과는 쇼핑 제품 탐색에 해당하며, 기존 '관심·탐색' 카테고리 범위에 포함됩니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "관심·탐색",
+      "categoryDescription": "쇼핑 제품 및 관련 정보 탐색에 관한 내용",
+      "reason": "노트북 가방 상품 검색 결과는 쇼핑 제품 탐색에 해당하며, 기존 '관심·탐색' 카테고리 범위에 포함됩니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

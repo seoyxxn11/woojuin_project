@@ -1,0 +1,52 @@
+{
+  "testId": "URL-084",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"40년 이상 운영 중인 전통적인 한국 음식점을 소개합니다.\",\n\"categoryName\":\"한국 전통 음식점\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 40년간 운영 중인 전통적인 한국 음식점에 대한 정보로, '한국 전통 음식점'이라는 범위가 적절합니다. 지나치게 좁은 범위를 피하고, 기존 카테고리 없이 새롭게 생성해야 하므로 GENERATED로 분류합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 461,
+    "outputTokens": 944,
+    "totalTokens": 1405,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 808,
+    "latencyMs": 19907.893600058742,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"40년 이상 운영 중인 전통적인 한국 음식점을 소개합니다.\",\n\"categoryName\":\"한국 전통 음식점\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 40년간 운영 중인 전통적인 한국 음식점에 대한 정보로, '한국 전통 음식점'이라는 범위가 적절합니다. 지나치게 좁은 범위를 피하고, 기존 카테고리 없이 새롭게 생성해야 하므로 GENERATED로 분류합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "한국 전통 음식점",
+      "categoryDescription": "40년 이상 운영 중인 전통적인 한국 음식점을 소개합니다.",
+      "reason": "제공된 콘텐츠는 40년간 운영 중인 전통적인 한국 음식점에 대한 정보로, '한국 전통 음식점'이라는 범위가 적절합니다. 지나치게 좁은 범위를 피하고, 기존 카테고리 없이 새롭게 생성해야 하므로 GENERATED로 분류합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

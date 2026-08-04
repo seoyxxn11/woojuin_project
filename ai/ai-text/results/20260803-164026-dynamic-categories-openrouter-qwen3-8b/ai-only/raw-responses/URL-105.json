@@ -1,0 +1,52 @@
+{
+  "testId": "URL-105",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"네트워크 관련 기본 개념과 핵심 내용을 정리한 자료\",\n\"categoryName\":\"네트워크 기초\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠가 네트워크 기초 개념에 대한 체계적인 정리 글로, '없음' 카테고리보다 구체적인 분류가 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 401,
+    "outputTokens": 454,
+    "totalTokens": 855,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 357,
+    "latencyMs": 19158.27120002359,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"네트워크 관련 기본 개념과 핵심 내용을 정리한 자료\",\n\"categoryName\":\"네트워크 기초\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠가 네트워크 기초 개념에 대한 체계적인 정리 글로, '없음' 카테고리보다 구체적인 분류가 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "네트워크 기초",
+      "categoryDescription": "네트워크 관련 기본 개념과 핵심 내용을 정리한 자료",
+      "reason": "제공된 콘텐츠가 네트워크 기초 개념에 대한 체계적인 정리 글로, '없음' 카테고리보다 구체적인 분류가 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

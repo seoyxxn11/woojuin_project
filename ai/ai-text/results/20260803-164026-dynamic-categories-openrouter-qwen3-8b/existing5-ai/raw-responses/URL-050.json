@@ -1,0 +1,58 @@
+{
+  "testId": "URL-050",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"생활비 절약 및 일상 경제 관리에 관한 내용\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"전기·가스 절약, 식비 관리 등 생활비 절약 방법은 경제 활동과 금융 관리의 범주에 해당하므로 기존 '소비·금융' 카테고리에 포함됨\"}",
+    "parsedOutput": null,
+    "inputTokens": 651,
+    "outputTokens": 473,
+    "totalTokens": 1124,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 374,
+    "latencyMs": 11045.761600020342,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"생활비 절약 및 일상 경제 관리에 관한 내용\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"전기·가스 절약, 식비 관리 등 생활비 절약 방법은 경제 활동과 금융 관리의 범주에 해당하므로 기존 '소비·금융' 카테고리에 포함됨\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "소비·금융",
+      "categoryDescription": "생활비 절약 및 일상 경제 관리에 관한 내용",
+      "reason": "전기·가스 절약, 식비 관리 등 생활비 절약 방법은 경제 활동과 금융 관리의 범주에 해당하므로 기존 '소비·금융' 카테고리에 포함됨"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

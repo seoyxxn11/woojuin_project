@@ -1,0 +1,64 @@
+{
+  "testId": "URL-008",
+  "availableCategories": [
+    "생활·할 일",
+    "학습·지식",
+    "취업·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "건강·운동",
+    "문화·콘텐츠",
+    "돈·재테크",
+    "아이디어·영감",
+    "기타"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"유산소 운동의 효과와 중요성에 대한 정보\",\n\"categoryName\":\"건강·운동\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"유산소 운동 관련 내용은 건강·운동 카테고리의 운동 계획 및 생활 습관 개선 범위에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 881,
+    "outputTokens": 319,
+    "totalTokens": 1200,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 239,
+    "latencyMs": 9577.722099958919,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"유산소 운동의 효과와 중요성에 대한 정보\",\n\"categoryName\":\"건강·운동\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"유산소 운동 관련 내용은 건강·운동 카테고리의 운동 계획 및 생활 습관 개선 범위에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "건강·운동",
+      "categoryDescription": "유산소 운동의 효과와 중요성에 대한 정보",
+      "reason": "유산소 운동 관련 내용은 건강·운동 카테고리의 운동 계획 및 생활 습관 개선 범위에 해당합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

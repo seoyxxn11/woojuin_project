@@ -1,0 +1,58 @@
+{
+  "testId": "URL-106",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"네트워크 기초 개념 및 기술 자료에 관한 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"네트워크 구성 요소, IP 주소, 서브넷 마스크 등 기술적 지식 정리 내용은 학습·커리어 카테고리의 '기술 구현', 'IT 참고 자료' 범주에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 670,
+    "outputTokens": 399,
+    "totalTokens": 1069,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 297,
+    "latencyMs": 10159.809099975973,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"네트워크 기초 개념 및 기술 자료에 관한 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"네트워크 구성 요소, IP 주소, 서브넷 마스크 등 기술적 지식 정리 내용은 학습·커리어 카테고리의 '기술 구현', 'IT 참고 자료' 범주에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·커리어",
+      "categoryDescription": "네트워크 기초 개념 및 기술 자료에 관한 내용",
+      "reason": "네트워크 구성 요소, IP 주소, 서브넷 마스크 등 기술적 지식 정리 내용은 학습·커리어 카테고리의 '기술 구현', 'IT 참고 자료' 범주에 해당합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

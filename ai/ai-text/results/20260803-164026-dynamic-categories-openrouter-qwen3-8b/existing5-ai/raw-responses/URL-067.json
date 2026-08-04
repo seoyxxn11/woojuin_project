@@ -1,0 +1,58 @@
+{
+  "testId": "URL-067",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"부동산 정책 및 금융 규제 관련 요약 정보\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"부동산 대책은 주택담보대출, DSR 등 금융 규제와 관련된 내용으로 소비·금융 카테고리에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 645,
+    "outputTokens": 374,
+    "totalTokens": 1019,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 294,
+    "latencyMs": 9780.365099897608,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"부동산 정책 및 금융 규제 관련 요약 정보\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"부동산 대책은 주택담보대출, DSR 등 금융 규제와 관련된 내용으로 소비·금융 카테고리에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "소비·금융",
+      "categoryDescription": "부동산 정책 및 금융 규제 관련 요약 정보",
+      "reason": "부동산 대책은 주택담보대출, DSR 등 금융 규제와 관련된 내용으로 소비·금융 카테고리에 해당합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,43 @@
+{
+  "testId": "URL-019",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"categories\": [\n    {\n        \"categoryId\": \"LEARNING_KNOWLEDGE\",\n        \"categoryName\": \"학습·지식\",\n        \"score\": 0.7\n    }\n]\n}",
+  "parsedOutput": {
+    "categories": [
+      {
+        "categoryId": "LEARNING_KNOWLEDGE",
+        "categoryName": "학습·지식",
+        "score": 0.7
+      }
+    ]
+  },
+  "inputTokens": 1552,
+  "outputTokens": 1019,
+  "totalTokens": 2571,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 972,
+  "latencyMs": 18083.25310004875,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

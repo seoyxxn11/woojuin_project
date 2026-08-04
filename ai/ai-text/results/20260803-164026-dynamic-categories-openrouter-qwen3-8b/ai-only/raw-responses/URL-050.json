@@ -1,0 +1,52 @@
+{
+  "testId": "URL-050",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"자취 생활비 절약 및 관리 팁을 포함한 생활 조언\",\n\"categoryName\":\"자취 생활 팁\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 전기·가스 절약, 식비 관리 등 자취 생활과 관련된 실용적인 조언을 다루고 있어 '자취 생활 팁'이라는 범위가 적절함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 411,
+    "outputTokens": 695,
+    "totalTokens": 1106,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 585,
+    "latencyMs": 19025.397599907592,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"자취 생활비 절약 및 관리 팁을 포함한 생활 조언\",\n\"categoryName\":\"자취 생활 팁\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 전기·가스 절약, 식비 관리 등 자취 생활과 관련된 실용적인 조언을 다루고 있어 '자취 생활 팁'이라는 범위가 적절함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "자취 생활 팁",
+      "categoryDescription": "자취 생활비 절약 및 관리 팁을 포함한 생활 조언",
+      "reason": "제공된 콘텐츠는 전기·가스 절약, 식비 관리 등 자취 생활과 관련된 실용적인 조언을 다루고 있어 '자취 생활 팁'이라는 범위가 적절함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

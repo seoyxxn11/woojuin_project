@@ -1,0 +1,58 @@
+{
+  "testId": "URL-026",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"주택 구매를 위한 예산 관리 및 대출 전략 등 금융적 고려 사항을 다루는 콘텐츠\",\n\"categoryName\":\"소비·금융\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주택 매매와 관련된 예산, 대출, 투자 등의 금융 활동에 해당하므로 '소비·금융' 카테고리가 가장 적절합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 657,
+    "outputTokens": 410,
+    "totalTokens": 1067,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 307,
+    "latencyMs": 10917.584100039676,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"주택 구매를 위한 예산 관리 및 대출 전략 등 금융적 고려 사항을 다루는 콘텐츠\",\n\"categoryName\":\"소비·금융\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주택 매매와 관련된 예산, 대출, 투자 등의 금융 활동에 해당하므로 '소비·금융' 카테고리가 가장 적절합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "소비·금융",
+      "categoryDescription": "주택 구매를 위한 예산 관리 및 대출 전략 등 금융적 고려 사항을 다루는 콘텐츠",
+      "reason": "주택 매매와 관련된 예산, 대출, 투자 등의 금융 활동에 해당하므로 '소비·금융' 카테고리가 가장 적절합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

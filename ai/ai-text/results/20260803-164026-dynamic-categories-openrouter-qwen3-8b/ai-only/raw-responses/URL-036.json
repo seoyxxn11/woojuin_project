@@ -1,0 +1,52 @@
+{
+  "testId": "URL-036",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"트로트 콘서트와 축제의 일정, 공연장소, 티켓 가격 및 예매 방법을 포함한 정보\",\n\"categoryName\":\"트로트 콘서트 및 축제\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"입력된 콘텐츠가 트로트 관련 공연 및 티켓 정보를 다루고 있으므로 새로운 카테고리로 분류\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 468,
+    "outputTokens": 803,
+    "totalTokens": 1271,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 692,
+    "latencyMs": 19866.15180002991,
+    "attemptCount": 3,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"트로트 콘서트와 축제의 일정, 공연장소, 티켓 가격 및 예매 방법을 포함한 정보\",\n\"categoryName\":\"트로트 콘서트 및 축제\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"입력된 콘텐츠가 트로트 관련 공연 및 티켓 정보를 다루고 있으므로 새로운 카테고리로 분류\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "트로트 콘서트 및 축제",
+      "categoryDescription": "트로트 콘서트와 축제의 일정, 공연장소, 티켓 가격 및 예매 방법을 포함한 정보",
+      "reason": "입력된 콘텐츠가 트로트 관련 공연 및 티켓 정보를 다루고 있으므로 새로운 카테고리로 분류"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

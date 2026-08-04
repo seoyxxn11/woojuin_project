@@ -1,0 +1,52 @@
+{
+  "testId": "URL-027",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"2026년 주택청약 경쟁률, 일정 및 무순위·임대청약 관련 정보\",\n\"categoryName\":\"주택청약 정보\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 주택청약 관련 정책과 일정, 경쟁률 등 구체적인 정보를 담고 있으며, '주택청약 정보'라는 기존 카테고리가 없고 새로운 분류가 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 414,
+    "outputTokens": 481,
+    "totalTokens": 895,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 367,
+    "latencyMs": 11828.741200035438,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"2026년 주택청약 경쟁률, 일정 및 무순위·임대청약 관련 정보\",\n\"categoryName\":\"주택청약 정보\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 주택청약 관련 정책과 일정, 경쟁률 등 구체적인 정보를 담고 있으며, '주택청약 정보'라는 기존 카테고리가 없고 새로운 분류가 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "주택청약 정보",
+      "categoryDescription": "2026년 주택청약 경쟁률, 일정 및 무순위·임대청약 관련 정보",
+      "reason": "제공된 콘텐츠는 주택청약 관련 정책과 일정, 경쟁률 등 구체적인 정보를 담고 있으며, '주택청약 정보'라는 기존 카테고리가 없고 새로운 분류가 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

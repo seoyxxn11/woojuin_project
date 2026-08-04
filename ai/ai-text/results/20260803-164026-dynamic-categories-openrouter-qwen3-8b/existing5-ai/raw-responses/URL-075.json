@@ -1,0 +1,58 @@
+{
+  "testId": "URL-075",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"여행 일정에 포함된 방문 장소와 맛집 정보를 담은 콘텐츠\",\"categoryName\":\"장소·먹거리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"여행 일정, 방문 장소, 식당, 카페 등 공간과 음식 관련 내용을 다루고 있어 '장소·먹거리' 카테고리에 해당함\"}",
+    "parsedOutput": null,
+    "inputTokens": 711,
+    "outputTokens": 317,
+    "totalTokens": 1028,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 221,
+    "latencyMs": 9494.205999886617,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"여행 일정에 포함된 방문 장소와 맛집 정보를 담은 콘텐츠\",\"categoryName\":\"장소·먹거리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"여행 일정, 방문 장소, 식당, 카페 등 공간과 음식 관련 내용을 다루고 있어 '장소·먹거리' 카테고리에 해당함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "장소·먹거리",
+      "categoryDescription": "여행 일정에 포함된 방문 장소와 맛집 정보를 담은 콘텐츠",
+      "reason": "여행 일정, 방문 장소, 식당, 카페 등 공간과 음식 관련 내용을 다루고 있어 '장소·먹거리' 카테고리에 해당함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,52 @@
+{
+  "testId": "URL-056",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"2024년 대용량 노트북가방에 대한 리뷰 및 추천 정보\",\"categoryName\":\"노트북 가방 리뷰\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"현재 카테고리 없음으로 새 카테고리 생성. 콘텐츠가 노트북 가방 관련 리뷰 및 추천 정보임을 반영\"}",
+    "parsedOutput": null,
+    "inputTokens": 459,
+    "outputTokens": 1129,
+    "totalTokens": 1588,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 1038,
+    "latencyMs": 25259.9897000473,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"2024년 대용량 노트북가방에 대한 리뷰 및 추천 정보\",\"categoryName\":\"노트북 가방 리뷰\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"현재 카테고리 없음으로 새 카테고리 생성. 콘텐츠가 노트북 가방 관련 리뷰 및 추천 정보임을 반영\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "노트북 가방 리뷰",
+      "categoryDescription": "2024년 대용량 노트북가방에 대한 리뷰 및 추천 정보",
+      "reason": "현재 카테고리 없음으로 새 카테고리 생성. 콘텐츠가 노트북 가방 관련 리뷰 및 추천 정보임을 반영"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

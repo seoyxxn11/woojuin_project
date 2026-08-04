@@ -1,0 +1,56 @@
+{
+  "testId": "URL-099",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"코딩테스트 준비 및 자기계발 경험 공유\",\"categoryName\":\"학습·성장\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"알고리즘 학습과 코딩테스트 준비, 교육 시스템에 대한 내용으로 자기계발과 학습 관련 카테고리에 해당\"}",
+    "parsedOutput": null,
+    "inputTokens": 551,
+    "outputTokens": 330,
+    "totalTokens": 881,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 251,
+    "latencyMs": 13215.658799977973,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"코딩테스트 준비 및 자기계발 경험 공유\",\"categoryName\":\"학습·성장\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"알고리즘 학습과 코딩테스트 준비, 교육 시스템에 대한 내용으로 자기계발과 학습 관련 카테고리에 해당\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·성장",
+      "categoryDescription": "코딩테스트 준비 및 자기계발 경험 공유",
+      "reason": "알고리즘 학습과 코딩테스트 준비, 교육 시스템에 대한 내용으로 자기계발과 학습 관련 카테고리에 해당"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

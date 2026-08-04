@@ -1,0 +1,56 @@
+{
+  "testId": "URL-012",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"별자리와 타로 등 다양한 운세 정보를 제공하는 콘텐츠입니다.\",\n\"categoryName\":\"운세·예측\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"운세 예측 관련 콘텐츠는 기존 카테고리에 포함되지 않아 새로운 카테고리 생성\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 517,
+    "outputTokens": 703,
+    "totalTokens": 1220,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 620,
+    "latencyMs": 13476.857800036669,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"별자리와 타로 등 다양한 운세 정보를 제공하는 콘텐츠입니다.\",\n\"categoryName\":\"운세·예측\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"운세 예측 관련 콘텐츠는 기존 카테고리에 포함되지 않아 새로운 카테고리 생성\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "운세·예측",
+      "categoryDescription": "별자리와 타로 등 다양한 운세 정보를 제공하는 콘텐츠입니다.",
+      "reason": "운세 예측 관련 콘텐츠는 기존 카테고리에 포함되지 않아 새로운 카테고리 생성"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

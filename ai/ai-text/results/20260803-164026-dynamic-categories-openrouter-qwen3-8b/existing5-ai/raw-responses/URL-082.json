@@ -1,0 +1,58 @@
+{
+  "testId": "URL-082",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"식당 정보 및 리뷰 리스트\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"전주 콩나물국밥 맛집 리스트는 식당 정보와 방문자 리뷰를 포함하여 장소와 음식에 관한 내용으로 분류됨\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 649,
+    "outputTokens": 268,
+    "totalTokens": 917,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 190,
+    "latencyMs": 8129.160600015894,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"식당 정보 및 리뷰 리스트\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"전주 콩나물국밥 맛집 리스트는 식당 정보와 방문자 리뷰를 포함하여 장소와 음식에 관한 내용으로 분류됨\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "장소·먹거리",
+      "categoryDescription": "식당 정보 및 리뷰 리스트",
+      "reason": "전주 콩나물국밥 맛집 리스트는 식당 정보와 방문자 리뷰를 포함하여 장소와 음식에 관한 내용으로 분류됨"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

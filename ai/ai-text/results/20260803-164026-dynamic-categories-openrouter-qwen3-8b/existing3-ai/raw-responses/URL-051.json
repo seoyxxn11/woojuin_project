@@ -1,0 +1,56 @@
+{
+  "testId": "URL-051",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"실용적인 생활 팁을 통해 일상의 질을 높이는 방법에 대한 내용\",\"categoryName\":\"생활·관리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"자취생을 위한 실용적인 생활 팁은 일상 유지와 관리에 해당하는 '생활·관리' 카테고리에 속합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 537,
+    "outputTokens": 308,
+    "totalTokens": 845,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 223,
+    "latencyMs": 9135.640499996953,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"실용적인 생활 팁을 통해 일상의 질을 높이는 방법에 대한 내용\",\"categoryName\":\"생활·관리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"자취생을 위한 실용적인 생활 팁은 일상 유지와 관리에 해당하는 '생활·관리' 카테고리에 속합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "생활·관리",
+      "categoryDescription": "실용적인 생활 팁을 통해 일상의 질을 높이는 방법에 대한 내용",
+      "reason": "자취생을 위한 실용적인 생활 팁은 일상 유지와 관리에 해당하는 '생활·관리' 카테고리에 속합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

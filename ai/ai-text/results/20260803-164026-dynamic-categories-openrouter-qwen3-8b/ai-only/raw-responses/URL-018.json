@@ -1,0 +1,52 @@
+{
+  "testId": "URL-018",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"자기 분석, 운세, 타로 등 개인 맞춤형 심리 관련 콘텐츠\",\n\"categoryName\":\"심리 및 운세 콘텐츠\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공하는 콘텐츠가 개인성 테스트, 심리 분석, 운세 예측 등 심리학과 관련된 다양한 주제를 포함하고 있어 새로운 카테고리 생성이 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 388,
+    "outputTokens": 698,
+    "totalTokens": 1086,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 586,
+    "latencyMs": 18821.158100035973,
+    "attemptCount": 3,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"자기 분석, 운세, 타로 등 개인 맞춤형 심리 관련 콘텐츠\",\n\"categoryName\":\"심리 및 운세 콘텐츠\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공하는 콘텐츠가 개인성 테스트, 심리 분석, 운세 예측 등 심리학과 관련된 다양한 주제를 포함하고 있어 새로운 카테고리 생성이 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "심리 및 운세 콘텐츠",
+      "categoryDescription": "자기 분석, 운세, 타로 등 개인 맞춤형 심리 관련 콘텐츠",
+      "reason": "제공하는 콘텐츠가 개인성 테스트, 심리 분석, 운세 예측 등 심리학과 관련된 다양한 주제를 포함하고 있어 새로운 카테고리 생성이 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

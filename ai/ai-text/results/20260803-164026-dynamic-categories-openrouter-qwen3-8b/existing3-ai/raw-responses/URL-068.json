@@ -1,0 +1,56 @@
+{
+  "testId": "URL-068",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"집에서 시작할 수 있는 창업 아이디어 및 사업 계획 관련 내용\",\"categoryName\":\"창업·사업\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 홈베이스 창업 아이디어를 다루고 있으며, 기존 카테고리인 생활·관리, 학습·성장, 관심·탐색과는 의미가 다르므로 새로운 카테고리로 분류함\"}",
+    "parsedOutput": null,
+    "inputTokens": 560,
+    "outputTokens": 389,
+    "totalTokens": 949,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 279,
+    "latencyMs": 11199.625700013712,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"집에서 시작할 수 있는 창업 아이디어 및 사업 계획 관련 내용\",\"categoryName\":\"창업·사업\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 홈베이스 창업 아이디어를 다루고 있으며, 기존 카테고리인 생활·관리, 학습·성장, 관심·탐색과는 의미가 다르므로 새로운 카테고리로 분류함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "창업·사업",
+      "categoryDescription": "집에서 시작할 수 있는 창업 아이디어 및 사업 계획 관련 내용",
+      "reason": "제공된 콘텐츠는 홈베이스 창업 아이디어를 다루고 있으며, 기존 카테고리인 생활·관리, 학습·성장, 관심·탐색과는 의미가 다르므로 새로운 카테고리로 분류함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

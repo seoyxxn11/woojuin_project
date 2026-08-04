@@ -1,0 +1,56 @@
+{
+  "testId": "URL-096",
+  "availableCategories": [
+    "생활·관리",
+    "학습·성장",
+    "관심·탐색"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"기업의 사회공헌 활동 및 윤리적 이니셔티브 관련 소식\", \"categoryName\":\"사회공헌·윤리\", \"categoryOrigin\":\"GENERATED\", \"reason\":\"기존 카테고리와는 차별화된 기업 사회공헌 활동에 대한 정보를 담은 새로운 분야로, CSR 관련 뉴스 및 공지사항을 포괄적으로 정리할 수 있는 적절한 카테고리\"\n\n}",
+    "parsedOutput": null,
+    "inputTokens": 502,
+    "outputTokens": 381,
+    "totalTokens": 883,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 269,
+    "latencyMs": 9220.061699976213,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"기업의 사회공헌 활동 및 윤리적 이니셔티브 관련 소식\", \"categoryName\":\"사회공헌·윤리\", \"categoryOrigin\":\"GENERATED\", \"reason\":\"기존 카테고리와는 차별화된 기업 사회공헌 활동에 대한 정보를 담은 새로운 분야로, CSR 관련 뉴스 및 공지사항을 포괄적으로 정리할 수 있는 적절한 카테고리\"\n\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "사회공헌·윤리",
+      "categoryDescription": "기업의 사회공헌 활동 및 윤리적 이니셔티브 관련 소식",
+      "reason": "기존 카테고리와는 차별화된 기업 사회공헌 활동에 대한 정보를 담은 새로운 분야로, CSR 관련 뉴스 및 공지사항을 포괄적으로 정리할 수 있는 적절한 카테고리"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

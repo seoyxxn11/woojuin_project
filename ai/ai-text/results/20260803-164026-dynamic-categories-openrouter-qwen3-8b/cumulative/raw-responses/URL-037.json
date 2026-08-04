@@ -1,0 +1,65 @@
+{
+  "testId": "URL-037",
+  "availableCategories": [
+    "건강 영향",
+    "운동 건강",
+    "수면 건강",
+    "운세 정보",
+    "성격 테스트",
+    "투자 전략",
+    "부동산 투자 전략",
+    "주택청약 정보",
+    "문화 패션 인물",
+    "재정 관리 팁",
+    "음악 및 콘서트 정보",
+    "문화 여행 가이드"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"문화적 장소의 전시회 및 예술 관련 정보 제공\",\"categoryName\":\"문화 패션 인물\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"문화 패션 인물 카테고리는 문화적 콘텐츠와 예술 관련 정보를 다루므로, 서울시립미술관의 전시회 추천 내용에 적합합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 823,
+    "outputTokens": 690,
+    "totalTokens": 1513,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 600,
+    "latencyMs": 13267.275899997912,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"문화적 장소의 전시회 및 예술 관련 정보 제공\",\"categoryName\":\"문화 패션 인물\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"문화 패션 인물 카테고리는 문화적 콘텐츠와 예술 관련 정보를 다루므로, 서울시립미술관의 전시회 추천 내용에 적합합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "문화 패션 인물",
+      "categoryDescription": "문화적 장소의 전시회 및 예술 관련 정보 제공",
+      "reason": "문화 패션 인물 카테고리는 문화적 콘텐츠와 예술 관련 정보를 다루므로, 서울시립미술관의 전시회 추천 내용에 적합합니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,52 @@
+{
+  "testId": "URL-052",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"고성능 프로 데스크탑으로 M4 Max/M3 Ultra 칩과 AI 기능을 갖춘 Mac 제품\", \"categoryName\":\"Mac 제품\", \"categoryOrigin\":\"GENERATED\", \"reason\":\"입력 콘텐츠가 Apple의 고성능 데스크탑 Mac Studio에 대한 정보로, Mac 제품 범주에 해당하므로 새 카테고리 생성\"}",
+    "parsedOutput": null,
+    "inputTokens": 431,
+    "outputTokens": 738,
+    "totalTokens": 1169,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 643,
+    "latencyMs": 20072.525899973698,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"고성능 프로 데스크탑으로 M4 Max/M3 Ultra 칩과 AI 기능을 갖춘 Mac 제품\", \"categoryName\":\"Mac 제품\", \"categoryOrigin\":\"GENERATED\", \"reason\":\"입력 콘텐츠가 Apple의 고성능 데스크탑 Mac Studio에 대한 정보로, Mac 제품 범주에 해당하므로 새 카테고리 생성\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "Mac 제품",
+      "categoryDescription": "고성능 프로 데스크탑으로 M4 Max/M3 Ultra 칩과 AI 기능을 갖춘 Mac 제품",
+      "reason": "입력 콘텐츠가 Apple의 고성능 데스크탑 Mac Studio에 대한 정보로, Mac 제품 범주에 해당하므로 새 카테고리 생성"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

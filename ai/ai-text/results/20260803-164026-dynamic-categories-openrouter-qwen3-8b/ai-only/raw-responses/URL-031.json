@@ -1,0 +1,52 @@
+{
+  "testId": "URL-031",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"초보 직장인의 저축 습관 관련 정보\",\"categoryName\":\"저축 습관\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"현재 카테고리에 해당하는 내용이 없어 새로운 카테고리를 생성했습니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 416,
+    "outputTokens": 739,
+    "totalTokens": 1155,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 675,
+    "latencyMs": 16537.856700015254,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"초보 직장인의 저축 습관 관련 정보\",\"categoryName\":\"저축 습관\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"현재 카테고리에 해당하는 내용이 없어 새로운 카테고리를 생성했습니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "저축 습관",
+      "categoryDescription": "초보 직장인의 저축 습관 관련 정보",
+      "reason": "현재 카테고리에 해당하는 내용이 없어 새로운 카테고리를 생성했습니다."
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

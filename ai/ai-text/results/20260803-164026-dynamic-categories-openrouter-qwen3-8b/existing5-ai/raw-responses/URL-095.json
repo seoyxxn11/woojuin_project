@@ -1,0 +1,58 @@
+{
+  "testId": "URL-095",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"SW·AI 교육 및 취업 지원 프로그램 관련 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"프로그램이 제공하는 SW·AI 교육과 취업 지원 서비스는 학습·커리어 카테고리에 해당하는 기술 교육 및 경력 개발에 관한 내용\"}",
+    "parsedOutput": null,
+    "inputTokens": 675,
+    "outputTokens": 429,
+    "totalTokens": 1104,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 344,
+    "latencyMs": 10333.822600077838,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"SW·AI 교육 및 취업 지원 프로그램 관련 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"프로그램이 제공하는 SW·AI 교육과 취업 지원 서비스는 학습·커리어 카테고리에 해당하는 기술 교육 및 경력 개발에 관한 내용\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·커리어",
+      "categoryDescription": "SW·AI 교육 및 취업 지원 프로그램 관련 내용",
+      "reason": "프로그램이 제공하는 SW·AI 교육과 취업 지원 서비스는 학습·커리어 카테고리에 해당하는 기술 교육 및 경력 개발에 관한 내용"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

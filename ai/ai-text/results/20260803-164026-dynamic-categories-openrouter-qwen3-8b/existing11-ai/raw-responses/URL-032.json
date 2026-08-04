@@ -1,0 +1,64 @@
+{
+  "testId": "URL-032",
+  "availableCategories": [
+    "생활·할 일",
+    "학습·지식",
+    "취업·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "건강·운동",
+    "문화·콘텐츠",
+    "돈·재테크",
+    "아이디어·영감",
+    "기타"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"음악 관련 영상 콘텐츠를 기록한 내용\",\n\"categoryName\":\"음악·영상\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 문화·콘텐츠 카테고리는 음악을 제외하므로, 음악 관련 영상 콘텐츠를 담는 새 카테고리가 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 877,
+    "outputTokens": 1001,
+    "totalTokens": 1878,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 909,
+    "latencyMs": 19419.11630006507,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"음악 관련 영상 콘텐츠를 기록한 내용\",\n\"categoryName\":\"음악·영상\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 문화·콘텐츠 카테고리는 음악을 제외하므로, 음악 관련 영상 콘텐츠를 담는 새 카테고리가 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "음악·영상",
+      "categoryDescription": "음악 관련 영상 콘텐츠를 기록한 내용",
+      "reason": "기존 문화·콘텐츠 카테고리는 음악을 제외하므로, 음악 관련 영상 콘텐츠를 담는 새 카테고리가 필요함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

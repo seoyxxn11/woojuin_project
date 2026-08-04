@@ -1,0 +1,52 @@
+{
+  "testId": "URL-099",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"코딩 테스트 준비 경험과 관련된 교육 시스템 및 코치의 역할을 다루는 데이터\",\"categoryName\":\"코딩 테스트 교육 및 코칭\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"비전공자 개발자의 코딩테스트 준비 경험과 교육 시스템, 코치 역할에 대한 내용으로 기존 카테고리와 중복되지 않으며 교육 관련 콘텐츠로 분류함\"}",
+    "parsedOutput": null,
+    "inputTokens": 428,
+    "outputTokens": 586,
+    "totalTokens": 1014,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 470,
+    "latencyMs": 14734.31659990456,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"코딩 테스트 준비 경험과 관련된 교육 시스템 및 코치의 역할을 다루는 데이터\",\"categoryName\":\"코딩 테스트 교육 및 코칭\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"비전공자 개발자의 코딩테스트 준비 경험과 교육 시스템, 코치 역할에 대한 내용으로 기존 카테고리와 중복되지 않으며 교육 관련 콘텐츠로 분류함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "코딩 테스트 교육 및 코칭",
+      "categoryDescription": "코딩 테스트 준비 경험과 관련된 교육 시스템 및 코치의 역할을 다루는 데이터",
+      "reason": "비전공자 개발자의 코딩테스트 준비 경험과 교육 시스템, 코치 역할에 대한 내용으로 기존 카테고리와 중복되지 않으며 교육 관련 콘텐츠로 분류함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

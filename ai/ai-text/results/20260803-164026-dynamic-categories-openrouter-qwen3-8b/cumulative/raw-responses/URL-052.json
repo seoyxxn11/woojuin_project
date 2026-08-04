@@ -1,0 +1,69 @@
+{
+  "testId": "URL-052",
+  "availableCategories": [
+    "건강 영향",
+    "운동 건강",
+    "수면 건강",
+    "운세 정보",
+    "성격 테스트",
+    "투자 전략",
+    "부동산 투자 전략",
+    "주택청약 정보",
+    "문화 패션 인물",
+    "재정 관리 팁",
+    "음악 및 콘서트 정보",
+    "문화 여행 가이드",
+    "영화 개봉 정보",
+    "생활 정리 팁",
+    "생활 패턴",
+    "앱 정보 및 리뷰"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"디지털 기기의 사양 및 기능 관련 정보 제공\",\"categoryName\":\"디지털 기기 정보\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 맥스튜디오의 칩 사양, 디스플레이 옵션, AI 기능 등 디지털 기기 관련 정보를 다루고 있으며, 기존 카테고리와 일치하는 항목이 없어 새로운 카테고리 생성\"}",
+    "parsedOutput": null,
+    "inputTokens": 934,
+    "outputTokens": 857,
+    "totalTokens": 1791,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 743,
+    "latencyMs": 17509.415800101124,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"디지털 기기의 사양 및 기능 관련 정보 제공\",\"categoryName\":\"디지털 기기 정보\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 맥스튜디오의 칩 사양, 디스플레이 옵션, AI 기능 등 디지털 기기 관련 정보를 다루고 있으며, 기존 카테고리와 일치하는 항목이 없어 새로운 카테고리 생성\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "디지털 기기 정보",
+      "categoryDescription": "디지털 기기의 사양 및 기능 관련 정보 제공",
+      "reason": "제공된 콘텐츠는 맥스튜디오의 칩 사양, 디스플레이 옵션, AI 기능 등 디지털 기기 관련 정보를 다루고 있으며, 기존 카테고리와 일치하는 항목이 없어 새로운 카테고리 생성"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

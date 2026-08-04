@@ -1,0 +1,60 @@
+{
+  "testId": "URL-094",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"취업 경험과 경력 개발에 관한 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"요약 내용에서 SSAFY 취업 후기와 베풀기 계획이라는 경력 관련 주제가 드러나므로 '학습·커리어' 카테고리에 해당함\"}",
+    "parsedOutput": null,
+    "inputTokens": 767,
+    "outputTokens": 385,
+    "totalTokens": 1152,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 299,
+    "latencyMs": 9842.058999929577,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"취업 경험과 경력 개발에 관한 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"요약 내용에서 SSAFY 취업 후기와 베풀기 계획이라는 경력 관련 주제가 드러나므로 '학습·커리어' 카테고리에 해당함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "EXISTING",
+      "categoryName": "학습·커리어",
+      "categoryDescription": "취업 경험과 경력 개발에 관한 내용",
+      "reason": "요약 내용에서 SSAFY 취업 후기와 베풀기 계획이라는 경력 관련 주제가 드러나므로 '학습·커리어' 카테고리에 해당함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

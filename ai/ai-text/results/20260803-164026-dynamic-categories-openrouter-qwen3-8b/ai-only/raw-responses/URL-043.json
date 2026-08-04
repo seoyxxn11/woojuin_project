@@ -1,0 +1,52 @@
+{
+  "testId": "URL-043",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"가정에서 물건을 정리하는 방법과 원칙을 설명한 콘텐츠\",\"categoryName\":\"홈 정리\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"콘텐츠는 옷, 책, 식기 등 다양한 아이템의 정리 방법과 3가지 원칙을 다루고 있어 '홈 정리' 카테고리에 해당함\"}",
+    "parsedOutput": null,
+    "inputTokens": 410,
+    "outputTokens": 403,
+    "totalTokens": 813,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 311,
+    "latencyMs": 11425.280799972825,
+    "attemptCount": 2,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"가정에서 물건을 정리하는 방법과 원칙을 설명한 콘텐츠\",\"categoryName\":\"홈 정리\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"콘텐츠는 옷, 책, 식기 등 다양한 아이템의 정리 방법과 3가지 원칙을 다루고 있어 '홈 정리' 카테고리에 해당함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "categoryOrigin": "GENERATED",
+      "categoryName": "홈 정리",
+      "categoryDescription": "가정에서 물건을 정리하는 방법과 원칙을 설명한 콘텐츠",
+      "reason": "콘텐츠는 옷, 책, 식기 등 다양한 아이템의 정리 방법과 3가지 원칙을 다루고 있어 '홈 정리' 카테고리에 해당함"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

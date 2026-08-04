@@ -61,6 +61,10 @@ class ServiceConfig:
     candidate_min_support_count: int = 3
     candidate_consistency_threshold: float = 0.75
     service_max_categories: int = 2
+    # 개선된 후보 재사용 판단용 임계값
+    center_similarity_threshold: float = 0.75
+    item_similarity_threshold: float = 0.78
+    ai_review_lower_bound: float = 0.60
 
     @classmethod
     def from_mapping(cls, mapping: dict[str, Any] | None) -> "ServiceConfig":
@@ -70,6 +74,20 @@ class ServiceConfig:
             for key in keys:
                 if key in data and data[key] is not None:
                     return data[key]
+            return default
+
+        legacy_similarity = float(
+            pick("candidate-similarity-threshold", "candidate_similarity_threshold", default=0.80)
+        )
+        # 중첩 category.candidate.* 블록이 있으면 우선 사용, 없으면 기존 값으로 하위 호환.
+        candidate_block = data.get("candidate")
+        if not isinstance(candidate_block, dict):
+            candidate_block = {}
+
+        def pick_candidate(*keys: str, default: Any) -> Any:
+            for key in keys:
+                if key in candidate_block and candidate_block[key] is not None:
+                    return candidate_block[key]
             return default
 
         return cls(
@@ -83,13 +101,7 @@ class ServiceConfig:
             formal_score_gap_threshold=float(
                 pick("formal-score-gap-threshold", "formal_score_gap_threshold", default=0.10)
             ),
-            candidate_similarity_threshold=float(
-                pick(
-                    "candidate-similarity-threshold",
-                    "candidate_similarity_threshold",
-                    default=0.80,
-                )
-            ),
+            candidate_similarity_threshold=legacy_similarity,
             candidate_min_support_count=int(
                 pick("candidate-min-support-count", "candidate_min_support_count", default=3)
             ),
@@ -102,6 +114,25 @@ class ServiceConfig:
             ),
             service_max_categories=int(
                 pick("service-max-categories", "service_max_categories", default=2)
+            ),
+            center_similarity_threshold=float(
+                pick_candidate(
+                    "center-similarity-threshold",
+                    "center_similarity_threshold",
+                    default=legacy_similarity,
+                )
+            ),
+            item_similarity_threshold=float(
+                pick_candidate(
+                    "item-similarity-threshold",
+                    "item_similarity_threshold",
+                    default=legacy_similarity,
+                )
+            ),
+            ai_review_lower_bound=float(
+                pick_candidate(
+                    "ai-review-lower-bound", "ai_review_lower_bound", default=0.60
+                )
             ),
         )
 
@@ -186,6 +217,18 @@ class ServiceBackend(Protocol):
         self, candidate: TemporaryCandidate, linked_items: list[dict[str, Any]]
     ) -> dict[str, Any]:
         """{"promote": bool, "reason": str}"""
+        ...
+
+    def review_reuse(
+        self, item: dict[str, Any], candidate_infos: list[dict[str, Any]]
+    ) -> dict[str, Any]:
+        """임베딩만으로 애매할 때 기존 후보 재사용 여부를 판단한다.
+
+        candidate_infos: [{candidateId, name, description, supportCount,
+        representativeItems:[{title, summary}], centerSimilarity, maxItemSimilarity}]
+        반환: {"action": "REUSE"|"CREATE", "candidateId": int|None,
+               "confidence": float, "reason": str}
+        """
         ...
 
 
@@ -421,6 +464,32 @@ class DeterministicBackend:
             "reason": f"공통 주제가 약함 (평균 일관성 {consistency:.2f})",
         }
 
+    def review_reuse(
+        self, item: dict[str, Any], candidate_infos: list[dict[str, Any]]
+    ) -> dict[str, Any]:
+        """임베딩만으로 애매한 경우: 가장 유사한 후보의 유사도가 충분하면 재사용."""
+        if not candidate_infos:
+            return {"action": "CREATE", "candidateId": None, "confidence": 0.5, "reason": "후보 없음"}
+        best = max(
+            candidate_infos,
+            key=lambda info: max(info["centerSimilarity"], info["maxItemSimilarity"]),
+        )
+        score = max(best["centerSimilarity"], best["maxItemSimilarity"])
+        # 결정론 백엔드는 하한(0.6 근처) 이상이면 같은 주제로 간주해 재사용한다.
+        if score >= 0.6:
+            return {
+                "action": "REUSE",
+                "candidateId": best["candidateId"],
+                "confidence": round(score, 3),
+                "reason": f"기존 후보 '{best['name']}'와 의미 유사(유사도 {score:.2f})",
+            }
+        return {
+            "action": "CREATE",
+            "candidateId": None,
+            "confidence": round(1 - score, 3),
+            "reason": "기존 후보와 구분되는 새 주제",
+        }
+
 
 def _default_clock() -> datetime:
     return datetime.now(timezone.utc).astimezone()
@@ -468,6 +537,7 @@ class WorkspaceCategoryEngine:
         self.item_classifications: dict[str, ItemClassification] = {}
         self.history: list[dict[str, Any]] = []
         self._items: dict[str, dict[str, Any]] = {}
+        self._item_embeddings: dict[str, list[float]] = {}  # maxItemSimilarity 계산용
         self._next_candidate_id = 1
         self.reclassified_item_ids: set[str] = set()
 
@@ -528,8 +598,13 @@ class WorkspaceCategoryEngine:
                 "selectedFormalCategoryIds": formal_ids,
                 "matchedExistingCandidate": False,
                 "linkedCandidateId": None,
+                "candidateName": None,
                 "newCandidateCreated": False,
                 "candidateSupportCount": None,
+                "candidateAction": "FORMAL_ONLY" if not ambiguous else None,
+                "centerSimilarity": None,
+                "maxItemSimilarity": None,
+                "aiReuseDecision": None,
                 "promoted": False,
                 "reclassified": False,
                 "candidateError": None,
@@ -562,6 +637,45 @@ class WorkspaceCategoryEngine:
             self.history.append(log)
             return log
 
+    def _similarity_infos(
+        self, embedding: list[float]
+    ) -> list[tuple[TemporaryCandidate, float, float]]:
+        """활성 후보별 (centerSimilarity, maxItemSimilarity)를 계산한다."""
+        infos: list[tuple[TemporaryCandidate, float, float]] = []
+        for candidate in self._active_candidates():
+            center = cosine_similarity(embedding, candidate.representativeEmbedding)
+            item_sims = [
+                cosine_similarity(embedding, self._item_embeddings[linked])
+                for linked in candidate.linkedItemIds
+                if linked in self._item_embeddings
+            ]
+            max_item = max(item_sims) if item_sims else center
+            infos.append((candidate, center, max_item))
+        return infos
+
+    def _ai_candidate_info(
+        self, sim: tuple[TemporaryCandidate, float, float]
+    ) -> dict[str, Any]:
+        candidate, center, max_item = sim
+        reps = []
+        for linked in candidate.linkedItemIds[:3]:
+            entry = self._items.get(linked, {})
+            reps.append(
+                {
+                    "title": str(entry.get("title", "")),
+                    "summary": str(entry.get("summary") or _summary_from_input(entry))[:200],
+                }
+            )
+        return {
+            "candidateId": candidate.candidateId,
+            "name": candidate.suggestedName,
+            "description": candidate.description,
+            "supportCount": candidate.supportCount,
+            "representativeItems": reps,
+            "centerSimilarity": round(center, 4),
+            "maxItemSimilarity": round(max_item, 4),
+        }
+
     def _handle_candidate(
         self,
         item: dict[str, Any],
@@ -571,60 +685,89 @@ class WorkspaceCategoryEngine:
         log: dict[str, Any],
     ) -> None:
         embedding = self.backend.embed(build_service_text(item))
+        self._item_embeddings[item_id] = embedding
 
-        # 4. 기존 임시 후보와 비교
-        best, best_similarity = self._best_candidate(embedding)
+        sims = self._similarity_infos(embedding)
+        if sims:
+            top = max(sims, key=lambda s: max(s[1], s[2]))
+            log["centerSimilarity"] = round(top[1], 4)
+            log["maxItemSimilarity"] = round(top[2], 4)
+
+        center_thr = self.config.center_similarity_threshold
+        item_thr = self.config.item_similarity_threshold
         candidate: TemporaryCandidate | None = None
-        if best is not None and best_similarity >= self.config.candidate_similarity_threshold:
-            candidate = best
+        action: str | None = None
+
+        # 1. 임베딩 기준(centerSimilarity 또는 maxItemSimilarity) 재사용
+        eligible = [s for s in sims if s[1] >= center_thr or s[2] >= item_thr]
+        if eligible:
+            best = max(eligible, key=lambda s: max(s[1], s[2]))
+            candidate = best[0]
+            action = "REUSE_EMBEDDING"
             log["matchedExistingCandidate"] = True
         else:
-            # 2 & 3. 신규 후보 필요 여부 판단 + 이름/설명 생성 (AI)
-            proposal = self.backend.propose_candidate(item, self._formal_snapshot(), ordered_scores)
-            if not proposal.get("needsNew"):
-                # 정식 카테고리 다중 분류로 충분 → 후보 없음
-                return
-            candidate = self._create_or_reuse_candidate(item_id, embedding, proposal)
-            if candidate is not None and candidate.createdAtItemId == item_id and len(
-                candidate.linkedItemIds
-            ) == 0:
-                log["newCandidateCreated"] = True
+            # 2. 애매 밴드(ai-review-lower-bound 이상)면 AI에게 재사용 여부 판단 요청
+            near = [s for s in sims if max(s[1], s[2]) >= self.config.ai_review_lower_bound]
+            if near:
+                decision = self.backend.review_reuse(
+                    item, [self._ai_candidate_info(s) for s in near]
+                )
+                log["aiReuseDecision"] = {
+                    key: decision.get(key)
+                    for key in ("action", "candidateId", "confidence", "reason")
+                }
+                if str(decision.get("action", "")).upper() == "REUSE" and decision.get(
+                    "candidateId"
+                ) is not None:
+                    picked = self._candidate_by_id(int(decision["candidateId"]))
+                    if picked is not None and picked.status in {PENDING, READY_TO_PROMOTE}:
+                        candidate, action = picked, "REUSE_AI"
+                        log["matchedExistingCandidate"] = True
+            if candidate is None:
+                # 3. 신규 후보 필요 여부 + 이름/설명 생성(AI), 그 후 최종 중복 확인
+                proposal = self.backend.propose_candidate(
+                    item, self._formal_snapshot(), ordered_scores
+                )
+                if not proposal.get("needsNew"):
+                    return  # 정식 다중 분류로 충분 → 후보 없음
+                candidate, created = self._create_or_reuse_candidate(item_id, embedding, proposal)
+                if created:
+                    action = "CREATE"
+                    log["newCandidateCreated"] = True
+                else:
+                    action = "REUSE_FINAL_DEDUP"
+                    log["matchedExistingCandidate"] = True
 
         if candidate is None:
             return
 
+        log["candidateAction"] = action
         self._link_item(candidate, item_id, embedding)
         classification.candidateId = candidate.candidateId
         classification.classificationStatus = CANDIDATE_LINKED
         log["linkedCandidateId"] = candidate.candidateId
+        log["candidateName"] = candidate.suggestedName
         log["candidateSupportCount"] = candidate.supportCount
 
         # 7~8. 승격 검토
         self._maybe_promote(candidate, log)
 
-    def _best_candidate(
-        self, embedding: list[float]
-    ) -> tuple[TemporaryCandidate | None, float]:
-        best: TemporaryCandidate | None = None
-        best_similarity = -1.0
-        for candidate in self._active_candidates():
-            similarity = cosine_similarity(embedding, candidate.representativeEmbedding)
-            if similarity > best_similarity:
-                best, best_similarity = candidate, similarity
-        return best, best_similarity
-
     def _create_or_reuse_candidate(
         self, item_id: str, embedding: list[float], proposal: dict[str, Any]
-    ) -> TemporaryCandidate:
+    ) -> tuple[TemporaryCandidate, bool]:
+        """신규 제안을 생성 직전에 기존 후보 전체와 마지막으로 비교한다.
+
+        반환: (후보, 새로 생성했는지)
+        """
         name = normalize_category_name(proposal.get("name") or f"후보-{item_id}")
         # 이름 정규화가 완전히 같은 후보는 재사용(중복 생성 방지)
         for candidate in self._active_candidates():
             if category_key(candidate.suggestedName) == category_key(name):
-                return candidate
+                return candidate, False
         # 대표 임베딩이 매우 유사한 후보가 이미 있으면 병합 대상 → 재사용
         for candidate in self._active_candidates():
             if cosine_similarity(embedding, candidate.representativeEmbedding) >= self.merge_threshold:
-                return candidate
+                return candidate, False
         now = self._now().isoformat()
         candidate = TemporaryCandidate(
             candidateId=self._next_candidate_id,
@@ -642,13 +785,14 @@ class WorkspaceCategoryEngine:
         )
         self._next_candidate_id += 1
         self.candidates.append(candidate)
-        return candidate
+        return candidate, True
 
     def _link_item(
         self, candidate: TemporaryCandidate, item_id: str, embedding: list[float]
     ) -> None:
         if item_id in candidate.linkedItemIds:
             return  # 같은 데이터 중복 연결 방지
+        self._item_embeddings.setdefault(item_id, embedding)
         similarity = cosine_similarity(embedding, candidate.representativeEmbedding)
         candidate.linkedItemIds.append(item_id)
         if not candidate.sumEmbedding:

@@ -288,6 +288,49 @@ class RealServiceBackend:
             return {"promote": False, "reason": "AI 응답 실패"}
         return {"promote": bool(parsed.get("promote")), "reason": str(parsed.get("reason", "")).strip()}
 
+    def review_reuse(self, item: dict[str, Any], candidate_infos: list[dict[str, Any]]) -> dict[str, Any]:
+        from src.incremental_category_service import build_service_text
+
+        lines = []
+        for info in candidate_infos:
+            reps = "; ".join(
+                f"{r.get('title','')}({r.get('summary','')[:40]})"
+                for r in info.get("representativeItems", [])
+            )
+            lines.append(
+                f"- candidateId={info['candidateId']} | 이름:{info['name']} | 설명:{info.get('description','')} "
+                f"| 연결수:{info['supportCount']} | center:{info['centerSimilarity']} max:{info['maxItemSimilarity']} "
+                f"| 대표:{reps}"
+            )
+        prompt = (
+            "새 데이터가 아래 기존 임시 후보 중 하나와 '같은 반복 주제'인지 판단하세요.\n"
+            "같으면 그 후보를 재사용(REUSE), 명확히 구분되는 새 주제면 생성(CREATE)입니다.\n"
+            "형식만 같고 목적이 다르면 재사용하지 마세요. JSON만 출력하세요:\n"
+            "{\"action\":\"REUSE\"|\"CREATE\",\"candidateId\":정수또는null,\"confidence\":0.0,\"reason\":\"근거\"}\n\n"
+            f"새 데이터:\n제목: {item.get('title','')}\n내용: {build_service_text(item)[:800]}\n\n"
+            f"기존 후보:\n" + "\n".join(lines) + "\n"
+        )
+        schema = {
+            "type": "object",
+            "properties": {
+                "action": {"type": "string", "enum": ["REUSE", "CREATE"]},
+                "candidateId": {"type": ["integer", "null"]},
+                "confidence": {"type": "number"},
+                "reason": {"type": "string"},
+            },
+            "required": ["action", "confidence", "reason"],
+        }
+        parsed = self._ask(prompt, schema)
+        if not parsed:
+            return {"action": "CREATE", "candidateId": None, "confidence": 0.0, "reason": "AI 응답 실패"}
+        cid = parsed.get("candidateId")
+        return {
+            "action": str(parsed.get("action", "CREATE")).upper(),
+            "candidateId": int(cid) if isinstance(cid, (int, float)) else None,
+            "confidence": float(parsed.get("confidence", 0.0) or 0.0),
+            "reason": str(parsed.get("reason", "")).strip(),
+        }
+
 
 # ---- 실행 및 보고서 ----
 

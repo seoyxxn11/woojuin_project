@@ -254,6 +254,145 @@ def test_manual_merge_marks_candidate_merged():
 # ---- 입력 텍스트 정제 ----
 
 
+# ---- 개선된 후보 재사용 로직 ----
+
+
+import json as _json
+
+
+class VectorBackend:
+    """itemId별 임베딩 벡터와 재사용 판단을 직접 통제하는 백엔드."""
+
+    def __init__(self, vectors, names=None, reuse_decision=None, promote=False):
+        self.vectors = vectors
+        self.names = names or {}
+        self.reuse_decision = reuse_decision
+        self.promote = promote
+        self._current = None
+
+    def classify_formal(self, item, formal_categories):
+        self._current = item["testId"]
+        return [{"categoryId": c["id"], "score": 0.2} for c in formal_categories]  # 항상 애매
+
+    def embed(self, text):
+        return l2_normalize(list(self.vectors[self._current]))
+
+    def propose_candidate(self, item, formal_categories, top_scores):
+        return {
+            "needsNew": True,
+            "name": self.names.get(item["testId"], item["testId"]),
+            "description": "설명",
+            "reason": "이유",
+        }
+
+    def review_reuse(self, item, candidate_infos):
+        decision = self.reuse_decision
+        if callable(decision):
+            return decision(item, candidate_infos)
+        return decision or {"action": "CREATE", "candidateId": None, "confidence": 0.5, "reason": "기본"}
+
+    def review_promotion(self, candidate, linked_items):
+        return {"promote": self.promote, "reason": "테스트"}
+
+
+def vec_item(test_id):
+    body = _json.dumps({"type": "MEMO", "title": test_id, "content": test_id, "summary": test_id}, ensure_ascii=False)
+    return {"testId": test_id, "title": test_id, "inputType": "memo", "input": body}
+
+
+def _engine(backend, config):
+    clock = itertools.count()
+    base = datetime(2026, 8, 4, 17, 0, 0, tzinfo=timezone.utc)
+    return WorkspaceCategoryEngine(
+        10, SEEDS, backend, config, now_fn=lambda: base.replace(microsecond=next(clock) % 1000)
+    )
+
+
+def test_config_nested_candidate_and_backward_compat():
+    nested = ServiceConfig.from_mapping(
+        {"candidate": {"center-similarity-threshold": 0.7, "item-similarity-threshold": 0.72, "ai-review-lower-bound": 0.55}}
+    )
+    assert nested.center_similarity_threshold == 0.7
+    assert nested.item_similarity_threshold == 0.72
+    assert nested.ai_review_lower_bound == 0.55
+    # 중첩 블록이 없으면 기존 candidate-similarity-threshold로 하위 호환
+    legacy = ServiceConfig.from_mapping({"candidate-similarity-threshold": 0.83})
+    assert legacy.center_similarity_threshold == 0.83
+    assert legacy.item_similarity_threshold == 0.83
+
+
+def test_reuse_by_max_item_similarity_even_if_center_low():
+    # A,B가 한 후보에 묶여 대표 임베딩이 희석되지만, C는 A와 동일 → maxItemSimilarity로 재사용
+    backend = VectorBackend(
+        vectors={"A": [1, 0, 0], "B": [0, 1, 0], "C": [1, 0, 0]},
+        reuse_decision={"action": "REUSE", "candidateId": 1, "confidence": 0.9, "reason": "AI"},
+    )
+    config = ServiceConfig(
+        center_similarity_threshold=0.75, item_similarity_threshold=0.78,
+        ai_review_lower_bound=0.0, candidate_min_support_count=99,
+    )
+    engine = _engine(backend, config)
+    engine.submit_item(vec_item("A"))       # 후보1 생성
+    engine.submit_item(vec_item("B"))       # AI가 후보1 재사용(대표 희석)
+    log_c = engine.submit_item(vec_item("C"))
+    assert log_c["candidateAction"] == "REUSE_EMBEDDING"
+    assert log_c["maxItemSimilarity"] >= 0.78
+    assert log_c["centerSimilarity"] < 0.75
+    active = [c for c in engine.candidates if c.status == PENDING]
+    assert len(active) == 1
+    assert active[0].supportCount == 3
+
+
+def test_ai_review_reuse_when_embedding_ambiguous():
+    backend = VectorBackend(
+        vectors={"A": [1, 0, 0], "B": [0.7, 0.714, 0]},
+        reuse_decision={"action": "REUSE", "candidateId": 1, "confidence": 0.9, "reason": "같은 주제"},
+    )
+    config = ServiceConfig(
+        center_similarity_threshold=0.75, item_similarity_threshold=0.78,
+        ai_review_lower_bound=0.6, candidate_min_support_count=99,
+    )
+    engine = _engine(backend, config)
+    engine.submit_item(vec_item("A"))
+    log_b = engine.submit_item(vec_item("B"))  # centerSim~0.7 (밴드) → AI 재사용
+    assert log_b["candidateAction"] == "REUSE_AI"
+    assert log_b["aiReuseDecision"]["action"] == "REUSE"
+    assert len([c for c in engine.candidates if c.status == PENDING]) == 1
+
+
+def test_ai_review_create_makes_new_candidate():
+    backend = VectorBackend(
+        vectors={"A": [1, 0, 0], "B": [0.7, 0.714, 0]},
+        reuse_decision={"action": "CREATE", "candidateId": None, "confidence": 0.8, "reason": "다른 주제"},
+    )
+    config = ServiceConfig(
+        center_similarity_threshold=0.75, item_similarity_threshold=0.78,
+        ai_review_lower_bound=0.6, candidate_min_support_count=99,
+    )
+    engine = _engine(backend, config)
+    engine.submit_item(vec_item("A"))
+    log_b = engine.submit_item(vec_item("B"))
+    assert log_b["candidateAction"] == "CREATE"
+    assert len([c for c in engine.candidates if c.status == PENDING]) == 2
+
+
+def test_final_dedup_reuses_candidate_with_same_proposed_name():
+    # 임베딩은 멀지만(AI 밴드 미만) 제안 이름이 기존 후보와 같으면 최종 단계에서 재사용
+    backend = VectorBackend(
+        vectors={"A": [1, 0, 0], "D": [0, 0, 1]},
+        names={"A": "운세·예측", "D": " 운세·예측 "},
+    )
+    config = ServiceConfig(
+        center_similarity_threshold=0.75, item_similarity_threshold=0.78,
+        ai_review_lower_bound=0.6, candidate_min_support_count=99,
+    )
+    engine = _engine(backend, config)
+    engine.submit_item(vec_item("A"))
+    log_d = engine.submit_item(vec_item("D"))
+    assert log_d["candidateAction"] == "REUSE_FINAL_DEDUP"
+    assert len([c for c in engine.candidates if c.status == PENDING]) == 1
+
+
 def test_build_service_text_drops_url_and_content_tokens_filter_numbers():
     url_item = {
         "testId": "URL-001",

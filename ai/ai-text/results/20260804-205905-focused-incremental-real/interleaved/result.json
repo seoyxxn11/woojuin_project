@@ -1,0 +1,1841 @@
+{
+  "order": "interleaved",
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2,
+    "center_similarity_threshold": 0.55,
+    "item_similarity_threshold": 0.6,
+    "ai_review_lower_bound": 0.3,
+    "signal_similarity_threshold": 0.55,
+    "signal_ttl_items": 100
+  },
+  "selectedItemIds": [
+    "EXIST-001",
+    "EXIST-006",
+    "EXIST-010",
+    "EXIST-015",
+    "EXIST-019",
+    "NEW5-001",
+    "NEW3-001",
+    "EXIST-002",
+    "EXIST-007",
+    "EXIST-011",
+    "EXIST-016",
+    "EXIST-020",
+    "NEW5-002",
+    "NEW3-002",
+    "EXIST-003",
+    "EXIST-008",
+    "EXIST-012",
+    "EXIST-017",
+    "EXIST-021",
+    "NEW5-003",
+    "NEW3-003",
+    "EXIST-004",
+    "EXIST-009",
+    "EXIST-013",
+    "EXIST-018",
+    "EXIST-022",
+    "NEW5-004",
+    "EXIST-005",
+    "EXIST-014",
+    "NEW5-005"
+  ],
+  "selectedItemCount": 30,
+  "metrics": {
+    "order": "interleaved",
+    "selectedItemCount": 30,
+    "existingFormalCount": 22,
+    "existingFormalOnlyCount": 15,
+    "existingSpuriousCandidateCount": 7,
+    "existingSpuriousItemIds": [
+      "EXIST-011",
+      "EXIST-016",
+      "EXIST-008",
+      "EXIST-012",
+      "EXIST-009",
+      "EXIST-005",
+      "EXIST-014"
+    ],
+    "provisionalSignalCount": 18,
+    "convertedSignalCount": 5,
+    "waitingSignalCount": 13,
+    "expiredSignalCount": 0,
+    "existingSignalOnlyCount": 15,
+    "newGroup5CandidateCount": 1,
+    "newGroup3CandidateCount": 2,
+    "fragmentationByGroup": {
+      "NEW_GROUP_3": 2,
+      "NEW_GROUP_5": 1
+    },
+    "maxFragmentation": 2,
+    "candidateReuseRate": 0.6,
+    "enteredCandidateStage": 5,
+    "reuseEvents": 3,
+    "avgCandidatePurity": 0.881,
+    "groupCaptureRate": 0.5,
+    "capturedGroups": [
+      "NEW_GROUP_5"
+    ],
+    "repeatedGroups": [
+      "NEW_GROUP_3",
+      "NEW_GROUP_5"
+    ],
+    "promotedCount": 2,
+    "promotedRecords": [
+      {
+        "candidateId": 1,
+        "candidateName": "부산 2박3일 여행코스",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "EXIST-012",
+        "promotedAtOrder": 17,
+        "purity": 1.0,
+        "majorityGoldGroup": "장소·먹거리"
+      },
+      {
+        "candidateId": 3,
+        "candidateName": "삼성·ssafy",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "EXIST-008",
+        "promotedAtOrder": 16,
+        "purity": 0.6667,
+        "majorityGoldGroup": "학습·커리어"
+      }
+    ],
+    "promotionPrecision": 0.5,
+    "promotionRecall": 0.0,
+    "reclassifiedItemCount": 6,
+    "misMergeEventCount": 0,
+    "misMergeEvents": [],
+    "finalFormalCategoryCount": 7,
+    "exceededMaxFormalCategories": false,
+    "candidateErrorCount": 0
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 7,
+        "itemIds": [
+          "EXIST-001",
+          "EXIST-002",
+          "EXIST-003",
+          "NEW5-003",
+          "EXIST-004",
+          "EXIST-005",
+          "NEW5-005"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 4,
+        "itemIds": [
+          "EXIST-006",
+          "NEW3-001",
+          "NEW3-003",
+          "EXIST-009"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 2,
+        "itemIds": [
+          "EXIST-013",
+          "EXIST-014"
+        ]
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 5,
+        "itemIds": [
+          "EXIST-015",
+          "EXIST-016",
+          "EXIST-020",
+          "EXIST-017",
+          "EXIST-018"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 6,
+        "itemIds": [
+          "EXIST-019",
+          "NEW5-001",
+          "NEW5-002",
+          "EXIST-021",
+          "EXIST-022",
+          "NEW5-004"
+        ]
+      },
+      {
+        "id": "AI-7C25B4B9E7",
+        "name": "삼성·ssafy",
+        "description": "삼성·ssafy 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "EXIST-007",
+        "itemCount": 3,
+        "itemIds": [
+          "EXIST-007",
+          "NEW3-002",
+          "EXIST-008"
+        ]
+      },
+      {
+        "id": "AI-00FF57CFCB",
+        "name": "부산 2박3일 여행코스",
+        "description": "부산·2박 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "EXIST-010",
+        "itemCount": 3,
+        "itemIds": [
+          "EXIST-010",
+          "EXIST-011",
+          "EXIST-012"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "부산 2박3일 여행코스",
+        "description": "부산·2박 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:10+09:00",
+        "updatedAt": "2026-08-05T02:00:25+09:00",
+        "createdAtItemId": "EXIST-010",
+        "linkedItemIds": [
+          "EXIST-010",
+          "EXIST-011",
+          "EXIST-012"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-00FF57CFCB",
+        "lastReviewReason": "모든 데이터가 '부산 2박3일 여행코스'라는 일관된 주제를 중심으로 하며, 여행 코스 추천 및 가볼 만한 곳 소개에 초점이 맞춰져 있습니다. 사용 목적도 모두 여행 계획 수립을 위한 정보 제공에 집중되어 있어 일관성 있는 반복 주제로 판단됩니다."
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "ETF 투자",
+        "description": "etf·투자 관련 반복 가능 세부 주제(잠정)",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:13+09:00",
+        "updatedAt": "2026-08-05T02:00:15+09:00",
+        "createdAtItemId": "EXIST-015",
+        "linkedItemIds": [
+          "EXIST-015",
+          "EXIST-016"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "삼성·ssafy",
+        "description": "삼성·ssafy 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:18+09:00",
+        "updatedAt": "2026-08-05T02:00:23+09:00",
+        "createdAtItemId": "EXIST-007",
+        "linkedItemIds": [
+          "EXIST-007",
+          "NEW3-002",
+          "EXIST-008"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-7C25B4B9E7",
+        "lastReviewReason": "이유"
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "코딩 교육 경험",
+        "description": "코딩 교육 경험 관련 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:28+09:00",
+        "updatedAt": "2026-08-05T02:00:31+09:00",
+        "createdAtItemId": "NEW3-003",
+        "linkedItemIds": [
+          "NEW3-003",
+          "EXIST-009"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "애니 캐릭터 분석",
+        "description": "애니 캐릭터 분석 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:35+09:00",
+        "updatedAt": "2026-08-05T02:00:36+09:00",
+        "createdAtItemId": "NEW5-004",
+        "linkedItemIds": [
+          "NEW5-004"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 6,
+        "workspaceId": 10,
+        "suggestedName": "불면증 치료",
+        "description": "불면증은·수면에 관련 반복 가능 세부 주제(잠정)",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:37+09:00",
+        "updatedAt": "2026-08-05T02:00:39+09:00",
+        "createdAtItemId": "EXIST-004",
+        "linkedItemIds": [
+          "EXIST-004",
+          "EXIST-005"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 7,
+        "workspaceId": 10,
+        "suggestedName": "속초 해변 카페",
+        "description": "속초·해변 관련 반복 가능 세부 주제(잠정)",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:40+09:00",
+        "updatedAt": "2026-08-05T02:00:42+09:00",
+        "createdAtItemId": "EXIST-013",
+        "linkedItemIds": [
+          "EXIST-013",
+          "EXIST-014"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      }
+    ],
+    "signals": [
+      {
+        "signalId": 1,
+        "itemId": "EXIST-001",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "견과류는·건강에",
+        "suggestedDescription": "견과류는·건강에 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:01+09:00",
+        "expiresAt": "2026-08-05T03:40:01+09:00",
+        "createdAtInput": 1,
+        "expiresAtInput": 101,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 2,
+        "itemId": "EXIST-006",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "react·query의",
+        "suggestedDescription": "react·query의 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:02+09:00",
+        "expiresAt": "2026-08-05T03:40:02+09:00",
+        "createdAtInput": 2,
+        "expiresAtInput": 102,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 3,
+        "itemId": "EXIST-010",
+        "workspaceId": 10,
+        "formalCategoryId": "PLACE_FOOD",
+        "suggestedName": "부산·2박",
+        "suggestedDescription": "부산·2박 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:03+09:00",
+        "expiresAt": "2026-08-05T03:40:03+09:00",
+        "createdAtInput": 3,
+        "expiresAtInput": 103,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 4,
+        "itemId": "EXIST-015",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "etf·투자",
+        "suggestedDescription": "etf·투자 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:04+09:00",
+        "expiresAt": "2026-08-05T03:40:04+09:00",
+        "createdAtInput": 4,
+        "expiresAtInput": 104,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 5,
+        "itemId": "EXIST-019",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "호정이·참여한",
+        "suggestedDescription": "호정이·참여한 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:05+09:00",
+        "expiresAt": "2026-08-05T03:40:05+09:00",
+        "createdAtInput": 5,
+        "expiresAtInput": 105,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 6,
+        "itemId": "NEW5-001",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "짱구는·못말려의",
+        "suggestedDescription": "짱구는·못말려의 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:06+09:00",
+        "expiresAt": "2026-08-05T03:40:06+09:00",
+        "createdAtInput": 6,
+        "expiresAtInput": 106,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 7,
+        "itemId": "NEW3-001",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "ssafy·15기",
+        "suggestedDescription": "ssafy·15기 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:07+09:00",
+        "expiresAt": "2026-08-05T03:40:07+09:00",
+        "createdAtInput": 7,
+        "expiresAtInput": 107,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 8,
+        "itemId": "EXIST-002",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "어깨·통증을",
+        "suggestedDescription": "어깨·통증을 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:08+09:00",
+        "expiresAt": "2026-08-05T03:40:08+09:00",
+        "createdAtInput": 8,
+        "expiresAtInput": 108,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 9,
+        "itemId": "EXIST-007",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "삼성·ssafy",
+        "suggestedDescription": "삼성·ssafy 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:09+09:00",
+        "expiresAt": "2026-08-05T03:40:09+09:00",
+        "createdAtInput": 9,
+        "expiresAtInput": 109,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 10,
+        "itemId": "EXIST-020",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "2026년·대한민국",
+        "suggestedDescription": "2026년·대한민국 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:16+09:00",
+        "expiresAt": "2026-08-05T03:40:16+09:00",
+        "createdAtInput": 12,
+        "expiresAtInput": 112,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 11,
+        "itemId": "NEW5-002",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "사토는·일본에서",
+        "suggestedDescription": "사토는·일본에서 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:17+09:00",
+        "expiresAt": "2026-08-05T03:40:17+09:00",
+        "createdAtInput": 13,
+        "expiresAtInput": 113,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 12,
+        "itemId": "EXIST-003",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "신경·이동",
+        "suggestedDescription": "신경·이동 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:21+09:00",
+        "expiresAt": "2026-08-05T03:40:21+09:00",
+        "createdAtInput": 15,
+        "expiresAtInput": 115,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 13,
+        "itemId": "EXIST-017",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "2026년·부동산",
+        "suggestedDescription": "2026년·부동산 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:26+09:00",
+        "expiresAt": "2026-08-05T03:40:26+09:00",
+        "createdAtInput": 18,
+        "expiresAtInput": 118,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 14,
+        "itemId": "EXIST-021",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "2026년·콘서트",
+        "suggestedDescription": "2026년·콘서트 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:27+09:00",
+        "expiresAt": "2026-08-05T03:40:27+09:00",
+        "createdAtInput": 19,
+        "expiresAtInput": 119,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 15,
+        "itemId": "EXIST-004",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "불면증은·수면에",
+        "suggestedDescription": "불면증은·수면에 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:30+09:00",
+        "expiresAt": "2026-08-05T03:40:30+09:00",
+        "createdAtInput": 22,
+        "expiresAtInput": 122,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 16,
+        "itemId": "EXIST-013",
+        "workspaceId": 10,
+        "formalCategoryId": "PLACE_FOOD",
+        "suggestedName": "속초·해변",
+        "suggestedDescription": "속초·해변 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:32+09:00",
+        "expiresAt": "2026-08-05T03:40:32+09:00",
+        "createdAtInput": 24,
+        "expiresAtInput": 124,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 17,
+        "itemId": "EXIST-018",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "월급쟁이부자들이·내집마",
+        "suggestedDescription": "월급쟁이부자들이·내집마 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:33+09:00",
+        "expiresAt": "2026-08-05T03:40:33+09:00",
+        "createdAtInput": 25,
+        "expiresAtInput": 125,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 18,
+        "itemId": "EXIST-022",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "서울시립미술관과·주변",
+        "suggestedDescription": "서울시립미술관과·주변 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:34+09:00",
+        "expiresAt": "2026-08-05T03:40:34+09:00",
+        "createdAtInput": 26,
+        "expiresAtInput": 126,
+        "status": "WAITING"
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "EXIST-010",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 1,
+        "itemId": "EXIST-011",
+        "similarity": 0.6432
+      },
+      {
+        "candidateId": 2,
+        "itemId": "EXIST-015",
+        "similarity": 0.9994
+      },
+      {
+        "candidateId": 2,
+        "itemId": "EXIST-016",
+        "similarity": 0.6259
+      },
+      {
+        "candidateId": 3,
+        "itemId": "EXIST-007",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "NEW3-002",
+        "similarity": 0.6282
+      },
+      {
+        "candidateId": 3,
+        "itemId": "EXIST-008",
+        "similarity": 0.5824
+      },
+      {
+        "candidateId": 1,
+        "itemId": "EXIST-012",
+        "similarity": 0.7865
+      },
+      {
+        "candidateId": 4,
+        "itemId": "NEW3-003",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 4,
+        "itemId": "EXIST-009",
+        "similarity": 0.4717
+      },
+      {
+        "candidateId": 5,
+        "itemId": "NEW5-004",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 6,
+        "itemId": "EXIST-004",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 6,
+        "itemId": "EXIST-005",
+        "similarity": 0.7063
+      },
+      {
+        "candidateId": 7,
+        "itemId": "EXIST-013",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 7,
+        "itemId": "EXIST-014",
+        "similarity": 0.5637
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "EXIST-001",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-006",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-010",
+        "formalCategoryId": "AI-00FF57CFCB",
+        "formalCategoryIds": [
+          "AI-00FF57CFCB",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-015",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-019",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-001",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW3-001",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-007",
+        "formalCategoryId": "AI-7C25B4B9E7",
+        "formalCategoryIds": [
+          "AI-7C25B4B9E7",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-011",
+        "formalCategoryId": "AI-00FF57CFCB",
+        "formalCategoryIds": [
+          "AI-00FF57CFCB",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-016",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-020",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-002",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW3-002",
+        "formalCategoryId": "AI-7C25B4B9E7",
+        "formalCategoryIds": [
+          "AI-7C25B4B9E7",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-003",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-008",
+        "formalCategoryId": "AI-7C25B4B9E7",
+        "formalCategoryIds": [
+          "AI-7C25B4B9E7",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-012",
+        "formalCategoryId": "AI-00FF57CFCB",
+        "formalCategoryIds": [
+          "AI-00FF57CFCB",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-017",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-021",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-003",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW3-003",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER",
+          "AI-7C25B4B9E7"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-004",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-009",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER",
+          "AI-7C25B4B9E7"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-013",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-018",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-022",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-014",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW5-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "EXIST-001",
+      "inputOrder": 1,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('견과류는·건강에')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 1,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-006",
+      "inputOrder": 2,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('react·query의')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 2,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-010",
+      "inputOrder": 3,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('부산·2박')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 3,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "부산 2박3일 여행코스",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-015",
+      "inputOrder": 4,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.9,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('etf·투자')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 4,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-019",
+      "inputOrder": 5,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('호정이·참여한')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 5,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-001",
+      "inputOrder": 6,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('짱구는·못말려의')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 6,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-001",
+      "inputOrder": 7,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('ssafy·15기')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 7,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-002",
+      "inputOrder": 8,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('어깨·통증을')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 8,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-007",
+      "inputOrder": 9,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('삼성·ssafy')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 9,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "삼성·ssafy",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-011",
+      "inputOrder": 10,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 부산의 2박3일 여행 코스를 다루며, 특정 지역(광안리, 해운대)에 대한 세부 정보를 포함하여 기존 카테고리보다 구체적이고 반복적으로 나타나는 주제로 묶을 수 있음.",
+      "signalAction": "CONVERTED",
+      "signalId": 3,
+      "candidateId": 1,
+      "candidateName": "부산 2박3일 여행코스",
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "부산 2박3일 여행코스",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-016",
+      "inputOrder": 11,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 ETF 투자 초보자를 위한 전략 및 방법을 다루고 있으며, 'ETF 투자'라는 구체적 주제 아래서도 반복적으로 다뤄질 수 있는 세부 주제로 분류 가능. 형식은 비슷하지만 목적(운용 방식 vs. 성공 전략)이 다르지만, 핵심 주제는 동일하여 구체화가 타당함.",
+      "signalAction": "CONVERTED",
+      "signalId": 4,
+      "candidateId": 2,
+      "candidateName": "ETF 투자",
+      "centerSimilarity": 0.1599,
+      "maxItemSimilarity": 0.1794,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-020",
+      "inputOrder": 12,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('2026년·대한민국')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 10,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3025,
+      "maxItemSimilarity": 0.2809,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-002",
+      "inputOrder": 13,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('사토는·일본에서')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 11,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1021,
+      "maxItemSimilarity": 0.1128,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-002",
+      "inputOrder": 14,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 삼성 청년 소프트웨어 아카데미(SSAFY)에 대한 경험 및 정보를 다루고 있으며, '학습·커리어' 범주 내에서 구체적인 주제로 분류될 수 있다. 형식은 비슷하지만 목적의 차이가 있음에도 불구하고, 공통된 세부 주제(SSAFY 관련 내용)로 묶일 가치가 있다.",
+      "signalAction": "CONVERTED",
+      "signalId": 9,
+      "candidateId": 3,
+      "candidateName": "삼성·ssafy",
+      "centerSimilarity": 0.2448,
+      "maxItemSimilarity": 0.2404,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "삼성·ssafy",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-003",
+      "inputOrder": 15,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.9,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('신경·이동')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 12,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2462,
+      "maxItemSimilarity": 0.236,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-008",
+      "inputOrder": 16,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.7,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 3,
+      "candidateName": "삼성·ssafy",
+      "centerSimilarity": 0.5824,
+      "maxItemSimilarity": 0.5667,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "삼성·ssafy",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-012",
+      "inputOrder": 17,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 1,
+      "candidateName": "부산 2박3일 여행코스",
+      "centerSimilarity": 0.7865,
+      "maxItemSimilarity": 0.7209,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "부산 2박3일 여행코스",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-017",
+      "inputOrder": 18,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('2026년·부동산')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 13,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.37,
+      "maxItemSimilarity": 0.4239,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-021",
+      "inputOrder": 19,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('2026년·콘서트')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 14,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2469,
+      "maxItemSimilarity": 0.2732,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-003",
+      "inputOrder": 20,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "데이터는 라이선스 정보와 위키 플랫폼의 특성(검증되지 않은 정보, 편향적 서술 가능성 등)을 다루고 있으며, '생활·건강' 범주나 기존 ETF 투자 주제와 직접적인 연관성이 없음. 일반적인 생활·건강 데이터에 해당하지 않음.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1248,
+      "maxItemSimilarity": 0.134,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-003",
+      "inputOrder": 21,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.1,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새 데이터는 SSAFY 코딩 교육 경험, 알고리즘 학습 프로세스, 프로젝트 참여, 기초 기술 교육 비판, 취업 성과 등 구체적 학습·커리어 관련 내용을 다루고 있음. 기존 ETF 투자 후보와 차별화되며 반복 가능 주제로 판단됨.",
+      "signalAction": "CONVERSION_REJECTED",
+      "signalId": 7,
+      "candidateId": 4,
+      "candidateName": "코딩 교육 경험",
+      "centerSimilarity": 0.2404,
+      "maxItemSimilarity": 0.2555,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-004",
+      "inputOrder": 22,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('불면증은·수면에')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 15,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2674,
+      "maxItemSimilarity": 0.2674,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-009",
+      "inputOrder": 23,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "REUSE_AI",
+      "candidateEntryDecision": "REUSE",
+      "candidateEntryReason": "새 데이터는 삼성 청년SW·AI아카데미(SSAFY)의 코딩 교육 및 취업 지원 프로그램을 다루고 있으며, 기존 candidateId=4의 '코딩 교육 경험' 후보와 동일한 주제를 반복적으로 다루고 있음. SSAFY 프로그램은 코딩 교육과 취업 연계 서비스를 제공하는 구체적인 사례로, 기존 후보의 범위 내에 해당.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 4,
+      "candidateName": "코딩 교육 경험",
+      "centerSimilarity": 0.4717,
+      "maxItemSimilarity": 0.4717,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-013",
+      "inputOrder": 24,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('속초·해변')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 16,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1989,
+      "maxItemSimilarity": 0.1987,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-018",
+      "inputOrder": 25,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('월급쟁이부자들이·내집마')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 17,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3127,
+      "maxItemSimilarity": 0.3243,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-022",
+      "inputOrder": 26,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('서울시립미술관과·주변')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 18,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2184,
+      "maxItemSimilarity": 0.2016,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-004",
+      "inputOrder": 27,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 애니메이션/만화 캐릭터의 존재성과 묘사 방식에 대한 분석을 다루며, 특정 캐릭터(맹구의 엄마)의 등장 여부와 상징적 의미를 탐구하는 구체적인 주제로 반복 가능성이 높음. 기존 후보와 관련성이 없으며 '문화·아이디어'보다 구체적임. 연도·브랜드 등 일회성 요소 배제됨. 대표 예시: 캐릭터 존재성 논의, 상상과 현실의 차이 분석, 장면 해석 등 반복 가능한 주제.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 5,
+      "candidateName": "애니 캐릭터 분석",
+      "centerSimilarity": 0.2307,
+      "maxItemSimilarity": 0.2352,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-005",
+      "inputOrder": 28,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 불면증의 치료 방법(인식치료, 수면 위생 등)과 관련된 내용으로, 생활·건강 카테고리 내에서 구체적이고 반복적으로 다루는 세부 주제로 묶일 수 있음. 형식과 목적은 유사하며, 동일한 주제를 다루고 있으므로 convert=True.",
+      "signalAction": "CONVERTED",
+      "signalId": 15,
+      "candidateId": 6,
+      "candidateName": "불면증 치료",
+      "centerSimilarity": 0.3068,
+      "maxItemSimilarity": 0.2695,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-014",
+      "inputOrder": 29,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.7,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 속초 해변 근처의 카페와 디저트 관련 정보로, 구체적이고 반복적으로 등장하는 주제이므로 세부 주제로 묶을 가치가 있음. '장소·먹거리'보다 더 구체적인 '속초 해변 카페'라는 주제로 분류 가능.",
+      "signalAction": "CONVERTED",
+      "signalId": 16,
+      "candidateId": 7,
+      "candidateName": "속초 해변 카페",
+      "centerSimilarity": 0.2458,
+      "maxItemSimilarity": 0.2222,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-005",
+      "inputOrder": 30,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "이 데이터는 '생활·건강' 범주 내에서 구체적이고 반복될 세부 주제가 아닙니다. CC 라이선스 및 나무위키 플랫폼의 특성에 대한 일반적인 설명으로, 특정 분야나 반복 가능한 테마를 포함하지 않습니다.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2156,
+      "maxItemSimilarity": 0.2274,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": 1,
+      "candidateName": "부산 2박3일 여행코스",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "EXIST-010",
+        "EXIST-011",
+        "EXIST-012"
+      ],
+      "linkedGoldGroupIds": [
+        "장소·먹거리"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-010",
+      "promotedAtItemId": "EXIST-012"
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "ETF 투자",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "EXIST-015",
+        "EXIST-016"
+      ],
+      "linkedGoldGroupIds": [
+        "소비·금융"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-015",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "삼성·ssafy",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "EXIST-007",
+        "NEW3-002",
+        "EXIST-008"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_3",
+        "학습·커리어"
+      ],
+      "purity": 0.6667,
+      "createdAtItemId": "EXIST-007",
+      "promotedAtItemId": "EXIST-008"
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "코딩 교육 경험",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "NEW3-003",
+        "EXIST-009"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_3",
+        "학습·커리어"
+      ],
+      "purity": 0.5,
+      "createdAtItemId": "NEW3-003",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "애니 캐릭터 분석",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "NEW5-004"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_5"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "NEW5-004",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "불면증 치료",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "EXIST-004",
+        "EXIST-005"
+      ],
+      "linkedGoldGroupIds": [
+        "생활·건강"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-004",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 7,
+      "candidateName": "속초 해변 카페",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "EXIST-013",
+        "EXIST-014"
+      ],
+      "linkedGoldGroupIds": [
+        "장소·먹거리"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-013",
+      "promotedAtItemId": null
+    }
+  ]
+}

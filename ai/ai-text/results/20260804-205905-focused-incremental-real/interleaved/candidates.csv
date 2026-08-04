@@ -1,0 +1,8 @@
+﻿candidateId,candidateName,status,supportCount,linkedItemIds,linkedGoldGroupIds,purity,createdAtItemId,promotedAtItemId
+1,부산 2박3일 여행코스,PROMOTED,3,EXIST-010;EXIST-011;EXIST-012,장소·먹거리,1.0,EXIST-010,EXIST-012
+2,ETF 투자,PENDING,2,EXIST-015;EXIST-016,소비·금융,1.0,EXIST-015,
+3,삼성·ssafy,PROMOTED,3,EXIST-007;NEW3-002;EXIST-008,NEW_GROUP_3;학습·커리어,0.6667,EXIST-007,EXIST-008
+4,코딩 교육 경험,PENDING,2,NEW3-003;EXIST-009,NEW_GROUP_3;학습·커리어,0.5,NEW3-003,
+5,애니 캐릭터 분석,PENDING,1,NEW5-004,NEW_GROUP_5,1.0,NEW5-004,
+6,불면증 치료,PENDING,2,EXIST-004;EXIST-005,생활·건강,1.0,EXIST-004,
+7,속초 해변 카페,PENDING,2,EXIST-013;EXIST-014,장소·먹거리,1.0,EXIST-013,

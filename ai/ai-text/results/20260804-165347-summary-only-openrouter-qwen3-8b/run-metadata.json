@@ -1,0 +1,71 @@
+{
+  "testMode": "summary-only",
+  "datasetType": "tester:url",
+  "datasetCount": 5,
+  "testIds": [
+    "URL-001",
+    "URL-002",
+    "URL-003",
+    "URL-004",
+    "URL-005"
+  ],
+  "promptVersion": "v1",
+  "promptFile": "summary-prompt-v1.txt",
+  "categories": [
+    "짱구"
+  ],
+  "models": [
+    "openrouter-qwen3-8b"
+  ],
+  "modelConfigs": [
+    {
+      "id": "openrouter-qwen3-8b",
+      "provider": "openrouter",
+      "requestedModel": "qwen/qwen3-8b",
+      "selectionStatus": "READY",
+      "selectionErrorType": null,
+      "selectionErrorMessage": null
+    }
+  ],
+  "startedAt": "2026-08-04T16:53:48.347461+09:00",
+  "completedAt": "2026-08-04T16:54:03.833447+09:00",
+  "status": "COMPLETED",
+  "environment": "Windows 11, Python 3.12.10",
+  "environmentVariables": {
+    "GMS_KEY": "configured",
+    "OPENROUTER_API_KEY": "configured"
+  },
+  "options": {
+    "temperatureRequested": 0,
+    "repeat": 1,
+    "categoryDescriptions": true,
+    "classificationMode": "multi_label",
+    "threshold": 0.65,
+    "serviceMaxCategories": 2,
+    "ensureAtLeastOne": true,
+    "writeUrlSummary": true,
+    "concurrencyRequested": 4,
+    "streaming": false,
+    "externalSearch": false,
+    "tools": false,
+    "providerDifferences": "GMS OpenAI 호환 Chat Completions에는 temperature/seed/contextLength를 적용하지 않음; 토큰 측정 기준은 provider별로 다를 수 있음",
+    "openaiEndpoint": "https://gms.ssafy.io/gmsapi/api.openai.com/v1",
+    "openaiApiMode": "chat_completions",
+    "concurrencyApplied": {
+      "openrouter-qwen3-8b": 4
+    }
+  },
+  "pricing": {
+    "currency": "USD",
+    "unit": "per_1m_tokens",
+    "updatedAt": null
+  },
+  "structuredOutput": {
+    "openrouter-qwen3-8b": {
+      "requested": true,
+      "appliedCount": 5,
+      "fallbackCount": 0,
+      "reasons": []
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"summary\":\"싸피 1학기 수료 후 금융IT기업에 취업한 경험을 공유하며, 알고리즘 실력 향상을 위한 엄격한 스케줄과 프로젝트 '싸방' 참여를 통해 얻은 성과를 강조했다. 다만 자바 교육은 도움이 되었으나 HTML, CSS, JS 등 기초 기술 교육은 부족하다는 비판도 제기했으며, 동료 네트워크와 지속 가능한 학습 환경 제공으로 취준생에게 긍정적인 영향을 미쳤다고 평가했다.\"\n\n}",
+  "parsedOutput": {
+    "summary": "싸피 1학기 수료 후 금융IT기업에 취업한 경험을 공유하며, 알고리즘 실력 향상을 위한 엄격한 스케줄과 프로젝트 '싸방' 참여를 통해 얻은 성과를 강조했다. 다만 자바 교육은 도움이 되었으나 HTML, CSS, JS 등 기초 기술 교육은 부족하다는 비판도 제기했으며, 동료 네트워크와 지속 가능한 학습 환경 제공으로 취준생에게 긍정적인 영향을 미쳤다고 평가했다."
+  },
+  "inputTokens": 3502,
+  "outputTokens": 394,
+  "totalTokens": 3896,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 246,
+  "latencyMs": 10230.16620008275,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

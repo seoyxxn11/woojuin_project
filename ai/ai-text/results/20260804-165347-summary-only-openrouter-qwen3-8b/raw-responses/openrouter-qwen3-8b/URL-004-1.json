@@ -1,0 +1,37 @@
+{
+  "testId": "URL-004",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"summary\":\"크레용 신짱의 등장인물 맹구의 엄마는 원작과 애니판에서 얼굴이 공개되지 않았으며, 작가의 의도로 일부러 모습을 숨긴 것으로 보인다. 그러나 대사와 설정상으로는 존재하는 것으로 추정되나, 실제 등장은 거의 없어 고아 캐릭터로 여겨진다. 최근 방영분에서는 엄마와 아빠가 얼굴만 가린 채 등장했으나, 이는 논란을 종식시키기 위한 조치로 해석된다.\"\n\n}",
+  "parsedOutput": {
+    "summary": "크레용 신짱의 등장인물 맹구의 엄마는 원작과 애니판에서 얼굴이 공개되지 않았으며, 작가의 의도로 일부러 모습을 숨긴 것으로 보인다. 그러나 대사와 설정상으로는 존재하는 것으로 추정되나, 실제 등장은 거의 없어 고아 캐릭터로 여겨진다. 최근 방영분에서는 엄마와 아빠가 얼굴만 가린 채 등장했으나, 이는 논란을 종식시키기 위한 조치로 해석된다."
+  },
+  "inputTokens": 2313,
+  "outputTokens": 400,
+  "totalTokens": 2713,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 258,
+  "latencyMs": 8840.98819992505,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

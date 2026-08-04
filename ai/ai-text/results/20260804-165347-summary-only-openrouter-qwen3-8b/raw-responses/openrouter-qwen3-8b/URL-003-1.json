@@ -1,0 +1,37 @@
+{
+  "testId": "URL-003",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"summary\":\"이 저작물은 CC BY-NC-SA 2.0 KR 라이선스로 이용 가능하며, 각 기여자는 자신의 기여분에 대한 저작권을 갖습니다. 나무위키는 검증되지 않은 정보나 편향적 서술이 있을 수 있는 위키입니다.\"\n\n}",
+  "parsedOutput": {
+    "summary": "이 저작물은 CC BY-NC-SA 2.0 KR 라이선스로 이용 가능하며, 각 기여자는 자신의 기여분에 대한 저작권을 갖습니다. 나무위키는 검증되지 않은 정보나 편향적 서술이 있을 수 있는 위키입니다."
+  },
+  "inputTokens": 433,
+  "outputTokens": 647,
+  "totalTokens": 1080,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 570,
+  "latencyMs": 10489.330100012012,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

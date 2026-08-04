@@ -1,0 +1,37 @@
+{
+  "testId": "URL-002",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"summary\":\"비전공자인 저자가 삼성 청년 소프트웨어 아카데미(SSAFY)를 통해 소프트웨어 역량을 키우고 취업 지원을 받은 경험을 공유하며, 실력 성장, 멘탈 관리, 우수 프로젝트 상 수상 등 다양한 혜택과 낮은 진입장벽을 강조했습니다.\"\n\n}",
+  "parsedOutput": {
+    "summary": "비전공자인 저자가 삼성 청년 소프트웨어 아카데미(SSAFY)를 통해 소프트웨어 역량을 키우고 취업 지원을 받은 경험을 공유하며, 실력 성장, 멘탈 관리, 우수 프로젝트 상 수상 등 다양한 혜택과 낮은 진입장벽을 강조했습니다."
+  },
+  "inputTokens": 7151,
+  "outputTokens": 452,
+  "totalTokens": 7603,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 353,
+  "latencyMs": 13255.80559996888,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

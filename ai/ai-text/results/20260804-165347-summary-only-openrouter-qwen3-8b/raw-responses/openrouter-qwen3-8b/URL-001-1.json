@@ -1,0 +1,37 @@
+{
+  "testId": "URL-001",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"summary\":\"입력된 콘텐츠에는 실제 요약할 내용이 없습니다.\"}",
+  "parsedOutput": {
+    "summary": "입력된 콘텐츠에는 실제 요약할 내용이 없습니다."
+  },
+  "inputTokens": 320,
+  "outputTokens": 644,
+  "totalTokens": 964,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 618,
+  "latencyMs": 11379.683499922976,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

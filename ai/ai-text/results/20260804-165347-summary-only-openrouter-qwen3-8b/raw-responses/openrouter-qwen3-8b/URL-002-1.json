@@ -1,0 +1,37 @@
+{
+  "testId": "URL-002",
+  "provider": "openrouter",
+  "modelId": "openrouter-qwen3-8b",
+  "requestedModel": "qwen/qwen3-8b",
+  "resolvedModel": "qwen/qwen3-8b",
+  "rawText": "{\n\n\"summary\":\"사토는 일본에서 가장 흔한 성씨로, 2013년 기준 약 193만 명이 사용하며 전체 인구의 1~2%를 차지한다. 2024년 조사에서는 부부동성 제도 유지 시 500년 후 모든 성씨가 사토로 통일될 수 있다는 예측이 나왔다.\"\n\n}",
+  "parsedOutput": {
+    "summary": "사토는 일본에서 가장 흔한 성씨로, 2013년 기준 약 193만 명이 사용하며 전체 인구의 1~2%를 차지한다. 2024년 조사에서는 부부동성 제도 유지 시 500년 후 모든 성씨가 사토로 통일될 수 있다는 예측이 나왔다."
+  },
+  "inputTokens": 732,
+  "outputTokens": 488,
+  "totalTokens": 1220,
+  "cachedInputTokens": 0,
+  "reasoningTokens": 391,
+  "latencyMs": 8704.363199998625,
+  "attemptCount": 1,
+  "finishReason": "stop",
+  "requestId": null,
+  "status": "SUCCESS",
+  "errorType": null,
+  "errorMessage": null,
+  "structuredOutputRequested": true,
+  "structuredOutputApplied": true,
+  "structuredOutputFallbackUsed": false,
+  "structuredOutputFallbackReason": null,
+  "providerMetadata": {
+    "temperatureRequested": 0,
+    "temperatureApplied": 0,
+    "note": "OpenRouter Chat Completions에 temperature 적용",
+    "streaming": false,
+    "toolsEnabled": false,
+    "apiMode": "chat_completions",
+    "baseUrl": "https://openrouter.ai/api/v1"
+  },
+  "estimatedCost": null
+}

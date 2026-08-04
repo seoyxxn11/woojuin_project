@@ -1,0 +1,55 @@
+{
+  "testId": "URL-004",
+  "availableCategories": [
+    "네트워크 기초",
+    "투자 전략"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"수면 장애, 정신 건강 문제, 치료 방법 등과 관련된 정보\",\"categoryName\":\"건강 및 정신 건강\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 불면증과 관련된 의학적 정보 및 치료 방법을 다루고 있으며, 이는 기존의 네트워크 기초나 투자 전략 카테고리와는 다른 분야에 해당하므로 새로운 카테고리가 필요하다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 492,
+    "outputTokens": 421,
+    "totalTokens": 913,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 298,
+    "latencyMs": 10039.424399961717,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"수면 장애, 정신 건강 문제, 치료 방법 등과 관련된 정보\",\"categoryName\":\"건강 및 정신 건강\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 불면증과 관련된 의학적 정보 및 치료 방법을 다루고 있으며, 이는 기존의 네트워크 기초나 투자 전략 카테고리와는 다른 분야에 해당하므로 새로운 카테고리가 필요하다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "제공된 콘텐츠는 불면증과 관련된 의학적 정보 및 치료 방법을 다루고 있으며, 이는 기존의 네트워크 기초나 투자 전략 카테고리와는 다른 분야에 해당하므로 새로운 카테고리가 필요하다.",
+      "categoryDescription": "수면 장애, 정신 건강 문제, 치료 방법 등과 관련된 정보",
+      "categoryName": "건강 및 정신 건강",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

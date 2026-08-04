@@ -1,0 +1,63 @@
+{
+  "testId": "URL-090",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세",
+    "앱 정보",
+    "온라인 플랫폼",
+    "창업·사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"강남 지역의 무한리필 식당 정보 및 리뷰를 제공하는 콘텐츠\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"입력된 콘텐츠는 강남 지역의 특정 식당(무한리필 맛집)에 대한 정보와 리뷰를 포함하고 있어 '장소·먹거리' 카테고리의 범위에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 787,
+    "outputTokens": 445,
+    "totalTokens": 1232,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 335,
+    "latencyMs": 9584.32550006546,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"강남 지역의 무한리필 식당 정보 및 리뷰를 제공하는 콘텐츠\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"입력된 콘텐츠는 강남 지역의 특정 식당(무한리필 맛집)에 대한 정보와 리뷰를 포함하고 있어 '장소·먹거리' 카테고리의 범위에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠는 강남 지역의 특정 식당(무한리필 맛집)에 대한 정보와 리뷰를 포함하고 있어 '장소·먹거리' 카테고리의 범위에 해당합니다.",
+      "categoryDescription": "강남 지역의 무한리필 식당 정보 및 리뷰를 제공하는 콘텐츠",
+      "categoryName": "장소·먹거리",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

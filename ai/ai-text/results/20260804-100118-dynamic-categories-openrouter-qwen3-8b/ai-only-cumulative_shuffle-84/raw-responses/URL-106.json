@@ -1,0 +1,52 @@
+{
+  "testId": "URL-106",
+  "availableCategories": [],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"네트워크의 기본 구성 요소, IP 주소, 서브넷 마스크, 계층 구조 등을 다루는 데이터\",\n\"categoryName\":\"네트워크 기초\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠가 네트워크 기초 개념을 다루고 있으며, '없음' 카테고리는 의미에 부합하지 않으므로 새 카테고리 생성\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 430,
+    "outputTokens": 476,
+    "totalTokens": 906,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 367,
+    "latencyMs": 9807.73430003319,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"네트워크의 기본 구성 요소, IP 주소, 서브넷 마스크, 계층 구조 등을 다루는 데이터\",\n\"categoryName\":\"네트워크 기초\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠가 네트워크 기초 개념을 다루고 있으며, '없음' 카테고리는 의미에 부합하지 않으므로 새 카테고리 생성\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "제공된 콘텐츠가 네트워크 기초 개념을 다루고 있으며, '없음' 카테고리는 의미에 부합하지 않으므로 새 카테고리 생성",
+      "categoryDescription": "네트워크의 기본 구성 요소, IP 주소, 서브넷 마스크, 계층 구조 등을 다루는 데이터",
+      "categoryName": "네트워크 기초",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

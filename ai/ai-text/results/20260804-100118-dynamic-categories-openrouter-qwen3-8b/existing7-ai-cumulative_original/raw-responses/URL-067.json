@@ -1,0 +1,65 @@
+{
+  "testId": "URL-067",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "운세·예측",
+    "심리·테스트",
+    "주택·청약",
+    "앱·서비스",
+    "창업·사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"주택청약 관련 정책 및 대책 정보 정리\",\"categoryName\":\"주택·청약\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력 콘텐츠는 2025년 주택 관련 대책 요약으로, 주택청약 정책과 규제 변경 사항을 다루고 있어 기존 '주택·청약' 카테고리에 해당\"}",
+    "parsedOutput": null,
+    "inputTokens": 846,
+    "outputTokens": 301,
+    "totalTokens": 1147,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 207,
+    "latencyMs": 8105.7546000229195,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"주택청약 관련 정책 및 대책 정보 정리\",\"categoryName\":\"주택·청약\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력 콘텐츠는 2025년 주택 관련 대책 요약으로, 주택청약 정책과 규제 변경 사항을 다루고 있어 기존 '주택·청약' 카테고리에 해당\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력 콘텐츠는 2025년 주택 관련 대책 요약으로, 주택청약 정책과 규제 변경 사항을 다루고 있어 기존 '주택·청약' 카테고리에 해당",
+      "categoryDescription": "주택청약 관련 정책 및 대책 정보 정리",
+      "categoryName": "주택·청약",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

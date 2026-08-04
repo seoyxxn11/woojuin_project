@@ -1,0 +1,67 @@
+{
+  "testId": "URL-003",
+  "availableCategories": [
+    "네트워크 기초",
+    "투자 전략",
+    "건강 및 정신 건강",
+    "주택청약 정보",
+    "성격 및 취향 테스트",
+    "프론트엔드 디자인 패턴",
+    "기술 면접 준비 팁",
+    "홈 정리 및 수납 팁",
+    "음식점 가이드",
+    "앱 정보 및 리뷰",
+    "가방 및 액세서리 쇼핑 정보",
+    "온라인 콘텐츠 플랫폼",
+    "부동산 투자 전략",
+    "온라인 쇼핑몰 성공 전략"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"신경 압박 해소를 위한 물리치료법에 대한 정보\",\"categoryName\":\"건강 및 정신 건강\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"신경 이동 운동은 신경 관련 질환의 치료 방법에 해당하며, '건강 및 정신 건강' 카테고리의 범위에 포함됨\"}",
+    "parsedOutput": null,
+    "inputTokens": 943,
+    "outputTokens": 559,
+    "totalTokens": 1502,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 471,
+    "latencyMs": 13250.968100037426,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"신경 압박 해소를 위한 물리치료법에 대한 정보\",\"categoryName\":\"건강 및 정신 건강\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"신경 이동 운동은 신경 관련 질환의 치료 방법에 해당하며, '건강 및 정신 건강' 카테고리의 범위에 포함됨\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "신경 이동 운동은 신경 관련 질환의 치료 방법에 해당하며, '건강 및 정신 건강' 카테고리의 범위에 포함됨",
+      "categoryDescription": "신경 압박 해소를 위한 물리치료법에 대한 정보",
+      "categoryName": "건강 및 정신 건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

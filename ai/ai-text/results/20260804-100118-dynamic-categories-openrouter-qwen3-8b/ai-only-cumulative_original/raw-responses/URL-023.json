@@ -1,0 +1,61 @@
+{
+  "testId": "URL-023",
+  "availableCategories": [
+    "식품 관련 주의사항",
+    "근육 통증 완화 운동",
+    "신경 이동 운동",
+    "수면장애 치료 방법",
+    "유산소 운동",
+    "별자리 운세",
+    "심리 테스트 및 성격 분석",
+    "투자 전략"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"ETF 투자 전략 및 초보자 지침 제공\",\"categoryName\":\"투자 전략\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 ETF 투자 초보자를 위한 전략 안내로 '투자 전략' 카테고리와 정확히 일치합니다. 분산 투자, 리스크 관리 등 투자 방법에 대한 내용이 포함되어 있음.\"}",
+    "parsedOutput": null,
+    "inputTokens": 716,
+    "outputTokens": 307,
+    "totalTokens": 1023,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 198,
+    "latencyMs": 9640.900099999271,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"ETF 투자 전략 및 초보자 지침 제공\",\"categoryName\":\"투자 전략\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 ETF 투자 초보자를 위한 전략 안내로 '투자 전략' 카테고리와 정확히 일치합니다. 분산 투자, 리스크 관리 등 투자 방법에 대한 내용이 포함되어 있음.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠는 ETF 투자 초보자를 위한 전략 안내로 '투자 전략' 카테고리와 정확히 일치합니다. 분산 투자, 리스크 관리 등 투자 방법에 대한 내용이 포함되어 있음.",
+      "categoryDescription": "ETF 투자 전략 및 초보자 지침 제공",
+      "categoryName": "투자 전략",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,63 @@
+{
+  "testId": "URL-094",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세",
+    "앱 정보",
+    "온라인 플랫폼",
+    "창업·사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"취업 경험 및 면접 관련 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠는 SSAFY 수료 후 취업 경험과 면접에 대한 후기를 공유하는 것으로, 학습·커리어 카테고리의 '면접' 범주에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 842,
+    "outputTokens": 299,
+    "totalTokens": 1141,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 212,
+    "latencyMs": 7772.252100054175,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"취업 경험 및 면접 관련 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠는 SSAFY 수료 후 취업 경험과 면접에 대한 후기를 공유하는 것으로, 학습·커리어 카테고리의 '면접' 범주에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘텐츠는 SSAFY 수료 후 취업 경험과 면접에 대한 후기를 공유하는 것으로, 학습·커리어 카테고리의 '면접' 범주에 해당합니다.",
+      "categoryDescription": "취업 경험 및 면접 관련 내용",
+      "categoryName": "학습·커리어",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

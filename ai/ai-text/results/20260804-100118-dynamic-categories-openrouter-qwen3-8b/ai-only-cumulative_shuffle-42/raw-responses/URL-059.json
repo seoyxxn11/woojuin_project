@@ -1,0 +1,72 @@
+{
+  "testId": "URL-059",
+  "availableCategories": [
+    "심리 테스트",
+    "앱 정보",
+    "재정 관리",
+    "운동 요법",
+    "주택청약 정보",
+    "카페 리뷰",
+    "전자제품 및 액세서리",
+    "음식 리뷰",
+    "호텔 리뷰",
+    "프랑스 생활 팁",
+    "콘서트 정보",
+    "걷기 운동 팁",
+    "생활 정리 팁",
+    "캠핑용품 리뷰",
+    "컴퓨터 네트워크 기초",
+    "온라인 비즈니스 스토리",
+    "전시회 정보",
+    "생활 팁",
+    "온라인 플랫폼 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"쿠팡에서 구매 가능한 베이비 상품 쇼핑몰 정보\",\n\"categoryName\":\"베이비 상품 쇼핑몰\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 카테고리 중 베이비 관련 상품 쇼핑몰을 정확히 표현하는 항목이 없어 새로운 카테고리로 생성\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 1123,
+    "outputTokens": 435,
+    "totalTokens": 1558,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 339,
+    "latencyMs": 12088.88279995881,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"쿠팡에서 구매 가능한 베이비 상품 쇼핑몰 정보\",\n\"categoryName\":\"베이비 상품 쇼핑몰\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 카테고리 중 베이비 관련 상품 쇼핑몰을 정확히 표현하는 항목이 없어 새로운 카테고리로 생성\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "기존 카테고리 중 베이비 관련 상품 쇼핑몰을 정확히 표현하는 항목이 없어 새로운 카테고리로 생성",
+      "categoryDescription": "쿠팡에서 구매 가능한 베이비 상품 쇼핑몰 정보",
+      "categoryName": "베이비 상품 쇼핑몰",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

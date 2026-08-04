@@ -1,0 +1,63 @@
+{
+  "testId": "URL-006",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼",
+    "패션·소품",
+    "운세·예측"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"건강한 수면을 위한 실용적인 팁 제공\",\"categoryName\":\"생활·건강\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"수면 질 개선 방법은 개인의 건강 관리와 직접적으로 관련되어 있으며, '생활·건강' 카테고리의 범위에 포함됨\"}",
+    "parsedOutput": null,
+    "inputTokens": 835,
+    "outputTokens": 263,
+    "totalTokens": 1098,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 185,
+    "latencyMs": 7227.373200003058,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"건강한 수면을 위한 실용적인 팁 제공\",\"categoryName\":\"생활·건강\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"수면 질 개선 방법은 개인의 건강 관리와 직접적으로 관련되어 있으며, '생활·건강' 카테고리의 범위에 포함됨\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "수면 질 개선 방법은 개인의 건강 관리와 직접적으로 관련되어 있으며, '생활·건강' 카테고리의 범위에 포함됨",
+      "categoryDescription": "건강한 수면을 위한 실용적인 팁 제공",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

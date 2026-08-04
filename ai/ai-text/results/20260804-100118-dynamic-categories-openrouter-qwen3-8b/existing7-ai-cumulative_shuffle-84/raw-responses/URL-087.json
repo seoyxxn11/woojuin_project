@@ -1,0 +1,61 @@
+{
+  "testId": "URL-087",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "주거·부동산"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"맛집 방문과 식사 계획에 관한 내용\",\"categoryName\":\"음식·맛집\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 강남 지역의 20대를 위한 맛집 리스트로, 음식·맛집 카테고리에 해당하는 식당 정보와 리뷰 제공을 포함하고 있음\"}",
+    "parsedOutput": null,
+    "inputTokens": 752,
+    "outputTokens": 481,
+    "totalTokens": 1233,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 389,
+    "latencyMs": 12025.711299967952,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"맛집 방문과 식사 계획에 관한 내용\",\"categoryName\":\"음식·맛집\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 강남 지역의 20대를 위한 맛집 리스트로, 음식·맛집 카테고리에 해당하는 식당 정보와 리뷰 제공을 포함하고 있음\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠는 강남 지역의 20대를 위한 맛집 리스트로, 음식·맛집 카테고리에 해당하는 식당 정보와 리뷰 제공을 포함하고 있음",
+      "categoryDescription": "맛집 방문과 식사 계획에 관한 내용",
+      "categoryName": "음식·맛집",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

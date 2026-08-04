@@ -1,0 +1,65 @@
+{
+  "testId": "URL-037",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "심리·자기개발",
+    "문화·전시",
+    "온라인 창업",
+    "온라인 플랫폼",
+    "사회공헌·csr"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"전시회 일정 및 문화적 전시 관련 정보\",\"categoryName\":\"문화·전시\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"콘텐츠는 서울시립미술관의 전시회 정보를 다루고 있어 '문화·전시' 카테고리에 해당하며, 이는 AI 생성된 카테고리 중 가장 적합한 분류입니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 893,
+    "outputTokens": 792,
+    "totalTokens": 1685,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 698,
+    "latencyMs": 16033.953699981794,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"전시회 일정 및 문화적 전시 관련 정보\",\"categoryName\":\"문화·전시\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"콘텐츠는 서울시립미술관의 전시회 정보를 다루고 있어 '문화·전시' 카테고리에 해당하며, 이는 AI 생성된 카테고리 중 가장 적합한 분류입니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘텐츠는 서울시립미술관의 전시회 정보를 다루고 있어 '문화·전시' 카테고리에 해당하며, 이는 AI 생성된 카테고리 중 가장 적합한 분류입니다.",
+      "categoryDescription": "전시회 일정 및 문화적 전시 관련 정보",
+      "categoryName": "문화·전시",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": true
+  },
+  "estimatedCost": null
+}

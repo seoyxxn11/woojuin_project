@@ -1,0 +1,63 @@
+{
+  "testId": "URL-014",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼",
+    "패션·소품",
+    "운세·예측"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"별자리, 띠별, 타로 등 운세 및 예측 정보 제공 웹사이트\", \n\"categoryName\":\"운세·예측\", \n\"categoryOrigin\":\"EXISTING\", \n\"reason\":\"입력된 콘텐츠가 별자리, 띠별, 타로 등 운세 관련 정보를 제공하는 웹사이트로, '운세·예측' 카테고리와 정확히 일치합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 815,
+    "outputTokens": 368,
+    "totalTokens": 1183,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 256,
+    "latencyMs": 8620.54730008822,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"별자리, 띠별, 타로 등 운세 및 예측 정보 제공 웹사이트\", \n\"categoryName\":\"운세·예측\", \n\"categoryOrigin\":\"EXISTING\", \n\"reason\":\"입력된 콘텐츠가 별자리, 띠별, 타로 등 운세 관련 정보를 제공하는 웹사이트로, '운세·예측' 카테고리와 정확히 일치합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠가 별자리, 띠별, 타로 등 운세 관련 정보를 제공하는 웹사이트로, '운세·예측' 카테고리와 정확히 일치합니다.",
+      "categoryDescription": "별자리, 띠별, 타로 등 운세 및 예측 정보 제공 웹사이트",
+      "categoryName": "운세·예측",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

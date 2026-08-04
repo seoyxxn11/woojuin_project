@@ -1,0 +1,65 @@
+{
+  "testId": "URL-076",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "운세·예측",
+    "심리·테스트",
+    "주택·청약",
+    "앱·서비스",
+    "창업·사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"해변 근처의 감성 카페와 디저트 정보\",\n\"categoryName\":\"음식·맛집\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"카페, 디저트, 인테리어, 오션뷰 등 식당 및 음식 관련 정보로 기존 '음식·맛집' 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 858,
+    "outputTokens": 379,
+    "totalTokens": 1237,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 287,
+    "latencyMs": 9144.592300057411,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"해변 근처의 감성 카페와 디저트 정보\",\n\"categoryName\":\"음식·맛집\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"카페, 디저트, 인테리어, 오션뷰 등 식당 및 음식 관련 정보로 기존 '음식·맛집' 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "카페, 디저트, 인테리어, 오션뷰 등 식당 및 음식 관련 정보로 기존 '음식·맛집' 카테고리에 해당",
+      "categoryDescription": "해변 근처의 감성 카페와 디저트 정보",
+      "categoryName": "음식·맛집",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

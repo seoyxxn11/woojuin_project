@@ -1,0 +1,62 @@
+{
+  "testId": "URL-025",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "주거·부동산",
+    "온라인 플랫폼"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"재테크와 부동산 투자 전략에 대한 지식 공유 콘텐츠\",\n\"categoryName\":\"돈·재테크\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"재테크 전략과 부동산 투자 관련 내용은 기존 '돈·재테크' 카테고리의 범위에 해당하며, 월급쟁이부자들의 내집마련 전략이라는 주제가 금융 관리와 투자에 초점이 맞춰져 있음\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 768,
+    "outputTokens": 844,
+    "totalTokens": 1612,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 713,
+    "latencyMs": 17442.675600061193,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"재테크와 부동산 투자 전략에 대한 지식 공유 콘텐츠\",\n\"categoryName\":\"돈·재테크\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"재테크 전략과 부동산 투자 관련 내용은 기존 '돈·재테크' 카테고리의 범위에 해당하며, 월급쟁이부자들의 내집마련 전략이라는 주제가 금융 관리와 투자에 초점이 맞춰져 있음\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "재테크 전략과 부동산 투자 관련 내용은 기존 '돈·재테크' 카테고리의 범위에 해당하며, 월급쟁이부자들의 내집마련 전략이라는 주제가 금융 관리와 투자에 초점이 맞춰져 있음",
+      "categoryDescription": "재테크와 부동산 투자 전략에 대한 지식 공유 콘텐츠",
+      "categoryName": "돈·재테크",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

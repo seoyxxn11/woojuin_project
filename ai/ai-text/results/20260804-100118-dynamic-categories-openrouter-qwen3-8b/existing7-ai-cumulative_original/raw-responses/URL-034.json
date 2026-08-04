@@ -1,0 +1,63 @@
+{
+  "testId": "URL-034",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "운세·예측",
+    "심리·테스트",
+    "주택·청약"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"공연 및 문화 행사 관련 정보 정리\",\"categoryName\":\"문화·아이디어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘서트는 공연 활동에 해당하며, '문화·아이디어' 카테고리의 '공연 감상' 범주에 포함됨\"}",
+    "parsedOutput": null,
+    "inputTokens": 813,
+    "outputTokens": 959,
+    "totalTokens": 1772,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 882,
+    "latencyMs": 17424.069000058807,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"공연 및 문화 행사 관련 정보 정리\",\"categoryName\":\"문화·아이디어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘서트는 공연 활동에 해당하며, '문화·아이디어' 카테고리의 '공연 감상' 범주에 포함됨\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘서트는 공연 활동에 해당하며, '문화·아이디어' 카테고리의 '공연 감상' 범주에 포함됨",
+      "categoryDescription": "공연 및 문화 행사 관련 정보 정리",
+      "categoryName": "문화·아이디어",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

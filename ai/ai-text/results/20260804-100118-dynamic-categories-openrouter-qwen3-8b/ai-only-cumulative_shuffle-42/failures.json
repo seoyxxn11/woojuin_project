@@ -1,0 +1,7 @@
+[
+  {
+    "testId": "URL-017",
+    "errorType": "SCHEMA_ERROR",
+    "errorMessage": "EXISTING 카테고리는 제공된 이름과 정확히 일치해야 합니다."
+  }
+]

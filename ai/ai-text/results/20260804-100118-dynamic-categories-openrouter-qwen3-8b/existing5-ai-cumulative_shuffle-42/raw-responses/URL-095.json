@@ -1,0 +1,62 @@
+{
+  "testId": "URL-095",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "주거·청약",
+    "사업 운영",
+    "온라인 플랫폼",
+    "사회공헌·CSR"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 온라인 플랫폼 정보\",\"categoryName\":\"사회공헌·CSR\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 URL은 삼성그룹의 사회공헌 활동 관련 페이지로, 기존 '사회공헌·CSR' 카테고리의 범위에 해당합니다. 프로그램 내용도 사회공헌 활동의 일환으로 분류됩니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 809,
+    "outputTokens": 987,
+    "totalTokens": 1796,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 866,
+    "latencyMs": 17151.314400020055,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 온라인 플랫폼 정보\",\"categoryName\":\"사회공헌·CSR\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 URL은 삼성그룹의 사회공헌 활동 관련 페이지로, 기존 '사회공헌·CSR' 카테고리의 범위에 해당합니다. 프로그램 내용도 사회공헌 활동의 일환으로 분류됩니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 URL은 삼성그룹의 사회공헌 활동 관련 페이지로, 기존 '사회공헌·CSR' 카테고리의 범위에 해당합니다. 프로그램 내용도 사회공헌 활동의 일환으로 분류됩니다.",
+      "categoryDescription": "삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 온라인 플랫폼 정보",
+      "categoryName": "사회공헌·CSR",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

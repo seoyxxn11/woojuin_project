@@ -1,0 +1,61 @@
+{
+  "testId": "URL-056",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세",
+    "앱 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"제품 리뷰 및 구매 가이드 정보\",\n\"categoryName\":\"소비·금융\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"노트북가방 제품의 판매량, 가성비, 리뷰 기반 비교 분석은 소비자 선택에 대한 금융적 의사결정 지원에 해당하므로 '소비·금융' 카테고리에 속합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 772,
+    "outputTokens": 428,
+    "totalTokens": 1200,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 330,
+    "latencyMs": 9134.557100012898,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"제품 리뷰 및 구매 가이드 정보\",\n\"categoryName\":\"소비·금융\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"노트북가방 제품의 판매량, 가성비, 리뷰 기반 비교 분석은 소비자 선택에 대한 금융적 의사결정 지원에 해당하므로 '소비·금융' 카테고리에 속합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "노트북가방 제품의 판매량, 가성비, 리뷰 기반 비교 분석은 소비자 선택에 대한 금융적 의사결정 지원에 해당하므로 '소비·금융' 카테고리에 속합니다.",
+      "categoryDescription": "제품 리뷰 및 구매 가이드 정보",
+      "categoryName": "소비·금융",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

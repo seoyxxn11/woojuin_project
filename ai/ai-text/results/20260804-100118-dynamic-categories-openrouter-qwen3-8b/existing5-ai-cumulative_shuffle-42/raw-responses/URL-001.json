@@ -1,0 +1,62 @@
+{
+  "testId": "URL-001",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "주거·청약",
+    "사업 운영",
+    "온라인 플랫폼",
+    "사회공헌·CSR"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"건강한 식습관과 음식 안전에 대한 정보\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"견과류의 건강 효과와 부작용, 보관 방법 등은 일상적인 건강 관리와 관련된 주제로 생활·건강 카테고리에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 776,
+    "outputTokens": 339,
+    "totalTokens": 1115,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 249,
+    "latencyMs": 8016.615000087768,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"건강한 식습관과 음식 안전에 대한 정보\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"견과류의 건강 효과와 부작용, 보관 방법 등은 일상적인 건강 관리와 관련된 주제로 생활·건강 카테고리에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "견과류의 건강 효과와 부작용, 보관 방법 등은 일상적인 건강 관리와 관련된 주제로 생활·건강 카테고리에 해당합니다.",
+      "categoryDescription": "건강한 식습관과 음식 안전에 대한 정보",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

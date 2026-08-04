@@ -1,0 +1,58 @@
+{
+  "testId": "URL-016",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"심리 테스트 및 자기 이해 관련 서비스\", \"categoryName\":\"문화·아이디어\", \"categoryOrigin\":\"EXISTING\", \"reason\":\"MBTI, 궁합, 운세 등은 개인의 성격과 관계에 대한 탐구로, 창작 아이디어나 서비스 발상에 해당하는 문화·아이디어 카테고리에 포함 가능\"}",
+    "parsedOutput": null,
+    "inputTokens": 617,
+    "outputTokens": 723,
+    "totalTokens": 1340,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 628,
+    "latencyMs": 13782.322300015949,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"심리 테스트 및 자기 이해 관련 서비스\", \"categoryName\":\"문화·아이디어\", \"categoryOrigin\":\"EXISTING\", \"reason\":\"MBTI, 궁합, 운세 등은 개인의 성격과 관계에 대한 탐구로, 창작 아이디어나 서비스 발상에 해당하는 문화·아이디어 카테고리에 포함 가능\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "MBTI, 궁합, 운세 등은 개인의 성격과 관계에 대한 탐구로, 창작 아이디어나 서비스 발상에 해당하는 문화·아이디어 카테고리에 포함 가능",
+      "categoryDescription": "심리 테스트 및 자기 이해 관련 서비스",
+      "categoryName": "문화·아이디어",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

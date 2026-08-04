@@ -1,0 +1,61 @@
+{
+  "testId": "URL-079",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"여행 일정 및 숙소 관련 정보를 제공하는 콘텐츠\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"여행 일정, 호텔 체크인, 관광 명소 탐방 등 장소 기반의 여행 경험을 다루고 있어 '장소·먹거리' 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 806,
+    "outputTokens": 479,
+    "totalTokens": 1285,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 384,
+    "latencyMs": 11481.171800056472,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"여행 일정 및 숙소 관련 정보를 제공하는 콘텐츠\",\n\"categoryName\":\"장소·먹거리\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"여행 일정, 호텔 체크인, 관광 명소 탐방 등 장소 기반의 여행 경험을 다루고 있어 '장소·먹거리' 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "여행 일정, 호텔 체크인, 관광 명소 탐방 등 장소 기반의 여행 경험을 다루고 있어 '장소·먹거리' 카테고리에 해당",
+      "categoryDescription": "여행 일정 및 숙소 관련 정보를 제공하는 콘텐츠",
+      "categoryName": "장소·먹거리",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

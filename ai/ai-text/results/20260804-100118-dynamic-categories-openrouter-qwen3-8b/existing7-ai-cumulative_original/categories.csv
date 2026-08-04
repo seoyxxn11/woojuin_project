@@ -1,0 +1,14 @@
+﻿categoryId,categoryName,description,origin,createdAtItemId,selectedItemCount
+LIFE_HEALTH,생활·건강,"개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",SEED,,20
+LEARNING_CAREER,학습·커리어,"시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",SEED,,20
+TRAVEL_PLACE,여행·장소,"여행 일정, 방문할 장소, 교통, 숙소와 지역 탐방에 관한 내용",SEED,,10
+FOOD_RESTAURANT,음식·맛집,"요리법, 식재료, 식당, 메뉴, 맛집 방문과 식사 계획에 관한 내용",SEED,,13
+SHOPPING_PRODUCT,쇼핑·제품,"상품 구매 후보, 제품 비교, 가격과 기능 검토, 구매 의사결정 중심의 내용",SEED,,10
+MONEY_FINANCE,돈·재테크,"예산, 저축, 투자, 보험, 세금, 대출과 자산 관리 등 개인 금융 중심의 내용",SEED,,8
+CULTURE_IDEA,문화·아이디어,"책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",SEED,,9
+AI-DB258FE027,운세·예측,주간 운세 및 예측 정보 제공,GENERATED,URL-013,3
+AI-4E12FFC968,심리·테스트,심리 테스트 및 인격 분석 관련 콘텐츠,GENERATED,URL-016,6
+AI-2EA840FE88,주택·청약,"주택청약 관련 경쟁률, 일정, 무순위 등 주택 구입 정보 정리",GENERATED,URL-027,2
+AI-572E3C8038,앱·서비스,앱의 상세 정보 및 서비스 관련 내용,GENERATED,URL-048,3
+AI-A7B5B1547A,창업·사업,1인 창업 스토리와 비즈니스 관련 경험 공유 콘텐츠,GENERATED,URL-063,7
+AI-16377E1782,사회공헌·csr,삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항을 정리한 콘텐츠,GENERATED,URL-096,1

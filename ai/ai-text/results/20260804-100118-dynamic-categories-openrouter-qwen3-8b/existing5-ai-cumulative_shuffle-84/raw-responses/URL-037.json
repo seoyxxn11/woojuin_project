@@ -1,0 +1,66 @@
+{
+  "testId": "URL-037",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼",
+    "패션·소품",
+    "운세·예측",
+    "사회공헌",
+    "제품 정보",
+    "온라인 사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"문화·아이디어는 예술 전시, 공연, 창작 활동 등 문화적 경험과 관련된 콘텐츠를 다룹니다.\",\n\"categoryName\":\"문화·아이디어\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"서울시립미술관의 전시회 정보는 예술 작품과 체험형 전시를 통해 문화적 경험을 제공하는 내용으로, '문화·아이디어' 카테고리에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 964,
+    "outputTokens": 685,
+    "totalTokens": 1649,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 564,
+    "latencyMs": 14859.79470005259,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"문화·아이디어는 예술 전시, 공연, 창작 활동 등 문화적 경험과 관련된 콘텐츠를 다룹니다.\",\n\"categoryName\":\"문화·아이디어\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"서울시립미술관의 전시회 정보는 예술 작품과 체험형 전시를 통해 문화적 경험을 제공하는 내용으로, '문화·아이디어' 카테고리에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "서울시립미술관의 전시회 정보는 예술 작품과 체험형 전시를 통해 문화적 경험을 제공하는 내용으로, '문화·아이디어' 카테고리에 해당합니다.",
+      "categoryDescription": "문화·아이디어는 예술 전시, 공연, 창작 활동 등 문화적 경험과 관련된 콘텐츠를 다룹니다.",
+      "categoryName": "문화·아이디어",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

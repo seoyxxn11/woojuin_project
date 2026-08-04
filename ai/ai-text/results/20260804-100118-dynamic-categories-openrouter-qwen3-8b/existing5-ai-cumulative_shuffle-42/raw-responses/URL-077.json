@@ -1,0 +1,59 @@
+{
+  "testId": "URL-077",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "주거·청약"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"카페 및 식사 공간 방문 후기와 관련된 정보\",\"categoryName\":\"장소·먹거리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠는 바다 전망 카페 방문 후기를 다루고 있어 장소와 음식 관련 내용에 해당하며, 기존 '장소·먹거리' 카테고리의 범위에 포함됨\"}",
+    "parsedOutput": null,
+    "inputTokens": 733,
+    "outputTokens": 513,
+    "totalTokens": 1246,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 420,
+    "latencyMs": 14757.04479997512,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"카페 및 식사 공간 방문 후기와 관련된 정보\",\"categoryName\":\"장소·먹거리\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠는 바다 전망 카페 방문 후기를 다루고 있어 장소와 음식 관련 내용에 해당하며, 기존 '장소·먹거리' 카테고리의 범위에 포함됨\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘텐츠는 바다 전망 카페 방문 후기를 다루고 있어 장소와 음식 관련 내용에 해당하며, 기존 '장소·먹거리' 카테고리의 범위에 포함됨",
+      "categoryDescription": "카페 및 식사 공간 방문 후기와 관련된 정보",
+      "categoryName": "장소·먹거리",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

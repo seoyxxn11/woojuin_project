@@ -1,0 +1,35 @@
+=== EXPERIMENT SCENARIO: existing5-ai-cumulative (기존 5개 + AI 생성 누적) ===
+- Model ID: openrouter-qwen3-8b (qwen/qwen3-8b)
+- Test Mode: dynamic-category
+- Dataset Count: 112 items
+- Order / Shuffle: N/A
+- Status: COMPLETED
+- Seed Category Count: 5
+- Accumulate Generated Categories: True
+- Execution Time: 2026-08-04T11:46:23.176992+09:00 ~ 2026-08-04T12:09:19.436915+09:00
+- Success / Failure: 112 / 0
+- Existing Selection Count: 104
+- Generated Selection Count: 8
+- Final Category Count: 13
+
+--- [SEED / INITIAL CATEGORIES] ---
+  1. 생활·건강
+  2. 학습·커리어
+  3. 장소·먹거리
+  4. 소비·금융
+  5. 문화·아이디어
+
+--- [FINAL CATEGORIES] ---
+  1. 생활·건강
+  2. 학습·커리어
+  3. 장소·먹거리
+  4. 소비·금융
+  5. 문화·아이디어
+  6. 기술·개발
+  7. 앱 정보
+  8. 온라인 플랫폼
+  9. 패션·소품
+  10. 운세·예측
+  11. 사회공헌
+  12. 제품 정보
+  13. 온라인 사업

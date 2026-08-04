@@ -1,0 +1,67 @@
+{
+  "testId": "URL-086",
+  "availableCategories": [
+    "네트워크 기초",
+    "투자 전략",
+    "건강 및 정신 건강",
+    "주택청약 정보",
+    "성격 및 취향 테스트",
+    "프론트엔드 디자인 패턴",
+    "기술 면접 준비 팁",
+    "홈 정리 및 수납 팁",
+    "음식점 가이드",
+    "앱 정보 및 리뷰",
+    "가방 및 액세서리 쇼핑 정보",
+    "온라인 콘텐츠 플랫폼",
+    "부동산 투자 전략",
+    "온라인 쇼핑몰 성공 전략"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"음식점 리뷰 및 순위 정보를 저장하는 카테고리\",\"categoryName\":\"음식점 가이드\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 서울 광화문 지역의 국밥 맛집 리뷰 글로, 음식점 가이드 카테고리의 목적과 일치합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 962,
+    "outputTokens": 406,
+    "totalTokens": 1368,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 314,
+    "latencyMs": 11159.752000006847,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"음식점 리뷰 및 순위 정보를 저장하는 카테고리\",\"categoryName\":\"음식점 가이드\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 서울 광화문 지역의 국밥 맛집 리뷰 글로, 음식점 가이드 카테고리의 목적과 일치합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠는 서울 광화문 지역의 국밥 맛집 리뷰 글로, 음식점 가이드 카테고리의 목적과 일치합니다.",
+      "categoryDescription": "음식점 리뷰 및 순위 정보를 저장하는 카테고리",
+      "categoryName": "음식점 가이드",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

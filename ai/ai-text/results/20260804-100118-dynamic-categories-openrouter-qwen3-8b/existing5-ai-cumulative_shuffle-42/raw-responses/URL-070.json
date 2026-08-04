@@ -1,0 +1,62 @@
+{
+  "testId": "URL-070",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "주거·청약",
+    "사업 운영",
+    "온라인 플랫폼",
+    "사회공헌·CSR"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"온라인 스토어 운영 전략과 수익성 향상 경험 공유\",\"categoryName\":\"사업 운영\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"스마트스토어 운영 경험, 사입 전략, 매출 성과 등은 온라인 사업 운영에 대한 실무 내용으로 '사업 운영' 카테고리와 가장 부합\"}",
+    "parsedOutput": null,
+    "inputTokens": 803,
+    "outputTokens": 418,
+    "totalTokens": 1221,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 326,
+    "latencyMs": 9443.943300051615,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"온라인 스토어 운영 전략과 수익성 향상 경험 공유\",\"categoryName\":\"사업 운영\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"스마트스토어 운영 경험, 사입 전략, 매출 성과 등은 온라인 사업 운영에 대한 실무 내용으로 '사업 운영' 카테고리와 가장 부합\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "스마트스토어 운영 경험, 사입 전략, 매출 성과 등은 온라인 사업 운영에 대한 실무 내용으로 '사업 운영' 카테고리와 가장 부합",
+      "categoryDescription": "온라인 스토어 운영 전략과 수익성 향상 경험 공유",
+      "categoryName": "사업 운영",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,64 @@
+{
+  "testId": "URL-102",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세",
+    "앱 정보",
+    "온라인 플랫폼",
+    "창업·사업",
+    "사회공헌·기업활동"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"프랑스 생활에 대한 실용적인 팁과 조언을 제공하는 콘텐츠\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"프랑스 생활 팁은 일상 행동과 관련된 내용으로 생활·건강 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 800,
+    "outputTokens": 613,
+    "totalTokens": 1413,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 531,
+    "latencyMs": 19259.043299942277,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"프랑스 생활에 대한 실용적인 팁과 조언을 제공하는 콘텐츠\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"프랑스 생활 팁은 일상 행동과 관련된 내용으로 생활·건강 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "프랑스 생활 팁은 일상 행동과 관련된 내용으로 생활·건강 카테고리에 해당",
+      "categoryDescription": "프랑스 생활에 대한 실용적인 팁과 조언을 제공하는 콘텐츠",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

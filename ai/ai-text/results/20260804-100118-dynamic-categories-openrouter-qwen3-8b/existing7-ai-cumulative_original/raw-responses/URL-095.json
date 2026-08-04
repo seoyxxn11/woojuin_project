@@ -1,0 +1,65 @@
+{
+  "testId": "URL-095",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "운세·예측",
+    "심리·테스트",
+    "주택·청약",
+    "앱·서비스",
+    "창업·사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"SW·AI 교육 및 취업 지원 프로그램 관련 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"청년들을 위한 SW·AI 교육과 취업 지원 서비스 제공이라는 학습 및 커리어 개발에 관한 내용이므로 '학습·커리어' 카테고리가 가장 적절함\"}",
+    "parsedOutput": null,
+    "inputTokens": 876,
+    "outputTokens": 386,
+    "totalTokens": 1262,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 294,
+    "latencyMs": 9855.07160006091,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"SW·AI 교육 및 취업 지원 프로그램 관련 내용\",\"categoryName\":\"학습·커리어\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"청년들을 위한 SW·AI 교육과 취업 지원 서비스 제공이라는 학습 및 커리어 개발에 관한 내용이므로 '학습·커리어' 카테고리가 가장 적절함\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "청년들을 위한 SW·AI 교육과 취업 지원 서비스 제공이라는 학습 및 커리어 개발에 관한 내용이므로 '학습·커리어' 카테고리가 가장 적절함",
+      "categoryDescription": "SW·AI 교육 및 취업 지원 프로그램 관련 내용",
+      "categoryName": "학습·커리어",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

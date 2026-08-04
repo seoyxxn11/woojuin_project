@@ -1,0 +1,63 @@
+{
+  "testId": "URL-043",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "운세·예측",
+    "심리·테스트",
+    "주택·청약"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"물건을 체계적으로 정리하여 쉽게 찾을 수 있도록 하는 방법\", \"categoryName\":\"생활·건강\", \"categoryOrigin\":\"EXISTING\", \"reason\":\"정리정돈은 일상 생활에서의 물품 배치와 관리에 해당하며, '생활·건강' 카테고리의 '정리' 범주에 포함됩니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 795,
+    "outputTokens": 385,
+    "totalTokens": 1180,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 293,
+    "latencyMs": 9270.73340001516,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"물건을 체계적으로 정리하여 쉽게 찾을 수 있도록 하는 방법\", \"categoryName\":\"생활·건강\", \"categoryOrigin\":\"EXISTING\", \"reason\":\"정리정돈은 일상 생활에서의 물품 배치와 관리에 해당하며, '생활·건강' 카테고리의 '정리' 범주에 포함됩니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "정리정돈은 일상 생활에서의 물품 배치와 관리에 해당하며, '생활·건강' 카테고리의 '정리' 범주에 포함됩니다.",
+      "categoryDescription": "물건을 체계적으로 정리하여 쉽게 찾을 수 있도록 하는 방법",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

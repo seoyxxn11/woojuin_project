@@ -1,0 +1,59 @@
+{
+  "testId": "URL-016",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"심리 테스트 및 운세 관련 정보 제공\",\"categoryName\":\"자기·운세\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"MBTI, 연애 궁합, 주간 운세 등 개인의 심리 상태와 운명에 관한 내용으로 기존 카테고리와 중복 없이 새로운 분류가 필요\"}",
+    "parsedOutput": null,
+    "inputTokens": 636,
+    "outputTokens": 1522,
+    "totalTokens": 2158,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 1439,
+    "latencyMs": 27719.209000002593,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"심리 테스트 및 운세 관련 정보 제공\",\"categoryName\":\"자기·운세\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"MBTI, 연애 궁합, 주간 운세 등 개인의 심리 상태와 운명에 관한 내용으로 기존 카테고리와 중복 없이 새로운 분류가 필요\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "MBTI, 연애 궁합, 주간 운세 등 개인의 심리 상태와 운명에 관한 내용으로 기존 카테고리와 중복 없이 새로운 분류가 필요",
+      "categoryDescription": "심리 테스트 및 운세 관련 정보 제공",
+      "categoryName": "자기·운세",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

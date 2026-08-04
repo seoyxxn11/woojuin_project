@@ -1,0 +1,61 @@
+{
+  "testId": "URL-053",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세",
+    "앱 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"노트북용 가방 구매 및 관련 혜택 안내\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"제공된 콘텐츠는 노트북용 가방 구매와 관련된 제품 정보 및 배송, 설치&A/S 등 소비자에게 제공되는 다양한 혜택을 안내하는 내용으로 '소비·금융' 카테고리에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 742,
+    "outputTokens": 443,
+    "totalTokens": 1185,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 340,
+    "latencyMs": 9249.328000005335,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"노트북용 가방 구매 및 관련 혜택 안내\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"제공된 콘텐츠는 노트북용 가방 구매와 관련된 제품 정보 및 배송, 설치&A/S 등 소비자에게 제공되는 다양한 혜택을 안내하는 내용으로 '소비·금융' 카테고리에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "제공된 콘텐츠는 노트북용 가방 구매와 관련된 제품 정보 및 배송, 설치&A/S 등 소비자에게 제공되는 다양한 혜택을 안내하는 내용으로 '소비·금융' 카테고리에 해당합니다.",
+      "categoryDescription": "노트북용 가방 구매 및 관련 혜택 안내",
+      "categoryName": "소비·금융",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

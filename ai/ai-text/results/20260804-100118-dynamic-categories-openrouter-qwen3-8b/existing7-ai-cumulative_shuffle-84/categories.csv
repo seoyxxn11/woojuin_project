@@ -1,0 +1,14 @@
+﻿categoryId,categoryName,description,origin,createdAtItemId,selectedItemCount
+LIFE_HEALTH,생활·건강,"개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",SEED,,20
+LEARNING_CAREER,학습·커리어,"시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",SEED,,22
+TRAVEL_PLACE,여행·장소,"여행 일정, 방문할 장소, 교통, 숙소와 지역 탐방에 관한 내용",SEED,,9
+FOOD_RESTAURANT,음식·맛집,"요리법, 식재료, 식당, 메뉴, 맛집 방문과 식사 계획에 관한 내용",SEED,,12
+SHOPPING_PRODUCT,쇼핑·제품,"상품 구매 후보, 제품 비교, 가격과 기능 검토, 구매 의사결정 중심의 내용",SEED,,13
+MONEY_FINANCE,돈·재테크,"예산, 저축, 투자, 보험, 세금, 대출과 자산 관리 등 개인 금융 중심의 내용",SEED,,7
+CULTURE_IDEA,문화·아이디어,"책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",SEED,,4
+AI-3A8D5C658D,주거·부동산,"주택청약 경쟁률, 일정, 임대청약 등 주거 관련 정보 제공",GENERATED,URL-027,4
+AI-EB9C0138E2,온라인 플랫폼,온라인에서 콘텐츠를 공유하고 소비하는 플랫폼 관련 정보,GENERATED,URL-062,5
+AI-2C24D0FE0A,문화·이벤트,"문화 행사 및 공연 일정, 티켓 정보 제공",GENERATED,URL-033,6
+AI-EE95C86A6D,심리·자기성찰,심리검사 및 자기성찰 도구 제공 웹사이트,GENERATED,URL-021,4
+AI-DB258FE027,운세·예측,별자리별 운세 정보 제공 웹사이트,GENERATED,URL-012,4
+AI-16377E1782,사회공헌·csr,삼성그룹의 사회공헌 활동과 관련된 뉴스 및 공지사항 제공,GENERATED,URL-096,2

@@ -31,22 +31,92 @@ python main.py `
   --concurrency 4
 ```
 
-### 동적 카테고리 7개 조건 테스트
+### 동적 카테고리 조건 테스트
 
 `run_dynamic_category_experiments.py`는 기존 기준 테스트 코드를 보존하면서 다음
-7개 조건을 각각 또는 한 번에 실행합니다.
+조건을 각각 또는 한 번에 실행합니다.
 
 ```text
-0. baseline11     기존 11개만 사용 (기준 테스트)
-1. existing11-ai  기존 11개 + 필요할 때 AI 카테고리 생성
-2. ai-only        기존 카테고리 없이 AI 카테고리 생성
-3. existing3-ai   기존 3개 + 필요할 때 AI 카테고리 생성
-4. existing5-ai   기존 5개 + 필요할 때 AI 카테고리 생성
-5. existing7-ai   기존 7개 + 필요할 때 AI 카테고리 생성
-6. cumulative     생성된 카테고리를 다음 데이터의 선택지에 누적
+0. baseline11               기존 11개만 사용 (기준 테스트)
+1. existing11-ai            기존 11개 + 필요할 때 AI 카테고리 생성 (비누적)
+2. ai-only                  기존 카테고리 없이 AI 카테고리 생성 (비누적)
+3. existing3-ai             기존 3개 + AI 생성 (비누적)
+4. existing5-ai             기존 5개 + AI 생성 (비누적)
+5. existing7-ai             기존 7개 + AI 생성 (비누적)
+6. cumulative               기존 없음 + 생성 카테고리 누적
+   ai-only-cumulative       기존 없음 + AI 생성 누적
+   existing3-ai-cumulative  기존 3개 + AI 생성 누적
+   existing5-ai-cumulative  기존 5개 + AI 생성 누적
+   existing7-ai-cumulative  기존 7개 + AI 생성 누적
+   existing11-ai-cumulative 기존 11개 + AI 생성 누적
 ```
 
-인자 없이 실행하면 번호를 고르는 메뉴가 표시됩니다.
+누적(`-cumulative`) 조건은 앞 데이터에서 생성한 카테고리를 다음 데이터의 후보로
+즉시 제공합니다. 첫 번째 데이터는 후보가 없으면 반드시 새 카테고리를 만들고,
+이후 데이터는 지금까지 누적된 모든 생성 카테고리와 시드 카테고리 중에서
+선택하거나 새로 만듭니다. 순서 영향을 없애기 위해 누적 조건은 동시 요청 수 1로
+순차 실행합니다.
+
+그룹 별칭으로 여러 조건을 한 번에 실행할 수 있습니다.
+
+```text
+reduced-ai            기존 3개/5개/7개 (비누적) 연속 실행
+reduced-ai-cumulative 기존 3개/5개/7개 누적 연속 실행
+cumulative-compare    AI 전용 / 기존 5개 / 기존 7개 누적 비교 (목표 조건)
+all                   기준 테스트를 포함한 기본 조건 실행
+```
+
+목표 비교(3조건)는 다음 한 줄로 실행합니다. 세 조건은 모델·데이터셋·데이터 순서·
+프롬프트·응답 형식·생성 파라미터·재시도 정책을 동일하게 사용하고 초기 카테고리와
+누적 여부만 다릅니다.
+
+```powershell
+python run_dynamic_category_experiments.py `
+  --scenario cumulative-compare `
+  --order original shuffle-42 shuffle-84 `
+  --model openrouter-qwen3-8b `
+  --dataset-root ".\dataset\tester\정우현" `
+  --input-type url
+```
+
+#### 데이터 순서 실험
+
+`--order`로 처리 순서를 지정합니다. 누적 결과는 처리 순서에 영향을 받으므로 각
+시나리오를 여러 순서로 실행해 최종 카테고리 수와 생성 비율 변동을 비교할 수
+있습니다. `shuffle-42`·`shuffle-84`는 고정 시드라 언제 실행해도 같은 순서입니다.
+
+```text
+original     기존 데이터 순서
+shuffle-42   random seed 42로 섞은 순서
+shuffle-84   random seed 84로 섞은 순서
+all          위 세 순서 모두
+```
+
+각 시나리오와 순서 조합은 `<시나리오>_<순서>` 하위 폴더로 분리 저장합니다
+(예: `existing5-ai-cumulative_shuffle-42`).
+
+#### 누적 여부 강제 지정
+
+시나리오 이름으로 누적 여부가 정해지지만 CLI로 덮어쓸 수 있습니다.
+
+```powershell
+--accumulate-generated-categories     # 선택한 모든 시나리오에 누적 강제 적용
+--no-accumulate-generated-categories  # 누적 강제 해제 (비누적으로 실행)
+```
+
+#### 중단 후 재개
+
+각 데이터 처리 직후 `progress.jsonl`에 결과를 추가 저장합니다. 중단된 상위
+결과 폴더를 `--resume`으로 지정하면 완료된 데이터를 건너뛰고, 누적 카테고리
+상태와 처리 순서를 그대로 복원해 이어서 실행합니다.
+
+```powershell
+python run_dynamic_category_experiments.py `
+  --scenario cumulative-compare --order all `
+  --resume ".\results\20260804-095600-dynamic-categories-openrouter-qwen3-8b"
+```
+
+인자 없이 실행하면 조건을 고르는 메뉴가 표시됩니다.
 
 ```powershell
 python run_dynamic_category_experiments.py
@@ -62,11 +132,11 @@ python run_dynamic_category_experiments.py `
   --limit 10
 ```
 
-3개·5개·7개 조건만 연속 실행하려면 `reduced-ai`, 기준 테스트를 포함한 7개
+3개·5개·7개 조건만 연속 실행하려면 `reduced-ai`, 기준 테스트를 포함한 기본
 조건을 모두 실행하려면 `all`을 선택합니다.
 
 ```powershell
-# 3개/5개/7개 + AI 생성
+# 3개/5개/7개 + AI 생성 (비누적)
 python run_dynamic_category_experiments.py `
   --scenario reduced-ai `
   --model openrouter-qwen3-8b `
@@ -74,26 +144,19 @@ python run_dynamic_category_experiments.py `
   --input-type url `
   --limit 10 `
   --concurrency 4
-
-# 기준 테스트를 포함한 전체 7개 조건
-python run_dynamic_category_experiments.py `
-  --scenario all `
-  --model openrouter-qwen3-8b `
-  --dataset-root ".\dataset\tester\정우현" `
-  --input-type url `
-  --limit 10 `
-  --concurrency 4
 ```
 
-API를 호출하기 전에 조건, 실제 시작 카테고리와 예상 요청 수를 확인하려면
-`--dry-run`을 추가합니다. `cumulative`는 앞 데이터에서 생성한 카테고리를 다음
-프롬프트에 넣어야 하므로 이 조건만 요청 순서를 보장하기 위해 동시 요청 수 1로
-실행됩니다. 누적 조건도 기존 카테고리와 함께 시작하려면
+API를 호출하기 전에 조건, 실제 시작 카테고리, 순서 조합과 예상 요청 수를
+확인하려면 `--dry-run`을 추가합니다. 누적 조건은 앞 데이터에서 생성한 카테고리를
+다음 프롬프트에 넣어야 하므로 요청 순서를 보장하기 위해 동시 요청 수 1로
+실행됩니다. `cumulative`(구 조건)를 기존 카테고리와 함께 시작하려면
 `--cumulative-seed-count 3`, `5`, `7`, `11` 중 하나를 지정합니다.
 
-기존 3개·5개·7개는 `config/categories.json`의 순서 중 현재 데이터셋 폴더에
-실제로 존재하는 카테고리만 사용합니다. 정우현 데이터는 `기타`를 포함한 11개
-폴더이므로 기준 테스트와 `existing11-ai` 모두 정확히 그 11개로 시작합니다.
+기존 3개·5개·7개 시드는 `config/categories.json`을 자르지 않고 통합 프리셋
+(`src/dynamic_category_experiment.py`의 `PRESET_SEEDS`)을 사용합니다. 5개는
+`생활·건강 / 학습·커리어 / 장소·먹거리 / 소비·금융 / 문화·아이디어`, 7개는
+`생활·건강 / 학습·커리어 / 여행·장소 / 음식·맛집 / 쇼핑·제품 / 돈·재테크 /
+문화·아이디어`로 시작합니다.
 
 기준 테스트는 별도로 유지된 기존 명령으로도 이전과 똑같이 실행할 수 있습니다.
 
@@ -108,22 +171,50 @@ python main.py `
   --concurrency 4
 ```
 
-전체 실행 결과는 하나의 상위 폴더 아래 조건별로 분리됩니다.
+#### 선택 결과 구분과 카테고리 출처
+
+각 데이터의 선택은 다음 세 가지로 구분해 기록합니다.
+
+```text
+SEED_EXISTING       처음 제공된 시드 카테고리 선택
+GENERATED_EXISTING  앞에서 AI가 생성한 카테고리 재사용
+NEW_GENERATED       새로운 카테고리 생성
+```
+
+카테고리에는 최초 출처 `origin`(`SEED` 또는 `GENERATED`)과 처음 만들어진 데이터
+ID `createdAtItemId`를 저장합니다. 앞에서 생성한 카테고리를 이후 데이터가 다시
+선택해도 그 카테고리의 `origin`은 계속 `GENERATED`입니다. 새 이름은 누적 목록에
+넣기 전에 앞뒤 공백 제거·연속 공백 축소·구분자 앞뒤 공백 정리·영문 대소문자
+무시 정규화를 적용해 완전히 동일한 이름만 병합하고, 의미만 비슷한 이름은
+자동으로 합치지 않고 보고서의 `duplicateCandidates`에 검토 후보로만 남깁니다.
+
+#### 결과 저장 구조
+
+전체 실행 결과는 하나의 상위 폴더 아래 `<시나리오>_<순서>`로 분리됩니다.
 
 ```text
 results/<시각>-dynamic-categories-openrouter-qwen3-8b/
-├── baseline11/
-├── existing11-ai/
-├── ai-only/
-├── existing3-ai/
-├── existing5-ai/
-├── existing7-ai/
-├── cumulative/
-└── run-summary.json
+├── ai-only-cumulative_original/
+│   ├── result.json          # 실행 설정 + 데이터별 결과 + 최종 카테고리
+│   ├── items.csv            # itemId, inputOrder, selectionType, ...
+│   ├── categories.csv       # categoryId, origin, createdAtItemId, selectedItemCount
+│   ├── report.md / report.txt
+│   ├── progress.jsonl       # --resume 재개용 진행 상황
+│   ├── review-draft.json    # 검토 GUI가 우선 인식
+│   ├── run-metadata.json / evaluation-results.json / results.csv / failures.json
+│   └── raw-responses/<testId>.json
+├── ai-only-cumulative_shuffle-42/
+├── existing5-ai-cumulative_original/
+├── ...
+├── run-summary.json
+├── comparison.csv           # 시나리오 × 순서 통합 비교
+└── comparison-report.md     # 순서별 변동 요약 포함
 ```
 
-동적 조건 폴더에는 GUI가 우선 인식하는 `review-draft.json`과 전체 실행 정보,
-원시 응답, CSV 및 보고서가 함께 저장됩니다. 검토 GUI에서는 위의
+`report.md`/`report.txt`에는 실행 정보, 선택 결과 수와 비율, 카테고리 사용 분포
+(선택 데이터 수·최초 생성 데이터 ID), 1회만 사용/2회 이상 재사용 카테고리 수,
+가장 많이 사용된 카테고리, 중복 검토 후보가 포함됩니다. 모든 실행이 끝나면
+`comparison-report.md`가 세 조건과 데이터 순서를 한 표로 비교합니다. 검토 GUI에서는
 `<시각>-dynamic-categories-...` 상위 폴더를 선택한 뒤 조건을 고르면 됩니다.
 원시 응답 폴더와 실행 메타데이터 폴더는 조건 목록에서 자동으로 제외됩니다.
 

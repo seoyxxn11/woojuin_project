@@ -1,0 +1,27 @@
+=== DYNAMIC CATEGORY EXPERIMENT: CUMULATIVE COMPARE OVERALL SUMMARY ===
+Result Directory: 20260804-100118-dynamic-categories-openrouter-qwen3-8b
+
+--- [COMPARISON REPORT SUMMARY] ---
+# 동적 카테고리 실험 통합 비교
+
+## 시나리오 × 데이터 순서 비교
+
+| 시나리오 | 순서 | 누적 | 초기 카테고리 수 | 최종 카테고리 수 | 신규 생성 수 | 생성 재사용 수 | 1회 사용 카테고리 수 | 카테고리당 평균 데이터 | 최대 카테고리 비율 | 실패 수 | 실행 시간(초) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| ai-only-cumulative | original | True | 0 | 36 | 36 | 76 | 12 | 3.1111 | 0.0893 | 0 | 1248.922 |
+| ai-only-cumulative | shuffle-42 | True | 0 | 32 | 32 | 79 | 6 | 3.4688 | 0.0901 | 1 | 1247.91 |
+| ai-only-cumulative | shuffle-84 | True | 0 | 30 | 30 | 82 | 6 | 3.7333 | 0.0982 | 0 | 1198.672 |
+| existing5-ai-cumulative | original | True | 5 | 11 | 6 | 11 | 1 | 10.1818 | 0.1875 | 0 | 1237.206 |
+| existing5-ai-cumulative | shuffle-42 | True | 5 | 9 | 4 | 11 | 0 | 12.4444 | 0.1875 | 0 | 1371.666 |
+| existing5-ai-cumulative | shuffle-84 | True | 5 | 13 | 8 | 13 | 3 | 8.6154 | 0.1786 | 0 | 1376.26 |
+| existing7-ai-cumulative | original | True | 7 | 13 | 6 | 16 | 1 | 8.6154 | 0.1786 | 0 | 1226.433 |
+| existing7-ai-cumulative | shuffle-42 | True | 7 | 15 | 8 | 17 | 2 | 7.4667 | 0.1875 | 0 | 1219.328 |
+| existing7-ai-cumulative | shuffle-84 | True | 7 | 13 | 6 | 19 | 0 | 8.6154 | 0.1964 | 0 | 1302.091 |
+
+## 데이터 순서에 따른 변동 (같은 시나리오)
+
+| 시나리오 | 순서 수 | 최종 카테고리 수(순서별) | 신규 생성 비율(순서별) |
+|---|--:|---|---|
+| ai-only-cumulative | 3 | original=36, shuffle-42=32, shuffle-84=30 | original=0.3214, shuffle-42=0.2883, shuffle-84=0.2679 |
+| existing5-ai-cumulative | 3 | original=11, shuffle-42=9, shuffle-84=13 | original=0.0536, shuffle-42=0.0357, shuffle-84=0.0714 |
+| existing7-ai-cumulative | 3 | original=13, shuffle-42=15, shuffle-84=13 | original=0.0536, shuffle-42=0.0714, shuffle-84=0.0536 |

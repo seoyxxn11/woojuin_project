@@ -1,0 +1,59 @@
+{
+  "testId": "URL-013",
+  "availableCategories": [
+    "식품 관련 주의사항",
+    "근육 통증 완화 운동",
+    "신경 이동 운동",
+    "수면장애 치료 방법",
+    "유산소 운동",
+    "별자리 운세"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"주간 별자리 운세 정보를 제공하는 콘텐츠\",\"categoryName\":\"별자리 운세\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 12개의 별자리를 기반으로 한 주간 운세 정보로, '별자리 운세' 카테고리에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 600,
+    "outputTokens": 560,
+    "totalTokens": 1160,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 470,
+    "latencyMs": 11491.973500000313,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"주간 별자리 운세 정보를 제공하는 콘텐츠\",\"categoryName\":\"별자리 운세\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"입력된 콘텐츠는 12개의 별자리를 기반으로 한 주간 운세 정보로, '별자리 운세' 카테고리에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠는 12개의 별자리를 기반으로 한 주간 운세 정보로, '별자리 운세' 카테고리에 해당합니다.",
+      "categoryDescription": "주간 별자리 운세 정보를 제공하는 콘텐츠",
+      "categoryName": "별자리 운세",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,61 @@
+{
+  "testId": "URL-105",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "주거·청약",
+    "사업 운영",
+    "온라인 플랫폼"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"네트워크 기초 개념 정리 자료\",\n\"categoryName\":\"학습·커리어\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"네트워크 관련 핵심 개념 정리 내용은 학습 및 지식 정리에 해당하므로 '학습·커리어' 카테고리에 속합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 730,
+    "outputTokens": 400,
+    "totalTokens": 1130,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 314,
+    "latencyMs": 9579.31139995344,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"네트워크 기초 개념 정리 자료\",\n\"categoryName\":\"학습·커리어\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"네트워크 관련 핵심 개념 정리 내용은 학습 및 지식 정리에 해당하므로 '학습·커리어' 카테고리에 속합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "네트워크 관련 핵심 개념 정리 내용은 학습 및 지식 정리에 해당하므로 '학습·커리어' 카테고리에 속합니다.",
+      "categoryDescription": "네트워크 기초 개념 정리 자료",
+      "categoryName": "학습·커리어",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

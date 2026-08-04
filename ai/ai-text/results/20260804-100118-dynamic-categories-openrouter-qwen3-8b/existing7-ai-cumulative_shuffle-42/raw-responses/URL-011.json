@@ -1,0 +1,63 @@
+{
+  "testId": "URL-011",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "심리·자기개발",
+    "문화·전시",
+    "온라인 창업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"걷기 운동의 심혈관 건강, 체중 관리 및 정신 건강 효과에 대한 정보\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"걷기 운동의 건강 효과와 올바른 자세 조절이 포함되어 생활·건강 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 811,
+    "outputTokens": 358,
+    "totalTokens": 1169,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 269,
+    "latencyMs": 8901.28079999704,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"걷기 운동의 심혈관 건강, 체중 관리 및 정신 건강 효과에 대한 정보\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"걷기 운동의 건강 효과와 올바른 자세 조절이 포함되어 생활·건강 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "걷기 운동의 건강 효과와 올바른 자세 조절이 포함되어 생활·건강 카테고리에 해당",
+      "categoryDescription": "걷기 운동의 심혈관 건강, 체중 관리 및 정신 건강 효과에 대한 정보",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

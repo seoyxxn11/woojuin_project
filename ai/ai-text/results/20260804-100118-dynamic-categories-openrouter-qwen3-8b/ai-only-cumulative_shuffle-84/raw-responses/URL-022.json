@@ -1,0 +1,54 @@
+{
+  "testId": "URL-022",
+  "availableCategories": [
+    "네트워크 기초"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"ETF 투자 방법과 자동매매 서비스 등 초보자를 위한 투자 전략 데이터\",\n\"categoryName\":\"투자 전략\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 ETF 투자 방법과 랩어카운트 활용 전략을 다루고 있으며, 이는 금융 투자 관련 지식으로 기존 카테고리와 의미가 일치하지 않아 새로운 카테고리 생성이 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 451,
+    "outputTokens": 723,
+    "totalTokens": 1174,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 598,
+    "latencyMs": 12636.67819998227,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"ETF 투자 방법과 자동매매 서비스 등 초보자를 위한 투자 전략 데이터\",\n\"categoryName\":\"투자 전략\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"제공된 콘텐츠는 ETF 투자 방법과 랩어카운트 활용 전략을 다루고 있으며, 이는 금융 투자 관련 지식으로 기존 카테고리와 의미가 일치하지 않아 새로운 카테고리 생성이 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "제공된 콘텐츠는 ETF 투자 방법과 랩어카운트 활용 전략을 다루고 있으며, 이는 금융 투자 관련 지식으로 기존 카테고리와 의미가 일치하지 않아 새로운 카테고리 생성이 필요함",
+      "categoryDescription": "ETF 투자 방법과 자동매매 서비스 등 초보자를 위한 투자 전략 데이터",
+      "categoryName": "투자 전략",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

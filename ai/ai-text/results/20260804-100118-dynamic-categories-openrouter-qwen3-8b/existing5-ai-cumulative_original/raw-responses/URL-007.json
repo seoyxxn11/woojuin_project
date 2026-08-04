@@ -1,0 +1,58 @@
+{
+  "testId": "URL-007",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"수면 품질 향상을 위한 건강한 생활 습관을 정리한 콘텐츠\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"수면 리듬, 수면 환경, 디지털 디톡스 등 일상 생활과 건강 관리에 관한 내용으로 기존 '생활·건강' 카테고리와 의미가 일치합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 731,
+    "outputTokens": 306,
+    "totalTokens": 1037,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 195,
+    "latencyMs": 8653.542499989271,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"수면 품질 향상을 위한 건강한 생활 습관을 정리한 콘텐츠\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"수면 리듬, 수면 환경, 디지털 디톡스 등 일상 생활과 건강 관리에 관한 내용으로 기존 '생활·건강' 카테고리와 의미가 일치합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "수면 리듬, 수면 환경, 디지털 디톡스 등 일상 생활과 건강 관리에 관한 내용으로 기존 '생활·건강' 카테고리와 의미가 일치합니다.",
+      "categoryDescription": "수면 품질 향상을 위한 건강한 생활 습관을 정리한 콘텐츠",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

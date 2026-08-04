@@ -1,0 +1,59 @@
+{
+  "testId": "URL-016",
+  "availableCategories": [
+    "식품 관련 주의사항",
+    "근육 통증 완화 운동",
+    "신경 이동 운동",
+    "수면장애 치료 방법",
+    "유산소 운동",
+    "별자리 운세"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"심리 테스트 및 궁합 분석을 제공하는 사이트 콘텐츠\",\"categoryName\":\"별자리 운세\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"사이트가 제공하는 '운세' 서비스는 기존 '별자리 운세' 카테고리와 직접적으로 일치하며, 다른 서비스 항목은 추가적인 분류 없이 가장 근접한 범주에 해당\"}",
+    "parsedOutput": null,
+    "inputTokens": 577,
+    "outputTokens": 976,
+    "totalTokens": 1553,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 875,
+    "latencyMs": 16859.67489995528,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"심리 테스트 및 궁합 분석을 제공하는 사이트 콘텐츠\",\"categoryName\":\"별자리 운세\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"사이트가 제공하는 '운세' 서비스는 기존 '별자리 운세' 카테고리와 직접적으로 일치하며, 다른 서비스 항목은 추가적인 분류 없이 가장 근접한 범주에 해당\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "사이트가 제공하는 '운세' 서비스는 기존 '별자리 운세' 카테고리와 직접적으로 일치하며, 다른 서비스 항목은 추가적인 분류 없이 가장 근접한 범주에 해당",
+      "categoryDescription": "심리 테스트 및 궁합 분석을 제공하는 사이트 콘텐츠",
+      "categoryName": "별자리 운세",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

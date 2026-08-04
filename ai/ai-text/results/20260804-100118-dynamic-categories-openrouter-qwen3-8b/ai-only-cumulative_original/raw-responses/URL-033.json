@@ -1,0 +1,66 @@
+{
+  "testId": "URL-033",
+  "availableCategories": [
+    "식품 관련 주의사항",
+    "근육 통증 완화 운동",
+    "신경 이동 운동",
+    "수면장애 치료 방법",
+    "유산소 운동",
+    "별자리 운세",
+    "심리 테스트 및 성격 분석",
+    "투자 전략",
+    "부동산 구매 전략",
+    "주택청약 정보",
+    "문화 및 패션 정보",
+    "재정 관리 팁",
+    "음악 및 엔터테인먼트 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"2026년 대한민국 콘서트 일정, 개최 도시 및 티켓 정보 제공\",\"categoryName\":\"음악 및 엔터테인먼트 정보\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘서트 일정 및 티켓 정보는 음악 및 엔터테인먼트 관련 콘텐츠 범위에 포함됩니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 881,
+    "outputTokens": 470,
+    "totalTokens": 1351,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 374,
+    "latencyMs": 10984.758300008252,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"2026년 대한민국 콘서트 일정, 개최 도시 및 티켓 정보 제공\",\"categoryName\":\"음악 및 엔터테인먼트 정보\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘서트 일정 및 티켓 정보는 음악 및 엔터테인먼트 관련 콘텐츠 범위에 포함됩니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘서트 일정 및 티켓 정보는 음악 및 엔터테인먼트 관련 콘텐츠 범위에 포함됩니다.",
+      "categoryDescription": "2026년 대한민국 콘서트 일정, 개최 도시 및 티켓 정보 제공",
+      "categoryName": "음악 및 엔터테인먼트 정보",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,63 @@
+{
+  "testId": "URL-071",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세",
+    "앱 정보",
+    "온라인 플랫폼",
+    "창업·사업"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"온라인 창업 경험과 수익·노력 균형에 대한 내용\",\n\"categoryName\":\"창업·사업\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"온라인 사업 운영 경험과 창업 관련 고민을 다루고 있어 '창업·사업' 카테고리가 가장 적절함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 798,
+    "outputTokens": 770,
+    "totalTokens": 1568,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 686,
+    "latencyMs": 18164.296200033277,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"온라인 창업 경험과 수익·노력 균형에 대한 내용\",\n\"categoryName\":\"창업·사업\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"온라인 사업 운영 경험과 창업 관련 고민을 다루고 있어 '창업·사업' 카테고리가 가장 적절함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "온라인 사업 운영 경험과 창업 관련 고민을 다루고 있어 '창업·사업' 카테고리가 가장 적절함",
+      "categoryDescription": "집에서 시작할 수 있는 창업 아이디어 및 사업 계획 관련 내용",
+      "categoryName": "창업·사업",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": true
+  },
+  "estimatedCost": null
+}

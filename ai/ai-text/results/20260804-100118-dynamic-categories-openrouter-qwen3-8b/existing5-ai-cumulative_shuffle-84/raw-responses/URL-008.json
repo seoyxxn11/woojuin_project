@@ -1,0 +1,61 @@
+{
+  "testId": "URL-008",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"산소 운동의 효과와 건강 관리에 대한 정보를 요약한 내용\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"유산소 운동은 심폐력 향상과 체지방 감량 등 건강 관리와 직접적으로 관련된 주제로, 기존 '생활·건강' 카테고리의 범위에 포함된다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 778,
+    "outputTokens": 240,
+    "totalTokens": 1018,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 135,
+    "latencyMs": 7719.9783000396565,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"산소 운동의 효과와 건강 관리에 대한 정보를 요약한 내용\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"유산소 운동은 심폐력 향상과 체지방 감량 등 건강 관리와 직접적으로 관련된 주제로, 기존 '생활·건강' 카테고리의 범위에 포함된다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "유산소 운동은 심폐력 향상과 체지방 감량 등 건강 관리와 직접적으로 관련된 주제로, 기존 '생활·건강' 카테고리의 범위에 포함된다.",
+      "categoryDescription": "산소 운동의 효과와 건강 관리에 대한 정보를 요약한 내용",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

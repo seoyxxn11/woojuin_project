@@ -1,0 +1,12 @@
+﻿categoryId,categoryName,description,origin,createdAtItemId,selectedItemCount
+LIFE_HEALTH,생활·건강,"개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",SEED,,20
+LEARNING_CAREER,학습·커리어,"시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",SEED,,20
+PLACE_FOOD,장소·먹거리,"여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",SEED,,21
+CONSUMPTION_FINANCE,소비·금융,"상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",SEED,,21
+CULTURE_IDEA,문화·아이디어,"책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",SEED,,13
+AI-025FA0A8B1,운세,주간 운세 및 별자리 관련 정보,GENERATED,URL-013,3
+AI-F33EAAA388,자기·운세,심리 테스트 및 운세 관련 정보 제공,GENERATED,URL-016,6
+AI-2C192809C3,앱 정보,앱스토어에서 제공하는 특정 앱의 상세 정보를 포함한 콘텐츠,GENERATED,URL-048,2
+AI-EB9C0138E2,온라인 플랫폼,온라인 콘텐츠 공유 및 소비 플랫폼에 대한 설명,GENERATED,URL-062,2
+AI-A7B5B1547A,창업·사업,집에서 시작할 수 있는 창업 아이디어 및 사업 계획 관련 내용,GENERATED,URL-068,3
+AI-389F97AEBE,사회공헌·기업활동,기업의 사회공헌 활동과 관련된 뉴스 및 공지사항을 제공하는 콘텐츠,GENERATED,URL-096,1

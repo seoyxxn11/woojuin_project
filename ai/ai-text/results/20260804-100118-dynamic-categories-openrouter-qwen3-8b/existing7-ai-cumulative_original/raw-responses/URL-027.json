@@ -1,0 +1,62 @@
+{
+  "testId": "URL-027",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "운세·예측",
+    "심리·테스트"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"주택청약 관련 경쟁률, 일정, 무순위 등 주택 구입 정보 정리\",\n\"categoryName\":\"주택·청약\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 카테고리와 달리 주택청약 관련 정보를 집중적으로 다루는 특화된 분야로, 재정 관리와는 차별화되며 독립적인 카테고리가 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 765,
+    "outputTokens": 544,
+    "totalTokens": 1309,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 437,
+    "latencyMs": 12480.738900019787,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"주택청약 관련 경쟁률, 일정, 무순위 등 주택 구입 정보 정리\",\n\"categoryName\":\"주택·청약\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 카테고리와 달리 주택청약 관련 정보를 집중적으로 다루는 특화된 분야로, 재정 관리와는 차별화되며 독립적인 카테고리가 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "기존 카테고리와 달리 주택청약 관련 정보를 집중적으로 다루는 특화된 분야로, 재정 관리와는 차별화되며 독립적인 카테고리가 필요함",
+      "categoryDescription": "주택청약 관련 경쟁률, 일정, 무순위 등 주택 구입 정보 정리",
+      "categoryName": "주택·청약",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,63 @@
+{
+  "testId": "URL-049",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼",
+    "패션·소품",
+    "운세·예측"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"자취생의 일상 생활과 요리 팁, 식재료 절약법 및 주방 도구 선택 등 실용적인 생활 가이드\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"요리 팁, 식재료 절약법, 주방 도구 선택 등은 일상 생활 관리와 직접적으로 관련되어 있으며, '생활·건강' 카테고리의 '준비물, 청소, 정리, 행정 처리' 범주에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 836,
+    "outputTokens": 1067,
+    "totalTokens": 1903,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 931,
+    "latencyMs": 24085.472799954005,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"자취생의 일상 생활과 요리 팁, 식재료 절약법 및 주방 도구 선택 등 실용적인 생활 가이드\",\n\"categoryName\":\"생활·건강\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"요리 팁, 식재료 절약법, 주방 도구 선택 등은 일상 생활 관리와 직접적으로 관련되어 있으며, '생활·건강' 카테고리의 '준비물, 청소, 정리, 행정 처리' 범주에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "요리 팁, 식재료 절약법, 주방 도구 선택 등은 일상 생활 관리와 직접적으로 관련되어 있으며, '생활·건강' 카테고리의 '준비물, 청소, 정리, 행정 처리' 범주에 해당합니다.",
+      "categoryDescription": "자취생의 일상 생활과 요리 팁, 식재료 절약법 및 주방 도구 선택 등 실용적인 생활 가이드",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,61 @@
+{
+  "testId": "URL-042",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "여행·장소",
+    "음식·맛집",
+    "쇼핑·제품",
+    "돈·재테크",
+    "문화·아이디어",
+    "심리·자기개발"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"삶의 정리와 물건 정리에 관한 실용적인 조언\",\"categoryName\":\"생활·건강\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠는 40세 이후 삶의 정리 방법과 물건 정리에 대한 실용적인 조언을 제공하며, 이는 생활·건강 카테고리의 '일상 행동과 정리' 범주에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 775,
+    "outputTokens": 463,
+    "totalTokens": 1238,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 361,
+    "latencyMs": 10740.767300012521,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"삶의 정리와 물건 정리에 관한 실용적인 조언\",\"categoryName\":\"생활·건강\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠는 40세 이후 삶의 정리 방법과 물건 정리에 대한 실용적인 조언을 제공하며, 이는 생활·건강 카테고리의 '일상 행동과 정리' 범주에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘텐츠는 40세 이후 삶의 정리 방법과 물건 정리에 대한 실용적인 조언을 제공하며, 이는 생활·건강 카테고리의 '일상 행동과 정리' 범주에 해당합니다.",
+      "categoryDescription": "삶의 정리와 물건 정리에 관한 실용적인 조언",
+      "categoryName": "생활·건강",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

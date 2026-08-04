@@ -1,0 +1,54 @@
+{
+  "testId": "URL-048",
+  "availableCategories": [
+    "심리 테스트"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"앱스토어에서 제공하는 특정 앱의 상세 정보 페이지를 포함한 앱 관련 데이터\",\"categoryName\":\"앱 정보\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"입력된 콘텐츠는 앱스토어의 앱 상세 정보 페이지 URL로, 심리 테스트 카테고리와 관련성이 없음\"}",
+    "parsedOutput": null,
+    "inputTokens": 406,
+    "outputTokens": 382,
+    "totalTokens": 788,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 295,
+    "latencyMs": 8511.38759998139,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"앱스토어에서 제공하는 특정 앱의 상세 정보 페이지를 포함한 앱 관련 데이터\",\"categoryName\":\"앱 정보\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"입력된 콘텐츠는 앱스토어의 앱 상세 정보 페이지 URL로, 심리 테스트 카테고리와 관련성이 없음\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "입력된 콘텐츠는 앱스토어의 앱 상세 정보 페이지 URL로, 심리 테스트 카테고리와 관련성이 없음",
+      "categoryDescription": "앱스토어에서 제공하는 특정 앱의 상세 정보 페이지를 포함한 앱 관련 데이터",
+      "categoryName": "앱 정보",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

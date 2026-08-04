@@ -1,0 +1,60 @@
+{
+  "testId": "URL-026",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "운세",
+    "자기·운세"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"주택 구매를 위한 예산 관리, 대출 전략 등 금융적 결정을 지원하는 내용\",\n\"categoryName\":\"소비·금융\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주택 구매 관련 예산 관리, 대출 전략 등은 소비 및 금융 활동에 해당하며 기존 '소비·금융' 카테고리의 범위에 포함됩니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 698,
+    "outputTokens": 520,
+    "totalTokens": 1218,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 421,
+    "latencyMs": 10834.88550002221,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"주택 구매를 위한 예산 관리, 대출 전략 등 금융적 결정을 지원하는 내용\",\n\"categoryName\":\"소비·금융\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"주택 구매 관련 예산 관리, 대출 전략 등은 소비 및 금융 활동에 해당하며 기존 '소비·금융' 카테고리의 범위에 포함됩니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "주택 구매 관련 예산 관리, 대출 전략 등은 소비 및 금융 활동에 해당하며 기존 '소비·금융' 카테고리의 범위에 포함됩니다.",
+      "categoryDescription": "주택 구매를 위한 예산 관리, 대출 전략 등 금융적 결정을 지원하는 내용",
+      "categoryName": "소비·금융",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

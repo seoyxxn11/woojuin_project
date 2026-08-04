@@ -1,0 +1,61 @@
+{
+  "testId": "URL-032",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"온라인 콘텐츠 공유 플랫폼의 플레이리스트 관련 정보\",\n\"categoryName\":\"온라인 플랫폼\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"YouTube 플레이리스트는 온라인 콘텐츠 공유 플랫폼의 기능으로, 기존 '온라인 플랫폼' 카테고리에 해당\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 774,
+    "outputTokens": 787,
+    "totalTokens": 1561,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 686,
+    "latencyMs": 16104.71470002085,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"온라인 콘텐츠 공유 플랫폼의 플레이리스트 관련 정보\",\n\"categoryName\":\"온라인 플랫폼\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"YouTube 플레이리스트는 온라인 콘텐츠 공유 플랫폼의 기능으로, 기존 '온라인 플랫폼' 카테고리에 해당\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "YouTube 플레이리스트는 온라인 콘텐츠 공유 플랫폼의 기능으로, 기존 '온라인 플랫폼' 카테고리에 해당",
+      "categoryDescription": "온라인 콘텐츠 공유 플랫폼의 플레이리스트 관련 정보",
+      "categoryName": "온라인 플랫폼",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,61 @@
+{
+  "testId": "URL-088",
+  "availableCategories": [
+    "네트워크 기초",
+    "투자 전략",
+    "건강 및 정신 건강",
+    "주택청약 정보",
+    "성격 및 취향 테스트",
+    "프론트엔드 디자인 패턴",
+    "기술 면접 준비 팁",
+    "홈 정리 및 수납 팁"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"음식점 리뷰 및 순위 정보를 저장하는 카테고리\",\n\"categoryName\":\"음식점 가이드\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 카테고리 중 식당 관련 정보를 다루는 항목이 없으며, '강남구 맛집'과 같은 지역별 음식점 정보는 새로운 카테고리가 필요함\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 700,
+    "outputTokens": 410,
+    "totalTokens": 1110,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 310,
+    "latencyMs": 9227.785900002345,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"음식점 리뷰 및 순위 정보를 저장하는 카테고리\",\n\"categoryName\":\"음식점 가이드\",\n\"categoryOrigin\":\"GENERATED\",\n\"reason\":\"기존 카테고리 중 식당 관련 정보를 다루는 항목이 없으며, '강남구 맛집'과 같은 지역별 음식점 정보는 새로운 카테고리가 필요함\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "기존 카테고리 중 식당 관련 정보를 다루는 항목이 없으며, '강남구 맛집'과 같은 지역별 음식점 정보는 새로운 카테고리가 필요함",
+      "categoryDescription": "음식점 리뷰 및 순위 정보를 저장하는 카테고리",
+      "categoryName": "음식점 가이드",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

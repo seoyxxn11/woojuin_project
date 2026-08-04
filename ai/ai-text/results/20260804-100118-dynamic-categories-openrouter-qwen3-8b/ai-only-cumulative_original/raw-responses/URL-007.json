@@ -1,0 +1,57 @@
+{
+  "testId": "URL-007",
+  "availableCategories": [
+    "식품 관련 주의사항",
+    "근육 통증 완화 운동",
+    "신경 이동 운동",
+    "수면장애 치료 방법"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"수면의 질을 높이는 생활습관 및 환경 개선 방법에 대한 정보\",\n\"categoryName\":\"수면장애 치료 방법\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"제공된 콘텐츠는 수면장애 예방과 향상을 위한 생활습관 개선 방법을 다루고 있으며, 기존 '수면장애 치료 방법' 카테고리의 범위에 해당합니다.\"\n}",
+    "parsedOutput": null,
+    "inputTokens": 631,
+    "outputTokens": 269,
+    "totalTokens": 900,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 156,
+    "latencyMs": 8090.527200023644,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"수면의 질을 높이는 생활습관 및 환경 개선 방법에 대한 정보\",\n\"categoryName\":\"수면장애 치료 방법\",\n\"categoryOrigin\":\"EXISTING\",\n\"reason\":\"제공된 콘텐츠는 수면장애 예방과 향상을 위한 생활습관 개선 방법을 다루고 있으며, 기존 '수면장애 치료 방법' 카테고리의 범위에 해당합니다.\"\n}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "제공된 콘텐츠는 수면장애 예방과 향상을 위한 생활습관 개선 방법을 다루고 있으며, 기존 '수면장애 치료 방법' 카테고리의 범위에 해당합니다.",
+      "categoryDescription": "수면의 질을 높이는 생활습관 및 환경 개선 방법에 대한 정보",
+      "categoryName": "수면장애 치료 방법",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

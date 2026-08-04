@@ -1,0 +1,58 @@
+{
+  "testId": "URL-077",
+  "availableCategories": [
+    "심리 테스트",
+    "앱 정보",
+    "재정 관리",
+    "운동 요법",
+    "주택청약 정보"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"카페 방문 후기 및 리뷰 관련 콘텐츠\",\"categoryName\":\"카페 리뷰\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 카페 방문 후기로, 기존 카테고리와 일치하지 않아 새로운 카테고리 생성\"}",
+    "parsedOutput": null,
+    "inputTokens": 634,
+    "outputTokens": 810,
+    "totalTokens": 1444,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 732,
+    "latencyMs": 14624.002199969254,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"카페 방문 후기 및 리뷰 관련 콘텐츠\",\"categoryName\":\"카페 리뷰\",\"categoryOrigin\":\"GENERATED\",\"reason\":\"제공된 콘텐츠는 카페 방문 후기로, 기존 카테고리와 일치하지 않아 새로운 카테고리 생성\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "제공된 콘텐츠는 카페 방문 후기로, 기존 카테고리와 일치하지 않아 새로운 카테고리 생성",
+      "categoryDescription": "카페 방문 후기 및 리뷰 관련 콘텐츠",
+      "categoryName": "카페 리뷰",
+      "categoryOrigin": "GENERATED"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

@@ -1,0 +1,63 @@
+{
+  "testId": "URL-031",
+  "availableCategories": [
+    "생활·건강",
+    "학습·커리어",
+    "장소·먹거리",
+    "소비·금융",
+    "문화·아이디어",
+    "기술·개발",
+    "앱 정보",
+    "온라인 플랫폼",
+    "패션·소품",
+    "운세·예측"
+  ],
+  "response": {
+    "provider": "openrouter",
+    "modelId": "openrouter-qwen3-8b",
+    "requestedModel": "qwen/qwen3-8b",
+    "resolvedModel": "qwen/qwen3-8b",
+    "rawText": "{\n\n\"categoryDescription\":\"저축 습관과 재정 관리 전략을 다루는 내용\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠가 저축 습관, 재정적 스트레스 완화, 장기적인 재테크 기반 마련 등 소비 및 금융 관련 주제를 다루고 있어 '소비·금융' 카테고리에 해당합니다.\"}",
+    "parsedOutput": null,
+    "inputTokens": 829,
+    "outputTokens": 367,
+    "totalTokens": 1196,
+    "cachedInputTokens": 0,
+    "reasoningTokens": 263,
+    "latencyMs": 10224.893899983726,
+    "attemptCount": 1,
+    "finishReason": "stop",
+    "requestId": null,
+    "status": "SUCCESS",
+    "errorType": null,
+    "errorMessage": null,
+    "structuredOutputRequested": true,
+    "structuredOutputApplied": true,
+    "structuredOutputFallbackUsed": false,
+    "structuredOutputFallbackReason": null,
+    "providerMetadata": {
+      "temperatureRequested": 0,
+      "temperatureApplied": 0,
+      "note": "OpenRouter Chat Completions에 temperature 적용",
+      "streaming": false,
+      "toolsEnabled": false,
+      "apiMode": "chat_completions",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    }
+  },
+  "parsing": {
+    "rawResponse": "{\n\n\"categoryDescription\":\"저축 습관과 재정 관리 전략을 다루는 내용\",\"categoryName\":\"소비·금융\",\"categoryOrigin\":\"EXISTING\",\"reason\":\"콘텐츠가 저축 습관, 재정적 스트레스 완화, 장기적인 재테크 기반 마련 등 소비 및 금융 관련 주제를 다루고 있어 '소비·금융' 카테고리에 해당합니다.\"}",
+    "jsonValid": true,
+    "schemaValid": true,
+    "extraTextDetected": false,
+    "parsedResponse": {
+      "reason": "콘텐츠가 저축 습관, 재정적 스트레스 완화, 장기적인 재테크 기반 마련 등 소비 및 금융 관련 주제를 다루고 있어 '소비·금융' 카테고리에 해당합니다.",
+      "categoryDescription": "저축 습관과 재정 관리 전략을 다루는 내용",
+      "categoryName": "소비·금융",
+      "categoryOrigin": "EXISTING"
+    },
+    "validationError": "",
+    "deduplicatedToExisting": false
+  },
+  "estimatedCost": null
+}

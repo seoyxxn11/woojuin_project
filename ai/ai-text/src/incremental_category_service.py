@@ -222,12 +222,26 @@ class ServiceBackend(Protocol):
     def review_reuse(
         self, item: dict[str, Any], candidate_infos: list[dict[str, Any]]
     ) -> dict[str, Any]:
-        """임베딩만으로 애매할 때 기존 후보 재사용 여부를 판단한다.
+        """(구) 임베딩 애매 시 기존 후보 재사용 여부 판단. review_candidate_entry로 대체됨."""
+        ...
+
+    def review_candidate_entry(
+        self,
+        item: dict[str, Any],
+        formal_category_name: str,
+        candidate_infos: list[dict[str, Any]],
+        *,
+        formal_confident: bool,
+    ) -> dict[str, Any]:
+        """정식 분류가 확신이어도, 반복 가능한 더 구체적인 세부 주제인지 판단한다.
 
         candidate_infos: [{candidateId, name, description, supportCount,
         representativeItems:[{title, summary}], centerSimilarity, maxItemSimilarity}]
-        반환: {"action": "REUSE"|"CREATE", "candidateId": int|None,
-               "confidence": float, "reason": str}
+        반환: {"action": "REUSE"|"CREATE"|"SKIP", "candidateId": int|None,
+               "name": str, "description": str, "confidence": float, "reason": str}
+        - REUSE: 기존 세부주제 후보와 같음 → 그 후보에 병행 연결
+        - CREATE: 정식 카테고리보다 구체적이고 반복될 세부 주제 → 신규 후보
+        - SKIP: 그냥 정식 카테고리의 일반적인 데이터 → 후보 만들지 않음
         """
         ...
 
@@ -490,6 +504,48 @@ class DeterministicBackend:
             "reason": "기존 후보와 구분되는 새 주제",
         }
 
+    def review_candidate_entry(
+        self, item, formal_category_name, candidate_infos, *, formal_confident
+    ) -> dict[str, Any]:
+        # 유사한 기존 후보가 있으면 재사용
+        if candidate_infos:
+            best = max(
+                candidate_infos,
+                key=lambda info: max(info["centerSimilarity"], info["maxItemSimilarity"]),
+            )
+            score = max(best["centerSimilarity"], best["maxItemSimilarity"])
+            if score >= 0.6:
+                return {
+                    "action": "REUSE",
+                    "candidateId": best["candidateId"],
+                    "name": "",
+                    "description": "",
+                    "confidence": round(score, 3),
+                    "reason": f"기존 세부주제 '{best['name']}'와 유사(유사도 {score:.2f})",
+                }
+        # 개념 맵에 걸리는 뚜렷한 세부 주제만 신규 생성, 그 외는 일반 데이터로 SKIP
+        text = build_service_text(item)
+        concept = next(
+            (self.concept_map[t] for t in service_tokens(text) if t in self.concept_map), None
+        )
+        if concept:
+            return {
+                "action": "CREATE",
+                "candidateId": None,
+                "name": concept,
+                "description": f"{concept} 관련 반복 세부 주제",
+                "confidence": 0.7,
+                "reason": f"'{formal_category_name}'보다 구체적인 반복 주제({concept})",
+            }
+        return {
+            "action": "SKIP",
+            "candidateId": None,
+            "name": "",
+            "description": "",
+            "confidence": 0.6,
+            "reason": f"'{formal_category_name}'의 일반적인 데이터",
+        }
+
 
 def _default_clock() -> datetime:
     return datetime.now(timezone.utc).astimezone()
@@ -596,15 +652,17 @@ class WorkspaceCategoryEngine:
                 "ambiguous": ambiguous,
                 "selectedFormalCategoryId": nearest_id,
                 "selectedFormalCategoryIds": formal_ids,
+                "formalConfident": not ambiguous,
                 "matchedExistingCandidate": False,
                 "linkedCandidateId": None,
                 "candidateName": None,
                 "newCandidateCreated": False,
                 "candidateSupportCount": None,
-                "candidateAction": "FORMAL_ONLY" if not ambiguous else None,
+                "candidateAction": "FORMAL_ONLY",
                 "centerSimilarity": None,
                 "maxItemSimilarity": None,
-                "aiReuseDecision": None,
+                "candidateEntryDecision": None,
+                "candidateEntryReason": None,
                 "promoted": False,
                 "reclassified": False,
                 "candidateError": None,
@@ -624,12 +682,12 @@ class WorkspaceCategoryEngine:
             if formal is not None:
                 formal["itemIds"].append(item_id)
 
-            # 3~8. 후보 처리 (실패해도 데이터 저장/정식 분류는 유지)
-            if ambiguous:
-                try:
-                    self._handle_candidate(item, item_id, ordered, classification, log)
-                except Exception as exc:  # noqa: BLE001 - 후보 처리 실패 격리
-                    log["candidateError"] = str(exc)
+            # 3~8. 후보 처리: 확신 분류 여부와 무관하게 세부 주제 진입을 평가한다.
+            # (데이터는 이미 가장 가까운 정식 카테고리에 배치됐고, 후보 연결은 병행 표시)
+            try:
+                self._handle_candidate(item, item_id, ordered, classification, log, ambiguous)
+            except Exception as exc:  # noqa: BLE001 - 후보 처리 실패 격리
+                log["candidateError"] = str(exc)
 
             log["formalCategoryCount"] = len(self.formal_categories)
             log["candidateCount"] = len(self._active_candidates())
@@ -683,6 +741,7 @@ class WorkspaceCategoryEngine:
         ordered_scores: list[dict[str, Any]],
         classification: ItemClassification,
         log: dict[str, Any],
+        ambiguous: bool,
     ) -> None:
         embedding = self.backend.embed(build_service_text(item))
         self._item_embeddings[item_id] = embedding
@@ -698,7 +757,8 @@ class WorkspaceCategoryEngine:
         candidate: TemporaryCandidate | None = None
         action: str | None = None
 
-        # 1. 임베딩 기준(centerSimilarity 또는 maxItemSimilarity) 재사용
+        # 1. 임베딩 기준(centerSimilarity 또는 maxItemSimilarity) 재사용 — 확신 분류든 아니든
+        #    기존 세부주제 후보와 충분히 유사하면 바로 병행 연결한다.
         eligible = [s for s in sims if s[1] >= center_thr or s[2] >= item_thr]
         if eligible:
             best = max(eligible, key=lambda s: max(s[1], s[2]))
@@ -706,40 +766,35 @@ class WorkspaceCategoryEngine:
             action = "REUSE_EMBEDDING"
             log["matchedExistingCandidate"] = True
         else:
-            # 2. 애매 밴드(ai-review-lower-bound 이상)면 AI에게 재사용 여부 판단 요청
-            near = [s for s in sims if max(s[1], s[2]) >= self.config.ai_review_lower_bound]
-            if near:
-                decision = self.backend.review_reuse(
-                    item, [self._ai_candidate_info(s) for s in near]
-                )
-                log["aiReuseDecision"] = {
-                    key: decision.get(key)
-                    for key in ("action", "candidateId", "confidence", "reason")
-                }
-                if str(decision.get("action", "")).upper() == "REUSE" and decision.get(
-                    "candidateId"
-                ) is not None:
-                    picked = self._candidate_by_id(int(decision["candidateId"]))
-                    if picked is not None and picked.status in {PENDING, READY_TO_PROMOTE}:
-                        candidate, action = picked, "REUSE_AI"
-                        log["matchedExistingCandidate"] = True
-            if candidate is None:
-                # 3. 신규 후보 필요 여부 + 이름/설명 생성(AI), 그 후 최종 중복 확인
-                proposal = self.backend.propose_candidate(
-                    item, self._formal_snapshot(), ordered_scores
-                )
-                if not proposal.get("needsNew"):
-                    return  # 정식 다중 분류로 충분 → 후보 없음
-                candidate, created = self._create_or_reuse_candidate(item_id, embedding, proposal)
-                if created:
-                    action = "CREATE"
-                    log["newCandidateCreated"] = True
-                else:
-                    action = "REUSE_FINAL_DEDUP"
+            # 2. 임베딩만으로 애매 → AI가 진입 판단: REUSE(기존 후보) / CREATE(새 세부주제) / SKIP(일반 데이터)
+            formal = self._formal_by_id(str(classification.formalCategoryId))
+            decision = self.backend.review_candidate_entry(
+                item,
+                str(formal["name"]) if formal else "",
+                [self._ai_candidate_info(s) for s in sims],
+                formal_confident=not ambiguous,
+            )
+            act = str(decision.get("action", "SKIP")).upper()
+            log["candidateEntryDecision"] = act
+            log["candidateEntryReason"] = str(decision.get("reason", ""))
+            if act == "REUSE" and decision.get("candidateId") is not None:
+                picked = self._candidate_by_id(int(decision["candidateId"]))
+                if picked is not None and picked.status in {PENDING, READY_TO_PROMOTE}:
+                    candidate, action = picked, "REUSE_AI"
                     log["matchedExistingCandidate"] = True
+            elif act == "CREATE":
+                proposal = {
+                    "name": decision.get("name") or f"후보-{item_id}",
+                    "description": decision.get("description") or "",
+                }
+                candidate, created = self._create_or_reuse_candidate(item_id, embedding, proposal)
+                action = "CREATE" if created else "REUSE_FINAL_DEDUP"
+                log["newCandidateCreated"] = created
+                log["matchedExistingCandidate"] = not created
+            # act == SKIP(또는 무효 응답) → 후보 없음, 정식 카테고리에만 유지
 
         if candidate is None:
-            return
+            return  # FORMAL_ONLY: 가장 가까운 정식 카테고리에만 표시
 
         log["candidateAction"] = action
         self._link_item(candidate, item_id, embedding)

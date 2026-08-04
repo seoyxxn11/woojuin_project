@@ -331,6 +331,58 @@ class RealServiceBackend:
             "reason": str(parsed.get("reason", "")).strip(),
         }
 
+    def review_candidate_entry(self, item, formal_category_name, candidate_infos, *, formal_confident):
+        from src.incremental_category_service import build_service_text
+
+        lines = []
+        for info in candidate_infos:
+            reps = "; ".join(
+                f"{r.get('title','')}({r.get('summary','')[:40]})" for r in info.get("representativeItems", [])
+            )
+            lines.append(
+                f"- candidateId={info['candidateId']} | 이름:{info['name']} | 설명:{info.get('description','')} "
+                f"| 연결수:{info['supportCount']} | center:{info['centerSimilarity']} max:{info['maxItemSimilarity']} | 대표:{reps}"
+            )
+        confident_note = (
+            "이 데이터는 이미 정식 카테고리에 확신 있게 분류됐다. 그래도 그 카테고리보다 '더 구체적이고 반복될 세부 주제'인지 판단하라."
+            if formal_confident
+            else "이 데이터는 정식 분류가 다소 애매하다. 반복될 세부 주제 후보 형성에 조금 더 적극적으로 판단하라."
+        )
+        prompt = (
+            f"데이터는 정식 카테고리 '{formal_category_name}'에 이미 분류됐다.\n{confident_note}\n"
+            "- 아래 기존 세부주제 후보 중 같은 주제가 있으면 REUSE(candidateId).\n"
+            "- 기존에 없지만 '{cat}'보다 구체적이고 반복될 세부 주제면 CREATE(name 2~12자 명사형, description). 연도·지역·브랜드 등 일회성 표현은 피하라.\n"
+            "- 그냥 '{cat}'의 일반적인 데이터면 SKIP.\n"
+            "JSON만: {\"action\":\"REUSE|CREATE|SKIP\",\"candidateId\":정수또는null,\"name\":\"\",\"description\":\"\",\"confidence\":0.0,\"reason\":\"\"}\n\n"
+        ).replace("{cat}", formal_category_name) + (
+            f"새 데이터:\n제목: {item.get('title','')}\n내용: {build_service_text(item)[:800]}\n\n"
+            f"기존 세부주제 후보:\n" + ("\n".join(lines) if lines else "(없음)") + "\n"
+        )
+        schema = {
+            "type": "object",
+            "properties": {
+                "action": {"type": "string", "enum": ["REUSE", "CREATE", "SKIP"]},
+                "candidateId": {"type": ["integer", "null"]},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "confidence": {"type": "number"},
+                "reason": {"type": "string"},
+            },
+            "required": ["action", "reason"],
+        }
+        parsed = self._ask(prompt, schema)
+        if not parsed:
+            return {"action": "SKIP", "candidateId": None, "name": "", "description": "", "confidence": 0.0, "reason": "AI 응답 실패"}
+        cid = parsed.get("candidateId")
+        return {
+            "action": str(parsed.get("action", "SKIP")).upper(),
+            "candidateId": int(cid) if isinstance(cid, (int, float)) else None,
+            "name": str(parsed.get("name", "")).strip(),
+            "description": str(parsed.get("description", "")).strip(),
+            "confidence": float(parsed.get("confidence", 0.0) or 0.0),
+            "reason": str(parsed.get("reason", "")).strip(),
+        }
+
 
 # ---- 실행 및 보고서 ----
 

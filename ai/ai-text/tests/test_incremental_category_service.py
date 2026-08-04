@@ -78,6 +78,16 @@ class FakeBackend:
         decision = self.promote(candidate) if callable(self.promote) else self.promote
         return {"promote": bool(decision), "reason": "테스트"}
 
+    def review_candidate_entry(self, item, formal_category_name, candidate_infos, *, formal_confident):
+        # 확신 분류면 일반 데이터로 보고 SKIP, 애매하면 새 세부주제로 CREATE
+        if formal_confident:
+            return {"action": "SKIP", "candidateId": None, "name": "", "description": "", "confidence": 0.6, "reason": "generic"}
+        return {
+            "action": "CREATE", "candidateId": None,
+            "name": item.get("candidateName") or item["testId"], "description": "설명",
+            "confidence": 0.8, "reason": "새 세부주제",
+        }
+
 
 def make_engine(backend, config=None, workspace_id=10):
     clock = itertools.count()
@@ -291,6 +301,19 @@ class VectorBackend:
             return decision(item, candidate_infos)
         return decision or {"action": "CREATE", "candidateId": None, "confidence": 0.5, "reason": "기본"}
 
+    def review_candidate_entry(self, item, formal_category_name, candidate_infos, *, formal_confident):
+        name = self.names.get(item["testId"], item["testId"])
+        if not candidate_infos:  # 첫 후보는 무조건 생성
+            return {"action": "CREATE", "candidateId": None, "name": name, "description": "d", "confidence": 0.8, "reason": "첫 후보"}
+        d = self.reuse_decision
+        dec = d(item, candidate_infos) if callable(d) else (d or {"action": "CREATE", "candidateId": None})
+        return {
+            "action": str(dec.get("action", "CREATE")).upper(),
+            "candidateId": dec.get("candidateId"),
+            "name": name, "description": "d",
+            "confidence": dec.get("confidence", 0.8), "reason": dec.get("reason", ""),
+        }
+
     def review_promotion(self, candidate, linked_items):
         return {"promote": self.promote, "reason": "테스트"}
 
@@ -354,9 +377,9 @@ def test_ai_review_reuse_when_embedding_ambiguous():
     )
     engine = _engine(backend, config)
     engine.submit_item(vec_item("A"))
-    log_b = engine.submit_item(vec_item("B"))  # centerSim~0.7 (밴드) → AI 재사용
+    log_b = engine.submit_item(vec_item("B"))  # centerSim~0.7 (임베딩 미달) → AI 진입판단 REUSE
     assert log_b["candidateAction"] == "REUSE_AI"
-    assert log_b["aiReuseDecision"]["action"] == "REUSE"
+    assert log_b["candidateEntryDecision"] == "REUSE"
     assert len([c for c in engine.candidates if c.status == PENDING]) == 1
 
 

@@ -1,0 +1,34 @@
+{
+  "parsed": {
+    "contentSufficient": true,
+    "finalTitle": "Byulli : 네이버 블로그",
+    "summary": "네이버 블로그에 게시된 Byulli 관련 글입니다.",
+    "titleAction": "KEEP"
+  },
+  "rawText": "{\"contentSufficient\":true,\"finalTitle\":\"Byulli : 네이버 블로그\",\"summary\":\"네이버 블로그에 게시된 Byulli 관련 글입니다.\",\"titleAction\":\"KEEP\"}",
+  "usage": {
+    "prompt_tokens": 620,
+    "completion_tokens": 48,
+    "total_tokens": 668,
+    "cost": 9.438e-05,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 9.438e-05,
+      "upstream_inference_prompt_cost": 7.254e-05,
+      "upstream_inference_completions_cost": 2.184e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latencyMs": 10313.18,
+  "model": "qwen/qwen3-8b"
+}

@@ -1,0 +1,15 @@
+{
+  "provider": "openrouter",
+  "model": "qwen/qwen3-8b",
+  "items": 5,
+  "titleChanged": 2,
+  "titleKept": 3,
+  "contentSufficient": 5,
+  "contentInsufficient": 0,
+  "shardIndex": null,
+  "shardCount": 1,
+  "totalDatasetItems": 5,
+  "output": "C:\\Users\\SSAFY\\ssafy\\ai\\ai-text\\results\\20260804-230555-openrouter-qwen3-8b-url-metadata",
+  "enrichedDataset": "C:\\Users\\SSAFY\\ssafy\\ai\\ai-text\\dataset\\tester",
+  "createdAt": "2026-08-04T23:06:54.581307+09:00"
+}

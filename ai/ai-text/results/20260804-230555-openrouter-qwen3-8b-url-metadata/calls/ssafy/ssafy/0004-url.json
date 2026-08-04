@@ -1,0 +1,34 @@
+{
+  "parsed": {
+    "contentSufficient": true,
+    "finalTitle": "삼성청년SW·AI아카데미",
+    "summary": "삼성전자와 고용노동부가 후원하는 청년 대상 소프트웨어 및 AI 교육 프로그램으로, 12개월간 실무 중심의 교육과 취업 지원을 제공합니다.",
+    "titleAction": "KEEP"
+  },
+  "rawText": "{\"contentSufficient\":true,\"finalTitle\":\"삼성청년SW·AI아카데미\",\"summary\":\"삼성전자와 고용노동부가 후원하는 청년 대상 소프트웨어 및 AI 교육 프로그램으로, 12개월간 실무 중심의 교육과 취업 지원을 제공합니다.\",\"titleAction\":\"KEEP\"}",
+  "usage": {
+    "prompt_tokens": 3521,
+    "completion_tokens": 80,
+    "total_tokens": 3601,
+    "cost": 0.000448357,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000448357,
+      "upstream_inference_prompt_cost": 0.000411957,
+      "upstream_inference_completions_cost": 3.64e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latencyMs": 11487.28,
+  "model": "qwen/qwen3-8b"
+}

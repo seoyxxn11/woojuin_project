@@ -1,0 +1,167 @@
+[
+  {
+    "file": "ssafy\\ssafy\\0003-url.txt",
+    "originalTitle": "삼성청년SW•AI아카데미(SSAFY) (@hellossafy) • Instagram photos and videos",
+    "contentSufficient": true,
+    "finalTitle": "삼성청년SW•AI아카데미(SSAFY) 인스타그램",
+    "summary": "삼성 청년 SW·AI 아카데미의 인스타그램 계정입니다. 학생들의 프로젝트와 활동을 공유합니다.",
+    "titleAction": "REPLACE",
+    "titleChanged": true,
+    "latencyMs": 11540.12,
+    "usage": {
+      "prompt_tokens": 669,
+      "completion_tokens": 75,
+      "total_tokens": 744,
+      "cost": 0.000112398,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000112398,
+        "upstream_inference_prompt_cost": 7.8273e-05,
+        "upstream_inference_completions_cost": 3.4125e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "file": "ssafy\\ssafy\\0004-url.txt",
+    "originalTitle": "삼성청년SW·AI아카데미",
+    "contentSufficient": true,
+    "finalTitle": "삼성청년SW·AI아카데미",
+    "summary": "삼성전자와 고용노동부가 후원하는 청년 대상 소프트웨어 및 AI 교육 프로그램으로, 12개월간 실무 중심의 교육과 취업 지원을 제공합니다.",
+    "titleAction": "KEEP",
+    "titleChanged": false,
+    "latencyMs": 11487.28,
+    "usage": {
+      "prompt_tokens": 3521,
+      "completion_tokens": 80,
+      "total_tokens": 3601,
+      "cost": 0.000448357,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000448357,
+        "upstream_inference_prompt_cost": 0.000411957,
+        "upstream_inference_completions_cost": 3.64e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "file": "짱구\\짱구\\0005-url.txt",
+    "originalTitle": "Byulli : 네이버 블로그",
+    "contentSufficient": true,
+    "finalTitle": "Byulli : 네이버 블로그",
+    "summary": "네이버 블로그에 게시된 Byulli 관련 글입니다.",
+    "titleAction": "KEEP",
+    "titleChanged": false,
+    "latencyMs": 10313.18,
+    "usage": {
+      "prompt_tokens": 620,
+      "completion_tokens": 48,
+      "total_tokens": 668,
+      "cost": 9.438e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 9.438e-05,
+        "upstream_inference_prompt_cost": 7.254e-05,
+        "upstream_inference_completions_cost": 2.184e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "file": "짱구\\짱구\\0006-url.txt",
+    "originalTitle": "짱구는 못말려/극장판",
+    "contentSufficient": true,
+    "finalTitle": "극장판 짱구는 못말려",
+    "summary": "인기 애니메이션 '짱구는 못말려'의 극장판 시리즈로, 일본에서는 매년 여름방학에 개봉하며 다양한 장르와 스토리로 구성된 애니메이션이다.",
+    "titleAction": "REPLACE",
+    "titleChanged": true,
+    "latencyMs": 13639.85,
+    "usage": {
+      "prompt_tokens": 9512,
+      "completion_tokens": 88,
+      "total_tokens": 9600,
+      "cost": 0.001152944,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001152944,
+        "upstream_inference_prompt_cost": 0.001112904,
+        "upstream_inference_completions_cost": 4.004e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "file": "짱구\\짱구\\0007-url.txt",
+    "originalTitle": "신짱구 - 위키백과, 우리 모두의 백과사전",
+    "contentSufficient": true,
+    "finalTitle": "신짱구 - 위키백과, 우리 모두의 백과사전",
+    "summary": "신짱구는 《짱구는 못말려》의 주인공으로, 유치원생이자 떡잎마을 방범대의 리더이다. 엉뚱하고 4차원적인 성격을 가진 그는 친구들과의 관계가 복잡하며, 다양한 캐릭터와 협력하는 등 활발한 활동을 하고 있다.",
+    "titleAction": "KEEP",
+    "titleChanged": false,
+    "latencyMs": 11959.19,
+    "usage": {
+      "prompt_tokens": 3045,
+      "completion_tokens": 124,
+      "total_tokens": 3169,
+      "cost": 0.000412685,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000412685,
+        "upstream_inference_prompt_cost": 0.000356265,
+        "upstream_inference_completions_cost": 5.642e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+]

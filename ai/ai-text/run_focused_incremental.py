@@ -204,9 +204,10 @@ def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, outpu
 
 ITEM_COLUMNS = [
     "itemId", "inputOrder", "dataType", "goldGroupId", "goldCategoryName", "expectedBehavior",
-    "initialFormalCategory", "formalTopScore", "formalScoreGap", "candidateAction",
+    "initialFormalCategory", "formalTopScore", "formalScoreGap", "formalConfident",
+    "candidateAction", "candidateEntryDecision", "candidateEntryReason",
     "candidateId", "candidateName", "centerSimilarity", "maxItemSimilarity",
-    "supportCountAfter", "aiReuseDecision", "wasPromoted", "finalFormalCategory", "wasReclassified",
+    "supportCountAfter", "wasPromoted", "finalFormalCategory", "wasReclassified",
 ]
 CANDIDATE_COLUMNS = [
     "candidateId", "candidateName", "status", "supportCount", "linkedItemIds",
@@ -221,7 +222,6 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
         gold = gold_by_id[item_id]
         classification = engine.item_classifications[item_id]
         final_formal = formal_name.get(classification.formalCategoryId, classification.formalCategoryId)
-        ai = log.get("aiReuseDecision")
         rows.append(
             {
                 "itemId": item_id,
@@ -230,18 +230,20 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
                 "goldGroupId": gold["goldGroupId"],
                 "goldCategoryName": gold["goldCategoryName"],
                 "expectedBehavior": gold["expectedBehavior"],
+                "formalConfident": log.get("formalConfident"),
                 "initialFormalCategory": formal_name.get(
                     log.get("selectedFormalCategoryId"), log.get("selectedFormalCategoryId")
                 ),
                 "formalTopScore": log.get("formalTopScore"),
                 "formalScoreGap": log.get("formalScoreGap"),
                 "candidateAction": log.get("candidateAction"),
+                "candidateEntryDecision": log.get("candidateEntryDecision"),
+                "candidateEntryReason": log.get("candidateEntryReason"),
                 "candidateId": log.get("linkedCandidateId"),
                 "candidateName": log.get("candidateName"),
                 "centerSimilarity": log.get("centerSimilarity"),
                 "maxItemSimilarity": log.get("maxItemSimilarity"),
                 "supportCountAfter": log.get("candidateSupportCount"),
-                "aiReuseDecision": (ai.get("action") if isinstance(ai, dict) else None),
                 "wasPromoted": log.get("promoted", False),
                 "finalFormalCategory": final_formal,
                 "wasReclassified": item_id in engine.reclassified_item_ids,

@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"문서 자동 분류 보관함","content":"업로드한 이미지와 문서를 내용에 따라 자동으로 폴더에 나눠 보관해 주는 서비스.","summary":"이미지·문서를 내용 기준으로 자동 분류해 보관하는 서비스.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"이미지·문서를 내용 기준으로 자동 분류해 보관하는 서비스."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

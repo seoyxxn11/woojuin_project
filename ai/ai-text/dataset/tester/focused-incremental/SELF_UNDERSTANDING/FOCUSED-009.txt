@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"스트레스 대처 성향 파악","content":"압박을 받을 때 회피형인지 정면돌파형인지 자신의 대처 방식을 알아보는 테스트.","summary":"스트레스 상황에서의 대처 성향을 파악하는 테스트.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"스트레스 상황에서의 대처 성향을 파악하는 테스트."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

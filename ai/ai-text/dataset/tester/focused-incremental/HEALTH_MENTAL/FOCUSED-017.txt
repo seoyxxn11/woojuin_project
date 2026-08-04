@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"우울감 완화 생활 습관","content":"기분이 가라앉을 때 도움이 되는 규칙적인 생활과 신체 활동을 소개하는 건강 정보.","summary":"기분 저하 시 도움이 되는 규칙적 생활 습관 안내.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"기분 저하 시 도움이 되는 규칙적 생활 습관 안내."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

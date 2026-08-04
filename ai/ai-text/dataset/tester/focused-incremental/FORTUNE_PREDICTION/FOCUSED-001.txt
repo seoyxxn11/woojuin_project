@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"이번 주 별자리 흐름","content":"각 별자리의 이번 주 감정과 대인관계 흐름을 짚어 주는 페이지. 물병자리와 사자자리의 주중 컨디션 변화를 살펴본다.","summary":"별자리별 이번 주 감정·관계 흐름을 요약해 주는 콘텐츠.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"별자리별 이번 주 감정·관계 흐름을 요약해 주는 콘텐츠."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

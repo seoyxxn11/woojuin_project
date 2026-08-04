@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"정신건강 상담기관 안내","content":"가까운 정신건강복지센터와 상담 전화를 어떻게 이용하는지 안내하는 페이지.","summary":"정신건강복지센터·상담 전화 이용 방법 안내.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"정신건강복지센터·상담 전화 이용 방법 안내."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

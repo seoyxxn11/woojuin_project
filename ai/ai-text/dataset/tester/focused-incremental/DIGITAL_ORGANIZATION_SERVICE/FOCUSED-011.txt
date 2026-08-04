@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"개인 기록 모으는 앱","content":"메모·사진·일정처럼 흩어진 개인 기록을 한 앱에 모아 주제별로 정리해 주는 모바일 앱.","summary":"흩어진 개인 기록을 한곳에 모아 정리하는 모바일 앱.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"흩어진 개인 기록을 한곳에 모아 정리하는 모바일 앱."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

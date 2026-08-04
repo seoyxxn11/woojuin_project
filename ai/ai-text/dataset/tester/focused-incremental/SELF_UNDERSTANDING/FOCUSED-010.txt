@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"가치관 우선순위 알아보기","content":"성취·안정·관계·자유 가운데 삶에서 무엇을 더 중시하는지 순위를 매겨 보는 검사.","summary":"삶의 가치관 우선순위를 순위로 확인하는 검사.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"삶의 가치관 우선순위를 순위로 확인하는 검사."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

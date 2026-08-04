@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"타로로 보는 연애 전망","content":"카드 세 장을 뽑아 지금 만나는 사람과의 관계가 어떻게 흘러갈지 해석해 주는 콘텐츠.","summary":"타로 카드로 연애 관계의 전개를 해석하는 콘텐츠.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"타로 카드로 연애 관계의 전개를 해석하는 콘텐츠."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

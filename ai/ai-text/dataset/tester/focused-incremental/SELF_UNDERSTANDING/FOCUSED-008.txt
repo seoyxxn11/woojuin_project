@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"대인관계 반응 질문지","content":"갈등이나 부탁을 받을 때 반복적으로 나오는 나의 반응 패턴을 살펴보는 문항 모음.","summary":"대인관계에서 반복되는 반응 패턴을 살펴보는 질문지.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"대인관계에서 반복되는 반응 패턴을 살펴보는 질문지."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

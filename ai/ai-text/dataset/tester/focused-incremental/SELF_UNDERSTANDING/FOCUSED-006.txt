@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"애착 유형 확인 검사","content":"연인·친구와의 관계에서 드러나는 애착 성향(안정·불안·회피)을 문항으로 확인하는 진단.","summary":"관계에서 드러나는 애착 성향을 문항으로 확인하는 진단.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"관계에서 드러나는 애착 성향을 문항으로 확인하는 진단."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"스마트폰 카메라 비교","content":"최신 스마트폰들의 카메라 화소와 야간 촬영 성능을 표로 비교한 구매 참고 자료.","summary":"최신 스마트폰들의 카메라 성능을 비교한 제품 자료.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"최신 스마트폰들의 카메라 성능을 비교한 제품 자료."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

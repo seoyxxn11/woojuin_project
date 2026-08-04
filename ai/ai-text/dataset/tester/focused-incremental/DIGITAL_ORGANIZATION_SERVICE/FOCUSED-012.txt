@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"나중에 읽기 저장 서비스","content":"지금 볼 수 없는 웹 글을 저장해 뒀다가 시간 날 때 모아 읽을 수 있게 해 주는 서비스.","summary":"웹 콘텐츠를 저장해 두었다가 나중에 읽게 해 주는 서비스.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"웹 콘텐츠를 저장해 두었다가 나중에 읽게 해 주는 서비스."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

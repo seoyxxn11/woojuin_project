@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"업무 행동 유형 진단","content":"회의·협업·마감 상황에서 내가 어떤 방식으로 움직이는지 유형으로 나눠 보여 주는 검사.","summary":"업무 상황에서의 행동 방식을 유형으로 진단하는 검사.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"업무 상황에서의 행동 방식을 유형으로 진단하는 검사."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

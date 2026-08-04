@@ -1,0 +1,1 @@
+{"itemId":null,"type":"MEMO","status":"DONE","title":"노트북 신제품 사양","content":"새로 나온 노트북의 프로세서·무게·배터리 지속 시간 등 사양을 표로 정리한 제품 정보.","summary":"신형 노트북의 프로세서·무게·배터리 등 사양 정리.","s3Key":null,"preview":{"thumbnailUrl":null,"description":"신형 노트북의 프로세서·무게·배터리 등 사양 정리."},"categories":[],"favorite":false,"createdAt":null,"deletedAt":null}

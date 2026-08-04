@@ -74,6 +74,9 @@ class ServiceConfig:
     # 생성 지연(잠정 신호) 정책용
     signal_similarity_threshold: float = 0.55
     signal_ttl_items: int = 100
+    # 핵심 대상(엔티티) 기반 매칭 정책용 (실험 플래그)
+    use_core_entity: bool = False
+    entity_min_confidence: float = 0.5
 
     @classmethod
     def from_mapping(cls, mapping: dict[str, Any] | None) -> "ServiceConfig":
@@ -159,6 +162,12 @@ class ServiceConfig:
             signal_ttl_items=int(
                 pick_candidate("signal-ttl-items", "signal_ttl_items", default=100)
             ),
+            use_core_entity=bool(
+                pick("use-core-entity", "use_core_entity", default=False)
+            ),
+            entity_min_confidence=float(
+                pick("entity-min-confidence", "entity_min_confidence", default=0.5)
+            ),
         )
 
 
@@ -179,6 +188,9 @@ class TemporaryCandidate:
     mergedIntoCandidateId: int | None = None
     promotedFormalCategoryId: str | None = None
     lastReviewReason: str | None = None
+    # 핵심 대상(엔티티) 기반 매칭용
+    entityKey: str = ""
+    entityAliases: set[str] = field(default_factory=set)
 
     def public_dict(self) -> dict[str, Any]:
         """대표 임베딩 원본 대신 차원만 노출한 직렬화."""
@@ -197,6 +209,8 @@ class TemporaryCandidate:
             "mergedIntoCandidateId": self.mergedIntoCandidateId,
             "promotedFormalCategoryId": self.promotedFormalCategoryId,
             "lastReviewReason": self.lastReviewReason,
+            "entityKey": self.entityKey,
+            "entityAliases": sorted(self.entityAliases),
         }
 
 
@@ -235,6 +249,9 @@ class ProvisionalSignal:
     createdAtInput: int
     expiresAtInput: int
     status: str = SIGNAL_WAITING
+    # 핵심 대상(엔티티) 기반 매칭용
+    entityKey: str = ""
+    entityAliases: set[str] = field(default_factory=set)
 
     def public_dict(self) -> dict[str, Any]:
         return {
@@ -250,6 +267,8 @@ class ProvisionalSignal:
             "createdAtInput": self.createdAtInput,
             "expiresAtInput": self.expiresAtInput,
             "status": self.status,
+            "entityKey": self.entityKey,
+            "entityAliases": sorted(self.entityAliases),
         }
 
 
@@ -317,6 +336,17 @@ class ServiceBackend(Protocol):
         반환: {"convert": bool, "name": str, "description": str, "confidence": float, "reason": str}
         - 두 데이터가 같은 세부 주제이고, 정식 카테고리보다 구체적으로 분리할 가치가 있으며,
           이후에도 반복될 만하면 convert=True.
+        """
+        ...
+
+    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
+        """제목+요약에서 중심적으로 다뤄지는 핵심 대상을 추출한다.
+
+        반환: {"coreEntityName": str, "normalizedEntityName": str,
+               "coreEntityType": "WORK"|"ORGANIZATION"|"BRAND"|"PERSON"|"TOPIC"|"OTHER",
+               "aliases": [str], "entityConfidence": float(0~1), "entityEvidence": str}
+        - 제목·요약에서 중심적으로 다뤄지는 대상만 인정한다(본문에 한 번 언급된 것은 제외).
+        - 별칭은 동일 대상으로 정규화한다(예: 짱구/짱구는 못말려/크레용 신짱 → 짱구).
         """
         ...
 
@@ -403,6 +433,44 @@ def build_service_text(item: dict[str, Any]) -> str:
     if body:
         parts.append(body)
     return "\n".join(parts) if parts else title or str(item.get("testId", ""))
+
+
+def build_embedding_text(item: dict[str, Any]) -> str:
+    """임베딩 입력 정제판: 제목 + 요약만 사용한다(본문·본문 excerpt 완전 제외).
+
+    긴 본문이 핵심 대상을 희석시키는 문제를 없애기 위한 실험용 입력.
+    URL 데이터라도 제목에는 페이지 제목(핵심 대상 포함)이 담기므로, 제목이
+    실제 URL 문자열이 아닌 한 포함한다(기존 build_service_text의 url-title 제외와 다름).
+    """
+    parts: list[str] = []
+    title = str(item.get("title", "")).strip()
+    if title and not _URL_PATTERN.match(title):
+        parts.append(title)
+    summary = str(item.get("summary") or _summary_from_input(item)).strip()
+    if summary:
+        parts.append(summary)
+    return "\n".join(parts) if parts else (title or str(item.get("testId", "")))
+
+
+def normalize_entity_key(name: str) -> str:
+    """핵심 대상 이름을 매칭용 키로 정규화한다(공백·기호·대소문자 제거)."""
+    if not name:
+        return ""
+    tokens = _TOKEN_PATTERN.findall(str(name).lower())
+    return "".join(tokens)
+
+
+def _entity_alias_set(entity: dict[str, Any]) -> set[str]:
+    """정규화된 이름 + 별칭들의 키 집합. 빈 키는 제외한다."""
+    keys: set[str] = set()
+    primary = normalize_entity_key(str(entity.get("normalizedEntityName") or entity.get("coreEntityName") or ""))
+    if primary:
+        keys.add(primary)
+    for alias in entity.get("aliases") or []:
+        key = normalize_entity_key(str(alias))
+        if key:
+            keys.add(key)
+    return keys
 
 
 def _summary_from_input(item: dict[str, Any]) -> str:
@@ -621,6 +689,38 @@ class DeterministicBackend:
             "reason": f"'{formal_category_name}'의 일반적인 데이터",
         }
 
+    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
+        """오프라인 휴리스틱: 제목+요약에서 가장 빈번한 의미 토큰을 핵심 대상으로 본다.
+
+        실제 실행에서는 AI 백엔드가 별칭 정규화까지 수행한다. 여기서는 결정론적으로
+        같은 대표 토큰을 가진 데이터가 동일 엔티티로 묶이도록만 한다.
+        """
+        title = str(item.get("title", ""))
+        summary = str(item.get("summary") or _summary_from_input(item))
+        counts: dict[str, int] = {}
+        order: list[str] = []
+        # 제목 토큰에 가중치를 둬(핵심 대상이 제목에 오는 경우가 많음) 대표성을 높인다.
+        for token in content_tokens(title) * 2 + content_tokens(summary):
+            if token not in counts:
+                counts[token] = 0
+                order.append(token)
+            counts[token] += 1
+        if not order:
+            return {
+                "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
+                "aliases": [], "entityConfidence": 0.0, "entityEvidence": "토큰 없음",
+            }
+        best = max(order, key=lambda t: (counts[t], -order.index(t)))
+        confidence = min(1.0, 0.4 + 0.1 * counts[best])
+        return {
+            "coreEntityName": best,
+            "normalizedEntityName": best,
+            "coreEntityType": "TOPIC",
+            "aliases": [],
+            "entityConfidence": round(confidence, 3),
+            "entityEvidence": f"제목·요약 최빈 토큰({counts[best]}회)",
+        }
+
     def review_signal_conversion(self, item, signal_info) -> dict[str, Any]:
         # 이미 임베딩 유사로 매칭된 2번째 데이터 → 같은 세부 주제로 보고 전환
         sim = float(signal_info.get("similarity", 0.0))
@@ -683,6 +783,9 @@ class WorkspaceCategoryEngine:
         self.history: list[dict[str, Any]] = []
         self._items: dict[str, dict[str, Any]] = {}
         self._item_embeddings: dict[str, list[float]] = {}  # maxItemSimilarity 계산용
+        self._item_entities: dict[str, dict[str, Any]] = {}  # 핵심 대상(엔티티) 저장
+        # 승격된 정식 대상 카테고리의 엔티티 키/별칭 → categoryId 인덱스
+        self._promoted_entity_map: dict[str, str] = {}
         self._next_candidate_id = 1
         self.reclassified_item_ids: set[str] = set()
         # 생성 지연: 잠정 신호
@@ -763,6 +866,13 @@ class WorkspaceCategoryEngine:
                 "promoted": False,
                 "reclassified": False,
                 "candidateError": None,
+                # 핵심 대상(엔티티) 기반 매칭 로그
+                "coreEntityName": None,
+                "normalizedEntityName": None,
+                "coreEntityType": None,
+                "entityConfidence": None,
+                "matchedCandidateName": None,
+                "matchMethod": None,
             }
 
             classification = ItemClassification(
@@ -863,9 +973,22 @@ class WorkspaceCategoryEngine:
                 signal.status = SIGNAL_EXPIRED
 
     def _store_signal(
-        self, item: dict[str, Any], item_id: str, formal_category_id: str, embedding: list[float]
+        self,
+        item: dict[str, Any],
+        item_id: str,
+        formal_category_id: str,
+        embedding: list[float],
+        entity: dict[str, Any] | None = None,
     ) -> ProvisionalSignal:
-        name = self._predict_subtopic_name(item)
+        # 신뢰 가능한 엔티티가 있으면 그 정규화 이름을 신호 이름으로 우선 사용한다.
+        entity_keys = _entity_alias_set(entity) if entity else set()
+        entity_key = normalize_entity_key(
+            str((entity or {}).get("normalizedEntityName") or (entity or {}).get("coreEntityName") or "")
+        )
+        if entity and str(entity.get("coreEntityName") or "").strip():
+            name = str(entity.get("coreEntityName")).strip()[:20]
+        else:
+            name = self._predict_subtopic_name(item)
         now = self._now()
         signal = ProvisionalSignal(
             signalId=self._next_signal_id,
@@ -880,6 +1003,8 @@ class WorkspaceCategoryEngine:
             createdAtInput=self._input_counter,
             expiresAtInput=self._input_counter + self.config.signal_ttl_items,
             status=SIGNAL_WAITING,
+            entityKey=entity_key,
+            entityAliases=set(entity_keys),
         )
         self._next_signal_id += 1
         self.signals.append(signal)
@@ -893,14 +1018,18 @@ class WorkspaceCategoryEngine:
         classification: ItemClassification,
         log: dict[str, Any],
         action: str,
+        match_method: str | None = None,
     ) -> None:
         log["candidateAction"] = action
-        log["matchedExistingCandidate"] = action in {"REUSE_EMBEDDING", "REUSE_AI"}
+        log["matchedExistingCandidate"] = action in {"REUSE_EMBEDDING", "REUSE_AI", "REUSE_ENTITY"}
+        if match_method is not None:
+            log["matchMethod"] = match_method
         self._link_item(candidate, item_id, embedding)
         classification.candidateId = candidate.candidateId
         classification.classificationStatus = CANDIDATE_LINKED
         log["linkedCandidateId"] = candidate.candidateId
         log["candidateName"] = candidate.suggestedName
+        log["matchedCandidateName"] = candidate.suggestedName
         log["candidateSupportCount"] = candidate.supportCount
         self._maybe_promote(candidate, log)
 
@@ -910,14 +1039,24 @@ class WorkspaceCategoryEngine:
         second_item_id: str,
         second_embedding: list[float],
         decision: dict[str, Any],
+        entity: dict[str, Any] | None = None,
     ) -> TemporaryCandidate:
         """잠정 신호를 실제 후보로 전환하고 첫 번째(신호) 데이터를 연결한다(supportCount=1)."""
         name = decision.get("name") or signal.suggestedName
         description = decision.get("description") or signal.suggestedDescription
         first_embedding = self._item_embeddings.get(signal.itemId, second_embedding)
+        # 신호가 보유한 엔티티가 있으면 그것을 후보 엔티티로 승계한다.
+        first_entity = self._item_entities.get(signal.itemId)
+        create_entity = first_entity or entity
         candidate, _created = self._create_or_reuse_candidate(
-            signal.itemId, first_embedding, {"name": name, "description": description}
+            signal.itemId, first_embedding, {"name": name, "description": description}, create_entity
         )
+        # 신호·두 번째 데이터의 엔티티 별칭을 후보에 합류시킨다.
+        candidate.entityAliases |= set(signal.entityAliases)
+        if entity:
+            candidate.entityAliases |= _entity_alias_set(entity)
+        if not candidate.entityKey and signal.entityKey:
+            candidate.entityKey = signal.entityKey
         self._link_item(candidate, signal.itemId, first_embedding)
         first_classification = self.item_classifications.get(signal.itemId)
         if first_classification is not None:
@@ -925,6 +1064,99 @@ class WorkspaceCategoryEngine:
             first_classification.classificationStatus = CANDIDATE_LINKED
         signal.status = SIGNAL_CONVERTED
         return candidate
+
+    # ---- 핵심 대상(엔티티) 헬퍼 ----
+
+    def _usable_entity(self, entity: dict[str, Any] | None) -> bool:
+        """제목·요약에서 중심적으로 다뤄지는, 신뢰 가능한 핵심 대상인지."""
+        if not entity:
+            return False
+        name = normalize_entity_key(
+            str(entity.get("normalizedEntityName") or entity.get("coreEntityName") or "")
+        )
+        if not name:
+            return False
+        etype = str(entity.get("coreEntityType") or "").upper()
+        if etype == "OTHER":
+            return False
+        try:
+            conf = float(entity.get("entityConfidence", 0.0) or 0.0)
+        except (TypeError, ValueError):
+            conf = 0.0
+        return conf >= self.config.entity_min_confidence
+
+    def _find_candidate_by_entity(
+        self, entity: dict[str, Any]
+    ) -> tuple[TemporaryCandidate | None, str | None]:
+        keys = _entity_alias_set(entity)
+        primary = normalize_entity_key(
+            str(entity.get("normalizedEntityName") or entity.get("coreEntityName") or "")
+        )
+        # ENTITY_EXACT: 정규화 이름이 같은 후보
+        for candidate in self._active_candidates():
+            if candidate.entityKey and candidate.entityKey == primary:
+                return candidate, "ENTITY_EXACT"
+        # ENTITY_ALIAS: 별칭 집합이 겹치는 후보
+        for candidate in self._active_candidates():
+            if keys and (candidate.entityAliases & keys):
+                return candidate, "ENTITY_ALIAS"
+        return None, None
+
+    def _find_signal_by_entity(
+        self, entity: dict[str, Any]
+    ) -> tuple[ProvisionalSignal | None, str | None]:
+        keys = _entity_alias_set(entity)
+        primary = normalize_entity_key(
+            str(entity.get("normalizedEntityName") or entity.get("coreEntityName") or "")
+        )
+        for signal in self.signals:
+            if signal.status != SIGNAL_WAITING:
+                continue
+            if signal.entityKey and signal.entityKey == primary:
+                return signal, "ENTITY_EXACT"
+        for signal in self.signals:
+            if signal.status != SIGNAL_WAITING:
+                continue
+            if keys and (signal.entityAliases & keys):
+                return signal, "ENTITY_ALIAS"
+        return None, None
+
+    def _find_promoted_formal_by_entity(
+        self, entity: dict[str, Any]
+    ) -> tuple[str | None, str | None]:
+        """승격된 정식 대상 카테고리 중 같은 핵심 대상을 가진 것을 찾는다."""
+        primary = normalize_entity_key(
+            str(entity.get("normalizedEntityName") or entity.get("coreEntityName") or "")
+        )
+        if primary and primary in self._promoted_entity_map:
+            return self._promoted_entity_map[primary], "ENTITY_EXACT"
+        for key in _entity_alias_set(entity):
+            if key in self._promoted_entity_map:
+                return self._promoted_entity_map[key], "ENTITY_ALIAS"
+        return None, None
+
+    def _attach_to_promoted_formal(
+        self,
+        item_id: str,
+        category_id: str,
+        classification: ItemClassification,
+        log: dict[str, Any],
+        method: str,
+    ) -> None:
+        """이미 승격된 대상 카테고리에 데이터를 2차 라벨로 연결한다(기본 카테고리는 유지)."""
+        formal = self._formal_by_id(category_id)
+        # 기본 카테고리(가장 가까운 정식) 유지 + 승격 대상 카테고리를 추가(최대 2개)
+        new_ids = _dedupe_keep_order(list(classification.formalCategoryIds) + [category_id])[
+            : self.config.service_max_categories
+        ]
+        classification.formalCategoryIds = new_ids
+        classification.classificationStatus = MULTI_LABEL_FORMAL
+        if formal is not None and item_id not in formal["itemIds"]:
+            formal["itemIds"].append(item_id)
+        log["candidateAction"] = "REUSE_PROMOTED_ENTITY"
+        log["matchMethod"] = method
+        log["matchedCandidateName"] = formal["name"] if formal else category_id
+        log["candidateEntryReason"] = "이미 승격된 동일 핵심 대상 카테고리에 2차 라벨로 연결"
 
     def _handle_candidate(
         self,
@@ -935,9 +1167,153 @@ class WorkspaceCategoryEngine:
         log: dict[str, Any],
         ambiguous: bool,
     ) -> None:
+        if self.config.use_core_entity:
+            # 임베딩 입력 정제: 본문 제외, 제목+요약만 사용
+            embedding = self.backend.embed(build_embedding_text(item))
+            self._item_embeddings[item_id] = embedding
+            entity = self._extract_entity_safely(item)
+            self._item_entities[item_id] = entity
+            log["coreEntityName"] = entity.get("coreEntityName")
+            log["normalizedEntityName"] = entity.get("normalizedEntityName")
+            log["coreEntityType"] = entity.get("coreEntityType")
+            try:
+                log["entityConfidence"] = round(float(entity.get("entityConfidence", 0.0) or 0.0), 4)
+            except (TypeError, ValueError):
+                log["entityConfidence"] = None
+            self._handle_candidate_entity(item, item_id, classification, log, ambiguous, embedding, entity)
+            return
+
         embedding = self.backend.embed(build_service_text(item))
         self._item_embeddings[item_id] = embedding
+        self._handle_candidate_legacy(item, item_id, classification, log, ambiguous, embedding)
 
+    def _extract_entity_safely(self, item: dict[str, Any]) -> dict[str, Any]:
+        try:
+            entity = self.backend.extract_core_entity(item)
+        except Exception:  # noqa: BLE001 - 엔티티 추출 실패는 폴백으로 흡수
+            entity = None
+        if not isinstance(entity, dict):
+            return {
+                "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
+                "aliases": [], "entityConfidence": 0.0, "entityEvidence": "추출 실패",
+            }
+        return entity
+
+    def _handle_candidate_entity(
+        self,
+        item: dict[str, Any],
+        item_id: str,
+        classification: ItemClassification,
+        log: dict[str, Any],
+        ambiguous: bool,
+        embedding: list[float],
+        entity: dict[str, Any],
+    ) -> None:
+        sims = self._similarity_infos(embedding)
+        if sims:
+            top = max(sims, key=lambda s: max(s[1], s[2]))
+            log["centerSimilarity"] = round(top[1], 4)
+            log["maxItemSimilarity"] = round(top[2], 4)
+
+        usable = self._usable_entity(entity)
+
+        # A0. ENTITY 매칭 → 이미 승격된 정식 대상 카테고리 (2차 라벨로 연결)
+        if usable:
+            cat_id, method = self._find_promoted_formal_by_entity(entity)
+            if cat_id is not None:
+                self._attach_to_promoted_formal(item_id, cat_id, classification, log, method)
+                return
+
+        # A. ENTITY 매칭 → 활성 후보 (임베딩보다 우선)
+        if usable:
+            cand, method = self._find_candidate_by_entity(entity)
+            if cand is not None:
+                self._attach_candidate(cand, item_id, embedding, classification, log, "REUSE_ENTITY", method)
+                return
+
+        # B. ENTITY 매칭 → WAITING 잠정 신호 → 즉시 후보 전환(동일 대상 2번째, AI 불필요)
+        if usable:
+            sig, method = self._find_signal_by_entity(entity)
+            if sig is not None:
+                log["signalId"] = sig.signalId
+                name = str(entity.get("coreEntityName") or sig.suggestedName)
+                candidate = self._convert_signal(sig, item_id, embedding, {"name": name, "description": ""}, entity)
+                log["signalAction"] = "CONVERTED"
+                log["newCandidateCreated"] = True
+                log["candidateEntryReason"] = f"동일 핵심 대상 2번째 데이터('{name}') → 후보 전환"
+                self._attach_candidate(candidate, item_id, embedding, classification, log, "CONVERT_SIGNAL", method)
+                return
+
+        center_thr = self.config.center_similarity_threshold
+        item_thr = self.config.item_similarity_threshold
+
+        # C. EMBEDDING 매칭 → 활성 후보
+        eligible = [s for s in sims if s[1] >= center_thr or s[2] >= item_thr]
+        if eligible:
+            best = max(eligible, key=lambda s: max(s[1], s[2]))
+            self._attach_candidate(best[0], item_id, embedding, classification, log, "REUSE_EMBEDDING", "EMBEDDING")
+            return
+
+        # D. EMBEDDING 매칭 → WAITING 잠정 신호 → AI 검토 후 전환
+        best_signal, sig_sim = self._best_signal(embedding)
+        if best_signal is not None and sig_sim >= self.config.signal_similarity_threshold:
+            log["signalId"] = best_signal.signalId
+            first = self._items.get(best_signal.itemId, {})
+            info = {
+                "signalId": best_signal.signalId,
+                "suggestedName": best_signal.suggestedName,
+                "suggestedDescription": best_signal.suggestedDescription,
+                "formalCategoryName": self._formal_name(best_signal.formalCategoryId),
+                "firstItem": {
+                    "title": str(first.get("title", "")),
+                    "summary": str(first.get("summary") or _summary_from_input(first))[:200],
+                },
+                "similarity": round(sig_sim, 4),
+            }
+            decision = self.backend.review_signal_conversion(item, info)
+            log["candidateEntryReason"] = str(decision.get("reason", ""))
+            if decision.get("convert"):
+                candidate = self._convert_signal(best_signal, item_id, embedding, decision, entity)
+                log["signalAction"] = "CONVERTED"
+                log["newCandidateCreated"] = True
+                self._attach_candidate(candidate, item_id, embedding, classification, log, "CONVERT_SIGNAL", "EMBEDDING")
+                return
+            log["signalAction"] = "CONVERSION_REJECTED"
+
+        # E. AI_REVIEW → 경계 유사도의 기존 후보 재사용만 허용(생성은 지연 정책이 전담)
+        ai_lower = self.config.ai_review_lower_bound
+        borderline = [s for s in sims if max(s[1], s[2]) >= ai_lower]
+        if borderline:
+            formal_name = self._formal_name(str(classification.formalCategoryId))
+            decision = self.backend.review_candidate_entry(
+                item, formal_name, [self._ai_candidate_info(s) for s in sims],
+                formal_confident=not ambiguous,
+            )
+            act = str(decision.get("action", "SKIP")).upper()
+            log["candidateEntryDecision"] = act
+            log["candidateEntryReason"] = str(decision.get("reason", ""))
+            if act == "REUSE" and decision.get("candidateId") is not None:
+                picked = self._candidate_by_id(int(decision["candidateId"]))
+                if picked is not None and picked.status in {PENDING, READY_TO_PROMOTE}:
+                    self._attach_candidate(picked, item_id, embedding, classification, log, "REUSE_AI", "AI_REVIEW")
+                    return
+
+        # F. 매칭 없음 → 첫 데이터는 후보를 만들지 않고 잠정 신호로 보류(생성 지연)
+        signal = self._store_signal(item, item_id, str(classification.formalCategoryId), embedding, entity)
+        log["signalAction"] = "STORE_SIGNAL"
+        log["signalId"] = signal.signalId
+        log["candidateEntryDecision"] = "DEFER_SIGNAL"
+        log["candidateEntryReason"] = f"매칭 없음 단발 데이터 → 잠정 신호 보류('{signal.suggestedName}')"
+
+    def _handle_candidate_legacy(
+        self,
+        item: dict[str, Any],
+        item_id: str,
+        classification: ItemClassification,
+        log: dict[str, Any],
+        ambiguous: bool,
+        embedding: list[float],
+    ) -> None:
         sims = self._similarity_infos(embedding)
         if sims:
             top = max(sims, key=lambda s: max(s[1], s[2]))
@@ -1018,12 +1394,29 @@ class WorkspaceCategoryEngine:
         log["candidateEntryReason"] = f"확신 분류 단발 데이터 → 잠정 신호 보류('{signal.suggestedName}')"
 
     def _create_or_reuse_candidate(
-        self, item_id: str, embedding: list[float], proposal: dict[str, Any]
+        self,
+        item_id: str,
+        embedding: list[float],
+        proposal: dict[str, Any],
+        entity: dict[str, Any] | None = None,
     ) -> tuple[TemporaryCandidate, bool]:
         """신규 제안을 생성 직전에 기존 후보 전체와 마지막으로 비교한다.
 
         반환: (후보, 새로 생성했는지)
+        entity가 주어지면 후보에 엔티티 키/별칭을 부여하고, 같은 엔티티 후보가 이미
+        있으면 재사용한다.
         """
+        entity_keys = _entity_alias_set(entity) if entity else set()
+        entity_key = normalize_entity_key(
+            str((entity or {}).get("normalizedEntityName") or (entity or {}).get("coreEntityName") or "")
+        )
+        # 같은 엔티티 키/별칭을 가진 활성 후보가 이미 있으면 재사용(엔티티 우선)
+        if entity_keys:
+            for candidate in self._active_candidates():
+                if candidate.entityKey and candidate.entityKey == entity_key:
+                    return candidate, False
+                if candidate.entityAliases & entity_keys:
+                    return candidate, False
         name = normalize_category_name(proposal.get("name") or f"후보-{item_id}")
         # 이름 정규화가 완전히 같은 후보는 재사용(중복 생성 방지)
         for candidate in self._active_candidates():
@@ -1047,6 +1440,8 @@ class WorkspaceCategoryEngine:
             createdAtItemId=item_id,
             linkedItemIds=[],
             sumEmbedding=[0.0] * len(embedding),
+            entityKey=entity_key,
+            entityAliases=set(entity_keys),
         )
         self._next_candidate_id += 1
         self.candidates.append(candidate)
@@ -1080,12 +1475,37 @@ class WorkspaceCategoryEngine:
             if keep is None or drop is None or keep is drop:
                 return
             for item_id in list(drop.linkedItemIds):
-                embedding = self.backend.embed(build_service_text(self._items[item_id]))
+                text = (
+                    build_embedding_text(self._items[item_id])
+                    if self.config.use_core_entity
+                    else build_service_text(self._items[item_id])
+                )
+                embedding = self.backend.embed(text)
                 self._link_item(keep, item_id, embedding)
                 self.item_classifications[item_id].candidateId = keep.candidateId
             drop.status = MERGED
             drop.mergedIntoCandidateId = keep.candidateId
             drop.updatedAt = self._now().isoformat()
+
+    def _entity_consistent(self, candidate: TemporaryCandidate) -> bool:
+        """엔티티로 형성된 후보에 한해, 연결 데이터의 핵심 대상이 후보와 일치하는지 검증한다.
+
+        임베딩으로 형성된 후보(엔티티 키 없음)는 이 가드를 적용하지 않는다(주제 군집 허용).
+        엔티티가 없는 데이터는 관대하게 통과시키고, '신뢰 가능하지만 다른 대상'만 충돌로 본다.
+        """
+        cand_keys = set(candidate.entityAliases)
+        if candidate.entityKey:
+            cand_keys.add(candidate.entityKey)
+        if not cand_keys:
+            return True
+        for item_id in candidate.linkedItemIds:
+            ent = self._item_entities.get(item_id)
+            if not self._usable_entity(ent):
+                continue
+            keys = _entity_alias_set(ent)
+            if keys and not (keys & cand_keys):
+                return False
+        return True
 
     def _maybe_promote(self, candidate: TemporaryCandidate, log: dict[str, Any]) -> None:
         if candidate.supportCount < self.config.candidate_min_support_count:
@@ -1098,6 +1518,10 @@ class WorkspaceCategoryEngine:
         if at_capacity:
             candidate.status = READY_TO_PROMOTE
             candidate.lastReviewReason = "정식 카테고리 상한으로 승격 대기"
+            return
+        # 엔티티 모드: 연결 데이터의 핵심 대상이 실제로 일관되는지 먼저 확인한다.
+        if self.config.use_core_entity and not self._entity_consistent(candidate):
+            candidate.lastReviewReason = "연결 데이터의 핵심 대상이 일관되지 않아 승격 보류"
             return
         linked_items = [self._items[item_id] for item_id in candidate.linkedItemIds]
         review = self.backend.review_promotion(candidate, linked_items)
@@ -1134,6 +1558,14 @@ class WorkspaceCategoryEngine:
         candidate.status = PROMOTED
         candidate.promotedFormalCategoryId = category_id
         candidate.updatedAt = self._now().isoformat()
+        # 승격된 대상 카테고리의 엔티티 키/별칭을 인덱스에 등록(이후 동일 대상 데이터 재연결용)
+        if self.config.use_core_entity:
+            promoted_keys = set(candidate.entityAliases)
+            if candidate.entityKey:
+                promoted_keys.add(candidate.entityKey)
+            for key in promoted_keys:
+                if key:
+                    self._promoted_entity_map[key] = category_id
         # 8. 연결된 데이터를 새 정식 카테고리로 재분류
         for item_id in candidate.linkedItemIds:
             classification = self.item_classifications[item_id]

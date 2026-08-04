@@ -149,6 +149,20 @@ def build_real_backend(options: argparse.Namespace) -> ServiceBackend:
     )
 
 
+def _clean_entity_name(value: Any) -> str:
+    """엔티티 이름 필드에서 잘못된 JSON 조각·따옴표 이후를 잘라내 정제한다.
+
+    모델이 unescaped 따옴표 등으로 값 안에 다음 필드를 새어 넣는 경우
+    (예: "짱구','entityEvidence':'...")를 방어한다.
+    """
+    text = str(value or "").strip()
+    for sep in ("'", '"', ",", "{", "}", "[", "]", "\n", "\t"):
+        idx = text.find(sep)
+        if idx != -1:
+            text = text[:idx]
+    return text.strip()[:40]
+
+
 class RealServiceBackend:
     """GMS 임베딩 + AI 모델을 사용하는 실제 백엔드. offline 백엔드와 동일 인터페이스."""
 
@@ -415,6 +429,75 @@ class RealServiceBackend:
             "description": str(parsed.get("description", "")).strip(),
             "confidence": float(parsed.get("confidence", 0.0) or 0.0),
             "reason": str(parsed.get("reason", "")).strip(),
+        }
+
+    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
+        from src.incremental_category_service import build_embedding_text
+
+        title = str(item.get("title", "")).strip()
+        summary = str(item.get("summary") or "").strip()
+        if not summary:
+            from src.incremental_category_service import _summary_from_input
+            summary = _summary_from_input(item)
+        text = build_embedding_text(item)[:800]
+        prompt = (
+            "다음 데이터의 제목과 요약에서 '중심적으로 다뤄지는 핵심 대상' 하나를 추출하세요.\n"
+            "규칙:\n"
+            "- 본문에 한 번 스친 대상이 아니라, 제목·요약에서 중심 주제인 대상만 인정합니다.\n"
+            "- 작품의 등장인물·에피소드·극장판·세부 항목은 그 상위 작품/프랜차이즈 이름으로 정규화하세요.\n"
+            "  예) 맹구/신짱구/짱구 극장판/크레용 신짱 → '짱구'.\n"
+            "- 기관/브랜드의 후기·모집·교육과정·합격 등 문서 유형은 무시하고 기관/브랜드명으로 정규화하세요.\n"
+            "  예) SSAFY/싸피/삼성 청년 SW·AI 아카데미 → 'SSAFY'.\n"
+            "- 지나치게 좁은 세부 대상(예: '공룡의 팔')이 아니라 포괄 대상(예: '공룡')을 고르세요.\n"
+            "- 중심 대상이 뚜렷하지 않으면 coreEntityType을 OTHER로 하고 entityConfidence를 낮게 주세요.\n"
+            "coreEntityType 후보: WORK, ORGANIZATION, BRAND, PERSON, TOPIC, OTHER.\n"
+            "normalizedEntityName은 별칭을 대표하는 짧은 표준 이름입니다.\n"
+            "JSON만 출력: {\"coreEntityName\":\"\",\"normalizedEntityName\":\"\",\"coreEntityType\":\"TOPIC\","
+            "\"aliases\":[\"\"],\"entityConfidence\":0.0,\"entityEvidence\":\"\"}\n\n"
+            f"제목: {title}\n요약: {summary}\n입력(참고): {text}\n"
+        )
+        schema = {
+            "type": "object",
+            "properties": {
+                "coreEntityName": {"type": "string"},
+                "normalizedEntityName": {"type": "string"},
+                "coreEntityType": {
+                    "type": "string",
+                    "enum": ["WORK", "ORGANIZATION", "BRAND", "PERSON", "TOPIC", "OTHER"],
+                },
+                "aliases": {"type": "array", "items": {"type": "string"}},
+                "entityConfidence": {"type": "number"},
+                "entityEvidence": {"type": "string"},
+            },
+            "required": ["coreEntityName", "normalizedEntityName", "coreEntityType", "entityConfidence"],
+        }
+        parsed = self._ask(prompt, schema)
+        if not parsed:
+            return {
+                "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
+                "aliases": [], "entityConfidence": 0.0, "entityEvidence": "AI 응답 실패",
+                "entityError": "API",
+            }
+        name = _clean_entity_name(parsed.get("coreEntityName", ""))
+        normalized = _clean_entity_name(parsed.get("normalizedEntityName", "")) or name
+        etype = str(parsed.get("coreEntityType", "OTHER")).strip().upper()
+        if etype not in {"WORK", "ORGANIZATION", "BRAND", "PERSON", "TOPIC", "OTHER"}:
+            etype = "OTHER"
+        aliases = parsed.get("aliases") or []
+        if not isinstance(aliases, list):
+            aliases = []
+        try:
+            conf = max(0.0, min(1.0, float(parsed.get("entityConfidence", 0.0) or 0.0)))
+        except (TypeError, ValueError):
+            conf = 0.0
+        cleaned_aliases = [a for a in (_clean_entity_name(x) for x in aliases) if a]
+        return {
+            "coreEntityName": name,
+            "normalizedEntityName": normalized,
+            "coreEntityType": etype,
+            "aliases": cleaned_aliases,
+            "entityConfidence": conf,
+            "entityEvidence": str(parsed.get("entityEvidence", "")).strip()[:200],
         }
 
 

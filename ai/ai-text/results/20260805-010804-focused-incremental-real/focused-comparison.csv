@@ -1,0 +1,3 @@
+﻿order,selectedItemCount,finalFormalCategoryCount,provisionalSignalCount,convertedSignalCount,maxFragmentation,candidateReuseRate,groupCaptureRate,promotedCount,misMergeEventCount,reclassifiedItemCount,entityApiFailureCount,aiResponseFailureCount,fallbackErrorCount
+grouped,31,6,27,3,1,1.0,0.5,1,0,3,0,0,0
+interleaved,31,6,27,3,2,1.0,0.1667,1,0,3,0,0,0

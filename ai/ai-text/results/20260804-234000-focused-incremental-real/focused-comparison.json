@@ -1,0 +1,106 @@
+{
+  "orders": [
+    {
+      "order": "grouped",
+      "selectedItemCount": 31,
+      "existingFormalCount": 5,
+      "existingFormalOnlyCount": 5,
+      "existingSpuriousCandidateCount": 0,
+      "existingSpuriousItemIds": [],
+      "provisionalSignalCount": 16,
+      "convertedSignalCount": 0,
+      "waitingSignalCount": 16,
+      "expiredSignalCount": 0,
+      "existingSignalOnlyCount": 4,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 4,
+        "FORTUNE_PREDICTION": 3,
+        "JJANGGU_CHARACTER": 0,
+        "JP_SURNAME": 0,
+        "SELF_UNDERSTANDING": 1,
+        "SSAFY_REVIEW": 0
+      },
+      "maxFragmentation": 4,
+      "candidateReuseRate": 0.0,
+      "enteredCandidateStage": 8,
+      "reuseEvents": 0,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.1667,
+      "capturedGroups": [
+        "SELF_UNDERSTANDING"
+      ],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 0,
+      "promotedRecords": [],
+      "promotionPrecision": null,
+      "promotionRecall": 0.0,
+      "reclassifiedItemCount": 0,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 5,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    },
+    {
+      "order": "interleaved",
+      "selectedItemCount": 31,
+      "existingFormalCount": 5,
+      "existingFormalOnlyCount": 4,
+      "existingSpuriousCandidateCount": 1,
+      "existingSpuriousItemIds": [
+        "FOCUSED-019"
+      ],
+      "provisionalSignalCount": 17,
+      "convertedSignalCount": 2,
+      "waitingSignalCount": 15,
+      "expiredSignalCount": 0,
+      "existingSignalOnlyCount": 4,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 3,
+        "FORTUNE_PREDICTION": 0,
+        "JJANGGU_CHARACTER": 0,
+        "JP_SURNAME": 1,
+        "SELF_UNDERSTANDING": 2,
+        "SSAFY_REVIEW": 2
+      },
+      "maxFragmentation": 3,
+      "candidateReuseRate": 0.0,
+      "enteredCandidateStage": 7,
+      "reuseEvents": 0,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.1667,
+      "capturedGroups": [
+        "JP_SURNAME"
+      ],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 0,
+      "promotedRecords": [],
+      "promotionPrecision": null,
+      "promotionRecall": 0.0,
+      "reclassifiedItemCount": 0,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 5,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    }
+  ]
+}

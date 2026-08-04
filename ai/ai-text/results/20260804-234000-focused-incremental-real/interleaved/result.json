@@ -1,0 +1,1849 @@
+{
+  "order": "interleaved",
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2,
+    "center_similarity_threshold": 0.55,
+    "item_similarity_threshold": 0.6,
+    "ai_review_lower_bound": 0.3,
+    "signal_similarity_threshold": 0.55,
+    "signal_ttl_items": 100
+  },
+  "selectedItemIds": [
+    "FOCUSED-001",
+    "FOCUSED-006",
+    "FOCUSED-011",
+    "FOCUSED-016",
+    "FOCUSED-019",
+    "JJANGGU-003",
+    "SURNAME-001",
+    "SSAFY-001",
+    "FOCUSED-002",
+    "FOCUSED-007",
+    "FOCUSED-012",
+    "FOCUSED-017",
+    "FOCUSED-020",
+    "JJANGGU-006",
+    "SURNAME-002",
+    "SSAFY-002",
+    "FOCUSED-003",
+    "FOCUSED-008",
+    "FOCUSED-013",
+    "FOCUSED-018",
+    "JJANGGU-007",
+    "SURNAME-004",
+    "SSAFY-003",
+    "FOCUSED-004",
+    "FOCUSED-009",
+    "FOCUSED-014",
+    "SSAFY-004",
+    "FOCUSED-005",
+    "FOCUSED-010",
+    "FOCUSED-015",
+    "SSAFY-005"
+  ],
+  "selectedItemCount": 31,
+  "metrics": {
+    "order": "interleaved",
+    "selectedItemCount": 31,
+    "existingFormalCount": 5,
+    "existingFormalOnlyCount": 4,
+    "existingSpuriousCandidateCount": 1,
+    "existingSpuriousItemIds": [
+      "FOCUSED-019"
+    ],
+    "provisionalSignalCount": 17,
+    "convertedSignalCount": 2,
+    "waitingSignalCount": 15,
+    "expiredSignalCount": 0,
+    "existingSignalOnlyCount": 4,
+    "newGroup5CandidateCount": 0,
+    "newGroup3CandidateCount": 0,
+    "fragmentationByGroup": {
+      "DIGITAL_ORGANIZATION_SERVICE": 3,
+      "FORTUNE_PREDICTION": 0,
+      "JJANGGU_CHARACTER": 0,
+      "JP_SURNAME": 1,
+      "SELF_UNDERSTANDING": 2,
+      "SSAFY_REVIEW": 2
+    },
+    "maxFragmentation": 3,
+    "candidateReuseRate": 0.0,
+    "enteredCandidateStage": 7,
+    "reuseEvents": 0,
+    "avgCandidatePurity": 1.0,
+    "groupCaptureRate": 0.1667,
+    "capturedGroups": [
+      "JP_SURNAME"
+    ],
+    "repeatedGroups": [
+      "DIGITAL_ORGANIZATION_SERVICE",
+      "FORTUNE_PREDICTION",
+      "JJANGGU_CHARACTER",
+      "JP_SURNAME",
+      "SELF_UNDERSTANDING",
+      "SSAFY_REVIEW"
+    ],
+    "promotedCount": 0,
+    "promotedRecords": [],
+    "promotionPrecision": null,
+    "promotionRecall": 0.0,
+    "reclassifiedItemCount": 0,
+    "misMergeEventCount": 0,
+    "misMergeEvents": [],
+    "finalFormalCategoryCount": 5,
+    "exceededMaxFormalCategories": false,
+    "candidateErrorCount": 0
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 10,
+        "itemIds": [
+          "FOCUSED-011",
+          "FOCUSED-016",
+          "FOCUSED-002",
+          "FOCUSED-017",
+          "SURNAME-002",
+          "FOCUSED-008",
+          "FOCUSED-013",
+          "FOCUSED-018",
+          "FOCUSED-009",
+          "FOCUSED-014"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 9,
+        "itemIds": [
+          "SSAFY-001",
+          "FOCUSED-007",
+          "FOCUSED-012",
+          "SSAFY-002",
+          "SSAFY-003",
+          "SSAFY-004",
+          "FOCUSED-010",
+          "FOCUSED-015",
+          "SSAFY-005"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 0,
+        "itemIds": []
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 2,
+        "itemIds": [
+          "FOCUSED-019",
+          "FOCUSED-020"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 10,
+        "itemIds": [
+          "FOCUSED-001",
+          "FOCUSED-006",
+          "JJANGGU-003",
+          "SURNAME-001",
+          "JJANGGU-006",
+          "FOCUSED-003",
+          "JJANGGU-007",
+          "SURNAME-004",
+          "FOCUSED-004",
+          "FOCUSED-005"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "애착 유형 진단",
+        "description": "애착 유형 진단 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:02+09:00",
+        "updatedAt": "2026-08-05T02:00:03+09:00",
+        "createdAtItemId": "FOCUSED-006",
+        "linkedItemIds": [
+          "FOCUSED-006"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "노트북 사양 요약",
+        "description": "노트북 사양 요약 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:06+09:00",
+        "updatedAt": "2026-08-05T02:00:07+09:00",
+        "createdAtItemId": "FOCUSED-019",
+        "linkedItemIds": [
+          "FOCUSED-019"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "일본 성씨 통계",
+        "description": "일본 성씨 통계 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:09+09:00",
+        "updatedAt": "2026-08-05T02:00:10+09:00",
+        "createdAtItemId": "SURNAME-001",
+        "linkedItemIds": [
+          "SURNAME-001"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "대인관계 반응 분석",
+        "description": "대인관계 반응 분석 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:18+09:00",
+        "updatedAt": "2026-08-05T02:00:19+09:00",
+        "createdAtItemId": "FOCUSED-008",
+        "linkedItemIds": [
+          "FOCUSED-008"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "링크 메모 통합",
+        "description": "링크 메모 통합 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:20+09:00",
+        "updatedAt": "2026-08-05T02:00:21+09:00",
+        "createdAtItemId": "FOCUSED-013",
+        "linkedItemIds": [
+          "FOCUSED-013"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 6,
+        "workspaceId": 10,
+        "suggestedName": "SSAFY 취업 경험",
+        "description": "ssafy·15기 관련 반복 가능 세부 주제(잠정)",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:24+09:00",
+        "updatedAt": "2026-08-05T02:00:26+09:00",
+        "createdAtItemId": "SSAFY-001",
+        "linkedItemIds": [
+          "SSAFY-001",
+          "SSAFY-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 7,
+        "workspaceId": 10,
+        "suggestedName": "문서 자동 분류",
+        "description": "문서 자동 분류 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:29+09:00",
+        "updatedAt": "2026-08-05T02:00:30+09:00",
+        "createdAtItemId": "FOCUSED-014",
+        "linkedItemIds": [
+          "FOCUSED-014"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 8,
+        "workspaceId": 10,
+        "suggestedName": "디바이스 데이터 동기화",
+        "description": "디바이스 데이터 동기화 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:33+09:00",
+        "updatedAt": "2026-08-05T02:00:34+09:00",
+        "createdAtItemId": "FOCUSED-015",
+        "linkedItemIds": [
+          "FOCUSED-015"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 9,
+        "workspaceId": 10,
+        "suggestedName": "비전공자",
+        "description": "비전공자인·저자가 관련 반복 가능 세부 주제(잠정)",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:35+09:00",
+        "updatedAt": "2026-08-05T02:00:37+09:00",
+        "createdAtItemId": "SSAFY-002",
+        "linkedItemIds": [
+          "SSAFY-002",
+          "SSAFY-005"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      }
+    ],
+    "signals": [
+      {
+        "signalId": 1,
+        "itemId": "FOCUSED-001",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "별자리·흐름",
+        "suggestedDescription": "별자리·흐름 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:01+09:00",
+        "expiresAt": "2026-08-05T03:40:01+09:00",
+        "createdAtInput": 1,
+        "expiresAtInput": 101,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 2,
+        "itemId": "FOCUSED-011",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "개인·기록",
+        "suggestedDescription": "개인·기록 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:04+09:00",
+        "expiresAt": "2026-08-05T03:40:04+09:00",
+        "createdAtInput": 3,
+        "expiresAtInput": 103,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 3,
+        "itemId": "FOCUSED-016",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "불면증·개선",
+        "suggestedDescription": "불면증·개선 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:05+09:00",
+        "expiresAt": "2026-08-05T03:40:05+09:00",
+        "createdAtInput": 4,
+        "expiresAtInput": 104,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 4,
+        "itemId": "JJANGGU-003",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "크레용·신짱의",
+        "suggestedDescription": "크레용·신짱의 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:08+09:00",
+        "expiresAt": "2026-08-05T03:40:08+09:00",
+        "createdAtInput": 6,
+        "expiresAtInput": 106,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 5,
+        "itemId": "SSAFY-001",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "ssafy·15기",
+        "suggestedDescription": "ssafy·15기 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:11+09:00",
+        "expiresAt": "2026-08-05T03:40:11+09:00",
+        "createdAtInput": 8,
+        "expiresAtInput": 108,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 6,
+        "itemId": "FOCUSED-002",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "생년월일·사주풀이",
+        "suggestedDescription": "생년월일·사주풀이 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:12+09:00",
+        "expiresAt": "2026-08-05T03:40:12+09:00",
+        "createdAtInput": 9,
+        "expiresAtInput": 109,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 7,
+        "itemId": "FOCUSED-007",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "업무·행동",
+        "suggestedDescription": "업무·행동 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:13+09:00",
+        "expiresAt": "2026-08-05T03:40:13+09:00",
+        "createdAtInput": 10,
+        "expiresAtInput": 110,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 8,
+        "itemId": "FOCUSED-017",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "우울감·완화",
+        "suggestedDescription": "우울감·완화 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:14+09:00",
+        "expiresAt": "2026-08-05T03:40:14+09:00",
+        "createdAtInput": 12,
+        "expiresAtInput": 112,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 9,
+        "itemId": "FOCUSED-020",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "스마트폰·카메라",
+        "suggestedDescription": "스마트폰·카메라 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:15+09:00",
+        "expiresAt": "2026-08-05T03:40:15+09:00",
+        "createdAtInput": 13,
+        "expiresAtInput": 113,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 10,
+        "itemId": "JJANGGU-006",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "인기·애니메이션",
+        "suggestedDescription": "인기·애니메이션 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:16+09:00",
+        "expiresAt": "2026-08-05T03:40:16+09:00",
+        "createdAtInput": 14,
+        "expiresAtInput": 114,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 11,
+        "itemId": "SSAFY-002",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "비전공자인·저자가",
+        "suggestedDescription": "비전공자인·저자가 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:17+09:00",
+        "expiresAt": "2026-08-05T03:40:17+09:00",
+        "createdAtInput": 16,
+        "expiresAtInput": 116,
+        "status": "CONVERTED"
+      },
+      {
+        "signalId": 12,
+        "itemId": "FOCUSED-018",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "정신건강·상담기관",
+        "suggestedDescription": "정신건강·상담기관 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:22+09:00",
+        "expiresAt": "2026-08-05T03:40:22+09:00",
+        "createdAtInput": 20,
+        "expiresAtInput": 120,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 13,
+        "itemId": "JJANGGU-007",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "신짱구는·짱구는",
+        "suggestedDescription": "신짱구는·짱구는 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:23+09:00",
+        "expiresAt": "2026-08-05T03:40:23+09:00",
+        "createdAtInput": 21,
+        "expiresAtInput": 121,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 14,
+        "itemId": "FOCUSED-004",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "띠별·올해",
+        "suggestedDescription": "띠별·올해 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:27+09:00",
+        "expiresAt": "2026-08-05T03:40:27+09:00",
+        "createdAtInput": 24,
+        "expiresAtInput": 124,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 15,
+        "itemId": "FOCUSED-009",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "스트레스·대처",
+        "suggestedDescription": "스트레스·대처 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:28+09:00",
+        "expiresAt": "2026-08-05T03:40:28+09:00",
+        "createdAtInput": 25,
+        "expiresAtInput": 125,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 16,
+        "itemId": "SSAFY-004",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "삼성·청년",
+        "suggestedDescription": "삼성·청년 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:31+09:00",
+        "expiresAt": "2026-08-05T03:40:31+09:00",
+        "createdAtInput": 27,
+        "expiresAtInput": 127,
+        "status": "WAITING"
+      },
+      {
+        "signalId": 17,
+        "itemId": "FOCUSED-005",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "토정비결·신년",
+        "suggestedDescription": "토정비결·신년 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:32+09:00",
+        "expiresAt": "2026-08-05T03:40:32+09:00",
+        "createdAtInput": 28,
+        "expiresAtInput": 128,
+        "status": "WAITING"
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "FOCUSED-006",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 2,
+        "itemId": "FOCUSED-019",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "SURNAME-001",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 4,
+        "itemId": "FOCUSED-008",
+        "similarity": 0.9997
+      },
+      {
+        "candidateId": 5,
+        "itemId": "FOCUSED-013",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 6,
+        "itemId": "SSAFY-001",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 6,
+        "itemId": "SSAFY-003",
+        "similarity": 0.64
+      },
+      {
+        "candidateId": 7,
+        "itemId": "FOCUSED-014",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 8,
+        "itemId": "FOCUSED-015",
+        "similarity": 0.9992
+      },
+      {
+        "candidateId": 9,
+        "itemId": "SSAFY-002",
+        "similarity": 0.9995
+      },
+      {
+        "candidateId": 9,
+        "itemId": "SSAFY-005",
+        "similarity": 0.655
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "FOCUSED-001",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-006",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-011",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-016",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-019",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "JJANGGU-003",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SURNAME-001",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-001",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-007",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-012",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-017",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-020",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-006",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SURNAME-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SSAFY-002",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-003",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-008",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-013",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-018",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-007",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SURNAME-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SSAFY-003",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-009",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-014",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-004",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-005",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-010",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-015",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 8,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-005",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "FOCUSED-001",
+      "inputOrder": 1,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('별자리·흐름')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 1,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-006",
+      "inputOrder": 2,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "관계에서 드러나는 애착 성향(안정·불안·회피)을 문항으로 진단하는 방법은 심리학적 개념을 구체화한 반복 가능한 주제로, '문화·아이디어'보다 구체적이다. 이는 개인의 관계 패턴 분석에 활용되는 일반적인 도구로, 반복적 데이터 생성 가능성이 높다.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 1,
+      "candidateName": "애착 유형 진단",
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-011",
+      "inputOrder": 3,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('개인·기록')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 2,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2547,
+      "maxItemSimilarity": 0.2547,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-016",
+      "inputOrder": 4,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('불면증·개선')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 3,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2772,
+      "maxItemSimilarity": 0.2772,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-019",
+      "inputOrder": 5,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "PRODUCT_INFO",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.6,
+      "formalScoreGap": 0.4,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "신제품 노트북의 하드웨어 사양(프로세서, 무게, 배터리 등)을 정리하는 데이터로, '소비·금융' 범주 내에서 구체적이고 반복적으로 나타나는 주제이다. 기존 후보와 관련성이 없으며, 일회성 표현도 포함하지 않음. 일반적인 소비 정보에 해당하므로 SKIP 대신 세부 주제로 분류함.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 2,
+      "candidateName": "노트북 사양 요약",
+      "centerSimilarity": 0.0931,
+      "maxItemSimilarity": 0.0931,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-003",
+      "inputOrder": 6,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('크레용·신짱의')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 4,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2615,
+      "maxItemSimilarity": 0.2615,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SURNAME-001",
+      "inputOrder": 7,
+      "dataType": "NOISE",
+      "goldGroupId": "JP_SURNAME",
+      "goldCategoryName": "일본 성씨",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.6,
+      "formalScoreGap": 0.6,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 일본의 사토 성씨에 대한 인구 통계와 법적 변화 시 성씨 통합 예측을 다루고 있어, '문화·아이디어'보다 구체적인 사회문화적 분석 주제로 분류 가능. 성씨 빈도, 역사적 변화, 인구학적 예측 등 반복 가능한 세부 주제로 확장 가능.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 3,
+      "candidateName": "일본 성씨 통계",
+      "centerSimilarity": 0.2288,
+      "maxItemSimilarity": 0.2288,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-001",
+      "inputOrder": 8,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('ssafy·15기')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 5,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2195,
+      "maxItemSimilarity": 0.2194,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-002",
+      "inputOrder": 9,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.4,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('생년월일·사주풀이')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 6,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1407,
+      "maxItemSimilarity": 0.1407,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-007",
+      "inputOrder": 10,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('업무·행동')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 7,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.4613,
+      "maxItemSimilarity": 0.4614,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-012",
+      "inputOrder": 11,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1995,
+      "maxItemSimilarity": 0.1995,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-017",
+      "inputOrder": 12,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('우울감·완화')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 8,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2346,
+      "maxItemSimilarity": 0.2346,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-020",
+      "inputOrder": 13,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "PRODUCT_INFO",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('스마트폰·카메라')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 9,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3177,
+      "maxItemSimilarity": 0.3178,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-006",
+      "inputOrder": 14,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('인기·애니메이션')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 10,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1965,
+      "maxItemSimilarity": 0.1964,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SURNAME-002",
+      "inputOrder": 15,
+      "dataType": "NOISE",
+      "goldGroupId": "JP_SURNAME",
+      "goldCategoryName": "일본 성씨",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "데이터는 라이선스 정보와 위키 플랫폼의 운영 방식에 대한 설명으로, '생활·건강' 카테고리와 직접적인 연관성이 없으며, 기존 세부주제 후보와도 관련성이 부족함.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.13,
+      "maxItemSimilarity": 0.13,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-002",
+      "inputOrder": 16,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('비전공자인·저자가')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 11,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2031,
+      "maxItemSimilarity": 0.2031,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-003",
+      "inputOrder": 17,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3416,
+      "maxItemSimilarity": 0.3416,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-008",
+      "inputOrder": 18,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새로운 데이터는 대인관계에서의 반복적 반응 패턴을 진단하는 질문지로, 기존 후보와 다른 구체적인 주제입니다. '애착 유형 진단'은 관계 성향에 초점이 맞춰 있지만, 이 데이터는 갈등이나 부탁 시 나타나는 실제 반응 패턴을 분석하는 데 특화되어 있습니다. 일회성 표현 없이 반복적 사회적 상호작용에 대한 심리적 분석을 포함하므로 새로운 세부 주제로 분류합니다.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 4,
+      "candidateName": "대인관계 반응 분석",
+      "centerSimilarity": 0.3106,
+      "maxItemSimilarity": 0.3107,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-013",
+      "inputOrder": 19,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새로운 앱 기능으로 링크와 메모를 태그로 묶어 관리하는 방식은 기존 후보와 차별화됨. 일회성 요소 없이 반복 가능한 세부 주제로 구체적 분류 가능.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 5,
+      "candidateName": "링크 메모 통합",
+      "centerSimilarity": 0.2082,
+      "maxItemSimilarity": 0.2082,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-018",
+      "inputOrder": 20,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.9,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('정신건강·상담기관')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 12,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2785,
+      "maxItemSimilarity": 0.2785,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-007",
+      "inputOrder": 21,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('신짱구는·짱구는')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 13,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1971,
+      "maxItemSimilarity": 0.1972,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SURNAME-004",
+      "inputOrder": 22,
+      "dataType": "NOISE",
+      "goldGroupId": "JP_SURNAME",
+      "goldCategoryName": "일본 성씨",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.1,
+      "formalScoreGap": 0.1,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "일반적인 '문화·아이디어' 범주 내 데이터로, 구체적 세부 주제 후보와 일치하지 않으며 반복 가능성도 낮음.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2441,
+      "maxItemSimilarity": 0.2441,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-003",
+      "inputOrder": 23,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 SSAFY 프로그램 참여자들의 학습 및 취업 관련 경험을 공유하며, 알고리즘 교육, 프로젝트 참여, 취업 성공 사례 등 구체적인 세부 주제를 다루고 있습니다. 이는 '기존 정식 카테고리(학습·커리어)보다 구체적이고 반복적으로 발생할 수 있는 주제'로 묶일 만한 가치가 있습니다. 다만, 두 데이터의 목적은 약간 차이가 있음에도 불구하고 핵심 주제는 일관되며, SSAFY 프로그램 내에서의 경험과 결과에 초점이 맞춰져 있어 통합 가능합니다.",
+      "signalAction": "CONVERTED",
+      "signalId": 5,
+      "candidateId": 6,
+      "candidateName": "SSAFY 취업 경험",
+      "centerSimilarity": 0.1765,
+      "maxItemSimilarity": 0.1765,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-004",
+      "inputOrder": 24,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('띠별·올해')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 14,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2379,
+      "maxItemSimilarity": 0.2365,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-009",
+      "inputOrder": 25,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('스트레스·대처')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 15,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3935,
+      "maxItemSimilarity": 0.3935,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-014",
+      "inputOrder": 26,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "기존 후보와 차이가 있으며, '생활·건강'보다 구체적이고 반복될 세부 주제로 판단됨. 문서 자동 분류 보관함은 이미지·문서의 내용 기반으로 폴더별 자동 분류 서비스로, 특정 기능 중심의 데이터임. 관련 후보 없음. 연도·브랜드 등 일회성 표현 배제. 일반적인 생활·건강 데이터 아님. 신규 생성 필요.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 7,
+      "candidateName": "문서 자동 분류",
+      "centerSimilarity": 0.3673,
+      "maxItemSimilarity": 0.3673,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-004",
+      "inputOrder": 27,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('삼성·청년')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 16,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3942,
+      "maxItemSimilarity": 0.3764,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-005",
+      "inputOrder": 28,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "확신 분류 단발 데이터 → 잠정 신호 보류('토정비결·신년')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 17,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2632,
+      "maxItemSimilarity": 0.3134,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-010",
+      "inputOrder": 29,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.6,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.384,
+      "maxItemSimilarity": 0.3841,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-015",
+      "inputOrder": 30,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "기기 간 자료 동기화 도구는 휴대폰·태블릿·PC 등 다양한 기기에서 분산된 파일을 자동으로 통합 정리하는 기능을 가진 디지털 관리 도구로, '학습·커리어'보다 구체적이고 반복적으로 발생할 수 있는 주제이다. 기존 후보 중 유사한 기능은 없으며, 문서 자동 분류(7번)와 달리 파일 동기화에 특화되어 있다. 연도·브랜드 등 일회성 요소가 없으며, 반복 가능한 기술 서비스로 분류 가능하다. 신규 생성 시 '디바이스 데이터 동기화'라는 명확한 이름과 기능 설명이 필요하다. 이는 디지털 정리 도구의 하위 개념으로, 반복적인 사용 사례가 있을 수 있다. 따라서 CREATE를 선택한다.",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 8,
+      "candidateName": "디바이스 데이터 동기화",
+      "centerSimilarity": 0.4524,
+      "maxItemSimilarity": 0.4524,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-005",
+      "inputOrder": 31,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터 모두 비전공자가 소프트웨어 교육 프로그램(SSAFY)에 참여한 경험과 관련되어 있으며, '비전공자'라는 공통된 세부 주제를 가진다. 첫 번째 데이터는 비전공자의 개인적 후기이고, 두 번째 데이터는 비전공자를 대상으로 한 프로그램의 개요이지만, 모두 비전공자 중심의 학습·커리어 관련 내용으로, 기존 카테고리보다 구체적이고 반복적으로 발생할 수 있는 주제로 묶일 수 있다.",
+      "signalAction": "CONVERTED",
+      "signalId": 11,
+      "candidateId": 9,
+      "candidateName": "비전공자",
+      "centerSimilarity": 0.5176,
+      "maxItemSimilarity": 0.4753,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": 1,
+      "candidateName": "애착 유형 진단",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-006"
+      ],
+      "linkedGoldGroupIds": [
+        "SELF_UNDERSTANDING"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-006",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "노트북 사양 요약",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-019"
+      ],
+      "linkedGoldGroupIds": [
+        "PRODUCT_INFO"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-019",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "일본 성씨 통계",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "SURNAME-001"
+      ],
+      "linkedGoldGroupIds": [
+        "JP_SURNAME"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "SURNAME-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "대인관계 반응 분석",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-008"
+      ],
+      "linkedGoldGroupIds": [
+        "SELF_UNDERSTANDING"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-008",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "링크 메모 통합",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-013"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-013",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "SSAFY 취업 경험",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "SSAFY-001",
+        "SSAFY-003"
+      ],
+      "linkedGoldGroupIds": [
+        "SSAFY_REVIEW"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "SSAFY-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 7,
+      "candidateName": "문서 자동 분류",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-014"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-014",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 8,
+      "candidateName": "디바이스 데이터 동기화",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-015"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-015",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 9,
+      "candidateName": "비전공자",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "SSAFY-002",
+        "SSAFY-005"
+      ],
+      "linkedGoldGroupIds": [
+        "SSAFY_REVIEW"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "SSAFY-002",
+      "promotedAtItemId": null
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "orders": [
+    {
+      "order": "grouped",
+      "selectedItemCount": 31,
+      "existingFormalCount": 5,
+      "existingFormalOnlyCount": 5,
+      "existingSpuriousCandidateCount": 0,
+      "existingSpuriousItemIds": [],
+      "provisionalSignalCount": 27,
+      "convertedSignalCount": 3,
+      "waitingSignalCount": 24,
+      "expiredSignalCount": 0,
+      "existingSignalOnlyCount": 5,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 0,
+        "FORTUNE_PREDICTION": 0,
+        "JJANGGU_CHARACTER": 1,
+        "JP_SURNAME": 1,
+        "SELF_UNDERSTANDING": 0,
+        "SSAFY_REVIEW": 1
+      },
+      "maxFragmentation": 1,
+      "candidateReuseRate": 1.0,
+      "enteredCandidateStage": 1,
+      "reuseEvents": 1,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.5,
+      "capturedGroups": [
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SSAFY_REVIEW"
+      ],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 1,
+      "promotedRecords": [
+        {
+          "candidateId": 3,
+          "candidateName": "SSAFY",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "SSAFY-003",
+          "promotedAtOrder": 29,
+          "purity": 1.0,
+          "majorityGoldGroup": "SSAFY_REVIEW"
+        }
+      ],
+      "promotionPrecision": 1.0,
+      "promotionRecall": 0.1667,
+      "reclassifiedItemCount": 3,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 6,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0,
+      "matchMethodCounts": {
+        "ENTITY_EXACT": 3,
+        "EMBEDDING": 1
+      },
+      "entityApiFailureCount": 0,
+      "aiResponseFailureCount": 0,
+      "fallbackErrorCount": 0
+    },
+    {
+      "order": "interleaved",
+      "selectedItemCount": 31,
+      "existingFormalCount": 5,
+      "existingFormalOnlyCount": 5,
+      "existingSpuriousCandidateCount": 0,
+      "existingSpuriousItemIds": [],
+      "provisionalSignalCount": 27,
+      "convertedSignalCount": 3,
+      "waitingSignalCount": 24,
+      "expiredSignalCount": 0,
+      "existingSignalOnlyCount": 5,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 0,
+        "FORTUNE_PREDICTION": 0,
+        "JJANGGU_CHARACTER": 0,
+        "JP_SURNAME": 1,
+        "SELF_UNDERSTANDING": 0,
+        "SSAFY_REVIEW": 2
+      },
+      "maxFragmentation": 2,
+      "candidateReuseRate": 1.0,
+      "enteredCandidateStage": 1,
+      "reuseEvents": 1,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.1667,
+      "capturedGroups": [
+        "JP_SURNAME"
+      ],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 1,
+      "promotedRecords": [
+        {
+          "candidateId": 1,
+          "candidateName": "SSAFY",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "SSAFY-003",
+          "promotedAtOrder": 23,
+          "purity": 1.0,
+          "majorityGoldGroup": "SSAFY_REVIEW"
+        }
+      ],
+      "promotionPrecision": 1.0,
+      "promotionRecall": 0.1667,
+      "reclassifiedItemCount": 3,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 6,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0,
+      "matchMethodCounts": {
+        "ENTITY_EXACT": 2,
+        "EMBEDDING": 2
+      },
+      "entityApiFailureCount": 0,
+      "aiResponseFailureCount": 0,
+      "fallbackErrorCount": 0
+    }
+  ]
+}

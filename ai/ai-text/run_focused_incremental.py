@@ -21,6 +21,9 @@ from src.incremental_category_service import (
     PROMOTED,
     ServiceConfig,
     WorkspaceCategoryEngine,
+    build_embedding_text,
+    build_service_text,
+    cosine_similarity,
     summarize_run,
 )
 from src.dynamic_category_experiment import PRESET_SEEDS
@@ -29,7 +32,7 @@ from src.result_writer import write_json
 ROOT = Path(__file__).resolve().parent
 DEFAULT_MANIFEST = ROOT / "dataset" / "tester" / "focused-incremental" / "focused-gold.jsonl"
 CONFIG_PATH = ROOT / "config" / "incremental-category.yaml"
-REUSE_ACTIONS = {"REUSE_EMBEDDING", "REUSE_AI", "REUSE_FINAL_DEDUP"}
+REUSE_ACTIONS = {"REUSE_EMBEDDING", "REUSE_AI", "REUSE_FINAL_DEDUP", "REUSE_ENTITY"}
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -53,6 +56,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--item-threshold", type=float)
     parser.add_argument("--ai-lower", type=float)
     parser.add_argument("--signal-threshold", type=float, help="잠정 신호 매칭 유사도(미지정 시 center와 동일)")
+    parser.add_argument(
+        "--use-core-entity",
+        action="store_true",
+        help="핵심 대상(엔티티) 기반 매칭 + 제목+요약 임베딩 정제 실험 모드 활성화",
+    )
+    parser.add_argument(
+        "--entity-min-confidence",
+        type=float,
+        help="엔티티를 신뢰해 매칭에 쓰는 최소 confidence(기본 0.5)",
+    )
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args(argv)
 
@@ -145,6 +158,85 @@ def build_backend(options: argparse.Namespace):
     return build_real_backend(options)
 
 
+def _group_similarity_stats(vectors: dict[str, list[float]], ids: list[str], gold_by_id) -> dict[str, Any]:
+    """정제/본문 임베딩 벡터로 그룹 내부·간 유사도와 최근접 동일그룹 확률을 계산한다."""
+    groups: dict[str, list[str]] = defaultdict(list)
+    for i in ids:
+        groups[gold_by_id[i]["goldGroupId"]].append(i)
+
+    per_group: dict[str, Any] = {}
+    for gid, members in groups.items():
+        sims = []
+        for a in range(len(members)):
+            for b in range(a + 1, len(members)):
+                va, vb = vectors.get(members[a]), vectors.get(members[b])
+                if va and vb:
+                    sims.append(cosine_similarity(va, vb))
+        per_group[gid] = {
+            "pairs": len(sims),
+            "avg": round(sum(sims) / len(sims), 4) if sims else None,
+            "min": round(min(sims), 4) if sims else None,
+            "max": round(max(sims), 4) if sims else None,
+        }
+
+    cross_max = 0.0
+    for x in range(len(ids)):
+        for y in range(x + 1, len(ids)):
+            i, j = ids[x], ids[y]
+            if gold_by_id[i]["goldGroupId"] == gold_by_id[j]["goldGroupId"]:
+                continue
+            vi, vj = vectors.get(i), vectors.get(j)
+            if vi and vj:
+                cross_max = max(cross_max, cosine_similarity(vi, vj))
+
+    same, total = 0, 0
+    for i in ids:
+        vi = vectors.get(i)
+        if not vi:
+            continue
+        best, best_sim = None, -2.0
+        for j in ids:
+            if j == i:
+                continue
+            vj = vectors.get(j)
+            if not vj:
+                continue
+            s = cosine_similarity(vi, vj)
+            if s > best_sim:
+                best, best_sim = j, s
+        if best is not None:
+            total += 1
+            if gold_by_id[best]["goldGroupId"] == gold_by_id[i]["goldGroupId"]:
+                same += 1
+    return {
+        "perGroup": per_group,
+        "crossGroupMax": round(cross_max, 4),
+        "nearestNeighborSameGroupProb": round(same / total, 4) if total else None,
+    }
+
+
+def similarity_analysis(rows, gold_by_id, backend) -> dict[str, Any]:
+    """제목+요약(정제) vs 제목+요약+본문(기존) 임베딩의 그룹 유사도를 비교 측정한다.
+
+    엔진 결정과 무관한 '측정용' 계산이다. 두 입력 방식 모두 백엔드에서 직접 임베딩해
+    (캐시 활용) 사과 대 사과로 비교한다.
+    """
+    ids = [r["item"]["testId"] for r in rows]
+    item_by_id = {r["item"]["testId"]: r["item"] for r in rows}
+    refined_vectors, body_vectors = {}, {}
+    for i in ids:
+        item = item_by_id[i]
+        try:
+            refined_vectors[i] = backend.embed(build_embedding_text(item))
+            body_vectors[i] = backend.embed(build_service_text(item))
+        except Exception:  # noqa: BLE001 - 측정 실패는 해당 항목만 건너뛴다
+            continue
+    return {
+        "refined_title_summary": _group_similarity_stats(refined_vectors, ids, gold_by_id),
+        "legacy_title_summary_body": _group_similarity_stats(body_vectors, ids, gold_by_id),
+    }
+
+
 def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, output) -> dict[str, Any]:
     ordered = order_items(rows, order_name)
     clock = counter_clock(datetime(2026, 8, 4, 17, 0, 0, tzinfo=timezone.utc).astimezone())
@@ -174,6 +266,7 @@ def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, outpu
     item_rows = _item_rows(logs, engine, gold_by_id, formal_name)
     candidate_rows = _candidate_rows(engine, gold_by_id, promoted_at)
     metrics = compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by_id, promoted_at)
+    analysis = similarity_analysis(ordered, gold_by_id, backend)
 
     output.mkdir(parents=True, exist_ok=True)
     snapshot = engine.snapshot()
@@ -185,6 +278,7 @@ def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, outpu
             "selectedItemIds": [r["item"]["testId"] for r in ordered],
             "selectedItemCount": len(ordered),
             "metrics": metrics,
+            "similarityAnalysis": analysis,
             "snapshot": snapshot,
             "items": item_rows,
             "candidates": candidate_rows,
@@ -200,16 +294,21 @@ def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, outpu
     report = build_report(order_name, metrics, snapshot, candidate_rows)
     (output / "report.md").write_text(report, encoding="utf-8")
     (output / "report.txt").write_text(report.replace("| ", "").replace("|", " "), encoding="utf-8")
-    return {"order": order_name, "metrics": metrics, "itemRows": item_rows, "candidateRows": candidate_rows}
+    return {
+        "order": order_name, "metrics": metrics, "itemRows": item_rows,
+        "candidateRows": candidate_rows, "similarityAnalysis": analysis,
+    }
 
 
 ITEM_COLUMNS = [
-    "itemId", "inputOrder", "dataType", "goldGroupId", "goldCategoryName", "expectedBehavior",
+    "itemId", "title", "inputOrder", "dataType", "goldGroupId", "goldCategoryName", "expectedBehavior",
     "initialFormalCategory", "formalTopScore", "formalScoreGap", "formalConfident",
+    "coreEntityName", "normalizedEntityName", "coreEntityType", "entityConfidence",
+    "matchMethod", "matchedCandidateName",
     "candidateAction", "candidateEntryDecision", "candidateEntryReason",
     "signalAction", "signalId",
-    "candidateId", "candidateName", "centerSimilarity", "maxItemSimilarity",
-    "supportCountAfter", "wasPromoted", "finalFormalCategory", "wasReclassified",
+    "candidateId", "candidateName", "centerSimilarity", "maxItemSimilarity", "embeddingSimilarity",
+    "supportCountAfter", "wasPromoted", "finalFormalCategory", "finalCategoryIds", "wasReclassified",
 ]
 CANDIDATE_COLUMNS = [
     "candidateId", "candidateName", "status", "supportCount", "linkedItemIds",
@@ -224,9 +323,16 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
         gold = gold_by_id[item_id]
         classification = engine.item_classifications[item_id]
         final_formal = formal_name.get(classification.formalCategoryId, classification.formalCategoryId)
+        final_ids = [formal_name.get(cid, cid) for cid in classification.formalCategoryIds]
+        center = log.get("centerSimilarity")
+        max_item = log.get("maxItemSimilarity")
+        emb_sim = None
+        if center is not None or max_item is not None:
+            emb_sim = round(max(center or 0.0, max_item or 0.0), 4)
         rows.append(
             {
                 "itemId": item_id,
+                "title": log.get("title", ""),
                 "inputOrder": log["inputOrder"],
                 "dataType": gold.get("dataType", ""),
                 "goldGroupId": gold["goldGroupId"],
@@ -238,6 +344,12 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
                 ),
                 "formalTopScore": log.get("formalTopScore"),
                 "formalScoreGap": log.get("formalScoreGap"),
+                "coreEntityName": log.get("coreEntityName"),
+                "normalizedEntityName": log.get("normalizedEntityName"),
+                "coreEntityType": log.get("coreEntityType"),
+                "entityConfidence": log.get("entityConfidence"),
+                "matchMethod": log.get("matchMethod"),
+                "matchedCandidateName": log.get("matchedCandidateName"),
                 "candidateAction": log.get("candidateAction"),
                 "candidateEntryDecision": log.get("candidateEntryDecision"),
                 "candidateEntryReason": log.get("candidateEntryReason"),
@@ -245,11 +357,13 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
                 "signalId": log.get("signalId"),
                 "candidateId": log.get("linkedCandidateId"),
                 "candidateName": log.get("candidateName"),
-                "centerSimilarity": log.get("centerSimilarity"),
-                "maxItemSimilarity": log.get("maxItemSimilarity"),
+                "centerSimilarity": center,
+                "maxItemSimilarity": max_item,
+                "embeddingSimilarity": emb_sim,
                 "supportCountAfter": log.get("candidateSupportCount"),
                 "wasPromoted": log.get("promoted", False),
                 "finalFormalCategory": final_formal,
+                "finalCategoryIds": final_ids,
                 "wasReclassified": item_id in engine.reclassified_item_ids,
             }
         )
@@ -365,6 +479,22 @@ def compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by
     new5_frag = len({r["candidateId"] for r in item_rows if r["goldGroupId"] == "NEW_GROUP_5" and r["candidateId"] is not None})
     new3_frag = len({r["candidateId"] for r in item_rows if r["goldGroupId"] == "NEW_GROUP_3" and r["candidateId"] is not None})
 
+    # 매칭 방법 분포(ENTITY_EXACT/ENTITY_ALIAS/EMBEDDING/AI_REVIEW)
+    match_method_counts = dict(
+        Counter(r.get("matchMethod") for r in item_rows if r.get("matchMethod"))
+    )
+    # 에러 분류: API/파싱(엔티티·AI 응답 실패) vs 후보 처리 예외(폴백)
+    item_entities = getattr(engine, "_item_entities", {})
+    entity_api_failures = sum(
+        1 for e in item_entities.values()
+        if isinstance(e, dict) and (e.get("entityError") == "API" or e.get("entityEvidence") == "AI 응답 실패")
+    )
+    ai_response_failures = sum(
+        1 for log in logs if isinstance(log.get("candidateEntryReason"), str)
+        and "AI 응답 실패" in log.get("candidateEntryReason", "")
+    )
+    fallback_errors = sum(1 for log in logs if log.get("candidateError"))
+
     return {
         "order": order_name,
         "selectedItemCount": len(item_rows),
@@ -393,7 +523,11 @@ def compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by
         "misMergeEvents": mismerge_events,
         "finalFormalCategoryCount": len(engine.formal_categories),
         "exceededMaxFormalCategories": len(engine.formal_categories) > engine.config.max_count,
-        "candidateErrorCount": sum(1 for log in logs if log.get("candidateError")),
+        "candidateErrorCount": fallback_errors,
+        "matchMethodCounts": match_method_counts,
+        "entityApiFailureCount": entity_api_failures,
+        "aiResponseFailureCount": ai_response_failures,
+        "fallbackErrorCount": fallback_errors,
     }
 
 
@@ -432,7 +566,8 @@ def build_report(order_name, metrics, snapshot, candidate_rows) -> str:
         f"- 승격 수: {metrics['promotedCount']} / 정밀도 {metrics['promotionPrecision']} / 재현율 {metrics['promotionRecall']}",
         f"- 재분류 데이터 수: {metrics['reclassifiedItemCount']}",
         f"- 오병합 건수: {metrics['misMergeEventCount']} (목표 0)",
-        f"- 후보 처리 에러: {metrics['candidateErrorCount']}",
+        f"- 매칭 방법: {metrics.get('matchMethodCounts') or '(없음)'}",
+        f"- 에러: 엔티티API {metrics.get('entityApiFailureCount', 0)} / AI응답 {metrics.get('aiResponseFailureCount', 0)} / 폴백 {metrics.get('fallbackErrorCount', 0)}",
         "",
         "## 정답 그룹별 후보 파편화",
         "| goldGroupId | 후보 수 |",
@@ -465,18 +600,56 @@ def write_comparison(output: Path, results: list[dict[str, Any]]) -> None:
     keys = [
         ("order", "순서"), ("selectedItemCount", "데이터 수"), ("finalFormalCategoryCount", "정식 수"),
         ("provisionalSignalCount", "잠정신호"), ("convertedSignalCount", "전환"),
-        ("existingSpuriousCandidateCount", "기존22 후보"), ("existingSignalOnlyCount", "기존22 신호만"),
+        ("maxFragmentation", "최대파편화"),
         ("candidateReuseRate", "재사용률"), ("groupCaptureRate", "포착률"),
         ("promotedCount", "승격 수"), ("misMergeEventCount", "오병합"),
-        ("reclassifiedItemCount", "재분류"), ("candidateErrorCount", "에러"),
+        ("reclassifiedItemCount", "재분류"),
+        ("entityApiFailureCount", "엔티티API실패"), ("aiResponseFailureCount", "AI응답실패"),
+        ("fallbackErrorCount", "폴백에러"),
     ]
     _write_csv(output / "focused-comparison.csv", [k for k, _ in keys], summaries)
 
-    lines = ["# 집중 증분 카테고리 비교 (clustered vs interleaved)", "",
+    lines = ["# 집중 증분 카테고리 비교 (제목+요약 엔티티 모드)", "",
              "| " + " | ".join(label for _, label in keys) + " |",
              "|" + "|".join("---" for _ in keys) + "|"]
     for s in summaries:
         lines.append("| " + " | ".join(_cell(s.get(k)) for k, _ in keys) + " |")
+
+    # 매칭 방법 분포
+    lines += ["", "## 매칭 방법 분포 (ENTITY_EXACT / ENTITY_ALIAS / EMBEDDING / AI_REVIEW)"]
+    for s in summaries:
+        mm = s.get("matchMethodCounts") or {}
+        detail = ", ".join(f"{k}:{v}" for k, v in sorted(mm.items())) or "(없음)"
+        lines.append(f"- {s['order']}: {detail}")
+
+    # 임베딩 유사도 비교: 제목+요약(정제) vs 제목+요약+본문(기존)
+    analysis = results[0].get("similarityAnalysis") if results else None
+    if analysis:
+        refined = analysis["refined_title_summary"]["perGroup"]
+        body = analysis["legacy_title_summary_body"]["perGroup"]
+        lines += [
+            "", "## 그룹 내부 유사도: 제목+요약(정제) vs 제목+요약+본문(기존)",
+            "| goldGroupId | 쌍수 | 정제avg | 정제min | 정제max | 본문avg | 본문min | 본문max | avg변화 |",
+            "|---|--:|--:|--:|--:|--:|--:|--:|--:|",
+        ]
+        for gid in sorted(refined):
+            r, b = refined[gid], body.get(gid, {})
+            delta = (
+                round((r["avg"] or 0) - (b.get("avg") or 0), 4)
+                if r.get("avg") is not None and b.get("avg") is not None else None
+            )
+            lines.append(
+                f"| {_cell(gid)} | {r['pairs']} | {_cell(r['avg'])} | {_cell(r['min'])} | {_cell(r['max'])} "
+                f"| {_cell(b.get('avg'))} | {_cell(b.get('min'))} | {_cell(b.get('max'))} | {_cell(delta)} |"
+            )
+        rr = analysis["refined_title_summary"]
+        bb = analysis["legacy_title_summary_body"]
+        lines += [
+            "",
+            f"- 서로 다른 그룹 간 최대 유사도: 정제 {rr['crossGroupMax']} / 본문 {bb['crossGroupMax']}",
+            f"- 최근접 데이터가 같은 그룹일 확률: 정제 {rr['nearestNeighborSameGroupProb']} "
+            f"/ 본문 {bb['nearestNeighborSameGroupProb']}",
+        ]
     # 순서 안정성: 그룹별 파편화 비교, 승격 그룹 일치
     lines += ["", "## 순서 안정성"]
     if len(summaries) == 2:
@@ -522,6 +695,10 @@ def main(argv: list[str] | None = None) -> int:
         elif options.center_threshold is not None:
             # 신호 매칭 임계값을 명시하지 않으면 center와 동일하게 맞춘다.
             overrides["signal_similarity_threshold"] = options.center_threshold
+        if options.use_core_entity:
+            overrides["use_core_entity"] = True
+        if options.entity_min_confidence is not None:
+            overrides["entity_min_confidence"] = options.entity_min_confidence
         if overrides:
             config = dataclasses.replace(config, **overrides)
         rows = load_manifest(options.manifest)
@@ -534,6 +711,11 @@ def main(argv: list[str] | None = None) -> int:
         print(
             f"[OK] 재사용 임계값 center={config.center_similarity_threshold} "
             f"item={config.item_similarity_threshold} ai-lower={config.ai_review_lower_bound}"
+        )
+        print(
+            f"[OK] 임베딩 입력: {'제목+요약(엔티티 모드)' if config.use_core_entity else '제목+요약+본문'}"
+            f" | 엔티티 매칭: {'ON' if config.use_core_entity else 'OFF'}"
+            + (f" (min-conf={config.entity_min_confidence})" if config.use_core_entity else "")
         )
         if options.dry_run:
             for order in options.order:

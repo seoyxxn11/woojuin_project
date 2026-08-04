@@ -1,0 +1,6 @@
+﻿id,name,origin,createdAtItemId,itemCount
+LIFE_HEALTH,생활·건강,SEED,,10
+LEARNING_CAREER,학습·커리어,SEED,,9
+PLACE_FOOD,장소·먹거리,SEED,,0
+CONSUMPTION_FINANCE,소비·금융,SEED,,2
+CULTURE_IDEA,문화·아이디어,SEED,,10

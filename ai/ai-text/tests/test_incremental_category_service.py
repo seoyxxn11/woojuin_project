@@ -92,6 +92,15 @@ class FakeBackend:
         return {"convert": True, "name": signal_info.get("suggestedName") or "세부주제",
                 "description": "설명", "confidence": 0.9, "reason": "두 번째 유사 데이터"}
 
+    def extract_core_entity(self, item):
+        entity = item.get("entity")
+        if entity:
+            return dict(entity)
+        return {
+            "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
+            "aliases": [], "entityConfidence": 0.0, "entityEvidence": "없음",
+        }
+
 
 def make_engine(backend, config=None, workspace_id=10):
     clock = itertools.count()
@@ -105,7 +114,7 @@ def make_engine(backend, config=None, workspace_id=10):
     )
 
 
-def item(test_id, group="", *, candidate_name=None, title=None):
+def item(test_id, group="", *, candidate_name=None, title=None, entity=None):
     text = f"{test_id} {group}"
     return {
         "testId": test_id,
@@ -113,6 +122,18 @@ def item(test_id, group="", *, candidate_name=None, title=None):
         "inputType": "memo",
         "input": text,
         "candidateName": candidate_name,
+        "entity": entity,
+    }
+
+
+def entity(name, *, etype="WORK", aliases=None, conf=0.9):
+    return {
+        "coreEntityName": name,
+        "normalizedEntityName": name,
+        "coreEntityType": etype,
+        "aliases": list(aliases or []),
+        "entityConfidence": conf,
+        "entityEvidence": "테스트",
     }
 
 
@@ -490,3 +511,118 @@ def test_build_service_text_drops_url_and_content_tokens_filter_numbers():
     tokens = content_tokens(text)
     assert "2026" not in tokens  # 연도(숫자) 제외
     assert "운세" in tokens
+
+
+# ---- 핵심 대상(엔티티) 기반 매칭 (use_core_entity=True) ----
+
+
+def entity_config(**kw):
+    base = dict(
+        use_core_entity=True,
+        candidate_min_support_count=3,
+        # 임베딩 임계값은 높게 둬서 엔티티 매칭 경로만 검증한다.
+        center_similarity_threshold=0.99,
+        item_similarity_threshold=0.99,
+        signal_similarity_threshold=0.99,
+        ai_review_lower_bound=0.99,
+    )
+    base.update(kw)
+    return ServiceConfig(**base)
+
+
+def test_build_embedding_text_excludes_body():
+    from src.incremental_category_service import build_embedding_text
+
+    it = {
+        "title": "짱구 극장판",
+        "summary": "짱구는 못말려 극장판 흥행 정리",
+        "inputType": "url",
+        "input": '{"content":"아주 긴 본문 내용 사토 카자마 등등"}',
+    }
+    text = build_embedding_text(it)
+    assert "짱구" in text and "흥행" in text
+    assert "본문" not in text and "사토" not in text  # 본문 완전 제외
+    # URL 데이터라도 제목은 포함
+    assert "극장판" in text
+
+
+def test_normalize_entity_key_ignores_spacing_symbols():
+    from src.incremental_category_service import normalize_entity_key
+
+    assert normalize_entity_key("삼성 청년 SW·AI 아카데미") == normalize_entity_key("삼성청년swai아카데미")
+    assert normalize_entity_key("SSAFY") == "ssafy"
+
+
+def test_same_entity_defers_then_converts_then_promotes():
+    backend = FakeBackend(groups=[])
+    engine = make_engine(backend, entity_config())
+    # 세부 내용이 달라도 같은 핵심 대상('짱구') 3건 → 신호 → 후보(support2) → 승격
+    log1 = engine.submit_item(item("J1", "aaa", entity=entity("짱구")))
+    log2 = engine.submit_item(item("J2", "bbb", entity=entity("짱구")))
+    log3 = engine.submit_item(item("J3", "ccc", entity=entity("짱구")))
+
+    assert log1["signalAction"] == "STORE_SIGNAL"  # 첫 데이터는 생성 지연
+    assert log2["candidateAction"] == "CONVERT_SIGNAL"
+    assert log2["matchMethod"] in {"ENTITY_EXACT", "ENTITY_ALIAS"}
+    assert log2["candidateSupportCount"] == 2
+    assert log3["matchMethod"] == "ENTITY_EXACT"
+    assert log3["promoted"] is True
+    active = [c for c in engine.candidates if c.status in {PENDING, READY_TO_PROMOTE, PROMOTED}]
+    assert len(active) == 1
+    assert active[0].supportCount == 3
+
+
+def test_entity_alias_matches_same_target():
+    backend = FakeBackend(groups=[])
+    engine = make_engine(backend, entity_config())
+    engine.submit_item(item("S1", entity=entity("SSAFY", etype="ORGANIZATION")))
+    # 별칭(싸피)이 정규 이름(SSAFY)과 매칭되어야 한다
+    log2 = engine.submit_item(
+        item("S2", entity=entity("싸피", etype="ORGANIZATION", aliases=["SSAFY"]))
+    )
+    assert log2["candidateAction"] == "CONVERT_SIGNAL"
+    assert log2["matchMethod"] in {"ENTITY_EXACT", "ENTITY_ALIAS"}
+
+
+def test_different_entities_do_not_merge():
+    backend = FakeBackend(groups=[])
+    engine = make_engine(backend, entity_config())
+    engine.submit_item(item("J1", entity=entity("짱구")))
+    log2 = engine.submit_item(item("K1", entity=entity("SSAFY", etype="ORGANIZATION")))
+    # 서로 다른 핵심 대상 → 전환되지 않고 각자 신호로 남는다
+    assert log2["signalAction"] == "STORE_SIGNAL"
+    assert log2["candidateAction"] == "FORMAL_ONLY"
+    active = [c for c in engine.candidates if c.status in {PENDING, READY_TO_PROMOTE, PROMOTED}]
+    assert active == []
+
+
+def test_low_confidence_entity_is_not_used():
+    backend = FakeBackend(groups=[])
+    engine = make_engine(backend, entity_config())
+    engine.submit_item(item("J1", entity=entity("짱구", conf=0.2)))
+    log2 = engine.submit_item(item("J2", entity=entity("짱구", conf=0.2)))
+    # confidence가 낮으면 엔티티 매칭을 신뢰하지 않아 신호로만 남는다
+    assert log2["signalAction"] == "STORE_SIGNAL"
+    assert log2["matchMethod"] is None
+
+
+def test_same_entity_after_promotion_attaches_to_promoted_category():
+    backend = FakeBackend(groups=[])
+    engine = make_engine(backend, entity_config())
+    # 같은 대상 3건 → 승격
+    engine.submit_item(item("J1", entity=entity("짱구")))
+    engine.submit_item(item("J2", entity=entity("짱구")))
+    log3 = engine.submit_item(item("J3", entity=entity("짱구")))
+    assert log3["promoted"] is True
+    # 승격 후 같은 대상 4번째 → 승격된 카테고리에 2차 라벨로 연결(새 후보 아님)
+    log4 = engine.submit_item(item("J4", entity=entity("짱구")))
+    assert log4["candidateAction"] == "REUSE_PROMOTED_ENTITY"
+    assert log4["matchMethod"] in {"ENTITY_EXACT", "ENTITY_ALIAS"}
+    classification = engine.item_classifications["J4"]
+    # 기본 카테고리 + 승격 대상 카테고리(최대 2개)
+    assert len(classification.formalCategoryIds) <= 2
+    promoted_id = next(c["id"] for c in engine.formal_categories if c["origin"] == "PROMOTED")
+    assert promoted_id in classification.formalCategoryIds
+    # 새 후보가 추가로 생기지 않는다
+    active = [c for c in engine.candidates if c.status in {PENDING, READY_TO_PROMOTE}]
+    assert active == []

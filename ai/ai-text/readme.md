@@ -353,6 +353,56 @@ results/<시각>-incremental-category-<mode>/
 > 서로 다른 표현의 의미 유사성(예: 별자리/사주/타로 → 운세)은 실제 임베딩이 더
 > 정확하므로, 후보 군집 품질을 볼 때는 `--mode real`을 사용하세요.
 
+### 후보 재사용 판단 개선
+
+같은 주제인데 이름이 달라 후보가 파편화(운세·예측 / 운세 정보 / 운세·타로)되는 문제를
+줄이기 위해, 정식 분류가 애매한 데이터는 다음 순서로 처리합니다.
+
+```text
+1. 기존 후보 대표 임베딩과의 코사인 유사도 centerSimilarity
+2. 후보에 연결된 개별 데이터와의 최대 유사도 maxItemSimilarity
+   → 둘 중 하나라도 임계값 이상이면 그 후보 재사용
+3. 애매 밴드(ai-review-lower-bound 이상~임계값 미만)면 AI에게 재사용 여부 판단 요청
+   (REUSE candidateId / CREATE)
+4. CREATE일 때만 새 이름·설명 생성 후, 기존 후보 전체와 최종 중복 확인 → 같으면 재사용
+5. 그래도 없으면 신규 후보 생성
+```
+
+임계값은 [config/incremental-category.yaml](config/incremental-category.yaml)의
+`category.candidate` 블록으로 분리했습니다(기존 `candidate-similarity-threshold`는 하위 호환).
+
+```yaml
+category:
+  candidate:
+    center-similarity-threshold: 0.75
+    item-similarity-threshold: 0.78
+    ai-review-lower-bound: 0.60
+```
+
+### 집중(focused) 테스트
+
+파편화·재사용을 집중 검증하는 소규모 데이터셋으로, 기존 112건을 로딩·호출하지 않고
+gold 매니페스트에 명시된 데이터(현재 28건: 기존 짱구 5 + ssafy 3 + 신규 20)만 실행합니다.
+실행기는 [run_focused_incremental.py](run_focused_incremental.py)입니다.
+
+- 데이터·정답: `dataset/tester/focused-incremental/`의 신규 20건과
+  `focused-gold.jsonl`(itemId·goldGroupId·goldCategoryName·expectedBehavior·mustNotMergeWithGroupIds).
+  기존 짱구·ssafy 파일은 수정하지 않고 경로로만 참조합니다.
+- 순서: `clustered`(같은 그룹 연속) / `interleaved`(그룹 한 건씩 교차) 두 가지만 기본 실행.
+
+```powershell
+cd ai\ai-text
+.\.venv\Scripts\python.exe .\run_focused_incremental.py --dry-run
+# 실제 임베딩·AI로 검증
+.\.venv\Scripts\python.exe .\run_focused_incremental.py --mode real --model openrouter-qwen3-8b
+```
+
+결과는 `results/<시각>-focused-incremental-<mode>/<order>/`에 `result.json`, `items.csv`,
+`candidates.csv`, `categories.csv`, `report.md/txt`로 저장하고, 상위에
+`focused-comparison.{json,csv}`, `focused-comparison-report.md`를 생성합니다. 지표는
+정답 그룹별 후보 파편화 수, 후보 재사용률, 후보 순도, 그룹 포착률, 승격 정밀도·재현율,
+오병합 건수(목표 0), clustered/interleaved 순서 안정성입니다.
+
 ## 카테고리
 
 최종 카테고리는 다음 12개입니다.

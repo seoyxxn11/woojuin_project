@@ -271,6 +271,88 @@ GUI에서 상위 결과 폴더를 고른 다음 검토할 실험 조건과 JSON�
 브라우저를 닫아도 이어서 할 수 있습니다. 다른 저장 위치는
 `WOOJUIN_REVIEW_ROOT`, 추가 탐색 위치는 `WOOJUIN_DRAFT_ROOTS`로 지정합니다.
 
+## 증분 카테고리 서비스 (한 건씩 입력)
+
+실제 서비스처럼 데이터가 한 번에 오지 않고 URL·이미지·메모가 **한 건씩** 저장되는
+흐름을 시뮬레이션합니다. 엔진은 [src/incremental_category_service.py](src/incremental_category_service.py),
+실행기는 [run_incremental_category_service.py](run_incremental_category_service.py)입니다.
+
+- **정식(FORMAL) 카테고리**: 사용자에게 노출. 기본 5개(`생활·건강 / 학습·커리어 /
+  장소·먹거리 / 소비·금융 / 문화·아이디어`)로 시작하고 **워크스페이스당 최대 10개**.
+- **임시(TEMPORARY) 후보**: 사용자에게 노출하지 않는 내부 후보. 한 건만 보고 바로
+  정식 카테고리를 만들지 않고, 여러 데이터에서 반복되는 주제가 확인되면 승격합니다.
+
+### 데이터 한 건 처리 흐름
+
+```text
+1. 현재 정식 카테고리와 비교(AI 점수)
+2. 최고 점수 ≥ 임계값이고 1·2위 차가 크면 → 바로 정식 분류
+3. 애매하면(최고 점수 낮거나 점수 차가 작음) 기존 임시 후보와 임베딩 비교
+4. 유사 후보가 있으면 해당 후보에 누적(중복 후보 생성 안 함)
+5. 유사 후보가 없으면 새 임시 후보 생성
+6. 데이터는 항상 가장 가까운 정식 카테고리에 우선 배치(후보는 내부 연결로만 저장)
+7. 후보 연결 데이터가 min-support 이상이면 승격 검토(AI가 일관성 확인)
+8. 승격되면 연결 데이터를 새 정식 카테고리로 재분류
+```
+
+정식 카테고리가 이미 10개면 후보는 계속 누적하되 승격하지 않고
+`READY_TO_PROMOTE` 상태로 대기합니다. 후보 상태: `PENDING / READY_TO_PROMOTE /
+PROMOTED / MERGED / EXPIRED / REJECTED`.
+
+### 임계값 설정
+
+임계값과 승격 조건은 코드가 아닌 [config/incremental-category.yaml](config/incremental-category.yaml)에서
+조정합니다.
+
+```yaml
+category:
+  max-count: 10
+  max-ai-generated-count: 5
+  formal-confidence-threshold: 0.65
+  formal-score-gap-threshold: 0.10
+  candidate-similarity-threshold: 0.80
+  candidate-min-support-count: 3
+```
+
+### 실행
+
+기본은 **API를 호출하지 않는 오프라인 결정론 모드**입니다. 112건을 `original /
+shuffle-42 / shuffle-84` 세 순서로 한 건씩 입력합니다.
+
+```powershell
+cd ai\ai-text
+.\.venv\Scripts\python.exe .\run_incremental_category_service.py --dry-run
+.\.venv\Scripts\python.exe .\run_incremental_category_service.py
+```
+
+실제 임베딩(GMS `text-embedding-3-small`)과 AI 모델로 실행하려면 `--mode real`을
+사용합니다. 정식 분류·후보 필요 판단·이름/설명 생성·승격 검토에만 AI를 호출하고,
+후보 매칭 같은 유사도 비교는 임베딩으로 처리합니다.
+
+```powershell
+.\.venv\Scripts\python.exe .\run_incremental_category_service.py `
+  --mode real --model openrouter-qwen3-8b --order original shuffle-42 shuffle-84
+```
+
+### 결과 저장 구조
+
+```text
+results/<시각>-incremental-category-<mode>/
+├── original/  shuffle-42/  shuffle-84/
+│   ├── result.json       # 설정 + 데이터별 로그 + 최종 스냅샷
+│   ├── items.csv         # 데이터별: 선택 정식 카테고리·최고 점수·후보 매칭·supportCount·승격·재분류·현재 카테고리/후보 수
+│   ├── categories.csv    # 정식 카테고리: id·이름·출처(SEED/PROMOTED)·최초 데이터·데이터 수
+│   ├── candidates.csv    # 임시 후보: 상태·supportCount·연결 데이터·승격 카테고리
+│   └── report.md / report.txt
+├── run-summary.json
+├── comparison.csv
+└── comparison-report.md  # 순서별 최종 카테고리 수·후보 수 차이
+```
+
+> 오프라인 모드는 토큰 해시 임베딩 + 소규모 개념 확장 맵으로 흐름을 재현합니다.
+> 서로 다른 표현의 의미 유사성(예: 별자리/사주/타로 → 운세)은 실제 임베딩이 더
+> 정확하므로, 후보 군집 품질을 볼 때는 `--mode real`을 사용하세요.
+
 ## 카테고리
 
 최종 카테고리는 다음 12개입니다.

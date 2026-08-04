@@ -1,0 +1,155 @@
+{
+  "orders": [
+    {
+      "order": "grouped",
+      "selectedItemCount": 30,
+      "existingFormalCount": 22,
+      "existingFormalOnlyCount": 3,
+      "existingSpuriousCandidateCount": 19,
+      "existingSpuriousItemIds": [
+        "EXIST-001",
+        "EXIST-002",
+        "EXIST-003",
+        "EXIST-005",
+        "EXIST-006",
+        "EXIST-007",
+        "EXIST-008",
+        "EXIST-009",
+        "EXIST-010",
+        "EXIST-011",
+        "EXIST-012",
+        "EXIST-013",
+        "EXIST-014",
+        "EXIST-015",
+        "EXIST-016",
+        "EXIST-018",
+        "EXIST-019",
+        "EXIST-020",
+        "EXIST-021"
+      ],
+      "newGroup5CandidateCount": 1,
+      "newGroup3CandidateCount": 1,
+      "fragmentationByGroup": {
+        "NEW_GROUP_3": 1,
+        "NEW_GROUP_5": 1
+      },
+      "maxFragmentation": 1,
+      "candidateReuseRate": 0.4167,
+      "enteredCandidateStage": 24,
+      "reuseEvents": 10,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 1.0,
+      "capturedGroups": [
+        "NEW_GROUP_3",
+        "NEW_GROUP_5"
+      ],
+      "repeatedGroups": [
+        "NEW_GROUP_3",
+        "NEW_GROUP_5"
+      ],
+      "promotedCount": 3,
+      "promotedRecords": [
+        {
+          "candidateId": 6,
+          "candidateName": "코딩 교육 프로그램",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "EXIST-009",
+          "promotedAtOrder": 9,
+          "purity": 1.0,
+          "majorityGoldGroup": "학습·커리어"
+        },
+        {
+          "candidateId": 7,
+          "candidateName": "여행코스",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "EXIST-012",
+          "promotedAtOrder": 12,
+          "purity": 1.0,
+          "majorityGoldGroup": "장소·먹거리"
+        },
+        {
+          "candidateId": 14,
+          "candidateName": "코딩 교육 프로그램",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "NEW3-003",
+          "promotedAtOrder": 30,
+          "purity": 1.0,
+          "majorityGoldGroup": "NEW_GROUP_3"
+        }
+      ],
+      "promotionPrecision": 1.0,
+      "promotionRecall": 0.5,
+      "reclassifiedItemCount": 9,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 7,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    },
+    {
+      "order": "interleaved",
+      "selectedItemCount": 30,
+      "existingFormalCount": 22,
+      "existingFormalOnlyCount": 3,
+      "existingSpuriousCandidateCount": 19,
+      "existingSpuriousItemIds": [
+        "EXIST-001",
+        "EXIST-006",
+        "EXIST-015",
+        "EXIST-019",
+        "EXIST-007",
+        "EXIST-011",
+        "EXIST-016",
+        "EXIST-020",
+        "EXIST-003",
+        "EXIST-012",
+        "EXIST-017",
+        "EXIST-021",
+        "EXIST-004",
+        "EXIST-009",
+        "EXIST-013",
+        "EXIST-018",
+        "EXIST-022",
+        "EXIST-005",
+        "EXIST-014"
+      ],
+      "newGroup5CandidateCount": 2,
+      "newGroup3CandidateCount": 2,
+      "fragmentationByGroup": {
+        "NEW_GROUP_3": 2,
+        "NEW_GROUP_5": 2
+      },
+      "maxFragmentation": 2,
+      "candidateReuseRate": 0.3333,
+      "enteredCandidateStage": 24,
+      "reuseEvents": 8,
+      "avgCandidatePurity": 0.9792,
+      "groupCaptureRate": 0.0,
+      "capturedGroups": [],
+      "repeatedGroups": [
+        "NEW_GROUP_3",
+        "NEW_GROUP_5"
+      ],
+      "promotedCount": 1,
+      "promotedRecords": [
+        {
+          "candidateId": 5,
+          "candidateName": "코딩 교육 프로그램",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "NEW3-002",
+          "promotedAtOrder": 14,
+          "purity": 0.6667,
+          "majorityGoldGroup": "NEW_GROUP_3"
+        }
+      ],
+      "promotionPrecision": 0.0,
+      "promotionRecall": 0.5,
+      "reclassifiedItemCount": 3,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 6,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    }
+  ]
+}

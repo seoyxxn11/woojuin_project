@@ -1,0 +1,1823 @@
+{
+  "order": "grouped",
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2,
+    "center_similarity_threshold": 0.55,
+    "item_similarity_threshold": 0.6,
+    "ai_review_lower_bound": 0.3
+  },
+  "selectedItemIds": [
+    "EXIST-001",
+    "EXIST-002",
+    "EXIST-003",
+    "EXIST-004",
+    "EXIST-005",
+    "EXIST-006",
+    "EXIST-007",
+    "EXIST-008",
+    "EXIST-009",
+    "EXIST-010",
+    "EXIST-011",
+    "EXIST-012",
+    "EXIST-013",
+    "EXIST-014",
+    "EXIST-015",
+    "EXIST-016",
+    "EXIST-017",
+    "EXIST-018",
+    "EXIST-019",
+    "EXIST-020",
+    "EXIST-021",
+    "EXIST-022",
+    "NEW5-001",
+    "NEW5-002",
+    "NEW5-003",
+    "NEW5-004",
+    "NEW5-005",
+    "NEW3-001",
+    "NEW3-002",
+    "NEW3-003"
+  ],
+  "selectedItemCount": 30,
+  "metrics": {
+    "order": "grouped",
+    "selectedItemCount": 30,
+    "existingFormalCount": 22,
+    "existingFormalOnlyCount": 3,
+    "existingSpuriousCandidateCount": 19,
+    "existingSpuriousItemIds": [
+      "EXIST-001",
+      "EXIST-002",
+      "EXIST-003",
+      "EXIST-005",
+      "EXIST-006",
+      "EXIST-007",
+      "EXIST-008",
+      "EXIST-009",
+      "EXIST-010",
+      "EXIST-011",
+      "EXIST-012",
+      "EXIST-013",
+      "EXIST-014",
+      "EXIST-015",
+      "EXIST-016",
+      "EXIST-018",
+      "EXIST-019",
+      "EXIST-020",
+      "EXIST-021"
+    ],
+    "newGroup5CandidateCount": 1,
+    "newGroup3CandidateCount": 1,
+    "fragmentationByGroup": {
+      "NEW_GROUP_3": 1,
+      "NEW_GROUP_5": 1
+    },
+    "maxFragmentation": 1,
+    "candidateReuseRate": 0.4167,
+    "enteredCandidateStage": 24,
+    "reuseEvents": 10,
+    "avgCandidatePurity": 1.0,
+    "groupCaptureRate": 1.0,
+    "capturedGroups": [
+      "NEW_GROUP_3",
+      "NEW_GROUP_5"
+    ],
+    "repeatedGroups": [
+      "NEW_GROUP_3",
+      "NEW_GROUP_5"
+    ],
+    "promotedCount": 3,
+    "promotedRecords": [
+      {
+        "candidateId": 6,
+        "candidateName": "코딩 교육 프로그램",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "EXIST-009",
+        "promotedAtOrder": 9,
+        "purity": 1.0,
+        "majorityGoldGroup": "학습·커리어"
+      },
+      {
+        "candidateId": 7,
+        "candidateName": "여행코스",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "EXIST-012",
+        "promotedAtOrder": 12,
+        "purity": 1.0,
+        "majorityGoldGroup": "장소·먹거리"
+      },
+      {
+        "candidateId": 14,
+        "candidateName": "코딩 교육 프로그램",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "NEW3-003",
+        "promotedAtOrder": 30,
+        "purity": 1.0,
+        "majorityGoldGroup": "NEW_GROUP_3"
+      }
+    ],
+    "promotionPrecision": 1.0,
+    "promotionRecall": 0.5,
+    "reclassifiedItemCount": 9,
+    "misMergeEventCount": 0,
+    "misMergeEvents": [],
+    "finalFormalCategoryCount": 7,
+    "exceededMaxFormalCategories": false,
+    "candidateErrorCount": 0
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 7,
+        "itemIds": [
+          "EXIST-001",
+          "EXIST-002",
+          "EXIST-003",
+          "EXIST-004",
+          "EXIST-005",
+          "NEW5-003",
+          "NEW5-005"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 1,
+        "itemIds": [
+          "EXIST-006"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 3,
+        "itemIds": [
+          "EXIST-013",
+          "EXIST-014",
+          "EXIST-020"
+        ]
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 4,
+        "itemIds": [
+          "EXIST-015",
+          "EXIST-016",
+          "EXIST-017",
+          "EXIST-018"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 5,
+        "itemIds": [
+          "EXIST-019",
+          "EXIST-022",
+          "NEW5-001",
+          "NEW5-002",
+          "NEW5-004"
+        ]
+      },
+      {
+        "id": "AI-ABFC4D23D8",
+        "name": "코딩 교육 프로그램",
+        "description": "코딩 교육 프로그램 관련 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "EXIST-007",
+        "itemCount": 6,
+        "itemIds": [
+          "EXIST-007",
+          "EXIST-008",
+          "EXIST-009",
+          "NEW3-001",
+          "NEW3-002",
+          "NEW3-003"
+        ]
+      },
+      {
+        "id": "AI-18F62F9450",
+        "name": "여행코스",
+        "description": "여행코스 관련 후보",
+        "origin": "PROMOTED",
+        "createdAtItemId": "EXIST-010",
+        "itemCount": 4,
+        "itemIds": [
+          "EXIST-010",
+          "EXIST-011",
+          "EXIST-012",
+          "EXIST-021"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "견과류 건강 영향",
+        "description": "견과류 건강 영향 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:01+09:00",
+        "updatedAt": "2026-08-05T02:00:02+09:00",
+        "createdAtItemId": "EXIST-001",
+        "linkedItemIds": [
+          "EXIST-001"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "어깨 스트레칭",
+        "description": "어깨 스트레칭 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:03+09:00",
+        "updatedAt": "2026-08-05T02:00:04+09:00",
+        "createdAtItemId": "EXIST-002",
+        "linkedItemIds": [
+          "EXIST-002"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "신경 스트레칭 운동",
+        "description": "신경 스트레칭 운동 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:05+09:00",
+        "updatedAt": "2026-08-05T02:00:06+09:00",
+        "createdAtItemId": "EXIST-003",
+        "linkedItemIds": [
+          "EXIST-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "수면장애 치료",
+        "description": "수면장애 치료 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:07+09:00",
+        "updatedAt": "2026-08-05T02:00:08+09:00",
+        "createdAtItemId": "EXIST-005",
+        "linkedItemIds": [
+          "EXIST-005"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "React 무한스크롤",
+        "description": "React 무한스크롤 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:09+09:00",
+        "updatedAt": "2026-08-05T02:00:10+09:00",
+        "createdAtItemId": "EXIST-006",
+        "linkedItemIds": [
+          "EXIST-006"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 6,
+        "workspaceId": 10,
+        "suggestedName": "코딩 교육 프로그램",
+        "description": "코딩 교육 프로그램 관련 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:11+09:00",
+        "updatedAt": "2026-08-05T02:00:15+09:00",
+        "createdAtItemId": "EXIST-007",
+        "linkedItemIds": [
+          "EXIST-007",
+          "EXIST-008",
+          "EXIST-009"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-ABFC4D23D8",
+        "lastReviewReason": "이유"
+      },
+      {
+        "candidateId": 7,
+        "workspaceId": 10,
+        "suggestedName": "여행코스",
+        "description": "여행코스 관련 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:16+09:00",
+        "updatedAt": "2026-08-05T02:00:20+09:00",
+        "createdAtItemId": "EXIST-010",
+        "linkedItemIds": [
+          "EXIST-010",
+          "EXIST-011",
+          "EXIST-012"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-18F62F9450",
+        "lastReviewReason": "이유"
+      },
+      {
+        "candidateId": 8,
+        "workspaceId": 10,
+        "suggestedName": "해변 카페 추천",
+        "description": "해변 카페 추천 관련 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:21+09:00",
+        "updatedAt": "2026-08-05T02:00:23+09:00",
+        "createdAtItemId": "EXIST-013",
+        "linkedItemIds": [
+          "EXIST-013",
+          "EXIST-014"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 9,
+        "workspaceId": 10,
+        "suggestedName": "ETF 투자 전략",
+        "description": "ETF 투자 전략 관련 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:24+09:00",
+        "updatedAt": "2026-08-05T02:00:26+09:00",
+        "createdAtItemId": "EXIST-015",
+        "linkedItemIds": [
+          "EXIST-015",
+          "EXIST-016"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 10,
+        "workspaceId": 10,
+        "suggestedName": "부동산 투자 전략",
+        "description": "부동산 투자 전략 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:27+09:00",
+        "updatedAt": "2026-08-05T02:00:28+09:00",
+        "createdAtItemId": "EXIST-018",
+        "linkedItemIds": [
+          "EXIST-018"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 11,
+        "workspaceId": 10,
+        "suggestedName": "음악 플레이리스트",
+        "description": "음악 플레이리스트 관련 후보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:29+09:00",
+        "updatedAt": "2026-08-05T02:00:30+09:00",
+        "createdAtItemId": "EXIST-019",
+        "linkedItemIds": [
+          "EXIST-019"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 12,
+        "workspaceId": 10,
+        "suggestedName": "콘서트 정보",
+        "description": "콘서트 정보 관련 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:31+09:00",
+        "updatedAt": "2026-08-05T02:00:33+09:00",
+        "createdAtItemId": "EXIST-020",
+        "linkedItemIds": [
+          "EXIST-020",
+          "EXIST-021"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 13,
+        "workspaceId": 10,
+        "suggestedName": "애니메이션 캐릭터 설정",
+        "description": "애니메이션 캐릭터 설정 관련 후보",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:34+09:00",
+        "updatedAt": "2026-08-05T02:00:36+09:00",
+        "createdAtItemId": "NEW5-001",
+        "linkedItemIds": [
+          "NEW5-001",
+          "NEW5-004"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 14,
+        "workspaceId": 10,
+        "suggestedName": "코딩 교육 프로그램",
+        "description": "코딩 교육 프로그램 관련 후보",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:37+09:00",
+        "updatedAt": "2026-08-05T02:00:41+09:00",
+        "createdAtItemId": "NEW3-001",
+        "linkedItemIds": [
+          "NEW3-001",
+          "NEW3-002",
+          "NEW3-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-ABFC4D23D8",
+        "lastReviewReason": "이유"
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "EXIST-001",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 2,
+        "itemId": "EXIST-002",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "EXIST-003",
+        "similarity": 0.9998
+      },
+      {
+        "candidateId": 4,
+        "itemId": "EXIST-005",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 5,
+        "itemId": "EXIST-006",
+        "similarity": 0.9993
+      },
+      {
+        "candidateId": 6,
+        "itemId": "EXIST-007",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 6,
+        "itemId": "EXIST-008",
+        "similarity": 0.5667
+      },
+      {
+        "candidateId": 6,
+        "itemId": "EXIST-009",
+        "similarity": 0.6534
+      },
+      {
+        "candidateId": 7,
+        "itemId": "EXIST-010",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 7,
+        "itemId": "EXIST-011",
+        "similarity": 0.6432
+      },
+      {
+        "candidateId": 7,
+        "itemId": "EXIST-012",
+        "similarity": 0.7865
+      },
+      {
+        "candidateId": 8,
+        "itemId": "EXIST-013",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 8,
+        "itemId": "EXIST-014",
+        "similarity": 0.564
+      },
+      {
+        "candidateId": 9,
+        "itemId": "EXIST-015",
+        "similarity": 0.9997
+      },
+      {
+        "candidateId": 9,
+        "itemId": "EXIST-016",
+        "similarity": 0.6261
+      },
+      {
+        "candidateId": 10,
+        "itemId": "EXIST-018",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 11,
+        "itemId": "EXIST-019",
+        "similarity": 0.9998
+      },
+      {
+        "candidateId": 12,
+        "itemId": "EXIST-020",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 12,
+        "itemId": "EXIST-021",
+        "similarity": 0.4425
+      },
+      {
+        "candidateId": 13,
+        "itemId": "NEW5-001",
+        "similarity": 0.9998
+      },
+      {
+        "candidateId": 13,
+        "itemId": "NEW5-004",
+        "similarity": 0.4728
+      },
+      {
+        "candidateId": 14,
+        "itemId": "NEW3-001",
+        "similarity": 0.9991
+      },
+      {
+        "candidateId": 14,
+        "itemId": "NEW3-002",
+        "similarity": 0.6264
+      },
+      {
+        "candidateId": 14,
+        "itemId": "NEW3-003",
+        "similarity": 0.7051
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "EXIST-001",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-003",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-004",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-006",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-007",
+        "formalCategoryId": "AI-ABFC4D23D8",
+        "formalCategoryIds": [
+          "AI-ABFC4D23D8",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-008",
+        "formalCategoryId": "AI-ABFC4D23D8",
+        "formalCategoryIds": [
+          "AI-ABFC4D23D8",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-009",
+        "formalCategoryId": "AI-ABFC4D23D8",
+        "formalCategoryIds": [
+          "AI-ABFC4D23D8",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-010",
+        "formalCategoryId": "AI-18F62F9450",
+        "formalCategoryIds": [
+          "AI-18F62F9450",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-011",
+        "formalCategoryId": "AI-18F62F9450",
+        "formalCategoryIds": [
+          "AI-18F62F9450",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-012",
+        "formalCategoryId": "AI-18F62F9450",
+        "formalCategoryIds": [
+          "AI-18F62F9450",
+          "PLACE_FOOD"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-013",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 8,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-014",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 8,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-015",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-016",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-017",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-018",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 10,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-019",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 11,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-020",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": 12,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-021",
+        "formalCategoryId": "AI-18F62F9450",
+        "formalCategoryIds": [
+          "AI-18F62F9450",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 12,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-022",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA",
+          "AI-18F62F9450"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "NEW5-001",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 13,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW5-002",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-003",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 13,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW5-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW3-001",
+        "formalCategoryId": "AI-ABFC4D23D8",
+        "formalCategoryIds": [
+          "AI-ABFC4D23D8",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 14,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW3-002",
+        "formalCategoryId": "AI-ABFC4D23D8",
+        "formalCategoryIds": [
+          "AI-ABFC4D23D8",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 14,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW3-003",
+        "formalCategoryId": "AI-ABFC4D23D8",
+        "formalCategoryIds": [
+          "AI-ABFC4D23D8",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 14,
+        "classificationStatus": "CANDIDATE_LINKED"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "EXIST-001",
+      "inputOrder": 1,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 견과류의 건강 효과와 부작용(과다 섭취, 부적절한 보관으로 인한 독소 발생)에 대한 구체적인 정보를 제공하며, '생활·건강' 카테고리보다 특정 식품에 대한 건강 영향을 다루는 반복적 주제로 분류 가능하다. 기존 세부주제 후보가 없으므로 새로운 주제 생성이 적절하다.",
+      "candidateId": 1,
+      "candidateName": "견과류 건강 영향",
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-002",
+      "inputOrder": 2,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 '생활·건강' 카테고리 내에서 어깨 통증 해소를 위한 반복적이고 구체적인 스트레칭 방법을 다루고 있으며, 기존 후보와 주제가 차이가 있음. 혈액순환 개선, 유연성 향상, 부상 예방 등 반복적으로 발생할 수 있는 건강 관리 주제로 분류 가능.",
+      "candidateId": 2,
+      "candidateName": "어깨 스트레칭",
+      "centerSimilarity": 0.4296,
+      "maxItemSimilarity": 0.4297,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-003",
+      "inputOrder": 3,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 신경 이동 운동(nerve glide)을 설명하며, 신경 스트레칭을 통한 주변 조직 압박 완화 및 통증 완화를 다루는 물리치료법에 해당합니다. 기존 후보의 '어깨 스트레칭'과 달리 신경 전반에 대한 구체적이고 반복되는 주제로, 새로운 세부 주제로 분류할 수 있습니다.",
+      "candidateId": 3,
+      "candidateName": "신경 스트레칭 운동",
+      "centerSimilarity": 0.3781,
+      "maxItemSimilarity": 0.3781,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-004",
+      "inputOrder": 4,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.4077,
+      "maxItemSimilarity": 0.4077,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-005",
+      "inputOrder": 5,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "기존 세부주제 후보와 관련성이 없으며, '생활·건강'보다 구체적이고 반복될 수 있는 주제로 수면장애에 대한 의료적 접근 방법(예: CBT-I, 수면 위생)을 다루고 있음. 연도·지역·브랜드 등 일회성 요소 없이 일반적인 건강 관리 주제임.",
+      "candidateId": 4,
+      "candidateName": "수면장애 치료",
+      "centerSimilarity": 0.3804,
+      "maxItemSimilarity": 0.3804,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-006",
+      "inputOrder": 6,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새 데이터는 React-Query의 useInfiniteQuery를 활용한 무한스크롤 구현 방법을 다루고 있으며, 기존 세부주제 후보(건강, 스트레칭, 수면장애 등)와 전혀 관련이 없음. '학습·커리어' 대분류 하에서 구체적이고 반복될 개발자 교육 콘텐츠로 분류 가능. 프레임워크/라이브러리 기반의 실무 기술 공유 주제로, 개발자 커뮤니티에서 자주 다루는 반복적 주제임. 연도·지역·브랜드 등 일회성 요소 없음. 기존 후보와 차별화된 기술 중심 콘텐츠 특성 보유. 신규 세부주제로 생성함에 적절함.",
+      "candidateId": 5,
+      "candidateName": "React 무한스크롤",
+      "centerSimilarity": 0.1899,
+      "maxItemSimilarity": 0.1898,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-007",
+      "inputOrder": 7,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 '학습·커리어' 카테고리 내에서 'SSAFY'라는 구체적인 프로그램에 대한 코딩 테스트, 커리큘럼, 인재상 등 세부 주제를 다루고 있으며, 기존 후보와 다른 새로운 주제로 분류 가능하다. 브랜드명은 피하되 프로그램의 핵심 내용인 코딩 교육과 관련된 세부 주제로 충분히 구체적이다.",
+      "candidateId": 6,
+      "candidateName": "코딩 교육 프로그램",
+      "centerSimilarity": 0.3215,
+      "maxItemSimilarity": 0.3214,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "코딩 교육 프로그램",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-008",
+      "inputOrder": 8,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 6,
+      "candidateName": "코딩 교육 프로그램",
+      "centerSimilarity": 0.5667,
+      "maxItemSimilarity": 0.5667,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "코딩 교육 프로그램",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-009",
+      "inputOrder": 9,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 6,
+      "candidateName": "코딩 교육 프로그램",
+      "centerSimilarity": 0.6534,
+      "maxItemSimilarity": 0.7225,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "코딩 교육 프로그램",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-010",
+      "inputOrder": 10,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 '장소·먹거리'보다 구체적인 '여행 일정 및 추천 장소·음식'을 다루고 있으며, 기존 세부주제 후보와 관련성이 없음. 여행 계획 수립 시 명소와 맛집을 포함한 구체적 콘텐츠로 반복적으로 등장할 가능성이 높음. 연도·지역·브랜드 등 일회성 표현은 피함. 신규 주제로 생성함.",
+      "candidateId": 7,
+      "candidateName": "여행코스",
+      "centerSimilarity": 0.2413,
+      "maxItemSimilarity": 0.2412,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "여행코스",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-011",
+      "inputOrder": 11,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 7,
+      "candidateName": "여행코스",
+      "centerSimilarity": 0.6432,
+      "maxItemSimilarity": 0.6431,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "여행코스",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-012",
+      "inputOrder": 12,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 7,
+      "candidateName": "여행코스",
+      "centerSimilarity": 0.7865,
+      "maxItemSimilarity": 0.7209,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "여행코스",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "EXIST-013",
+      "inputOrder": 13,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새 데이터는 '장소·먹거리' 카테고리 내에서 '해변 근처 카페', '오션뷰', '디저트', '인생샷 명소' 등 구체적이고 반복적으로 나타나는 세부 주제를 포함하고 있음. 기존 후보와 관련성이 없으며, 일반적인 '장소·먹거리' 범주보다 더 구체적임.",
+      "candidateId": 8,
+      "candidateName": "해변 카페 추천",
+      "centerSimilarity": 0.1746,
+      "maxItemSimilarity": 0.1746,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-014",
+      "inputOrder": 14,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 8,
+      "candidateName": "해변 카페 추천",
+      "centerSimilarity": 0.564,
+      "maxItemSimilarity": 0.5639,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-015",
+      "inputOrder": 15,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.6,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새 데이터는 '소비·금융' 카테고리 내에서 ETF 투자 방법과 자동매매 서비스 등 구체적이고 반복되는 주제를 다루고 있으며, 기존 세부주제 후보와 관련성이 없음. 금융상품 중 ETF에 대한 운용 방식과 초보자 대상 전략을 설명하는 내용으로, 특정 분야의 재사용 가능한 세부주제로 적합함.",
+      "candidateId": 9,
+      "candidateName": "ETF 투자 전략",
+      "centerSimilarity": 0.2526,
+      "maxItemSimilarity": 0.2525,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-016",
+      "inputOrder": 16,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 9,
+      "candidateName": "ETF 투자 전략",
+      "centerSimilarity": 0.6261,
+      "maxItemSimilarity": 0.626,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-017",
+      "inputOrder": 17,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3695,
+      "maxItemSimilarity": 0.4231,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-018",
+      "inputOrder": 18,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.5,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새 데이터는 부동산 투자와 내집마련 전략에 대한 내용으로, '소비·금융' 카테고리 아래에서 구체적이고 반복될 세부 주제로 분류 가능. 기존 후보 중 관련된 항목은 없음. 재테크 및 부동산 투자 전략은 금융 분야의 반복적 주제로, 명확한 세분화 필요.",
+      "candidateId": 10,
+      "candidateName": "부동산 투자 전략",
+      "centerSimilarity": 0.302,
+      "maxItemSimilarity": 0.2912,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-019",
+      "inputOrder": 19,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "새로운 데이터는 음악 영상으로 호정이 참여한 플레이리스트를 소개하는 콘텐츠로, 기존 세부주제 후보와는 다른 '음악 콘텐츠' 분야에 해당하며 반복될 수 있는 구체적 주제로 판단됨. '문화·아이디어'보다 구체적이며, 음악 관련 플레이리스트 소개 형식은 반복 가능성이 높음. 연도·지역·브랜드 등 일회성 요소 없음. 일반적인 문화·아이디어 데이터가 아님.",
+      "candidateId": 11,
+      "candidateName": "음악 플레이리스트",
+      "centerSimilarity": 0.193,
+      "maxItemSimilarity": 0.2152,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-020",
+      "inputOrder": 20,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.5,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 '장소·먹거리'보다 구체적이고 반복될 세부 주제인 '콘서트 일정 및 티켓 정보'에 해당하며, 기존 후보와 중복되지 않음. 연도(2026년)나 특정 브랜드 등 일회성 요소를 피하고 일반적인 콘서트 관련 정보를 다루고 있음.",
+      "candidateId": 12,
+      "candidateName": "콘서트 정보",
+      "centerSimilarity": 0.2262,
+      "maxItemSimilarity": 0.2656,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-021",
+      "inputOrder": 21,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "여행코스",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.1,
+      "candidateAction": "REUSE_AI",
+      "candidateEntryDecision": "REUSE",
+      "candidateEntryReason": "새 데이터는 2026년 콘서트 일정 및 티켓 정보를 제공하는 내용으로, 기존 '콘서트 정보' 후보와 동일한 주제입니다. Trip.com을 통해 아티스트별 투어 일정, 개최 장소, 가격 등 구체적인 정보를 다루고 있어 반복될 세부 주제에 해당합니다.",
+      "candidateId": 12,
+      "candidateName": "콘서트 정보",
+      "centerSimilarity": 0.4425,
+      "maxItemSimilarity": 0.4425,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "여행코스",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-022",
+      "inputOrder": 22,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.41,
+      "maxItemSimilarity": 0.3689,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-001",
+      "inputOrder": 23,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.6,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 '문화·아이디어' 카테고리의 하위 세부 주제로, 애니메이션 캐릭터의 가족 구성원 및 등장인물 설정을 다루는 구체적 주제입니다. 기존 후보와 차별화되며 반복적으로 등장하는 콘텐츠 유형입니다.",
+      "candidateId": 13,
+      "candidateName": "애니메이션 캐릭터 설정",
+      "centerSimilarity": 0.2796,
+      "maxItemSimilarity": 0.2572,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-002",
+      "inputOrder": 24,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "AI 응답 실패",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1922,
+      "maxItemSimilarity": 0.1922,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-003",
+      "inputOrder": 25,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "데이터는 '생활·건강' 범주 내에서도 구체적인 세부 주제로 분류되지 않으며, 라이선스 정보 및 위키 플랫폼의 특성에 대한 일반적 설명으로, 기존 후보와도 관련성이 부족합니다. 반복 가능성도 낮아 SKIP 처리합니다.",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2445,
+      "maxItemSimilarity": 0.2444,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-004",
+      "inputOrder": 26,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.9,
+      "candidateAction": "REUSE_AI",
+      "candidateEntryDecision": "REUSE",
+      "candidateEntryReason": "데이터는 애니메이션 캐릭터 설정 관련 내용으로, '맹구의 엄마' 등장인물의 존재 여부와 묘사 방식에 대한 분석이 포함되어 있음. 기존 후보 13번 '애니메이션 캐릭터 설정'과 주제가 일치함.",
+      "candidateId": 13,
+      "candidateName": "애니메이션 캐릭터 설정",
+      "centerSimilarity": 0.4728,
+      "maxItemSimilarity": 0.4728,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-005",
+      "inputOrder": 27,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "SKIP",
+      "candidateEntryReason": "데이터는 '생활·건강' 범주보다 더 일반적인 플랫폼 이용약관 및 공동 편집 시스템 설명에 해당하며, 기존 세부 주제 후보와도 구체적 연관성이 없음.",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2373,
+      "maxItemSimilarity": 0.2373,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-001",
+      "inputOrder": 28,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateEntryDecision": "CREATE",
+      "candidateEntryReason": "데이터는 '학습·커리어' 카테고리 내에서 '코딩 교육 프로그램'이라는 구체적이고 반복되는 주제에 해당합니다. 알고리즘 교육, 취업 컨설팅, AI 교육, 프로젝트 기회, 교육지원금 등은 코딩 교육 프로그램의 핵심 구성 요소이며, 에세이 작성, 코딩테스트 준비, 면접 전략 등은 이 프로그램을 통해 얻는 실용적인 경험과 팁을 담고 있습니다. 기존 세부주제 후보와는 관련성이 없으며, 반복적으로 발생하는 주제입니다.",
+      "candidateId": 14,
+      "candidateName": "코딩 교육 프로그램",
+      "centerSimilarity": 0.3846,
+      "maxItemSimilarity": 0.3846,
+      "supportCountAfter": 1,
+      "wasPromoted": false,
+      "finalFormalCategory": "코딩 교육 프로그램",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "NEW3-002",
+      "inputOrder": 29,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 14,
+      "candidateName": "코딩 교육 프로그램",
+      "centerSimilarity": 0.6264,
+      "maxItemSimilarity": 0.6261,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "코딩 교육 프로그램",
+      "wasReclassified": true
+    },
+    {
+      "itemId": "NEW3-003",
+      "inputOrder": 30,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "candidateId": 14,
+      "candidateName": "코딩 교육 프로그램",
+      "centerSimilarity": 0.7051,
+      "maxItemSimilarity": 0.6399,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "코딩 교육 프로그램",
+      "wasReclassified": true
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": 1,
+      "candidateName": "견과류 건강 영향",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-001"
+      ],
+      "linkedGoldGroupIds": [
+        "생활·건강"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "어깨 스트레칭",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-002"
+      ],
+      "linkedGoldGroupIds": [
+        "생활·건강"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-002",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "신경 스트레칭 운동",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-003"
+      ],
+      "linkedGoldGroupIds": [
+        "생활·건강"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-003",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "수면장애 치료",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-005"
+      ],
+      "linkedGoldGroupIds": [
+        "생활·건강"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-005",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "React 무한스크롤",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-006"
+      ],
+      "linkedGoldGroupIds": [
+        "학습·커리어"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-006",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "코딩 교육 프로그램",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "EXIST-007",
+        "EXIST-008",
+        "EXIST-009"
+      ],
+      "linkedGoldGroupIds": [
+        "학습·커리어"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-007",
+      "promotedAtItemId": "EXIST-009"
+    },
+    {
+      "candidateId": 7,
+      "candidateName": "여행코스",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "EXIST-010",
+        "EXIST-011",
+        "EXIST-012"
+      ],
+      "linkedGoldGroupIds": [
+        "장소·먹거리"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-010",
+      "promotedAtItemId": "EXIST-012"
+    },
+    {
+      "candidateId": 8,
+      "candidateName": "해변 카페 추천",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "EXIST-013",
+        "EXIST-014"
+      ],
+      "linkedGoldGroupIds": [
+        "장소·먹거리"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-013",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 9,
+      "candidateName": "ETF 투자 전략",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "EXIST-015",
+        "EXIST-016"
+      ],
+      "linkedGoldGroupIds": [
+        "소비·금융"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-015",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 10,
+      "candidateName": "부동산 투자 전략",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-018"
+      ],
+      "linkedGoldGroupIds": [
+        "소비·금융"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-018",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 11,
+      "candidateName": "음악 플레이리스트",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-019"
+      ],
+      "linkedGoldGroupIds": [
+        "문화·아이디어"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-019",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 12,
+      "candidateName": "콘서트 정보",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "EXIST-020",
+        "EXIST-021"
+      ],
+      "linkedGoldGroupIds": [
+        "문화·아이디어"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-020",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 13,
+      "candidateName": "애니메이션 캐릭터 설정",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "NEW5-001",
+        "NEW5-004"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_5"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "NEW5-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 14,
+      "candidateName": "코딩 교육 프로그램",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "NEW3-001",
+        "NEW3-002",
+        "NEW3-003"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_3"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "NEW3-001",
+      "promotedAtItemId": "NEW3-003"
+    }
+  ]
+}

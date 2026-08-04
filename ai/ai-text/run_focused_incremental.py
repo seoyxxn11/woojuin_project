@@ -52,6 +52,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--center-threshold", type=float)
     parser.add_argument("--item-threshold", type=float)
     parser.add_argument("--ai-lower", type=float)
+    parser.add_argument("--signal-threshold", type=float, help="잠정 신호 매칭 유사도(미지정 시 center와 동일)")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args(argv)
 
@@ -206,6 +207,7 @@ ITEM_COLUMNS = [
     "itemId", "inputOrder", "dataType", "goldGroupId", "goldCategoryName", "expectedBehavior",
     "initialFormalCategory", "formalTopScore", "formalScoreGap", "formalConfident",
     "candidateAction", "candidateEntryDecision", "candidateEntryReason",
+    "signalAction", "signalId",
     "candidateId", "candidateName", "centerSimilarity", "maxItemSimilarity",
     "supportCountAfter", "wasPromoted", "finalFormalCategory", "wasReclassified",
 ]
@@ -239,6 +241,8 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
                 "candidateAction": log.get("candidateAction"),
                 "candidateEntryDecision": log.get("candidateEntryDecision"),
                 "candidateEntryReason": log.get("candidateEntryReason"),
+                "signalAction": log.get("signalAction"),
+                "signalId": log.get("signalId"),
                 "candidateId": log.get("linkedCandidateId"),
                 "candidateName": log.get("candidateName"),
                 "centerSimilarity": log.get("centerSimilarity"),
@@ -347,6 +351,17 @@ def compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by
     existing_rows = [r for r in item_rows if r.get("dataType") == "EXISTING_FORMAL"]
     existing_formal_only = [r for r in existing_rows if r["candidateId"] is None]
     existing_spurious = [r for r in existing_rows if r["candidateId"] is not None]
+    existing_signal_only = [
+        r for r in existing_rows if r["candidateId"] is None and r.get("signalAction") == "STORE_SIGNAL"
+    ]
+    signals = getattr(engine, "signals", [])
+    signal_metrics = {
+        "provisionalSignalCount": len(signals),
+        "convertedSignalCount": sum(1 for s in signals if s.status == "CONVERTED"),
+        "waitingSignalCount": sum(1 for s in signals if s.status == "WAITING"),
+        "expiredSignalCount": sum(1 for s in signals if s.status == "EXPIRED"),
+        "existingSignalOnlyCount": len(existing_signal_only),
+    }
     new5_frag = len({r["candidateId"] for r in item_rows if r["goldGroupId"] == "NEW_GROUP_5" and r["candidateId"] is not None})
     new3_frag = len({r["candidateId"] for r in item_rows if r["goldGroupId"] == "NEW_GROUP_3" and r["candidateId"] is not None})
 
@@ -357,6 +372,7 @@ def compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by
         "existingFormalOnlyCount": len(existing_formal_only),
         "existingSpuriousCandidateCount": len(existing_spurious),
         "existingSpuriousItemIds": [r["itemId"] for r in existing_spurious],
+        **signal_metrics,
         "newGroup5CandidateCount": new5_frag,
         "newGroup3CandidateCount": new3_frag,
         "fragmentationByGroup": fragmentation,
@@ -407,6 +423,8 @@ def build_report(order_name, metrics, snapshot, candidate_rows) -> str:
         "## 지표",
         f"- 선택 데이터 수: {metrics['selectedItemCount']}",
         f"- 최종 정식 카테고리 수: {metrics['finalFormalCategoryCount']} (10 초과: {'예' if metrics['exceededMaxFormalCategories'] else '아니오'})",
+        f"- 잠정 신호: 총 {metrics['provisionalSignalCount']} / 전환 {metrics['convertedSignalCount']} / 대기 {metrics['waitingSignalCount']} / 만료 {metrics['expiredSignalCount']}",
+        f"- 기존 22건: 후보 {metrics['existingSpuriousCandidateCount']} / 신호만 {metrics['existingSignalOnlyCount']} / FORMAL_ONLY {metrics['existingFormalOnlyCount']}",
         f"- 후보 재사용률: {metrics['candidateReuseRate']:.2%} (재사용 {metrics['reuseEvents']}/{metrics['enteredCandidateStage']})",
         f"- 평균 후보 순도: {metrics['avgCandidatePurity']}",
         f"- 그룹 포착률: {metrics['groupCaptureRate']:.2%} (포착 {metrics['capturedGroups']})",
@@ -446,8 +464,9 @@ def write_comparison(output: Path, results: list[dict[str, Any]]) -> None:
     write_json(output / "focused-comparison.json", {"orders": summaries})
     keys = [
         ("order", "순서"), ("selectedItemCount", "데이터 수"), ("finalFormalCategoryCount", "정식 수"),
-        ("candidateReuseRate", "재사용률"), ("avgCandidatePurity", "평균 순도"),
-        ("groupCaptureRate", "포착률"), ("maxFragmentation", "최대 파편화"),
+        ("provisionalSignalCount", "잠정신호"), ("convertedSignalCount", "전환"),
+        ("existingSpuriousCandidateCount", "기존22 후보"), ("existingSignalOnlyCount", "기존22 신호만"),
+        ("candidateReuseRate", "재사용률"), ("groupCaptureRate", "포착률"),
         ("promotedCount", "승격 수"), ("misMergeEventCount", "오병합"),
         ("reclassifiedItemCount", "재분류"), ("candidateErrorCount", "에러"),
     ]
@@ -498,6 +517,11 @@ def main(argv: list[str] | None = None) -> int:
             overrides["item_similarity_threshold"] = options.item_threshold
         if options.ai_lower is not None:
             overrides["ai_review_lower_bound"] = options.ai_lower
+        if options.signal_threshold is not None:
+            overrides["signal_similarity_threshold"] = options.signal_threshold
+        elif options.center_threshold is not None:
+            # 신호 매칭 임계값을 명시하지 않으면 center와 동일하게 맞춘다.
+            overrides["signal_similarity_threshold"] = options.center_threshold
         if overrides:
             config = dataclasses.replace(config, **overrides)
         rows = load_manifest(options.manifest)

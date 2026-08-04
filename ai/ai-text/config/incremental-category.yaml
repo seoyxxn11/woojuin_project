@@ -1,0 +1,20 @@
+# 증분 카테고리 서비스 임계값과 승격 조건.
+# 코드에 고정하지 않고 이 파일에서 조정한다. 현재 모델·임베딩 결과에 맞춰 값을 바꾼다.
+category:
+  max-count: 10                       # 정식 카테고리 최대 개수
+  max-ai-generated-count: 5           # AI 승격으로 늘릴 수 있는 최대 개수 (기본 5 + 5)
+  formal-confidence-threshold: 0.65   # 정식 분류 최고 점수 임계값 (미만이면 애매)
+  formal-score-gap-threshold: 0.10    # 1·2위 점수 차 임계값 (미만이면 애매)
+  candidate-similarity-threshold: 0.80  # 기존 임시 후보 재사용 유사도 임계값
+  candidate-min-support-count: 3      # 승격 검토를 시작할 최소 연결 데이터 수
+  candidate-consistency-threshold: 0.75 # 승격 전 후보 내부 일관성 임계값(참고값)
+  service-max-categories: 2           # 데이터 한 건에 유지할 수 있는 최대 정식 카테고리 수
+
+# 기본 정식 카테고리(시드) 5개는 config/categories 계열이 아닌 통합 프리셋을 사용한다.
+# 이름은 아래 5개이며 상세 정의는 src/dynamic_category_experiment.py의 PRESET_SEEDS[5]에서 온다.
+seed-categories:
+  - 생활·건강
+  - 학습·커리어
+  - 장소·먹거리
+  - 소비·금융
+  - 문화·아이디어

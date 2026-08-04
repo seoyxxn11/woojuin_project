@@ -163,6 +163,36 @@ def _clean_entity_name(value: Any) -> str:
     return text.strip()[:40]
 
 
+def _anchor_dict(*, name, normalized, atype, specific, aliases, confidence, evidence) -> dict[str, Any]:
+    """카테고리 앵커 결과. 새 앵커 필드 + 엔진 하위호환 엔티티 키를 함께 담는다."""
+    return {
+        # 새 앵커 필드
+        "categoryAnchorName": name,
+        "categoryAnchorType": atype,
+        "normalizedAnchorName": normalized,
+        "specificEntities": specific,
+        "aliases": aliases,
+        "anchorConfidence": confidence,
+        "anchorEvidence": evidence,
+        # 하위호환 키(엔진의 기존 엔티티 매칭 코드가 사용) — coreEntityType은 OTHER만 거부됨
+        "coreEntityName": name,
+        "normalizedEntityName": normalized,
+        "coreEntityType": atype,
+        "entityConfidence": confidence,
+        "entityEvidence": evidence,
+    }
+
+
+def _anchor_failure(err: str) -> dict[str, Any]:
+    result = _anchor_dict(
+        name="", normalized="", atype="OTHER", specific=[], aliases=[],
+        confidence=0.0, evidence="AI 응답 실패",
+    )
+    result["entityError"] = err
+    result["anchorError"] = err
+    return result
+
+
 class RealServiceBackend:
     """GMS 임베딩 + AI 모델을 사용하는 실제 백엔드. offline 백엔드와 동일 인터페이스."""
 
@@ -431,7 +461,7 @@ class RealServiceBackend:
             "reason": str(parsed.get("reason", "")).strip(),
         }
 
-    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
+    def extract_category_anchor(self, item: dict[str, Any]) -> dict[str, Any]:
         from src.incremental_category_service import build_embedding_text
 
         title = str(item.get("title", "")).strip()
@@ -441,64 +471,71 @@ class RealServiceBackend:
             summary = _summary_from_input(item)
         text = build_embedding_text(item)[:800]
         prompt = (
-            "다음 데이터의 제목과 요약에서 '중심적으로 다뤄지는 핵심 대상' 하나를 추출하세요.\n"
+            "다음 데이터의 제목과 요약에서 '카테고리 앵커(categoryAnchor)' 하나를 추출하세요.\n"
+            "카테고리 앵커는 개별 문서보다 한 단계 위의 공통 개념이며, 두 유형이 있습니다.\n"
+            "1) ENTITY: 특정 작품·기관·브랜드·인물 (예: 짱구, SSAFY).\n"
+            "   - 등장인물·에피소드·극장판·후기·모집 등 세부는 상위 작품/기관명으로 정규화.\n"
+            "     예) 맹구/신짱구/짱구 극장판/크레용 신짱 → '짱구'. 싸피/삼성 청년 SW·AI 아카데미 → 'SSAFY'.\n"
+            "2) UMBRELLA_TOPIC: 여러 세부 주제를 아우르는 상위 개념.\n"
+            "   예) 별자리·사주·타로·띠별·토정비결 → '운세'.\n"
+            "       애착 유형·행동 유형·대인관계·스트레스 대처·가치관 → '자기 이해'.\n"
+            "       기록 앱·나중에 읽기·링크 관리·문서 자동 분류·자료 동기화 → '디지털 정리'.\n"
             "규칙:\n"
-            "- 본문에 한 번 스친 대상이 아니라, 제목·요약에서 중심 주제인 대상만 인정합니다.\n"
-            "- 작품의 등장인물·에피소드·극장판·세부 항목은 그 상위 작품/프랜차이즈 이름으로 정규화하세요.\n"
-            "  예) 맹구/신짱구/짱구 극장판/크레용 신짱 → '짱구'.\n"
-            "- 기관/브랜드의 후기·모집·교육과정·합격 등 문서 유형은 무시하고 기관/브랜드명으로 정규화하세요.\n"
-            "  예) SSAFY/싸피/삼성 청년 SW·AI 아카데미 → 'SSAFY'.\n"
-            "- 지나치게 좁은 세부 대상(예: '공룡의 팔')이 아니라 포괄 대상(예: '공룡')을 고르세요.\n"
-            "- 중심 대상이 뚜렷하지 않으면 coreEntityType을 OTHER로 하고 entityConfidence를 낮게 주세요.\n"
-            "coreEntityType 후보: WORK, ORGANIZATION, BRAND, PERSON, TOPIC, OTHER.\n"
-            "normalizedEntityName은 별칭을 대표하는 짧은 표준 이름입니다.\n"
-            "JSON만 출력: {\"coreEntityName\":\"\",\"normalizedEntityName\":\"\",\"coreEntityType\":\"TOPIC\","
-            "\"aliases\":[\"\"],\"entityConfidence\":0.0,\"entityEvidence\":\"\"}\n\n"
+            "- 개별 문서보다 한 단계 위의 공통 개념을 고르되, '문화/학습/생활'처럼 기본 카테고리 수준까지 넓히지 마세요.\n"
+            "- 지나치게 좁은 세부(예: '공룡의 팔')가 아니라 포괄 대상(예: '공룡')을 고르세요.\n"
+            "- normalizedAnchorName은 별칭을 대표하는 짧은 표준 이름입니다.\n"
+            "- specificEntities에는 이 문서가 실제로 다룬 세부 대상을 넣으세요(예: ['별자리']).\n"
+            "- 앵커가 뚜렷하지 않으면 categoryAnchorType을 OTHER로 하고 anchorConfidence를 낮게 주세요.\n"
+            "categoryAnchorType 후보: ENTITY, UMBRELLA_TOPIC, OTHER.\n"
+            "JSON만 출력: {\"categoryAnchorName\":\"\",\"categoryAnchorType\":\"ENTITY\","
+            "\"normalizedAnchorName\":\"\",\"specificEntities\":[\"\"],\"aliases\":[\"\"],"
+            "\"anchorConfidence\":0.0,\"anchorEvidence\":\"\"}\n\n"
             f"제목: {title}\n요약: {summary}\n입력(참고): {text}\n"
         )
         schema = {
             "type": "object",
             "properties": {
-                "coreEntityName": {"type": "string"},
-                "normalizedEntityName": {"type": "string"},
-                "coreEntityType": {
-                    "type": "string",
-                    "enum": ["WORK", "ORGANIZATION", "BRAND", "PERSON", "TOPIC", "OTHER"],
-                },
+                "categoryAnchorName": {"type": "string"},
+                "categoryAnchorType": {"type": "string", "enum": ["ENTITY", "UMBRELLA_TOPIC", "OTHER"]},
+                "normalizedAnchorName": {"type": "string"},
+                "specificEntities": {"type": "array", "items": {"type": "string"}},
                 "aliases": {"type": "array", "items": {"type": "string"}},
-                "entityConfidence": {"type": "number"},
-                "entityEvidence": {"type": "string"},
+                "anchorConfidence": {"type": "number"},
+                "anchorEvidence": {"type": "string"},
             },
-            "required": ["coreEntityName", "normalizedEntityName", "coreEntityType", "entityConfidence"],
+            "required": ["categoryAnchorName", "categoryAnchorType", "normalizedAnchorName", "anchorConfidence"],
         }
         parsed = self._ask(prompt, schema)
         if not parsed:
-            return {
-                "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
-                "aliases": [], "entityConfidence": 0.0, "entityEvidence": "AI 응답 실패",
-                "entityError": "API",
-            }
-        name = _clean_entity_name(parsed.get("coreEntityName", ""))
-        normalized = _clean_entity_name(parsed.get("normalizedEntityName", "")) or name
-        etype = str(parsed.get("coreEntityType", "OTHER")).strip().upper()
-        if etype not in {"WORK", "ORGANIZATION", "BRAND", "PERSON", "TOPIC", "OTHER"}:
-            etype = "OTHER"
-        aliases = parsed.get("aliases") or []
-        if not isinstance(aliases, list):
-            aliases = []
+            return _anchor_failure("API")
+        name = _clean_entity_name(parsed.get("categoryAnchorName", ""))
+        normalized = _clean_entity_name(parsed.get("normalizedAnchorName", "")) or name
+        atype = str(parsed.get("categoryAnchorType", "OTHER")).strip().upper()
+        if atype not in {"ENTITY", "UMBRELLA_TOPIC", "OTHER"}:
+            atype = "OTHER"
+
+        def _clean_list(raw: Any) -> list[str]:
+            if not isinstance(raw, list):
+                return []
+            return [a for a in (_clean_entity_name(x) for x in raw) if a]
+
         try:
-            conf = max(0.0, min(1.0, float(parsed.get("entityConfidence", 0.0) or 0.0)))
+            conf = max(0.0, min(1.0, float(parsed.get("anchorConfidence", 0.0) or 0.0)))
         except (TypeError, ValueError):
             conf = 0.0
-        cleaned_aliases = [a for a in (_clean_entity_name(x) for x in aliases) if a]
-        return {
-            "coreEntityName": name,
-            "normalizedEntityName": normalized,
-            "coreEntityType": etype,
-            "aliases": cleaned_aliases,
-            "entityConfidence": conf,
-            "entityEvidence": str(parsed.get("entityEvidence", "")).strip()[:200],
-        }
+        return _anchor_dict(
+            name=name,
+            normalized=normalized,
+            atype=atype,
+            specific=_clean_list(parsed.get("specificEntities")),
+            aliases=_clean_list(parsed.get("aliases")),
+            confidence=conf,
+            evidence=str(parsed.get("anchorEvidence", "")).strip()[:200],
+        )
+
+    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
+        # 하위호환: 엔진이 앵커 메서드를 우선 호출하지만, 구 인터페이스도 유지한다.
+        return self.extract_category_anchor(item)
 
 
 # ---- 실행 및 보고서 ----

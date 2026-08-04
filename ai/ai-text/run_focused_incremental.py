@@ -304,6 +304,7 @@ ITEM_COLUMNS = [
     "itemId", "title", "inputOrder", "dataType", "goldGroupId", "goldCategoryName", "expectedBehavior",
     "initialFormalCategory", "formalTopScore", "formalScoreGap", "formalConfident",
     "coreEntityName", "normalizedEntityName", "coreEntityType", "entityConfidence",
+    "categoryAnchorType", "normalizedAnchorName", "specificEntities",
     "matchMethod", "matchedCandidateName",
     "candidateAction", "candidateEntryDecision", "candidateEntryReason",
     "signalAction", "signalId",
@@ -348,6 +349,9 @@ def _item_rows(logs, engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
                 "normalizedEntityName": log.get("normalizedEntityName"),
                 "coreEntityType": log.get("coreEntityType"),
                 "entityConfidence": log.get("entityConfidence"),
+                "categoryAnchorType": log.get("categoryAnchorType"),
+                "normalizedAnchorName": log.get("normalizedAnchorName"),
+                "specificEntities": log.get("specificEntities"),
                 "matchMethod": log.get("matchMethod"),
                 "matchedCandidateName": log.get("matchedCandidateName"),
                 "candidateAction": log.get("candidateAction"),
@@ -483,6 +487,16 @@ def compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by
     match_method_counts = dict(
         Counter(r.get("matchMethod") for r in item_rows if r.get("matchMethod"))
     )
+    # 앵커 타입 분포(ENTITY/UMBRELLA_TOPIC/OTHER)
+    anchor_type_counts = dict(
+        Counter(r.get("categoryAnchorType") for r in item_rows if r.get("categoryAnchorType"))
+    )
+    # 규칙 기반 승격(ENTITY) vs AI 승격(UMBRELLA_TOPIC/임베딩)
+    promoted_names = {p["candidateName"] for p in promoted_records}
+    rule_based_promotions = sum(
+        1 for c in engine.candidates
+        if c.status == PROMOTED and getattr(c, "anchorType", "") == "ENTITY"
+    )
     # 에러 분류: API/파싱(엔티티·AI 응답 실패) vs 후보 처리 예외(폴백)
     item_entities = getattr(engine, "_item_entities", {})
     entity_api_failures = sum(
@@ -525,6 +539,8 @@ def compute_metrics(order_name, logs, item_rows, candidate_rows, engine, gold_by
         "exceededMaxFormalCategories": len(engine.formal_categories) > engine.config.max_count,
         "candidateErrorCount": fallback_errors,
         "matchMethodCounts": match_method_counts,
+        "anchorTypeCounts": anchor_type_counts,
+        "ruleBasedPromotionCount": rule_based_promotions,
         "entityApiFailureCount": entity_api_failures,
         "aiResponseFailureCount": ai_response_failures,
         "fallbackErrorCount": fallback_errors,
@@ -621,6 +637,16 @@ def write_comparison(output: Path, results: list[dict[str, Any]]) -> None:
         mm = s.get("matchMethodCounts") or {}
         detail = ", ".join(f"{k}:{v}" for k, v in sorted(mm.items())) or "(없음)"
         lines.append(f"- {s['order']}: {detail}")
+
+    # 앵커 타입 분포 + 규칙 기반 승격
+    lines += ["", "## 카테고리 앵커 타입 분포 (ENTITY / UMBRELLA_TOPIC / OTHER) · 규칙기반 승격"]
+    for s in summaries:
+        at = s.get("anchorTypeCounts") or {}
+        detail = ", ".join(f"{k}:{v}" for k, v in sorted(at.items())) or "(없음)"
+        lines.append(
+            f"- {s['order']}: {detail} | 규칙기반 승격(ENTITY) {s.get('ruleBasedPromotionCount', 0)}"
+            f" / 전체 승격 {s.get('promotedCount', 0)}"
+        )
 
     # 임베딩 유사도 비교: 제목+요약(정제) vs 제목+요약+본문(기존)
     analysis = results[0].get("similarityAnalysis") if results else None

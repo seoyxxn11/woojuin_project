@@ -93,12 +93,17 @@ class FakeBackend:
                 "description": "설명", "confidence": 0.9, "reason": "두 번째 유사 데이터"}
 
     def extract_core_entity(self, item):
-        entity = item.get("entity")
-        if entity:
-            return dict(entity)
+        return self.extract_category_anchor(item)
+
+    def extract_category_anchor(self, item):
+        a = item.get("anchor") or item.get("entity")
+        if a:
+            return dict(a)
         return {
+            "categoryAnchorName": "", "categoryAnchorType": "OTHER", "normalizedAnchorName": "",
+            "specificEntities": [], "aliases": [], "anchorConfidence": 0.0, "anchorEvidence": "없음",
             "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
-            "aliases": [], "entityConfidence": 0.0, "entityEvidence": "없음",
+            "entityConfidence": 0.0, "entityEvidence": "없음",
         }
 
 
@@ -114,7 +119,7 @@ def make_engine(backend, config=None, workspace_id=10):
     )
 
 
-def item(test_id, group="", *, candidate_name=None, title=None, entity=None):
+def item(test_id, group="", *, candidate_name=None, title=None, entity=None, anchor=None):
     text = f"{test_id} {group}"
     return {
         "testId": test_id,
@@ -123,6 +128,7 @@ def item(test_id, group="", *, candidate_name=None, title=None, entity=None):
         "input": text,
         "candidateName": candidate_name,
         "entity": entity,
+        "anchor": anchor,
     }
 
 
@@ -132,6 +138,24 @@ def entity(name, *, etype="WORK", aliases=None, conf=0.9):
         "normalizedEntityName": name,
         "coreEntityType": etype,
         "aliases": list(aliases or []),
+        "entityConfidence": conf,
+        "entityEvidence": "테스트",
+    }
+
+
+def anchor(name, *, atype="ENTITY", aliases=None, conf=0.9, specific=None):
+    return {
+        "categoryAnchorName": name,
+        "categoryAnchorType": atype,
+        "normalizedAnchorName": name,
+        "specificEntities": list(specific or []),
+        "aliases": list(aliases or []),
+        "anchorConfidence": conf,
+        "anchorEvidence": "테스트",
+        # 하위호환 키
+        "coreEntityName": name,
+        "normalizedEntityName": name,
+        "coreEntityType": atype,
         "entityConfidence": conf,
         "entityEvidence": "테스트",
     }
@@ -626,3 +650,60 @@ def test_same_entity_after_promotion_attaches_to_promoted_category():
     # 새 후보가 추가로 생기지 않는다
     active = [c for c in engine.candidates if c.status in {PENDING, READY_TO_PROMOTE}]
     assert active == []
+
+
+# ---- categoryAnchor 유형별 승격 (ENTITY 규칙기반 / UMBRELLA_TOPIC AI) ----
+
+
+def test_entity_anchor_rule_based_promotion_ignores_ai(): 
+    # AI가 승격을 거부(promote=False)해도, ENTITY 동일 대상 3건이면 규칙기반으로 승격
+    backend = FakeBackend(groups=[], promote=False)
+    engine = make_engine(backend, entity_config())
+    engine.submit_item(item("J1", anchor=anchor("짱구", atype="ENTITY")))
+    engine.submit_item(item("J2", anchor=anchor("짱구", atype="ENTITY")))
+    log3 = engine.submit_item(item("J3", anchor=anchor("짱구", atype="ENTITY")))
+    assert log3["promoted"] is True  # 순서·AI 판단과 무관하게 승격
+    promoted = [c for c in engine.candidates if c.status == PROMOTED]
+    assert len(promoted) == 1 and promoted[0].anchorType == "ENTITY"
+
+
+def test_entity_anchor_promotion_is_order_independent():
+    # 입력 순서를 섞어도 ENTITY 3건이면 동일하게 승격(순서 민감성 제거)
+    backend = FakeBackend(groups=[], promote=False)
+    engine = make_engine(backend, entity_config())
+    other = anchor("다른대상", atype="ENTITY")
+    seq = [item("A", anchor=anchor("짱구", atype="ENTITY")),
+           item("X", anchor=other),
+           item("B", anchor=anchor("짱구", atype="ENTITY")),
+           item("Y", anchor=anchor("또다른", atype="ENTITY")),
+           item("C", anchor=anchor("짱구", atype="ENTITY"))]
+    logs = [engine.submit_item(it) for it in seq]
+    assert logs[-1]["promoted"] is True
+
+
+def test_umbrella_topic_keeps_ai_review_and_can_be_rejected():
+    # UMBRELLA_TOPIC은 과잉 일반화 위험 → AI 승격 검토 유지. AI가 거부하면 승격 안 됨
+    backend = FakeBackend(groups=[], promote=False)
+    engine = make_engine(backend, entity_config())
+    engine.submit_item(item("U1", anchor=anchor("운세", atype="UMBRELLA_TOPIC")))
+    engine.submit_item(item("U2", anchor=anchor("운세", atype="UMBRELLA_TOPIC")))
+    log3 = engine.submit_item(item("U3", anchor=anchor("운세", atype="UMBRELLA_TOPIC")))
+    assert log3["promoted"] is False  # AI가 거부 → 보류
+    # AI가 허용하면 승격
+    backend2 = FakeBackend(groups=[], promote=True)
+    engine2 = make_engine(backend2, entity_config())
+    engine2.submit_item(item("U1", anchor=anchor("운세", atype="UMBRELLA_TOPIC")))
+    engine2.submit_item(item("U2", anchor=anchor("운세", atype="UMBRELLA_TOPIC")))
+    log3b = engine2.submit_item(item("U3", anchor=anchor("운세", atype="UMBRELLA_TOPIC")))
+    assert log3b["promoted"] is True
+
+
+def test_low_confidence_anchor_not_used_for_entity_conversion():
+    # 앵커 confidence가 낮으면 엔티티 권위 전환(B) 미발동 → 신호로만 남음(임베딩 임계값 높게)
+    backend = FakeBackend(groups=[], promote=True)
+    engine = make_engine(backend, entity_config())
+    engine.submit_item(item("L1", anchor=anchor("짱구", atype="ENTITY", conf=0.2)))
+    log2 = engine.submit_item(item("L2", anchor=anchor("짱구", atype="ENTITY", conf=0.2)))
+    assert log2["signalAction"] == "STORE_SIGNAL"
+    assert log2["matchMethod"] is None
+    assert [c for c in engine.candidates if c.status in {PENDING, READY_TO_PROMOTE}] == []

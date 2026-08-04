@@ -188,9 +188,10 @@ class TemporaryCandidate:
     mergedIntoCandidateId: int | None = None
     promotedFormalCategoryId: str | None = None
     lastReviewReason: str | None = None
-    # 핵심 대상(엔티티) 기반 매칭용
+    # 핵심 대상(엔티티/앵커) 기반 매칭용
     entityKey: str = ""
     entityAliases: set[str] = field(default_factory=set)
+    anchorType: str = ""  # ENTITY | UMBRELLA_TOPIC | (빈값=임베딩 후보)
 
     def public_dict(self) -> dict[str, Any]:
         """대표 임베딩 원본 대신 차원만 노출한 직렬화."""
@@ -249,9 +250,10 @@ class ProvisionalSignal:
     createdAtInput: int
     expiresAtInput: int
     status: str = SIGNAL_WAITING
-    # 핵심 대상(엔티티) 기반 매칭용
+    # 핵심 대상(엔티티/앵커) 기반 매칭용
     entityKey: str = ""
     entityAliases: set[str] = field(default_factory=set)
+    anchorType: str = ""  # ENTITY | UMBRELLA_TOPIC | OTHER
 
     def public_dict(self) -> dict[str, Any]:
         return {
@@ -340,13 +342,18 @@ class ServiceBackend(Protocol):
         ...
 
     def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
-        """제목+요약에서 중심적으로 다뤄지는 핵심 대상을 추출한다.
+        """(구) 핵심 대상 추출. extract_category_anchor로 대체됨(하위호환)."""
+        ...
 
-        반환: {"coreEntityName": str, "normalizedEntityName": str,
-               "coreEntityType": "WORK"|"ORGANIZATION"|"BRAND"|"PERSON"|"TOPIC"|"OTHER",
-               "aliases": [str], "entityConfidence": float(0~1), "entityEvidence": str}
-        - 제목·요약에서 중심적으로 다뤄지는 대상만 인정한다(본문에 한 번 언급된 것은 제외).
-        - 별칭은 동일 대상으로 정규화한다(예: 짱구/짱구는 못말려/크레용 신짱 → 짱구).
+    def extract_category_anchor(self, item: dict[str, Any]) -> dict[str, Any]:
+        """제목+요약에서 카테고리 앵커(개별 문서보다 한 단계 위의 공통 개념)를 추출한다.
+
+        반환: {"categoryAnchorName": str, "categoryAnchorType": "ENTITY"|"UMBRELLA_TOPIC"|"OTHER",
+               "normalizedAnchorName": str, "specificEntities": [str], "aliases": [str],
+               "anchorConfidence": float(0~1), "anchorEvidence": str, ...하위호환 엔티티 키}
+        - ENTITY: 특정 작품·기관·브랜드·인물(짱구, SSAFY). 세부는 상위 대상으로 정규화.
+        - UMBRELLA_TOPIC: 여러 세부 주제의 상위 개념(별자리·타로 → 운세). 기본 카테고리 수준까지 넓히지 않음.
+        - 앵커가 불명확하면 categoryAnchorType=OTHER, anchorConfidence 낮게.
         """
         ...
 
@@ -458,6 +465,13 @@ def normalize_entity_key(name: str) -> str:
         return ""
     tokens = _TOKEN_PATTERN.findall(str(name).lower())
     return "".join(tokens)
+
+
+def _anchor_type_of(entity: dict[str, Any] | None) -> str:
+    """앵커 유형(ENTITY|UMBRELLA_TOPIC|OTHER)을 읽는다. 앵커 키 우선, 없으면 구 엔티티 타입."""
+    if not entity:
+        return ""
+    return str(entity.get("categoryAnchorType") or entity.get("coreEntityType") or "").upper()
 
 
 def _entity_alias_set(entity: dict[str, Any]) -> set[str]:
@@ -689,37 +703,43 @@ class DeterministicBackend:
             "reason": f"'{formal_category_name}'의 일반적인 데이터",
         }
 
-    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
-        """오프라인 휴리스틱: 제목+요약에서 가장 빈번한 의미 토큰을 핵심 대상으로 본다.
+    def extract_category_anchor(self, item: dict[str, Any]) -> dict[str, Any]:
+        """오프라인 휴리스틱: 제목+요약에서 가장 빈번한 의미 토큰을 앵커로 본다.
 
-        실제 실행에서는 AI 백엔드가 별칭 정규화까지 수행한다. 여기서는 결정론적으로
-        같은 대표 토큰을 가진 데이터가 동일 엔티티로 묶이도록만 한다.
+        실제 실행에서는 AI 백엔드가 유형 판별·별칭 정규화까지 수행한다. 여기서는
+        결정론적으로 같은 대표 토큰을 가진 데이터가 동일 앵커로 묶이도록만 한다.
         """
+        base = {
+            "categoryAnchorName": "", "categoryAnchorType": "OTHER", "normalizedAnchorName": "",
+            "specificEntities": [], "aliases": [], "anchorConfidence": 0.0, "anchorEvidence": "",
+            "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
+            "entityConfidence": 0.0, "entityEvidence": "",
+        }
         title = str(item.get("title", ""))
         summary = str(item.get("summary") or _summary_from_input(item))
         counts: dict[str, int] = {}
         order: list[str] = []
-        # 제목 토큰에 가중치를 둬(핵심 대상이 제목에 오는 경우가 많음) 대표성을 높인다.
         for token in content_tokens(title) * 2 + content_tokens(summary):
             if token not in counts:
                 counts[token] = 0
                 order.append(token)
             counts[token] += 1
         if not order:
-            return {
-                "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
-                "aliases": [], "entityConfidence": 0.0, "entityEvidence": "토큰 없음",
-            }
+            base["anchorEvidence"] = base["entityEvidence"] = "토큰 없음"
+            return base
         best = max(order, key=lambda t: (counts[t], -order.index(t)))
-        confidence = min(1.0, 0.4 + 0.1 * counts[best])
-        return {
-            "coreEntityName": best,
-            "normalizedEntityName": best,
-            "coreEntityType": "TOPIC",
-            "aliases": [],
-            "entityConfidence": round(confidence, 3),
-            "entityEvidence": f"제목·요약 최빈 토큰({counts[best]}회)",
-        }
+        confidence = round(min(1.0, 0.4 + 0.1 * counts[best]), 3)
+        evidence = f"제목·요약 최빈 토큰({counts[best]}회)"
+        base.update(
+            categoryAnchorName=best, categoryAnchorType="ENTITY", normalizedAnchorName=best,
+            anchorConfidence=confidence, anchorEvidence=evidence,
+            coreEntityName=best, normalizedEntityName=best, coreEntityType="ENTITY",
+            entityConfidence=confidence, entityEvidence=evidence,
+        )
+        return base
+
+    def extract_core_entity(self, item: dict[str, Any]) -> dict[str, Any]:
+        return self.extract_category_anchor(item)
 
     def review_signal_conversion(self, item, signal_info) -> dict[str, Any]:
         # 이미 임베딩 유사로 매칭된 2번째 데이터 → 같은 세부 주제로 보고 전환
@@ -866,11 +886,14 @@ class WorkspaceCategoryEngine:
                 "promoted": False,
                 "reclassified": False,
                 "candidateError": None,
-                # 핵심 대상(엔티티) 기반 매칭 로그
+                # 핵심 대상(엔티티/앵커) 기반 매칭 로그
                 "coreEntityName": None,
                 "normalizedEntityName": None,
                 "coreEntityType": None,
                 "entityConfidence": None,
+                "categoryAnchorType": None,
+                "normalizedAnchorName": None,
+                "specificEntities": None,
                 "matchedCandidateName": None,
                 "matchMethod": None,
             }
@@ -1005,6 +1028,7 @@ class WorkspaceCategoryEngine:
             status=SIGNAL_WAITING,
             entityKey=entity_key,
             entityAliases=set(entity_keys),
+            anchorType=_anchor_type_of(entity),
         )
         self._next_signal_id += 1
         self.signals.append(signal)
@@ -1057,6 +1081,9 @@ class WorkspaceCategoryEngine:
             candidate.entityAliases |= _entity_alias_set(entity)
         if not candidate.entityKey and signal.entityKey:
             candidate.entityKey = signal.entityKey
+        # 앵커 유형 승계: 신호 → 후보(신호에 없으면 두 번째 데이터의 앵커 유형)
+        if not candidate.anchorType:
+            candidate.anchorType = signal.anchorType or _anchor_type_of(entity)
         self._link_item(candidate, signal.itemId, first_embedding)
         first_classification = self.item_classifications.get(signal.itemId)
         if first_classification is not None:
@@ -1173,11 +1200,16 @@ class WorkspaceCategoryEngine:
             self._item_embeddings[item_id] = embedding
             entity = self._extract_entity_safely(item)
             self._item_entities[item_id] = entity
-            log["coreEntityName"] = entity.get("coreEntityName")
-            log["normalizedEntityName"] = entity.get("normalizedEntityName")
-            log["coreEntityType"] = entity.get("coreEntityType")
+            log["coreEntityName"] = entity.get("categoryAnchorName") or entity.get("coreEntityName")
+            log["normalizedEntityName"] = entity.get("normalizedAnchorName") or entity.get("normalizedEntityName")
+            log["coreEntityType"] = entity.get("categoryAnchorType") or entity.get("coreEntityType")
+            log["categoryAnchorType"] = entity.get("categoryAnchorType") or entity.get("coreEntityType")
+            log["normalizedAnchorName"] = entity.get("normalizedAnchorName") or entity.get("normalizedEntityName")
+            log["specificEntities"] = entity.get("specificEntities")
             try:
-                log["entityConfidence"] = round(float(entity.get("entityConfidence", 0.0) or 0.0), 4)
+                log["entityConfidence"] = round(
+                    float(entity.get("anchorConfidence", entity.get("entityConfidence", 0.0)) or 0.0), 4
+                )
             except (TypeError, ValueError):
                 log["entityConfidence"] = None
             self._handle_candidate_entity(item, item_id, classification, log, ambiguous, embedding, entity)
@@ -1188,14 +1220,21 @@ class WorkspaceCategoryEngine:
         self._handle_candidate_legacy(item, item_id, classification, log, ambiguous, embedding)
 
     def _extract_entity_safely(self, item: dict[str, Any]) -> dict[str, Any]:
+        entity = None
         try:
-            entity = self.backend.extract_core_entity(item)
-        except Exception:  # noqa: BLE001 - 엔티티 추출 실패는 폴백으로 흡수
+            extractor = getattr(self.backend, "extract_category_anchor", None)
+            if callable(extractor):
+                entity = extractor(item)
+            else:
+                entity = self.backend.extract_core_entity(item)
+        except Exception:  # noqa: BLE001 - 앵커 추출 실패는 폴백으로 흡수
             entity = None
         if not isinstance(entity, dict):
             return {
+                "categoryAnchorName": "", "categoryAnchorType": "OTHER", "normalizedAnchorName": "",
+                "specificEntities": [], "aliases": [], "anchorConfidence": 0.0, "anchorEvidence": "추출 실패",
                 "coreEntityName": "", "normalizedEntityName": "", "coreEntityType": "OTHER",
-                "aliases": [], "entityConfidence": 0.0, "entityEvidence": "추출 실패",
+                "entityConfidence": 0.0, "entityEvidence": "추출 실패",
             }
         return entity
 
@@ -1442,6 +1481,7 @@ class WorkspaceCategoryEngine:
             sumEmbedding=[0.0] * len(embedding),
             entityKey=entity_key,
             entityAliases=set(entity_keys),
+            anchorType=_anchor_type_of(entity),
         )
         self._next_candidate_id += 1
         self.candidates.append(candidate)
@@ -1507,6 +1547,23 @@ class WorkspaceCategoryEngine:
                 return False
         return True
 
+    def _anchor_confident(self, candidate: TemporaryCandidate) -> bool:
+        """후보와 같은 정규화 앵커를 가진 '신뢰 가능한' 연결 데이터가 min-support 이상인지.
+
+        ENTITY 규칙 기반 승격의 confidence 조건. 순서에 무관하게 결정론적으로 판정한다.
+        """
+        cand_keys = set(candidate.entityAliases)
+        if candidate.entityKey:
+            cand_keys.add(candidate.entityKey)
+        if not cand_keys:
+            return False
+        n = 0
+        for item_id in candidate.linkedItemIds:
+            anchor = self._item_entities.get(item_id)
+            if self._usable_entity(anchor) and (_entity_alias_set(anchor) & cand_keys):
+                n += 1
+        return n >= self.config.candidate_min_support_count
+
     def _maybe_promote(self, candidate: TemporaryCandidate, log: dict[str, Any]) -> None:
         if candidate.supportCount < self.config.candidate_min_support_count:
             return
@@ -1519,10 +1576,21 @@ class WorkspaceCategoryEngine:
             candidate.status = READY_TO_PROMOTE
             candidate.lastReviewReason = "정식 카테고리 상한으로 승격 대기"
             return
-        # 엔티티 모드: 연결 데이터의 핵심 대상이 실제로 일관되는지 먼저 확인한다.
-        if self.config.use_core_entity and not self._entity_consistent(candidate):
-            candidate.lastReviewReason = "연결 데이터의 핵심 대상이 일관되지 않아 승격 보류"
-            return
+
+        if self.config.use_core_entity:
+            # ENTITY: 동일 정규화 대상 3건 + confidence 충족 + 일관 → 규칙 기반 승격(AI 판단 배제, 순서 무관)
+            if candidate.anchorType == "ENTITY":
+                if self._entity_consistent(candidate) and self._anchor_confident(candidate):
+                    candidate.lastReviewReason = "ENTITY 규칙 기반 승격(동일 대상 3건+confidence 충족)"
+                    self._promote(candidate, log)
+                else:
+                    candidate.lastReviewReason = "ENTITY 앵커 일관성/신뢰 미달로 승격 보류"
+                return
+            # UMBRELLA_TOPIC(과잉 일반화 위험) 또는 임베딩 후보 → 엔티티 일관성 가드 후 AI 검토 유지
+            if not self._entity_consistent(candidate):
+                candidate.lastReviewReason = "연결 데이터의 핵심 대상이 일관되지 않아 승격 보류"
+                return
+
         linked_items = [self._items[item_id] for item_id in candidate.linkedItemIds]
         review = self.backend.review_promotion(candidate, linked_items)
         candidate.lastReviewReason = str(review.get("reason", ""))

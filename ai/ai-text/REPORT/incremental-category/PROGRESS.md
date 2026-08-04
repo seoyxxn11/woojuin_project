@@ -20,6 +20,13 @@
 - 다중 카테고리 부여 확인: `['짱구','문화·아이디어']`, `['SSAFY','학습·커리어']`.
 - 오병합 0 / 정식 6~7(≤10) / 파편화 최대 1 / 순도 1.0. 단위 테스트 26건 통과.
 
+**7단계(카테고리 앵커, 2026-08-05 구현 완료·미실행)**
+- `coreEntity`를 **`categoryAnchor`로 확장**. 추출 필드: `categoryAnchorName / categoryAnchorType(ENTITY|UMBRELLA_TOPIC|OTHER) / normalizedAnchorName / specificEntities / aliases / anchorConfidence / anchorEvidence`. 백엔드 `extract_category_anchor`(구 `extract_core_entity`는 델리게이터로 유지, 하위호환 키도 함께 반환).
+- **ENTITY 타입**: 동일 정규화 앵커 3건 + confidence 충족 + 일관 → **규칙 기반 승격**(AI review_promotion 배제 → 입력 순서에 따른 승격 편차 제거). `_anchor_confident` + `_entity_consistent`로 판정.
+- **UMBRELLA_TOPIC**: 과잉 일반화 위험 → 기존 **AI 승격 검토 유지**.
+- 매칭 우선순위 불변(normalizedAnchorName 정확·별칭 > 임베딩). 앵커 추출 실패/저신뢰(conf<`entity_min_confidence`)면 엔티티 권위 전환(무AI) 미발동 → 임베딩 신호 전환은 **AI 의미검증(review_signal_conversion) 필수** 경로로만.
+- 러너 items.csv에 `categoryAnchorType·normalizedAnchorName·specificEntities` 추가, 비교 리포트에 앵커 타입 분포·규칙기반 승격 수. 단위 테스트 **30건**(앵커 4건 포함) 통과. **아직 실 API 미실행**(임계값·모델·데이터 불변, 요청 시 실행).
+
 **남은 사실(중요)**
 - **임베딩 정제(본문 제거)만으로는 유사도가 안 올랐다**(그룹 내부 avg 소폭 하락). 실제 개선은 전부 엔티티 매칭이 가져옴.
 - FORTUNE/SELF/DIGITAL은 문서마다 서로 다른 개별 엔티티(별자리≠타로≠띠별)라 엔티티로 안 묶이고, 임베딩 유사도(~0.29)도 임계값 0.55 미만 → 후보 0. (단 최근접이웃 동일그룹 확률 0.94 → 임계값 낮추면 잡힘, 이번엔 고정.)

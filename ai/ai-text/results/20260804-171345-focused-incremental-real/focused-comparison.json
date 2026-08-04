@@ -1,0 +1,74 @@
+{
+  "orders": [
+    {
+      "order": "clustered",
+      "selectedItemCount": 28,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 4,
+        "FORTUNE_PREDICTION": 2,
+        "JJANGGU_CHARACTER": 2,
+        "SELF_UNDERSTANDING": 3,
+        "SSAFY_REVIEW": 0
+      },
+      "maxFragmentation": 4,
+      "candidateReuseRate": 0.0769,
+      "enteredCandidateStage": 13,
+      "reuseEvents": 1,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.0,
+      "capturedGroups": [],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 0,
+      "promotedRecords": [],
+      "promotionPrecision": null,
+      "promotionRecall": 0.0,
+      "reclassifiedItemCount": 0,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 5,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    },
+    {
+      "order": "interleaved",
+      "selectedItemCount": 28,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 4,
+        "FORTUNE_PREDICTION": 3,
+        "JJANGGU_CHARACTER": 3,
+        "SELF_UNDERSTANDING": 3,
+        "SSAFY_REVIEW": 0
+      },
+      "maxFragmentation": 4,
+      "candidateReuseRate": 0.0667,
+      "enteredCandidateStage": 15,
+      "reuseEvents": 1,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.0,
+      "capturedGroups": [],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 0,
+      "promotedRecords": [],
+      "promotionPrecision": null,
+      "promotionRecall": 0.0,
+      "reclassifiedItemCount": 0,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 5,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+﻿candidateId,candidateName,status,supportCount,linkedItemIds,linkedGoldGroupIds,purity,createdAtItemId,promotedAtItemId
+1,음악 콘텐츠,PENDING,1,EXIST-019,문화·아이디어,1.0,EXIST-019,
+2,운영·정책,PENDING,1,NEW5-001,NEW_GROUP_5,1.0,NEW5-001,
+3,사회·통계,PENDING,1,NEW5-002,NEW_GROUP_5,1.0,NEW5-002,
+4,공동체·기여,PENDING,1,EXIST-008,학습·커리어,1.0,EXIST-008,
+5,오픈컨텐츠,PENDING,2,NEW5-003;NEW5-005,NEW_GROUP_5,1.0,NEW5-003,

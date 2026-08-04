@@ -1,0 +1,79 @@
+{
+  "orders": [
+    {
+      "order": "grouped",
+      "selectedItemCount": 30,
+      "existingFormalCount": 22,
+      "existingFormalOnlyCount": 21,
+      "existingSpuriousCandidateCount": 1,
+      "existingSpuriousItemIds": [
+        "EXIST-008"
+      ],
+      "newGroup5CandidateCount": 2,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "NEW_GROUP_3": 0,
+        "NEW_GROUP_5": 2
+      },
+      "maxFragmentation": 2,
+      "candidateReuseRate": 0.25,
+      "enteredCandidateStage": 4,
+      "reuseEvents": 1,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.0,
+      "capturedGroups": [],
+      "repeatedGroups": [
+        "NEW_GROUP_3",
+        "NEW_GROUP_5"
+      ],
+      "promotedCount": 0,
+      "promotedRecords": [],
+      "promotionPrecision": null,
+      "promotionRecall": 0.0,
+      "reclassifiedItemCount": 0,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 5,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    },
+    {
+      "order": "interleaved",
+      "selectedItemCount": 30,
+      "existingFormalCount": 22,
+      "existingFormalOnlyCount": 20,
+      "existingSpuriousCandidateCount": 2,
+      "existingSpuriousItemIds": [
+        "EXIST-019",
+        "EXIST-008"
+      ],
+      "newGroup5CandidateCount": 3,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "NEW_GROUP_3": 0,
+        "NEW_GROUP_5": 3
+      },
+      "maxFragmentation": 3,
+      "candidateReuseRate": 0.1667,
+      "enteredCandidateStage": 6,
+      "reuseEvents": 1,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 0.0,
+      "capturedGroups": [],
+      "repeatedGroups": [
+        "NEW_GROUP_3",
+        "NEW_GROUP_5"
+      ],
+      "promotedCount": 0,
+      "promotedRecords": [],
+      "promotionPrecision": null,
+      "promotionRecall": 0.0,
+      "reclassifiedItemCount": 0,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 5,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0
+    }
+  ]
+}

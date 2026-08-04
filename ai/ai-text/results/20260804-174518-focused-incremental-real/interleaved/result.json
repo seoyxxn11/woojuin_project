@@ -1,0 +1,1279 @@
+{
+  "order": "interleaved",
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2,
+    "center_similarity_threshold": 0.55,
+    "item_similarity_threshold": 0.6,
+    "ai_review_lower_bound": 0.3
+  },
+  "selectedItemIds": [
+    "EXIST-001",
+    "EXIST-006",
+    "EXIST-010",
+    "EXIST-015",
+    "EXIST-019",
+    "NEW5-001",
+    "NEW3-001",
+    "EXIST-002",
+    "EXIST-007",
+    "EXIST-011",
+    "EXIST-016",
+    "EXIST-020",
+    "NEW5-002",
+    "NEW3-002",
+    "EXIST-003",
+    "EXIST-008",
+    "EXIST-012",
+    "EXIST-017",
+    "EXIST-021",
+    "NEW5-003",
+    "NEW3-003",
+    "EXIST-004",
+    "EXIST-009",
+    "EXIST-013",
+    "EXIST-018",
+    "EXIST-022",
+    "NEW5-004",
+    "EXIST-005",
+    "EXIST-014",
+    "NEW5-005"
+  ],
+  "selectedItemCount": 30,
+  "metrics": {
+    "order": "interleaved",
+    "selectedItemCount": 30,
+    "existingFormalCount": 22,
+    "existingFormalOnlyCount": 20,
+    "existingSpuriousCandidateCount": 2,
+    "existingSpuriousItemIds": [
+      "EXIST-019",
+      "EXIST-008"
+    ],
+    "newGroup5CandidateCount": 3,
+    "newGroup3CandidateCount": 0,
+    "fragmentationByGroup": {
+      "NEW_GROUP_3": 0,
+      "NEW_GROUP_5": 3
+    },
+    "maxFragmentation": 3,
+    "candidateReuseRate": 0.1667,
+    "enteredCandidateStage": 6,
+    "reuseEvents": 1,
+    "avgCandidatePurity": 1.0,
+    "groupCaptureRate": 0.0,
+    "capturedGroups": [],
+    "repeatedGroups": [
+      "NEW_GROUP_3",
+      "NEW_GROUP_5"
+    ],
+    "promotedCount": 0,
+    "promotedRecords": [],
+    "promotionPrecision": null,
+    "promotionRecall": 0.0,
+    "reclassifiedItemCount": 0,
+    "misMergeEventCount": 0,
+    "misMergeEvents": [],
+    "finalFormalCategoryCount": 5,
+    "exceededMaxFormalCategories": false,
+    "candidateErrorCount": 0
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 7,
+        "itemIds": [
+          "EXIST-001",
+          "NEW5-001",
+          "EXIST-002",
+          "EXIST-003",
+          "EXIST-004",
+          "EXIST-005",
+          "NEW5-005"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 7,
+        "itemIds": [
+          "EXIST-006",
+          "NEW3-001",
+          "EXIST-007",
+          "NEW3-002",
+          "EXIST-008",
+          "NEW3-003",
+          "EXIST-009"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 5,
+        "itemIds": [
+          "EXIST-010",
+          "EXIST-011",
+          "EXIST-012",
+          "EXIST-013",
+          "EXIST-014"
+        ]
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 5,
+        "itemIds": [
+          "EXIST-015",
+          "EXIST-016",
+          "EXIST-020",
+          "EXIST-017",
+          "EXIST-018"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 6,
+        "itemIds": [
+          "EXIST-019",
+          "NEW5-002",
+          "EXIST-021",
+          "NEW5-003",
+          "EXIST-022",
+          "NEW5-004"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "음악 콘텐츠",
+        "description": "음악 관련 콘텐츠 및 플레이리스트 소개",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:01+09:00",
+        "updatedAt": "2026-08-05T02:00:02+09:00",
+        "createdAtItemId": "EXIST-019",
+        "linkedItemIds": [
+          "EXIST-019"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "운영·정책",
+        "description": "웹사이트 운영 및 정책 관련 정보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:03+09:00",
+        "updatedAt": "2026-08-05T02:00:04+09:00",
+        "createdAtItemId": "NEW5-001",
+        "linkedItemIds": [
+          "NEW5-001"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "사회·통계",
+        "description": "인구 통계 및 사회적 변화 예측",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:05+09:00",
+        "updatedAt": "2026-08-05T02:00:06+09:00",
+        "createdAtItemId": "NEW5-002",
+        "linkedItemIds": [
+          "NEW5-002"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "공동체·기여",
+        "description": "공동체·기여",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:07+09:00",
+        "updatedAt": "2026-08-05T02:00:08+09:00",
+        "createdAtItemId": "EXIST-008",
+        "linkedItemIds": [
+          "EXIST-008"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "오픈컨텐츠",
+        "description": "오픈컨텐츠",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:09+09:00",
+        "updatedAt": "2026-08-05T02:00:11+09:00",
+        "createdAtItemId": "NEW5-003",
+        "linkedItemIds": [
+          "NEW5-003",
+          "NEW5-005"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "EXIST-019",
+        "similarity": 0.9998
+      },
+      {
+        "candidateId": 2,
+        "itemId": "NEW5-001",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "NEW5-002",
+        "similarity": 0.9995
+      },
+      {
+        "candidateId": 4,
+        "itemId": "EXIST-008",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 5,
+        "itemId": "NEW5-003",
+        "similarity": 0.9997
+      },
+      {
+        "candidateId": 5,
+        "itemId": "NEW5-005",
+        "similarity": 0.9162
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "EXIST-001",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-006",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-010",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-015",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-019",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW5-001",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW3-001",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-007",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-011",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-016",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-020",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-002",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW3-002",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-003",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-008",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "EXIST-012",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-017",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-021",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-003",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "NEW3-003",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-004",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-009",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-013",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-018",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-022",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "EXIST-014",
+        "formalCategoryId": "PLACE_FOOD",
+        "formalCategoryIds": [
+          "PLACE_FOOD"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "NEW5-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "EXIST-001",
+      "inputOrder": 1,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.95,
+      "formalScoreGap": 0.85,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-006",
+      "inputOrder": 2,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-010",
+      "inputOrder": 3,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-015",
+      "inputOrder": 4,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-019",
+      "inputOrder": 5,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 1,
+      "candidateName": "음악 콘텐츠",
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": 1,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-001",
+      "inputOrder": 6,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateId": 2,
+      "candidateName": "운영·정책",
+      "centerSimilarity": 0.0998,
+      "maxItemSimilarity": 0.0998,
+      "supportCountAfter": 1,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-001",
+      "inputOrder": 7,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-002",
+      "inputOrder": 8,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-007",
+      "inputOrder": 9,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-011",
+      "inputOrder": 10,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-016",
+      "inputOrder": 11,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-020",
+      "inputOrder": 12,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-002",
+      "inputOrder": 13,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 3,
+      "candidateName": "사회·통계",
+      "centerSimilarity": 0.1066,
+      "maxItemSimilarity": 0.1067,
+      "supportCountAfter": 1,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-002",
+      "inputOrder": 14,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-003",
+      "inputOrder": 15,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.9,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-008",
+      "inputOrder": 16,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 4,
+      "candidateName": "공동체·기여",
+      "centerSimilarity": 0.2003,
+      "maxItemSimilarity": 0.2003,
+      "supportCountAfter": 1,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-012",
+      "inputOrder": 17,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-017",
+      "inputOrder": 18,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-021",
+      "inputOrder": 19,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-003",
+      "inputOrder": 20,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.1,
+      "formalScoreGap": 0.1,
+      "candidateAction": "CREATE",
+      "candidateId": 5,
+      "candidateName": "오픈컨텐츠",
+      "centerSimilarity": 0.2689,
+      "maxItemSimilarity": 0.269,
+      "supportCountAfter": 1,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW3-003",
+      "inputOrder": 21,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "NEW_GROUP_3",
+      "goldCategoryName": "SSAFY·취업후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-004",
+      "inputOrder": 22,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-009",
+      "inputOrder": 23,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "학습·커리어",
+      "goldCategoryName": "학습·커리어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-013",
+      "inputOrder": 24,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.9,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-018",
+      "inputOrder": 25,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "소비·금융",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.95,
+      "formalScoreGap": 0.95,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-022",
+      "inputOrder": 26,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "문화·아이디어",
+      "goldCategoryName": "문화·아이디어",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.6,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-004",
+      "inputOrder": 27,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-005",
+      "inputOrder": 28,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "생활·건강",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "EXIST-014",
+      "inputOrder": 29,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "장소·먹거리",
+      "goldCategoryName": "장소·먹거리",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "장소·먹거리",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "supportCountAfter": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "장소·먹거리",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "NEW5-005",
+      "inputOrder": 30,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "NEW_GROUP_5",
+      "goldCategoryName": "짱구·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateId": 5,
+      "candidateName": "오픈컨텐츠",
+      "centerSimilarity": 0.9162,
+      "maxItemSimilarity": 0.9161,
+      "supportCountAfter": 2,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": 1,
+      "candidateName": "음악 콘텐츠",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-019"
+      ],
+      "linkedGoldGroupIds": [
+        "문화·아이디어"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-019",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "운영·정책",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "NEW5-001"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_5"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "NEW5-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "사회·통계",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "NEW5-002"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_5"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "NEW5-002",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "공동체·기여",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "EXIST-008"
+      ],
+      "linkedGoldGroupIds": [
+        "학습·커리어"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "EXIST-008",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "오픈컨텐츠",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "NEW5-003",
+        "NEW5-005"
+      ],
+      "linkedGoldGroupIds": [
+        "NEW_GROUP_5"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "NEW5-003",
+      "promotedAtItemId": null
+    }
+  ]
+}

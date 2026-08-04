@@ -1,0 +1,43 @@
+# 집중 증분 카테고리 실행: interleaved
+
+## 지표
+- 선택 데이터 수: 28
+- 최종 정식 카테고리 수: 5 (10 초과: 아니오)
+- 후보 재사용률: 6.67% (재사용 1/15)
+- 평균 후보 순도: 1.0
+- 그룹 포착률: 0.00% (포착 [])
+- 최대 파편화: 4
+- 승격 수: 0 / 정밀도 None / 재현율 0.0
+- 재분류 데이터 수: 0
+- 오병합 건수: 0 (목표 0)
+- 후보 처리 에러: 0
+
+## 정답 그룹별 후보 파편화
+| goldGroupId | 후보 수 |
+|---|--:|
+| DIGITAL_ORGANIZATION_SERVICE | 4 |
+| FORTUNE_PREDICTION | 3 |
+| JJANGGU_CHARACTER | 3 |
+| SELF_UNDERSTANDING | 3 |
+| SSAFY_REVIEW | 0 |
+
+## 임시 후보
+| ID | 이름 | 상태 | 지지 | 순도 | 연결 그룹 |
+|---|---|---|--:|--:|---|
+| 1 | 온라인 정책·보안 | PENDING | 1 | 1.0 | JJANGGU_CHARACTER |
+| 2 | 자리운세 | PENDING | 1 | 1.0 | FORTUNE_PREDICTION |
+| 3 | 심리·관계 | PENDING | 1 | 1.0 | SELF_UNDERSTANDING |
+| 4 | 전자제품 사양 | PENDING | 1 | 1.0 | PRODUCT_INFO |
+| 5 | 사회·통계 | PENDING | 1 | 1.0 | JJANGGU_CHARACTER |
+| 6 | 운세·예측 | PENDING | 1 | 1.0 | FORTUNE_PREDICTION |
+| 7 | 정보 저장 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 8 | 오픈컨텐츠 | PENDING | 2 | 1.0 | JJANGGU_CHARACTER |
+| 9 | 타로 연애 | PENDING | 1 | 1.0 | FORTUNE_PREDICTION |
+| 10 | 사회 반응 | PENDING | 1 | 1.0 | SELF_UNDERSTANDING |
+| 11 | 도구·프로덕티비티 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 12 | 자동분류 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 13 | 가치관 분석 | PENDING | 1 | 1.0 | SELF_UNDERSTANDING |
+| 14 | 디지털 통합 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+
+## 승격 결과
+- 승격된 후보 없음

@@ -1,0 +1,1497 @@
+{
+  "order": "interleaved",
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2,
+    "center_similarity_threshold": 0.75,
+    "item_similarity_threshold": 0.78,
+    "ai_review_lower_bound": 0.6
+  },
+  "selectedItemIds": [
+    "JJANGGU-001",
+    "SSAFY-001",
+    "FOCUSED-001",
+    "FOCUSED-006",
+    "FOCUSED-011",
+    "FOCUSED-016",
+    "FOCUSED-019",
+    "JJANGGU-002",
+    "SSAFY-002",
+    "FOCUSED-002",
+    "FOCUSED-007",
+    "FOCUSED-012",
+    "FOCUSED-017",
+    "FOCUSED-020",
+    "JJANGGU-003",
+    "SSAFY-003",
+    "FOCUSED-003",
+    "FOCUSED-008",
+    "FOCUSED-013",
+    "FOCUSED-018",
+    "JJANGGU-004",
+    "FOCUSED-004",
+    "FOCUSED-009",
+    "FOCUSED-014",
+    "JJANGGU-005",
+    "FOCUSED-005",
+    "FOCUSED-010",
+    "FOCUSED-015"
+  ],
+  "selectedItemCount": 28,
+  "metrics": {
+    "order": "interleaved",
+    "selectedItemCount": 28,
+    "fragmentationByGroup": {
+      "DIGITAL_ORGANIZATION_SERVICE": 4,
+      "FORTUNE_PREDICTION": 3,
+      "JJANGGU_CHARACTER": 3,
+      "SELF_UNDERSTANDING": 3,
+      "SSAFY_REVIEW": 0
+    },
+    "maxFragmentation": 4,
+    "candidateReuseRate": 0.0667,
+    "enteredCandidateStage": 15,
+    "reuseEvents": 1,
+    "avgCandidatePurity": 1.0,
+    "groupCaptureRate": 0.0,
+    "capturedGroups": [],
+    "repeatedGroups": [
+      "DIGITAL_ORGANIZATION_SERVICE",
+      "FORTUNE_PREDICTION",
+      "JJANGGU_CHARACTER",
+      "SELF_UNDERSTANDING",
+      "SSAFY_REVIEW"
+    ],
+    "promotedCount": 0,
+    "promotedRecords": [],
+    "promotionPrecision": null,
+    "promotionRecall": 0.0,
+    "reclassifiedItemCount": 0,
+    "misMergeEventCount": 0,
+    "misMergeEvents": [],
+    "finalFormalCategoryCount": 5,
+    "exceededMaxFormalCategories": false,
+    "candidateErrorCount": 0
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 12,
+        "itemIds": [
+          "JJANGGU-001",
+          "FOCUSED-011",
+          "FOCUSED-016",
+          "FOCUSED-002",
+          "FOCUSED-017",
+          "JJANGGU-003",
+          "FOCUSED-013",
+          "FOCUSED-018",
+          "FOCUSED-009",
+          "FOCUSED-014",
+          "JJANGGU-005",
+          "FOCUSED-015"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 6,
+        "itemIds": [
+          "SSAFY-001",
+          "SSAFY-002",
+          "FOCUSED-007",
+          "FOCUSED-012",
+          "SSAFY-003",
+          "FOCUSED-010"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 0,
+        "itemIds": []
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 2,
+        "itemIds": [
+          "FOCUSED-019",
+          "FOCUSED-020"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 8,
+        "itemIds": [
+          "FOCUSED-001",
+          "FOCUSED-006",
+          "JJANGGU-002",
+          "FOCUSED-003",
+          "FOCUSED-008",
+          "JJANGGU-004",
+          "FOCUSED-004",
+          "FOCUSED-005"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "온라인 정책·보안",
+        "description": "웹사이트 운영 정책, 개인정보 처리 방침, 보안 관련 내용",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:01+09:00",
+        "updatedAt": "2026-08-05T02:00:02+09:00",
+        "createdAtItemId": "JJANGGU-001",
+        "linkedItemIds": [
+          "JJANGGU-001"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "자리운세",
+        "description": "주간 별자리 기반 감정 및 대인관계 분석 콘텐츠",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:03+09:00",
+        "updatedAt": "2026-08-05T02:00:04+09:00",
+        "createdAtItemId": "FOCUSED-001",
+        "linkedItemIds": [
+          "FOCUSED-001"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "심리·관계",
+        "description": "애착 유형을 진단하는 심리적 평가",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:05+09:00",
+        "updatedAt": "2026-08-05T02:00:06+09:00",
+        "createdAtItemId": "FOCUSED-006",
+        "linkedItemIds": [
+          "FOCUSED-006"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "전자제품 사양",
+        "description": "제품 사양 정보",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:07+09:00",
+        "updatedAt": "2026-08-05T02:00:08+09:00",
+        "createdAtItemId": "FOCUSED-019",
+        "linkedItemIds": [
+          "FOCUSED-019"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "사회·통계",
+        "description": "인구 통계 및 사회적 변화에 대한 분석",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:09+09:00",
+        "updatedAt": "2026-08-05T02:00:10+09:00",
+        "createdAtItemId": "JJANGGU-002",
+        "linkedItemIds": [
+          "JJANGGU-002"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 6,
+        "workspaceId": 10,
+        "suggestedName": "운세·예측",
+        "description": "생년월일 기반으로 개인의 재물·건강 운세를 분석하는 서비스",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:11+09:00",
+        "updatedAt": "2026-08-05T02:00:12+09:00",
+        "createdAtItemId": "FOCUSED-002",
+        "linkedItemIds": [
+          "FOCUSED-002"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 7,
+        "workspaceId": 10,
+        "suggestedName": "정보 저장",
+        "description": "웹 콘텐츠를 저장해 나중에 읽을 수 있도록 도와주는 서비스",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:13+09:00",
+        "updatedAt": "2026-08-05T02:00:14+09:00",
+        "createdAtItemId": "FOCUSED-012",
+        "linkedItemIds": [
+          "FOCUSED-012"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 8,
+        "workspaceId": 10,
+        "suggestedName": "오픈컨텐츠",
+        "description": "오픈컨텐츠",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:15+09:00",
+        "updatedAt": "2026-08-05T02:00:25+09:00",
+        "createdAtItemId": "JJANGGU-003",
+        "linkedItemIds": [
+          "JJANGGU-003",
+          "JJANGGU-005"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 9,
+        "workspaceId": 10,
+        "suggestedName": "타로 연애",
+        "description": "타로 카드를 활용한 연애 관계의 미래 전망 분석 콘텐츠",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:17+09:00",
+        "updatedAt": "2026-08-05T02:00:18+09:00",
+        "createdAtItemId": "FOCUSED-003",
+        "linkedItemIds": [
+          "FOCUSED-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 10,
+        "workspaceId": 10,
+        "suggestedName": "사회 반응",
+        "description": "인간관계에서 반복되는 반응 패턴을 분석하는 도구",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:19+09:00",
+        "updatedAt": "2026-08-05T02:00:20+09:00",
+        "createdAtItemId": "FOCUSED-008",
+        "linkedItemIds": [
+          "FOCUSED-008"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 11,
+        "workspaceId": 10,
+        "suggestedName": "도구·프로덕티비티",
+        "description": "디지털 정보를 태그로 통합 관리하는 도구",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:21+09:00",
+        "updatedAt": "2026-08-05T02:00:22+09:00",
+        "createdAtItemId": "FOCUSED-013",
+        "linkedItemIds": [
+          "FOCUSED-013"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 12,
+        "workspaceId": 10,
+        "suggestedName": "자동분류",
+        "description": "이미지·문서를 내용 기준으로 자동 분류해 보관하는 서비스",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:23+09:00",
+        "updatedAt": "2026-08-05T02:00:24+09:00",
+        "createdAtItemId": "FOCUSED-014",
+        "linkedItemIds": [
+          "FOCUSED-014"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 13,
+        "workspaceId": 10,
+        "suggestedName": "가치관 분석",
+        "description": "삶의 가치관을 순위로 분석하는 검사",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:26+09:00",
+        "updatedAt": "2026-08-05T02:00:27+09:00",
+        "createdAtItemId": "FOCUSED-010",
+        "linkedItemIds": [
+          "FOCUSED-010"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      },
+      {
+        "candidateId": 14,
+        "workspaceId": 10,
+        "suggestedName": "디지털 통합",
+        "description": "기기 간 데이터를 통합하고 정리하는 도구",
+        "status": "PENDING",
+        "supportCount": 1,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:28+09:00",
+        "updatedAt": "2026-08-05T02:00:29+09:00",
+        "createdAtItemId": "FOCUSED-015",
+        "linkedItemIds": [
+          "FOCUSED-015"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "JJANGGU-001",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 2,
+        "itemId": "FOCUSED-001",
+        "similarity": 0.9994
+      },
+      {
+        "candidateId": 3,
+        "itemId": "FOCUSED-006",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 4,
+        "itemId": "FOCUSED-019",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 5,
+        "itemId": "JJANGGU-002",
+        "similarity": 0.9996
+      },
+      {
+        "candidateId": 6,
+        "itemId": "FOCUSED-002",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 7,
+        "itemId": "FOCUSED-012",
+        "similarity": 0.9994
+      },
+      {
+        "candidateId": 8,
+        "itemId": "JJANGGU-003",
+        "similarity": 0.9991
+      },
+      {
+        "candidateId": 9,
+        "itemId": "FOCUSED-003",
+        "similarity": 0.9993
+      },
+      {
+        "candidateId": 10,
+        "itemId": "FOCUSED-008",
+        "similarity": 0.9997
+      },
+      {
+        "candidateId": 11,
+        "itemId": "FOCUSED-013",
+        "similarity": 0.9998
+      },
+      {
+        "candidateId": 12,
+        "itemId": "FOCUSED-014",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 8,
+        "itemId": "JJANGGU-005",
+        "similarity": 0.9162
+      },
+      {
+        "candidateId": 13,
+        "itemId": "FOCUSED-010",
+        "similarity": 0.9999
+      },
+      {
+        "candidateId": 14,
+        "itemId": "FOCUSED-015",
+        "similarity": 0.9992
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "JJANGGU-001",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-001",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-001",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-006",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-011",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-016",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-019",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "JJANGGU-002",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-002",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-002",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-007",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-012",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 7,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-017",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-020",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-003",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 8,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-003",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-003",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 9,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-008",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 10,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-013",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 11,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-018",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-004",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-009",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-014",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 12,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "JJANGGU-005",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 8,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-005",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-010",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 13,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-015",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 14,
+        "classificationStatus": "CANDIDATE_LINKED"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "JJANGGU-001",
+      "inputOrder": 1,
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateId": 1,
+      "candidateName": "온라인 정책·보안",
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-001",
+      "inputOrder": 2,
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-001",
+      "inputOrder": 3,
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "CREATE",
+      "candidateId": 2,
+      "candidateName": "자리운세",
+      "centerSimilarity": 0.1576,
+      "maxItemSimilarity": 0.1576,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-006",
+      "inputOrder": 4,
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 3,
+      "candidateName": "심리·관계",
+      "centerSimilarity": 0.3039,
+      "maxItemSimilarity": 0.3038,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-011",
+      "inputOrder": 5,
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-016",
+      "inputOrder": 6,
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-019",
+      "inputOrder": 7,
+      "goldGroupId": "PRODUCT_INFO",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 4,
+      "candidateName": "전자제품 사양",
+      "centerSimilarity": 0.1426,
+      "maxItemSimilarity": 0.1427,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-002",
+      "inputOrder": 8,
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "CREATE",
+      "candidateId": 5,
+      "candidateName": "사회·통계",
+      "centerSimilarity": 0.2288,
+      "maxItemSimilarity": 0.2288,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-002",
+      "inputOrder": 9,
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-002",
+      "inputOrder": 10,
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.1,
+      "candidateAction": "CREATE",
+      "candidateId": 6,
+      "candidateName": "운세·예측",
+      "centerSimilarity": 0.3258,
+      "maxItemSimilarity": 0.3257,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-007",
+      "inputOrder": 11,
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.8,
+      "formalScoreGap": 0.8,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-012",
+      "inputOrder": 12,
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 7,
+      "candidateName": "정보 저장",
+      "centerSimilarity": 0.345,
+      "maxItemSimilarity": 0.3449,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-017",
+      "inputOrder": 13,
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-020",
+      "inputOrder": 14,
+      "goldGroupId": "PRODUCT_INFO",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-003",
+      "inputOrder": 15,
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateId": 8,
+      "candidateName": "오픈컨텐츠",
+      "centerSimilarity": 0.2731,
+      "maxItemSimilarity": 0.2731,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-003",
+      "inputOrder": 16,
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-003",
+      "inputOrder": 17,
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "candidateAction": "CREATE",
+      "candidateId": 9,
+      "candidateName": "타로 연애",
+      "centerSimilarity": 0.344,
+      "maxItemSimilarity": 0.3439,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-008",
+      "inputOrder": 18,
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "candidateAction": "CREATE",
+      "candidateId": 10,
+      "candidateName": "사회 반응",
+      "centerSimilarity": 0.3585,
+      "maxItemSimilarity": 0.3584,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-013",
+      "inputOrder": 19,
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateId": 11,
+      "candidateName": "도구·프로덕티비티",
+      "centerSimilarity": 0.3327,
+      "maxItemSimilarity": 0.3326,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-018",
+      "inputOrder": 20,
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-004",
+      "inputOrder": 21,
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-004",
+      "inputOrder": 22,
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.7,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-009",
+      "inputOrder": 23,
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.5,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-014",
+      "inputOrder": 24,
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateId": 12,
+      "candidateName": "자동분류",
+      "centerSimilarity": 0.424,
+      "maxItemSimilarity": 0.4239,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-005",
+      "inputOrder": 25,
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "REUSE_EMBEDDING",
+      "candidateId": 8,
+      "candidateName": "오픈컨텐츠",
+      "centerSimilarity": 0.9162,
+      "maxItemSimilarity": 0.9158,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-005",
+      "inputOrder": 26,
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-010",
+      "inputOrder": 27,
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.1,
+      "candidateAction": "CREATE",
+      "candidateId": 13,
+      "candidateName": "가치관 분석",
+      "centerSimilarity": 0.3844,
+      "maxItemSimilarity": 0.3844,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-015",
+      "inputOrder": 28,
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "candidateAction": "CREATE",
+      "candidateId": 14,
+      "candidateName": "디지털 통합",
+      "centerSimilarity": 0.4524,
+      "maxItemSimilarity": 0.4524,
+      "aiReuseDecision": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "wasReclassified": false
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": 1,
+      "candidateName": "온라인 정책·보안",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "JJANGGU-001"
+      ],
+      "linkedGoldGroupIds": [
+        "JJANGGU_CHARACTER"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "JJANGGU-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "자리운세",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-001"
+      ],
+      "linkedGoldGroupIds": [
+        "FORTUNE_PREDICTION"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-001",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "심리·관계",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-006"
+      ],
+      "linkedGoldGroupIds": [
+        "SELF_UNDERSTANDING"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-006",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "전자제품 사양",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-019"
+      ],
+      "linkedGoldGroupIds": [
+        "PRODUCT_INFO"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-019",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "사회·통계",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "JJANGGU-002"
+      ],
+      "linkedGoldGroupIds": [
+        "JJANGGU_CHARACTER"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "JJANGGU-002",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "운세·예측",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-002"
+      ],
+      "linkedGoldGroupIds": [
+        "FORTUNE_PREDICTION"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-002",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 7,
+      "candidateName": "정보 저장",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-012"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-012",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 8,
+      "candidateName": "오픈컨텐츠",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "JJANGGU-003",
+        "JJANGGU-005"
+      ],
+      "linkedGoldGroupIds": [
+        "JJANGGU_CHARACTER"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "JJANGGU-003",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 9,
+      "candidateName": "타로 연애",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-003"
+      ],
+      "linkedGoldGroupIds": [
+        "FORTUNE_PREDICTION"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-003",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 10,
+      "candidateName": "사회 반응",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-008"
+      ],
+      "linkedGoldGroupIds": [
+        "SELF_UNDERSTANDING"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-008",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 11,
+      "candidateName": "도구·프로덕티비티",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-013"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-013",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 12,
+      "candidateName": "자동분류",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-014"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-014",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 13,
+      "candidateName": "가치관 분석",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-010"
+      ],
+      "linkedGoldGroupIds": [
+        "SELF_UNDERSTANDING"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-010",
+      "promotedAtItemId": null
+    },
+    {
+      "candidateId": 14,
+      "candidateName": "디지털 통합",
+      "status": "PENDING",
+      "supportCount": 1,
+      "linkedItemIds": [
+        "FOCUSED-015"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-015",
+      "promotedAtItemId": null
+    }
+  ]
+}

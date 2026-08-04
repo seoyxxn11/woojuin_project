@@ -1,0 +1,41 @@
+# 집중 증분 카테고리 실행: clustered
+
+## 지표
+- 선택 데이터 수: 28
+- 최종 정식 카테고리 수: 5 (10 초과: 아니오)
+- 후보 재사용률: 7.69% (재사용 1/13)
+- 평균 후보 순도: 1.0
+- 그룹 포착률: 0.00% (포착 [])
+- 최대 파편화: 4
+- 승격 수: 0 / 정밀도 None / 재현율 0.0
+- 재분류 데이터 수: 0
+- 오병합 건수: 0 (목표 0)
+- 후보 처리 에러: 0
+
+## 정답 그룹별 후보 파편화
+| goldGroupId | 후보 수 |
+|---|--:|
+| DIGITAL_ORGANIZATION_SERVICE | 4 |
+| FORTUNE_PREDICTION | 2 |
+| JJANGGU_CHARACTER | 2 |
+| SELF_UNDERSTANDING | 3 |
+| SSAFY_REVIEW | 0 |
+
+## 임시 후보
+| ID | 이름 | 상태 | 지지 | 순도 | 연결 그룹 |
+|---|---|---|--:|--:|---|
+| 1 | 기술·보안 | PENDING | 1 | 1.0 | JJANGGU_CHARACTER |
+| 2 | 공유지식 | PENDING | 2 | 1.0 | JJANGGU_CHARACTER |
+| 3 | 운세·예측 | PENDING | 1 | 1.0 | FORTUNE_PREDICTION |
+| 4 | 타로 연애 | PENDING | 1 | 1.0 | FORTUNE_PREDICTION |
+| 5 | 심리·관계 | PENDING | 1 | 1.0 | SELF_UNDERSTANDING |
+| 6 | 관계패턴 | PENDING | 1 | 1.0 | SELF_UNDERSTANDING |
+| 7 | 가치관 분석 | PENDING | 1 | 1.0 | SELF_UNDERSTANDING |
+| 8 | 정보 저장·관리 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 9 | 도구·프로덕티비티 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 10 | 자동분류 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 11 | 디지털 정리 | PENDING | 1 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 12 | 기기 사양 | PENDING | 1 | 1.0 | PRODUCT_INFO |
+
+## 승격 결과
+- 승격된 후보 없음

@@ -1,0 +1,45 @@
+# 집중 증분 카테고리 실행: interleaved
+
+## 지표
+- 선택 데이터 수: 31
+- 최종 정식 카테고리 수: 10 (10 초과: 아니오)
+- 잠정 신호: 총 15 / 전환 6 / 대기 9 / 만료 0
+- 기존 22건: 후보 0 / 신호만 5 / FORMAL_ONLY 5
+- 후보 재사용률: 100.00% (재사용 5/5)
+- 평균 후보 순도: 1.0
+- 그룹 포착률: 100.00% (포착 ['DIGITAL_ORGANIZATION_SERVICE', 'FORTUNE_PREDICTION', 'JJANGGU_CHARACTER', 'JP_SURNAME', 'SELF_UNDERSTANDING', 'SSAFY_REVIEW'])
+- 최대 파편화: 1
+- 승격 수: 5 / 정밀도 1.0 / 재현율 0.8333
+- 재분류 데이터 수: 15
+- 오병합 건수: 0 (목표 0)
+- 매칭 방법: {'ENTITY_EXACT': 15, 'EMBEDDING': 1}
+- 에러: 엔티티API 2 / AI응답 0 / 폴백 0
+
+## 정답 그룹별 후보 파편화
+| goldGroupId | 후보 수 |
+|---|--:|
+| DIGITAL_ORGANIZATION_SERVICE | 1 |
+| FORTUNE_PREDICTION | 1 |
+| JJANGGU_CHARACTER | 1 |
+| JP_SURNAME | 1 |
+| SELF_UNDERSTANDING | 1 |
+| SSAFY_REVIEW | 1 |
+
+## 임시 후보
+| ID | 이름 | 상태 | 지지 | 순도 | 연결 그룹 |
+|---|---|---|--:|--:|---|
+| 1 | 운세 | PROMOTED | 3 | 1.0 | FORTUNE_PREDICTION |
+| 2 | 자기 이해 | PROMOTED | 3 | 1.0 | SELF_UNDERSTANDING |
+| 3 | 디지털 정리 | PROMOTED | 3 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 4 | 짱구 | PROMOTED | 3 | 1.0 | JJANGGU_CHARACTER |
+| 5 | SSAFY | PROMOTED | 3 | 1.0 | SSAFY_REVIEW |
+| 6 | 라이선스 및 위키 정보 | PENDING | 2 | 1.0 | JP_SURNAME |
+
+## 승격 결과
+| 후보 | 승격 시점(itemId/순번) | 승격 supportCount | 순도 | 대표 그룹 |
+|---|---|--:|--:|---|
+| 운세 | FOCUSED-003/17 | 3 | 1.0 | FORTUNE_PREDICTION |
+| 자기 이해 | FOCUSED-009/25 | 3 | 1.0 | SELF_UNDERSTANDING |
+| 디지털 정리 | FOCUSED-013/19 | 3 | 1.0 | DIGITAL_ORGANIZATION_SERVICE |
+| 짱구 | JJANGGU-007/21 | 3 | 1.0 | JJANGGU_CHARACTER |
+| SSAFY | SSAFY-003/23 | 3 | 1.0 | SSAFY_REVIEW |

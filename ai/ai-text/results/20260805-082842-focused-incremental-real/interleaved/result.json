@@ -1,0 +1,2665 @@
+{
+  "order": "interleaved",
+  "config": {
+    "max_count": 10,
+    "max_ai_generated_count": 5,
+    "formal_confidence_threshold": 0.65,
+    "formal_score_gap_threshold": 0.1,
+    "candidate_similarity_threshold": 0.8,
+    "candidate_min_support_count": 3,
+    "candidate_consistency_threshold": 0.75,
+    "service_max_categories": 2,
+    "center_similarity_threshold": 0.55,
+    "item_similarity_threshold": 0.6,
+    "ai_review_lower_bound": 0.3,
+    "signal_similarity_threshold": 0.55,
+    "signal_ttl_items": 100,
+    "use_core_entity": true,
+    "entity_min_confidence": 0.5
+  },
+  "selectedItemIds": [
+    "FOCUSED-001",
+    "FOCUSED-006",
+    "FOCUSED-011",
+    "FOCUSED-016",
+    "FOCUSED-019",
+    "JJANGGU-003",
+    "SURNAME-001",
+    "SSAFY-001",
+    "FOCUSED-002",
+    "FOCUSED-007",
+    "FOCUSED-012",
+    "FOCUSED-017",
+    "FOCUSED-020",
+    "JJANGGU-006",
+    "SURNAME-002",
+    "SSAFY-002",
+    "FOCUSED-003",
+    "FOCUSED-008",
+    "FOCUSED-013",
+    "FOCUSED-018",
+    "JJANGGU-007",
+    "SURNAME-004",
+    "SSAFY-003",
+    "FOCUSED-004",
+    "FOCUSED-009",
+    "FOCUSED-014",
+    "SSAFY-004",
+    "FOCUSED-005",
+    "FOCUSED-010",
+    "FOCUSED-015",
+    "SSAFY-005"
+  ],
+  "selectedItemCount": 31,
+  "metrics": {
+    "order": "interleaved",
+    "selectedItemCount": 31,
+    "existingFormalCount": 5,
+    "existingFormalOnlyCount": 5,
+    "existingSpuriousCandidateCount": 0,
+    "existingSpuriousItemIds": [],
+    "provisionalSignalCount": 15,
+    "convertedSignalCount": 6,
+    "waitingSignalCount": 9,
+    "expiredSignalCount": 0,
+    "existingSignalOnlyCount": 5,
+    "newGroup5CandidateCount": 0,
+    "newGroup3CandidateCount": 0,
+    "fragmentationByGroup": {
+      "DIGITAL_ORGANIZATION_SERVICE": 1,
+      "FORTUNE_PREDICTION": 1,
+      "JJANGGU_CHARACTER": 1,
+      "JP_SURNAME": 1,
+      "SELF_UNDERSTANDING": 1,
+      "SSAFY_REVIEW": 1
+    },
+    "maxFragmentation": 1,
+    "candidateReuseRate": 1.0,
+    "enteredCandidateStage": 5,
+    "reuseEvents": 5,
+    "avgCandidatePurity": 1.0,
+    "groupCaptureRate": 1.0,
+    "capturedGroups": [
+      "DIGITAL_ORGANIZATION_SERVICE",
+      "FORTUNE_PREDICTION",
+      "JJANGGU_CHARACTER",
+      "JP_SURNAME",
+      "SELF_UNDERSTANDING",
+      "SSAFY_REVIEW"
+    ],
+    "repeatedGroups": [
+      "DIGITAL_ORGANIZATION_SERVICE",
+      "FORTUNE_PREDICTION",
+      "JJANGGU_CHARACTER",
+      "JP_SURNAME",
+      "SELF_UNDERSTANDING",
+      "SSAFY_REVIEW"
+    ],
+    "promotedCount": 5,
+    "promotedRecords": [
+      {
+        "candidateId": 1,
+        "candidateName": "운세",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "FOCUSED-003",
+        "promotedAtOrder": 17,
+        "purity": 1.0,
+        "majorityGoldGroup": "FORTUNE_PREDICTION"
+      },
+      {
+        "candidateId": 2,
+        "candidateName": "자기 이해",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "FOCUSED-009",
+        "promotedAtOrder": 25,
+        "purity": 1.0,
+        "majorityGoldGroup": "SELF_UNDERSTANDING"
+      },
+      {
+        "candidateId": 3,
+        "candidateName": "디지털 정리",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "FOCUSED-013",
+        "promotedAtOrder": 19,
+        "purity": 1.0,
+        "majorityGoldGroup": "DIGITAL_ORGANIZATION_SERVICE"
+      },
+      {
+        "candidateId": 4,
+        "candidateName": "짱구",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "JJANGGU-007",
+        "promotedAtOrder": 21,
+        "purity": 1.0,
+        "majorityGoldGroup": "JJANGGU_CHARACTER"
+      },
+      {
+        "candidateId": 5,
+        "candidateName": "SSAFY",
+        "supportCountAtPromotion": 3,
+        "promotedAtItemId": "SSAFY-003",
+        "promotedAtOrder": 23,
+        "purity": 1.0,
+        "majorityGoldGroup": "SSAFY_REVIEW"
+      }
+    ],
+    "promotionPrecision": 1.0,
+    "promotionRecall": 0.8333,
+    "reclassifiedItemCount": 15,
+    "misMergeEventCount": 0,
+    "misMergeEvents": [],
+    "finalFormalCategoryCount": 10,
+    "exceededMaxFormalCategories": false,
+    "candidateErrorCount": 0,
+    "matchMethodCounts": {
+      "ENTITY_EXACT": 15,
+      "EMBEDDING": 1
+    },
+    "anchorTypeCounts": {
+      "UMBRELLA_TOPIC": 16,
+      "OTHER": 4,
+      "ENTITY": 11
+    },
+    "ruleBasedPromotionCount": 2,
+    "entityApiFailureCount": 2,
+    "aiResponseFailureCount": 0,
+    "fallbackErrorCount": 0
+  },
+  "similarityAnalysis": {
+    "refined_title_summary": {
+      "perGroup": {
+        "FORTUNE_PREDICTION": {
+          "pairs": 10,
+          "avg": 0.2907,
+          "min": 0.1,
+          "max": 0.4351
+        },
+        "SELF_UNDERSTANDING": {
+          "pairs": 10,
+          "avg": 0.296,
+          "min": 0.1767,
+          "max": 0.4676
+        },
+        "DIGITAL_ORGANIZATION_SERVICE": {
+          "pairs": 10,
+          "avg": 0.369,
+          "min": 0.2981,
+          "max": 0.476
+        },
+        "HEALTH_MENTAL": {
+          "pairs": 3,
+          "avg": 0.3212,
+          "min": 0.2547,
+          "max": 0.3678
+        },
+        "PRODUCT_INFO": {
+          "pairs": 1,
+          "avg": 0.2793,
+          "min": 0.2793,
+          "max": 0.2793
+        },
+        "JJANGGU_CHARACTER": {
+          "pairs": 3,
+          "avg": 0.2807,
+          "min": 0.2485,
+          "max": 0.3284
+        },
+        "JP_SURNAME": {
+          "pairs": 3,
+          "avg": 0.2709,
+          "min": 0.0658,
+          "max": 0.6379
+        },
+        "SSAFY_REVIEW": {
+          "pairs": 10,
+          "avg": 0.5267,
+          "min": 0.3704,
+          "max": 0.724
+        }
+      },
+      "crossGroupMax": 0.35,
+      "nearestNeighborSameGroupProb": 0.9355
+    },
+    "legacy_title_summary_body": {
+      "perGroup": {
+        "FORTUNE_PREDICTION": {
+          "pairs": 10,
+          "avg": 0.3076,
+          "min": 0.121,
+          "max": 0.3973
+        },
+        "SELF_UNDERSTANDING": {
+          "pairs": 10,
+          "avg": 0.3426,
+          "min": 0.2212,
+          "max": 0.4614
+        },
+        "DIGITAL_ORGANIZATION_SERVICE": {
+          "pairs": 10,
+          "avg": 0.3823,
+          "min": 0.3035,
+          "max": 0.4513
+        },
+        "HEALTH_MENTAL": {
+          "pairs": 3,
+          "avg": 0.3522,
+          "min": 0.2759,
+          "max": 0.3929
+        },
+        "PRODUCT_INFO": {
+          "pairs": 1,
+          "avg": 0.3177,
+          "min": 0.3177,
+          "max": 0.3177
+        },
+        "JJANGGU_CHARACTER": {
+          "pairs": 3,
+          "avg": 0.3676,
+          "min": 0.2824,
+          "max": 0.4257
+        },
+        "JP_SURNAME": {
+          "pairs": 3,
+          "avg": 0.3844,
+          "min": 0.1143,
+          "max": 0.9161
+        },
+        "SSAFY_REVIEW": {
+          "pairs": 10,
+          "avg": 0.5295,
+          "min": 0.3374,
+          "max": 0.6548
+        }
+      },
+      "crossGroupMax": 0.3589,
+      "nearestNeighborSameGroupProb": 0.9677
+    }
+  },
+  "snapshot": {
+    "workspaceId": 10,
+    "formalCategories": [
+      {
+        "id": "LIFE_HEALTH",
+        "name": "생활·건강",
+        "description": "개인 일정, 준비물, 청소, 정리, 행정 처리, 운동 계획, 신체 활동, 건강 관리 등 일상 행동과 건강에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 5,
+        "itemIds": [
+          "FOCUSED-016",
+          "FOCUSED-017",
+          "FOCUSED-008",
+          "FOCUSED-018",
+          "SURNAME-004"
+        ]
+      },
+      {
+        "id": "LEARNING_CAREER",
+        "name": "학습·커리어",
+        "description": "시험 공부, 강의, 개념 정리, 기술 구현, IT 참고 자료, 채용 공고, 면접, 이력서 등 배움과 경력 개발에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 2,
+        "itemIds": [
+          "SSAFY-004",
+          "SSAFY-005"
+        ]
+      },
+      {
+        "id": "PLACE_FOOD",
+        "name": "장소·먹거리",
+        "description": "여행 일정, 방문 장소, 숙소, 식당, 카페, 레시피, 맛집 등 장소와 음식에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 0,
+        "itemIds": []
+      },
+      {
+        "id": "CONSUMPTION_FINANCE",
+        "name": "소비·금융",
+        "description": "상품 구매, 제품 비교, 가격 검토, 예산, 저축, 투자 등 경제 활동과 금융에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 2,
+        "itemIds": [
+          "FOCUSED-019",
+          "FOCUSED-020"
+        ]
+      },
+      {
+        "id": "CULTURE_IDEA",
+        "name": "문화·아이디어",
+        "description": "책, 영화, 드라마, 웹툰, 공연 감상 및 창작 아이디어, 서비스 발상, 영감 기록에 관한 내용",
+        "origin": "SEED",
+        "createdAtItemId": null,
+        "itemCount": 2,
+        "itemIds": [
+          "SURNAME-001",
+          "SURNAME-002"
+        ]
+      },
+      {
+        "id": "AI-025FA0A8B1",
+        "name": "운세",
+        "description": "운세 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "FOCUSED-001",
+        "itemCount": 5,
+        "itemIds": [
+          "FOCUSED-001",
+          "FOCUSED-002",
+          "FOCUSED-003",
+          "FOCUSED-004",
+          "FOCUSED-005"
+        ]
+      },
+      {
+        "id": "AI-B36ADB37AC",
+        "name": "디지털 정리",
+        "description": "디지털 정리 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "FOCUSED-011",
+        "itemCount": 5,
+        "itemIds": [
+          "FOCUSED-011",
+          "FOCUSED-012",
+          "FOCUSED-013",
+          "FOCUSED-014",
+          "FOCUSED-015"
+        ]
+      },
+      {
+        "id": "AI-DFD35138CE",
+        "name": "짱구",
+        "description": "짱구 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "JJANGGU-003",
+        "itemCount": 3,
+        "itemIds": [
+          "JJANGGU-003",
+          "JJANGGU-006",
+          "JJANGGU-007"
+        ]
+      },
+      {
+        "id": "AI-2A02741731",
+        "name": "SSAFY",
+        "description": "SSAFY 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "SSAFY-001",
+        "itemCount": 4,
+        "itemIds": [
+          "SSAFY-001",
+          "SSAFY-002",
+          "SSAFY-003",
+          "SSAFY-004"
+        ]
+      },
+      {
+        "id": "AI-6D8FE074AD",
+        "name": "자기 이해",
+        "description": "자기 이해 관련 반복 가능 세부 주제(잠정)",
+        "origin": "PROMOTED",
+        "createdAtItemId": "FOCUSED-006",
+        "itemCount": 4,
+        "itemIds": [
+          "FOCUSED-006",
+          "FOCUSED-007",
+          "FOCUSED-009",
+          "FOCUSED-010"
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "candidateId": 1,
+        "workspaceId": 10,
+        "suggestedName": "운세",
+        "description": "운세 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:09+09:00",
+        "updatedAt": "2026-08-05T02:00:28+09:00",
+        "createdAtItemId": "FOCUSED-001",
+        "linkedItemIds": [
+          "FOCUSED-001",
+          "FOCUSED-002",
+          "FOCUSED-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-025FA0A8B1",
+        "lastReviewReason": "이유",
+        "entityKey": "운세",
+        "entityAliases": [
+          "운세"
+        ]
+      },
+      {
+        "candidateId": 2,
+        "workspaceId": 10,
+        "suggestedName": "자기 이해",
+        "description": "자기 이해 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:12+09:00",
+        "updatedAt": "2026-08-05T02:00:41+09:00",
+        "createdAtItemId": "FOCUSED-006",
+        "linkedItemIds": [
+          "FOCUSED-006",
+          "FOCUSED-007",
+          "FOCUSED-009"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-6D8FE074AD",
+        "lastReviewReason": "자기 이해라는 주제 아래 애착 유형, 업무 행동 유형, 스트레스 대처 성향은 모두 개인의 내면적 특성을 파악하는 차원에서 일관된 반복 주제로 분류될 수 있습니다. 각 데이터는 서로 다른 측면을 다루지만, 자기 인식과 관련된 통합적인 분석을 위한 요소로 볼 수 있습니다.",
+        "entityKey": "자기이해",
+        "entityAliases": [
+          "자기이해"
+        ]
+      },
+      {
+        "candidateId": 3,
+        "workspaceId": 10,
+        "suggestedName": "디지털 정리",
+        "description": "디지털 정리 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:15+09:00",
+        "updatedAt": "2026-08-05T02:00:31+09:00",
+        "createdAtItemId": "FOCUSED-011",
+        "linkedItemIds": [
+          "FOCUSED-011",
+          "FOCUSED-012",
+          "FOCUSED-013"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-B36ADB37AC",
+        "lastReviewReason": "모든 데이터가 디지털 정보를 정리하고 관리하는 주제에 해당합니다. 개인 기록, 읽기 저장, 링크 및 메모 통합 관리는 모두 디지털 정리의 범주에 들어맞습니다.",
+        "entityKey": "디지털정리",
+        "entityAliases": [
+          "디지털정리"
+        ]
+      },
+      {
+        "candidateId": 4,
+        "workspaceId": 10,
+        "suggestedName": "짱구",
+        "description": "짱구 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:20+09:00",
+        "updatedAt": "2026-08-05T02:00:34+09:00",
+        "createdAtItemId": "JJANGGU-003",
+        "linkedItemIds": [
+          "JJANGGU-003",
+          "JJANGGU-006",
+          "JJANGGU-007"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-DFD35138CE",
+        "lastReviewReason": "ENTITY 규칙 기반 승격(동일 대상 3건+confidence 충족)",
+        "entityKey": "짱구",
+        "entityAliases": [
+          "짱구"
+        ]
+      },
+      {
+        "candidateId": 5,
+        "workspaceId": 10,
+        "suggestedName": "SSAFY",
+        "description": "SSAFY 관련 반복 가능 세부 주제(잠정)",
+        "status": "PROMOTED",
+        "supportCount": 3,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:24+09:00",
+        "updatedAt": "2026-08-05T02:00:39+09:00",
+        "createdAtItemId": "SSAFY-001",
+        "linkedItemIds": [
+          "SSAFY-001",
+          "SSAFY-002",
+          "SSAFY-003"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": "AI-2A02741731",
+        "lastReviewReason": "ENTITY 규칙 기반 승격(동일 대상 3건+confidence 충족)",
+        "entityKey": "ssafy",
+        "entityAliases": [
+          "ssafy"
+        ]
+      },
+      {
+        "candidateId": 6,
+        "workspaceId": 10,
+        "suggestedName": "라이선스 및 위키 정보",
+        "description": "카자마 관련 반복 가능 세부 주제(잠정)",
+        "status": "PENDING",
+        "supportCount": 2,
+        "representativeEmbeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:35+09:00",
+        "updatedAt": "2026-08-05T02:00:37+09:00",
+        "createdAtItemId": "SURNAME-002",
+        "linkedItemIds": [
+          "SURNAME-002",
+          "SURNAME-004"
+        ],
+        "mergedIntoCandidateId": null,
+        "promotedFormalCategoryId": null,
+        "lastReviewReason": null,
+        "entityKey": "카자마",
+        "entityAliases": [
+          "사쿠라다",
+          "카자마"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "signalId": 1,
+        "itemId": "FOCUSED-001",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "운세",
+        "suggestedDescription": "운세 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:01+09:00",
+        "expiresAt": "2026-08-05T03:40:01+09:00",
+        "createdAtInput": 1,
+        "expiresAtInput": 101,
+        "status": "CONVERTED",
+        "entityKey": "운세",
+        "entityAliases": [
+          "운세"
+        ]
+      },
+      {
+        "signalId": 2,
+        "itemId": "FOCUSED-006",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "자기 이해",
+        "suggestedDescription": "자기 이해 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:02+09:00",
+        "expiresAt": "2026-08-05T03:40:02+09:00",
+        "createdAtInput": 2,
+        "expiresAtInput": 102,
+        "status": "CONVERTED",
+        "entityKey": "자기이해",
+        "entityAliases": [
+          "자기이해"
+        ]
+      },
+      {
+        "signalId": 3,
+        "itemId": "FOCUSED-011",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "디지털 정리",
+        "suggestedDescription": "디지털 정리 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:03+09:00",
+        "expiresAt": "2026-08-05T03:40:03+09:00",
+        "createdAtInput": 3,
+        "expiresAtInput": 103,
+        "status": "CONVERTED",
+        "entityKey": "디지털정리",
+        "entityAliases": [
+          "디지털정리"
+        ]
+      },
+      {
+        "signalId": 4,
+        "itemId": "FOCUSED-016",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "불면증 개선",
+        "suggestedDescription": "불면증 개선 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:04+09:00",
+        "expiresAt": "2026-08-05T03:40:04+09:00",
+        "createdAtInput": 4,
+        "expiresAtInput": 104,
+        "status": "WAITING",
+        "entityKey": "불면증개선",
+        "entityAliases": [
+          "불면증개선"
+        ]
+      },
+      {
+        "signalId": 5,
+        "itemId": "FOCUSED-019",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "제품 사양",
+        "suggestedDescription": "제품 사양 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:05+09:00",
+        "expiresAt": "2026-08-05T03:40:05+09:00",
+        "createdAtInput": 5,
+        "expiresAtInput": 105,
+        "status": "WAITING",
+        "entityKey": "제품사양",
+        "entityAliases": [
+          "제품사양"
+        ]
+      },
+      {
+        "signalId": 6,
+        "itemId": "JJANGGU-003",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "짱구",
+        "suggestedDescription": "짱구 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:06+09:00",
+        "expiresAt": "2026-08-05T03:40:06+09:00",
+        "createdAtInput": 6,
+        "expiresAtInput": 106,
+        "status": "CONVERTED",
+        "entityKey": "짱구",
+        "entityAliases": [
+          "짱구"
+        ]
+      },
+      {
+        "signalId": 7,
+        "itemId": "SURNAME-001",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "사토",
+        "suggestedDescription": "사토 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:07+09:00",
+        "expiresAt": "2026-08-05T03:40:07+09:00",
+        "createdAtInput": 7,
+        "expiresAtInput": 107,
+        "status": "WAITING",
+        "entityKey": "sato",
+        "entityAliases": [
+          "sato"
+        ]
+      },
+      {
+        "signalId": 8,
+        "itemId": "SSAFY-001",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "SSAFY",
+        "suggestedDescription": "SSAFY 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:08+09:00",
+        "expiresAt": "2026-08-05T03:40:08+09:00",
+        "createdAtInput": 8,
+        "expiresAtInput": 108,
+        "status": "CONVERTED",
+        "entityKey": "ssafy",
+        "entityAliases": [
+          "ssafy"
+        ]
+      },
+      {
+        "signalId": 9,
+        "itemId": "FOCUSED-017",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "생활습관",
+        "suggestedDescription": "생활습관 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:18+09:00",
+        "expiresAt": "2026-08-05T03:40:18+09:00",
+        "createdAtInput": 12,
+        "expiresAtInput": 112,
+        "status": "WAITING",
+        "entityKey": "생활습관",
+        "entityAliases": [
+          "생활습관"
+        ]
+      },
+      {
+        "signalId": 10,
+        "itemId": "FOCUSED-020",
+        "workspaceId": 10,
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "suggestedName": "카메라 성능",
+        "suggestedDescription": "카메라 성능 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:19+09:00",
+        "expiresAt": "2026-08-05T03:40:19+09:00",
+        "createdAtInput": 13,
+        "expiresAtInput": 113,
+        "status": "WAITING",
+        "entityKey": "카메라성능",
+        "entityAliases": [
+          "카메라성능"
+        ]
+      },
+      {
+        "signalId": 11,
+        "itemId": "SURNAME-002",
+        "workspaceId": 10,
+        "formalCategoryId": "CULTURE_IDEA",
+        "suggestedName": "카자마",
+        "suggestedDescription": "카자마 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:23+09:00",
+        "expiresAt": "2026-08-05T03:40:23+09:00",
+        "createdAtInput": 15,
+        "expiresAtInput": 115,
+        "status": "CONVERTED",
+        "entityKey": "카자마",
+        "entityAliases": [
+          "카자마"
+        ]
+      },
+      {
+        "signalId": 12,
+        "itemId": "FOCUSED-008",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "대인관계·반응",
+        "suggestedDescription": "대인관계·반응 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:29+09:00",
+        "expiresAt": "2026-08-05T03:40:29+09:00",
+        "createdAtInput": 18,
+        "expiresAtInput": 118,
+        "status": "WAITING",
+        "entityKey": "",
+        "entityAliases": []
+      },
+      {
+        "signalId": 13,
+        "itemId": "FOCUSED-018",
+        "workspaceId": 10,
+        "formalCategoryId": "LIFE_HEALTH",
+        "suggestedName": "정신건강 상담",
+        "suggestedDescription": "정신건강 상담 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:32+09:00",
+        "expiresAt": "2026-08-05T03:40:32+09:00",
+        "createdAtInput": 20,
+        "expiresAtInput": 120,
+        "status": "WAITING",
+        "entityKey": "정신건강상담",
+        "entityAliases": [
+          "정신건강상담"
+        ]
+      },
+      {
+        "signalId": 14,
+        "itemId": "FOCUSED-015",
+        "workspaceId": 10,
+        "formalCategoryId": "AI-B36ADB37AC",
+        "suggestedName": "기기·자료",
+        "suggestedDescription": "기기·자료 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:42+09:00",
+        "expiresAt": "2026-08-05T03:40:42+09:00",
+        "createdAtInput": 30,
+        "expiresAtInput": 130,
+        "status": "WAITING",
+        "entityKey": "",
+        "entityAliases": []
+      },
+      {
+        "signalId": 15,
+        "itemId": "SSAFY-005",
+        "workspaceId": 10,
+        "formalCategoryId": "LEARNING_CAREER",
+        "suggestedName": "삼성청년SW·AI아카데미",
+        "suggestedDescription": "삼성청년SW·AI아카데미 관련 반복 가능 세부 주제(잠정)",
+        "embeddingDim": 1536,
+        "createdAt": "2026-08-05T02:00:43+09:00",
+        "expiresAt": "2026-08-05T03:40:43+09:00",
+        "createdAtInput": 31,
+        "expiresAtInput": 131,
+        "status": "WAITING",
+        "entityKey": "삼성청년swai아카데미",
+        "entityAliases": [
+          "삼성청년swai아카데미"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "candidateId": 1,
+        "itemId": "FOCUSED-001",
+        "similarity": 0.9998
+      },
+      {
+        "candidateId": 1,
+        "itemId": "FOCUSED-002",
+        "similarity": 0.2461
+      },
+      {
+        "candidateId": 2,
+        "itemId": "FOCUSED-006",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 2,
+        "itemId": "FOCUSED-007",
+        "similarity": 0.4676
+      },
+      {
+        "candidateId": 3,
+        "itemId": "FOCUSED-011",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 3,
+        "itemId": "FOCUSED-012",
+        "similarity": 0.3811
+      },
+      {
+        "candidateId": 4,
+        "itemId": "JJANGGU-003",
+        "similarity": 0.9999
+      },
+      {
+        "candidateId": 4,
+        "itemId": "JJANGGU-006",
+        "similarity": 0.2485
+      },
+      {
+        "candidateId": 5,
+        "itemId": "SSAFY-001",
+        "similarity": 1.0
+      },
+      {
+        "candidateId": 5,
+        "itemId": "SSAFY-002",
+        "similarity": 0.6282
+      },
+      {
+        "candidateId": 1,
+        "itemId": "FOCUSED-003",
+        "similarity": 0.315
+      },
+      {
+        "candidateId": 3,
+        "itemId": "FOCUSED-013",
+        "similarity": 0.4406
+      },
+      {
+        "candidateId": 4,
+        "itemId": "JJANGGU-007",
+        "similarity": 0.3757
+      },
+      {
+        "candidateId": 6,
+        "itemId": "SURNAME-002",
+        "similarity": 0.9994
+      },
+      {
+        "candidateId": 6,
+        "itemId": "SURNAME-004",
+        "similarity": 0.6381
+      },
+      {
+        "candidateId": 5,
+        "itemId": "SSAFY-003",
+        "similarity": 0.7687
+      },
+      {
+        "candidateId": 2,
+        "itemId": "FOCUSED-009",
+        "similarity": 0.3755
+      }
+    ],
+    "itemClassifications": [
+      {
+        "itemId": "FOCUSED-001",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-006",
+        "formalCategoryId": "AI-6D8FE074AD",
+        "formalCategoryIds": [
+          "AI-6D8FE074AD",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-011",
+        "formalCategoryId": "AI-B36ADB37AC",
+        "formalCategoryIds": [
+          "AI-B36ADB37AC",
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-016",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-019",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-003",
+        "formalCategoryId": "AI-DFD35138CE",
+        "formalCategoryIds": [
+          "AI-DFD35138CE",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SURNAME-001",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SSAFY-001",
+        "formalCategoryId": "AI-2A02741731",
+        "formalCategoryIds": [
+          "AI-2A02741731",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-002",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-007",
+        "formalCategoryId": "AI-6D8FE074AD",
+        "formalCategoryIds": [
+          "AI-6D8FE074AD",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-012",
+        "formalCategoryId": "AI-B36ADB37AC",
+        "formalCategoryIds": [
+          "AI-B36ADB37AC",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-017",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-020",
+        "formalCategoryId": "CONSUMPTION_FINANCE",
+        "formalCategoryIds": [
+          "CONSUMPTION_FINANCE"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-006",
+        "formalCategoryId": "AI-DFD35138CE",
+        "formalCategoryIds": [
+          "AI-DFD35138CE",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SURNAME-002",
+        "formalCategoryId": "CULTURE_IDEA",
+        "formalCategoryIds": [
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-002",
+        "formalCategoryId": "AI-2A02741731",
+        "formalCategoryIds": [
+          "AI-2A02741731",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-003",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 1,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-008",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "FOCUSED-013",
+        "formalCategoryId": "AI-B36ADB37AC",
+        "formalCategoryIds": [
+          "AI-B36ADB37AC",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 3,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-018",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "JJANGGU-007",
+        "formalCategoryId": "AI-DFD35138CE",
+        "formalCategoryIds": [
+          "AI-DFD35138CE",
+          "CULTURE_IDEA"
+        ],
+        "candidateId": 4,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SURNAME-004",
+        "formalCategoryId": "LIFE_HEALTH",
+        "formalCategoryIds": [
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 6,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "SSAFY-003",
+        "formalCategoryId": "AI-2A02741731",
+        "formalCategoryIds": [
+          "AI-2A02741731",
+          "LEARNING_CAREER"
+        ],
+        "candidateId": 5,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-004",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "FOCUSED-009",
+        "formalCategoryId": "AI-6D8FE074AD",
+        "formalCategoryIds": [
+          "AI-6D8FE074AD",
+          "LIFE_HEALTH"
+        ],
+        "candidateId": 2,
+        "classificationStatus": "CANDIDATE_LINKED"
+      },
+      {
+        "itemId": "FOCUSED-014",
+        "formalCategoryId": "AI-B36ADB37AC",
+        "formalCategoryIds": [
+          "AI-B36ADB37AC"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "SSAFY-004",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER",
+          "AI-2A02741731"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "FOCUSED-005",
+        "formalCategoryId": "AI-025FA0A8B1",
+        "formalCategoryIds": [
+          "AI-025FA0A8B1"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "FOCUSED-010",
+        "formalCategoryId": "AI-6D8FE074AD",
+        "formalCategoryIds": [
+          "AI-6D8FE074AD"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      },
+      {
+        "itemId": "FOCUSED-015",
+        "formalCategoryId": "AI-B36ADB37AC",
+        "formalCategoryIds": [
+          "AI-B36ADB37AC"
+        ],
+        "candidateId": null,
+        "classificationStatus": "FORMAL_ONLY"
+      },
+      {
+        "itemId": "SSAFY-005",
+        "formalCategoryId": "LEARNING_CAREER",
+        "formalCategoryIds": [
+          "LEARNING_CAREER",
+          "AI-2A02741731"
+        ],
+        "candidateId": null,
+        "classificationStatus": "MULTI_LABEL_FORMAL"
+      }
+    ]
+  },
+  "items": [
+    {
+      "itemId": "FOCUSED-001",
+      "title": "이번 주 별자리 흐름",
+      "inputOrder": 1,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "coreEntityName": "운세",
+      "normalizedEntityName": "운세",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "운세",
+      "specificEntities": [
+        "별자리",
+        "감정",
+        "관계",
+        "주간 흐름"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('운세')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 1,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "운세",
+      "finalCategoryIds": [
+        "운세",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-006",
+      "title": "애착 유형 확인 검사",
+      "inputOrder": 2,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "coreEntityName": "자기 이해",
+      "normalizedEntityName": "자기이해",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "자기이해",
+      "specificEntities": [
+        "애착 유형"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('자기 이해')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 2,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "자기 이해",
+      "finalCategoryIds": [
+        "자기 이해",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-011",
+      "title": "개인 기록 모으는 앱",
+      "inputOrder": 3,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "디지털 정리",
+      "normalizedEntityName": "디지털정리",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "디지털정리",
+      "specificEntities": [
+        "기록 앱",
+        "나중에 읽기",
+        "링크 관리",
+        "문서 자동 분류",
+        "자료 동기화"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('디지털 정리')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 3,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "디지털 정리",
+      "finalCategoryIds": [
+        "디지털 정리",
+        "생활·건강"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-016",
+      "title": "불면증 개선 방법",
+      "inputOrder": 4,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "불면증 개선",
+      "normalizedEntityName": "불면증 개선",
+      "coreEntityType": "OTHER",
+      "entityConfidence": 0.0,
+      "categoryAnchorType": "OTHER",
+      "normalizedAnchorName": "불면증 개선",
+      "specificEntities": [
+        "수면 환경",
+        "습관"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('불면증 개선')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 4,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "finalCategoryIds": [
+        "생활·건강"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-019",
+      "title": "노트북 신제품 사양",
+      "inputOrder": 5,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "PRODUCT_INFO",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": false,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.1,
+      "coreEntityName": "제품 사양",
+      "normalizedEntityName": "제품사양",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "제품사양",
+      "specificEntities": [
+        "프로세서",
+        "무게",
+        "배터리"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('제품 사양')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 5,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "finalCategoryIds": [
+        "소비·금융"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-003",
+      "title": "보오",
+      "inputOrder": 6,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "짱구",
+      "normalizedEntityName": "짱구",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "짱구",
+      "specificEntities": [
+        "맹구",
+        "신짱구"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('짱구')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 6,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "짱구",
+      "finalCategoryIds": [
+        "짱구",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "SURNAME-001",
+      "title": "사토",
+      "inputOrder": 7,
+      "dataType": "NOISE",
+      "goldGroupId": "JP_SURNAME",
+      "goldCategoryName": "일본 성씨",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.8,
+      "coreEntityName": "사토",
+      "normalizedEntityName": "Sato",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 1.0,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "Sato",
+      "specificEntities": [
+        "사토"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('사토')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 7,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "finalCategoryIds": [
+        "문화·아이디어"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-001",
+      "title": "[SSAFY] 싸피 15기 합격 후기 (전공 Java)",
+      "inputOrder": 8,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "SSAFY",
+      "normalizedEntityName": "SSAFY",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "SSAFY",
+      "specificEntities": [
+        "Java 트랙",
+        "알고리즘 교육",
+        "취업 컨설팅",
+        "AI 교육",
+        "프로젝트 기회",
+        "교육지원금",
+        "에세이 작성",
+        "코딩테스트 준비",
+        "면접 전략"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('SSAFY')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 8,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "SSAFY",
+      "finalCategoryIds": [
+        "SSAFY",
+        "학습·커리어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-002",
+      "title": "생년월일 사주풀이",
+      "inputOrder": 9,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.4,
+      "coreEntityName": "운세",
+      "normalizedEntityName": "운세",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "운세",
+      "specificEntities": [
+        "사주",
+        "재물",
+        "건강",
+        "사주풀이",
+        "생년월일"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "운세",
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "동일 핵심 대상 2번째 데이터('운세') → 후보 전환",
+      "signalAction": "CONVERTED",
+      "signalId": 1,
+      "candidateId": 1,
+      "candidateName": "운세",
+      "centerSimilarity": null,
+      "maxItemSimilarity": null,
+      "embeddingSimilarity": null,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "운세",
+      "finalCategoryIds": [
+        "운세",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-007",
+      "title": "업무 행동 유형 진단",
+      "inputOrder": 10,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.5,
+      "coreEntityName": "자기 이해",
+      "normalizedEntityName": "자기이해",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "자기이해",
+      "specificEntities": [
+        "업무 행동 유형"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "자기 이해",
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "동일 핵심 대상 2번째 데이터('자기 이해') → 후보 전환",
+      "signalAction": "CONVERTED",
+      "signalId": 2,
+      "candidateId": 2,
+      "candidateName": "자기 이해",
+      "centerSimilarity": 0.2722,
+      "maxItemSimilarity": 0.2828,
+      "embeddingSimilarity": 0.2828,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "자기 이해",
+      "finalCategoryIds": [
+        "자기 이해",
+        "학습·커리어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-012",
+      "title": "나중에 읽기 저장 서비스",
+      "inputOrder": 11,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.5,
+      "formalScoreGap": 0.2,
+      "coreEntityName": "디지털 정리",
+      "normalizedEntityName": "디지털정리",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 1.0,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "디지털정리",
+      "specificEntities": [
+        "나중에 읽기"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "디지털 정리",
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "동일 핵심 대상 2번째 데이터('디지털 정리') → 후보 전환",
+      "signalAction": "CONVERTED",
+      "signalId": 3,
+      "candidateId": 3,
+      "candidateName": "디지털 정리",
+      "centerSimilarity": 0.3917,
+      "maxItemSimilarity": 0.35,
+      "embeddingSimilarity": 0.3917,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "디지털 정리",
+      "finalCategoryIds": [
+        "디지털 정리",
+        "학습·커리어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-017",
+      "title": "우울감 완화 생활 습관",
+      "inputOrder": 12,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "생활습관",
+      "normalizedEntityName": "생활습관",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.7,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "생활습관",
+      "specificEntities": [
+        "우울감 완화"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('생활습관')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 9,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3335,
+      "maxItemSimilarity": 0.2868,
+      "embeddingSimilarity": 0.3335,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "finalCategoryIds": [
+        "생활·건강"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-020",
+      "title": "스마트폰 카메라 비교",
+      "inputOrder": 13,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "PRODUCT_INFO",
+      "goldCategoryName": "소비·금융",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "소비·금융",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "카메라 성능",
+      "normalizedEntityName": "카메라 성능",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "카메라 성능",
+      "specificEntities": [
+        "카메라 성능",
+        "스마트폰 카메라 비교",
+        "최신 스마트폰 카메라 성능 비교"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('카메라 성능')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 10,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.3081,
+      "maxItemSimilarity": 0.2936,
+      "embeddingSimilarity": 0.3081,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "소비·금융",
+      "finalCategoryIds": [
+        "소비·금융"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-006",
+      "title": "극장판 짱구는 못말려",
+      "inputOrder": 14,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "coreEntityName": "짱구",
+      "normalizedEntityName": "짱구",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "짱구",
+      "specificEntities": [
+        "극장판 짱구는 못말려",
+        "짱구는 못말려",
+        "극장판",
+        "애니메이션 시리즈",
+        "여름방학 개봉 애니메이션"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "짱구",
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "동일 핵심 대상 2번째 데이터('짱구') → 후보 전환",
+      "signalAction": "CONVERTED",
+      "signalId": 6,
+      "candidateId": 4,
+      "candidateName": "짱구",
+      "centerSimilarity": 0.1854,
+      "maxItemSimilarity": 0.1595,
+      "embeddingSimilarity": 0.1854,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "짱구",
+      "finalCategoryIds": [
+        "짱구",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "SURNAME-002",
+      "title": "카자마",
+      "inputOrder": 15,
+      "dataType": "NOISE",
+      "goldGroupId": "JP_SURNAME",
+      "goldCategoryName": "일본 성씨",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.2,
+      "formalScoreGap": 0.2,
+      "coreEntityName": "카자마",
+      "normalizedEntityName": "카자마",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.8,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "카자마",
+      "specificEntities": [
+        "카자마"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('카자마')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 11,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2888,
+      "maxItemSimilarity": 0.2865,
+      "embeddingSimilarity": 0.2888,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "문화·아이디어",
+      "finalCategoryIds": [
+        "문화·아이디어"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-002",
+      "title": "[SSAFY 후기/팁/장단점] 비전공자 같은 전공자의 싸피 솔직 후기",
+      "inputOrder": 16,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.9,
+      "coreEntityName": "SSAFY",
+      "normalizedEntityName": "SSAFY",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "SSAFY",
+      "specificEntities": [
+        "SSAFY",
+        "삼성 청년 소프트웨어 아카데미",
+        "싸피"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "SSAFY",
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "동일 핵심 대상 2번째 데이터('SSAFY') → 후보 전환",
+      "signalAction": "CONVERTED",
+      "signalId": 8,
+      "candidateId": 5,
+      "candidateName": "SSAFY",
+      "centerSimilarity": 0.276,
+      "maxItemSimilarity": 0.2373,
+      "embeddingSimilarity": 0.276,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "SSAFY",
+      "finalCategoryIds": [
+        "SSAFY",
+        "학습·커리어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-003",
+      "title": "타로로 보는 연애 전망",
+      "inputOrder": 17,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.3,
+      "formalScoreGap": 0.3,
+      "coreEntityName": "운세",
+      "normalizedEntityName": "운세",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "운세",
+      "specificEntities": [
+        "타로",
+        "연애 전망"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "운세",
+      "candidateAction": "REUSE_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 1,
+      "candidateName": "운세",
+      "centerSimilarity": 0.315,
+      "maxItemSimilarity": 0.3972,
+      "embeddingSimilarity": 0.3972,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "운세",
+      "finalCategoryIds": [
+        "운세",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-008",
+      "title": "대인관계 반응 질문지",
+      "inputOrder": 18,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "coreEntityName": "",
+      "normalizedEntityName": "",
+      "coreEntityType": "OTHER",
+      "entityConfidence": 0.0,
+      "categoryAnchorType": "OTHER",
+      "normalizedAnchorName": "",
+      "specificEntities": [],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('대인관계·반응')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 12,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.398,
+      "maxItemSimilarity": 0.3448,
+      "embeddingSimilarity": 0.398,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "finalCategoryIds": [
+        "생활·건강"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-013",
+      "title": "링크와 메모 통합 관리",
+      "inputOrder": 19,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 0.7,
+      "formalScoreGap": 0.4,
+      "coreEntityName": "디지털 정리",
+      "normalizedEntityName": "디지털정리",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "디지털정리",
+      "specificEntities": [
+        "링크 관리",
+        "메모 관리"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "디지털 정리",
+      "candidateAction": "REUSE_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 3,
+      "candidateName": "디지털 정리",
+      "centerSimilarity": 0.4406,
+      "maxItemSimilarity": 0.4048,
+      "embeddingSimilarity": 0.4406,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "디지털 정리",
+      "finalCategoryIds": [
+        "디지털 정리",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-018",
+      "title": "정신건강 상담기관 안내",
+      "inputOrder": 20,
+      "dataType": "EXISTING_FORMAL",
+      "goldGroupId": "HEALTH_MENTAL",
+      "goldCategoryName": "생활·건강",
+      "expectedBehavior": "FORMAL_ONLY",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "정신건강 상담",
+      "normalizedEntityName": "정신건강상담",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "정신건강상담",
+      "specificEntities": [
+        "정신건강복지센터",
+        "상담 전화"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('정신건강 상담')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 13,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2179,
+      "maxItemSimilarity": 0.2309,
+      "embeddingSimilarity": 0.2309,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "finalCategoryIds": [
+        "생활·건강"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "JJANGGU-007",
+      "title": "신짱구 - 위키백과, 우리 모두의 백과사전",
+      "inputOrder": 21,
+      "dataType": "NEW_GROUP_5",
+      "goldGroupId": "JJANGGU_CHARACTER",
+      "goldCategoryName": "만화·캐릭터",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "문화·아이디어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "짱구",
+      "normalizedEntityName": "짱구",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "짱구",
+      "specificEntities": [
+        "신짱구",
+        "짱구는 못말려",
+        "떡잎마을 방범대",
+        "유치원생",
+        "4차원적인 성격",
+        "친구들과의 관계",
+        "다양한 캐릭터와 협력",
+        "활발한 활동"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "짱구",
+      "candidateAction": "REUSE_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 4,
+      "candidateName": "짱구",
+      "centerSimilarity": 0.3757,
+      "maxItemSimilarity": 0.3284,
+      "embeddingSimilarity": 0.3757,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "짱구",
+      "finalCategoryIds": [
+        "짱구",
+        "문화·아이디어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "SURNAME-004",
+      "title": "사쿠라다",
+      "inputOrder": 22,
+      "dataType": "NOISE",
+      "goldGroupId": "JP_SURNAME",
+      "goldCategoryName": "일본 성씨",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 0.0,
+      "formalScoreGap": 0.0,
+      "coreEntityName": "사쿠라다",
+      "normalizedEntityName": "사쿠라다",
+      "coreEntityType": "OTHER",
+      "entityConfidence": 0.0,
+      "categoryAnchorType": "OTHER",
+      "normalizedAnchorName": "사쿠라다",
+      "specificEntities": [
+        "사쿠라다"
+      ],
+      "matchMethod": "EMBEDDING",
+      "matchedCandidateName": "라이선스 및 위키 정보",
+      "candidateAction": "CONVERT_SIGNAL",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "두 데이터는 모두 나무위키의 라이선스 정보와 공동 편집 플랫폼 특성을 설명하는 형식을 공유하며, 동일한 목적(라이선스 안내 및 위키 특성 알림)을 가진 구체적이고 반복적인 주제로 분류 가능. 제목이 다를 뿐 내용 구조와 목적은 유사하여 세부 주제로 묶을 가치가 있음.",
+      "signalAction": "CONVERTED",
+      "signalId": 11,
+      "candidateId": 6,
+      "candidateName": "라이선스 및 위키 정보",
+      "centerSimilarity": 0.1849,
+      "maxItemSimilarity": 0.1946,
+      "embeddingSimilarity": 0.1946,
+      "supportCountAfter": 2,
+      "wasPromoted": false,
+      "finalFormalCategory": "생활·건강",
+      "finalCategoryIds": [
+        "생활·건강"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-003",
+      "title": "[SSAFY] 싸피 1학기 솔직 후기, 그리고 취업",
+      "inputOrder": 23,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.7,
+      "coreEntityName": "SSAFY",
+      "normalizedEntityName": "SSAFY",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "SSAFY",
+      "specificEntities": [
+        "SSAFY",
+        "싸피",
+        "1학기",
+        "취업",
+        "알고리즘",
+        "프로젝트",
+        "자바",
+        "HTML",
+        "CSS",
+        "JS",
+        "동료 네트워크",
+        "지속 가능한 학습 환경",
+        "취준생"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "SSAFY",
+      "candidateAction": "REUSE_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 5,
+      "candidateName": "SSAFY",
+      "centerSimilarity": 0.7687,
+      "maxItemSimilarity": 0.724,
+      "embeddingSimilarity": 0.7687,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "SSAFY",
+      "finalCategoryIds": [
+        "SSAFY",
+        "학습·커리어"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-004",
+      "title": "띠별 올해 길흉 정리",
+      "inputOrder": 24,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "운세",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "운세",
+      "normalizedEntityName": "운세",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "운세",
+      "specificEntities": [
+        "띠별"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "운세",
+      "candidateAction": "REUSE_PROMOTED_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "이미 승격된 동일 핵심 대상 카테고리에 2차 라벨로 연결",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2384,
+      "maxItemSimilarity": 0.2314,
+      "embeddingSimilarity": 0.2384,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "운세",
+      "finalCategoryIds": [
+        "운세"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-009",
+      "title": "스트레스 대처 성향 파악",
+      "inputOrder": 25,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "생활·건강",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "자기 이해",
+      "normalizedEntityName": "자기이해",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "자기이해",
+      "specificEntities": [
+        "스트레스 대처"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "자기 이해",
+      "candidateAction": "REUSE_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": null,
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": 2,
+      "candidateName": "자기 이해",
+      "centerSimilarity": 0.3755,
+      "maxItemSimilarity": 0.333,
+      "embeddingSimilarity": 0.3755,
+      "supportCountAfter": 3,
+      "wasPromoted": true,
+      "finalFormalCategory": "자기 이해",
+      "finalCategoryIds": [
+        "자기 이해",
+        "생활·건강"
+      ],
+      "wasReclassified": true
+    },
+    {
+      "itemId": "FOCUSED-014",
+      "title": "문서 자동 분류 보관함",
+      "inputOrder": 26,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "디지털 정리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.9,
+      "coreEntityName": "디지털 정리",
+      "normalizedEntityName": "디지털정리",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "디지털정리",
+      "specificEntities": [
+        "문서 자동 분류",
+        "이미지 분류"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "디지털 정리",
+      "candidateAction": "REUSE_PROMOTED_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "이미 승격된 동일 핵심 대상 카테고리에 2차 라벨로 연결",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.318,
+      "maxItemSimilarity": 0.3101,
+      "embeddingSimilarity": 0.318,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "디지털 정리",
+      "finalCategoryIds": [
+        "디지털 정리"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-004",
+      "title": "삼성청년SW•AI아카데미(SSAFY) 인스타그램",
+      "inputOrder": 27,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 0.9,
+      "formalScoreGap": 0.6,
+      "coreEntityName": "삼성 청년 SW·AI 아카데미",
+      "normalizedEntityName": "SSAFY",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 1.0,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "SSAFY",
+      "specificEntities": [
+        "인스타그램",
+        "프로젝트",
+        "활동"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "SSAFY",
+      "candidateAction": "REUSE_PROMOTED_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "이미 승격된 동일 핵심 대상 카테고리에 2차 라벨로 연결",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2129,
+      "maxItemSimilarity": 0.2176,
+      "embeddingSimilarity": 0.2176,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "finalCategoryIds": [
+        "학습·커리어",
+        "SSAFY"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-005",
+      "title": "토정비결 신년 안내",
+      "inputOrder": 28,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "FORTUNE_PREDICTION",
+      "goldCategoryName": "운세·예측",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "운세",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "운세",
+      "normalizedEntityName": "운세",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.9,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "운세",
+      "specificEntities": [
+        "토정비결",
+        "신년",
+        "달별 흐름"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "운세",
+      "candidateAction": "REUSE_PROMOTED_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "이미 승격된 동일 핵심 대상 카테고리에 2차 라벨로 연결",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1139,
+      "maxItemSimilarity": 0.1138,
+      "embeddingSimilarity": 0.1139,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "운세",
+      "finalCategoryIds": [
+        "운세"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-010",
+      "title": "가치관 우선순위 알아보기",
+      "inputOrder": 29,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "SELF_UNDERSTANDING",
+      "goldCategoryName": "심리·자기 이해",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "자기 이해",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.8,
+      "coreEntityName": "자기 이해",
+      "normalizedEntityName": "자기이해",
+      "coreEntityType": "UMBRELLA_TOPIC",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "UMBRELLA_TOPIC",
+      "normalizedAnchorName": "자기이해",
+      "specificEntities": [
+        "가치관 우선순위",
+        "삶의 가치관",
+        "우선순위 검사"
+      ],
+      "matchMethod": "ENTITY_EXACT",
+      "matchedCandidateName": "자기 이해",
+      "candidateAction": "REUSE_PROMOTED_ENTITY",
+      "candidateEntryDecision": null,
+      "candidateEntryReason": "이미 승격된 동일 핵심 대상 카테고리에 2차 라벨로 연결",
+      "signalAction": null,
+      "signalId": null,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.1732,
+      "maxItemSimilarity": 0.171,
+      "embeddingSimilarity": 0.1732,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "자기 이해",
+      "finalCategoryIds": [
+        "자기 이해"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "FOCUSED-015",
+      "title": "기기 간 자료 동기화 도구",
+      "inputOrder": 30,
+      "dataType": "NICHE_TOPIC",
+      "goldGroupId": "DIGITAL_ORGANIZATION_SERVICE",
+      "goldCategoryName": "디지털 정리 서비스",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": true,
+      "initialFormalCategory": "디지털 정리",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 1.0,
+      "coreEntityName": "",
+      "normalizedEntityName": "",
+      "coreEntityType": "OTHER",
+      "entityConfidence": 0.0,
+      "categoryAnchorType": "OTHER",
+      "normalizedAnchorName": "",
+      "specificEntities": [],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('기기·자료')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 14,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.2692,
+      "maxItemSimilarity": 0.279,
+      "embeddingSimilarity": 0.279,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "디지털 정리",
+      "finalCategoryIds": [
+        "디지털 정리"
+      ],
+      "wasReclassified": false
+    },
+    {
+      "itemId": "SSAFY-005",
+      "title": "삼성청년SW·AI아카데미",
+      "inputOrder": 31,
+      "dataType": "NEW_GROUP_3",
+      "goldGroupId": "SSAFY_REVIEW",
+      "goldCategoryName": "취업·후기",
+      "expectedBehavior": "CREATE_OR_REUSE_CANDIDATE",
+      "formalConfident": false,
+      "initialFormalCategory": "학습·커리어",
+      "formalTopScore": 1.0,
+      "formalScoreGap": 0.0,
+      "coreEntityName": "삼성청년SW·AI아카데미",
+      "normalizedEntityName": "삼성청년SW·AI아카데미",
+      "coreEntityType": "ENTITY",
+      "entityConfidence": 0.95,
+      "categoryAnchorType": "ENTITY",
+      "normalizedAnchorName": "삼성청년SW·AI아카데미",
+      "specificEntities": [
+        "소프트웨어 교육",
+        "AI 교육",
+        "실무 중심의 교육",
+        "취업 지원"
+      ],
+      "matchMethod": null,
+      "matchedCandidateName": null,
+      "candidateAction": "FORMAL_ONLY",
+      "candidateEntryDecision": "DEFER_SIGNAL",
+      "candidateEntryReason": "매칭 없음 단발 데이터 → 잠정 신호 보류('삼성청년SW·AI아카데미')",
+      "signalAction": "STORE_SIGNAL",
+      "signalId": 15,
+      "candidateId": null,
+      "candidateName": null,
+      "centerSimilarity": 0.172,
+      "maxItemSimilarity": 0.1706,
+      "embeddingSimilarity": 0.172,
+      "supportCountAfter": null,
+      "wasPromoted": false,
+      "finalFormalCategory": "학습·커리어",
+      "finalCategoryIds": [
+        "학습·커리어",
+        "SSAFY"
+      ],
+      "wasReclassified": false
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": 1,
+      "candidateName": "운세",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "FOCUSED-001",
+        "FOCUSED-002",
+        "FOCUSED-003"
+      ],
+      "linkedGoldGroupIds": [
+        "FORTUNE_PREDICTION"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-001",
+      "promotedAtItemId": "FOCUSED-003"
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "자기 이해",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "FOCUSED-006",
+        "FOCUSED-007",
+        "FOCUSED-009"
+      ],
+      "linkedGoldGroupIds": [
+        "SELF_UNDERSTANDING"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-006",
+      "promotedAtItemId": "FOCUSED-009"
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "디지털 정리",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "FOCUSED-011",
+        "FOCUSED-012",
+        "FOCUSED-013"
+      ],
+      "linkedGoldGroupIds": [
+        "DIGITAL_ORGANIZATION_SERVICE"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "FOCUSED-011",
+      "promotedAtItemId": "FOCUSED-013"
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "짱구",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "JJANGGU-003",
+        "JJANGGU-006",
+        "JJANGGU-007"
+      ],
+      "linkedGoldGroupIds": [
+        "JJANGGU_CHARACTER"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "JJANGGU-003",
+      "promotedAtItemId": "JJANGGU-007"
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "SSAFY",
+      "status": "PROMOTED",
+      "supportCount": 3,
+      "linkedItemIds": [
+        "SSAFY-001",
+        "SSAFY-002",
+        "SSAFY-003"
+      ],
+      "linkedGoldGroupIds": [
+        "SSAFY_REVIEW"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "SSAFY-001",
+      "promotedAtItemId": "SSAFY-003"
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "라이선스 및 위키 정보",
+      "status": "PENDING",
+      "supportCount": 2,
+      "linkedItemIds": [
+        "SURNAME-002",
+        "SURNAME-004"
+      ],
+      "linkedGoldGroupIds": [
+        "JP_SURNAME"
+      ],
+      "purity": 1.0,
+      "createdAtItemId": "SURNAME-002",
+      "promotedAtItemId": null
+    }
+  ]
+}

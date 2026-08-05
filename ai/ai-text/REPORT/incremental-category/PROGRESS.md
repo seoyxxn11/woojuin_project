@@ -20,7 +20,14 @@
 - 다중 카테고리 부여 확인: `['짱구','문화·아이디어']`, `['SSAFY','학습·커리어']`.
 - 오병합 0 / 정식 6~7(≤10) / 파편화 최대 1 / 순도 1.0. 단위 테스트 26건 통과.
 
-**7단계(카테고리 앵커, 2026-08-05 구현 완료·미실행)**
+**7단계(카테고리 앵커, 2026-08-05 실행 완료 — `results/20260805-082842-focused-incremental-real/`)**
+- **결과**: 승격 grouped 4 / interleaved 5, **포착률 1.0**(모든 반복군 포착), 순도 1.0, 오병합 0, 정식 9~10(≤10).
+  - **UMBRELLA_TOPIC이 결정타**: `운세`·`자기 이해`·`디지털 정리`(FOCUSED)가 양쪽 순서 모두 승격(이전 엔티티판에선 개별 엔티티라 후보 0이었음). AI 승격 검토 경로.
+  - **SSAFY**: ENTITY 규칙 기반 승격(양쪽). **짱구**: interleaved 규칙 기반 승격, grouped는 앵커 추출 변동(003이 '짱구' 대신 '맹구의 엄마'로 정규화)으로 support 2 보류.
+  - 앵커 타입 분포 ENTITY 11 / UMBRELLA_TOPIC 15~16 / OTHER 4~5. 규칙기반 승격 1~2건, 나머지는 UMBRELLA AI 승격.
+- 남은 변동: **승격 로직은 순서 무관(규칙 기반)**이나, LLM 앵커 추출 자체의 편차(temp 0이어도 동일 항목이 run/order에 따라 다르게 정규화)는 존재 → 추출 안정화가 다음 과제.
+
+**7단계 설계(구현 상세)**
 - `coreEntity`를 **`categoryAnchor`로 확장**. 추출 필드: `categoryAnchorName / categoryAnchorType(ENTITY|UMBRELLA_TOPIC|OTHER) / normalizedAnchorName / specificEntities / aliases / anchorConfidence / anchorEvidence`. 백엔드 `extract_category_anchor`(구 `extract_core_entity`는 델리게이터로 유지, 하위호환 키도 함께 반환).
 - **ENTITY 타입**: 동일 정규화 앵커 3건 + confidence 충족 + 일관 → **규칙 기반 승격**(AI review_promotion 배제 → 입력 순서에 따른 승격 편차 제거). `_anchor_confident` + `_entity_consistent`로 판정.
 - **UMBRELLA_TOPIC**: 과잉 일반화 위험 → 기존 **AI 승격 검토 유지**.

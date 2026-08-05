@@ -1,0 +1,224 @@
+{
+  "orders": [
+    {
+      "order": "grouped",
+      "selectedItemCount": 31,
+      "existingFormalCount": 5,
+      "existingFormalOnlyCount": 5,
+      "existingSpuriousCandidateCount": 0,
+      "existingSpuriousItemIds": [],
+      "provisionalSignalCount": 16,
+      "convertedSignalCount": 6,
+      "waitingSignalCount": 10,
+      "expiredSignalCount": 0,
+      "existingSignalOnlyCount": 5,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 1,
+        "FORTUNE_PREDICTION": 1,
+        "JJANGGU_CHARACTER": 1,
+        "JP_SURNAME": 1,
+        "SELF_UNDERSTANDING": 1,
+        "SSAFY_REVIEW": 1
+      },
+      "maxFragmentation": 1,
+      "candidateReuseRate": 1.0,
+      "enteredCandidateStage": 4,
+      "reuseEvents": 4,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 1.0,
+      "capturedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 4,
+      "promotedRecords": [
+        {
+          "candidateId": 1,
+          "candidateName": "운세",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "FOCUSED-003",
+          "promotedAtOrder": 3,
+          "purity": 1.0,
+          "majorityGoldGroup": "FORTUNE_PREDICTION"
+        },
+        {
+          "candidateId": 2,
+          "candidateName": "자기 이해",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "FOCUSED-008",
+          "promotedAtOrder": 8,
+          "purity": 1.0,
+          "majorityGoldGroup": "SELF_UNDERSTANDING"
+        },
+        {
+          "candidateId": 3,
+          "candidateName": "디지털 정리",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "FOCUSED-013",
+          "promotedAtOrder": 13,
+          "purity": 1.0,
+          "majorityGoldGroup": "DIGITAL_ORGANIZATION_SERVICE"
+        },
+        {
+          "candidateId": 6,
+          "candidateName": "SSAFY",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "SSAFY-003",
+          "promotedAtOrder": 29,
+          "purity": 1.0,
+          "majorityGoldGroup": "SSAFY_REVIEW"
+        }
+      ],
+      "promotionPrecision": 1.0,
+      "promotionRecall": 0.6667,
+      "reclassifiedItemCount": 12,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 9,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0,
+      "matchMethodCounts": {
+        "ENTITY_EXACT": 13,
+        "AI_REVIEW": 1,
+        "EMBEDDING": 1
+      },
+      "anchorTypeCounts": {
+        "UMBRELLA_TOPIC": 15,
+        "OTHER": 5,
+        "ENTITY": 11
+      },
+      "ruleBasedPromotionCount": 1,
+      "entityApiFailureCount": 3,
+      "aiResponseFailureCount": 0,
+      "fallbackErrorCount": 0
+    },
+    {
+      "order": "interleaved",
+      "selectedItemCount": 31,
+      "existingFormalCount": 5,
+      "existingFormalOnlyCount": 5,
+      "existingSpuriousCandidateCount": 0,
+      "existingSpuriousItemIds": [],
+      "provisionalSignalCount": 15,
+      "convertedSignalCount": 6,
+      "waitingSignalCount": 9,
+      "expiredSignalCount": 0,
+      "existingSignalOnlyCount": 5,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "DIGITAL_ORGANIZATION_SERVICE": 1,
+        "FORTUNE_PREDICTION": 1,
+        "JJANGGU_CHARACTER": 1,
+        "JP_SURNAME": 1,
+        "SELF_UNDERSTANDING": 1,
+        "SSAFY_REVIEW": 1
+      },
+      "maxFragmentation": 1,
+      "candidateReuseRate": 1.0,
+      "enteredCandidateStage": 5,
+      "reuseEvents": 5,
+      "avgCandidatePurity": 1.0,
+      "groupCaptureRate": 1.0,
+      "capturedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "repeatedGroups": [
+        "DIGITAL_ORGANIZATION_SERVICE",
+        "FORTUNE_PREDICTION",
+        "JJANGGU_CHARACTER",
+        "JP_SURNAME",
+        "SELF_UNDERSTANDING",
+        "SSAFY_REVIEW"
+      ],
+      "promotedCount": 5,
+      "promotedRecords": [
+        {
+          "candidateId": 1,
+          "candidateName": "운세",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "FOCUSED-003",
+          "promotedAtOrder": 17,
+          "purity": 1.0,
+          "majorityGoldGroup": "FORTUNE_PREDICTION"
+        },
+        {
+          "candidateId": 2,
+          "candidateName": "자기 이해",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "FOCUSED-009",
+          "promotedAtOrder": 25,
+          "purity": 1.0,
+          "majorityGoldGroup": "SELF_UNDERSTANDING"
+        },
+        {
+          "candidateId": 3,
+          "candidateName": "디지털 정리",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "FOCUSED-013",
+          "promotedAtOrder": 19,
+          "purity": 1.0,
+          "majorityGoldGroup": "DIGITAL_ORGANIZATION_SERVICE"
+        },
+        {
+          "candidateId": 4,
+          "candidateName": "짱구",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "JJANGGU-007",
+          "promotedAtOrder": 21,
+          "purity": 1.0,
+          "majorityGoldGroup": "JJANGGU_CHARACTER"
+        },
+        {
+          "candidateId": 5,
+          "candidateName": "SSAFY",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "SSAFY-003",
+          "promotedAtOrder": 23,
+          "purity": 1.0,
+          "majorityGoldGroup": "SSAFY_REVIEW"
+        }
+      ],
+      "promotionPrecision": 1.0,
+      "promotionRecall": 0.8333,
+      "reclassifiedItemCount": 15,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 10,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0,
+      "matchMethodCounts": {
+        "ENTITY_EXACT": 15,
+        "EMBEDDING": 1
+      },
+      "anchorTypeCounts": {
+        "UMBRELLA_TOPIC": 16,
+        "OTHER": 4,
+        "ENTITY": 11
+      },
+      "ruleBasedPromotionCount": 2,
+      "entityApiFailureCount": 2,
+      "aiResponseFailureCount": 0,
+      "fallbackErrorCount": 0
+    }
+  ]
+}

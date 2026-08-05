@@ -244,11 +244,20 @@ def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, outpu
     formal_name = {c["id"]: c["name"] for c in engine.formal_categories}
 
     logs: list[dict[str, Any]] = []
+    total = len(ordered)
     for order_index, row in enumerate(ordered, start=1):
         log = engine.submit_item(row["item"])
         log["inputOrder"] = order_index
         log["initialFormalCategory"] = engine.formal_categories and log.get("selectedFormalCategoryId")
         logs.append(log)
+        if order_index % 10 == 0 or order_index == total:
+            active = sum(1 for c in engine.candidates if c.status in {"PENDING", "READY_TO_PROMOTE", PROMOTED})
+            promoted = sum(1 for c in engine.formal_categories if c.get("origin") == "PROMOTED")
+            waiting = sum(1 for s in getattr(engine, "signals", []) if s.status == "WAITING")
+            print(
+                f"  [{order_name}] {order_index}/{total} 처리 | 후보 {active} · 승격 {promoted} · 대기신호 {waiting}",
+                flush=True,
+            )
 
     # 최신 formal 이름 매핑(승격 포함)
     formal_name = {c["id"]: c["name"] for c in engine.formal_categories}
@@ -286,6 +295,7 @@ def run_order(order_name, rows, gold_by_id, backend, config, workspace_id, outpu
     )
     _write_csv(output / "items.csv", ITEM_COLUMNS, item_rows)
     _write_csv(output / "candidates.csv", CANDIDATE_COLUMNS, candidate_rows)
+    _write_csv(output / "signals.csv", SIGNAL_COLUMNS, _signal_rows(engine, gold_by_id, formal_name))
     _write_csv(
         output / "categories.csv",
         ["id", "name", "origin", "createdAtItemId", "itemCount"],
@@ -312,8 +322,12 @@ ITEM_COLUMNS = [
     "supportCountAfter", "wasPromoted", "finalFormalCategory", "finalCategoryIds", "wasReclassified",
 ]
 CANDIDATE_COLUMNS = [
-    "candidateId", "candidateName", "status", "supportCount", "linkedItemIds",
+    "candidateId", "candidateName", "anchorType", "status", "supportCount", "linkedItemIds",
     "linkedGoldGroupIds", "purity", "createdAtItemId", "promotedAtItemId",
+]
+SIGNAL_COLUMNS = [
+    "signalId", "itemId", "status", "anchorType", "entityKey", "suggestedName",
+    "formalCategory", "linkedGoldGroupId", "createdAtInput", "expiresAtInput",
 ]
 
 
@@ -386,6 +400,7 @@ def _candidate_rows(engine, gold_by_id, promoted_at) -> list[dict[str, Any]]:
             {
                 "candidateId": candidate.candidateId,
                 "candidateName": candidate.suggestedName,
+                "anchorType": getattr(candidate, "anchorType", ""),
                 "status": candidate.status,
                 "supportCount": candidate.supportCount,
                 "linkedItemIds": linked,
@@ -393,6 +408,28 @@ def _candidate_rows(engine, gold_by_id, promoted_at) -> list[dict[str, Any]]:
                 "purity": round(purity, 4),
                 "createdAtItemId": candidate.createdAtItemId,
                 "promotedAtItemId": promo.get("promotedAtItemId"),
+            }
+        )
+    return rows
+
+
+def _signal_rows(engine, gold_by_id, formal_name) -> list[dict[str, Any]]:
+    """생성된 모든 잠정 신호(WAITING/CONVERTED/EXPIRED)를 기록한다(실서비스 문제 분석용)."""
+    rows = []
+    for signal in getattr(engine, "signals", []):
+        gold = gold_by_id.get(signal.itemId, {})
+        rows.append(
+            {
+                "signalId": signal.signalId,
+                "itemId": signal.itemId,
+                "status": signal.status,
+                "anchorType": getattr(signal, "anchorType", ""),
+                "entityKey": getattr(signal, "entityKey", ""),
+                "suggestedName": signal.suggestedName,
+                "formalCategory": formal_name.get(signal.formalCategoryId, signal.formalCategoryId),
+                "linkedGoldGroupId": gold.get("goldGroupId", ""),
+                "createdAtInput": signal.createdAtInput,
+                "expiresAtInput": signal.expiresAtInput,
             }
         )
     return rows

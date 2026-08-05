@@ -1,0 +1,70 @@
+﻿signalId,itemId,status,anchorType,entityKey,suggestedName,formalCategory,linkedGoldGroupId,createdAtInput,expiresAtInput
+1,WH-0061,EXPIRED,UMBRELLA_TOPIC,식품안전,식품 안전,생활·건강,WH_건강·운동,1,101
+2,WH-0102,CONVERTED,UMBRELLA_TOPIC,운세,운세,문화·아이디어,WH_기타,2,102
+3,WH-0082,CONVERTED,UMBRELLA_TOPIC,투자전략,투자 전략,소비·금융,WH_돈·재테크,3,103
+4,WH-0072,EXPIRED,ENTITY,플레이리스트,플레이리스트,문화·아이디어,WH_문화·콘텐츠,4,104
+5,WH-0000,EXPIRED,OTHER,,40세·이후,생활·건강,WH_생활·할 일,5,105
+6,WH-0050,EXPIRED,ENTITY,macstudio,Mac Studio,학습·커리어,WH_쇼핑·제품,6,106
+7,WH-0092,EXPIRED,ENTITY,솔로비즈니스나이트,솔로비즈니스나이트,문화·아이디어,WH_아이디어·영감,7,107
+8,WH-0031,CONVERTED,ENTITY,부산,부산 여행,장소·먹거리,WH_여행·장소,8,108
+9,WH-0040,CONVERTED,ENTITY,콩나물국밥,콩나물국밥,장소·먹거리,WH_음식·맛집,9,109
+10,WH-0021,EXPIRED,ENTITY,reactquery,React-Query,학습·커리어,WH_취업·커리어,10,110
+11,WH-0010,EXPIRED,ENTITY,프랑스생활팁,프랑스 생활 팁,생활·건강,WH_학습·지식,11,111
+12,JJG-0001,EXPIRED,OTHER,,사토는·일본에서,문화·아이디어,JJANGGU_EXT,12,112
+13,SSF-0000,CONVERTED,ENTITY,ssafy,SSAFY,학습·커리어,SSAFY_EXT,13,113
+14,WH-0062,EXPIRED,UMBRELLA_TOPIC,스트레칭,스트레칭,생활·건강,WH_건강·운동,14,114
+15,WH-0073,CONVERTED,ENTITY,콘서트,2026년대한민국콘서트,소비·금융,WH_문화·콘텐츠,17,117
+16,WH-0001,EXPIRED,UMBRELLA_TOPIC,정리정돈,정리정돈,생활·건강,WH_생활·할 일,18,118
+17,WH-0051,EXPIRED,ENTITY,노트북용가방,노트북용 가방,소비·금융,WH_쇼핑·제품,19,119
+18,WH-0093,EXPIRED,UMBRELLA_TOPIC,1인창업,1인 창업,학습·커리어,WH_아이디어·영감,20,120
+19,WH-0041,EXPIRED,ENTITY,전주콩나물국밥,전주 콩나물국밥,장소·먹거리,WH_음식·맛집,22,122
+20,WH-0011,WAITING,UMBRELLA_TOPIC,컴퓨터공학,컴퓨터공학,학습·커리어,WH_학습·지식,24,124
+21,JJG-0002,CONVERTED,OTHER,,저작물은·cc,생활·건강,JJANGGU_EXT,25,125
+22,WH-0063,WAITING,ENTITY,nerveglide,Nerve Glide,생활·건강,WH_건강·운동,27,127
+23,WH-0084,WAITING,UMBRELLA_TOPIC,부동산트렌드,부동산 트렌드,소비·금융,WH_돈·재테크,29,129
+24,WH-0002,CONVERTED,UMBRELLA_TOPIC,정리,정리,생활·건강,WH_생활·할 일,31,131
+25,WH-0052,CONVERTED,UMBRELLA_TOPIC,노트북가방,노트북가방,소비·금융,WH_쇼핑·제품,32,132
+26,WH-0094,WAITING,ENTITY,쇼핑몰창업전략,쇼핑몰 창업 전략,소비·금융,WH_아이디어·영감,33,133
+27,WH-0042,WAITING,ENTITY,왼이집,전주 왱이집,장소·먹거리,WH_음식·맛집,35,135
+28,WH-0012,CONVERTED,UMBRELLA_TOPIC,네트워크,네트워크,학습·커리어,WH_학습·지식,37,137
+29,JJG-0003,WAITING,OTHER,,크레용·신짱의,문화·아이디어,JJANGGU_EXT,38,138
+30,WH-0064,CONVERTED,ENTITY,불면증,불면증,생활·건강,WH_건강·운동,40,140
+31,WH-0085,CONVERTED,UMBRELLA_TOPIC,재테크,재테크,소비·금융,WH_돈·재테크,42,142
+32,WH-0075,WAITING,OTHER,,서울시립미술관과·주변,문화·아이디어,WH_문화·콘텐츠,43,143
+33,WH-0095,CONVERTED,ENTITY,스마트스토어,스마트스토어,학습·커리어,WH_아이디어·영감,46,146
+34,WH-0034,CONVERTED,UMBRELLA_TOPIC,감성카페,감성 카페,장소·먹거리,WH_여행·장소,47,147
+35,WH-0106,WAITING,UMBRELLA_TOPIC,심리테스트,심리 테스트,운세,WH_기타,54,154
+36,WH-0086,WAITING,UMBRELLA_TOPIC,주택구매,주택 구매 전략,소비·금융,WH_돈·재테크,55,155
+37,WH-0004,WAITING,UMBRELLA_TOPIC,라이프스타일,라이프스타일,생활·건강,WH_생활·할 일,57,157
+38,WH-0096,WAITING,UMBRELLA_TOPIC,부동산정책,부동산 정책,소비·금융,WH_아이디어·영감,59,159
+39,WH-0044,WAITING,ENTITY,광화문국밥seoul,광화문 국밥 Seoul,장소·먹거리,WH_음식·맛집,61,161
+40,WH-0025,WAITING,ENTITY,삼성그룹,삼성그룹,생활·건강,WH_취업·커리어,62,162
+41,JJG-0006,CONVERTED,ENTITY,짱구,짱구,문화·아이디어,JJANGGU_EXT,64,164
+42,WH-0107,CONVERTED,OTHER,,mbti·성격,문화·아이디어,WH_기타,67,167
+43,WH-0087,WAITING,UMBRELLA_TOPIC,주택청약,주택청약,소비·금융,WH_돈·재테크,68,168
+44,WH-0077,WAITING,ENTITY,서울시립미술관,서울시립미술관,문화·아이디어,WH_문화·콘텐츠,69,169
+45,WH-0005,WAITING,OTHER,,냉장고에·있는,생활·건강,WH_생활·할 일,70,170
+46,WH-0097,WAITING,UMBRELLA_TOPIC,창업,창업,학습·커리어,WH_아이디어·영감,72,172
+47,WH-0026,WAITING,OTHER,,취준생들이·함께하는,학습·커리어,WH_취업·커리어,75,175
+48,WH-0108,CONVERTED,UMBRELLA_TOPIC,자기이해,자기 이해,운세,WH_기타,79,179
+49,WH-0088,WAITING,OTHER,,2026년·4월,문화·아이디어,WH_돈·재테크,80,180
+50,WH-0078,WAITING,UMBRELLA_TOPIC,전시,전시,문화·아이디어,WH_문화·콘텐츠,81,181
+51,WH-0006,CONVERTED,OTHER,앱스토어,앱스토어,소비·금융,WH_생활·할 일,82,182
+52,WH-0056,WAITING,OTHER,,출퇴근용·명품,노트북 가방,WH_쇼핑·제품,83,183
+53,WH-0098,WAITING,ENTITY,보험계리사,보험계리사 시험,학습·커리어,WH_아이디어·영감,84,184
+54,WH-0027,WAITING,ENTITY,코딩테스트,코딩테스트,학습·커리어,WH_취업·커리어,87,187
+55,WH-0016,CONVERTED,UMBRELLA_TOPIC,기술면접,기술 면접,학습·커리어,WH_학습·지식,88,188
+56,WH-0068,WAITING,ENTITY,유산소운동,유산소 운동,생활·건강,WH_건강·운동,89,189
+57,WH-0079,WAITING,UMBRELLA_TOPIC,예술전시,예술 전시,문화·아이디어,WH_문화·콘텐츠,92,192
+58,WH-0007,WAITING,OTHER,,자취생이·자취생활을,생활·건강,WH_생활·할 일,93,193
+59,WH-0057,WAITING,ENTITY,베이비상품,베이비 상품,소비·금융,WH_쇼핑·제품,94,194
+60,WH-0038,WAITING,OTHER,강원도해안마을여행,강원도 해안 마을 여행,장소·먹거리,WH_여행·장소,96,196
+61,WH-0028,CONVERTED,ENTITY,알고리즘잡스,알고리즘 잡스,학습·커리어,WH_취업·커리어,98,198
+62,WH-0069,CONVERTED,OTHER,,걷기·운동,생활·건강,WH_건강·운동,100,200
+63,WH-0080,CONVERTED,ENTITY,영화,2026년 대한민국 영화,문화·아이디어,WH_문화·콘텐츠,103,203
+64,WH-0058,WAITING,ENTITY,텐트,텐트,소비·금융,WH_쇼핑·제품,105,205
+65,WH-0039,WAITING,UMBRELLA_TOPIC,여행,여행,장소·먹거리,WH_여행·장소,107,207
+66,WH-0009,WAITING,UMBRELLA_TOPIC,생활팁,생활 팁,생활·건강,WH_생활·할 일,115,215
+67,WH-0059,WAITING,ENTITY,campingtent,캠핑 텐트,소비·금융,WH_쇼핑·제품,116,216
+68,WH-0019,WAITING,UMBRELLA_TOPIC,디자인패턴,디자인 패턴,학습·커리어,WH_학습·지식,120,220
+69,WH-0060,WAITING,ENTITY,유튜브,유튜브,문화·아이디어,WH_쇼핑·제품,122,222

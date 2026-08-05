@@ -1,0 +1,130 @@
+{
+  "orders": [
+    {
+      "order": "interleaved",
+      "selectedItemCount": 123,
+      "existingFormalCount": 0,
+      "existingFormalOnlyCount": 0,
+      "existingSpuriousCandidateCount": 0,
+      "existingSpuriousItemIds": [],
+      "provisionalSignalCount": 69,
+      "convertedSignalCount": 22,
+      "waitingSignalCount": 34,
+      "expiredSignalCount": 13,
+      "existingSignalOnlyCount": 0,
+      "newGroup5CandidateCount": 0,
+      "newGroup3CandidateCount": 0,
+      "fragmentationByGroup": {
+        "JJANGGU_EXT": 2,
+        "SSAFY_EXT": 1,
+        "WH_건강·운동": 2,
+        "WH_기타": 3,
+        "WH_돈·재테크": 2,
+        "WH_문화·콘텐츠": 2,
+        "WH_생활·할 일": 2,
+        "WH_쇼핑·제품": 1,
+        "WH_아이디어·영감": 2,
+        "WH_여행·장소": 2,
+        "WH_음식·맛집": 1,
+        "WH_취업·커리어": 2,
+        "WH_학습·지식": 2
+      },
+      "maxFragmentation": 3,
+      "candidateReuseRate": 1.0,
+      "enteredCandidateStage": 24,
+      "reuseEvents": 24,
+      "avgCandidatePurity": 0.953,
+      "groupCaptureRate": 0.2308,
+      "capturedGroups": [
+        "SSAFY_EXT",
+        "WH_쇼핑·제품",
+        "WH_음식·맛집"
+      ],
+      "repeatedGroups": [
+        "JJANGGU_EXT",
+        "SSAFY_EXT",
+        "WH_건강·운동",
+        "WH_기타",
+        "WH_돈·재테크",
+        "WH_문화·콘텐츠",
+        "WH_생활·할 일",
+        "WH_쇼핑·제품",
+        "WH_아이디어·영감",
+        "WH_여행·장소",
+        "WH_음식·맛집",
+        "WH_취업·커리어",
+        "WH_학습·지식"
+      ],
+      "promotedCount": 5,
+      "promotedRecords": [
+        {
+          "candidateId": 1,
+          "candidateName": "운세",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "WH-0104",
+          "promotedAtOrder": 28,
+          "purity": 1.0,
+          "majorityGoldGroup": "WH_기타"
+        },
+        {
+          "candidateId": 4,
+          "candidateName": "SSAFY",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "SSF-0001",
+          "promotedAtOrder": 26,
+          "purity": 0.6667,
+          "majorityGoldGroup": "SSAFY_EXT"
+        },
+        {
+          "candidateId": 7,
+          "candidateName": "노트북 가방",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "WH-0054",
+          "promotedAtOrder": 58,
+          "purity": 1.0,
+          "majorityGoldGroup": "WH_쇼핑·제품"
+        },
+        {
+          "candidateId": 9,
+          "candidateName": "네트워크 기초",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "WH-0014",
+          "promotedAtOrder": 63,
+          "purity": 1.0,
+          "majorityGoldGroup": "WH_학습·지식"
+        },
+        {
+          "candidateId": 18,
+          "candidateName": "자기 이해",
+          "supportCountAtPromotion": 3,
+          "promotedAtItemId": "WH-0111",
+          "promotedAtOrder": 112,
+          "purity": 1.0,
+          "majorityGoldGroup": "WH_기타"
+        }
+      ],
+      "promotionPrecision": 0.8,
+      "promotionRecall": 0.3077,
+      "reclassifiedItemCount": 15,
+      "misMergeEventCount": 0,
+      "misMergeEvents": [],
+      "finalFormalCategoryCount": 10,
+      "exceededMaxFormalCategories": false,
+      "candidateErrorCount": 0,
+      "matchMethodCounts": {
+        "EMBEDDING": 23,
+        "ENTITY_EXACT": 25,
+        "AI_REVIEW": 6
+      },
+      "anchorTypeCounts": {
+        "UMBRELLA_TOPIC": 54,
+        "ENTITY": 50,
+        "OTHER": 19
+      },
+      "ruleBasedPromotionCount": 1,
+      "entityApiFailureCount": 12,
+      "aiResponseFailureCount": 0,
+      "fallbackErrorCount": 0
+    }
+  ]
+}

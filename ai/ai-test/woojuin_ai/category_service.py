@@ -72,8 +72,12 @@ class CategoryEngineService:
         item = value.item
 
         # 1. 정식 분류(항상 가장 가까운 기본 카테고리에 배치)
-        scores = self._classify_formal(item, value.formal_categories)
-        base_id, ambiguous = self._select_formal(scores, value.formal_categories)
+        #    base는 시드 카테고리에서만 고른다 — 승격 카테고리는 앵커 매칭으로 별도 연결한다.
+        #    (승격 카테고리를 분류 대상에 넣으면 그게 최상위로 뽑혀 base+승격이 하나로 붕괴한다)
+        seed_categories = [c for c in value.formal_categories if c.origin != "AI_PROMOTED"]
+        classify_targets = seed_categories or value.formal_categories
+        scores = self._classify_formal(item, classify_targets)
+        base_id, ambiguous = self._select_formal(scores, classify_targets)
         actions: list[Action] = [Action(type="LINK_FORMAL_CATEGORY", category_id=base_id)]
         formal_ids: list[int] = [base_id]
         base_name = self._name_of(base_id, value.formal_categories)

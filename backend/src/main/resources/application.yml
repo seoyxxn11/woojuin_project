@@ -162,6 +162,8 @@ woojuin:
     enabled: ${CATEGORY_ENGINE_ENABLED:false}
     base-url: ${CATEGORY_ENGINE_BASE_URL:http://localhost:8002}
     timeout-ms: ${CATEGORY_ENGINE_TIMEOUT_MS:45000}
+    # 잠정 신호(Redis) 수명. 첫 동일 대상 데이터가 이 시간 안에 2번째를 못 만나면 만료(=EXPIRED).
+    signal-ttl-hours: ${CATEGORY_ENGINE_SIGNAL_TTL_HOURS:336}
   ai-usage:
     # 1차 배포 비용 보호 장치. false로 바꾸면 Redis 카운터를 건드리지 않고 모든 아이템 AI 처리를 허용한다.
     enabled: ${AI_USAGE_LIMIT_ENABLED:true}

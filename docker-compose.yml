@@ -68,8 +68,11 @@ services:
   # ai/ai-mix(묶음 F 산출물) 그대로 컨테이너화한 것. OpenRouter를 호출하므로 키가 필수다 —
   # 키가 없으면 컨테이너는 뜨지만 호출이 실패하고, 백엔드는 AiAnalyzer 폴백(빈 결과)으로
   # 동작한다(앱 기동엔 지장 없음).
+  # feature/AI-server-test: 구 ai-mix 대신 ai-test로 빌드한다. ai-test는 ai-mix 엔드포인트
+  # 전부 + 카테고리 엔진(/api/category-engine/decide)을 함께 서빙하는 상위집합이라,
+  # 이 컨테이너 하나(8002)가 제목·요약/분류/임베딩과 decide를 모두 담당한다.
   aimix:
-    build: ./ai/ai-mix
+    build: ./ai/ai-test
     container_name: woojuin-aimix
     ports:
       - "8002:8002"

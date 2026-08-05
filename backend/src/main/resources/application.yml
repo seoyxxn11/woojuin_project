@@ -155,6 +155,13 @@ woojuin:
     # 한 번 돌고, input_hash가 이미 새 버전인 아이템은 건너뛰므로 재실행해도 안전하다(멱등).
     # 상시 켜두는 값이 아니다 — 백필이 끝난 다음 배포부터는 다시 꺼둘 것.
     embedding-backfill: ${AIMIX_EMBEDDING_BACKFILL:false}
+  # 증분 카테고리(앵커) 엔진 stateless decide API(ai/ai-test 사이드카). ai-test 서버는
+  # ai-mix 엔드포인트 + /api/category-engine/decide를 모두 제공하므로 base-url은 ai-test를
+  # 가리킨다(같은 포트 8002면 aimix와 공유). 기본은 꺼둔다 — 연동 테스트에서만 켠다.
+  category-engine:
+    enabled: ${CATEGORY_ENGINE_ENABLED:false}
+    base-url: ${CATEGORY_ENGINE_BASE_URL:http://localhost:8002}
+    timeout-ms: ${CATEGORY_ENGINE_TIMEOUT_MS:45000}
   ai-usage:
     # 1차 배포 비용 보호 장치. false로 바꾸면 Redis 카운터를 건드리지 않고 모든 아이템 AI 처리를 허용한다.
     enabled: ${AI_USAGE_LIMIT_ENABLED:true}

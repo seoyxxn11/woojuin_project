@@ -34,6 +34,21 @@ public class AiAnalyzerConfig {
         return new AiMixClient(baseUrl, Duration.ofMillis(timeoutMs), objectMapper);
     }
 
+    /**
+     * 증분 카테고리(앵커) 엔진 stateless decide 클라이언트(ai-test 사이드카). 상태 전이 판단만
+     * 받아오고 DB·Redis 반영은 백엔드가 한다. 켜져 있을 때만 등록한다 — 쓰는 쪽은
+     * {@link ObjectProvider}로 받아 없으면 건너뛴다.
+     */
+    @Bean
+    @ConditionalOnProperty(name = "woojuin.category-engine.enabled", havingValue = "true")
+    public CategoryEngineClient categoryEngineClient(
+            ObjectMapper objectMapper,
+            @Value("${woojuin.category-engine.base-url}") String baseUrl,
+            @Value("${woojuin.category-engine.timeout-ms}") long timeoutMs) {
+        log.info("CategoryEngineClient: 카테고리 엔진 활성화 (baseUrl={})", baseUrl);
+        return new CategoryEngineClient(baseUrl, Duration.ofMillis(timeoutMs), objectMapper);
+    }
+
     @Bean
     public AiAnalyzer aiAnalyzer(
             ObjectProvider<AiMixClient> clientProvider,

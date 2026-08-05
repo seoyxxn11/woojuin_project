@@ -30,6 +30,8 @@ from woojuin_ai.models import (
     UrlAiSource,
 )
 from woojuin_ai.service import AiMixService, InvalidModelResponse
+from woojuin_ai.category_models import DecideInput, DecideOutput
+from woojuin_ai.category_service import CategoryEngineService
 
 
 app = FastAPI(
@@ -48,6 +50,12 @@ def get_settings() -> Settings:
 def get_service() -> AiMixService:
     settings = get_settings()
     return AiMixService(OpenRouterClient(settings), settings)
+
+
+@lru_cache
+def get_category_service() -> CategoryEngineService:
+    settings = get_settings()
+    return CategoryEngineService(OpenRouterClient(settings), settings)
 
 
 def success(data: Any) -> dict[str, Any]:
@@ -195,3 +203,19 @@ def create_category_description(
     service: AiMixService = Depends(get_service),
 ) -> dict[str, Any]:
     return success(service.create_category_description(value))
+
+
+@app.post(
+    "/api/category-engine/decide",
+    response_model=ApiResponse[DecideOutput],
+)
+def category_engine_decide(
+    value: DecideInput,
+    service: CategoryEngineService = Depends(get_category_service),
+) -> dict[str, Any]:
+    """상태 전이 판단. 현재 워크스페이스 상태 + 신규 아이템을 받아 actions만 반환한다.
+
+    AI 서버는 상태를 저장하지 않는다. 정식 분류·앵커 추출·매칭·승격 판단만 하고,
+    실제 DB·Redis 반영은 백엔드가 actions를 실행해 처리한다.
+    """
+    return success(service.decide(value))

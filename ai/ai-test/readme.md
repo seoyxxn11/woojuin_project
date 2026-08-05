@@ -1,11 +1,27 @@
 # Woojuin AI Server Test
 
-> `ai/ai-mix` 골격을 그대로 복사한 **스캐폴드**입니다(feature/AI-server-test).
-> 이후 `ai-test` 브랜치의 증분 카테고리(핵심 대상/앵커) 엔진을 이식해
-> API 엔드포인트로 노출할 예정입니다. 현재는 ai-mix와 동일하게 동작합니다.
+> `ai/ai-mix` 골격 기반. ai-mix의 단계별 API에 더해 **증분 카테고리(앵커) 엔진**을
+> stateless 상태 전이 API로 추가했습니다.
 
 우주인의 제목·요약 생성, 카테고리 분류, 임베딩, 3차원 좌표 축소, 카테고리 설명
 생성을 각각 독립적으로 호출할 수 있는 FastAPI 서비스입니다.
+
+## 카테고리 엔진 (stateless 상태 전이 API)
+
+`POST /api/category-engine/decide`
+
+AI 서버는 **상태를 저장하지 않습니다.** 백엔드가 현재 워크스페이스 상태(정식 카테고리,
+후보 shortlist, 잠정 신호)와 신규 아이템을 전달하면, AI 서버는 판단만 하고 백엔드가
+DB·Redis에 적용할 `actions`만 반환합니다.
+
+- **판단**: 정식 분류 · 카테고리 앵커 추출(ENTITY/UMBRELLA_TOPIC) · 승격 카테고리/후보/신호 매칭 · 승격
+- **매칭 우선순위**: `ENTITY_EXACT → ENTITY_ALIAS → EMBEDDING(백엔드 Top-K) → AI_REVIEW`
+- **승격**: ENTITY는 규칙 기반(동일 앵커 3건+confidence, 순서 무관), UMBRELLA_TOPIC은 AI 검토
+- **앵커 실패/저신뢰**: 임베딩만으로 신호→후보 전환 금지, AI 의미검증 필수
+- **액션**: `LINK_FORMAL_CATEGORY · STORE_SIGNAL · CREATE_CANDIDATE · LINK_CANDIDATE · PROMOTE_CANDIDATE`
+
+상태 소유: 정식 카테고리·후보·연결·별칭·이력은 백엔드 DB, 첫 잠정 신호와 TTL은 Redis.
+(엔진 판단 로직은 `ai-test` 브랜치 `ai/ai-text`의 증분 카테고리 엔진에서 이식.)
 
 모든 생성형 AI 및 임베딩 호출은 OpenRouter를 사용하며 API 키는
 `OPENROUTER_API_KEY` 환경변수에서만 읽습니다.

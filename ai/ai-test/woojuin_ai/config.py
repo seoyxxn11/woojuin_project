@@ -19,6 +19,10 @@ class Settings:
     app_title: str = "Woojuin AI Mix"
     category_score_threshold: float = 0.65
     category_max_results: int = 2
+    # 증분 카테고리(앵커) 엔진 — stateless decide용
+    category_score_gap_threshold: float = 0.10
+    category_min_support_count: int = 3
+    anchor_min_confidence: float = 0.5
 
 
 def _find_env_file(start: Path) -> Path | None:
@@ -59,6 +63,9 @@ def load_settings(start: Path | None = None) -> Settings:
     retries = _int_env("OPENROUTER_MAX_RETRIES", 3)
     threshold = _float_env("CATEGORY_SCORE_THRESHOLD", 0.65)
     max_results = _int_env("CATEGORY_MAX_RESULTS", 2)
+    gap_threshold = _float_env("CATEGORY_SCORE_GAP_THRESHOLD", 0.10)
+    min_support = _int_env("CATEGORY_MIN_SUPPORT_COUNT", 3)
+    anchor_min_conf = _float_env("ANCHOR_MIN_CONFIDENCE", 0.5)
     if timeout <= 0:
         raise ValueError("OPENROUTER_TIMEOUT_SECONDS는 0보다 커야 합니다")
     if retries < 0:
@@ -67,6 +74,12 @@ def load_settings(start: Path | None = None) -> Settings:
         raise ValueError("CATEGORY_SCORE_THRESHOLD는 0~1이어야 합니다")
     if not 1 <= max_results <= 10:
         raise ValueError("CATEGORY_MAX_RESULTS는 1~10이어야 합니다")
+    if not 0 <= gap_threshold <= 1:
+        raise ValueError("CATEGORY_SCORE_GAP_THRESHOLD는 0~1이어야 합니다")
+    if min_support < 2:
+        raise ValueError("CATEGORY_MIN_SUPPORT_COUNT는 2 이상이어야 합니다")
+    if not 0 <= anchor_min_conf <= 1:
+        raise ValueError("ANCHOR_MIN_CONFIDENCE는 0~1이어야 합니다")
 
     api_key = os.getenv("OPENROUTER_API_KEY", "").strip() or None
     referer = os.getenv("OPENROUTER_HTTP_REFERER", "").strip() or None
@@ -84,4 +97,7 @@ def load_settings(start: Path | None = None) -> Settings:
         http_referer=referer,
         category_score_threshold=threshold,
         category_max_results=max_results,
+        category_score_gap_threshold=gap_threshold,
+        category_min_support_count=min_support,
+        anchor_min_confidence=anchor_min_conf,
     )

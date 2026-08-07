@@ -39,9 +39,23 @@ const LINK_WINDOW_KEY = 'loginWindowId';
  */
 const PENDING_CODE_KEY = 'pendingLinkCode';
 
-export async function isPendingLinkCode(code: string): Promise<boolean> {
+interface PendingLink {
+  code: string;
+  expiresAt: number;
+}
+
+/** 진행 중(만료 전)인 링크 흐름 — 없거나 코드 수명이 지났으면 null. */
+async function pendingLink(): Promise<PendingLink | null> {
   const stored = await chrome.storage.session.get(PENDING_CODE_KEY);
-  return typeof code === 'string' && code.length > 0 && stored[PENDING_CODE_KEY] === code;
+  const pending = stored[PENDING_CODE_KEY] as PendingLink | undefined;
+  return pending && typeof pending.code === 'string' && pending.expiresAt > Date.now()
+    ? pending
+    : null;
+}
+
+export async function isPendingLinkCode(code: string): Promise<boolean> {
+  const pending = await pendingLink();
+  return code.length > 0 && pending?.code === code;
 }
 
 const POLL_INTERVAL_MS = 2_000;
@@ -61,6 +75,10 @@ let activeFlow = 0;
  * @throws 코드 발급 실패(통신 없음 등). 창이 열리기 전이므로 팝업이 받아서 보여줄 수 있다.
  */
 export async function beginDeviceLinkLogin(): Promise<void> {
+  // 이미 로그인돼 있으면 창을 열지 않는다 — 팝업 UI 는 로그인 상태에서 이 버튼을 안
+  // 보여주지만, 조용한 자동 연결이 클릭 직전에 끝나는 경합이 있다. 그때 창을 열면
+  // 계정당 세션이 하나 더 생겨 기기 목록에 중복 "크롬 익스텐션"이 쌓인다.
+  if (await getRefreshToken()) return;
   const started = await publicApiFetch<DeviceLinkStart>('/auth/device-link', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -80,7 +98,7 @@ export async function beginDeviceLinkLogin(): Promise<void> {
   }
 
   const flow = ++activeFlow;
-  await chrome.storage.session.set({ [PENDING_CODE_KEY]: started.code });
+  await savePending(started);
   void pollUntilApproved(flow, started);
 }
 
@@ -89,21 +107,35 @@ export async function beginDeviceLinkLogin(): Promise<void> {
  * requestLinkCode 메시지), 코드를 발급해 돌려주고 승인을 기다린다. 웹은 방금 로그인한
  * 세션으로 그 코드를 곧바로 승인하므로 창도 클릭도 없이 확장이 로그인된다.
  *
- * **이미 로그인돼 있으면 null** — 웹에 로그인할 때마다 세션이 하나씩 늘면 기기 목록이
- * 쓰레기장이 되고, 확장이 멀쩡히 쓰던 세션을 갈아치울 이유도 없다. 확장에서 로그아웃한
- * 직후는 보통 웹이 여전히 로그인 상태라 새 로그인 이벤트가 없다 — 로그아웃이 조용히
- * 뒤집히지 않는다는 뜻이고, 다음 웹 "로그인"부터 다시 자동으로 붙는다.
+ * **null 을 돌려주는 두 경우** — 웹은 아무것도 하지 않는다:
+ * - 이미 로그인돼 있음: 웹에 로그인할 때마다 세션이 늘면 기기 목록이 쓰레기장이 되고,
+ *   확장이 멀쩡히 쓰던 세션을 갈아치울 이유도 없다. 확장에서 로그아웃한 직후는 보통
+ *   웹이 여전히 로그인 상태라 새 로그인 이벤트가 없다 — 로그아웃이 조용히 뒤집히지
+ *   않는다는 뜻이고, 다음 웹 "로그인"부터 다시 자동으로 붙는다.
+ * - 진행 중 흐름이 있음: 승인 창 흐름이 도는 중에(예: 창에서 로그인을 마친 순간의 훅)
+ *   새 코드를 또 만들면 **두 흐름이 각자 완주해 세션이 두 개** 생긴다. 돌던 흐름이
+ *   마저 끝나게 둔다.
  */
 export async function requestSilentLinkCode(): Promise<string | null> {
   if (await getRefreshToken()) return null;
+  if (await pendingLink()) return null;
   const started = await publicApiFetch<DeviceLinkStart>('/auth/device-link', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });
   const flow = ++activeFlow;
-  await chrome.storage.session.set({ [PENDING_CODE_KEY]: started.code });
+  await savePending(started);
   void pollUntilApproved(flow, started);
   return started.code;
+}
+
+async function savePending(started: DeviceLinkStart): Promise<void> {
+  await chrome.storage.session.set({
+    [PENDING_CODE_KEY]: {
+      code: started.code,
+      expiresAt: Date.now() + started.expiresInSeconds * 1_000,
+    } satisfies PendingLink,
+  });
 }
 
 async function pollUntilApproved(flow: number, started: DeviceLinkStart): Promise<void> {

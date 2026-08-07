@@ -85,7 +85,8 @@ export default function Popup() {
   const [contextFeedback, setContextFeedback] = useState<ContextSaveFeedback | null>(null);
   const urlRef = useRef<HTMLParagraphElement>(null);
 
-  const loadWorkspaces = useCallback(async () => {
+  /** @returns 목록을 실제로 받았는지 — 물려받은 토큰이 살아 있는지의 판정으로도 쓴다. */
+  const loadWorkspaces = useCallback(async (): Promise<boolean> => {
     setStatus('loading');
     try {
       const [items, previousId] = await Promise.all([getWorkspaces(), getSelectedWorkspaceId()]);
@@ -97,10 +98,12 @@ export default function Popup() {
       await setCachedWorkspaces(items);
       if (selected) await setSelectedWorkspaceId(selected.id);
       setStatus('idle');
+      return true;
     } catch (error) {
       if (error instanceof ApiError && error.status === 401) setAuthenticated(false);
       setStatus('error');
       setMessage(messageFrom(error));
+      return false;
     }
   }, []);
 
@@ -214,12 +217,19 @@ export default function Popup() {
     setMessage('');
     // 로그인 버튼을 누른 것 자체가 '다시 붙어도 좋다'는 뜻 — 로그아웃 때 세운 차단을 내린다.
     await setAutoLoginSuppressed(false);
-    // 브라우저에 이미 우주인 세션이 있으면 로그인 창을 띄우지 않는다 — 열어 둔 우주인 탭에서
-    // 그대로 이어받으면 되고, 이 경우 창을 띄우면 아무 조작도 필요 없는 창이 떴다 사라진다.
+    // 브라우저에 살아 있는 우주인 세션이 있으면 로그인 창을 띄우지 않는다 — 열어 둔 우주인
+    // 탭에서 그대로 이어받으면 되고, 이 경우 창을 띄우면 아무 조작도 필요 없는 창이 떴다
+    // 사라진다. 다만 수확이 됐다고 끝이 아니다: 확장 로그아웃이 서버 세션까지 끊으므로
+    // (api/auth.ts) 웹 탭 localStorage 에는 죽은 세션의 토큰이 남아 있을 수 있다(웹은 다음
+    // 요청에서야 걷어낸다). 살았는지는 목록 요청이 판정한다 — 죽은 토큰이면 refresh 거부가
+    // 토큰을 지우므로, 그때는 진짜 로그인 창으로 간다.
     if (await harvestWebSession()) {
-      setAuthenticated(true);
-      await loadWorkspaces();
-      return;
+      if (await loadWorkspaces()) {
+        setAuthenticated(true);
+        return;
+      }
+      // 토큰이 남아 있으면 통신 오류다 — loadWorkspaces 가 남긴 메시지를 그대로 보여 준다.
+      if (await getRefreshToken()) return;
     }
     setStatus('idle');
     await openWebLogin();
@@ -279,7 +289,9 @@ export default function Popup() {
   }
 
   async function handleLogout() {
-    // 토큰만 지우면 팝업을 다시 열 때 우주인 탭에서 곧바로 재수확되어 로그아웃이 무의미해진다.
+    // logout() 은 서버 세션까지 끊는다(api/auth.ts) — 그래도 차단 플래그는 여전히 필요하다.
+    // 웹 탭 localStorage 에는 죽은 토큰 사본이 남는데(웹은 다음 요청에서야 걷어낸다), 플래그가
+    // 없으면 팝업을 다시 여는 순간 그 시체를 주워 와 로그인된 화면이 번쩍했다 꺼진다.
     await Promise.all([
       logout(),
       clearSelectedWorkspaceId(),

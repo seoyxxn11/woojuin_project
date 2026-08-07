@@ -31,9 +31,10 @@ export async function saveTokens(accessToken: string, refreshToken: string): Pro
 /**
  * 자동 로그인 차단 플래그.
  *
- * 확장은 우주인 탭에 살아 있는 세션을 자동으로 물려받는다(webSession.ts). 편하지만 그대로면
- * **로그아웃이 무의미해진다** — 확장 토큰만 지워도 팝업을 다시 열 때 곧바로 재수확되기 때문이다.
- * 그래서 로그아웃은 이 플래그를 세우고, 사용자가 로그인 버튼을 누를 때만 내린다.
+ * 확장은 우주인 탭에 살아 있는 세션을 자동으로 물려받는다(webSession.ts). 로그아웃이 서버
+ * 세션까지 끊는 지금도(api/auth.ts) 이 플래그는 필요하다 — 웹 탭 localStorage 에는 죽은
+ * 토큰 사본이 남아 있어서(웹은 다음 요청에서야 걷어낸다), 플래그 없이 팝업을 다시 열면
+ * 그 시체를 주워 와 로그인된 화면이 번쩍했다 꺼진다. 사용자가 로그인 버튼을 누를 때만 내린다.
  * 브라우저를 닫아도 유지되도록 local 에 둔다(session 이면 재시작으로 풀려 버린다).
  */
 const AUTO_LOGIN_SUPPRESSED_KEY = 'autoLoginSuppressed';

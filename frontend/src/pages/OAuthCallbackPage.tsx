@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useAtom, useSetAtom } from 'jotai';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { accessTokenAtom, postLoginRedirectAtom, refreshTokenAtom } from '@/stores/authAtoms';
+import { offerExtensionAutoLink } from '@/services/extensionLink';
 
 /**
  * 구글 로그인 성공 시 백엔드(OAuth2LoginSuccessHandler)가
@@ -22,6 +23,9 @@ export default function OAuthCallbackPage() {
     if (accessToken && refreshToken) {
       setAccessToken(accessToken);
       setRefreshToken(refreshToken);
+      // 이 브라우저에 우주인 익스텐션이 깔려 있고 로그아웃 상태면 조용히 같이 연결한다 —
+      // 실패·부재 모두 무해한 fire-and-forget 이라 로그인 흐름과 무관하다(-498).
+      offerExtensionAutoLink();
 
       if (isNewUser) {
         // 이메일 가입과 같은 관문(닉네임 설정·개인정보처리방침 동의)을 거치게 한다.

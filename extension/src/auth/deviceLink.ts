@@ -1,5 +1,5 @@
 import { ApiError, publicApiFetch, WEB_ORIGIN } from '@/api/client';
-import { saveTokens } from '@/storage/authStorage';
+import { getRefreshToken, saveTokens } from '@/storage/authStorage';
 
 /**
  * 링크 코드(device-link) 로그인 — 워치(S15P11C105-458)와 같은 흐름의 익스텐션판(-498).
@@ -82,6 +82,28 @@ export async function beginDeviceLinkLogin(): Promise<void> {
   const flow = ++activeFlow;
   await chrome.storage.session.set({ [PENDING_CODE_KEY]: started.code });
   void pollUntilApproved(flow, started);
+}
+
+/**
+ * 조용한 자동 연결(-498) — 웹이 로그인 성공 순간 "코드 하나 줘"라고 요청하면(background 의
+ * requestLinkCode 메시지), 코드를 발급해 돌려주고 승인을 기다린다. 웹은 방금 로그인한
+ * 세션으로 그 코드를 곧바로 승인하므로 창도 클릭도 없이 확장이 로그인된다.
+ *
+ * **이미 로그인돼 있으면 null** — 웹에 로그인할 때마다 세션이 하나씩 늘면 기기 목록이
+ * 쓰레기장이 되고, 확장이 멀쩡히 쓰던 세션을 갈아치울 이유도 없다. 확장에서 로그아웃한
+ * 직후는 보통 웹이 여전히 로그인 상태라 새 로그인 이벤트가 없다 — 로그아웃이 조용히
+ * 뒤집히지 않는다는 뜻이고, 다음 웹 "로그인"부터 다시 자동으로 붙는다.
+ */
+export async function requestSilentLinkCode(): Promise<string | null> {
+  if (await getRefreshToken()) return null;
+  const started = await publicApiFetch<DeviceLinkStart>('/auth/device-link', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const flow = ++activeFlow;
+  await chrome.storage.session.set({ [PENDING_CODE_KEY]: started.code });
+  void pollUntilApproved(flow, started);
+  return started.code;
 }
 
 async function pollUntilApproved(flow: number, started: DeviceLinkStart): Promise<void> {

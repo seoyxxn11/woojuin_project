@@ -21,9 +21,40 @@ interface ChromeRuntimeMessaging {
   sendMessage?: (
     extensionId: string,
     message: unknown,
-    callback: (response?: { mine?: boolean }) => void,
+    callback: (response?: { mine?: boolean; linkCode?: string }) => void,
   ) => void;
   lastError?: unknown;
+}
+
+/**
+ * 로그인 성공 순간, 이 브라우저의 익스텐션도 조용히 연결해 준다 (0클릭·창 없음).
+ *
+ * 익스텐션에게 "코드 하나 줘"라고 요청하고(requestLinkCode), 받은 코드를 방금 로그인한
+ * 세션으로 곧바로 승인한다 — 코드가 **익스텐션에게서 직접 온 것**이라 linkCode URL 처럼
+ * 위조될 표면이 없고, 통로 자체가 우주인 origin 전용이다. 익스텐션이 없거나 이미
+ * 로그인돼 있으면 빈 응답이 와서 아무 일도 일어나지 않는다.
+ *
+ * 실패는 전부 삼킨다 — 로그인 흐름을 막을 이유가 없고, 수동 경로(익스텐션 팝업의
+ * 시작하기 버튼)가 항상 남아 있다.
+ */
+export function offerExtensionAutoLink(): void {
+  const runtime = (window as { chrome?: { runtime?: ChromeRuntimeMessaging } }).chrome?.runtime;
+  const send = runtime?.sendMessage;
+  if (!runtime || !send) return;
+  try {
+    send.call(runtime, EXTENSION_ID, { type: 'requestLinkCode' }, (response) => {
+      void runtime.lastError;
+      const code = response?.linkCode;
+      if (typeof code !== 'string' || code.length !== 6) return;
+      void import('@/services/auth').then(({ approveDeviceLink }) =>
+        approveDeviceLink(code).catch(() => {
+          // 승인 실패(코드 만료 등) — 익스텐션 폴링이 시한으로 접히고, 수동 경로가 남는다.
+        }),
+      );
+    });
+  } catch {
+    // 통로가 없는 브라우저 — 조용히 넘어간다.
+  }
 }
 
 /** 이 코드가 (이 브라우저의) 우주인 익스텐션이 방금 발급받은 것인지 확인한다. */

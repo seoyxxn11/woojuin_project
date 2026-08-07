@@ -1,6 +1,11 @@
 import { ApiError, WEB_ORIGIN } from '@/api/client';
 import { saveImage, saveMemo } from '@/api/items';
-import { beginDeviceLinkLogin, closeLinkWindow, isPendingLinkCode } from '@/auth/deviceLink';
+import {
+  beginDeviceLinkLogin,
+  closeLinkWindow,
+  isPendingLinkCode,
+  requestSilentLinkCode,
+} from '@/auth/deviceLink';
 import { getWorkspaces } from '@/api/workspaces';
 import { AUTH_STORAGE, getAccessToken, getRefreshToken } from '@/storage/authStorage';
 import { openFromNotification, resumeWatchOnAlarm, watchItem } from '@/background/watchItem';
@@ -90,13 +95,25 @@ chrome.runtime.onMessage.addListener((message: unknown, _sender, sendResponse) =
 // 빌드 모드의 웹 주소까지 좁힌다.
 chrome.runtime.onMessageExternal.addListener((message: unknown, sender, sendResponse) => {
   const request = message as { type?: string; code?: string };
-  if (request?.type !== 'isPendingLinkCode' || typeof request.code !== 'string') return;
   if (sender.origin !== WEB_ORIGIN) {
-    sendResponse({ mine: false });
+    sendResponse({});
     return;
   }
-  void isPendingLinkCode(request.code).then((mine) => sendResponse({ mine }));
-  return true; // sendResponse 를 비동기로 쓴다
+
+  if (request?.type === 'isPendingLinkCode' && typeof request.code === 'string') {
+    void isPendingLinkCode(request.code).then((mine) => sendResponse({ mine }));
+    return true; // sendResponse 를 비동기로 쓴다
+  }
+
+  // 웹이 로그인 성공 순간 보내는 자동 연결 요청 — 확장이 로그아웃 상태면 코드를 발급해
+  // 돌려주고(웹이 곧바로 승인한다), 이미 로그인돼 있으면 빈 응답으로 거절한다.
+  // 실패(통신 등)도 빈 응답 — 웹은 조용히 넘어가고 수동 경로(팝업 버튼)가 남는다.
+  if (request?.type === 'requestLinkCode') {
+    requestSilentLinkCode()
+      .then((code) => sendResponse(code ? { linkCode: code } : {}))
+      .catch(() => sendResponse({}));
+    return true;
+  }
 });
 
 // 링크 승인으로 토큰이 저장되면 우클릭 메뉴 재료(워크스페이스 목록)를 받아 두고,

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import ConfirmModal from '@/components/ui/ConfirmModal';
 import WatchLinkModal from '@/components/domain/mypage/WatchLinkModal';
+import { confirmExtensionLinkCode } from '@/services/extensionLink';
 import {
   fetchSessions,
   revokeAllSessions,
@@ -34,10 +35,23 @@ const ConnectedDevicesCard = ({
   const queryClient = useQueryClient();
   const [pending, setPending] = useState<PendingRevoke>(null);
   const [watchLinkOpen, setWatchLinkOpen] = useState(false);
+  const [autoApprove, setAutoApprove] = useState(false);
 
   // 익스텐션에서 넘어온 코드가 있으면 사용자가 버튼을 찾을 필요 없이 모달부터 연다.
+  // 그 코드가 정말 이 브라우저의 익스텐션이 발급받은 것이면(대조 성공) 승인 버튼도
+  // 대신 눌러 준다 — 0클릭. 대조에 실패하면(익스텐션 없음·남이 열어 둔 URL) 수동으로
+  // 남는다: 왜 자동이 조건부인지는 services/extensionLink.ts 참고.
   useEffect(() => {
-    if (initialLinkCode) setWatchLinkOpen(true);
+    if (!initialLinkCode) return;
+    let cancelled = false;
+    void confirmExtensionLinkCode(initialLinkCode).then((mine) => {
+      if (cancelled) return;
+      setAutoApprove(mine);
+      setWatchLinkOpen(true);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [initialLinkCode]);
 
   // 오래된 목록으로 엉뚱한 세션을 끊으면 안 되므로 캐시하지 않고 화면을 열 때마다 다시 받는다.
@@ -177,6 +191,7 @@ const ConnectedDevicesCard = ({
       <WatchLinkModal
         open={watchLinkOpen}
         initialCode={initialLinkCode}
+        autoApprove={autoApprove}
         onClose={() => setWatchLinkOpen(false)}
         onApproved={() => {
           void queryClient.invalidateQueries({ queryKey: ['auth', 'sessions'] });

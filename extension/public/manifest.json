@@ -30,6 +30,13 @@
     "https://api.dev.woojuin.store/*",
     "https://api.woojuin.store/*"
   ],
+  "externally_connectable": {
+    "matches": [
+      "http://localhost:5173/*",
+      "https://dev.woojuin.store/*",
+      "https://woojuin.store/*"
+    ]
+  },
   "optional_host_permissions": [
     "http://*/*",
     "https://*/*"

@@ -1,6 +1,6 @@
-import { ApiError } from '@/api/client';
+import { ApiError, WEB_ORIGIN } from '@/api/client';
 import { saveImage, saveMemo } from '@/api/items';
-import { beginDeviceLinkLogin, closeLinkWindow } from '@/auth/deviceLink';
+import { beginDeviceLinkLogin, closeLinkWindow, isPendingLinkCode } from '@/auth/deviceLink';
 import { getWorkspaces } from '@/api/workspaces';
 import { AUTH_STORAGE, getAccessToken, getRefreshToken } from '@/storage/authStorage';
 import { openFromNotification, resumeWatchOnAlarm, watchItem } from '@/background/watchItem';
@@ -80,6 +80,22 @@ chrome.runtime.onMessage.addListener((message: unknown, _sender, sendResponse) =
       ok: false,
       message: error instanceof Error ? error.message : '로그인을 시작하지 못했습니다.',
     }));
+  return true; // sendResponse 를 비동기로 쓴다
+});
+
+// 승인 페이지(우주인 웹)의 0클릭 확인 — "이 코드, 네가 발급받은 것 맞아?"에만 답한다.
+// 대조가 성립해야 페이지가 자동 승인하므로, 아무 사이트가 열어 둔 linkCode URL 로는
+// 자동 승인이 일어나지 않는다(그 코드는 여기 저장된 코드와 다르다). manifest 의
+// externally_connectable 이 발신자를 우주인 origin 으로 제한하고, 아래 origin 검사가
+// 빌드 모드의 웹 주소까지 좁힌다.
+chrome.runtime.onMessageExternal.addListener((message: unknown, sender, sendResponse) => {
+  const request = message as { type?: string; code?: string };
+  if (request?.type !== 'isPendingLinkCode' || typeof request.code !== 'string') return;
+  if (sender.origin !== WEB_ORIGIN) {
+    sendResponse({ mine: false });
+    return;
+  }
+  void isPendingLinkCode(request.code).then((mine) => sendResponse({ mine }));
   return true; // sendResponse 를 비동기로 쓴다
 });
 

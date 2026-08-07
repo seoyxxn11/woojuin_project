@@ -19,6 +19,13 @@ const HOSTS_BY_MODE: Record<string, string[]> = {
   production: ['https://api.woojuin.store/*'],
 };
 
+/** externally_connectable(승인 페이지의 0클릭 확인 통로, -498)도 같은 이유로 모드별로 좁힌다. */
+const CONNECTABLE_BY_MODE: Record<string, string[]> = {
+  development: ['http://localhost:5173/*'],
+  demo: ['https://dev.woojuin.store/*'],
+  production: ['https://woojuin.store/*'],
+};
+
 function narrowHostPermissions(mode: string): Plugin {
   return {
     name: 'woojuin:narrow-host-permissions',
@@ -31,11 +38,23 @@ function narrowHostPermissions(mode: string): Plugin {
         return;
       }
       const target = resolve(options.dir ?? 'dist', 'manifest.json');
-      const manifest = JSON.parse(readFileSync(target, 'utf-8')) as { host_permissions?: string[] };
-      if (!manifest.host_permissions) return;
-      manifest.host_permissions = manifest.host_permissions.filter((o) => allowed.includes(o));
+      const manifest = JSON.parse(readFileSync(target, 'utf-8')) as {
+        host_permissions?: string[];
+        externally_connectable?: { matches?: string[] };
+      };
+      if (manifest.host_permissions) {
+        manifest.host_permissions = manifest.host_permissions.filter((o) => allowed.includes(o));
+      }
+      const connectable = CONNECTABLE_BY_MODE[mode];
+      if (manifest.externally_connectable?.matches && connectable) {
+        manifest.externally_connectable.matches =
+          manifest.externally_connectable.matches.filter((o) => connectable.includes(o));
+      }
       writeFileSync(target, `${JSON.stringify(manifest, null, 2)}\n`);
-      this.info(`host_permissions → ${manifest.host_permissions.join(', ')} (mode=${mode})`);
+      this.info(
+        `host_permissions → ${(manifest.host_permissions ?? []).join(', ')} / `
+        + `connectable → ${(manifest.externally_connectable?.matches ?? []).join(', ')} (mode=${mode})`,
+      );
     },
   };
 }

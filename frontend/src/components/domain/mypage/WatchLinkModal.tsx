@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import Modal from '@/components/ui/Modal';
 import { approveDeviceLink } from '@/services/auth';
@@ -10,9 +10,15 @@ interface WatchLinkModalProps {
   onApproved: () => void;
   /**
    * 열릴 때 미리 채울 코드 — 크롬 익스텐션이 `?linkCode=` 로 들어올 때 쓴다(S15P11C105-498).
-   * 익스텐션은 코드를 자기가 발급받았으므로 사용자가 옮겨 적을 필요가 없다. 승인 버튼만 남는다.
+   * 익스텐션은 코드를 자기가 발급받았으므로 사용자가 옮겨 적을 필요가 없다.
    */
   initialCode?: string;
+  /**
+   * 참이면 승인 버튼까지 대신 누른다 — 0클릭. **이 코드가 정말 이 브라우저의 익스텐션이
+   * 발급받은 것임을 대조로 확인한 경우에만** 부모가 켠다(ConnectedDevicesCard). URL 의
+   * 코드를 무조건 자동 승인하면 아무 사이트나 계정에 제 기기를 붙일 수 있다.
+   */
+  autoApprove?: boolean;
 }
 
 /**
@@ -21,20 +27,16 @@ interface WatchLinkModalProps {
  * 기기 화면의 6자리 코드를 여기 입력하면 서버가 그 코드에 이 계정을 붙이고,
  * 기기는 폴링으로 토큰을 받아 간다 — 기기 쪽 입력이 0회가 되는 흐름의 웹 절반이다.
  */
-const WatchLinkModal = ({ open, onClose, onApproved, initialCode }: WatchLinkModalProps) => {
+const WatchLinkModal = ({
+  open,
+  onClose,
+  onApproved,
+  initialCode,
+  autoApprove = false,
+}: WatchLinkModalProps) => {
   const [code, setCode] = useState('');
-
-  // 프리필은 "열리는 순간"에만 — 열린 뒤 사용자가 고친 입력을 리렌더가 덮어쓰면 안 된다.
-  useEffect(() => {
-    if (open && initialCode) {
-      setCode(
-        initialCode
-          .toUpperCase()
-          .replace(/[^A-Z0-9]/g, '')
-          .slice(0, 6),
-      );
-    }
-  }, [open, initialCode]);
+  // StrictMode(dev)의 이중 실행·리렌더에 자동 승인이 두 번 나가지 않게 잠근다.
+  const autoSubmitted = useRef(false);
 
   const mutation = useMutation({
     // 함수 참조를 그대로 주면 react-query 가 두 번째 인자(컨텍스트)까지 넘긴다 — 코드만 고정
@@ -44,6 +46,22 @@ const WatchLinkModal = ({ open, onClose, onApproved, initialCode }: WatchLinkMod
       onApproved();
     },
   });
+
+  // 프리필은 "열리는 순간"에만 — 열린 뒤 사용자가 고친 입력을 리렌더가 덮어쓰면 안 된다.
+  useEffect(() => {
+    if (open && initialCode) {
+      const prefill = initialCode
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g, '')
+        .slice(0, 6);
+      setCode(prefill);
+      if (autoApprove && prefill.length === 6 && !autoSubmitted.current) {
+        autoSubmitted.current = true;
+        mutation.mutate(prefill);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mutation 은 렌더마다 새 객체라 넣으면 무한 재실행
+  }, [open, initialCode, autoApprove]);
 
   const close = () => {
     setCode('');

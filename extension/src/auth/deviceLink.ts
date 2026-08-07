@@ -29,6 +29,21 @@ interface DeviceLinkPoll {
 /** 승인 창의 windowId. 서비스워커는 언제든 죽을 수 있어 메모리 대신 storage 에 둔다. */
 const LINK_WINDOW_KEY = 'loginWindowId';
 
+/**
+ * 지금 진행 중인 링크 코드. 승인 페이지의 **0클릭 자동 승인**이 이걸 대조한다 —
+ * 페이지가 externally_connectable 메시지로 "이 코드 네 것 맞아?"라고 물으면(background)
+ * 여기 저장된 코드와 같을 때만 그렇다고 답하고, 페이지는 그 답을 받아야만 자동 승인한다.
+ * 대조 없이 URL 의 코드를 자동 승인하면 아무 사이트나 /my?linkCode=공격자코드 창을 열어
+ * 로그인된 사용자의 계정에 제 기기를 붙일 수 있다(계정 탈취). 워커가 죽어도 남게
+ * session 영역에 둔다(브라우저를 닫으면 사라지는 게 맞다 — 코드 수명이 몇 분이다).
+ */
+const PENDING_CODE_KEY = 'pendingLinkCode';
+
+export async function isPendingLinkCode(code: string): Promise<boolean> {
+  const stored = await chrome.storage.session.get(PENDING_CODE_KEY);
+  return typeof code === 'string' && code.length > 0 && stored[PENDING_CODE_KEY] === code;
+}
+
 const POLL_INTERVAL_MS = 2_000;
 
 /**
@@ -65,10 +80,20 @@ export async function beginDeviceLinkLogin(): Promise<void> {
   }
 
   const flow = ++activeFlow;
+  await chrome.storage.session.set({ [PENDING_CODE_KEY]: started.code });
   void pollUntilApproved(flow, started);
 }
 
 async function pollUntilApproved(flow: number, started: DeviceLinkStart): Promise<void> {
+  try {
+    await pollLoop(flow, started);
+  } finally {
+    // 이 흐름이 최신일 때만 지운다 — 새 흐름이 이미 제 코드를 올려뒀을 수 있다.
+    if (flow === activeFlow) await chrome.storage.session.remove(PENDING_CODE_KEY);
+  }
+}
+
+async function pollLoop(flow: number, started: DeviceLinkStart): Promise<void> {
   const deadline = Date.now() + started.expiresInSeconds * 1_000;
   while (Date.now() < deadline) {
     await new Promise((resolve) => setTimeout(resolve, POLL_INTERVAL_MS));

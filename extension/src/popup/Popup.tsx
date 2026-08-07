@@ -77,7 +77,6 @@ export default function Popup() {
   const [workspaceId, setWorkspaceId] = useState<number | null>(null);
   const [status, setStatus] = useState<Status>('idle');
   const [message, setMessage] = useState('');
-  const [loginOpened, setLoginOpened] = useState(false);
   const [notifyOnSave, setNotifyOnSave] = useState(true);
   const [watchedItemId, setWatchedItemId] = useState<number | null>(null);
   const [doneStatus, setDoneStatus] = useState<ItemStatus | null>(null);
@@ -235,26 +234,6 @@ export default function Popup() {
     setStatus('idle');
     // 로그아웃 뒤에는 reauth 창으로 — 웹 localStorage 에 토큰이 남아 있어도 폼이 뜬다.
     await openWebLogin(suppressed);
-    setLoginOpened(true);
-  }
-
-  /**
-   * 로그인을 다시 확인한다 — 아래 storage 감지가 어떤 이유로 놓쳤을 때의 수동 경로.
-   *
-   * **저장된 토큰을 먼저 본다.** 백그라운드가 OAuth 콜백에서 이미 채워 넣었을 수 있고, 그때는
-   * 로그인 창이 닫혀 있어 harvestWebSession(열린 탭에서 읽는 함수)은 실패한다.
-   */
-  async function handleRecheck() {
-    setStatus('loading');
-    setMessage('');
-    const [accessToken, refreshToken] = await Promise.all([getAccessToken(), getRefreshToken()]);
-    if (accessToken || refreshToken || await harvestWebSession()) {
-      setAuthenticated(true);
-      await loadWorkspaces();
-      return;
-    }
-    setStatus('error');
-    setMessage('아직 로그인이 확인되지 않았어요. 우주인 탭에서 로그인을 마친 뒤 다시 눌러 주세요.');
   }
 
   async function handleSave() {
@@ -303,7 +282,6 @@ export default function Popup() {
     setAuthenticated(false);
     setWorkspaces([]);
     setWorkspaceId(null);
-    setLoginOpened(false);
     setStatus('idle');
     setMessage('');
   }
@@ -330,16 +308,13 @@ export default function Popup() {
           <img src="/icon128.png" alt="" width={18} height={18} style={{ flexShrink: 0 }} />
           우주인 계정으로 시작하기
         </button>
+        {/* "로그인 확인" 수동 버튼은 없앴다 — 재로그인 창에서 로그인하면 백그라운드가
+            SPA 내비게이션까지 잡아 자동으로 이어받으므로(background 의 adoptFromLoginWindow)
+            수동 경로가 필요 없어졌다. 로그인 중 팝업은 포커스를 잃어 닫히니, 창이 닫힌 뒤
+            아이콘을 다시 여는 안내만 남긴다. */}
         <p style={styles.hint}>
-          {loginOpened
-            ? '로그인 창은 끝나면 자동으로 닫혀요. 닫힌 뒤 이 아이콘을 다시 눌러 주세요.'
-            : '로그인과 회원가입 모두 열리는 창에서 할 수 있어요.'}
+          로그인과 회원가입 모두 열리는 창에서 할 수 있어요. 끝나면 창이 자동으로 닫혀요.
         </p>
-        {loginOpened && (
-          <button onClick={handleRecheck} disabled={status === 'loading'} style={styles.secondary}>
-            {status === 'loading' ? '확인 중…' : '로그인 확인'}
-          </button>
-        )}
         {message && <p style={styles.error}>{message}</p>}
       </main>
     );
@@ -548,7 +523,6 @@ const styles: Record<string, React.CSSProperties> = {
   },
   // 웹앱 GoogleAuthButton 과 같은 껍데기 — 흰 버튼은 다크 테마에서 혼자 튄다
   login: { ...buttonBase, border: `1px solid ${BORDER}`, background: SURFACE_2, color: TEXT_1 },
-  secondary: { ...buttonBase, border: `1px solid ${BORDER}`, background: SURFACE_3, color: TEXT_1 },
   primary: { ...buttonBase, background: ACCENT, color: '#ffffff' },
   link: { border: 0, background: 'transparent', color: TEXT_3, fontSize: 12, cursor: 'pointer' },
   urlBox: { padding: 10, borderRadius: 12, background: SURFACE, border: `1px solid ${BORDER}` },

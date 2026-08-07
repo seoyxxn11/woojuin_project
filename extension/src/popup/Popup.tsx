@@ -264,12 +264,18 @@ export default function Popup() {
       setMessage('');
     } catch (error) {
       if (error instanceof ApiError && error.status === 401) setAuthenticated(false);
-      // 403 = 지금 계정이 그 워크스페이스의 멤버가 아니다. 세션 물려받기 때문에 토큰은
-      // 팝업 밖에서 다른 계정으로 바뀔 수 있는데(웹 로그인 자동 이어받기) 워크스페이스
+      // 멤버십 403 = 지금 계정이 그 워크스페이스의 멤버가 아니다. 세션 물려받기 때문에
+      // 토큰은 팝업 밖에서 다른 계정으로 바뀔 수 있는데(웹 로그인 자동 이어받기) 워크스페이스
       // 선택은 저장소에 남아, 이전 계정의 공간을 들고 있는 어긋남이 생긴다. 목록을 다시
       // 받으면 loadWorkspaces 가 선택을 현재 계정의 공간으로 바로잡는다 — 사용자는 한 번 더
       // 누르기만 하면 된다.
-      if (error instanceof ApiError && error.status === 403) {
+      //
+      // 서버 문구로 멤버십 건만 가려낸다(WorkspaceAccessDeniedException 의 메시지) — 403 을
+      // 전부 이걸로 처리하면 안 된다. 확장 Origin 이 CORS 허용 목록에 없을 때도 저장만 403 이
+      // 나는데(SecurityConfig 주석의 "조회는 되는데 저장만 403"), 그건 본문 없는 평문 응답이라
+      // 이 문구가 없고, 목록을 다시 받아 봐야 고쳐지지 않는다.
+      if (error instanceof ApiError && error.status === 403
+          && error.message.includes('워크스페이스 멤버가 아닙니다')) {
         const synced = await loadWorkspaces();
         setStatus('error');
         // 재동기화가 실패했으면 loadWorkspaces 가 이미 원인 메시지를 남겼다 — 덮지 않는다.

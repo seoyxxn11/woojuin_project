@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAtomValue } from 'jotai';
 import { accessTokenAtom } from '@/stores/authAtoms';
 
@@ -19,8 +19,15 @@ import { accessTokenAtom } from '@/stores/authAtoms';
  */
 const GuestOnly = () => {
   const accessToken = useAtomValue(accessTokenAtom);
+  const location = useLocation();
 
-  if (accessToken) return <Navigate to="/home" replace />;
+  // 익스텐션의 연결 로그인(/login?linkCode=, -498)은 웹에 로그인돼 있어도 폼을 보여준다 —
+  // 익스텐션 로그인은 웹 세션과 무관하게 **자기 자격 증명 입력**으로만 이뤄진다는 결정이다.
+  // 이 우회가 없으면 토큰이 있는 브라우저에서 창이 /home 으로 튕겨 로그인 단계가 사라진다.
+  const linkLogin =
+    location.pathname === '/login' && new URLSearchParams(location.search).has('linkCode');
+
+  if (accessToken && !linkLogin) return <Navigate to="/home" replace />;
 
   return <Outlet />;
 };

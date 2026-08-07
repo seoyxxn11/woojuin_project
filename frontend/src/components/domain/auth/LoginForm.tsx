@@ -5,7 +5,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useAtom, useSetAtom } from 'jotai';
 import axios from 'axios';
 import { login } from '@/services/auth';
-import { offerExtensionAutoLink } from '@/services/extensionLink';
 import { loginSchema, type LoginFormValues } from '@/schemas/authSchemas';
 import { accessTokenAtom, postLoginRedirectAtom, refreshTokenAtom } from '@/stores/authAtoms';
 import FormTextField from '@/components/ui/form/FormTextField';
@@ -33,9 +32,6 @@ const LoginForm = () => {
     onSuccess: ({ accessToken, refreshToken }) => {
       setAccessToken(accessToken);
       setRefreshToken(refreshToken);
-      // 이 브라우저에 우주인 익스텐션이 깔려 있고 로그아웃 상태면 조용히 같이 연결한다 —
-      // 실패·부재 모두 무해한 fire-and-forget 이라 로그인 흐름과 무관하다(-498).
-      offerExtensionAutoLink();
       setPostLoginRedirect(null);
       navigate(postLoginRedirect ?? '/home', { replace: true });
     },

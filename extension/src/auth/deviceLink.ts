@@ -85,9 +85,12 @@ export async function beginDeviceLinkLogin(): Promise<void> {
   });
 
   const window = await chrome.windows.create({
-    // 마이페이지가 linkCode 쿼리를 보고 승인 모달을 코드가 채워진 채로 연다.
-    // 웹에 로그인돼 있지 않으면 로그인 화면부터 — postLoginRedirect 가 쿼리째 돌려보낸다.
-    url: `${WEB_ORIGIN}/my?linkCode=${started.code}`,
+    // **로그인 화면으로 연다 — 웹에 로그인돼 있어도.** 익스텐션 로그인은 웹 세션과 무관하게
+    // 자기 자격 증명 입력으로만 이뤄진다는 결정이다(완전 격리, -498). GuestOnly 가 linkCode
+    // 를 보고 폼을 보여주고, LoginPage 가 postLoginRedirect 를 /my?linkCode= 로 심어 두므로
+    // 어떤 수단으로 로그인하든 승인 페이지로 이어진다 — 거기서 이 확장과의 대조가 성립하면
+    // 코드가 자동 승인되고(사용자에겐 "로그인했더니 연결됨") 폴링이 창을 닫는다.
+    url: `${WEB_ORIGIN}/login?linkCode=${started.code}`,
     type: 'popup',
     width: 460,
     height: 760,
@@ -100,33 +103,6 @@ export async function beginDeviceLinkLogin(): Promise<void> {
   const flow = ++activeFlow;
   await savePending(started);
   void pollUntilApproved(flow, started);
-}
-
-/**
- * 조용한 자동 연결(-498) — 웹이 로그인 성공 순간 "코드 하나 줘"라고 요청하면(background 의
- * requestLinkCode 메시지), 코드를 발급해 돌려주고 승인을 기다린다. 웹은 방금 로그인한
- * 세션으로 그 코드를 곧바로 승인하므로 창도 클릭도 없이 확장이 로그인된다.
- *
- * **null 을 돌려주는 두 경우** — 웹은 아무것도 하지 않는다:
- * - 이미 로그인돼 있음: 웹에 로그인할 때마다 세션이 늘면 기기 목록이 쓰레기장이 되고,
- *   확장이 멀쩡히 쓰던 세션을 갈아치울 이유도 없다. 확장에서 로그아웃한 직후는 보통
- *   웹이 여전히 로그인 상태라 새 로그인 이벤트가 없다 — 로그아웃이 조용히 뒤집히지
- *   않는다는 뜻이고, 다음 웹 "로그인"부터 다시 자동으로 붙는다.
- * - 진행 중 흐름이 있음: 승인 창 흐름이 도는 중에(예: 창에서 로그인을 마친 순간의 훅)
- *   새 코드를 또 만들면 **두 흐름이 각자 완주해 세션이 두 개** 생긴다. 돌던 흐름이
- *   마저 끝나게 둔다.
- */
-export async function requestSilentLinkCode(): Promise<string | null> {
-  if (await getRefreshToken()) return null;
-  if (await pendingLink()) return null;
-  const started = await publicApiFetch<DeviceLinkStart>('/auth/device-link', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  });
-  const flow = ++activeFlow;
-  await savePending(started);
-  void pollUntilApproved(flow, started);
-  return started.code;
 }
 
 async function savePending(started: DeviceLinkStart): Promise<void> {

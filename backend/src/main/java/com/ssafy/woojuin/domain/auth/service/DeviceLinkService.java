@@ -51,7 +51,7 @@ public class DeviceLinkService {
      * 세션을 만든다(sid 발급 + UserSession 저장). 만료·미발급 코드는 400 — 워치는 새
      * 코드를 발급받아 다시 띄운다.
      */
-    public DeviceLinkPollResponse poll(String code, String userAgent) {
+    public DeviceLinkPollResponse poll(String code, String userAgent, String client) {
         DeviceLinkStore.LinkState state = linkStore.find(code)
                 .orElseThrow(() -> new IllegalArgumentException("코드가 만료되었거나 올바르지 않습니다"));
 
@@ -71,7 +71,13 @@ public class DeviceLinkService {
         String sid = UserSession.newSessionId();
         String accessToken = jwtTokenProvider.createAccessToken(userId, sid);
         String refreshToken = jwtTokenProvider.createRefreshToken(userId, sid);
-        sessionStore.save(userId, UserSession.start(sid, refreshToken, userAgent));
+        // client 표식이 오면 UA 앞에 붙인다 — DeviceNameParser 가 표식을 먼저 보므로 기기
+        // 목록에 그 이름("크롬 익스텐션")이 뜨고, 원래 UA 는 뒤에 남아 조사할 때 볼 수 있다.
+        // 브라우저 안 클라이언트는 fetch 로 UA 를 못 바꿔서 본문으로 밝힌다(DeviceLinkPollRequest).
+        String effectiveUserAgent = client == null || client.isBlank()
+                ? userAgent
+                : (userAgent == null || userAgent.isBlank() ? client : client + " " + userAgent);
+        sessionStore.save(userId, UserSession.start(sid, refreshToken, effectiveUserAgent));
 
         return DeviceLinkPollResponse.approved(accessToken, refreshToken);
     }

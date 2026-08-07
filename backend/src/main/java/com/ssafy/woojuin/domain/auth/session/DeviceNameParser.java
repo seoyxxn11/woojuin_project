@@ -24,6 +24,11 @@ public final class DeviceNameParser {
         // 문구는 서버에 있으므로 워치 출시 후에도 서버 배포만으로 바꿀 수 있다 (S15P11C105-458)
         if (userAgent.contains("Woojuin-WearOS")) return "Wear OS 워치";
 
+        // 크롬 익스텐션도 링크 코드로 자체 세션을 만든다(S15P11C105-498). 브라우저 UA 그대로면
+        // 웹 세션과 구분이 안 되므로 poll 요청에만 이 토큰을 실어 보낸다 — 크롬은 fetch 에서
+        // User-Agent 재정의를 허용한다(스펙에서 금지 헤더 목록에서 빠졌다).
+        if (userAgent.contains("Woojuin-Extension")) return "크롬 익스텐션";
+
         String os = os(userAgent);
         String browser = browser(userAgent);
         if (os == null && browser == null) return UNKNOWN;

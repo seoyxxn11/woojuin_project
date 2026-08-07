@@ -48,11 +48,14 @@ public class DeviceLinkController {
         return ApiResponse.success(null);
     }
 
-    /** 워치: 승인 여부 폴링. 승인되면 토큰이 실려 온다 — UA 가 기기 목록의 이름이 된다 */
+    /**
+     * 기기: 승인 여부 폴링. 승인되면 토큰이 실려 온다 — UA(또는 본문의 client 표식)가
+     * 기기 목록의 이름이 된다. client 가 필요한 이유는 DeviceLinkPollRequest 참고.
+     */
     @PostMapping("/poll")
     public ApiResponse<DeviceLinkPollResponse> poll(
             @Valid @RequestBody DeviceLinkPollRequest request,
             @RequestHeader(value = "User-Agent", required = false) String userAgent) {
-        return ApiResponse.success(deviceLinkService.poll(request.code(), userAgent));
+        return ApiResponse.success(deviceLinkService.poll(request.code(), userAgent, request.client()));
     }
 }

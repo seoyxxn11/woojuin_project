@@ -49,4 +49,10 @@ class DeviceNameParserTest {
     void parse_wearOsApp() {
         assertThat(DeviceNameParser.parse("Woojuin-WearOS/1.0")).isEqualTo("Wear OS 워치");
     }
+
+    @Test
+    @DisplayName("크롬 익스텐션의 링크 poll UA 는 익스텐션임을 알아볼 수 있는 이름이 된다 (S15P11C105-498)")
+    void parse_extension() {
+        assertThat(DeviceNameParser.parse("Woojuin-Extension/1.0")).isEqualTo("크롬 익스텐션");
+    }
 }

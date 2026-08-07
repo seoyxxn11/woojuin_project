@@ -5,6 +5,7 @@ import com.ssafy.woojuin.domain.auth.dto.DeviceLinkStartResponse;
 import com.ssafy.woojuin.domain.auth.jwt.JwtTokenProvider;
 import com.ssafy.woojuin.domain.auth.repository.UserRepository;
 import com.ssafy.woojuin.domain.auth.session.DeviceLinkStore;
+import com.ssafy.woojuin.domain.auth.session.DeviceNameParser;
 import com.ssafy.woojuin.domain.auth.session.UserSession;
 import com.ssafy.woojuin.domain.auth.session.UserSessionStore;
 import org.junit.jupiter.api.DisplayName;
@@ -71,7 +72,7 @@ class DeviceLinkServiceTest {
     void poll_pending_returnsPendingWithoutSession() {
         when(linkStore.find("AB23CD")).thenReturn(Optional.of(pendingState()));
 
-        DeviceLinkPollResponse response = deviceLinkService.poll("AB23CD", WATCH_UA);
+        DeviceLinkPollResponse response = deviceLinkService.poll("AB23CD", WATCH_UA, null);
 
         assertThat(response.status()).isEqualTo(DeviceLinkPollResponse.Status.PENDING);
         assertThat(response.accessToken()).isNull();
@@ -86,7 +87,7 @@ class DeviceLinkServiceTest {
         when(jwtTokenProvider.createAccessToken(eq(1L), anyString())).thenReturn("access-token");
         when(jwtTokenProvider.createRefreshToken(eq(1L), anyString())).thenReturn("refresh-token");
 
-        DeviceLinkPollResponse response = deviceLinkService.poll("AB23CD", WATCH_UA);
+        DeviceLinkPollResponse response = deviceLinkService.poll("AB23CD", WATCH_UA, null);
 
         assertThat(response.status()).isEqualTo(DeviceLinkPollResponse.Status.APPROVED);
         assertThat(response.accessToken()).isEqualTo("access-token");
@@ -104,11 +105,30 @@ class DeviceLinkServiceTest {
     }
 
     @Test
+    @DisplayName("client 표식이 오면 UA 앞에 붙는다 — 기기 목록이 익스텐션을 알아보는 근거 (S15P11C105-498)")
+    void poll_withClient_prependsToUserAgent() {
+        // 크롬은 fetch 의 User-Agent 재정의를 조용히 무시한다(실측). 브라우저 안에서 도는
+        // 클라이언트는 본문의 client 로 자신을 밝히고, 서버가 UA 앞에 붙여 세션에 남긴다.
+        when(linkStore.find("AB23CD")).thenReturn(Optional.of(approvedState(1L)));
+        when(userRepository.existsByIdAndDeletedAtIsNull(1L)).thenReturn(true);
+        when(jwtTokenProvider.createAccessToken(eq(1L), anyString())).thenReturn("access-token");
+        when(jwtTokenProvider.createRefreshToken(eq(1L), anyString())).thenReturn("refresh-token");
+
+        deviceLinkService.poll("AB23CD", "Mozilla/5.0 (Windows NT 10.0)", "Woojuin-Extension/1.0");
+
+        ArgumentCaptor<UserSession> saved = ArgumentCaptor.forClass(UserSession.class);
+        verify(sessionStore).save(eq(1L), saved.capture());
+        assertThat(saved.getValue().userAgent())
+                .isEqualTo("Woojuin-Extension/1.0 Mozilla/5.0 (Windows NT 10.0)");
+        assertThat(DeviceNameParser.parse(saved.getValue().userAgent())).isEqualTo("크롬 익스텐션");
+    }
+
+    @Test
     @DisplayName("만료·미발급 코드의 poll 은 400 — 워치는 새 코드를 발급받는다")
     void poll_unknownCode_throws() {
         when(linkStore.find("EXPIRED")).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> deviceLinkService.poll("EXPIRED", WATCH_UA))
+        assertThatThrownBy(() -> deviceLinkService.poll("EXPIRED", WATCH_UA, null))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -118,7 +138,7 @@ class DeviceLinkServiceTest {
         when(linkStore.find("AB23CD")).thenReturn(Optional.of(approvedState(1L)));
         when(userRepository.existsByIdAndDeletedAtIsNull(1L)).thenReturn(false);
 
-        assertThatThrownBy(() -> deviceLinkService.poll("AB23CD", WATCH_UA))
+        assertThatThrownBy(() -> deviceLinkService.poll("AB23CD", WATCH_UA, null))
                 .isInstanceOf(IllegalArgumentException.class);
 
         verify(linkStore).consume("AB23CD");

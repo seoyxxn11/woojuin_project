@@ -21,7 +21,11 @@ const AuthLayout = () => {
       // 로그인 후 GoogleAuthButton이 백엔드로 전체 페이지 이동하는데,
       // 이 화면은 그 전에 이미 사라지므로 목적지를 여기서 미리 남겨둔다.
       setPostLoginRedirect(location.pathname + location.search);
-      navigate('/', { replace: true });
+      // 랜딩(/)이 아니라 로그인으로 보낸다 — 여기 온 사람은 앱 안쪽 주소를 들고 온
+      // 것이라(딥링크·세션 만료·익스텐션 승인 창의 /my?linkCode=) 마케팅 화면을 거칠
+      // 이유가 없다. 랜딩은 / 로 직접 온 방문자의 것이고, 로그인만 마치면
+      // postLoginRedirect 가 원래 목적지로 돌려보낸다.
+      navigate('/login', { replace: true });
     }
   }, [accessToken, navigate, location, setPostLoginRedirect]);
 

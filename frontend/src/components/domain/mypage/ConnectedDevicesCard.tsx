@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import ConfirmModal from '@/components/ui/ConfirmModal';
 import WatchLinkModal from '@/components/domain/mypage/WatchLinkModal';
@@ -17,14 +17,28 @@ interface ConnectedDevicesCardProps {
    */
   onSessionEnded: () => void;
   onError: (message: string) => void;
+  /**
+   * `?linkCode=` 로 들어온 승인 요청 — 크롬 익스텐션이 코드를 발급받아 이 주소로 창을
+   * 연다(S15P11C105-498). 있으면 승인 모달을 코드가 채워진 채로 바로 연다.
+   */
+  initialLinkCode?: string;
 }
 
 type PendingRevoke = { kind: 'one'; session: DeviceSession } | { kind: 'all' } | null;
 
-const ConnectedDevicesCard = ({ onSessionEnded, onError }: ConnectedDevicesCardProps) => {
+const ConnectedDevicesCard = ({
+  onSessionEnded,
+  onError,
+  initialLinkCode,
+}: ConnectedDevicesCardProps) => {
   const queryClient = useQueryClient();
   const [pending, setPending] = useState<PendingRevoke>(null);
   const [watchLinkOpen, setWatchLinkOpen] = useState(false);
+
+  // 익스텐션에서 넘어온 코드가 있으면 사용자가 버튼을 찾을 필요 없이 모달부터 연다.
+  useEffect(() => {
+    if (initialLinkCode) setWatchLinkOpen(true);
+  }, [initialLinkCode]);
 
   // 오래된 목록으로 엉뚱한 세션을 끊으면 안 되므로 캐시하지 않고 화면을 열 때마다 다시 받는다.
   const {
@@ -134,13 +148,14 @@ const ConnectedDevicesCard = ({ onSessionEnded, onError }: ConnectedDevicesCardP
               ))}
             </ul>
 
-            {/* 워치 링크 코드 승인 진입점 — 워치가 띄운 코드를 여기서 입력한다 (S15P11C105-458) */}
+            {/* 기기 링크 코드 승인 진입점 — 워치·익스텐션이 띄운 코드를 여기서 입력한다
+                (S15P11C105-458, -498) */}
             <button
               type="button"
               onClick={() => setWatchLinkOpen(true)}
               className="flex w-full items-center border-t border-border-soft px-4 py-3.5 text-left hover:bg-surface-2"
             >
-              <span className="flex-1 text-sm font-semibold text-text-1">워치 연결</span>
+              <span className="flex-1 text-sm font-semibold text-text-1">기기 연결</span>
               <span aria-hidden="true" className="text-lg leading-none text-text-3">
                 ›
               </span>
@@ -161,6 +176,7 @@ const ConnectedDevicesCard = ({ onSessionEnded, onError }: ConnectedDevicesCardP
 
       <WatchLinkModal
         open={watchLinkOpen}
+        initialCode={initialLinkCode}
         onClose={() => setWatchLinkOpen(false)}
         onApproved={() => {
           void queryClient.invalidateQueries({ queryKey: ['auth', 'sessions'] });

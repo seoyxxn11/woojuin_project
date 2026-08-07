@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useAtomValue, useSetAtom } from 'jotai';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import ConnectedAppsCard from '@/components/domain/mypage/ConnectedAppsCard';
 import ConnectedDevicesCard from '@/components/domain/mypage/ConnectedDevicesCard';
 import ProfileCard from '@/components/domain/mypage/ProfileCard';
@@ -29,6 +29,11 @@ const MyPage = () => {
   const user = useUser();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  // 크롬 익스텐션이 발급받은 링크 코드를 들고 승인하러 오는 진입 — /my?linkCode=XXXXXX
+  // (S15P11C105-498). 승인 모달이 코드가 채워진 채로 바로 열린다. 로그인 전이면 AuthLayout 이
+  // 로그인으로 보냈다가 postLoginRedirect 로 쿼리째 돌려보내므로 여기서 따로 챙길 것이 없다.
+  const [searchParams] = useSearchParams();
+  const linkCode = searchParams.get('linkCode') ?? undefined;
   const setAccessToken = useSetAtom(accessTokenAtom);
   const setRefreshToken = useSetAtom(refreshTokenAtom);
   const fcmToken = useAtomValue(fcmTokenAtom);
@@ -165,6 +170,7 @@ const MyPage = () => {
         <ConnectedDevicesCard
           onSessionEnded={handleSessionEnded}
           onError={(message) => setToast({ message, tone: 'error' })}
+          initialLinkCode={linkCode}
         />
         <ConnectedAppsCard onError={(message) => setToast({ message, tone: 'error' })} />
 

@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAtomValue } from 'jotai';
 import { accessTokenAtom } from '@/stores/authAtoms';
 
@@ -19,16 +19,8 @@ import { accessTokenAtom } from '@/stores/authAtoms';
  */
 const GuestOnly = () => {
   const accessToken = useAtomValue(accessTokenAtom);
-  const location = useLocation();
 
-  // ?reauth=1 이면 토큰이 있어도 폼을 보여준다 — 익스텐션의 재로그인 창이 쓴다.
-  // 익스텐션에서 로그아웃하면 서버 세션이 끊기는데 localStorage 에는 죽은 토큰이 남고,
-  // 그 죽은 토큰이 이 리다이렉트를 태우면 로그인 창이 폼을 보여주지도 못하고 /home 으로
-  // 넘어가 버린다(익스텐션은 그 페이지에서 죽은 토큰을 주워 조용히 닫힌다). 명시적으로
-  // "다시 로그인하겠다"는 진입이므로 세션이 살아 있어도 폼이 맞다 — 계정 전환 경로이기도 하다.
-  const reauth = new URLSearchParams(location.search).has('reauth');
-
-  if (accessToken && !reauth) return <Navigate to="/home" replace />;
+  if (accessToken) return <Navigate to="/home" replace />;
 
   return <Outlet />;
 };

@@ -34,7 +34,9 @@ export async function saveTokens(accessToken: string, refreshToken: string): Pro
  * 확장은 우주인 탭에 살아 있는 세션을 자동으로 물려받는다(webSession.ts). 로그아웃이 서버
  * 세션까지 끊는 지금도(api/auth.ts) 이 플래그는 필요하다 — 웹 탭 localStorage 에는 죽은
  * 토큰 사본이 남아 있어서(웹은 다음 요청에서야 걷어낸다), 플래그 없이 팝업을 다시 열면
- * 그 시체를 주워 와 로그인된 화면이 번쩍했다 꺼진다. 사용자가 로그인 버튼을 누를 때만 내린다.
+ * 그 시체를 주워 와 로그인된 화면이 번쩍했다 꺼진다. 내리는 건 **재로그인 창에서 실제로
+ * 로그인했을 때의 백그라운드뿐이다** — 로그인 버튼 클릭만으로 내리면 브라우저 어딘가의
+ * 웹 세션이 자격 증명 입력 없이 조용히 따라붙어 로그아웃이 다시 무의미해진다.
  * 브라우저를 닫아도 유지되도록 local 에 둔다(session 이면 재시작으로 풀려 버린다).
  */
 const AUTO_LOGIN_SUPPRESSED_KEY = 'autoLoginSuppressed';

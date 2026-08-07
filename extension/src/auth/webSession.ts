@@ -40,10 +40,17 @@ export const OAUTH_CALLBACK_PREFIX = `${WEB_ORIGIN}/oauth/callback`;
  * 탭이 아니라 팝업 창인 이유: 로그인만 받고 사라지는 흐름이라 사용자의 탭 목록을 어지럽히지
  * 않는 편이 낫다. 크기는 모바일 뷰에 가깝게 잡아 웹앱의 좁은 화면 레이아웃이 뜨게 한다.
  * 구글 로그인은 iframe 을 거부하지만 이건 진짜 브라우저 창이라 정상 동작한다.
+ *
+ * @param reauth 참이면 `?reauth=1` 로 연다 — 웹의 GuestOnly 가드가 이 파라미터를 보고,
+ *   localStorage 에 토큰이 남아 있어도 /home 으로 보내지 않고 **로그인 폼을 보여준다.**
+ *   로그아웃 뒤에 쓴다: 확장 로그아웃이 서버 세션을 끊어도 웹 localStorage 에는 죽은
+ *   토큰이 남는데, 그 토큰이 리다이렉트를 태우면 폼이 뜨기도 전에 백그라운드가 죽은
+ *   토큰을 주워 창을 닫아 버린다 — "로그인이 소리 없이 되는" 증상의 원인이었다.
+ *   살아 있는 다른 세션이 있어도 폼이 뜨므로 계정 전환 경로이기도 하다.
  */
-export async function openWebLogin(): Promise<void> {
+export async function openWebLogin(reauth = false): Promise<void> {
   const window = await chrome.windows.create({
-    url: `${WEB_ORIGIN}/login`,
+    url: reauth ? `${WEB_ORIGIN}/login?reauth=1` : `${WEB_ORIGIN}/login`,
     type: 'popup',
     width: 460,
     height: 760,
@@ -52,6 +59,12 @@ export async function openWebLogin(): Promise<void> {
   if (window.id !== undefined) {
     await chrome.storage.local.set({ [LOGIN_WINDOW_KEY]: window.id });
   }
+}
+
+/** 우리가 연 로그인 창의 windowId — 백그라운드가 "이 창에서 온 토큰인가"를 가를 때 쓴다. */
+export async function getLoginWindowId(): Promise<number | undefined> {
+  const stored = await chrome.storage.local.get(LOGIN_WINDOW_KEY);
+  return stored[LOGIN_WINDOW_KEY] as number | undefined;
 }
 
 /**
@@ -63,10 +76,15 @@ export async function openWebLogin(): Promise<void> {
  *
  * @returns 토큰을 얻었는지
  */
-export async function captureTokensFromCallback(url: string): Promise<boolean> {
+export async function captureTokensFromCallback(
+  url: string,
+  { force = false }: { force?: boolean } = {},
+): Promise<boolean> {
   if (!url.startsWith(OAUTH_CALLBACK_PREFIX)) return false;
   // 확장에서 로그아웃한 뒤라면 웹에서 로그인해도 따라 붙지 않는다 — 로그아웃을 존중한다.
-  if (await isAutoLoginSuppressed()) return false;
+  // 단 우리가 연 재로그인 창에서 온 콜백(force)은 예외다: 사용자가 확장의 로그인 버튼을
+  // 눌러 연 창에서 직접 로그인한 것이므로, 그게 바로 차단을 푸는 명시적 동의다.
+  if (!force && (await isAutoLoginSuppressed())) return false;
   const params = new URL(url).searchParams;
   const accessToken = params.get('accessToken');
   const refreshToken = params.get('refreshToken');
@@ -102,10 +120,14 @@ export async function closeLoginWindow(delayMs = 700): Promise<void> {
  * @param tabId 특정 탭만 볼 때(백그라운드의 탭 갱신 감지). 없으면 우주인 탭 전체를 훑는다.
  * @returns 세션을 얻었는지
  */
-export async function harvestWebSession(tabId?: number): Promise<boolean> {
+export async function harvestWebSession(
+  tabId?: number,
+  { force = false }: { force?: boolean } = {},
+): Promise<boolean> {
   // 자동 수확이 곧 자동 로그인이므로 여기서 막는다 — 호출하는 쪽(팝업 마운트·백그라운드 탭 감지)
-  // 어디서도 가드를 빼먹지 않게 함수 안에 둔다. 사용자가 로그인 버튼을 누르면 플래그가 내려간다.
-  if (await isAutoLoginSuppressed()) return false;
+  // 어디서도 가드를 빼먹지 않게 함수 안에 둔다. force 는 재로그인 창 전용이다: 그 창에서
+  // 사용자가 직접 로그인한 결과를 걷는 것이라 차단 플래그보다 우선한다(background 참고).
+  if (!force && (await isAutoLoginSuppressed())) return false;
   const targets = tabId === undefined
     ? (await chrome.tabs.query({ url: `${WEB_ORIGIN}/*` }))
         .map((tab) => tab.id)

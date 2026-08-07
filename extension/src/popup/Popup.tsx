@@ -13,6 +13,7 @@ import {
   AUTH_STORAGE,
   getAccessToken,
   getRefreshToken,
+  isAutoLoginSuppressed,
   setAutoLoginSuppressed,
 } from '@/storage/authStorage';
 import {
@@ -215,15 +216,15 @@ export default function Popup() {
   async function handleWebLogin() {
     setStatus('loading');
     setMessage('');
-    // 로그인 버튼을 누른 것 자체가 '다시 붙어도 좋다'는 뜻 — 로그아웃 때 세운 차단을 내린다.
-    await setAutoLoginSuppressed(false);
-    // 브라우저에 살아 있는 우주인 세션이 있으면 로그인 창을 띄우지 않는다 — 열어 둔 우주인
-    // 탭에서 그대로 이어받으면 되고, 이 경우 창을 띄우면 아무 조작도 필요 없는 창이 떴다
-    // 사라진다. 다만 수확이 됐다고 끝이 아니다: 확장 로그아웃이 서버 세션까지 끊으므로
-    // (api/auth.ts) 웹 탭 localStorage 에는 죽은 세션의 토큰이 남아 있을 수 있다(웹은 다음
-    // 요청에서야 걷어낸다). 살았는지는 목록 요청이 판정한다 — 죽은 토큰이면 refresh 거부가
-    // 토큰을 지우므로, 그때는 진짜 로그인 창으로 간다.
-    if (await harvestWebSession()) {
+    // 차단 플래그(로그아웃 흔적)를 **여기서 내리면 안 된다.** 내리는 순간 아래 수확과
+    // 백그라운드 탭 감지가 살아나서, 브라우저 어딘가의 웹 세션이 자격 증명 입력 없이
+    // 조용히 따라붙는다 — "로그아웃했는데 로그인 버튼만 눌러도 바로 로그인되는" 증상.
+    // 플래그는 재로그인 창에서 실제로 로그인했을 때 백그라운드가 내린다.
+    const suppressed = await isAutoLoginSuppressed();
+    // 로그아웃한 적 없는 사용자의 편의는 지킨다 — 살아 있는 우주인 탭이 있으면 로그인 창
+    // 없이 그대로 이어받는다(수확이 됐다고 끝이 아니다: 죽은 세션의 사본일 수 있어 목록
+    // 요청으로 생사를 판정한다). 로그아웃 뒤라면 harvest 가 스스로 거부한다.
+    if (!suppressed && (await harvestWebSession())) {
       if (await loadWorkspaces()) {
         setAuthenticated(true);
         return;
@@ -232,7 +233,8 @@ export default function Popup() {
       if (await getRefreshToken()) return;
     }
     setStatus('idle');
-    await openWebLogin();
+    // 로그아웃 뒤에는 reauth 창으로 — 웹 localStorage 에 토큰이 남아 있어도 폼이 뜬다.
+    await openWebLogin(suppressed);
     setLoginOpened(true);
   }
 

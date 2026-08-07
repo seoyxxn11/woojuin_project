@@ -3,11 +3,12 @@ import { saveImage, saveMemo } from '@/api/items';
 import {
   captureTokensFromCallback,
   closeLoginWindow,
+  getLoginWindowId,
   harvestWebSession,
   OAUTH_CALLBACK_PREFIX,
 } from '@/auth/webSession';
 import { getWorkspaces } from '@/api/workspaces';
-import { getAccessToken, getRefreshToken } from '@/storage/authStorage';
+import { getAccessToken, getRefreshToken, setAutoLoginSuppressed } from '@/storage/authStorage';
 import { openFromNotification, resumeWatchOnAlarm, watchItem } from '@/background/watchItem';
 import {
   findWorkspaceLabel,
@@ -83,32 +84,62 @@ chrome.runtime.onMessage.addListener((message: unknown) => {
 // 전에 채 갈 수 있다(그만큼 창이 빨리 닫힌다).
 let handledCallbackUrl: string | null = null;
 
+/**
+ * 우리가 연 재로그인 창에서만 쓰는 수확 경로 — 로그아웃 차단 플래그보다 우선한다(force).
+ *
+ * 성공 신호는 "창이 /login 화면을 벗어났다"이다. 이메일 로그인은 SPA 라우팅이라 페이지를
+ * 다시 로드하지 않으므로(status: 'complete' 가 안 온다) changeInfo.url 로도 잡아야 한다 —
+ * 예전 코드는 complete 만 봐서 이메일 로그인은 자동으로 이어받지 못하고 사용자가 팝업의
+ * "로그인 다시 확인"을 눌러야 했다.
+ *
+ * /login 에 머무는 동안은 걷지 않는다: 재로그인 폼이 뜬 그 페이지의 localStorage 에는
+ * 이전 세션의(죽었을 수도, 다른 계정일 수도 있는) 토큰이 남아 있는데, 그건 사용자가
+ * 이 창에서 동의한 로그인이 아니다.
+ */
+async function adoptFromLoginWindow(tabId: number, url: string): Promise<void> {
+  if (!url.startsWith(WEB_ORIGIN) || url.startsWith(`${WEB_ORIGIN}/login`)) return;
+  if (!(await harvestWebSession(tabId, { force: true }))) return;
+  // 이 창에서 직접 로그인한 것이 차단을 푸는 명시적 동의다 — 여기서만 내린다.
+  await setAutoLoginSuppressed(false);
+  void syncWorkspaces();
+  await closeLoginWindow(0);
+}
+
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.url?.startsWith(OAUTH_CALLBACK_PREFIX)) {
-    const url = changeInfo.url;
-    if (url === handledCallbackUrl) return;
-    handledCallbackUrl = url;
-    void captureTokensFromCallback(url).then((captured) => {
+  void (async () => {
+    const loginWindowId = await getLoginWindowId();
+    const fromLoginWindow = loginWindowId !== undefined && tab.windowId === loginWindowId;
+
+    if (changeInfo.url?.startsWith(OAUTH_CALLBACK_PREFIX)) {
+      const url = changeInfo.url;
+      if (url === handledCallbackUrl) return;
+      handledCallbackUrl = url;
       // 알림·배지를 띄우지 않는다 — 팝업이 storage 변화를 듣고 스스로 로그인 상태로 바뀌므로
       // 따로 알릴 게 없다.
-      if (!captured) return;
+      if (!(await captureTokensFromCallback(url, { force: fromLoginWindow }))) return;
+      if (fromLoginWindow) await setAutoLoginSuppressed(false);
       // 이제 목록을 받을 수 있다 — 우클릭 메뉴의 스페이스 하위 항목이 여기서 채워진다.
       void syncWorkspaces();
-      return closeLoginWindow();
-    });
-    return;
-  }
+      await closeLoginWindow();
+      return;
+    }
 
-  if (changeInfo.status === 'complete' && tab.url?.startsWith(WEB_ORIGIN)) {
-    void harvestWebSession(tabId).then((harvested) => {
+    if (fromLoginWindow) {
+      const url = changeInfo.url ?? (changeInfo.status === 'complete' ? tab.url : undefined);
+      if (url) await adoptFromLoginWindow(tabId, url);
+      return;
+    }
+
+    if (changeInfo.status === 'complete' && tab.url?.startsWith(WEB_ORIGIN)) {
       // 이미 웹에 로그인돼 있었다는 뜻 — OAuth 를 거칠 필요가 없었으므로 로그인 창이 떠 있으면
       // 바로 닫는다. 우리가 만든 windowId 만 닫으니 사용자가 열어 둔 탭은 그대로다.
       // 콜백 경로와 달리 여유를 두지 않는다: 웹 세션은 이미 저장돼 있다.
-      if (!harvested) return;
+      // (로그아웃 차단 플래그는 harvestWebSession 안에서 존중된다)
+      if (!(await harvestWebSession(tabId))) return;
       void syncWorkspaces();
-      return closeLoginWindow(0);
-    });
-  }
+      await closeLoginWindow(0);
+    }
+  })();
 });
 
 /**

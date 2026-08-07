@@ -5,7 +5,7 @@ import { ItemStatus } from '@/api/items';
 import { LAST_RESULT_KEY } from '@/background/watchItem';
 import { saveUrl } from '@/api/items';
 import { getWorkspaces, Workspace } from '@/api/workspaces';
-import { harvestWebSession, openWebLogin } from '@/auth/webSession';
+import { clearWebSessions, harvestWebSession, openWebLogin } from '@/auth/webSession';
 import SpacePicker from '@/popup/SpacePicker';
 import { isNotifyOnSaveEnabled, setNotifyOnSaveEnabled } from '@/storage/settingsStorage';
 import InteractiveLogo from '@/ui/InteractiveLogo';
@@ -270,11 +270,16 @@ export default function Popup() {
   }
 
   async function handleLogout() {
-    // logout() 은 서버 세션까지 끊는다(api/auth.ts) — 그래도 차단 플래그는 여전히 필요하다.
-    // 웹 탭 localStorage 에는 죽은 토큰 사본이 남는데(웹은 다음 요청에서야 걷어낸다), 플래그가
-    // 없으면 팝업을 다시 여는 순간 그 시체를 주워 와 로그인된 화면이 번쩍했다 꺼진다.
+    // logout() 은 서버 세션까지 끊고(api/auth.ts), clearWebSessions() 는 열려 있는 우주인
+    // 탭들이 그걸 **즉시** 알게 한다 — 안 하면 탭은 다음 요청 전까지 죽은 토큰으로 로그인된
+    // 화면을 계속 그린다. 차단 플래그는 그래도 필요하다: 주입이 막힌 탭에 죽은 사본이 남을
+    // 수 있고, 그걸 다시 주워 오면 로그인된 화면이 번쩍했다 꺼진다.
+    //
+    // clearWebSessions 는 logout 이 끝난 **뒤에** 돈다 — 서버 호출이 실패했는데 웹부터
+    // 지우면, 세션은 살아 있는데 웹만 로그아웃된 어정쩡한 상태가 된다.
+    await logout();
     await Promise.all([
-      logout(),
+      clearWebSessions(),
       clearSelectedWorkspaceId(),
       clearCachedWorkspaces(),
       setAutoLoginSuppressed(true),

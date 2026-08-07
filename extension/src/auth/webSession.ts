@@ -158,4 +158,39 @@ export async function harvestWebSession(
   return false;
 }
 
+/**
+ * 열려 있는 우주인 탭들의 웹 세션을 지운다 — 확장 로그아웃의 마무리.
+ *
+ * 서버 세션은 이미 끊었지만(api/auth.ts) 웹 탭은 **다음 요청을 보내기 전까지 그걸 모른다** —
+ * localStorage 의 죽은 토큰으로 로그인된 화면을 계속 그린다. 사용자에겐 "익스텐션에서
+ * 로그아웃했는데 웹은 그대로"로 보인다.
+ *
+ * 토큰을 지우는 것만으로는 부족하다: 같은 탭 안에서의 localStorage 변경은 storage 이벤트가
+ * 발생하지 않아 웹앱의 atomWithStorage 구독이 모른다. 그래서 이벤트를 손으로 쏜다 — 받으면
+ * 토큰 atom 이 null 이 되고 AuthLayout 이 즉시 로그인 화면으로 보낸다(프리뷰로 확인:
+ * /workspace/… 에서 곧바로 랜딩으로 이동). 주입이 막힌 탭은 다음 요청의 401이 정리한다.
+ */
+export async function clearWebSessions(): Promise<void> {
+  const tabs = await chrome.tabs.query({ url: `${WEB_ORIGIN}/*` });
+  await Promise.all(tabs.map(async (tab) => {
+    if (tab.id === undefined) return;
+    try {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        // 페이지 컨텍스트 — 확장 상수를 못 쓰므로 키를 그대로 적는다(harvest 와 같은 이유).
+        func: () => {
+          for (const key of ['woojuin:accessToken', 'woojuin:refreshToken']) {
+            localStorage.removeItem(key);
+            window.dispatchEvent(
+              new StorageEvent('storage', { key, newValue: null, storageArea: localStorage }),
+            );
+          }
+        },
+      });
+    } catch {
+      // 탭이 방금 닫혔거나 주입이 거부된 경우 — 무해하다(위 javadoc).
+    }
+  }));
+}
+
 export { ACCESS_STORAGE_KEY, REFRESH_STORAGE_KEY };

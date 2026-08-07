@@ -1,4 +1,4 @@
-import { publicApiFetch, WEB_ORIGIN } from '@/api/client';
+import { ApiError, publicApiFetch, WEB_ORIGIN } from '@/api/client';
 import { saveTokens } from '@/storage/authStorage';
 
 /**
@@ -85,10 +85,13 @@ async function pollUntilApproved(flow: number, started: DeviceLinkStart): Promis
         // 실었더니 세션에 브라우저 UA 가 찍혔다).
         body: JSON.stringify({ code: started.code, client: 'Woojuin-Extension/1.0' }),
       });
-    } catch {
-      // 코드 만료·소비는 400 으로 온다 — 흐름을 접는다. 사용자는 로그인을 다시 누른다.
-      // (일시적 통신 오류도 접히지만, 다음 클릭이 새 코드라 복구 경로는 같다)
-      return;
+    } catch (error) {
+      // 코드가 죽었을 때(만료·소비 = 400)만 흐름을 접는다. 사용자는 로그인을 다시 누른다.
+      if (error instanceof ApiError && error.status === 400) return;
+      // 그 외(통신 순간 단절, 백엔드 재시작 중 등)는 다음 턴에 다시 묻는다 — 여기서 접으면
+      // poll 하나 실패한 것만으로 승인을 받아 갈 주체가 사라져, 사용자가 승인을 마쳐도
+      // 로그인이 안 되고 창도 영원히 안 닫힌다.
+      continue;
     }
 
     if (result.status === 'APPROVED' && result.accessToken && result.refreshToken) {

@@ -1,6 +1,6 @@
 import { ApiError } from '@/api/client';
 import { saveImage, saveMemo } from '@/api/items';
-import { beginDeviceLinkLogin } from '@/auth/deviceLink';
+import { beginDeviceLinkLogin, closeLinkWindow } from '@/auth/deviceLink';
 import { getWorkspaces } from '@/api/workspaces';
 import { AUTH_STORAGE, getAccessToken, getRefreshToken } from '@/storage/authStorage';
 import { openFromNotification, resumeWatchOnAlarm, watchItem } from '@/background/watchItem';
@@ -83,11 +83,14 @@ chrome.runtime.onMessage.addListener((message: unknown, _sender, sendResponse) =
   return true; // sendResponse 를 비동기로 쓴다
 });
 
-// 링크 승인으로 토큰이 저장되면 우클릭 메뉴 재료(워크스페이스 목록)를 받아 둔다 —
-// 팝업을 한 번도 열지 않고 우클릭 저장부터 하는 경로가 있어서다(syncWorkspaces 주석).
+// 링크 승인으로 토큰이 저장되면 우클릭 메뉴 재료(워크스페이스 목록)를 받아 두고,
+// 승인 창도 닫는다. 닫기는 폴링 루프도 하지만(deviceLink.ts) 여기가 안전망이다 —
+// 저장과 지연 닫기 사이에 서비스워커가 재시작하는 등 루프의 닫기가 못 도는 경우를
+// "토큰이 도착했다"는 사실 자체로 잡는다(창이 이미 없으면 아무 일도 안 한다).
 chrome.storage.onChanged.addListener((changes, areaName) => {
   if (areaName === AUTH_STORAGE.refresh.area && changes[AUTH_STORAGE.refresh.key]?.newValue) {
     void syncWorkspaces();
+    void closeLinkWindow(1_200);
   }
 });
 

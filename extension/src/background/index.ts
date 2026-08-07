@@ -1,14 +1,8 @@
-import { ApiError, WEB_ORIGIN } from '@/api/client';
+import { ApiError } from '@/api/client';
 import { saveImage, saveMemo } from '@/api/items';
-import {
-  captureTokensFromCallback,
-  closeLoginWindow,
-  getLoginWindowId,
-  harvestWebSession,
-  OAUTH_CALLBACK_PREFIX,
-} from '@/auth/webSession';
+import { beginDeviceLinkLogin } from '@/auth/deviceLink';
 import { getWorkspaces } from '@/api/workspaces';
-import { getAccessToken, getRefreshToken, setAutoLoginSuppressed } from '@/storage/authStorage';
+import { AUTH_STORAGE, getAccessToken, getRefreshToken } from '@/storage/authStorage';
 import { openFromNotification, resumeWatchOnAlarm, watchItem } from '@/background/watchItem';
 import {
   findWorkspaceLabel,
@@ -33,7 +27,7 @@ const NOTIFICATION_ICON = chrome.runtime.getURL('icon128.png');
  * 워크스페이스 목록을 서버에서 새로 받아 캐시한다.
  *
  * 팝업을 한 번도 열지 않아도 우클릭 메뉴에 스페이스가 떠야 한다 — 로그인은 웹앱 세션에서
- * 자동으로 물려받으므로(webSession.ts) 팝업을 안 거치고 저장부터 하는 경로가 실제로 있다.
+ * 링크 승인만으로 끝나므로(deviceLink.ts) 팝업을 안 거치고 저장부터 하는 경로가 실제로 있다.
  * 실패는 삼킨다: 목록이 없으면 메뉴가 단일 항목으로 뜰 뿐 저장 자체는 막히지 않는다.
  */
 async function syncWorkspaces(): Promise<void> {
@@ -74,72 +68,27 @@ chrome.runtime.onMessage.addListener((message: unknown) => {
   void watchItem(request.itemId, request.status, request.workspaceId);
 });
 
-// 웹앱에서 로그인하면 그 세션을 자동으로 물려받는다 — 사용자가 팝업에서 따로 확인을 누르지
-// 않아도 우클릭 저장이 바로 된다. 이미 토큰이 있으면 같은 값으로 덮어써도 무해하다.
-//
-// 콜백 분기는 **changeInfo.url 이 있는 이벤트만** 본다. onUpdated 는 한 번의 이동에도 여러 번
-// 발생하는데(loading·제목·favicon·complete), tab.url 로 매칭하면 그 횟수만큼 중복 처리된다.
-// changeInfo.url 은 주소가 실제로 바뀔 때만 채워지므로 이동당 한 번이다.
-// status 를 기다리지 않는 이유: URL 이 바뀌는 순간 토큰이 이미 주소에 있어서 페이지가 다 뜨기
-// 전에 채 갈 수 있다(그만큼 창이 빨리 닫힌다).
-let handledCallbackUrl: string | null = null;
+// 링크 코드 로그인(S15P11C105-498) — 팝업이 시작을 요청하면 흐름 전체는 여기서 진행한다.
+// 승인 창이 포커스를 가져가는 순간 팝업은 닫히므로 폴링을 팝업에 둘 수 없다.
+// 승인 결과는 storage 의 토큰 변화로 전달된다(팝업의 handleTokenArrival 이 듣는다).
+// 토큰이 저장되는 순간 우클릭 메뉴도 채워지도록 목록 동기화를 함께 건다.
+chrome.runtime.onMessage.addListener((message: unknown, _sender, sendResponse) => {
+  if ((message as { type?: string })?.type !== 'deviceLinkLogin') return;
+  beginDeviceLinkLogin()
+    .then(() => sendResponse({ ok: true }))
+    .catch((error: unknown) => sendResponse({
+      ok: false,
+      message: error instanceof Error ? error.message : '로그인을 시작하지 못했습니다.',
+    }));
+  return true; // sendResponse 를 비동기로 쓴다
+});
 
-/**
- * 우리가 연 재로그인 창에서만 쓰는 수확 경로 — 로그아웃 차단 플래그보다 우선한다(force).
- *
- * 성공 신호는 "창이 /login 화면을 벗어났다"이다. 이메일 로그인은 SPA 라우팅이라 페이지를
- * 다시 로드하지 않으므로(status: 'complete' 가 안 온다) changeInfo.url 로도 잡아야 한다 —
- * 예전 코드는 complete 만 봐서 이메일 로그인은 자동으로 이어받지 못하고 사용자가 팝업의
- * "로그인 다시 확인"을 눌러야 했다.
- *
- * /login 에 머무는 동안은 걷지 않는다: 재로그인 폼이 뜬 그 페이지의 localStorage 에는
- * 이전 세션의(죽었을 수도, 다른 계정일 수도 있는) 토큰이 남아 있는데, 그건 사용자가
- * 이 창에서 동의한 로그인이 아니다.
- */
-async function adoptFromLoginWindow(tabId: number, url: string): Promise<void> {
-  if (!url.startsWith(WEB_ORIGIN) || url.startsWith(`${WEB_ORIGIN}/login`)) return;
-  if (!(await harvestWebSession(tabId, { force: true }))) return;
-  // 이 창에서 직접 로그인한 것이 차단을 푸는 명시적 동의다 — 여기서만 내린다.
-  await setAutoLoginSuppressed(false);
-  void syncWorkspaces();
-  await closeLoginWindow(0);
-}
-
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  void (async () => {
-    const loginWindowId = await getLoginWindowId();
-    const fromLoginWindow = loginWindowId !== undefined && tab.windowId === loginWindowId;
-
-    if (changeInfo.url?.startsWith(OAUTH_CALLBACK_PREFIX)) {
-      const url = changeInfo.url;
-      if (url === handledCallbackUrl) return;
-      handledCallbackUrl = url;
-      // 알림·배지를 띄우지 않는다 — 팝업이 storage 변화를 듣고 스스로 로그인 상태로 바뀌므로
-      // 따로 알릴 게 없다.
-      if (!(await captureTokensFromCallback(url, { force: fromLoginWindow }))) return;
-      if (fromLoginWindow) await setAutoLoginSuppressed(false);
-      // 이제 목록을 받을 수 있다 — 우클릭 메뉴의 스페이스 하위 항목이 여기서 채워진다.
-      void syncWorkspaces();
-      await closeLoginWindow();
-      return;
-    }
-
-    if (fromLoginWindow) {
-      const url = changeInfo.url ?? (changeInfo.status === 'complete' ? tab.url : undefined);
-      if (url) await adoptFromLoginWindow(tabId, url);
-      return;
-    }
-
-    if (changeInfo.status === 'complete' && tab.url?.startsWith(WEB_ORIGIN)) {
-      // 이미 웹에 로그인돼 있었다는 뜻 — OAuth 를 거칠 필요가 없었으므로 로그인 창이 떠 있으면
-      // 바로 닫는다. 우리가 만든 windowId 만 닫으니 사용자가 열어 둔 탭은 그대로다.
-      // 콜백 경로와 달리 여유를 두지 않는다: 웹 세션은 이미 저장돼 있다.
-      // (로그아웃 차단 플래그는 harvestWebSession 안에서 존중된다)
-      if (!(await harvestWebSession(tabId))) return;
-      void syncWorkspaces();
-      await closeLoginWindow(0);
-    }
-  })();
+// 링크 승인으로 토큰이 저장되면 우클릭 메뉴 재료(워크스페이스 목록)를 받아 둔다 —
+// 팝업을 한 번도 열지 않고 우클릭 저장부터 하는 경로가 있어서다(syncWorkspaces 주석).
+chrome.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName === AUTH_STORAGE.refresh.area && changes[AUTH_STORAGE.refresh.key]?.newValue) {
+    void syncWorkspaces();
+  }
 });
 
 /**

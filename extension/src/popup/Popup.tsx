@@ -5,17 +5,10 @@ import { ItemStatus } from '@/api/items';
 import { LAST_RESULT_KEY } from '@/background/watchItem';
 import { saveUrl } from '@/api/items';
 import { getWorkspaces, Workspace } from '@/api/workspaces';
-import { clearWebSessions, harvestWebSession, openWebLogin } from '@/auth/webSession';
 import SpacePicker from '@/popup/SpacePicker';
 import { isNotifyOnSaveEnabled, setNotifyOnSaveEnabled } from '@/storage/settingsStorage';
 import InteractiveLogo from '@/ui/InteractiveLogo';
-import {
-  AUTH_STORAGE,
-  getAccessToken,
-  getRefreshToken,
-  isAutoLoginSuppressed,
-  setAutoLoginSuppressed,
-} from '@/storage/authStorage';
+import { AUTH_STORAGE, getAccessToken, getRefreshToken } from '@/storage/authStorage';
 import {
   clearCachedWorkspaces,
   clearSelectedWorkspaceId,
@@ -115,9 +108,8 @@ export default function Popup() {
         getRefreshToken(),
       ]);
       setUrl(tab?.url ?? '');
-      // 확장에 토큰이 없어도 우주인 탭이 열려 있으면 그 세션을 물려받는다 —
-      // 웹에서 로그인하고 돌아온 사용자가 아무 조작 없이 바로 저장할 수 있다.
-      const hasSession = Boolean(accessToken || refreshToken) || await harvestWebSession();
+      // 확장은 자기 세션만 본다 — 웹 세션 물려받기는 링크 코드 로그인으로 대체됐다(-498).
+      const hasSession = Boolean(accessToken || refreshToken);
       setAuthenticated(hasSession);
       if (hasSession) await loadWorkspaces();
     })();
@@ -212,28 +204,24 @@ export default function Popup() {
     return () => cancelAnimationFrame(frame);
   }, [url]);
 
-  async function handleWebLogin() {
+  /**
+   * 링크 코드 로그인 시작(-498). 흐름 전체(코드 발급 → 승인 창 → 폴링 → 토큰 저장)는
+   * 백그라운드가 진행한다 — 승인 창이 포커스를 가져가는 순간 이 팝업은 닫히기 때문이다.
+   * 여기서 처리할 수 있는 실패는 시작 실패(통신 없음 등)뿐이고, 그건 창이 열리기 전이라
+   * 팝업이 아직 살아 있어 보여줄 수 있다.
+   */
+  async function handleLinkLogin() {
     setStatus('loading');
     setMessage('');
-    // 차단 플래그(로그아웃 흔적)를 **여기서 내리면 안 된다.** 내리는 순간 아래 수확과
-    // 백그라운드 탭 감지가 살아나서, 브라우저 어딘가의 웹 세션이 자격 증명 입력 없이
-    // 조용히 따라붙는다 — "로그아웃했는데 로그인 버튼만 눌러도 바로 로그인되는" 증상.
-    // 플래그는 재로그인 창에서 실제로 로그인했을 때 백그라운드가 내린다.
-    const suppressed = await isAutoLoginSuppressed();
-    // 로그아웃한 적 없는 사용자의 편의는 지킨다 — 살아 있는 우주인 탭이 있으면 로그인 창
-    // 없이 그대로 이어받는다(수확이 됐다고 끝이 아니다: 죽은 세션의 사본일 수 있어 목록
-    // 요청으로 생사를 판정한다). 로그아웃 뒤라면 harvest 가 스스로 거부한다.
-    if (!suppressed && (await harvestWebSession())) {
-      if (await loadWorkspaces()) {
-        setAuthenticated(true);
-        return;
-      }
-      // 토큰이 남아 있으면 통신 오류다 — loadWorkspaces 가 남긴 메시지를 그대로 보여 준다.
-      if (await getRefreshToken()) return;
+    const response = (await chrome.runtime.sendMessage({ type: 'deviceLinkLogin' })) as
+      | { ok: boolean; message?: string }
+      | undefined;
+    if (response?.ok) {
+      setStatus('idle');
+      return;
     }
-    setStatus('idle');
-    // 로그아웃 뒤에는 reauth 창으로 — 웹 localStorage 에 토큰이 남아 있어도 폼이 뜬다.
-    await openWebLogin(suppressed);
+    setStatus('error');
+    setMessage(response?.message ?? '로그인을 시작하지 못했습니다.');
   }
 
   async function handleSave() {
@@ -288,19 +276,12 @@ export default function Popup() {
   }
 
   async function handleLogout() {
-    // logout() 은 서버 세션까지 끊고(api/auth.ts), clearWebSessions() 는 열려 있는 우주인
-    // 탭들이 그걸 **즉시** 알게 한다 — 안 하면 탭은 다음 요청 전까지 죽은 토큰으로 로그인된
-    // 화면을 계속 그린다. 차단 플래그는 그래도 필요하다: 주입이 막힌 탭에 죽은 사본이 남을
-    // 수 있고, 그걸 다시 주워 오면 로그인된 화면이 번쩍했다 꺼진다.
-    //
-    // clearWebSessions 는 logout 이 끝난 **뒤에** 돈다 — 서버 호출이 실패했는데 웹부터
-    // 지우면, 세션은 살아 있는데 웹만 로그아웃된 어정쩡한 상태가 된다.
-    await logout();
+    // 확장 전용 세션(-498)이라 서버에서 이 세션만 끊으면 끝이다(api/auth.ts). 웹은 자기
+    // 세션이 따로라 아무 영향이 없다 — 물려받기 시절의 차단 플래그·웹 탭 정리가 다 사라졌다.
     await Promise.all([
-      clearWebSessions(),
+      logout(),
       clearSelectedWorkspaceId(),
       clearCachedWorkspaces(),
-      setAutoLoginSuppressed(true),
     ]);
     setAuthenticated(false);
     setWorkspaces([]);
@@ -320,23 +301,19 @@ export default function Popup() {
         <p style={styles.muted}>
           로그인하면 지금 보는 페이지를 바로 담을 수 있어요.
         </p>
-        {/* 로그인 수단을 문구에 박지 않는다. 이 버튼이 하는 일은 **우주인 로그인 화면을 여는
-            것**이고, 어떤 수단을 쓸지는 그 화면이 정한다(웹앱은 구글과 이메일·비밀번호를 함께
-            제공한다). 수단 이름을 적어 두면 웹앱이 로그인 방식을 늘리거나 줄일 때마다 여기까지
-            따라 고쳐야 하고, 그 사이에는 버튼이 거짓말을 한다.
-            같은 이유로 마크도 구글 로고가 아니라 우주인 아이콘을 쓴다 — 여는 화면이 우주인이다.
-            '로그인'이 아니라 '시작하기'인 이유: 같은 버튼이 가입으로도 이어진다(열리는 화면에
-            회원가입 링크가 있고, 구글은 첫 로그인이 곧 가입이다). */}
-        <button onClick={handleWebLogin} style={styles.login}>
+        {/* 로그인 수단을 문구에 박지 않는다. 이 버튼이 하는 일은 **우주인 승인 화면을 여는
+            것**(링크 코드, -498)이고, 웹에 로그인돼 있지 않으면 그 창이 로그인·가입부터
+            이어준다 — 어떤 수단을 쓸지는 웹앱이 정하므로 여기 적어 두면 그 목록이 바뀔 때마다
+            버튼이 거짓말을 한다. 마크도 같은 이유로 우주인 아이콘이다.
+            '로그인'이 아니라 '시작하기'인 이유: 같은 버튼이 가입으로도 이어진다. */}
+        <button onClick={handleLinkLogin} disabled={status === 'loading'} style={styles.login}>
           <img src="/icon128.png" alt="" width={18} height={18} style={{ flexShrink: 0 }} />
-          우주인 계정으로 시작하기
+          {status === 'loading' ? '여는 중…' : '우주인 계정으로 시작하기'}
         </button>
-        {/* "로그인 확인" 수동 버튼은 없앴다 — 재로그인 창에서 로그인하면 백그라운드가
-            SPA 내비게이션까지 잡아 자동으로 이어받으므로(background 의 adoptFromLoginWindow)
-            수동 경로가 필요 없어졌다. 로그인 중 팝업은 포커스를 잃어 닫히니, 창이 닫힌 뒤
-            아이콘을 다시 여는 안내만 남긴다. */}
+        {/* 로그인 중 팝업은 포커스를 잃어 닫힌다 — 승인이 끝나면 창이 닫히고, 아이콘을
+            다시 열면 로그인돼 있다. 그 한 문장이 안내의 전부다. */}
         <p style={styles.hint}>
-          로그인과 회원가입 모두 열리는 창에서 할 수 있어요. 끝나면 창이 자동으로 닫혀요.
+          우주인 창이 열리면 '기기 연결' 승인 한 번이면 돼요. 끝나면 창이 자동으로 닫혀요.
         </p>
         {message && <p style={styles.error}>{message}</p>}
       </main>

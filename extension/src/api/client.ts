@@ -42,24 +42,42 @@ async function parseResponse<T>(response: Response): Promise<ApiResponse<T>> {
   return body;
 }
 
+/**
+ * refresh 거부로 볼 상태 코드 — 웹앱 client.ts 의 REFRESH_REJECTED_STATUSES 와 같은 계약이다.
+ * 백엔드는 무효·만료·불일치·탈퇴를 전부 400 으로 준다(TokenRefreshService, S15P11C105-455).
+ * 401 만 보면 **웹에서 로그아웃한 뒤의 익스텐션**이 로그인 화면으로 못 가고 갇힌다 —
+ * 웹 로그아웃이 공유 세션을 지우면 refresh 가 400 으로 거부되는데, 팝업은 401 에만
+ * setAuthenticated(false) 를 하므로 로그인된 화면에서 서버 오류 문구만 반복해서 보게 된다.
+ */
+const REFRESH_REJECTED_STATUSES = [400, 401, 403];
+
 async function refreshAccessToken(): Promise<string> {
   if (refreshPromise) return refreshPromise;
   refreshPromise = (async () => {
     const refreshToken = await getRefreshToken();
     if (!refreshToken) throw new ApiError('로그인이 필요합니다.', 401);
+    let data: TokenData;
     try {
       const response = await fetch(`${API_BASE_URL}/auth/token/refresh`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ refreshToken }),
       });
-      const { data } = await parseResponse<TokenData>(response);
-      await saveTokens(data.accessToken, data.refreshToken);
-      return data.accessToken;
+      ({ data } = await parseResponse<TokenData>(response));
     } catch (error) {
-      await clearTokens();
+      // 서버가 거부했을 때만 토큰을 지운다. 통신 실패(fetch 예외 등)로도 지워 버리면
+      // 와이파이가 잠깐 끊긴 것만으로 로그아웃되는데, 웹앱은 이 경우 토큰을 남겨
+      // 통신이 돌아오면 재시도한다 — 같은 정책을 따른다.
+      if (error instanceof ApiError && REFRESH_REJECTED_STATUSES.includes(error.status)) {
+        await clearTokens();
+        // 팝업의 로그아웃 판정(error.status === 401)이 세 곳이라, 원래 상태 코드 대신
+        // 401 로 통일해 던진다 — 400 을 그대로 흘리면 위 주석의 "갇히는" 증상이 된다.
+        throw new ApiError('로그인이 만료되었습니다. 다시 로그인해 주세요.', 401);
+      }
       throw error;
     }
+    await saveTokens(data.accessToken, data.refreshToken);
+    return data.accessToken;
   })().finally(() => { refreshPromise = null; });
   return refreshPromise;
 }

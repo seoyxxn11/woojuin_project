@@ -78,7 +78,7 @@ export default function Popup() {
   const [contextFeedback, setContextFeedback] = useState<ContextSaveFeedback | null>(null);
   const urlRef = useRef<HTMLParagraphElement>(null);
 
-  /** @returns 목록을 실제로 받았는지 — 물려받은 토큰이 살아 있는지의 판정으로도 쓴다. */
+  /** @returns 목록을 실제로 받았는지 — 저장 403 뒤의 재동기화가 성공했는지 판정으로도 쓴다. */
   const loadWorkspaces = useCallback(async (): Promise<boolean> => {
     setStatus('loading');
     try {
@@ -252,9 +252,10 @@ export default function Popup() {
       setMessage('');
     } catch (error) {
       if (error instanceof ApiError && error.status === 401) setAuthenticated(false);
-      // 멤버십 403 = 지금 계정이 그 워크스페이스의 멤버가 아니다. 세션 물려받기 때문에
-      // 토큰은 팝업 밖에서 다른 계정으로 바뀔 수 있는데(웹 로그인 자동 이어받기) 워크스페이스
-      // 선택은 저장소에 남아, 이전 계정의 공간을 들고 있는 어긋남이 생긴다. 목록을 다시
+      // 멤버십 403 = 지금 계정이 그 워크스페이스의 멤버가 아니다. 로그아웃한 뒤 다른 계정으로
+      // 다시 로그인하면 토큰은 바뀌는데 워크스페이스 선택은 저장소에 그대로 남아, 이전 계정의
+      // 공간을 들고 있는 어긋남이 생긴다(선택을 지우는 로그아웃 경로를 안 탄 경우 — 예: 다른
+      // 기기에서 이 세션을 끊어 재로그인한 경우). 목록을 다시
       // 받으면 loadWorkspaces 가 선택을 현재 계정의 공간으로 바로잡는다 — 사용자는 한 번 더
       // 누르기만 하면 된다.
       //

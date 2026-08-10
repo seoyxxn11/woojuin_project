@@ -76,8 +76,9 @@ let activeFlow = 0;
  */
 export async function beginDeviceLinkLogin(): Promise<void> {
   // 이미 로그인돼 있으면 창을 열지 않는다 — 팝업 UI 는 로그인 상태에서 이 버튼을 안
-  // 보여주지만, 조용한 자동 연결이 클릭 직전에 끝나는 경합이 있다. 그때 창을 열면
-  // 계정당 세션이 하나 더 생겨 기기 목록에 중복 "크롬 익스텐션"이 쌓인다.
+  // 보여주지만, 앞선 흐름의 승인이 클릭 직전에 끝나는 경합이 있다(팝업이 토큰 도착을
+  // 반영하기 전의 한 클릭). 그때 창을 열면 세션이 하나 더 생겨 기기 목록에 중복
+  // "크롬 익스텐션"이 쌓인다.
   if (await getRefreshToken()) return;
   const started = await publicApiFetch<DeviceLinkStart>('/auth/device-link', {
     method: 'POST',

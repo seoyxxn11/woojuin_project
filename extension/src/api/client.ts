@@ -10,8 +10,9 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
   ?? DEFAULT_API_BASE_URLS[import.meta.env.MODE]
   ?? DEFAULT_API_BASE_URLS.production;
 
-// 웹앱 origin. 로그인은 웹앱 로그인 화면을 그대로 쓰고(확장은 자체 로그인 폼이 없다)
-// 그 세션을 물려받으므로, API 주소와 짝을 맞춰 모드별로 둔다.
+// 웹앱 origin. 확장은 자체 로그인 폼이 없어 링크 코드 승인 창을 웹앱 로그인 화면으로 열고
+// (deviceLink.ts), 팝업의 '우주인 열기'도 여기로 간다. 화면만 빌려 쓸 뿐 **세션은 웹과
+// 완전히 별개다**(-498). API 주소와 짝을 맞춰 모드별로 둔다.
 const DEFAULT_WEB_ORIGINS: Record<string, string> = {
   development: 'http://localhost:5173',
   demo: 'https://dev.woojuin.store',
@@ -45,9 +46,10 @@ async function parseResponse<T>(response: Response): Promise<ApiResponse<T>> {
 /**
  * refresh 거부로 볼 상태 코드 — 웹앱 client.ts 의 REFRESH_REJECTED_STATUSES 와 같은 계약이다.
  * 백엔드는 무효·만료·불일치·탈퇴를 전부 400 으로 준다(TokenRefreshService, S15P11C105-455).
- * 401 만 보면 **웹에서 로그아웃한 뒤의 익스텐션**이 로그인 화면으로 못 가고 갇힌다 —
- * 웹 로그아웃이 공유 세션을 지우면 refresh 가 400 으로 거부되는데, 팝업은 401 에만
- * setAuthenticated(false) 를 하므로 로그인된 화면에서 서버 오류 문구만 반복해서 보게 된다.
+ * 401 만 보면 **세션이 밖에서 끊긴 익스텐션**이 로그인 화면으로 못 가고 갇힌다 — 마이페이지
+ * 기기 목록에서 "크롬 익스텐션"을 끊거나 탈퇴하면 refresh 가 400 으로 거부되는데, 팝업은
+ * 401 에만 setAuthenticated(false) 를 하므로 로그인된 화면에서 서버 오류 문구만 반복해서
+ * 보게 된다.
  */
 const REFRESH_REJECTED_STATUSES = [400, 401, 403];
 

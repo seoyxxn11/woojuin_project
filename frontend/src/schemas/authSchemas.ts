@@ -1,5 +1,14 @@
 import { z } from 'zod';
 
+export const NICKNAME_GUIDE = '닉네임은 한글, 영문, 숫자로 2~20자 입력해 주세요.';
+
+export const nicknameSchema = z
+  .string()
+  .trim()
+  .min(2, NICKNAME_GUIDE)
+  .max(20, NICKNAME_GUIDE)
+  .regex(/^[가-힣A-Za-z0-9]+$/, NICKNAME_GUIDE);
+
 /**
  * 로그인/회원가입 폼 검증 스키마.
  *
@@ -10,11 +19,7 @@ import { z } from 'zod';
 export const signupSchema = z.object({
   email: z.string().trim().min(1, '이메일은 필수입니다').email('이메일 형식이 올바르지 않습니다'),
   password: z.string().min(1, '비밀번호는 필수입니다').min(8, '비밀번호는 8자 이상이어야 합니다'),
-  nickname: z
-    .string()
-    .trim()
-    .min(1, '닉네임은 필수입니다')
-    .max(50, '닉네임은 50자를 넘을 수 없습니다'),
+  nickname: nicknameSchema,
 });
 
 export const loginSchema = z.object({

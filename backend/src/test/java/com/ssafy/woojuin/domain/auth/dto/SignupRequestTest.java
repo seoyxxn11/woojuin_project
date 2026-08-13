@@ -71,6 +71,26 @@ class SignupRequestTest {
     }
 
     @Test
+    @DisplayName("닉네임에 공백이나 특수문자가 있으면 검증에 실패한다")
+    void invalidNicknameFormat_failsValidation() {
+        SignupRequest request = new SignupRequest("test@woojuin.com", "password1234", "우주인!");
+
+        Set<ConstraintViolation<SignupRequest>> violations = validator.validate(request);
+
+        assertThat(violations).isNotEmpty();
+    }
+
+    @Test
+    @DisplayName("닉네임이 20자를 넘으면 검증에 실패한다")
+    void tooLongNickname_failsValidation() {
+        SignupRequest request = new SignupRequest("test@woojuin.com", "password1234", "가".repeat(21));
+
+        Set<ConstraintViolation<SignupRequest>> violations = validator.validate(request);
+
+        assertThat(violations).isNotEmpty();
+    }
+
+    @Test
     @DisplayName("모든 값이 유효하면 검증을 통과한다")
     void validRequest_passesValidation() {
         SignupRequest request = new SignupRequest("test@woojuin.com", "password1234", "닉네임");

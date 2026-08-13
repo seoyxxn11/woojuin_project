@@ -84,6 +84,17 @@ describe('OAuthOnboardingPage', () => {
     expect(submitButton(container).hasAttribute('disabled')).toBe(true);
   });
 
+  it('특수문자가 포함된 닉네임은 안내하고 제출할 수 없다', async () => {
+    const { container } = await renderOnboarding();
+    await expect.poll(() => nicknameInput(container).value).toBe('구글유저');
+
+    await userEvent.clear(nicknameInput(container));
+    await userEvent.type(nicknameInput(container), '구글유저!');
+
+    expect(submitButton(container).hasAttribute('disabled')).toBe(true);
+    expect(container.textContent).toContain('닉네임은 한글, 영문, 숫자로 2~20자 입력해 주세요.');
+  });
+
   it('닉네임을 채우고 방침에 끝까지 동의하면 시작하기 버튼이 활성화된다', async () => {
     const { container, getByRole } = await renderOnboarding();
     await expect.poll(() => nicknameInput(container).value).toBe('구글유저');

@@ -38,10 +38,24 @@ describe('마이페이지 프로필 카드', () => {
 
     const input = container.querySelector('input[aria-label="닉네임"]') as HTMLInputElement;
     await userEvent.clear(input);
-    await userEvent.type(input, '새 우주인');
+    await userEvent.type(input, '새우주인');
     await userEvent.keyboard('{Enter}');
 
-    expect(onNicknameChange).toHaveBeenCalledWith('새 우주인');
+    expect(onNicknameChange).toHaveBeenCalledWith('새우주인');
+  });
+
+  it('특수문자가 포함된 닉네임은 저장하지 않고 안내한다', async () => {
+    const { container, onNicknameChange } = await renderProfileCard();
+    const editButton = container.querySelector('button[aria-label="닉네임 수정"]') as HTMLElement;
+    await userEvent.click(editButton);
+
+    const input = container.querySelector('input[aria-label="닉네임"]') as HTMLInputElement;
+    await userEvent.clear(input);
+    await userEvent.type(input, '우주인!');
+    await userEvent.keyboard('{Enter}');
+
+    expect(onNicknameChange).not.toHaveBeenCalled();
+    expect(container.textContent).toContain('닉네임은 한글, 영문, 숫자로 2~20자 입력해 주세요.');
   });
 
   it('색상과 로그아웃 동작을 부모에게 전달한다', async () => {

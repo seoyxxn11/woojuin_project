@@ -9,6 +9,7 @@ import BrandMark from '@/components/ui/BrandMark';
 import TextInput from '@/components/ui/TextInput';
 import SubmitButton from '@/components/ui/button/SubmitButton';
 import PrivacyPolicyConsentCheckbox from '@/components/domain/auth/PrivacyPolicyConsentCheckbox';
+import { nicknameSchema } from '@/schemas/authSchemas';
 
 /**
  * 구글 로그인 온보딩 — 이메일 회원가입 폼과 같은 관문(닉네임 설정·개인정보처리방침 동의)을
@@ -44,7 +45,10 @@ const OAuthOnboardingPage = () => {
     },
   });
 
-  const canSubmit = nickname.trim().length > 0 && agreedToPrivacyPolicy;
+  const nicknameResult = nicknameSchema.safeParse(nickname);
+  const nicknameError =
+    nickname.length > 0 && !nicknameResult.success ? nicknameResult.error.issues[0]?.message : null;
+  const canSubmit = nicknameResult.success && agreedToPrivacyPolicy;
 
   return (
     <div className="min-h-dvh bg-space">
@@ -71,8 +75,15 @@ const OAuthOnboardingPage = () => {
               placeholder="닉네임"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
-              maxLength={50}
+              maxLength={20}
+              aria-invalid={Boolean(nicknameError)}
+              aria-describedby={nicknameError ? 'oauth-nickname-error' : undefined}
             />
+            {nicknameError && (
+              <p id="oauth-nickname-error" className="text-sm text-red-400">
+                {nicknameError}
+              </p>
+            )}
 
             <PrivacyPolicyConsentCheckbox
               agreed={agreedToPrivacyPolicy}

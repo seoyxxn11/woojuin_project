@@ -41,10 +41,20 @@ class UpdateProfileRequestTest {
     }
 
     @Test
-    @DisplayName("닉네임이 50자를 넘으면 검증에 실패한다")
+    @DisplayName("닉네임이 20자를 넘으면 검증에 실패한다")
     void tooLongNickname_failsValidation() {
         UpdateProfileRequest request =
-                new UpdateProfileRequest("가".repeat(51), "https://example.com/a.png", AvatarColor.WHITE);
+                new UpdateProfileRequest("가".repeat(21), "https://example.com/a.png", AvatarColor.WHITE);
+
+        Set<ConstraintViolation<UpdateProfileRequest>> violations = validator.validate(request);
+
+        assertThat(violations).isNotEmpty();
+    }
+
+    @Test
+    @DisplayName("닉네임에 공백이나 특수문자가 있으면 검증에 실패한다")
+    void invalidNicknameFormat_failsValidation() {
+        UpdateProfileRequest request = new UpdateProfileRequest("우주 인", null, AvatarColor.WHITE);
 
         Set<ConstraintViolation<UpdateProfileRequest>> violations = validator.validate(request);
 

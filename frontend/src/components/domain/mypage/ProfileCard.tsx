@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import AvatarColorPicker from './AvatarColorPicker';
 import { getSpacemanImage } from '@/utils/getSpacemanImage';
+import { nicknameSchema } from '@/schemas/authSchemas';
 
 interface ProfileCardProps {
   nickname: string;
@@ -31,17 +32,24 @@ const ProfileCard = ({
 }: ProfileCardProps) => {
   const [editing, setEditing] = useState(false);
   const [draftNickname, setDraftNickname] = useState(nickname);
+  const [nicknameError, setNicknameError] = useState<string | null>(null);
 
   useEffect(() => setDraftNickname(nickname), [nickname]);
 
   const cancelEditing = () => {
     setDraftNickname(nickname);
+    setNicknameError(null);
     setEditing(false);
   };
 
   const saveNickname = () => {
-    const nextNickname = draftNickname.trim();
-    if (!nextNickname || nextNickname === nickname) {
+    const result = nicknameSchema.safeParse(draftNickname);
+    if (!result.success) {
+      setNicknameError(result.error.issues[0]?.message ?? null);
+      return;
+    }
+    const nextNickname = result.data;
+    if (nextNickname === nickname) {
       cancelEditing();
       return;
     }
@@ -67,9 +75,14 @@ const ProfileCard = ({
               autoFocus
               aria-label="닉네임"
               value={draftNickname}
-              maxLength={50}
+              maxLength={20}
               disabled={saving}
-              onChange={(event) => setDraftNickname(event.target.value)}
+              aria-invalid={Boolean(nicknameError)}
+              aria-describedby={nicknameError ? 'profile-nickname-error' : undefined}
+              onChange={(event) => {
+                setDraftNickname(event.target.value);
+                setNicknameError(null);
+              }}
               onBlur={saveNickname}
               onKeyDown={(event) => {
                 if (event.key === 'Enter') saveNickname();
@@ -90,6 +103,11 @@ const ProfileCard = ({
                 수정
               </button>
             </div>
+          )}
+          {editing && nicknameError && (
+            <p id="profile-nickname-error" className="mt-1 text-xs text-red-400">
+              {nicknameError}
+            </p>
           )}
           <p className="mt-0.5 truncate text-[13.5px] text-text-2">{email}</p>
           <p className="mt-1.5 text-xs text-text-3">
